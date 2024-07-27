@@ -5,6 +5,10 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  pages: write
+
 env:
   INSTANCE: 'Writerside/docsite'
   ARTIFACT: 'webHelpDOCSITE2-all.zip'
@@ -34,8 +38,6 @@ jobs:
             artifacts/${{ env.ARTIFACT }}
           retention-days: 7
   deploy:
-    permissions:
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
