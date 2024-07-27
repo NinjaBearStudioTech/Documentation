@@ -1,0 +1,27 @@
+.article__p {
+    max-width: var(--wh-max-width-xl) !important;
+}
+
+.code-block__wrapper {
+    max-width: var(--wh-max-width-xl) !important;
+}
+
+.code-collapse__wrapper {
+    max-width: var(--wh-max-width-xl) !important;
+}
+
+.definition-list {
+    max-width: var(--wh-max-width-xl) !important;
+}
+
+.micro-format__content {
+    max-width: var(--wh-max-width-xl) !important;
+}
+
+.procedure-steps {
+    max-width: var(--wh-max-width-xl) !important;
+}
+
+.prompt {
+    max-width: var(--wh-max-width-xl) !important;
+}

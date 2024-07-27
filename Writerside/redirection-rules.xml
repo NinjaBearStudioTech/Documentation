@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rules SYSTEM "https://resources.jetbrains.com/writerside/1.0/redirection-rules.dtd">
+<rules>
+    <!-- format is as follows
+    <rule id="<unique id>">
+        <accepts>page.html</accepts>
+    </rule>
+    -->
+    <rule id="9a393a4">
+        <description>Created after removal of "Overview" from Ninja Bear Studio Plugins</description>
+        <accepts>overview.html</accepts>
+    </rule>
+    <rule id="272fa17">
+        <description>Created after removal of "Ninja Input" from Ninja Bear Studio Plugins</description>
+        <accepts>index_md.html</accepts>
+    </rule>
+    <rule id="795266e9">
+        <description>Created after removal of "Overview" from Ninja Bear Studio Plugins</description>
+        <accepts>overview.html</accepts>
+    </rule>
+    <rule id="19aaa98d">
+        <description>Created after removal of "Ninja Input" from Ninja Bear Studio Plugins</description>
+        <accepts>index_md.html</accepts>
+    </rule>
+    <rule id="1616ae0">
+        <description>Created after removal of "Ninja Input" from Ninja Bear Studio Plugins</description>
+        <accepts>input_index.html</accepts>
+    </rule>
+    <rule id="97b316b">
+        <description>Created after removal of "Fragment Reference" from Ninja Bear Studio Plugins</description>
+        <accepts>inv_items.html</accepts>
+    </rule>
+    <rule id="570538f7">
+        <description>Created after removal of "gas_Overview" from Ninja Bear Studio Plugins</description>
+        <accepts>gas-Overview.html</accepts>
+    </rule>
+</rules>

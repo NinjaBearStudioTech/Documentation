@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Welcome" id="welcome" help-id="Section-Starting-Page">
+
+<!--    A section combines multiple topics dedicated to a specific subject.
+            Add a starting page to provide an overview of the topics in the section.
+            Start with two topics you want to promote in the <spotlight> group,
+            several important topics in the <primary> group (for example, where to start),
+            several less important topics in the <secondary> group (for example, more advanced topics),
+            and optionally add any other relevant topics in the <misc> group as cards and lists of links
+            (maybe related topics from other sections).
+            Only the spotlight section is limited to two topics.
+            For other groups, try to keep the number between 2 and 6, but you can add more if necessary.-->
+
+    <section-starting-page>
+        <title>Ninja Bear Studio Plugins</title>
+        <description>
+            Documentation site for all Ninja Bear Studio plugins, available in the Unreal Engine Marketplace.
+        </description>
+
+        <!-- Add up to 2 topics that you want to promote. Use the "type" attribute to select an icon. -->
+        <spotlight>
+            <a href="plugin-summary.md" type="library" summary="Get a summary of all plugins currently available, their goals, capabilities and synergies.">Plugin Summary</a>
+            <a href="resources-and-support.md" type="community" summary="Additional resources, such as the Unreal Marketplace, YouTube channel and Discord support server.">Resources and Support</a>
+
+        </spotlight>
+
+        <!-- Add several topics that are most important for this section. -->
+        <primary>
+            <title>Get started</title>
+            <a href="cbt_overview.md" summary="Extensive Combat domain, built on top of the Gameplay Ability System.">Ninja Combat</a>
+            <a href="fct_overview.md" summary="Factions and Reputation management for Players and AI Agents.">Ninja Factions</a>
+            <a href="gas_overview.md" summary="Boilerplate code and extra functionality for the Gameplay Ability System.">Ninja GAS</a>
+            <a href="ipt_overview.md" summary="Dedicated and reusable Handlers for the Enhanced Input. Integrated with the Gameplay Ability System.">Ninja Input</a>
+            <a href="inv_overview.md" summary="Inventory and Equipment management, integrated with G.A.S. and the Asset Manager.">Ninja Inventory</a>
+        </primary>
+
+        <!-- Add several topics that are less important or are relevant only for advanced/experienced users. -->
+        <secondary>
+            <title>Cross-plugin topics</title>
+            <a href="#" summary="How to acquire, install/update and modify the source code.">Installation</a>
+            <a href="#" summary="Overview of all technologies used by the plugins.">Technology Stack</a>
+            <a href="#" summary="All integration possibilities between available plugins.">Plugin Integration</a>
+            <a href="#" summary="Technical deep-dives for games built using our technology.">Our Games</a>
+        </secondary>
+    </section-starting-page>
+</topic>

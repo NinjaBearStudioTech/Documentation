@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE buildprofiles SYSTEM "https://resources.jetbrains.com/writerside/1.0/build-profiles.dtd">
+<buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <build-profile instance="docsite">
+        <variables>
+            <custom-favicons>nb_logo_favico.png</custom-favicons>
+            <header-logo>nb_logo_transparent.png</header-logo>
+            <noindex-content>true</noindex-content>
+            <primary-color>#326c5a</primary-color>
+            <color-preset>contrast</color-preset>
+            <custom-css>custom.css</custom-css>
+            <download-title>Unreal Engine Marketplace</download-title>
+            <download-page>https://www.unrealengine.com/marketplace/en-US/profile/Ninja+Bear+Studio+Inc.</download-page>
+            <showDownloadButton>true</showDownloadButton>
+        </variables>
+        <footer>
+            <copyright>2022-2024 Ninja Bear Studio Inc.</copyright>
+            <social type="email" href="mailto:support@ninjabear.studio"/>
+            <social type="youtube" href="https://youtube.com/ninjabearstudio"/>
+            <social type="twitter" href="https://youtube.com/ninjabeargames"/>
+        </footer>
+    </build-profile>
+    <build-profile instance="plugins">
+        <variables>
+            <noindex-content>true</noindex-content>
+        </variables>
+    </build-profile>
+    <build-profile instance="docsite">
+        <variables>
+            <noindex-content>true</noindex-content>
+        </variables>
+    </build-profile>
+</buildprofiles>
