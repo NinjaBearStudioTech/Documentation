@@ -34,4 +34,8 @@
         <description>Created after removal of "gas_Overview" from Ninja Bear Studio Plugins</description>
         <accepts>gas-Overview.html</accepts>
     </rule>
+    <rule id="2757d716">
+        <description>Created after removal of "Fragment Reference" from Ninja Bear Studio Plugins</description>
+        <accepts>inv_fragment_reference.html</accepts>
+    </rule>
 </rules>

@@ -2,7 +2,6 @@
 <primary-label ref="inventory"/>
 
 <tldr>
-    <b>Summary: Gameplay Attributes</b>
     <ul>
         <li>Add the <code>NinjaInventoryAttributeSet</code> to your Ability System Component.</li>
         <li>Initialize the <code>WeightLimit</code> attribute, if your Inventory Manager will track encumbrance.</li> 

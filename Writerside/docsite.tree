@@ -23,8 +23,21 @@
     <toc-element topic="inv_overview.md">
         <toc-element topic="inv_setup.md"/>
         <toc-element topic="inv_container_and_layout.md"/>
-        <toc-element topic="inv_items_and_fragments.md"/>
-        <toc-element topic="inv_fragment_reference.md"/>
+        <toc-element topic="inv_items_and_fragments.md" >
+            <toc-element topic="inv_consumable_fragment.md"/>
+            <toc-element topic="inv_container_fragment.md"/>
+            <toc-element topic="inv_durability_fragment.md"/>
+            <toc-element topic="inv_economy_fragment.md"/>
+            <toc-element topic="inv_equipment_fragment.md"/>
+            <toc-element topic="inv_gameplay_effect_fragment.md"/>
+            <toc-element topic="inv_level_fragment.md"/>
+            <toc-element topic="inv_loot_fragment.md"/>
+            <toc-element topic="inv_pickup_fragment.md"/>
+            <toc-element topic="inv_quality_fragment.md"/>
+            <toc-element topic="inv_stack_fragment.md"/>
+            <toc-element topic="inv_user_interface_fragment.md"/>
+            <toc-element topic="inv_weight_fragment.md"/>
+        </toc-element>
         <toc-element topic="inv_inventory_manager.md"/>
         <toc-element topic="inv_equipment.md"/>
         <toc-element topic="inv_equipment_manager.md"/>

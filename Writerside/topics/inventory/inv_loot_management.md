@@ -1,6 +1,6 @@
 # Loot Management
 <primary-label ref="inventory"/>
-<secondary-label ref="beta"/>
+<secondary-label ref="wip"/>
 
 Loot is a common feature in many games: players open a treasure chest or kitchen cabinet, chop a tree, defeat an enemy, 
 and they are awarded loot. For this functionality, you can use the `UNinjaInventoryLootComponent`.

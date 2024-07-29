@@ -6,7 +6,7 @@ The Inventory System was built using the Gameplay Ability System and as such, it
 Each topic in this section will provide more information about each of the three main functionality pillars from the 
 Gameplay Ability System: 
 
-> When exploring these features, make sure that you already have the Gameplay Ability System framework added and 
+> Before exploring these features, make sure that you already have the Gameplay Ability System framework added and 
 > configured in your project.
 > 
 > For more information about the GAS setup for the Inventory system, please check the [Setup](inv_setup.md) topic.

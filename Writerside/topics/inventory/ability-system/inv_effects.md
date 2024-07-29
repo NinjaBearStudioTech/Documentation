@@ -2,7 +2,6 @@
 <primary-label ref="inventory"/>
 
 <tldr>
-    <b>Summary: Gameplay Effects</b>
     <ul>
         <li>Gameplay Effects can be applied by Items, through Item Fragments extending the <code>GameplayEffect</code> Fragment.</li>
         <li>Gameplay Effects can be applied by Equipment, when the state in which they are defined becomes active.</li>

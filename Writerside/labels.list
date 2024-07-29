@@ -10,7 +10,8 @@
     <primary-label id="input" short-name="IPT" name="Input">Ninja Input</primary-label>
     <primary-label id="inventory" short-name="INV" name="Inventory">Ninja Inventory</primary-label>
 
-    <secondary-label id="experimental" name="experimental" color="red">API subject to changes, likely buggy.</secondary-label>
+    <secondary-label id="wip" name="work-in-progress" color="red">Work in progress, informational only.</secondary-label>
+    <secondary-label id="experimental" name="experimental" color="strawberry">API subject to changes, likely buggy.</secondary-label>
     <secondary-label id="beta" name="beta" color="tangerine">Stable API, but you might find bugs.</secondary-label>
     <secondary-label id="advanced" name="advanced" color="purple">Advanced feature, some experience required.</secondary-label>
     <secondary-label id="how-to" name="how-to" color="blue">Step-by-step tutorial, with clear goals.</secondary-label>
