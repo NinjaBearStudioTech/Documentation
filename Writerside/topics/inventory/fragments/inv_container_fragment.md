@@ -1,9 +1,12 @@
 # Container
 <primary-label ref="inventory"/>
 
-Manages the **container** and **position** where the backing item is stored, and provides the "**Move**" and "**Swap**" 
-operations. 
+Manages the **container** and **position** where the backing item is stored, and provides the **Move** and "**Swap**" 
+operations, along with other utility functions.
 
+> You should always have a Container fragment in your items!
+{style="note"}
+> 
 ## Modifying Requests
 
 Since it implements `IItemContextModifierInterface`, this fragment is invoked for every item added to the inventory, to 
@@ -23,10 +26,14 @@ use `FindBestContainerForItem` and `FindBestPositionForItem`.
 There are other useful functions that you may want to explore for other placement queries, such as `IsValidPosition`
 and `IsPreferredContainer`.
 
+> When used in conjunction with the Stack fragment, make sure to place the Container **after** the Stack. This ensures
+> that new items created by the Stack fragment are properly placed.
+{style="note"}
+
 ## Move Operation
 
-This fragment provides the **Move** operation, which can be created via the `CreateMovePayload` function. Moving the 
-item sets a new container and position for it.
+This fragment provides the **Move** operation, which can be created via the `CreateMovePayload` function. It moves the 
+item to a new container and position.
 
 <tabs group="sample">
     <tab title="Blueprint" group-key="bp">
@@ -45,8 +52,8 @@ item sets a new container and position for it.
 
 ## Swap Operation
 
-This fragment provides the **Swap** operation, which can be created via the `CreateSwapPayload` function. Swapping two 
-items will invert their containers and positions.
+This fragment provides the **Swap** operation, which can be created via the `CreateSwapPayload` function. Swaps two items,
+exchanging their containers and positions.
 
 <tabs group="sample">
     <tab title="Blueprint" group-key="bp">
@@ -62,3 +69,14 @@ items will invert their containers and positions.
         </code-block>
     </tab>
 </tabs>
+
+## Additional Containers
+
+An item can add additional containers to the inventory. This is useful for items that can provide **their own storage**,
+like _boxes_, _pots_ and so on.
+
+Containers added via this fragment are registered to the inventory, along with their items. Once the item is removed, 
+the container is removed with it.
+
+Keep in mind that you can also add containers from an **active equipment**, meaning that containers are only registered 
+when an item is **activated**. This is more suited represent items like a _backpack_.

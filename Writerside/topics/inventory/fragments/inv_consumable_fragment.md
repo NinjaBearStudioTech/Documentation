@@ -1,7 +1,9 @@
 # Consumable
 <primary-label ref="inventory"/>
 
-Grants the backing item the **consumable** trait, and provides the "**Consume**" operation.
+Grants the backing item the **consumable** trait, and provides the **Consume** operation.
+
+Consumable items are tagged as `Inventory.Item.Trait.Consumable`.
 
 ## Tracking Charges
 
