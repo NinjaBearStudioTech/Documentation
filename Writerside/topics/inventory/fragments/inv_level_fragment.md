@@ -34,6 +34,13 @@ This is very useful if you want to the magnitudes in your Gameplay Effect to **s
 
 ## Upgrade Operation
 
+During an **upgrade**, the level can be modified in two ways: **absolute** or **incremental** value.
+
+- **Absolute**: The value provided in the operation **replaces** the current level.
+- **Incremental**: The value provided is **added** to the current level. 
+
+> Incremental updates can be useful when the current level is unknown, but it must be updated by a given amount.
+
 <tabs group="sample">
     <tab title="Blueprint" group-key="bp">
         <img src="inv_upgrade_operation.png" alt="Upgrade operation sample in Blueprints"/>

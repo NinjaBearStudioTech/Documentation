@@ -18,32 +18,32 @@ Containers and Layouts define the structure used by the inventory to store its i
 There are many names and usages that can be used to exemplify a container: a **Region** for items, a **Slot** that can 
 hold equipment pieces, actual **Containers** representing items inside the inventory, and probably others.
 
-Containers are defined by the Data Asset `UNinjaInventoryContainerDataAsset`. You can assign Gameplay Tags to establish 
+Containers are defined by the Data Asset `NinjaInventoryContainerDataAsset`. You can assign Gameplay Tags to establish 
 traits that will fine-tune the container's purpose, determine the specific Container Class instantiated when the container 
 is added to an Inventory, available slots, etc. 
 
-The `UNinjaInventoryContainerDataAsset` is a Primary Data Asset and as such, it must be registered to the **[Asset Manager][1]**.
+The `NinjaInventoryContainerDataAsset` is a Primary Data Asset and as such, it must be registered to the **[Asset Manager][1]**.
 This can be done in the Engine Settings, or directly added to the `DefaultGame.ini` file.
 
 All properties available to containers are defined in the following table.
 
-| Property                 | Description                                                                   |
-|--------------------------|-------------------------------------------------------------------------------|
-| Display Name             | Localized name for this container.                                            |
-| Gameplay Tags            | Gameplay Tags defining additional traits to this container.                   |
-| Container Class          | Class used to create instances of Containers.                                 |
-| Priority                 | Priority applied when matched against other Container.                        |
-| Slots                    | Maximum amount of item slots available to this container.                     |
-| Slots Attribute          | Overrides the Slots property, using a Gameplay Attribute instead.             |
-| Item Compatibility Query | Query applied to all items before adding them, to ensure they are compatible. |
+| Property                 | Description                                                                                          |
+|--------------------------|------------------------------------------------------------------------------------------------------|
+| Display Name             | The name for the container. Supports localization from [String Tables][2].                           |
+| Gameplay Tags            | Gameplay Tags defining additional traits to this container.                                          |
+| Container Class          | Class used to create Container Instances in an Inventory Manager.                                    |
+| Priority                 | Priority applied when matched against other Container. The lower the value, the higher the priority. |
+| Slots                    | Maximum amount of item slots available to this container.                                            |
+| Slots Attribute          | Overrides the Slots property, using a Gameplay Attribute instead.                                    |
+| Item Compatibility Query | Query applied to all items before adding them, to ensure they are compatible.                        |
 
-> The Attribute Set provided by the Inventory System, 'UNinjaInventoryAttributeSet', contains an attribute for Backpack 
+> The Attribute Set provided by the Inventory System, 'NinjaInventoryAttributeSet', contains an attribute for Backpack 
 > Slots.
 > 
 > This attribute is available for convenience, but if you don't need it, then you can safely ignore it.
 {style="note"}
 
-Once a container is assigned to an Inventory, through its Data Asset, it's represented by the `UNinjaInventoryContainer`
+Once a container is assigned to an Inventory, through its Data Asset, it's represented by the `NinjaInventoryContainer`
 class, or a subclass defined in the data asset.
 
 ### Default Containers
@@ -80,7 +80,7 @@ that, if present, would drop the item as a Pickup Actor.
 
 An Inventory Layout provides the initial containers available to the inventory and defines the default one.
 
-Inventory Layouts are created from `UNinjaInventoryLayoutDataAsset`, they contain a Gameplay Tag Query used to identify
+Inventory Layouts are created from `NinjaInventoryLayoutDataAsset`, they contain a Gameplay Tag Query used to identify
 the default container, by default any Container tagged with `Inventory.Container.Default`, and all containers added to
 an Inventory Manager by default.
 
@@ -90,19 +90,21 @@ an Inventory Manager by default.
 
 You can assign a Layout to an Inventory Manager using a few different ways, which are described in the following table:
 
-| Assignment        | Description                                                                     |
-|-------------------|---------------------------------------------------------------------------------|
-| Property          | Directly to an Inventory Manager, via it's `InventoryLayout` property.          |
-| Interface, Owner  | Via the `IInventoryManagerProviderInterface` in the Inventory Manager's owner.  |
-| Interface, Avatar | Via the `IInventoryManagerProviderInterface` in the Inventory Manager's avatar. |
+| Assignment        | Description                                                                    |
+|-------------------|--------------------------------------------------------------------------------|
+| Property          | Directly to an Inventory Manager, via it's `InventoryLayout` property.         |
+| Interface, Owner  | Via the `InventoryManagerProviderInterface` in the Inventory Manager's owner.  |
+| Interface, Avatar | Via the `InventoryManagerProviderInterface` in the Inventory Manager's avatar. |
 
 > The strategies above are ordered from lowest to highest, meaning that everytime a new avatar is initialized in an 
 > Inventory Manager, it can set its Inventory Layout over all other options.
 
 <seealso>
    <category ref="external">
-    <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/asset-management-in-unreal-engine">Asset Manager Documentation</a>
-</category>
+        <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/asset-management-in-unreal-engine">Asset Manager Documentation</a>
+        <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/using-string-tables-for-text-in-unreal-engine">String Tables Documentation</a>
+    </category>
 </seealso>
 
 [1]: https://dev.epicgames.com/documentation/en-us/unreal-engine/asset-management-in-unreal-engine
+[2]: https://dev.epicgames.com/documentation/en-us/unreal-engine/using-string-tables-for-text-in-unreal-engine

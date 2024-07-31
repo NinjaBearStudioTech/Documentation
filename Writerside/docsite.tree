@@ -22,6 +22,8 @@
     <toc-element topic="int_overview.md" hidden="true"/>
     <toc-element topic="inv_overview.md">
         <toc-element topic="inv_setup.md"/>
+        <toc-element topic="inv_configuration.md"/>
+        <toc-element topic="inv_debugger_and_logs.md"/>
         <toc-element topic="inv_container_and_layout.md"/>
         <toc-element topic="inv_items_and_fragments.md" >
             <toc-element topic="inv_consumable_fragment.md"/>
@@ -55,8 +57,9 @@
         <toc-element topic="inv_animation.md"/>
         <toc-element topic="inv_save_and_load.md"/>
         <toc-element topic="inv_function_library.md"/>
-        <toc-element topic="inv_debugger_and_logs.md"/>
         <toc-element toc-title="How To">
+            <toc-element topic="inv_create_containers.md"/>
+            <toc-element topic="inv_create_item.md"/>
             <toc-element topic="inv_add_remove_items.md"/>
             <toc-element topic="inv_create_fragment_effects.md"/>
             <toc-element topic="inv_consumables.md"/>

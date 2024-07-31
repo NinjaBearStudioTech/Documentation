@@ -1,8 +1,10 @@
 # Durability
 <primary-label ref="inventory"/>
 
-Grants the backing item the **durable** trait, and provides the **Wear** operation and **Restore** operations, along
-with other utility functions.
+Enables the **durable** trait, along with the accompanying **Wear** and **Repair** operations. 
+
+Durable items can be indestructible or break, which tags them as `Inventory.Item.Trait.Indestructible` and 
+`Inventory.Item.Trait.Broken`, respectively. 
 
 ## Tracking Durability
 

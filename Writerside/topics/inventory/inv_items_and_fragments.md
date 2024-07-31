@@ -5,7 +5,7 @@
     <ul>
         <li>Items do not have <b>presence</b> in the game world.</li>
         <li>Items are defined by the aggregation of <b>item fragments</b>.</li>
-        <li>Items are defined by an <b>Item Definition</b> (<code>UNinjaInventoryItemDataAsset</code>), and represented by an <b>Item Instance</b> (<code>UNinjaInventoryItem</code>).</li>
+        <li>Items are defined by an <b>Item Definition</b> (<code>NinjaInventoryItemDataAsset</code>), and represented by an <b>Item Instance</b> (<code>NinjaInventoryItem</code>).</li>
         <li>Item Fragments are <b>reusable pieces of data and logic</b> that can be added to items.</li>
         <li>All Item Instances created from the same Item Definition will <b>share</b> the same item fragment.</li>
     </ul>
@@ -18,7 +18,7 @@ are data-driven objects without physical presence in the game world.
 
 Inventory Items are the primary object type for the Inventory System. 
 
-They are defined by the `UNinjaInventoryItemDataAsset`, which is a Primary Data Asset that must be registered to the **[Asset Manager][1]**.
+They are defined by the `NinjaInventoryItemDataAsset`, which is a Primary Data Asset that must be registered to the **[Asset Manager][1]**.
 This data asset by itself only contains a few properties, but most importantly, it's where you can assign all Fragments
 that will contribute to the item's data and logic.
 
@@ -56,14 +56,14 @@ The following table contain a non-extensive list of useful functions that an **I
 The primary way to define items is via **aggregation**, adding and configuring fragments for an item. But in certain situations 
 you might need to use **inheritance** instance, and create your own Item subclass.
 
-In that case, you can create subclasses or blueprints based on `UNinjaInventoryItem`, and then set them to a specific 
+In that case, you can create subclasses or blueprints based on `NinjaInventoryItem`, and then set them to a specific 
 item's definition, or globally in the project's settings, under the Ninja Inventory category.
 
 ## Item Fragments
 
 Item Fragments are small, reusable pieces of logic that are focused on a specific item's aspect.
 
-The base fragment class is `UNinjaInventoryItemFragment`, a valid implementation of `IOperableItemInterface`. All concrete
+The base fragment class is `NinjaInventoryItemFragment`, a valid implementation of `OperableItemInterface`. All concrete
 fragment classes available in the system extend from it.
 
 By itself, an item doesn't have any logic (unless extended by a subclass). It is only meant as a platform for fragments, 
@@ -72,7 +72,7 @@ to execute their tasks and persist their memories. Fragments are responsible for
 > The architectural standard in which external objects (fragments) externally modify the object they are related to (item) 
 > is known as **Inversion of Control**, or **IoC**.
 
-These are the main fragment goals in this system:
+A fragment has these objectives:
 
 1. Expose configuration parameters that define how their logic executes.
 2. Execute logic on an item, to accomplish tasks within a fragment's domain.
@@ -82,13 +82,16 @@ Fragments are related to the **Item Definition**. They are instantiated by that 
 Instance generated from that definition. This means that they should be **Stateless** as they are not related to any 
 item in particular, which is also why their methods often receive an item as a parameter.
 
+> An item can have **one instance** of each fragment type!
+{style="note"}
+
 To persist information related to a specific item, fragments use a **Fragment Memory**.
 
 ### Fragment Memories
 
 Fragment memories are structures defined by each fragment, so they can persist their data in an item.
 
-All memories are based on the `FInventoryFragmentMemory` structure, this hierarchy is important because the system
+All memories are based on the `InventoryFragmentMemory` structure, this hierarchy is important because the system
 extensively uses the [`TInstanceStruct`][2] type to read polymorphic fragment memories. 
 
 > Since structures created in the editor cannot have a type hierarchy, new fragment memories must be created in C++.
@@ -110,7 +113,7 @@ Here are some example of data stored in fragment memories:
 
 Fragment operations are functionalities exposed by fragments, triggered by event-like calls.
 
-Each operation requires a **payload** represent by a structure based on the `FInventoryFragmentPayload`. Once again, the
+Each operation requires a **payload** represent by a structure based on the `InventoryFragmentPayload`. Once again, the
 hierarchy is important because the system uses [`TInstanceStruct`][2] for polymorphism.
 
 > Since structures created in the editor cannot have a type hierarchy, new fragment payloads must be created in C++.
