@@ -18,21 +18,36 @@ Component assigned to your Character or Player State.
 
 ## Available Attributes
 
-The following table contains all attributes available in the Inventory System's Attribute Set. Please note that some
-of these attributes are _Meta Attributes_, meaning they are calculated automatically, when other attributes are changed.
+The following table contains all attributes available in the Inventory System's Attribute Set.
 
-| Attribute               | Description                                                                             | Meta Attribute |
-|-------------------------|-----------------------------------------------------------------------------------------|----------------|
-| `Wealth`                | Current wealth for the character. Can represent any type of in-game currency.           | No             |
-| `EquipmentLevel`        | Aggregation of the level from all equipment pieces in use. Maintained automatically.    | Yes            |
-| `AverageEquipmentLevel` | Average Equipment Level. Maintained automatically.                                      | Yes            |
-| `WeightLimit`           | Maximum weight capacity for this inventory.                                             | No             |
-| `Encumbrance`           | Weight currently carried by the avatar, considering stacks. Maintained automatically.   | Yes            |
-| `BackpackSlots`         | Slots available for the Backpack container. Provided for convenience, but not required. | No             |
+| Attribute               | Description                                                                             | Meta |
+|-------------------------|-----------------------------------------------------------------------------------------|------|
+| `Wealth`                | Current wealth for the character. Can represent any type of in-game currency.           | No   |
+| `EquipmentLevel`        | Aggregation of the level from all equipment pieces in use. Maintained automatically.    | No   |
+| `AverageEquipmentLevel` | Average Equipment Level. Maintained automatically.                                      | Yes  |
+| `WeightLimit`           | Maximum weight capacity for this inventory.                                             | No   |
+| `Encumbrance`           | Weight currently carried by the avatar, considering stacks. Maintained automatically.   | No   |
+| `BackpackSlots`         | Slots available for the Backpack container. Provided for convenience, but not required. | No   |
 
 > You can always track your character's Attributes and their current values using the Gameplay Ability System debugger.
 > 
 > For more information about debugging the Inventory, including the Ability System please check the [Debugging][1] topic.
+
+### Average Equipment Level
+
+This **Meta Attribute** is calculated by the `GetAverageGearLevel` function in [Equipment Manager](inv_equipment_manager.md). 
+The attribute is updated when the total **Equipment Level** changes. The calculation logic can be represented as:
+
+```Generic
+float absolute_level = aggregate_levels();
+int container_count = get_relevant_containers().size();
+return absolute_level / max(relevant_container_count, 1)
+```
+
+This means the average level is defined by the **absolute item level** divided by the amount of **relevant containers**
+configured in the inventory layout.
+
+> A **relevant container** is an equipment slot not used for **cosmetics**.
 
 ## Initialization Data
 

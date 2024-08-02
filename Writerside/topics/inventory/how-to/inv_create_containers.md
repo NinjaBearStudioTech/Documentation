@@ -4,7 +4,7 @@
 
 ## Goals
 
-In this how-to, you will learn how to create your first **Container**, assign it to a new **Inventory Layout** and then
+In this how-to, you will learn how to create your first **Containers**, add them to a new **Inventory Layout** and then
 assign this layout to an **Inventory Manager**.
 
 ## Pre-requisites
@@ -65,9 +65,9 @@ assign this layout to an **Inventory Manager**.
     <step>Under the <b>Inventory Manager</b> category, select the <b>layout</b> in the <b>Inventory Layout</b> property.</step>
 </procedure>
 
-<procedure title="Testing Everything" collapsible="true">
-    <step>Hit <b>Play</b> and you should see the message <code>Initializing inventory for [character name] using layout [layout name]</code> in the <code>LogNinjaInventory</code> category.</step>
-    <step>You can also open the <b>Gameplay Debugger</b>, activate the <b>Inventory</b> category, and you should see your containers</step>
+<procedure title="Test the Results" collapsible="true">
+    <step>Hit <b>Play</b>, open the <b>Gameplay Debugger</b> and activate the <b>Inventory</b> category.</step>
+    <step>Make sure that you see all containers - <b>Backpack</b>, <b>Primary Item</b> and <b>Secondary Item</b> - assigned to the inventory.</step>
 </procedure>
 
 <seealso style="cards">

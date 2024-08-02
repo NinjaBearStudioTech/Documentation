@@ -38,4 +38,8 @@
         <description>Created after removal of "Fragment Reference" from Ninja Bear Studio Plugins</description>
         <accepts>inv_fragment_reference.html</accepts>
     </rule>
+    <rule id="57aaf446">
+        <description>Created after removal of "Manage Equipment States" from Ninja Bear Studio Plugins</description>
+        <accepts>inv_manage_equipment_states.html</accepts>
+    </rule>
 </rules>

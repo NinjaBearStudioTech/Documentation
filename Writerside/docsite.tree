@@ -57,13 +57,13 @@
         <toc-element topic="inv_animation.md"/>
         <toc-element topic="inv_save_and_load.md"/>
         <toc-element topic="inv_function_library.md"/>
-        <toc-element toc-title="How To">
+        <toc-element toc-title="How-To">
             <toc-element topic="inv_create_containers.md"/>
             <toc-element topic="inv_create_item.md"/>
+            <toc-element topic="inv_configure_equipment.md"/>
             <toc-element topic="inv_add_remove_items.md"/>
             <toc-element topic="inv_create_fragment_effects.md"/>
             <toc-element topic="inv_consumables.md"/>
-            <toc-element topic="inv_manage_equipment_states.md"/>
             <toc-element topic="inv_building_ui.md"/>
             <toc-element topic="inv_generate_loot.md"/>
             <toc-element topic="inv_set_dynamic_effect_values.md"/>
