@@ -1,13 +1,44 @@
 # Debugger and Logs
 <primary-label ref="inventory"/>
 
+The Inventory System dedicated **Gameplay Debugger Category** to display its internal **state**. It can also print log
+messages in the dedicated `LogNinjaInventory`, so you can track its internal logic flows.
+
 ## Inventory Debugger
 
-## Ability System
+The Inventory Debugger is a category available in the **Gameplay Debugger**. You can check your debugger settings, and
+most importantly the **key** used to open the debugger, in **Project Settings** > **Engine** > **Gameplay Debugger**.
 
-### Gameplay Debugger
+While in there, make sure that your **Activation Key** is properly set, along with your **Category Keys**. If you have
+many systems providing categories to the Gameplay Debugger, you might need to ensure that the **Inventory Category** is
+properly assigned in the list of **Categories**, in the **Add Ons** section.
 
-### Debug Console Command
+The Inventory Debugger is a great tool to help you evaluate your inventory state, especially when your user interface 
+is not fully implemented or simply won't show certain details about the internal items.
+
+### Default View
+
+Once activated, the Inventory Debugger will be shown in the **Default View**.
+
+![Default Debugger View](inv_debugger_default.png "Default Debugger View")
+
+It will show you all the **containers** and their current **items**. For each item, it will display the items **name**,
+**position in the container**, **stack** (current amount, stack size, storage limit) and the **equipment state**.
+
+There are a few important things to notice here:
+
+1. Container titles will inform their type (default, equipment and loot) and the slot count (current and maximum slots).
+2. You can show or hide the main container types, or empty containers, by pressing `shift+1`, `shift+2`, `shift+3` and `shift+4`.
+3. You can switch to the **Detailed View** by pressing `shift+5`.
+
+### Detailed View
+
+By pressing `shift+5` you can toggle between the **default** and **detailed** views of the Inventory Debugger.
+
+![Detailed Debugger View](inv_debugger_detailed.png "Detailed Debugger View")
+
+While in the **detailed view**, you can see more information about each item: **position**, **stack**, **level**, 
+**quality**, **durability**, **weight** and **equipment details**.
 
 ## Log Messages
 
@@ -25,15 +56,13 @@ what severity level you want to enable.
 | Verbose     | Useful debug messages to confirm internal data and states.                                                                               |
 | VeryVerbose | Very specific messages mostly relevant when developing or extending functionalities. Can be overwhelming!                                |
 
-> Since the Inventory System heavily uses Gameplay Effects, it might be useful to also log their messages too!
-
 To enable relevant log categories, for certain log severities, please add the following lines to your `DefaultEngine.ini`,
-located in your project's `Config` folder. Make sure that you are not duplicating the `Core.Log` section, as it may 
-already exist!
+located in your project's `Config` folder.
+
+> Make sure that you are not duplicating the `Core.Log` section!
+{style="warning"}
 
 ```ini
 [Core.Log]
-LogGameplayEffects=Log
 LogNinjaInventory=Verbose
 ```
-

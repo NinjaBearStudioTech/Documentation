@@ -1,12 +1,12 @@
 # Container
 <primary-label ref="inventory"/>
 
-Manages the **container** and **position** where the backing item is stored, and provides the **Move** and "**Swap**" 
+Manages the **container** and **position** where the backing item is stored, and provides the **Move** and **Swap** 
 operations, along with other utility functions.
 
 > You should always have a Container fragment in your items!
 {style="note"}
-> 
+
 ## Modifying Requests
 
 Since it implements `IItemContextModifierInterface`, this fragment is invoked for every item added to the inventory, to 
@@ -43,7 +43,7 @@ item to a new container and position.
         <code-block lang="c++">
         void UInventoryExamples::Move(UNinjaInventoryItem* Item, UNinjaInventoryContainer* Container, int32 Position)
         {
-            const TInstancedStruct&lt;FInventoryFragmentPayload&gt;&amp; Payload = UNinjaInventoryGameplayFunctionLibrary::CreateConsumePayload(Item, Container, Position);
+            const TInstancedStruct&lt;FInventoryFragmentPayload&gt;&amp; Payload = UNinjaInventoryGameplayFunctionLibrary::CreateMovePayload(Item, Container, Position);
             InventoryManager-&gt;TryPerformOperation(Payload);
         }
         </code-block>

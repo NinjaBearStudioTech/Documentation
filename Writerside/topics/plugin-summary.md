@@ -1,18 +1,18 @@
 # Plugin Summary
 
-Overview articles give background information and provide context to a particular subject.
-Their goal is to explain a concept, not to teach or give instructions.
+[Ninja Combat](cbt_overview.md)
+: Introduces combat-related concepts such as attacks, projectiles and damage. integrated with the Gameplay Ability System.
 
-## What is product/service/concept
+[Ninja Factions](fct_overview.md)
+: Declarative Faction and Reputation system, integrated with the AI Team Management from the Perception System.
 
-Provide some background and context, explain choices and alternatives.
+[Ninja GAS](gas_overview.md)
+: _Work In Progress_
+: Base configuration and functionality for the Gameplay Ability System.
 
-## Glossary
+[Ninja Input](ipt_overview.md)
+: Dedicated structure to handle Player Input. Includes an animation-based Input Buffer.
 
-A definition list or a glossary:
+[Ninja Inventory](inv_overview.md)
+: Inventory and Equipment Management, integrated with the Gameplay Ability System and Asset Manager.
 
-First Term
-: This is the definition of the first term.
-
-Second Term
-: This is the definition of the second term.

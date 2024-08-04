@@ -2,13 +2,16 @@
 
 ![Ninja Inventory](inv_feature.png "Ninja Inventory")
 
-The Ninja Inventory plugin was inspired by concepts introduced by Epic's project "Lyra", such as definitions, instances, 
+The **Ninja Inventory** plugin was inspired by concepts introduced by Epic's project "Lyra", such as definitions, instances, 
 and fragments. These concepts are quite powerful for an inventory system, as they promote defining items through _aggregation_ 
 instead of the classic _inheritance_ approach.
 
 For a generic and reusable framework like this, such concepts are fundamental, as they truly allow the Inventory System 
 to remain agnostic of a game's design and requirements. Furthermore, in line with a recurring theme for all plugins from 
 Ninja Bear Studio, this framework was designed with a strong focus on _separation of concerns_.
+
+This is an **ample** and **advanced** system, built on top of many Unreal Engine capabilities. To take full advantage of
+it, it's recommended that you have some familiarity with these base systems. **For advanced usage, you will need to use C++**.
 
 ## Main Features
 
@@ -20,8 +23,17 @@ Ninja Bear Studio, this framework was designed with a strong focus on _separatio
 - **Flexibility and Extensibility**: Designed to support various types of projects.
 - **Quality and Support**: Features clean, well-documented code, a thorough documentation site and a Discord support channel.
 
+## Design Pillars
+
+- **Separation of Concerns**: The Inventory domain is self-contained and affect other domains such as "Locomotion", "Combat", "Interaction", etc.
+- **Flexibility**: The Inventory System is flexible enough to be used in multiple projects, from simple weapon wheels to RPG games.
+- **Extensibility**: Multiple extension points are available so the Inventory System can be adapted to many situations.
+- **Designer Friendly**: You can configure and operate the entire Inventory System using Data Assets and Blueprints. Deeper customization might require C++.
+- **Engine Parity**: As much as possible, reuses features already available in the engine, without "reinventing the wheel".
+
 ## Integrations
-- The Ability System can be configured using **[Ninja GAS][6]**.
+
+- The Gameplay Ability System can be configured using **[Ninja GAS][6]**.
 - The Equipment Manager can be used as the Weapon Manager for **[Ninja Combat][7]**.
 - Pickups can be created as Interaction Actors from **[Ninja Interaction][8]**. 
 - Inventory Abilities can be triggered using Input Handlers from **[Ninja Input][9].** 

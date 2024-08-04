@@ -21,7 +21,7 @@ The system provides the following actors that can be used as a starting point:
 | `EquipmentAwarePickupActor` | Configures the mesh based on the item's Equipment configuration. Integrated with the Asset Manager. |
 | `PhysicsPickupActor`        | Adds physics to the Equipment Pickup.                                                               |
 
-> Actors have the `ANinjaInventory` prefix to their names, here omitted for legibility purposes.
+> Actors have the `NinjaInventory` prefix to their names, here omitted for legibility purposes.
 
 You are free to build your pickup actors with any of the base actors above. Keep in mind that these actors **will not
 provide interaction features**, such as collision detection.
@@ -50,4 +50,19 @@ The Drop operation allows you to set important properties to customize the opera
 
 ## Adding a Pickup
 
-A pickup 
+A pickup actor can be directly added to an inventory without any conversions.
+
+<tabs group="sample">
+    <tab title="Blueprint" group-key="bp">
+        <img src="inv_add_pickup.png" alt="Add pickup to inventory"/>
+    </tab>
+    <tab title="C++" group-key="cpp">
+        <code-block lang="c++">
+        void UInventoryExamples::Interact(AExamplePickup* Pickup)
+        {
+            FInventoryItemContext& Result;
+            InventoryManager-&gt;Result(Pickup, Result);
+        }
+        </code-block>
+    </tab>
+</tabs>
