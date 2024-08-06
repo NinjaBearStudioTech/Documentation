@@ -1,4 +1,5 @@
 # Ninja Combat
+<primary-label ref="combat"/>
 
 ![Ninja Combat](cbt_feature.png "Ninja Combat")
 
@@ -39,11 +40,11 @@ it, it's recommended that you have some familiarity with these base systems. **F
 - Allows the creation of weapons as Equipment Actors with **[Ninja Inventory][10]**.
 
 [1]: https://www.unrealengine.com/marketplace/product/ninja-combat
-[2]: https://docs.unrealengine.com/5.3/en-US/gameplay-ability-system-for-unreal-engine/
-[3]: https://docs.unrealengine.com/5.3/en-US/gameplay-targeting-system-in-unreal-engine/
-[4]: https://docs.unrealengine.com/5.3/en-US/motion-warping-in-unreal-engine/
-[5]: https://docs.unrealengine.com/5.3/en-US/state-tree-in-unreal-engine/
-[6]: https://docs.unrealengine.com/5.3/en-US/physics-driven-animation-in-unreal-engine/
+[2]: https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine
+[3]: https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-targeting-system-in-unreal-engine
+[4]: https://dev.epicgames.com/documentation/en-us/unreal-engine/motion-warping-in-unreal-engine
+[5]: https://dev.epicgames.com/documentation/en-us/unreal-engine/state-tree-in-unreal-engine
+[6]: https://dev.epicgames.com/documentation/en-us/unreal-engine/physics-driven-animation-in-unreal-engine
 [7]: https://dev.epicgames.com/documentation/en-us/unreal-engine/umg-viewmodel
 [8]: gas_overview.md
 [9]: ipt_overview.md

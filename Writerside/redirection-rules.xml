@@ -42,4 +42,12 @@
         <description>Created after removal of "Manage Equipment States" from Ninja Bear Studio Plugins</description>
         <accepts>inv_manage_equipment_states.html</accepts>
     </rule>
+    <rule id="3d1caa46">
+        <description>Created after removal of "Animation Support" from Ninja Bear Studio Plugins</description>
+        <accepts>inv_animation.html</accepts>
+    </rule>
+    <rule id="1b64f160">
+        <description>Created after removal of "Function Library" from Ninja Bear Studio Plugins</description>
+        <accepts>inv_function_library.html</accepts>
+    </rule>
 </rules>

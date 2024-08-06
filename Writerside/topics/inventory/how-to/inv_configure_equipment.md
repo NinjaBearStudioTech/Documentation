@@ -2,7 +2,7 @@
 <primary-label ref="inventory"/>
 <secondary-label ref="how-to"/>
 
-## Goals
+## Goal
 
 In this how-to, you will learn how to define **Equipment** that represents **Items** in the game world, and change their 
 states between **activate** and **deactivated**, using **Inventory Abilities**.

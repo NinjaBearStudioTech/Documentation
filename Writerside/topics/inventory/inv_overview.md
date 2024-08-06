@@ -1,4 +1,5 @@
 # Ninja Inventory
+<primary-label ref="inventory"/>
 
 ![Ninja Inventory](inv_feature.png "Ninja Inventory")
 
@@ -47,7 +48,7 @@ it, it's recommended that you have some familiarity with these base systems. **F
 </seealso>
 
 [1]: https://www.unrealengine.com/marketplace/product/ninja-inventory
-[2]: https://docs.unrealengine.com/5.3/en-US/gameplay-ability-system-for-unreal-engine/
+[2]: https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine
 [3]: https://dev.epicgames.com/documentation/en-us/unreal-engine/asset-management-in-unreal-engine
 [4]: https://dev.epicgames.com/documentation/en-us/unreal-engine/common-ui-quickstart-guide-for-unreal-engine
 [5]: https://dev.epicgames.com/documentation/en-us/unreal-engine/umg-viewmodel

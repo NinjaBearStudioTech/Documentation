@@ -1,4 +1,5 @@
 # Ninja Input
+<primary-label ref="input"/>
 
 ![Ninja Input](ipt_feature.png "Ninja Input")
 
@@ -29,8 +30,8 @@ in **Blueprints** or **C++**. The system offers a variety of handlers out-of-the
 - It can trigger abilities and send events to the Combo Manager from **[Ninja Combat][4]**.
 - It can trigger abilities from **[Ninja Inventory][5]**.
 
-[1]: https://docs.unrealengine.com/5.0/en-US/enhanced-input-in-unreal-engine/
-[2]: https://docs.unrealengine.com/5.0/en-US/gameplay-ability-system-for-unreal-engine/
+[1]: https://dev.epicgames.com/documentation/en-us/unreal-engine/enhanced-input-in-unreal-engine
+[2]: https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine
 [3]: gas_overview.md
 [4]: cbt_overview.md
 [5]: inv_overview.md

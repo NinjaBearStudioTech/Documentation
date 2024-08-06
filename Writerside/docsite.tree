@@ -12,12 +12,32 @@
     <toc-element topic="bot_overview.md" hidden="true">
     </toc-element>
     <toc-element topic="cbt_overview.md">
+        <toc-element toc-title="How-To">
+            <toc-element topic="cbt_create_melee_weapon.md"/>
+            <toc-element topic="cbt_create_melee_attacks.md"/>
+            <toc-element topic="cbt_create_attack_combo.md"/>
+            <toc-element topic="cbt_handle_hits.md"/>
+            <toc-element topic="cbt_lock_on_target.md"/>
+            <toc-element topic="cbt_add_motion_warping.md"/>
+            <toc-element topic="cbt_configure_critical_damage.md"/>
+            <toc-element topic="cbt_configure_armor.md"/>
+            <toc-element topic="cbt_block_attacks.md"/>
+            <toc-element topic="cbt_create_evade.md"/>
+            <toc-element topic="cbt_create_ranged_weapon.md"/>
+            <toc-element topic="cbt_create_ranged_attack.md"/>
+            <toc-element topic="cbt_handle_death.md"/>
+            <toc-element topic="cbt_create_backstab.md"/>
+            <toc-element topic="cbt_parry_and_stagger.md"/>
+        </toc-element>
     </toc-element>
     <toc-element topic="fct_overview.md">
     </toc-element>
     <toc-element topic="gas_overview.md" hidden="true">
     </toc-element>
     <toc-element topic="ipt_overview.md">
+        <toc-element toc-title="How-To">
+            <toc-element topic="ipt_replace_default_inputs.md"/>
+        </toc-element>
     </toc-element>
     <toc-element topic="int_overview.md" hidden="true"/>
     <toc-element topic="inv_overview.md">
@@ -54,9 +74,7 @@
             <toc-element topic="inv_widget_reference.md"/>
             <toc-element topic="inv_viewmodel_reference.md"/>
         </toc-element>
-        <toc-element topic="inv_animation.md"/>
         <toc-element topic="inv_save_and_load.md"/>
-        <toc-element topic="inv_function_library.md"/>
         <toc-element toc-title="How-To">
             <toc-element topic="inv_create_containers.md"/>
             <toc-element topic="inv_create_item.md"/>

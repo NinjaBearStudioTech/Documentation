@@ -2,7 +2,7 @@
 <primary-label ref="inventory"/>
 <secondary-label ref="how-to"/>
 
-## Goals
+## Goal
 
 In this how-to, you will learn how to create your first **Containers**, add them to a new **Inventory Layout** and then
 assign this layout to an **Inventory Manager**.
