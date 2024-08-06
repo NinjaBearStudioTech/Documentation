@@ -15,22 +15,19 @@ Before getting started, make sure that the Ninja Input plugin was **installed**.
     </step>
     <step>
         <p>Add the <b>Ninja Input Manager Component</b> to your character or controller.</p>
-        <tabs>
+        <tabs group="sample">
             <tab title="Blueprint" group-key="bp">
                 <p>In <b>Blueprints</b>, search for <b>Ninja Input</b> and add a new <b>Ninja Input Manager</b>.</p>
                 <img src="ipt_add_input_component.png" alt="Add the Input Manager Component"/>
             </tab>
             <tab title="C++" group-key="cpp">
-                <p>In <b>C++</b>, add a new <code>NinjaInputManagerComponent</code> to your class.</p>
+                <p>In <b>C++</b>, add a new <code>NinjaInputManagerComponent</code> to your header.</p>
                 <code-block lang="c++">
-                // -----
-                // .h
-                //
                 UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = true))
                 TObjectPtr&lt;UNinjaInputManagerComponent&gt; InputManager;
-                // -----
-                // .cpp
-                //
+                </code-block>
+                <p>Then, initialize the component in the <b>constructor</b>.</p>
+                <code-block lang="c++">
                 APluginLabsPlayerController::APluginLabsPlayerController()
                 {
                     InputManager = CreateDefaultSubobject&lt;UNinjaInputManagerComponent&gt;("InputManager");
