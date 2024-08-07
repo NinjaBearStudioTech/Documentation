@@ -50,4 +50,20 @@
         <description>Created after removal of "Function Library" from Ninja Bear Studio Plugins</description>
         <accepts>inv_function_library.html</accepts>
     </rule>
+    <rule id="1369c54e">
+        <description>Created after removal of "Reference" from Ninja Bear Studio Plugins</description>
+        <accepts>Reference.html</accepts>
+    </rule>
+    <rule id="408d0b29">
+        <description>Created after removal of "Plugin Summary" from Ninja Bear Studio Plugins</description>
+        <accepts>plugin-summary.html</accepts>
+    </rule>
+    <rule id="314e91d6">
+        <description>Created after removal of "Plugin Summary" from Ninja Bear Studio Plugins</description>
+        <accepts>plugin_summary.html</accepts>
+    </rule>
+    <rule id="2fe9c217">
+        <description>Created after removal of "Configuration" from Ninja Bear Studio Plugins</description>
+        <accepts>inv_configuration.html</accepts>
+    </rule>
 </rules>

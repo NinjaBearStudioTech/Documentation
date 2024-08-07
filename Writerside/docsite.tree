@@ -7,8 +7,8 @@
                   start-page="welcome.topic">
 
     <toc-element topic="welcome.topic" />
-    <toc-element topic="plugin-summary.md"/>
-    <toc-element topic="resources-and-support.md"/>
+    <toc-element topic="getting_started.md"/>
+    <toc-element topic="integrations.md"/>
     <toc-element topic="bot_overview.md" hidden="true">
     </toc-element>
     <toc-element topic="cbt_overview.md">
@@ -42,7 +42,6 @@
     <toc-element topic="int_overview.md" hidden="true"/>
     <toc-element topic="inv_overview.md">
         <toc-element topic="inv_setup.md"/>
-        <toc-element topic="inv_configuration.md"/>
         <toc-element topic="inv_debugger_and_logs.md"/>
         <toc-element topic="inv_container_and_layout.md"/>
         <toc-element topic="inv_items_and_fragments.md" >
