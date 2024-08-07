@@ -71,8 +71,20 @@
             <toc-element topic="inv_abilities.md"/>
         </toc-element>
         <toc-element topic="inv_user_interface.md">
-            <toc-element topic="inv_widget_reference.md"/>
-            <toc-element topic="inv_viewmodel_reference.md"/>
+            <toc-element topic="inv_widgets.md"/>
+            <toc-element topic="inv_viewmodels.md">
+                <toc-element topic="inv_core_attributes_mvvm.md"/>
+                <toc-element topic="inv_core_items_mvvm.md"/>
+                <toc-element topic="inv_core_layout_mvvm.md"/>
+                <toc-element topic="inv_item_durability_mvvm.md"/>
+                <toc-element topic="inv_item_economy_mvvm.md"/>
+                <toc-element topic="inv_item_equipment_mvvm.md"/>
+                <toc-element topic="inv_item_level_mvvm.md"/>
+                <toc-element topic="inv_item_quality_mvvm.md"/>
+                <toc-element topic="inv_item_stack_mvvm.md"/>
+                <toc-element topic="inv_item_ui_mvvm.md"/>
+                <toc-element topic="inv_item_weight_mvvm.md"/>
+            </toc-element>
         </toc-element>
         <toc-element topic="inv_save_and_load.md"/>
         <toc-element toc-title="How-To">

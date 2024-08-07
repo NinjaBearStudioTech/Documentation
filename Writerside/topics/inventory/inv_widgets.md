@@ -1,2 +1,2 @@
-# Viewmodel Reference
+# Inventory Widgets
 <primary-label ref="inventory"/>

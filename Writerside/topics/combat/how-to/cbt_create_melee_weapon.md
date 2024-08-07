@@ -15,6 +15,9 @@ At the end, you will create a simple `Weapon Query` to make sure that your weapo
             <tab title="Blueprint" group-key="bp">
                 <p>In <b>Blueprints</b>, go to your <b>Class Settings</b> and under <b>Implemented Interfaces</b>, add <code>CombatWeaponInterface</code>.</p>
                 <br/>
+                <p class="klee">
+                    test
+                </p>
                 <img src="cbt_add_weapon_interface.png" alt="Add the Combat Weapon Interface"/>
             </tab>
             <tab title="C++" group-key="cpp">
@@ -41,7 +44,7 @@ At the end, you will create a simple `Weapon Query` to make sure that your weapo
                 <br/>
                 <code-block lang="c++" src="cbt_add_weapon_tag_container_impl.cpp" />
             </tab>
-        </tabs>        
+        </tabs>
     </step>
     <step>
         <p>Create a <b>Static Mesh</b> (or <b>Skeletal Mesh</b>, if that's more appropriate to your scenario) and</p>
