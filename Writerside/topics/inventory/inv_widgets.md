@@ -98,8 +98,8 @@ It is represented by `NinjaInventoryTooltipWidget`.
 
 ### Drop Zone
 
-Not shown in the image above but also useful for handling **Drop** operations, the **Drop Zone** Widget is a transparent 
-area that should cover the area that allows players to drop items and generate **Pickups**.
+Not shown in the image above, but also useful when handling **Drop** operations, the **Drop Zone** Widget is a transparent 
+area that should cover any regions in the UI that allows players to drop items and generate **Pickups**.
 
 It is represented by `NinjaInventoryDropZoneWidget`.
 

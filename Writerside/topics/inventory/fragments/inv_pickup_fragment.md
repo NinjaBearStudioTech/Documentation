@@ -50,7 +50,7 @@ The Drop operation allows you to set important properties to customize the opera
 
 ## Adding a Pickup
 
-A pickup actor can be directly added to an inventory without any conversions.
+A pickup actor can be directly added to the **Inventory Manager** without any conversions.
 
 <tabs group="sample">
     <tab title="Blueprint" group-key="bp">
