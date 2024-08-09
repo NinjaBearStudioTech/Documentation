@@ -8,7 +8,6 @@
 
     <toc-element topic="welcome.topic" />
     <toc-element topic="getting_started.md"/>
-    <toc-element topic="integrations.md"/>
     <toc-element topic="bot_overview.md" hidden="true">
     </toc-element>
     <toc-element topic="cbt_overview.md">
@@ -31,6 +30,13 @@
         </toc-element>
     </toc-element>
     <toc-element topic="fct_overview.md">
+        <toc-element toc-title="How-To">
+            <toc-element topic="fct_create_faction.md"/>
+            <toc-element topic="fct_configure_tiers.md"/>
+            <toc-element topic="fct_configure_memberships.md"/>
+            <toc-element topic="fct_add_reputation.md"/>
+            <toc-element topic="fct_manage_memberships.md"/>
+        </toc-element>
     </toc-element>
     <toc-element topic="gas_overview.md" hidden="true">
     </toc-element>
@@ -98,4 +104,5 @@
             <toc-element topic="inv_set_dynamic_effect_values.md"/>
         </toc-element>
     </toc-element>
+    <toc-element topic="integrations.md"/>
 </instance-profile>
