@@ -1,25 +1,25 @@
 # Ability System
 <primary-label ref="inventory"/>
 
-The Inventory System was built using the Gameplay Ability System and as such, it provides functionality related to it.
+The Inventory System is built on the **Gameplay Ability System (GAS)**, providing a range of functionality related to it.
 
-Each topic in this section will provide more information about each of the three main functionality pillars from the 
-Gameplay Ability System: 
+Each topic in this section will delve into the three main pillars of functionality provided by the Gameplay Ability System:
 
-> Before exploring these features, make sure that you already have the Gameplay Ability System framework added and 
-> configured in your project.
+> **Gameplay Ability Setup** 
 > 
-> For more information about the GAS setup for the Inventory system, please check the [Setup](inv_setup.md) topic.
+> Before exploring these features, ensure that the Gameplay Ability System framework is added and configured in your project!
+>
+> For more information on setting up GAS for the Inventory System, please refer to the [Setup](inv_setup.md) section.
 {style="note"}
 
 [Gameplay Attributes](inv_attributes.md)
-: All attributes available in the Inventory System, their purpose and usage recommendations. These are used to store
-persistent, centralized values such as the _equipment level_ and _encumbrance_.
+: Details all attributes available in the Inventory System, their purpose, and usage recommendations. Attributes 
+are used to store persistent, centralized values such as _equipment level_ and _encumbrance_.
 
 [Gameplay Effects](inv_effects.md)
-: All effects available in the Inventory System, their purpose and usage recommendations. These are used to apply 
-gameplay tags to the owner of the inventory and to modify attribute values. 
+: Describes all effects available in the Inventory System, their purpose, and usage recommendations. Effects are 
+used to apply gameplay tags to the owner of the inventory, to modify attribute values and to grant other effects.
 
 [Gameplay Abilities](inv_abilities.md)
-: All abilities available in the Inventory System, their purpose, usage recommendations and activation strategies. 
-These are used to perform actions on Items, Equipment or the Inventory Manager itself.
+: Explains all abilities available in the Inventory System, including their purpose, usage recommendations, and 
+activation strategies. Abilities are used to perform actions on Items, Equipment, or the Inventory Manager itself.

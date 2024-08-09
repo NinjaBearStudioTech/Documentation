@@ -39,9 +39,9 @@ and an **Ability System** to initialize. This is particularly relevant in the fo
 > Waiting for these elements happens **asynchronously** and won't lock your game thread.
 > For more information, please check `NinjaInventoryAction_WaitForAbilitySystem`.
 
-You can fine tune how the pooling process happens by adjusting the following properties:
+You can fine tune how the polling process happens by adjusting the following properties:
 
-- `AbilitySystemPoolInterval`: How often it will check for the Ability System's presence.
+- `AbilitySystemPollInterval`: How often it will check for the Ability System's presence.
 - `AbilitySystemMaxWait`: Maximum amount of time the inventory will wait for the ASC to replicate.
 
 Issues during this process will be added to your **Inventory Log**.
@@ -52,7 +52,7 @@ also query the initialization state by calling `IsInventoryInitialized`.
 ## Default Objects
 
 The Inventory can receive a **Layout** and **Default Items** directly, via its properties. However, if you need to have 
-more flexibility way, allowing each _avatar_ to define their own Layout or Default Items, you can do so using the
+more flexibility, allowing each _avatar_ to define their own Layout or Default Items, you can do so using the
 `InventoryManagerProviderInterface`.
 
 This interface has the following functions that can be used to customize the initialization:

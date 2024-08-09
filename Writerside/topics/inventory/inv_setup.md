@@ -60,12 +60,12 @@ You can register these assets in the following ways:
 - In the Editor, configure the **Asset Manager**: `Edit` > `Project Settings` > `Asset Manager`.
 - If you use a **Modular Game Feature** to add your Inventory, you can register these assets in your Feature configuration.
 
-| Asset                    | Description                                                    |
-|--------------------------|----------------------------------------------------------------|
-| `InventoryContainerData` | Contains information about Inventory Containers.               |
-| `InventoryItemData`      | Contains information about Items and their Fragments.          |
-| `EquipmentData`          | Contains information about Equipment, its States, and Actors.  |
-| `EquipmentSlotData`      | Contains information about default meshes for Equipment Slots. |
+| Asset Name               | Base Class                         | Description                                                    |
+|--------------------------|------------------------------------|----------------------------------------------------------------|
+| `InventoryContainerData` | `NinjaInventoryContainerDataAsset` | Contains information about Inventory Containers.               |
+| `InventoryItemData`      | `NinjaInventoryItemDataAsset`      | Contains information about Items and their Fragments.          |
+| `EquipmentData`          | `NinjaEquipmentDataAsset`          | Contains information about Equipment, its States, and Actors.  |
+| `EquipmentSlotData`      | `NinjaEquipmentSlotDataAsset`      | Contains information about default meshes for Equipment Slots. |
 
 ## Ability System
 
@@ -130,3 +130,21 @@ and implement the `GetEquipmentManager` function to return the component.
         <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine" summary="High-level view of the Gameplay Ability System.">Gameplay Ability System</a>
     </category>
 </seealso>
+
+### Character Slots
+
+Equipment will use Mesh Components to represent the equipment. Make sure to check how [Equipment Slots](inv_equipment_slots.md)
+work, so you can create all appropriate **sockets** and **mesh components** in your character.
+
+For now, this setup implies a **Leader Pose Component** setup, where all equipment slots are **followers** of a main
+mesh. In the future, **Mesh Merge** support is planned as well.
+
+When configuring your **Leader Mesh**, make sure to adjust these settings:
+
+- `VisibilityBasedAnimTickOption`: `AlwaysTickPoseAndRefreshBones`
+- `bLightAttachmentsAsGroup`: `true`
+
+As for your **Follower Meshes**, make sure to adjust these settings:
+
+- `bUseBoundsFromLeaderPoseComponent`: `true`;
+- `bUseAttachParentBound`: `true`;

@@ -61,8 +61,8 @@
         </toc-element>
         <toc-element topic="inv_inventory_manager.md"/>
         <toc-element topic="inv_equipment.md"/>
-        <toc-element topic="inv_equipment_manager.md"/>
         <toc-element topic="inv_equipment_slots.md"/>
+        <toc-element topic="inv_equipment_manager.md"/>
         <toc-element topic="inv_loot_management.md"/>
         <toc-element topic="inv_ability_system.md">
             <toc-element topic="inv_attributes.md"/>

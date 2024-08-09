@@ -24,11 +24,11 @@ Fragments that will contribute to the item's data and logic.
 
 The following table provides details about the properties available in the **Item Definition**:
 
-| Property               | Description                                                                         |
-|------------------------|-------------------------------------------------------------------------------------|
-| Gameplay Tags          | All Gameplay Tags that describe this item. Fragments may enhance this container.    |
-| Default Instance Class | Default class used when the item is managed by an Inventory Manager.                |
-| Fragments              | All fragments adding data and logic to the item.                                    |
+| Property               | Description                                                                                       |
+|------------------------|---------------------------------------------------------------------------------------------------|
+| Gameplay Tags          | All Gameplay Tags that describe this item. Fragments may add tags to this Gameplay Tag Container. |
+| Default Instance Class | Default class used when the item is managed by an Inventory Manager.                              |
+| Fragments              | All fragments adding data and logic to the item.                                                  |
 
 One way items can be added to the Inventory Manager is by adding an Item Definition. Once the definition is fully processed, 
 an **Item Instance** is created.

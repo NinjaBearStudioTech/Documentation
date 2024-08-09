@@ -36,3 +36,8 @@ You can find more information about these abilities in the [Gameplay Abilities](
 > The abilities should always be granted as **default** abilities to your character, as they should be available when
 > the appropriate Gameplay Events are triggered.
 {style="note"}
+
+## Animation Notify
+
+In conjunction with the **Gameplay Abilities**, you can use the **Send Equipment Event** Animation Notify, to trigger
+certain gameplay events, such as effectively changing an item's state.
