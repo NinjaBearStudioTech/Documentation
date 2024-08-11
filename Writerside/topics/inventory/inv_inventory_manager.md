@@ -95,7 +95,7 @@ Containers are **added** by the `AddContainer` function, like so:
         <img src="inv_add_container.png" alt="Add a container to the inventory" thumbnail="true"/>
     </tab>
     <tab title="C++" group-key="cpp">
-        <code-block lang="c++" src="inv_add_container_impl.cpp"/>
+        <code-block lang="c++" src="inv_add_container.cpp"/>
     </tab>
 </tabs>
 
@@ -107,7 +107,7 @@ using the `RemoveContainerById` function.
         <img src="inv_remove_container.png" alt="Remove a container from the inventory" thumbnail="true"/>
     </tab>
     <tab title="C++" group-key="cpp">
-        <code-block lang="c++" src="inv_remove_container_impl.cpp"/>
+        <code-block lang="c++" src="inv_remove_container.cpp"/>
     </tab>
 </tabs>
 
@@ -133,7 +133,7 @@ First, by the `AddItem` function, which allows you to set **optional** default m
         <img src="inv_add_item.png" alt="Adds an item to the inventory" thumbnail="true"/>
     </tab>
     <tab title="C++" group-key="cpp">
-        <code-block lang="c++" src="inv_add_item_impl.cpp"/>
+        <code-block lang="c++" src="inv_add_item.cpp"/>
     </tab>
 </tabs>
 
@@ -145,7 +145,7 @@ you can use the provided functions:
         <img src="inv_create_default_memories.png" alt="Crates default memories for new items" thumbnail="true"/>
     </tab>
     <tab title="C++" group-key="cpp">
-        <code-block lang="c++" src="inv_create_default_memories_impl.cpp"/>
+        <code-block lang="c++" src="inv_create_default_memories.cpp"/>
     </tab>
 </tabs>
 
@@ -159,7 +159,7 @@ a valid actor that implements `InventoryPickupInterface`.
         <img src="inv_add_pickup.png" alt="Adds a pickup to the inventory" thumbnail="true"/>
     </tab>
     <tab title="C++" group-key="cpp">
-        <code-block lang="c++" src="inv_add_pickup_impl.cpp"/>
+        <code-block lang="c++" src="inv_add_pickup.cpp"/>
     </tab>
 </tabs>
 
@@ -173,7 +173,7 @@ You can also add items that were selected by a **Loot Manager**, via the `AddLoo
         <img src="inv_add_loot.png" alt="Adds selected loot to the inventory" thumbnail="true"/>
     </tab>
     <tab title="C++" group-key="cpp">
-        <code-block lang="c++" src="inv_remove_container_impl.cpp"/>
+        <code-block lang="c++" src="inv_add_loot.cpp"/>
     </tab>
 </tabs>
 
@@ -191,7 +191,7 @@ remove the **entire stack**.
         <img src="inv_remove_item.png" alt="Removes an item from the inventory" thumbnail="true"/>
     </tab>
     <tab title="C++" group-key="cpp">
-        <code-block lang="c++" src="inv_remove_item_impl.cpp"/>
+        <code-block lang="c++" src="inv_remove_item.cpp"/>
     </tab>
 </tabs>
 

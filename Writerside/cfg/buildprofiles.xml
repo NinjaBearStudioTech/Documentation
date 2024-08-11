@@ -23,11 +23,6 @@
             <social type="twitter" href="https://youtube.com/ninjabeargames"/>
         </footer>
     </build-profile>
-    <build-profile instance="plugins">
-        <variables>
-            <noindex-content>true</noindex-content>
-        </variables>
-    </build-profile>
     <build-profile instance="docsite">
         <variables>
             <noindex-content>true</noindex-content>

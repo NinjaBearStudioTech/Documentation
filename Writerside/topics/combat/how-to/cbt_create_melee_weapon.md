@@ -15,15 +15,12 @@ At the end, you will create a simple `Weapon Query` to make sure that your weapo
             <tab title="Blueprint" group-key="bp">
                 <p>In <b>Blueprints</b>, go to your <b>Class Settings</b> and under <b>Implemented Interfaces</b>, add <code>CombatWeaponInterface</code>.</p>
                 <br/>
-                <p class="klee">
-                    test
-                </p>
                 <img src="cbt_add_weapon_interface.png" alt="Add the Combat Weapon Interface"/>
             </tab>
             <tab title="C++" group-key="cpp">
                 <p>In <b>C++</b>, add the interface in your header <code>CombatWeaponInterface</code>.</p>
                 <br/>
-                <code-block lang="c++" src="cbt_add_weapon_interface_header.cpp" />
+                <code-block lang="c++" src="cbt_add_weapon_interface.h" />
             </tab>
         </tabs>
     </step>
@@ -38,11 +35,11 @@ At the end, you will create a simple `Weapon Query` to make sure that your weapo
             <tab title="C++" group-key="cpp">
                 <p>Add your <b>Constructor</b>, override <code>GetLifetimeReplicatedProps</code> and add a <b>Gameplay Tag Container</b> named <code>WeaponTags</code>.</p>
                 <br/>
-                <code-block lang="c++" src="cbt_add_weapon_tag_container_header.cpp" />
+                <code-block lang="c++" src="cbt_add_weapon_tag_container.h" />
                 <br/>
                 <p>In your <b>implementation</b> configure the <b>replication</b> of the weapon and its tags.</p>
                 <br/>
-                <code-block lang="c++" src="cbt_add_weapon_tag_container_impl.cpp" />
+                <code-block lang="c++" src="cbt_add_weapon_tag_container.cpp" />
             </tab>
         </tabs>
     </step>
@@ -56,11 +53,11 @@ At the end, you will create a simple `Weapon Query` to make sure that your weapo
             <tab title="C++" group-key="cpp">
                 <p>Declare your <b>Mesh Component</b> in your <b>header</b>.</p>
                 <br/>
-                <code-block lang="c++" src="cbt_add_weapon_mesh_header.cpp" />
+                <code-block lang="c++" src="cbt_add_weapon_mesh.h" />
                 <br/>
                 <p>Initialize your <b>Mesh Component</b> in your constructor.</p>
                 <br/>
-                <code-block lang="c++" src="cbt_add_weapon_tag_container_impl.cpp" />
+                <code-block lang="c++" src="cbt_add_weapon_tag_container.cpp" />
             </tab>
         </tabs>    
     </step>

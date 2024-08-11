@@ -43,6 +43,7 @@
     <toc-element topic="ipt_overview.md">
         <toc-element toc-title="How-To">
             <toc-element topic="ipt_replace_default_inputs.md"/>
+            <toc-element topic="ipt_manage_contexts.md"/>
         </toc-element>
     </toc-element>
     <toc-element topic="int_overview.md" hidden="true"/>
@@ -95,6 +96,7 @@
         <toc-element toc-title="How-To">
             <toc-element topic="inv_create_containers.md"/>
             <toc-element topic="inv_create_item.md"/>
+            <toc-element topic="inv_configure_inventory_manager.md"/>
             <toc-element topic="inv_configure_equipment.md"/>
             <toc-element topic="inv_add_remove_items.md"/>
             <toc-element topic="inv_create_fragment_effects.md"/>
