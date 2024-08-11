@@ -16,11 +16,11 @@ that can be added to an **Inventory Manager**.
     <step>Set your <b>Slots Attribute</b> to <code>NinjaInventoryAttributeSet:BackpackSlots</code>.</step>
     <step>
         <p>Configure your <b>Item Compatibility Query</b> to support any items.</p>
-        <img src="inv_add_container_backpack_query.png" alt="Backpack Container Query"/>
+        <img src="inv_add_container_backpack_query.png" alt="Backpack Container Query" border-effect="line"/>
     </step>
     <step>
         <p>When you are done, your <b>Backpack Container</b> should look like this.</p>
-        <img src="inv_add_container_backpack_data.png" alt="Backpack Container Data Asset"/>
+        <img src="inv_add_container_backpack_data.png" alt="Backpack Container Data Asset" border-effect="line"/>
     </step>
 </procedure>
 
@@ -34,11 +34,11 @@ that can be added to an **Inventory Manager**.
     <step>Set the <b>Default State Tag</b> to <code>Equipment.State.Deactivated</code>, to determine the initial state of equipment instances added to this container.</step>
     <step>
         <p>Configure your <b>Item Compatibility Query</b> to support any weapons except for shields.</p>
-        <img src="inv_add_container_primary_a_query.png" alt="Primary Item A Container Query"/>
+        <img src="inv_add_container_primary_a_query.png" alt="Primary Item A Container Query" border-effect="line"/>
     </step>
     <step>
         <p>When you are done, your <b>Primary Item A Container</b> should look like this.</p>
-        <img src="inv_add_container_primary_a_data.png" alt="Primary Item A Data Asset"/>
+        <img src="inv_add_container_primary_a_data.png" alt="Primary Item A Data Asset" border-effect="line"/>
     </step>
 </procedure>
 
@@ -53,11 +53,11 @@ that can be added to an **Inventory Manager**.
     <step>Set the <b>priority</b> to <code>2</code>. This gives the secondary slot a lower priority than the primary one.</step>
     <step>
         <p>Configure your <b>Item Compatibility Query</b> to support any off-hand weapons, including shields.</p>
-        <img src="inv_add_container_primary_b_query.png" alt="Primary Item B Container Query"/>
+        <img src="inv_add_container_primary_b_query.png" alt="Primary Item B Container Query" border-effect="line"/>
     </step>
     <step>
         <p>When you are done, your <b>Primary Item B Container</b> should look like this.</p>
-        <img src="inv_add_container_primary_b_data.png" alt="Primary Item B Data Asset"/>
+        <img src="inv_add_container_primary_b_data.png" alt="Primary Item B Data Asset" border-effect="line"/>
     </step>
 </procedure>
 
@@ -70,7 +70,7 @@ that can be added to an **Inventory Manager**.
     <step>Add the <b>containers</b> created in the previous steps.</step>
     <step>
         <p>When you are done, your <b>Inventory Layout</b> should look like this.</p>
-        <img src="inv_add_container_layout_data.png" alt="Inventory Layout with Backpack and Primary Items"/>
+        <img src="inv_add_container_layout_data.png" alt="Inventory Layout with Backpack and Primary Items" border-effect="line"/>
     </step>
 </procedure>
 

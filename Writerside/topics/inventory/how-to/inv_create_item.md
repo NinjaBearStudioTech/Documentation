@@ -13,11 +13,11 @@ This how-to will show you how to create your first few **Inventory Items**.
     <step>Add the <b><a href="inv_stack_fragment.md">Stack Fragment</a></b>.</step>
     <step>
         <p>Add the <b><a href="inv_container_fragment.md">Container Fragment</a></b> and configure your <b>Preferred Container Query</b> to prioritize equipment containers.</p>
-        <img src="inv_create_item_sword_query.png" alt="Sword Preferred Container Query"/>
+        <img src="inv_create_item_sword_query.png" alt="Sword Preferred Container Query" border-effect="line"/>
     </step>
     <step>
         <p>When you are done, your <b>Sword Item</b> should look like this (except maybe for the User Interface details).</p>
-        <img src="inv_create_item_sword_data.png" alt="Sword Item Data Asset"/>
+        <img src="inv_create_item_sword_data.png" alt="Sword Item Data Asset" border-effect="line"/>
     </step>
 </procedure>
 
@@ -30,11 +30,11 @@ This how-to will show you how to create your first few **Inventory Items**.
     <step>Add the <b><a href="inv_stack_fragment.md">Stack Fragment</a></b>.</step>
     <step>
         <p>Add the <b><a href="inv_container_fragment.md">Container Fragment</a></b> and configure your <b>Preferred Container Query</b> to prioritize the off-hand container.</p>
-        <img src="inv_create_item_shield_query.png" alt="Shield Preferred Container Query"/>
+        <img src="inv_create_item_shield_query.png" alt="Shield Preferred Container Query" border-effect="line"/>
     </step>
     <step>
         <p>When you are done, your <b>Shield Item</b> should look like this (except maybe for the User Interface details).</p>
-        <img src="inv_create_item_shield_data.png" alt="Shield Item Data Asset"/>
+        <img src="inv_create_item_shield_data.png" alt="Shield Item Data Asset" border-effect="line"/>
     </step>
 </procedure>
 
@@ -47,11 +47,11 @@ This how-to will show you how to create your first few **Inventory Items**.
     <step>Add the <b><a href="inv_stack_fragment.md">Stack Fragment</a></b>. Set a <code>Stack Limit</code> of <code>20</code>, and a <b>Maximum Limit</b> of <code>100</code>. Set it to <b>Automatically Merge New Items</b>.</step>.
     <step>
         <p>Add the <b><a href="inv_container_fragment.md">Container Fragment</a></b> and configure your <b>Preferred Container Query</b> to prioritize the backpack container.</p>
-        <img src="inv_create_item_iron_query.png" alt="Iron Bar Preferred Container Query"/>
+        <img src="inv_create_item_iron_query.png" alt="Iron Bar Preferred Container Query" border-effect="line"/>
     </step>
     <step>
         <p>When you are done, your <b>Iron Bar Item</b> should look like this (except maybe for the User Interface details).</p>
-        <img src="inv_create_item_iron_data.png" alt="Iron Bar Item Data Asset"/>
+        <img src="inv_create_item_iron_data.png" alt="Iron Bar Item Data Asset" border-effect="line"/>
     </step>
 </procedure>
 
