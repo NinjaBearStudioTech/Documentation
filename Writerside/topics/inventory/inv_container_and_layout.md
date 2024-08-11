@@ -61,17 +61,17 @@ and off-hands, each hand being represented by its own container.
 An item can only ever have one primary container, but it can have multiple secondary ones. The relationship between 
 primary and secondary containers is defined in the Container Definition.
 
-### Automatic Container and Position Assignments
+### Container and Position Assignment
 
 Items added to the inventory can define their preferred container and position. However, these requests might not be viable, 
-necessitating a new position and container. This is also the case for items added to the inventory without defining these 
-values.
+thus requiring a new container and position. This is also the case for items added to the inventory without deliberately 
+defining these values.
 
 For those situations, the Inventory Manager will attempt to determine the most appropriate container and position for 
-the new item. This is based on the configuration available for each container, ordered by their priorities.
+the new item. This is based on the **Item Compatibility** for each container, ordered by their **Priority**.
 
 If an automatic assignment is not possible, other aspects of the item might be triggered, such as the **Drop Fragment**, 
-which, if present, would drop the item as a Pickup Actor.
+which, if present, will drop the item as a **[Pickup Actor](inv_pickup_fragment.md)**.
 
 ## Inventory Layouts
 

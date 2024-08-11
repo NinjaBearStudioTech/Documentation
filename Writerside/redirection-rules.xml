@@ -66,4 +66,8 @@
         <description>Created after removal of "Configuration" from Ninja Bear Studio Plugins</description>
         <accepts>inv_configuration.html</accepts>
     </rule>
+    <rule id="45473d52">
+        <description>Created after removal of "Generate and Assign Loot" from Ninja Bear Studio Plugins</description>
+        <accepts>inv_generate_loot.html</accepts>
+    </rule>
 </rules>

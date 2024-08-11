@@ -97,12 +97,12 @@
             <toc-element topic="inv_create_containers.md"/>
             <toc-element topic="inv_create_item.md"/>
             <toc-element topic="inv_configure_inventory_manager.md"/>
-            <toc-element topic="inv_configure_equipment.md"/>
+            <toc-element topic="inv_configure_stored_equipment.md"/>
+            <toc-element topic="inv_activate_stored_equipment.md"/>
             <toc-element topic="inv_add_remove_items.md"/>
-            <toc-element topic="inv_create_fragment_effects.md"/>
             <toc-element topic="inv_consumables.md"/>
             <toc-element topic="inv_building_ui.md"/>
-            <toc-element topic="inv_generate_loot.md"/>
+            <toc-element topic="inv_create_fragment_effects.md"/>
             <toc-element topic="inv_set_dynamic_effect_values.md"/>
         </toc-element>
     </toc-element>

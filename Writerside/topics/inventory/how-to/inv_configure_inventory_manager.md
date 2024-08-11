@@ -13,7 +13,7 @@ Before starting, please make sure that:
 
 <procedure title="Add the Inventory Manager Component" collapsible="true">
     <step>
-        <p>Open your <b>Player State</b> (Class or Blueprint) and add the <b>Inventory Manager</b> component.</p>
+        <p>Add the <b>Inventory Manager</b> component to your <b>Player State</b>.</p>
         <tabs group="sample">
             <tab title="Blueprint" group-key="bp">
                 <p>In <b>Blueprints</b>, go to your <b>Components</b>, search for <code>Inventory</code> and add <b>Ninja Inventory Manager Component</b>.</p>
@@ -62,7 +62,8 @@ Before starting, please make sure that:
     <step>In the <b>Defaults Panel</b>, go to the <b>Inventory Manager</b> category and set the <code>Layout_Player</code> as the <b>Inventory Layout</b>.</step>
     <step>Add a new entry to the <b>Default Items</b> property, select <code>Weapon_Sword</code> as the <b>Item Data</b>.</step>
     <step>Add another entry to the <b>Default Items</b> property, select <code>Weapon_Shield</code> as the <b>Item Data</b>.</step>
-    <step>Add one more entry to the <b>Default Items</b> property, select <code>Resource_IronBar</code> as the <b>Item Data</b>, add a new <b>Fragment Memory</b>, select the <code>Stack</code> fragment class and the <code>Stack Memory</code>, set the <b>Stack Size</b> to <code>50</code>.</step>
+    <step>Add one more entry to the <b>Default Items</b> property, select <code>Resource_IronBar</code> as the <b>Item Data</b>.</step>
+    <step>For the <code>Resource_IronBar</code>, add a new <b>Fragment Memory</b>, select the <code>Stack</code> fragment class along with the <code>Stack Memory</code>. Set the <b>Stack Size</b> to <code>50</code>. This will initialize default values for the <b>Stack Fragment</b> present in the <b>Iron Bar Definition</b>.</step>
     <step>
         <p>Ensure that your configuration is similar to this.</p>
         <img src="inv_setup_inventory_defaults.png" alt="Adding defaults items to the Inventory Manager" border-effect="line" thumbnail="true"/>
@@ -73,7 +74,7 @@ Before starting, please make sure that:
     <step>Hit <b>Play</b>, open the <b>Gameplay Debugger</b> and activate the <b>Inventory</b> category.</step>
     <step>
         <p>Confirm that the <b>Sword</b> and <b>Shield</b> were assigned to their <b>Preferred Containers</b>.</p>
-        <p>Confirm that three stacks of <b>Iron Bars</b> were created: two stacks with a size of <b>20</b>, one stack with a size of <b>10</b>. They occupy positions <b>0</b>, <b>1</b> and <b>2</b> in the <b>Backpack</b>.</p>
+        <p>Confirm that three stacks of <b>Iron Bars</b> were created: two stacks with a size of <b>20</b>, one stack with a size of <b>10</b>. They occupy positions <b>0</b>, <b>1</b> and <b>2</b> in the <b>Backpack</b>. This indicates that the <b>stack</b> was properly <b>distributed</b> following its configuration.</p>
         <img src="inv_setup_inventory_debugger.png" alt="Items and Containers in the Gameplay Debugger" border-effect="line" thumbnail="true" />
     </step>
 </procedure>

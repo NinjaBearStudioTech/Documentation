@@ -9,8 +9,8 @@ This how-to will show you how to create your first few **Inventory Items**.
     <step>Right-click in any empty area, select the <b>Inventory</b> category and then <b>Item Definition</b>.</step>
     <step>Name your new container asset <code>Weapon_Sword</code> and open it.</step>
     <step>In the <b>Gameplay Tags</b> property, add the <code>Inventory.Item.Weapon.Sword</code> Gameplay Tag, to identify this item.</step>
-    <step>Add the <b><a href="inv_user_interface_fragment.md">User Interface Fragment</a></b> and configure it.</step>
-    <step>Add the <b><a href="inv_stack_fragment.md">Stack Fragment</a></b>.</step>
+    <step>Add the <b><a href="inv_user_interface_fragment.md">User Interface Fragment</a></b> to configure how this item is presented in the user interface. Set appropriate values to it.</step>
+    <step>Add the <b><a href="inv_stack_fragment.md">Stack Fragment</a></b>, set the <b>Stack Limit</b> to <code>1</code> so this item cannot be stacked, and the <b>Maximum Limit</b> to <code>10</code>, so we can allow a maximum of 10 swords in the inventory.</step>
     <step>
         <p>Add the <b><a href="inv_container_fragment.md">Container Fragment</a></b> and configure your <b>Preferred Container Query</b> to prioritize equipment containers.</p>
         <img src="inv_create_item_sword_query.png" alt="Sword Preferred Container Query" border-effect="line"/>
@@ -27,7 +27,7 @@ This how-to will show you how to create your first few **Inventory Items**.
     <step>Name your new container asset <code>Weapon_Shield</code> and open it.</step>
     <step>In the <b>Gameplay Tags</b> property, add the <code>Inventory.Item.Weapon.Shield</code> Gameplay Tag, to identify this item.</step>
     <step>Add the <b><a href="inv_user_interface_fragment.md">User Interface Fragment</a></b>, and configure it.</step>
-    <step>Add the <b><a href="inv_stack_fragment.md">Stack Fragment</a></b>.</step>
+    <step>Add the <b><a href="inv_stack_fragment.md">Stack Fragment</a></b>, set the <b>Stack Limit</b> to <code>1</code> so this item cannot be stacked, and the <b>Maximum Limit</b> to <code>10</code>, so we can allow a maximum of 10 shields in the inventory.</step>
     <step>
         <p>Add the <b><a href="inv_container_fragment.md">Container Fragment</a></b> and configure your <b>Preferred Container Query</b> to prioritize the off-hand container.</p>
         <img src="inv_create_item_shield_query.png" alt="Shield Preferred Container Query" border-effect="line"/>
