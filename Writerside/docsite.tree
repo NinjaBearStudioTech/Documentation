@@ -41,6 +41,8 @@
     <toc-element topic="gas_overview.md" hidden="true">
     </toc-element>
     <toc-element topic="ipt_overview.md">
+        <toc-element topic="ipt_managing_input_setups.md"/>
+        <toc-element topic="ipt_animation_input_buffer.md"/>
         <toc-element toc-title="How-To">
             <toc-element topic="ipt_replace_default_inputs.md"/>
             <toc-element topic="ipt_manage_contexts.md"/>

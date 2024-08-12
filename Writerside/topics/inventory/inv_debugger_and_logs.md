@@ -1,6 +1,14 @@
 # Debugger and Logs
 <primary-label ref="inventory"/>
 
+<tldr>
+    <ul>
+        <li>The Inventory System provides <b>Gameplay Debugger</b> category with <b>basic</b> and <b>advanced</b> perspectives.</li>
+        <li>The <b>Inventory Debugger</b> is very useful to evaluate the inventory's state, without the need of creating any user interface.</li>
+        <li>Enable the <b>LogNinjaInventory</b> and <b>LogNinjaInventoryEquipment</b> log categories to track multiple internal flows.</li>
+    </ul>
+</tldr>
+
 The Inventory System has a dedicated **Gameplay Debugger Category** to display its internal **state**. It can also print 
 log messages in the dedicated `LogNinjaInventory` category, allowing you to track its internal logic flows.
 

@@ -12,7 +12,7 @@ to properly represent these Items.
 In this topic, you will see a **Static Mesh** being used to represent the stored weapons, so make sure to have those
 ready before getting started.
 
-<procedure title="Configure Equipment Slots in the character" collapsible="true">
+<procedure title="Configure Equipment Slots in the Character" collapsible="true">
     <step>Open your character's <b>Skeleton Asset</b>.</step>
     <step>Add a <b>socket</b> named <code>sSword_RH</code> to the <b>Right Hand</b> bone. Adjust the location and rotation as necessary.</step>  
     <step>Add a <b>socket</b> named <code>sShield_LH</code> to the <b>Left Hand</b> bone. Adjust the location and rotation as necessary.</step>    
@@ -23,23 +23,49 @@ ready before getting started.
 </procedure>
 
 <procedure title="Add the Equipment Manager to the Character" collapsible="true">
-    <step>Add the <b>Equipment Manager</b> component to your Character.</step>
+    <step>
+        <p>Add the <b>Equipment Manager</b> component to your <b>Character</b>.</p>
         <tabs group="sample">
             <tab title="Blueprint" group-key="bp">
                 <p>In <b>Blueprints</b>, go to your <b>Components</b>, search for <code>Equipment</code> and add <b>Ninja Equipment Manager Component</b>.</p>
                 <br/>
-                <img src="inv_setup_inventory_component.png" alt="Add the Equipment Manager Component" border-effect="line"/>
+                <img src="inv_setup_equipment_component.png" alt="Add the Equipment Manager Component" border-effect="line"/>
             </tab>
             <tab title="C++" group-key="cpp">
                 <p>Create a variable for the of <code>UNinjaEquipmentManagerComponent</code> in your class.</p>
                 <br/>
-                <code-block lang="c++" src="inv_setup_inventory_component.h" />
+                <code-block lang="c++" src="inv_setup_equipment_component.h" />
                 <br/>
                 <p>Create an instance of <code>UNinjaEquipmentManagerComponent</code> in your <b>constructor</b>.</p>
                 <br/>
-                <code-block lang="c++" src="inv_setup_inventory_component.cpp" />
+                <code-block lang="c++" src="inv_setup_equipment_component.cpp" />
             </tab>
         </tabs>
+    </step>
+    <step>
+        <p>Add the <b>Equipment Manager Provider Interface</b> to your <b>Character</b>.</p>
+        <tabs group="sample">
+            <tab title="Blueprint" group-key="bp">
+                <p>Open your <b>Class Settings</b>, navigate to the list of <b>Implemented Interfaces</b> and add the interface.</p>
+                <br/>
+                <img src="inv_setup_equipment_interface.png" alt="Add the Equipment Manager Component" border-effect="line"/>
+                <br/>
+                <p>In the <b>My Blueprint</b> panel, under <b>Interfaces</b>, expand <b>Equipment Manager Provider</b> and double-click <b>Get Equipment Manager</b>.</p>
+                <p>In the <b>Blueprint Graph</b>, drag your <b>Equipment Manager</b> into the <b>Return Value</b>.</p>
+                <br/>
+                <img src="inv_setup_equipment_implementation.png" alt="Add the Equipment Manager Component" border-effect="line"/>
+            </tab>
+            <tab title="C++" group-key="cpp">
+                <p>Add <code>IEquipmentManagerProviderInterface</code> to your <b>class declaration</b>, and <b>override</b> <code>GetEquipmentManager</code>.</p>
+                <br/>
+                <code-block lang="c++" src="inv_setup_equipment_interface.h" />
+                <br/>
+                <p>Implement <code>GetEquipmentManager</code>, so it returns the <b>Equipment Manager</b>.</p>
+                <br/>
+                <code-block lang="c++" src="inv_setup_equipment_interface.cpp" />
+            </tab>
+        </tabs>
+    </step>
 </procedure>
 
 <procedure title="Create the Sword Equipment Definition" collapsible="true">
@@ -87,6 +113,15 @@ ready before getting started.
     <step>
         <p>Set the <code>Equipment_Shield</code> to the <b>Equipment Data</b>.</p>
         <img src="inv_configure_stored_equipment_shield_item.png" alt="Shield Item Definition with the Equipment Fragment" border-effect="line" thumbnail="true" />
+    </step>
+</procedure>
+
+<procedure title="Check your Inventory in the Gameplay Debugger" collapsible="true">
+    <step>Hit <b>Play</b>, open the <b>Gameplay Debugger</b> and activate the <b>Inventory</b> category.</step>
+    <step>
+        <p>Confirm that the <b>Sword</b> and <b>Shield</b> now show <b>Deactivated</b> in the <b>Equipment</b> column, meaning that an <b>Equipment Instance</b> is present.</p>
+        <p>Your <b>Sword</b> and <b>Shield</b> meshes should be properly attached to your character.</p>
+        <img src="inv_setup_equipment_debugger.png" alt="Equipment in the Gameplay Debugger" border-effect="line" thumbnail="true" />
     </step>
 </procedure>
 

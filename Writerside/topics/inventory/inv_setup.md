@@ -2,14 +2,14 @@
 <primary-label ref="inventory"/>
 
 <tldr>
-<ul>
-    <li>Install the Ninja Inventory plugin using the Epic Games Launcher.</li>
-    <li>Open your project and enable the plugin: <code>Edit</code> &rightarrow; <code>Plugins</code>, search for <i>inventory</i>, and tick the checkbox for <b>Ninja Inventory</b>. Restart the engine.</li>
-    <li>Add the <code>NinjaInventoryManagerComponent</code> to your <b>Character</b> or <b>Player State</b>. The actor must also have the <code>AbilitySystemInterface</code>.</li>
-    <li>Add the <code>InventoryManagerProviderInterface</code> to the same object that has the Inventory Manager. Implement the <code>GetInventoryManager</code> function.</li>
-    <li>Add the <code>NinjaEquipmentManagerComponent</code> to your <b>Character</b>, regardless of where the Inventory Manager was placed.</li>
-    <li>Add the <code>EquipmentManagerProviderInterface</code> to your character. Implement the <code>GetEquipmentManager</code> function.</li>
-</ul>
+    <ul>
+        <li>Install the Ninja Inventory plugin using the Epic Games Launcher.</li>
+        <li>Open your project and enable the plugin: <code>Edit</code> &rightarrow; <code>Plugins</code>, search for <i>inventory</i>, and tick the checkbox for <b>Ninja Inventory</b>. Restart the engine.</li>
+        <li>Add the <code>NinjaInventoryManagerComponent</code> to your <b>Character</b> or <b>Player State</b>. The actor must also have the <code>AbilitySystemInterface</code>.</li>
+        <li>Add the <code>InventoryManagerProviderInterface</code> to the same object that has the Inventory Manager. Implement the <code>GetInventoryManager</code> function.</li>
+        <li>Add the <code>NinjaEquipmentManagerComponent</code> to your <b>Character</b>, regardless of where the Inventory Manager was placed.</li>
+        <li>Add the <code>EquipmentManagerProviderInterface</code> to your character. Implement the <code>GetEquipmentManager</code> function.</li>
+    </ul>
 </tldr>
 
 ## Installing the Plugin

@@ -17,9 +17,9 @@ public:
 
     APluginLabsPlayerState(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
-    // -- Begin Inventory System implementation
+    // -- Begin Inventory Provider implementation
     virtual UNinjaInventoryManagerComponent* GetInventoryManager_Implementation() const override;
-    // -- End Inventory System implementation
+    // -- End Inventory Provider implementation
 
 private:
 
