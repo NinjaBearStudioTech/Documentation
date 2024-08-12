@@ -1,4 +1,4 @@
-# Configure Equipment for the Stored Items
+# Configure Equipment for Stored Items
 <primary-label ref="inventory"/>
 <secondary-label ref="how-to"/>
 
