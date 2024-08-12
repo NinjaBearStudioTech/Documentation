@@ -2,6 +2,15 @@
 <primary-label ref="input"/>
 <secondary-label ref="advanced"/>
 
+<tldr>
+    <ul>
+        <li>The <b>Input Buffer</b> is an animation-based mechanist to cache a player input and trigger it later.</li>
+        <li>It is defined by the <code>InputBufferInterface</code>. The <b>Input Manager Component</b> is a valid implementation.</li>
+        <li>You can control the start capturing inputs for the buffer and then release the buffered command using the <b>Input Buffer</b> Animation Notify State.</li>
+        <li>The <b>Input Manager Component</b> allows you to decide if you want to buffer the <b>first</b> or the <b>last</b> command captured in the buffer window.</li>
+    </ul>
+</tldr>
+
 The Input System offers an **Input Buffer** that allows deferring the execution of Input Handlers to a **later moment**.
 
 This is particularly useful in combat systems where players might press keys during animations that cannot be interrupted, 
