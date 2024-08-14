@@ -118,19 +118,6 @@ The Equipment Manager must be added to the actual **Pawn**, regardless of where 
 After adding the Equipment Manager to the appropriate pawn, the next step is to add the `EquipmentManagerProviderInterface` 
 and implement the `GetEquipmentManager` function to return the component.
 
-<seealso style="cards">
-   <category ref="related">
-        <a href="inv_debugger_and_logs.md" summary="Debugging the inventory and accessing the logs.">Debugger and Logs</a>
-        <a href="inv_create_item.md" summary="How to create your first container and add it to the inventory.">How-to: Create a Container</a>        
-        <a href="inv_create_item.md" summary="How to create your first item and add it to the inventory.">How-to: Create an Item</a>
-    </category>
-   <category ref="external">
-        <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/asset-management-in-unreal-engine" summary="Loading and unloading assets with the Asset Manager.">Asset Manager</a>
-        <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/game-features-and-modular-gameplay-in-unreal-engine" summary="Build standalone features that you can quickly activate or deactivate.">Game Features</a>
-        <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine" summary="High-level view of the Gameplay Ability System.">Gameplay Ability System</a>
-    </category>
-</seealso>
-
 ### Character Slots
 
 Equipment will use Mesh Components to represent the equipment. Make sure to check how [Equipment Slots](inv_equipment_slots.md)
@@ -148,3 +135,16 @@ As for your **Follower Meshes**, make sure to adjust these settings:
 
 - `bUseBoundsFromLeaderPoseComponent`: `true`;
 - `bUseAttachParentBound`: `true`;
+
+<seealso style="cards">
+   <category ref="related">
+        <a href="inv_debugger_and_logs.md" summary="Debugging the inventory and accessing the logs.">Debugger and Logs</a>
+        <a href="inv_create_item.md" summary="How to create your first container and add it to the inventory.">How-to: Create a Container</a>        
+        <a href="inv_create_item.md" summary="How to create your first item and add it to the inventory.">How-to: Create an Item</a>
+    </category>
+   <category ref="external">
+        <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/asset-management-in-unreal-engine" summary="Loading and unloading assets with the Asset Manager.">Asset Manager</a>
+        <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/game-features-and-modular-gameplay-in-unreal-engine" summary="Build standalone features that you can quickly activate or deactivate.">Game Features</a>
+        <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine" summary="High-level view of the Gameplay Ability System.">Gameplay Ability System</a>
+    </category>
+</seealso>
