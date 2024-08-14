@@ -22,7 +22,8 @@ The primary characteristic of an Equipment Slot is the presence of the `Inventor
 restricts the container to store **only one item**.
 
 When Containers are configured as **Equipment Slots**, the inventory system expects a **match** between the **container 
-tag** and a **Mesh Component** on the avatar with the same tag.
+tag** and a **Mesh Component** on the avatar with the same tag. You will need to map Containers and Components when your
+equipment representation is a **Skeletal or Static Mesh**.
 
 <img src="inv_equipment_slot_container.png" alt="Slots and Containers" thumbnail="true"/>
 
@@ -40,4 +41,5 @@ You can set **Default Meshes** for slots without any equipment assigned to them.
 displayed to represent an empty slot, such as a _shirt_ or a _naked torso_.
 
 To configure this, create a new **Equipment Slot Setup**, and add all appropriate meshes with the correct **Slot Tags**. 
-This configuration also supports **Compatibility Checks**, which is useful if you need to support multiple body types using the same Data Asset.
+This configuration also supports **Compatibility Checks**, which is useful if you need to support multiple body types 
+using the same Data Asset.
