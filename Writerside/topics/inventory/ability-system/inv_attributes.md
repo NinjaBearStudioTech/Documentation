@@ -4,6 +4,7 @@
 <tldr>
     <ul>
         <li>Add the <code>NinjaInventoryAttributeSet</code> to your Ability System Component.</li>
+        <li>Initialize the Attribute Set with a <b>Data Table</b> that uses <code>AttributeMetaData</code> as the <b>row type</b>.</li>
         <li>Initialize the <code>WeightLimit</code> attribute, if your Inventory Manager will track encumbrance.</li> 
         <li>Initialize the <code>Wealth</code> attribute, if your character has any initial funds.</li>
         <li>The attributes, <code>EquipmentLevel</code>, <code>AverageEquipmentLevel</code> and <code>Encumbrance</code> are calculated automatically and don't require initialization.</li>
@@ -23,10 +24,10 @@ The following table contains all attributes available in the Inventory System's 
 | Attribute               | Description                                                                             | Meta |
 |-------------------------|-----------------------------------------------------------------------------------------|------|
 | `Wealth`                | Current wealth for the character. Can represent any type of in-game currency.           | No   |
-| `EquipmentLevel`        | Aggregation of the level from all equipment pieces in use. Maintained automatically.    | No   |
+| `EquipmentLevel`        | Aggregation of the level from all equipment pieces in use. Maintained automatically.    | Yes  |
 | `AverageEquipmentLevel` | Average Equipment Level. Maintained automatically.                                      | Yes  |
 | `WeightLimit`           | Maximum weight capacity for this inventory.                                             | No   |
-| `Encumbrance`           | Weight currently carried by the avatar, considering stacks. Maintained automatically.   | No   |
+| `Encumbrance`           | Weight currently carried by the avatar, considering stacks. Maintained automatically.   | Yes  |
 | `BackpackSlots`         | Slots available for the Backpack container. Provided for convenience, but not required. | No   |
 
 > You can always track your character's Attributes and their current values using the Gameplay Ability System debugger.
@@ -55,35 +56,8 @@ You can use this Json to facilitate the creation the Data Table used to initiali
 Please note that only attributes that are not maintained automatically were included.
 
 The Data Table Row type used to create Attribute Set Data for initialization is provided by the Gameplay Ability System
-You can create your data table using the `FAttributeMetaData` structure.
+You can create your data table using the `AttributeMetaData` structure.
 
-```json
-[
-  {
-    "Name": "NinjaInventoryAttributeSet.Wealth",
-    "BaseValue": 0,
-    "MinValue": 0,
-    "MaxValue": 0,
-    "DerivedAttributeInfo": "",
-    "bCanStack": false
-  },
-  {
-    "Name": "NinjaInventoryAttributeSet.WeightLimit",
-    "BaseValue": 100,
-    "MinValue": 0,
-    "MaxValue": 0,
-    "DerivedAttributeInfo": "",
-    "bCanStack": false
-  }, 
-  {
-    "Name": "NinjaInventoryAttributeSet.BackpackSlots",
-    "BaseValue": 12,
-    "MinValue": 0,
-    "MaxValue": 0,
-    "DerivedAttributeInfo": "",
-    "bCanStack": false
-  }  
-]
-```
+<code-block lang="json" src="inv_attributes.json" collapsible="true" collapsed-title="Inventory Attributes"/>
 
 [1]: inv_debugger_and_logs.md

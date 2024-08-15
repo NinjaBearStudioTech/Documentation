@@ -1,7 +1,7 @@
 # Ability System
 <primary-label ref="inventory"/>
 
-The Inventory System is built on the **Gameplay Ability System (GAS)**, providing a range of functionality related to it.
+The Inventory System heavily relies on  **Gameplay Ability System (GAS)**, providing a range of functionality related to it.
 
 Each topic in this section will delve into the three main pillars of functionality provided by the Gameplay Ability System:
 
@@ -12,14 +12,14 @@ Each topic in this section will delve into the three main pillars of functionali
 > For more information on setting up GAS for the Inventory System, please refer to the [Setup](inv_setup.md) section.
 {style="note"}
 
-[Gameplay Attributes](inv_attributes.md)
-: Details all attributes available in the Inventory System, their purpose, and usage recommendations. Attributes 
-are used to store persistent, centralized values such as _equipment level_ and _encumbrance_.
+[Gameplay Attributes](cbt_attributes.md)
+: Details all attributes available in the Combat System, their purpose, and usage recommendations. Attributes 
+are used to store persistent, centralized values such as _vitals_, _damage_ and _defense_ values.
 
-[Gameplay Effects](inv_effects.md)
-: Describes all effects available in the Inventory System, their purpose, and usage recommendations. Effects are 
-used to apply gameplay tags to the owner of the inventory, to modify attribute values and to grant other effects.
+[Gameplay Effects](cbt_effects.md)
+: Describes all effects available in the Combat System, their purpose, and usage recommendations. Effects are 
+used to apply gameplay tags to the combatant, to modify attribute values and to grant other effects.
 
-[Gameplay Abilities](inv_abilities.md)
-: Explains all abilities available in the Inventory System, including their purpose, usage recommendations, and 
-activation strategies. Abilities are used to perform actions on Items, Equipment, or the Inventory Manager itself.
+[Gameplay Abilities](cbt_abilities.md)
+: Explains all abilities available in the Combat System, including their purpose, usage recommendations, and 
+activation strategies. Abilities are used perform combat actions such as _attack_, _block_ or _react to a hit_.

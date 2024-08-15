@@ -19,6 +19,11 @@
             <toc-element topic="cbt_combo_manager.md"/>
             <toc-element topic="cbt_weapon_manager.md"/>
         </toc-element>
+        <toc-element topic="cbt_ability_system.md">
+            <toc-element topic="cbt_attributes.md"/>
+            <toc-element topic="cbt_effects.md"/>
+            <toc-element topic="cbt_abilities.md"/>
+        </toc-element>
         <toc-element topic="cbt_actor_pooling.md"/>
         <toc-element toc-title="How-To">
             <toc-element topic="cbt_create_melee_weapon.md"/>

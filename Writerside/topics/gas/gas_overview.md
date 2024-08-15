@@ -2,6 +2,8 @@
 <primary-label ref="gas"/>
 <secondary-label ref="wip"/>
 
+![Ninja G.A.S.](gas_feature.png "Ninja G.A.S.")
+
 The **Ninja G.A.S** plugin is designed to help with the boilerplate code necessary to get started with the **[Gameplay Ability System][1]**.
 
 ## Main Features

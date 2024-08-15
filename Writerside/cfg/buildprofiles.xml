@@ -19,8 +19,8 @@
         <footer>
             <copyright>2022-2024 Ninja Bear Studio Inc.</copyright>
             <social type="email" href="mailto:support@ninjabear.studio"/>
-            <social type="youtube" href="https://youtube.com/ninjabearstudio"/>
-            <social type="twitter" href="https://youtube.com/ninjabeargames"/>
+            <social type="linkedin" href="https://www.linkedin.com/company/ninja-bear-studio"/>
+            <social type="youtube" href="https://www.youtube.com/ninjabearstudio"/>
         </footer>
     </build-profile>
     <build-profile instance="docsite">
