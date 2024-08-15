@@ -49,9 +49,14 @@ adding the following asset.
 |---------------------|----------------------|------------------------------------------------------------|
 | `AbilityBundleData` | `UNinjaGASDataAsset` | Bundles all Attribute Sets, Effects and Abilities to give. |
 
-Here is a reference of how this should look like.
+Once configured, your entry in the Asset Manager should look like this:
 
 ![Ability Bundle Data Asset Setup](gas_setup_data_asset.png "Ability Bundle Data Asset Setup")
+
+> **Asset Directory**
+> 
+> If you have a specific **directory** for your Data Assets, like in the example above, make sure to set that in the
+> Primary Asset type registry as well.
 
 ## Ability System Initialization
 

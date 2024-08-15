@@ -67,6 +67,16 @@ You can register these assets in the following ways:
 | `EquipmentData`          | `NinjaEquipmentDataAsset`          | Contains information about Equipment, its States, and Actors.  |
 | `EquipmentSlotData`      | `NinjaEquipmentSlotDataAsset`      | Contains information about default meshes for Equipment Slots. |
 
+
+Once configured, your entries in the Asset Manager should look like this:
+
+![Inventory Data Assets Setup](inv_setup_asset_manager.png "Inventory Data Assets Setup")
+
+> **Asset Directory**
+>
+> If you have a specific **directory** for your Data Assets, like in the example above, make sure to set that in the
+> Primary Asset type registry as well.
+
 ## Ability System
 
 The **Ability System Component** is a prerequisite for the system to operate. Ensure that actors using the Inventory 
