@@ -60,12 +60,12 @@ You can register these assets in the following ways:
 - In the Editor, configure the **Asset Manager**: `Edit` > `Project Settings` > `Asset Manager`.
 - If you use a **Modular Game Feature** to add your Inventory, you can register these assets in your Feature configuration.
 
-| Asset Name               | Base Class                         | Description                                                    |
-|--------------------------|------------------------------------|----------------------------------------------------------------|
-| `InventoryContainerData` | `NinjaInventoryContainerDataAsset` | Contains information about Inventory Containers.               |
-| `InventoryItemData`      | `NinjaInventoryItemDataAsset`      | Contains information about Items and their Fragments.          |
-| `EquipmentData`          | `NinjaEquipmentDataAsset`          | Contains information about Equipment, its States, and Actors.  |
-| `EquipmentSlotData`      | `NinjaEquipmentSlotDataAsset`      | Contains information about default meshes for Equipment Slots. |
+| Asset Name               | Base Class                         | Description                                                 |
+|--------------------------|------------------------------------|-------------------------------------------------------------|
+| `InventoryContainerData` | `NinjaInventoryContainerDataAsset` | Defines the data structure for **Inventory Containers**.    |
+| `InventoryItemData`      | `NinjaInventoryItemDataAsset`      | Defines the data structure for **Items** and **Fragments**. |
+| `EquipmentData`          | `NinjaEquipmentDataAsset`          | Defines the data structure for **Equipment**.               |
+| `EquipmentSlotData`      | `NinjaEquipmentSlotDataAsset`      | Default Skeletal Meshes for unused **Equipment Slots**.     |
 
 
 Once configured, your entries in the Asset Manager should look like this:

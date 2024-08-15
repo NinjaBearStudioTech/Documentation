@@ -6,7 +6,6 @@ This how-to will show you how to create your first **Melee Weapon** and assign i
 
 <procedure title="Create your Sword Weapon actor" collapsible="true">
     <step>Create a new <b>Actor</b> extending from <code>NinjaCombatWeaponActor</code> and name it <code>BP_Weapon_Sword</code>.</step>
-    <step></step>
     <step>
         <p>Add <code>Inventory.Item.Type.Sword</code> to the <b>Weapon Tags</b> container.</p>
         <img src="cbt_create_weapon_tags.png" alt="Create the Weapon Tags" border-effect="line" thumbnail="true"/>

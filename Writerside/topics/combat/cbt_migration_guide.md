@@ -12,3 +12,5 @@ Weapon Manager, ensure that the new features are working with your setup.
 **Melee** and **Ranged** Impact Handler functions will now receive the Source and Target tags. If you override those
 functions, make sure to add the new parameters as well.
 
+Add the new `CombatWeapon` module to your `Build.cs` file. Main weapon classes were moved into this module.
+

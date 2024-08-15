@@ -54,8 +54,10 @@ If you plan to work with C++ and use classes from the Combat System, ensure you 
             "InputCore",
             "ModelViewViewModel",
             "NinjaCombat",
+            "NinjaCombatCore",
             "NinjaCombatActorPool",
             "NinjaCombatUI",
+            "NinjaCombatActorWeapon",
             "StructUtils",
             "UMG"
         });
