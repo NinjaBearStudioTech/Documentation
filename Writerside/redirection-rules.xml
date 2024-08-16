@@ -86,4 +86,16 @@
         </description>
         <accepts>inv_set_dynamic_effect_values.html</accepts>
     </rule>
+    <rule id="d27735c">
+        <description>Created after removal of "Combo Manager" from Ninja Bear Studio Plugins</description>
+        <accepts>cbt_combo_manager.html</accepts>
+    </rule>
+    <rule id="2d83c339">
+        <description>Created after removal of "Combat Components" from Ninja Bear Studio Plugins</description>
+        <accepts>cbt_components.html</accepts>
+    </rule>
+    <rule id="489d7334">
+        <description>Created after removal of "Weapon Manager" from Ninja Bear Studio Plugins</description>
+        <accepts>cbt_weapon_manager.html</accepts>
+    </rule>
 </rules>
