@@ -3,14 +3,15 @@
 
 <tldr>
     <ul>
+        <li>An <b>Input Setup</b> bundles an <b>Input Mapping Context</b> with their appropriate <b>Input Handlers</b>.</li>
         <li>The <b>Input Manager</b> can have <b>default</b> Input Setups available in all situations.</li>
         <li>Input Setups can be <b>added</b> or <b>removed</b> using the appropriate functions in the <b>Input Manager</b>: <code>AddInputSetupData</code> and <code>RemoveInputSetupData</code>.</li>
         <li>New Pawns set to a <b>Player Controller</b> can grant their own Input Sets via <code>InputSetupProviderInterface</code>. They are automatically added and removed when the pawn is <b>possessed</b> and <b>unpossessed</b>.</li>
     </ul>
 </tldr>
 
-Following the **Enhanced Input** philosophy supporting **multiple Input Mapping Contexts**, the Input System allows you 
-to define various **Input Setups**.
+Input Setups bundle a specific **Input Mapping Context** and all its **Input Handlers** together, so they can be added
+to the **Input Manager**.
 
 You can categorize Input Setups as:
 
@@ -30,7 +31,7 @@ from having all setups added as default. In contrast, larger games may require m
 > **Context Priorities**
 >
 > If you have overlapping Setups/Contexts (e.g., **Basic Locomotion** and **Mount Locomotion**), consider adjusting 
-> their priorities to ensure that the more specific context (like Mount Locomotion) takes precedence and properly 
+> their priorities to ensure that the more specific context (like "Mount Locomotion") takes precedence and properly 
 > **consumes the input**.
 {style="note"}
 
@@ -50,6 +51,21 @@ important to ensure that any context you add is properly removed later to avoid 
 > processed will generate a warning in the `LogNinjaInput` category.
 {style="note"}
 
+These functions are available in both Blueprints and C++ and can be used as needed. Here are common usage cases:
+
+- Begin or End Play of certain actors that provide additional input options to players.
+- When the User Interface activates and new inputs are available.
+- Inputs granted, based on certain conditions that must be met.
+
+<tabs group="sample">
+    <tab title="Blueprint">
+        <img src="ipt_add_remove_setup.png" alt="Adding or Removing Setups" border-effect="line"/>
+    </tab>
+    <tab title="C++">
+        <code-block lang="c++" src="ipt_add_remove_setups.cpp"/>
+    </tab>
+</tabs>
+
 ### Input Setup Provider Interface
 
 Situational Input Setups can also be managed via the **Input Setup Provider Interface**.
@@ -58,19 +74,19 @@ This interface can be implemented by any pawn. When a Player Controller possesse
 Component checks for this interface and automatically adds the provided setups. The setups are then removed when the 
 pawn is unpossessed.
 
-> **Player Controller Requirement**
+> **Player Controller Only**
 >
-> This approach requires the Input Manager Component to be added to the **Player Controller** so it can respond to Pawns 
-> being **possessed** and **unpossessed**.
+> The Input Manager Component will look for this interface in **Pawns** being **possessed** and **unpossessed**. This 
+> Setup only works when your Input Manager is in the **Player Controller**!
+{style="note"}
 
-### User Interface Input
-
-Depending on your design, you might want to add or remove dedicated Input Setups when your User Interface is active, 
-allowing the player to navigate the UI with specific inputs.
-
-Here are some options for managing Input Contexts for UI:
-
-- Change the **Input Mode** when the User Interface is active.
-- Use **Common UI** to manage inputs, including its own **Enhanced Input** integration.
-- Use **Ninja Input** to add/remove a dedicated setup with high priority when the UI is activated.
-
+<tabs group="sample">
+    <tab title="Blueprint">
+        <img src="ipt_setup_provider_interface.png" alt="Using the Input Provider Interface" border-effect="line" thumbnail="true"/>
+    </tab>
+    <tab title="C++">
+        <code-block lang="c++" src="ipt_provider_interface.h"/>
+        <br/>
+        <code-block lang="c++" src="ipt_provider_interface.cpp"/>
+    </tab>
+</tabs>

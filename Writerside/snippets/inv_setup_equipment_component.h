@@ -2,7 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "APluginLabsPlayerState.generated.h"
+#include "PluginLabsPlayerCharacter.generated.h"
 
 class UNinjaEquipmentManagerComponent;
 

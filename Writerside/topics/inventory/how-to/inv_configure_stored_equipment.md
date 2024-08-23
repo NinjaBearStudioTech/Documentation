@@ -12,14 +12,14 @@ to properly represent these Items.
 In this topic, you will see a **Static Mesh** being used to represent the stored weapons, so make sure to have those
 ready before getting started.
 
-<procedure title="Configure Equipment Slots in the Character" collapsible="true">
+<procedure title="Configure Equipment Slots in the Character" collapsible="true" id="character_slots">
     <step>Open your character's <b>Skeleton Asset</b>.</step>
     <step>Add a <b>socket</b> named <code>sSword_RH</code> to the <b>Right Hand</b> bone. Adjust the location and rotation as necessary.</step>  
     <step>Add a <b>socket</b> named <code>sShield_LH</code> to the <b>Left Hand</b> bone. Adjust the location and rotation as necessary.</step>    
     <step>Add two <b>sockets</b> to the <b>Spine 03</b> bone: <code>sSword_Stored</code> and <code>sShield_Stored</code>. Adjust their location and rotation as necessary.</step>
     <step>Open your character's <b>Blueprint</b>.</step>
-    <step>Add a <b>Static Mesh Component</b> parented to the character's <b>Mesh</b>, set the <b>Parent Socket</b> to <code>sSword_Stored</code>, and add <code>Equipment.Slot.Back.Weapon.A.Right</code> to the list of <b>Component Tags</b>.</step>    
-    <step>Add a <b>Static Mesh Component</b> parented to the character's <b>Mesh</b>, set the <b>Parent Socket</b> to <code>sShield_Stored</code>, and add <code>Equipment.Slot.Back.Weapon.A.Left</code> to the list of <b>Component Tags</b>.</step>
+    <step>Add a <b>Static Mesh Component</b>, child of the character's <b>Mesh</b>, set the <b>Parent Socket</b> to <code>sSword_Stored</code>, and add <code>Equipment.Slot.Back.Weapon.A.Right</code> to the list of <b>Component Tags</b>.</step>    
+    <step>Add a <b>Static Mesh Component</b>, child of the character's <b>Mesh</b>, set the <b>Parent Socket</b> to <code>sShield_Stored</code>, and add <code>Equipment.Slot.Back.Weapon.A.Left</code> to the list of <b>Component Tags</b>.</step>
 </procedure>
 
 <procedure title="Add the Equipment Manager to the Character" collapsible="true">
@@ -76,7 +76,7 @@ ready before getting started.
     <step>In the <b>Deactivated</b> State Configuration, add a new entry to the <b>Static Meshes</b> array. Set the Static Mesh that represents your sword to the <b>Mesh</b>.</step>
     <step>
         <p>Set <code>Equipment.Slot.Back.Weapon.A.Right</code> to the <b>Slot Tag</b> and <code>sSword_Stored</code> to the <b>SocketName</b>.</p>
-        <tip>The Gameplay Tag matches the one set in the <b><a href="inv_create_containers.md">Main Hand Container Definition</a></b>.</tip>
+        <tip>This is the same Tag set to your Mesh Component, during the <a href="#character_slots">first part</a>.</tip>
     </step>
     <step>
         <p>When you are done, your <b>Sword Equipment Definition</b> should be similar to this.</p>

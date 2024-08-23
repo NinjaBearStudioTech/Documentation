@@ -55,8 +55,17 @@
         <toc-element topic="gas_base_classes.md"/>
     </toc-element>
     <toc-element topic="ipt_overview.md">
+        <toc-element topic="ipt_setup.md"/>
+        <toc-element topic="ipt_design_overview.md"/>
         <toc-element topic="ipt_managing_input_setups.md"/>
-        <toc-element topic="ipt_animation_input_buffer.md"/>
+        <toc-element topic="ipt_forward_reference.md"/>
+        <toc-element topic="ipt_input_handlers.md">
+            <toc-element topic="ipt_character_handlers.md"/>
+            <toc-element topic="ipt_gas_handlers.md"/>
+        </toc-element>
+        <toc-element topic="ipt_input_detection.md"/>
+        <toc-element topic="ipt_input_buffer.md"/>
+        <toc-element topic="ipt_debugger_and_logs.md"/>
         <toc-element toc-title="How-To">
             <toc-element topic="ipt_replace_default_inputs.md"/>
             <toc-element topic="ipt_manage_contexts.md"/>
@@ -65,7 +74,6 @@
     <toc-element topic="int_overview.md" hidden="true"/>
     <toc-element topic="inv_overview.md">
         <toc-element topic="inv_setup.md"/>
-        <toc-element topic="inv_debugger_and_logs.md"/>
         <toc-element topic="inv_container_and_layout.md"/>
         <toc-element topic="inv_items_and_fragments.md" >
             <toc-element topic="inv_consumable_fragment.md"/>
@@ -109,6 +117,7 @@
             </toc-element>
         </toc-element>
         <toc-element topic="inv_save_and_load.md"/>
+        <toc-element topic="inv_debugger_and_logs.md"/>
         <toc-element toc-title="How-To">
             <toc-element topic="inv_create_containers.md"/>
             <toc-element topic="inv_create_item.md"/>

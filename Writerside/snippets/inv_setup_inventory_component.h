@@ -2,7 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerState.h"
-#include "APluginLabsPlayerState.generated.h"
+#include "PluginLabsPlayerState.generated.h"
 
 class UNinjaInventoryManagerComponent;
 

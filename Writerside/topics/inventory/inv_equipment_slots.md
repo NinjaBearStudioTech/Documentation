@@ -43,3 +43,31 @@ displayed to represent an empty slot, such as a _shirt_ or a _naked torso_.
 To configure this, create a new **Equipment Slot Setup**, and add all appropriate meshes with the correct **Slot Tags**. 
 This configuration also supports **Compatibility Checks**, which is useful if you need to support multiple body types 
 using the same Data Asset.
+
+## Skeletal Meshes
+
+Some slots will be **Skeletal Meshes** representing items worn by the character, such as an **Armor Vest** or **Pants**.
+It's expected that these components will follow the **Primary Mesh** in any animations.
+
+The most common way to do that is by setting up a **Leader Pose Component**, so all relevant equipment slots are set as 
+**followers** of the main mesh driving the animation
+
+When configuring your **Leader Mesh**, make sure to adjust these settings:
+
+- `VisibilityBasedAnimTickOption`: `AlwaysTickPoseAndRefreshBones`
+- `bLightAttachmentsAsGroup`: `true`
+
+As for your **Follower Meshes**, make sure to adjust these settings:
+
+- `bUseBoundsFromLeaderPoseComponent`: `true`;
+- `bUseAttachParentBound`: `true`;
+
+> **Merge Mesh**
+> 
+> In the future, **Mesh Merge** support is planned as well.
+
+<seealso style="cards">
+   <category ref="external">
+        <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/working-with-modular-characters-in-unreal-engine" summary="Techniques available in the engine to work with modular character.">Working with Modular Characters</a>
+    </category>
+</seealso>

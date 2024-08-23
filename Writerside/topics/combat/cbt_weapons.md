@@ -1,4 +1,4 @@
-# Weapon Management
+# Weapon Architecture
 <primary-label ref="combat"/>
 
 <tldr>
@@ -11,7 +11,7 @@
     </ul>
 </tldr>
 
-## Weapon Design
+## Weapon Actor
 
 **Weapon** are a **core component** in the Combat System. They are **Actors** that can perform important combat tasks
 such as **Melee Scans** or **Launch a Projectile**.
@@ -150,16 +150,16 @@ The following image shows how to add weapons that are instantiated, but not alre
 attachment. If your game allows multiple weapons to be equipped, then you can delegate all your weapon management to the
 Inventory System.
 
-The Combat System is able to detect if you have the Inventory System in your project. If so, then the **Equipment Weapon
-Manager** will become available, and can be used to retrieve **Weapon Actors** from the **Inventory System**.
+The Combat System is able to detect if you have the Inventory System in your project. If so, then the **Equipment Adapter
+Component** will become available, and can be used to retrieve **Weapon Actors** from the **Inventory System**. 
 
 Items must adhere to the following criteria:
 
 - The **[Equipment Manager](inv_equipment_manager.md)** can find a match for the **Weapon Query**.
 - The **Equipment Instance** has an actor marked as an **[Effect Causer](inv_equipment.md)**.
 
-Add `NinjaCombatEquipmentWeaponManagerComponent` to your Combatant Pawn or Character to enable the integration.Make sure
-to remove the **Default Weapon Manager** if you added it before.
+Add `UNinjaCombatEquipmentAdapterComponent` to your Combatant Pawn or Character to enable the integration. Make sure
+to remove the **Default Weapon Manager** if you added it before, since this adapter is a **replacement for it**.
 
 <seealso style="cards">
     <category ref="related">

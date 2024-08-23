@@ -1,13 +1,13 @@
-# Animation-Based Input Buffer
+# Input Buffer
 <primary-label ref="input"/>
 <secondary-label ref="advanced"/>
 
 <tldr>
     <ul>
-        <li>The <b>Input Buffer</b> is an animation-based mechanist to cache a player input and trigger it later.</li>
-        <li>It is defined by the <code>InputBufferInterface</code>. The <b>Input Manager Component</b> is a valid implementation.</li>
-        <li>You can control the start capturing inputs for the buffer and then release the buffered command using the <b>Input Buffer</b> Animation Notify State.</li>
-        <li>The <b>Input Manager Component</b> allows you to decide if you want to buffer the <b>first</b> or the <b>last</b> command captured in the buffer window.</li>
+        <li>The <b>Input Buffer</b> is an <b>animation-based</b> mechanism, used to store a player input while the buffer is <b>open</b>, and trigger it later when it <b>closes</b>.</li>
+        <li>It is defined by the <code>InputBufferInterface</code>. The <b>Input Manager Component</b> is a valid implementation of this interface.</li>
+        <li>You can control the buffer state using the <b>Input Buffer</b> Animation Notify State.</li>
+        <li>The <b>Input Manager Component</b> allows you to decide if you want to capture the <b>first</b> or the <b>last</b> player input.</li>
     </ul>
 </tldr>
 
@@ -19,7 +19,12 @@ yet the game should still register these inputs to ensure responsiveness.
 ## Input Buffer Design
 
 The buffer is implemented using the _Command_ design pattern: Inputs that cannot be handled immediately are encapsulated 
-in a Command structure, which can be executed later when the buffer is closed.
+in a **Command** structure, which can be executed later when the buffer is closed.
+
+> **Command**
+>
+> In OOP terms, the Input Buffer implements the **Command** pattern. Incoming Input Actions and their values are 
+> converted into a command structure that can be executed later on.
 
 The Input Buffer is _Animation-Based_, meaning it is opened and closed at specific points during an animation, controlled 
 through an Animation Notify State.
@@ -90,10 +95,8 @@ using the `InputBufferInterface`.
         <img src="ipt_input_buffer_blueprint.png" alt="Add a container to the inventory" thumbnail="true"/>
     </tab>
     <tab title="C++" group-key="cpp">
-        <p>Create any function that you want to use to fine-tune the buffer's state.</p>
         <code-block lang="c++" src="ipt_use_input_buffer.h"/>
         <br/>
-        <p>Implement it by invoking the <code>InputBufferInterface</code> on the <b>Input Manager Component</b>.</p>
         <code-block lang="c++" src="ipt_use_input_buffer.cpp"/>
     </tab>
 </tabs>

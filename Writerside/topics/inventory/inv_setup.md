@@ -87,7 +87,7 @@ Also, review the [Abilities](inv_abilities.md) to learn more about abilities tha
 
 ## Inventory Manager
 
-The [**Inventory Manager**](inv_inventory_manager.md) is the primary component that must be added to any actor with an 
+The **[Inventory Manager](inv_inventory_manager.md)** is the primary component that must be added to any actor with an 
 inventory.
 
 The Inventory Manager can be added to a **Player State** or **Pawn**—the former being common for **Players** and the 
@@ -128,29 +128,10 @@ The Equipment Manager must be added to the actual **Pawn**, regardless of where 
 After adding the Equipment Manager to the appropriate pawn, the next step is to add the `EquipmentManagerProviderInterface` 
 and implement the `GetEquipmentManager` function to return the component.
 
-### Character Slots
-
-Equipment will use Mesh Components to represent the equipment. Make sure to check how [Equipment Slots](inv_equipment_slots.md)
-work, so you can create all appropriate **sockets** and **mesh components** in your character.
-
-For now, this setup implies a **Leader Pose Component** setup, where all equipment slots are **followers** of a main
-mesh. In the future, **Mesh Merge** support is planned as well.
-
-When configuring your **Leader Mesh**, make sure to adjust these settings:
-
-- `VisibilityBasedAnimTickOption`: `AlwaysTickPoseAndRefreshBones`
-- `bLightAttachmentsAsGroup`: `true`
-
-As for your **Follower Meshes**, make sure to adjust these settings:
-
-- `bUseBoundsFromLeaderPoseComponent`: `true`;
-- `bUseAttachParentBound`: `true`;
-
 <seealso style="cards">
    <category ref="related">
         <a href="inv_debugger_and_logs.md" summary="Debugging the inventory and accessing the logs.">Debugger and Logs</a>
         <a href="inv_create_item.md" summary="How to create your first container and add it to the inventory.">How-to: Create a Container</a>        
-        <a href="inv_create_item.md" summary="How to create your first item and add it to the inventory.">How-to: Create an Item</a>
     </category>
    <category ref="external">
         <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/asset-management-in-unreal-engine" summary="Loading and unloading assets with the Asset Manager.">Asset Manager</a>
