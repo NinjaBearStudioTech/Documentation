@@ -15,6 +15,7 @@
         <toc-element topic="cbt_melee_combat.md"/>
         <toc-element topic="cbt_ranged_combat.md"/>
         <toc-element topic="cbt_combo_system.md"/>
+        <toc-element topic="cbt_opportunity_system.md"/>
         <toc-element topic="cbt_weapons.md"/>
         <toc-element topic="cbt_ability_system.md">
             <toc-element topic="cbt_attributes.md"/>

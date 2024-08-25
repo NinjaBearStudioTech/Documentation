@@ -45,4 +45,4 @@ instances to initialize.
 
 ### Supported Actors
 
-Currently, projectiles and cast actors are supported by default.
+Currently, **Projectiles** and **Cast** actors are supported by default.

@@ -93,6 +93,7 @@ This **Primary Data Asset** defines the following elements of a combo:
 
 1. The **State Tree** containing all attacks and their transitions.
 2. The mapping between **Input Actions** and **Combo Events**, allowing primary, secondary or other **branching options**. 
+3. Additional Abilities required by the combo. They are added and removed with the Combo Ability itself.
 
 For the State Tree above, we have the following definition.
 
@@ -106,13 +107,10 @@ routing incoming **Gameplay Events** to the **Combo Manager**.
 <img src="cbt_combo_ability.png" alt="Combo Ability" border-effect="line" thumbnail="true"/>
 
 It is recommended to use your **Ability Tags** for activation. In which case, consider using the `Ability.Combo`, at 
-least as a _prefix_ to your tag.
+least as a _prefix_ to your tag. 
 
-> **Ability Bundle**
->
-> The State Tree will trigger one or many **Gameplay Abilities** for each **Attack State**. This means that one combo
-> is represented by its **Combo Ability** plus all other **Gameplay Abilities** that can be triggered from it.
-{style="note"}
+The Combo Ability will **add** or **remove** abilities added to the **Combo Definition**. These are meant to be the 
+**Attacks** or other elements necessary to fully execute the combo.
 
 ## Combo Window
 
