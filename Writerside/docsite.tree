@@ -17,6 +17,7 @@
         <toc-element topic="cbt_combo_system.md"/>
         <toc-element topic="cbt_opportunity_system.md"/>
         <toc-element topic="cbt_weapons.md"/>
+        <toc-element topic="cbt_poise_and_stagger.md"/>
         <toc-element topic="cbt_ability_system.md">
             <toc-element topic="cbt_attributes.md"/>
             <toc-element topic="cbt_effects.md"/>
@@ -129,5 +130,5 @@
             <toc-element topic="inv_consumables.md"/>
         </toc-element>
     </toc-element>
-    <toc-element topic="integrations.md"/>
+    <toc-element topic="guides.md"/>
 </instance-profile>

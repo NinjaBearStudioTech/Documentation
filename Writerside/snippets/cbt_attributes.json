@@ -256,8 +256,32 @@
     "bCanStack": false
   },
   {
-    "Name": "NinjaCombatAttributeSet.MaxPoise",
+    "Name": "NinjaCombatAttributeSet.PoiseDamage",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.PoiseRecovery",
     "BaseValue": 100,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.PoiseRecoveryInterval",
+    "BaseValue": 10,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.StaggerDuration",
+    "BaseValue": 5,
     "MinValue": 0,
     "MaxValue": 0,
     "DerivedAttributeInfo": "",

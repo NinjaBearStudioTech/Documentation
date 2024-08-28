@@ -5,7 +5,7 @@
     <ul>
         <li>The <b>Combo Manager</b> is the <b>backbone</b> of the Combo System.</li>
         <li>Combos are defined by a <b>State Tree</b> and a <b>Data Asset</b>.</li>
-        <li>The <b>Data Asset</b> is used by the <b>Combo Ability</b> to receive **Gameplay Events** and forward them to the <b>Combo Manager</b>.</li>
+        <li>The <b>Data Asset</b> is used by the <b>Combo Ability</b> to receive <b>Gameplay Events</b> and forward them to the <b>Combo Manager</b>.</li>
         <li>Each <b>Attack</b> is encapsulated into an <b>Attack Ability</b>.</li>
         <li>The <b>Combo Window</b> is established by the <b>Combo Window Anim Notify State</b>.</li>
         <li>Details like the <b>Combo Window State</b> and <b>Combo Count</b> are exposed to the UI by the <b>Combo Viewmodel</b>.</li>
@@ -89,7 +89,7 @@ this example we have `Combat.Event.Combo.Attack.Primary` and `Combat.Event.Combo
 
 ### Combo Definition
 
-This **Primary Data Asset** defines the following elements of a combo:
+The `NinjaCombatComboData` is **Data Asset** that allows you to define the following elements of a combo:
 
 1. The **State Tree** containing all attacks and their transitions.
 2. The mapping between **Input Actions** and **Combo Events**, allowing primary, secondary or other **branching options**. 

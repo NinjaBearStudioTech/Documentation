@@ -90,3 +90,20 @@ pawn is unpossessed.
         <code-block lang="c++" src="ipt_provider_interface.cpp"/>
     </tab>
 </tabs>
+
+### Globally Enable or Disable Inputs
+
+Inputs can be completely **disabled**, and later on **enabled** at the **Input Manager** component level. 
+
+This can be useful when doing in-game cutscenes or other similar operations where all inputs should be discarded, 
+without the need to remove/add current **Setups**.
+
+<tabs group="sample">
+    <tab title="Blueprint">
+        <img src="ipt_global_enable_disable.png" alt="Globally Enable/Disable inputs" border-effect="line" thumbnail="true"/>
+    </tab>
+    <tab title="C++">
+        <code-block lang="c++" src="ipt_global_enable_disable.cpp"/>
+    </tab>
+</tabs>
+

@@ -24,7 +24,7 @@
         <!-- Add up to 2 topics that you want to promote. Use the "type" attribute to select an icon. -->
         <spotlight>
             <a href="getting_started.md" type="community" summary="How to get started with the plugins, available resources and how to get support.">Getting Started</a>
-            <a href="integrations.md" type="branch" summary="Overview of all plugins, their scope and how they integrate with each other.">Plugin Summary</a>
+            <a href="guides.md" type="branch" summary="Overview of all plugins, their scope and how they integrate with each other.">Plugin Summary</a>
         </spotlight>
 
         <!-- Add several topics that are most important for this section. -->
@@ -40,7 +40,7 @@
         <!-- Add several topics that are less important or are relevant only for advanced/experienced users. -->
         <secondary>
             <title>Other Topics</title>
-            <a href="integrations.md" summary="Integration possibilities between available plugins.">Plugin Integration</a>
+            <a href="guides.md" summary="Guides based on the Showcase project.">Guides</a>
             <a href="https:://ninjabear.studio" summary="Technical deep-dives for games built using our technology.">Ninja Bear Studio Inc.</a>
         </secondary>
     </section-starting-page>
