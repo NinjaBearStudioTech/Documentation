@@ -1,4 +1,5 @@
 # Target Lock
+<primary-label ref="combat"/>
 
 W.I.P
 1. Add the Anchor tag and socket to your base class/meshes.

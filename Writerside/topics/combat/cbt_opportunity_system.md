@@ -1,5 +1,6 @@
 # Opportunity System
 <primary-label ref="combat"/>
+<secondary-label ref="advanced"/>
 <secondary-label ref="experimental"/>
 
 <tldr>
@@ -14,3 +15,8 @@
 The **Opportunity System** is used to implement abilities that can only execute under **certain conditions** and will
 **pair animations** between the **attacker** and **victim**.
 
+## Backstabs and Executions
+
+
+
+## Parry and Riposte

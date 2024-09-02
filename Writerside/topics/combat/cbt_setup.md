@@ -1,20 +1,6 @@
 # Setup
 <primary-label ref="combat"/>
 
-<tldr>
-    <ul>
-        <li>Install the Ninja Combat plugin using the Epic Games Launcher.</li>
-        <li>Open your project and enable the plugin: <code>Edit</code> &rightarrow; <code>Plugins</code>, search for <i>combat</i>, and tick the checkbox for <b>Ninja Combat</b>. Restart the engine.</li>
-        <li>Add <code>NinjaCombatWeaponManagerComponent</code> to your <b>Character</b>. The actor must implement <code>AbilitySystemInterface</code>.</li>
-        <li>Add <code>NinjaCombatDamageManagerComponent</code> to the same object that has the Inventory Manager. Implement the <code>GetInventoryManager</code> function.</li>
-        <li>Add <code>NinjaCombatDefenseManagerComponent</code> to the same object that has the Inventory Manager. Implement the <code>GetInventoryManager</code> function.</li>
-        <li>Add <code>CombatSystemInterface</code> to your character and implement the appropriate <i>Getter</i> functions for the components above.</li>
-        <li>Add and initialize the <code>UNinjaCombatAttributeSet</code> to your character's Ability System Component.</li>
-        <li>Set the correct <b>Ability System Global Objects</b> to your <code>DefaultGame.ini</code> file.</li>
-        <li>Create the appropriate <b>Collision Channels</b>: <code>Weapon</code>, <code>Projectile</code> and <code>Opportunity</code>.</li>
-    </ul>
-</tldr>
-
 This page will walk you through the **pre-requisites** and **steps** necessary to enable the **Ninja Combat** plugin.
 
 ## Pre-Requisites
@@ -22,11 +8,12 @@ Before setting up the component, there are some pre-requisites to address.
 
 First, a working **Gameplay Ability System** setup:
 1. Add the **Ability System Component** to your Pawn or Player State.
-2. Properly implement the **Ability System Interface** on them.
-3. Being able to add **Attribute Sets**, **Gameplay Effects** and **Gameplay Abilities**.
+2. Properly implement the **Ability System Interface** on your base class.
+3. You should be able to add **Attribute Sets**, **Gameplay Effects** and **Gameplay Abilities**.
+4. If you are using [Ninja G.A.S.](gas_overview.md), configure it first.
 
 Then, make sure that you have the **Input** configured:
-1. Your Player Character is ready to handle **Input Actions**
+1. Your Player Character is ready to handle **Input Actions**.
 2. If you are using [Ninja Input](ipt_overview.md), configure it first.
 
 ## Installing the Plugin
@@ -54,6 +41,7 @@ If you plan to work with C++ and use classes from the Combat System, ensure you 
             "InputCore",
             "ModelViewViewModel",
             "NinjaCombat",
+            "NinjaCombatCamera",
             "NinjaCombatCore",
             "NinjaCombatActorPool",
             "NinjaCombatUI",
@@ -100,13 +88,12 @@ adding the following lines to your `DefaultEngine.ini` file, located in your `Co
 [/Script/Engine.CollisionProfile]
 +DefaultChannelResponses=(Channel=ECC_GameTraceChannel1,DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=False,Name="Weapon")
 +DefaultChannelResponses=(Channel=ECC_GameTraceChannel2,DefaultResponse=ECR_Block,bTraceType=True,bStaticObject=True,Name="Projectile")
-+DefaultChannelResponses=(Channel=ECC_GameTraceChannel3,DefaultResponse=ECR_Ignore,bTraceType=True,bStaticObject=True,Name="Opportunity")
 ```
 
 Here is a breakdown of these collision types, so you can make sure that actors will also react correctly to them:
 
-1. The **Weapon** and **Projectile** collisions are relevant to your character's meshes, so it should **Block** them.
-2. The **Opportunity** collision is relevant to your character's capsule, so it should **Overlap** it.
+1. The **Weapon** channel is used to trace weapon collisions during **Melee Attacks**.
+2. The **Projectile** channel is used to detect impacts from **Projectile Impacts**.
 
 > **Ignore or Block?**
 > 
@@ -125,3 +112,26 @@ Here is a breakdown of these collision types, so you can make sure that actors w
 Finally, assign these Collision Channels in your Combat Settings: `Edit` > `Project Settings` > `Ninja Combat` 
 
 ![Initial Settings](cbt_setup_settings.png "Initial Settings")
+
+## Combat Component
+
+Your main Character class must have the **Combat Manager** component added to it, along with the appropriate **Combat
+System Interface**. Make sure to return the **Combat Manager** from the `GetCombatManager` function.
+
+> **How about the other Components and Functions?**
+>
+> You don't need to worry about other components or methods in this interface for now, except for the **Weapon Manager** 
+> and **Movement Component**, both listed below. 
+>
+> For more information about the other components, and how to use these interface functions, check the 
+> **[Extensions](cbt_extensions.md)** page.
+{style="note"}
+
+### Weapon Manager
+
+Create the appropriate **Weapon Manager** and make sure to return it in the **Combat System Interface**.
+
+### Movement Component
+
+If you want to use the provided Combat **Character Movement Component**, make sure to override the default one in your
+character, either in C++ or in your Blueprint.

@@ -90,8 +90,9 @@ Also, review the [Abilities](inv_abilities.md) to learn more about abilities tha
 The **[Inventory Manager](inv_inventory_manager.md)** is the primary component that must be added to any actor with an 
 inventory.
 
-The Inventory Manager can be added to a **Player State** or **Pawn**—the former being common for **Players** and the 
-latter for other scenarios.
+The Inventory Manager can be added to a **Player State** or **Pawn**. Both are equally viable and the decisive factor 
+should be your inventory's **persistence**. The Player State is usually a good option for inventories that should be
+kept over _respawns_ or _level travel_.
 
 During its initialization, the Inventory Manager will wait for the Ability System Component to **initialize** and obtain 
 an avatar that **is not** a Player State.
