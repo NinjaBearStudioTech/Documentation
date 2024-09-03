@@ -7,6 +7,10 @@ W.I.P
 
 ## Defense Calculation
 
-## Hit Reaction
+## Handle Damage
 
-## Death
+### Damage Handlers
+
+### Hit Reactions
+
+### Death

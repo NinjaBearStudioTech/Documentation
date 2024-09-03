@@ -4,10 +4,9 @@
 <tldr>
     <ul>
         <li>The <b>Combo Manager</b> is the <b>backbone</b> of the Combo System.</li>
-        <li>Combos are defined by a <b>State Tree</b> and a <b>Data Asset</b>.</li>
-        <li>The <b>Data Asset</b> is used by the <b>Combo Ability</b> to receive <b>Gameplay Events</b> and forward them to the <b>Combo Manager</b>.</li>
-        <li>Each <b>Attack</b> is encapsulated into an <b>Attack Ability</b>.</li>
-        <li>The <b>Combo Window</b> is established by the <b>Combo Window Anim Notify State</b>.</li>
+        <li>Combos are defined by a <b>State Tree</b> and a <b>Gameplay Ability</b>.</li>
+        <li>Each <b>Attack</b> is defined by its own <b>Attack Ability</b>.</li>
+        <li>The <b>Combo Window</b> is defined by the <b>Combo Window Anim Notify State</b>.</li>
         <li>Details like the <b>Combo Window State</b> and <b>Combo Count</b> are exposed to the UI by the <b>Combo Viewmodel</b>.</li>
     </ul>
 </tldr>
@@ -40,12 +39,7 @@ which are a very fitting representation for a combo, including branching to mult
 Once set, this component works as the **backbone** of the Combo System, accessed primarily by other parts of the system,
 such as the **Combo Window Notify State**.
 
-## Combo Assets
-
-There are **two assets** required to define a combo: The **State Tree** orchestrating the attacks and transitions, and 
-the **Definition Data** pointing to the State Tree and mapping all **Input Actions and Event Tags**.
-
-### Combo State Tree
+## Combo State Tree
 
 The Combo State Tree has each **attack** represented as a **state**, using **transitions** to trigger the next viable
 attack or complete the combo.
@@ -87,34 +81,25 @@ It is recommended to have your **Abilities** using the `Ability.Attack.[Combo].[
 As for the **Events** used in the Transitions**, it's recommended to use the `Combat.Event.Combo.Attack.[EventType]`. In
 this example we have `Combat.Event.Combo.Attack.Primary` and `Combat.Event.Combo.Attack.Secondary`.
 
-### Combo Definition
-
-The `NinjaCombatComboData` is **Data Asset** that allows you to define the following elements of a combo:
-
-1. The **State Tree** containing all attacks and their transitions.
-2. The mapping between **Input Actions** and **Combo Events**, allowing primary, secondary or other **branching options**. 
-3. Additional Abilities required by the combo. They are added and removed with the Combo Ability itself.
-
-For the State Tree above, we have the following definition.
-
-<img src="cbt_combo_definition.png" alt="Combo Definition" border-effect="line" thumbnail="true"/>
-
 ## Combo Ability
 
-Once a **Combo Definition** is done, it needs to be assigned to a **Combo Ability**. This ability is responsible for
-routing incoming **Gameplay Events** to the **Combo Manager**.
+The **Combo Ability** orchestrates the **Combo Window Effect** and forwards **Inputs** to the correct **Combo Events**.
+It can also add other Gameplay Abilities required by the Combo to execute correctly.
 
 <img src="cbt_combo_ability.png" alt="Combo Ability" border-effect="line" thumbnail="true"/>
 
 It is recommended to use your **Ability Tags** for activation. In which case, consider using the `Ability.Combo`, at 
-least as a _prefix_ to your tag. 
+least as a _prefix_ to your tag.
 
-The Combo Ability will **add** or **remove** abilities added to the **Combo Definition**. These are meant to be the 
-**Attacks** or other elements necessary to fully execute the combo.
+In the Combo Section, you will find the following properties:
+
+1. The **State Tree** containing all attacks and their transitions.
+2. The mapping between **Input Actions** and **Combo Events**, allowing primary, secondary or other **branching options**.
+3. **Additional Abilities** required by the combo. They are **added and removed** with the Combo Ability itself.
 
 ## Combo Window
 
-An important aspect of a combo is its **Combo Window**. This is the moment in an attack where an input is allowed and,
+An important aspect of a combo is its **Combo Window**. This is the moment in an attack, where inputs are allowed and,
 if received, will trigger the next Combo's state.
 
 Combo Windows are defined in each **Animation Montage** used by **Attack Abilities**, by the **Combo Window Notify State**.
@@ -123,7 +108,6 @@ Add the state across all frames that are considered the **Combo Window**. No add
 <img src="cbt_combo_window_notify.png" alt="Combo Notify State" border-effect="line" thumbnail="true"/>
 
 ## Combo Viewmodel
-<secondary-label ref="wip"/>
 
 Showing the details about the Combo in the User Interface is a very common requirement. To that end, the **Combo Viewmodel**
 can be used, so widgets can react to changes in the **Combo Manager** and update themselves. 

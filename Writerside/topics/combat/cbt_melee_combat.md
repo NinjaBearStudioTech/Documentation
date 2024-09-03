@@ -1,6 +1,16 @@
 # Melee Combat
 <primary-label ref="combat"/>
 
+## Attack Ability
+
+## Melee Scan
+
+### Melee Scan Notify State
+
+### Melee Scan Transfer Object
+
+## Melee Weapon Interface
+
 ### Melee Hit Cosmetics
 
 In the Damage Handling flow, you can have a **Damage Handler** to invoke **Combat Interfaces** on the **Damage Causer**,

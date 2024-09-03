@@ -1,6 +1,16 @@
 # Setup
 <primary-label ref="combat"/>
 
+<tldr>
+    <ul>
+        <li><b>Download</b> and <b>install</b> the plugin.</li>
+        <li>Make sure that all <b>pre-requisites</b> are executed before configuring the Combat System.</li>
+        <li>If your project uses <b>C++</b>, make sure to add the correct <b>modules</b> to your <code>Build.cs</code> file.</li>
+        <li>Configure the <b>Ability System</b> elements used by the Combat System.</li>
+        <li>Add the necessary <b>Components</b> and <b>Interfaces</b> to your Character.</li>
+    </ul>
+</tldr>
+
 This page will walk you through the **pre-requisites** and **steps** necessary to enable the **Ninja Combat** plugin.
 
 ## Pre-Requisites
@@ -24,7 +34,7 @@ installed to any compatible engine version.
 Once installed, create or open your project and navigate to **Edit** and then **Plugins**. In the search bar, type
 _Combat_ and the **Ninja Combat** plugin should appear. Tick the checkbox and restart the engine.
 
-## C++ Libraries
+## C++ Modules
 
 If you plan to work with C++ and use classes from the Combat System, ensure you add the following modules to your
 `Build.cs` file:
