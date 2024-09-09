@@ -7,7 +7,7 @@
         <li>Can become <b>Melee</b> and <b>Ranged</b> weapons via the appropriate interfaces.</li>
         <li>Weapons are assigned to the <b>Weapon Manager</b>, used by the Combat System to query for them via <b>Gameplay Tag Queries</b>.</li>
         <li>The <b>Weapon Manager</b> is an <b>Actor Component</b> implementing <code>NinjaCombatWeaponManagerComponent</code>.</li>
-        <li>The Combat System provides base classes for Weapons and the Weapon Manager. It also provides versions compatible with <b>Ninja Inventory</b>.</li>
+        <li>The Combat System provides base classes for Weapons and the Weapon Manager, along with classes integrated with <b>Ninja Inventory</b>.</li>
     </ul>
 </tldr>
 
@@ -150,11 +150,11 @@ The following image shows how to add weapons that are instantiated, but not alre
 
 <img src="cbt_weapon_manager_add.png" alt="Adding external Weapon Actors" border-effect="line" thumbnail="true"/>
 
-### Equipment Weapon Manager
+### Equipment Weapon Adapter
 
 **[Ninja Inventory](inv_overview.md)** supports complex item and equipment management, including asset loading and
 attachment. If your game allows multiple weapons to be equipped, then you can delegate all your weapon management to the
-Inventory System.
+**Inventory System**.
 
 The Combat System is able to detect if you have the Inventory System in your project. If so, then the **Equipment Adapter
 Component** will become available, and can be used to retrieve **Weapon Actors** from the **Inventory System**. 
