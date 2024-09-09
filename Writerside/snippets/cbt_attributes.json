@@ -73,7 +73,15 @@
   },
   {
     "Name": "NinjaCombatAttributeSet.StaminaRegenRate",
-    "BaseValue": 0,
+    "BaseValue": 10,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.StaminaRegenDelay",
+    "BaseValue": 5,
     "MinValue": 0,
     "MaxValue": 0,
     "DerivedAttributeInfo": "",
@@ -185,7 +193,7 @@
   },
   {
     "Name": "NinjaCombatAttributeSet.EvadeStaminaCost",
-    "BaseValue": 10,
+    "BaseValue": 20,
     "MinValue": 0,
     "MaxValue": 0,
     "DerivedAttributeInfo": "",
@@ -193,7 +201,7 @@
   },
   {
     "Name": "NinjaCombatAttributeSet.EvadeCooldown",
-    "BaseValue": 0,
+    "BaseValue": 0.2,
     "MinValue": 0,
     "MaxValue": 0,
     "DerivedAttributeInfo": "",

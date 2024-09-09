@@ -139,9 +139,21 @@ System Interface**. Make sure to return the **Combat Manager** from the `GetComb
 
 ### Weapon Manager
 
-Create the appropriate **Weapon Manager** and make sure to return it in the **Combat System Interface**.
+Create the appropriate **[Weapon Manager](cbt_weapon_architecture.md#weapon-manager)** and make sure to return it in the 
+**Combat System Interface**. By default, you have **two options** available for the Weapon Manager type:
+
+- **Default**: A basic Weapon Manager that can be used as-is for simpler scenarios.
+- **Equipment**: This Weapon Manager is compatible with the **[Inventory System](inv_overview.md)**.
+
+> **One step at a time**
+> 
+> Even if you plan to integrate with Ninja Inventory, consider starting with the **Default Weapon Manager**, so you 
+> can make sure that your system works as expected, before introducing more layers to it.
 
 ### Movement Component
 
 If you want to use the provided Combat **Character Movement Component**, make sure to override the default one in your
 character, either in C++ or in your Blueprint.
+
+You are not required to use this Movement Component in your project, and it is also fine to use a completely different
+Movement Solution.

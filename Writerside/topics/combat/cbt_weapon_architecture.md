@@ -73,7 +73,6 @@ Actor** will become available. It can be used as a base class to create **weapon
 An **Equipment Weapon Actor** (`ANinjaCombatEquipmentWeaponActor`) has the following characteristics:
 
 - It is compatible with the **Equipment Weapon Manager**.
-- It is visible to the **[Equipment Manager](inv_equipment_manager.md)**, since it implements `IEquipmentActorInterface`.
 - It will be used by the Equipment System as an **Effect Causer**, which is the Actor used as the **Cause** of an effect applied to target. 
 - Can use the **[Item Level](inv_level_fragment.md)** as the Effect Level for Melee Hit Gameplay Effects.
 
@@ -83,6 +82,13 @@ or Character.
 The Combat System does not interact with this component directly. Instead, it will use the `CombatWeaponManagerInterface`,
 which is implemented by the base component provided by the framework. This interface allows the Combat System to identify
 weapons based on its **Gameplay Tags**.
+
+> **Equipment Manager Interface is still required!**
+> 
+> Due to limitations in the Unreal Engine's preprocessor macros, it is not possible to automatically implement the Equipment
+> Actor Interface, so you **must** add `EquipmentActorInterface` to your Weapon Actor. There is **no need to implement its
+> functions**!
+{style="note"}
 
 ## Weapon Manager
 

@@ -60,6 +60,7 @@ The following table contains all attributes available in the Combat System's Att
 | `LastStandHealthPercent` | Amount health granted when fatal damage is reverted.     | Last Stand        |
 | `Poise`                  | Current poise. At zero, triggers a stagger.              | Poise and Stagger |
 | `MaxPoise`               | Maximum poise for a character.                           | Poise and Stagger |
+| `StaggerDuration`        | Duration of the Stagger effect.                          | Poise and Stagger |
 
 > You can always track your character's Attributes and their current values using the Gameplay Ability System debugger.
 

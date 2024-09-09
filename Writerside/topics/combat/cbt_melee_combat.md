@@ -1,6 +1,15 @@
 # Melee Combat
 <primary-label ref="combat"/>
 
+<tldr>
+    <ul>
+        <li>The Weapon (or Character) must implement the <b>Melee Interface</b>.</li>
+        <li>The <b>Attack Ability</b> is used to execute <b>Melee Attacks</b>.</li>
+        <li><b>Melee Scans</b> are executed by the Attack Ability. They are started and stopped from <b>Gameplay Events</b>.</li>
+        <li>The <b>Damage</b> applied by a melee hit can be customized in many ways.</li>
+    </ul>
+</tldr>
+
 ## Attack Ability
 
 ## Melee Scan

@@ -12,14 +12,14 @@ Each topic in this section will delve into the three main pillars of functionali
 > For more information on setting up GAS for the Inventory System, please refer to the [Setup](inv_setup.md) section.
 {style="note"}
 
-[Gameplay Attributes](cbt_attributes.md)
+**[Gameplay Attributes](cbt_attributes.md)**
 : Details all attributes available in the Inventory System, their purpose, and usage recommendations. Attributes 
 are used to store persistent, centralized values such as _equipment level_ and _encumbrance_.
 
-[Gameplay Effects](cbt_effects.md)
+**[Gameplay Effects](cbt_effects.md)**
 : Describes all effects available in the Inventory System, their purpose, and usage recommendations. Effects are 
 used to apply gameplay tags to the owner of the inventory, to modify attribute values and to grant other effects.
 
-[Gameplay Abilities](cbt_abilities.md)
+**[Gameplay Abilities](cbt_abilities.md)**
 : Explains all abilities available in the Inventory System, including their purpose, usage recommendations, and 
 activation strategies. Abilities are used to perform actions on Items, Equipment, or the Inventory Manager itself.
