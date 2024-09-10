@@ -116,7 +116,7 @@ System Interface**. Make sure to return the **Combat Manager** from the `GetComb
 > and **Movement Component**, both listed below. 
 >
 > For more information about the other components, and how to use these interface functions, check the 
-> **[Extensions](cbt_extensions.md)** page.
+> **[Extensions](cbt_component_extensions.md)** page.
 {style="note"}
 
 ### Weapon Manager

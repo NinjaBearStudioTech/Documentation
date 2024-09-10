@@ -1,4 +1,4 @@
-# Extensions
+# Components and Extensions
 <primary-label ref="combat"/>
 <secondary-label ref="advanced"/>
 

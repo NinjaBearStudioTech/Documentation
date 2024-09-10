@@ -12,16 +12,20 @@
     </toc-element>
     <toc-element topic="cbt_overview.md">
         <toc-element topic="cbt_setup.md"/>
-        <toc-element topic="cbt_melee_combat.md"/>
-        <toc-element topic="cbt_ranged_combat.md"/>
-        <toc-element topic="cbt_combo_system.md"/>
-        <toc-element topic="cbt_weapon_architecture.md"/>
-        <toc-element topic="cbt_damage_and_defense.md"/>
-        <toc-element topic="cbt_poise_and_stagger.md"/>
-        <toc-element topic="cbt_opportunity_system.md"/>
-        <toc-element topic="cbt_user_interface.md"/>
-        <toc-element topic="cbt_actor_pooling.md"/>
-        <toc-element topic="cbt_extensions.md"/>
+        <toc-element topic="cbt_concepts.md">
+            <toc-element topic="cbt_melee_combat.md"/>
+            <toc-element topic="cbt_ranged_combat.md"/>
+            <toc-element topic="cbt_combo_system.md"/>
+            <toc-element topic="cbt_opportunity_system.md"/>
+            <toc-element topic="cbt_damage_and_defense.md"/>
+            <toc-element topic="cbt_poise_and_stagger.md"/>
+        </toc-element>
+        <toc-element topic="cbt_architecture.md">
+            <toc-element topic="cbt_component_extensions.md"/>
+            <toc-element topic="cbt_weapon_architecture.md"/>
+            <toc-element topic="cbt_actor_pooling.md"/>
+            <toc-element topic="cbt_user_interface.md"/>
+        </toc-element>
         <toc-element topic="cbt_ability_system.md">
             <toc-element topic="cbt_attributes.md"/>
             <toc-element topic="cbt_effects.md"/>

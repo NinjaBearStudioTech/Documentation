@@ -1,0 +1,29 @@
+# Concepts
+<primary-label ref="combat"/>
+
+This section includes **high-level concepts** for the Combat System. These elements are provided by an aggregation of 
+multiple technical elements, such as **components** and **abilities**.
+
+**[Melee Combat](cbt_melee_combat.md)**
+: Melee combat can be executed by a combatant (hand-to-hand combat) or using weapons. The process is the same for both 
+scenarios and includes scanning, applying damage effects, and triggering impact cosmetics.
+
+**[Ranged Combat](cbt_ranged_combat.md)**
+: Ranged combat can be executed by a combatant or using ranged weapons. In both cases, projectiles are spawned in the 
+world and can apply damage independently of their owner's Ability System Component.
+
+**[Combo System](cbt_combo_system.md)**
+: Attack Abilities for both Melee and Ranged Combat can be orchestrated by the Combo System. This is a State Tree-based
+solution that can manage combo states, transitions, and damage multipliers.
+
+**[Opportunity System](cbt_opportunity_system.md)**
+: This system handles attacks that can only be triggered from certain opportunities, such as a Backstab or a Riposte.
+This system takes care of gathering eligible targets, pairing animations between participants, and animating the camera.
+
+**[Damage and Defense](cbt_damage_and_defense.md)**
+: Every successful hit or impact triggers the Damage and Defense system, where things like Critical Damage, Armor, 
+Blocking, and Invincibility are considered to determine the final damage output.
+
+**[Poise and Stagger](cbt_poise_and_stagger.md)**
+: A system that works in tandem with the Damage system, but can be enabled or disabled as needed. It is commonly used in 
+conjunction with the Opportunity System.
