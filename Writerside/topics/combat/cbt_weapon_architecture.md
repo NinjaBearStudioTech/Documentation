@@ -167,6 +167,9 @@ Items must adhere to the following criteria:
 Add `UNinjaCombatEquipmentAdapterComponent` to your Combatant Pawn or Character to enable the integration. Make sure
 to remove the **Default Weapon Manager** if you added it before, since this adapter is a **replacement for it**.
 
+Check the **[Inventory Integration](cbt_integration_inventory.md) Topic** for more information about how to integrate
+Ninja Combat and Ninja Inventory.
+
 ## Weapon Cosmetics Component
 
 This additional Component is responsible for handling usual cosmetics for Weapons, such as **Particles**, **Sounds** 
@@ -176,6 +179,7 @@ and **Camera Shakes**. It is added by default to all **Weapons**.
     <category ref="related">
         <a href="cbt_melee_combat.md" summary="Melee weapons and Melee Scans.">Melee Combat</a>
         <a href="cbt_ranged_combat.md" summary="Ranged weapons and Projectiles.">Ranged Combat</a>
+        <a href="cbt_integration_inventory.md" summary="Inventory and Combat integration.">Inventory Integration</a>
     </category>
     <category ref="external">
         <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine" summary="Official documentation for Gameplay Ability System.">Gameplay Ability System</a>

@@ -19,6 +19,9 @@
         <toc-element topic="cbt_damage_and_defense.md"/>
         <toc-element topic="cbt_poise_and_stagger.md"/>
         <toc-element topic="cbt_opportunity_system.md"/>
+        <toc-element topic="cbt_user_interface.md"/>
+        <toc-element topic="cbt_actor_pooling.md"/>
+        <toc-element topic="cbt_extensions.md"/>
         <toc-element topic="cbt_ability_system.md">
             <toc-element topic="cbt_attributes.md"/>
             <toc-element topic="cbt_effects.md"/>
@@ -28,15 +31,12 @@
                 <toc-element topic="cbt_ability_target_lock.md"/>
             </toc-element>
         </toc-element>
-        <toc-element topic="cbt_user_interface.md"/>
-        <toc-element topic="cbt_actor_pooling.md"/>
-        <toc-element topic="cbt_extensions.md"/>
         <toc-element topic="cbt_integration.md">
             <toc-element topic="cbt_integration_factions.md"/>
             <toc-element topic="cbt_integration_input.md"/>
             <toc-element topic="cbt_integration_inventory.md"/>
         </toc-element>
-        <toc-element toc-title="How-To">
+        <toc-element toc-title="How-To" hidden="true">
             <toc-element topic="cbt_create_melee_weapon.md"/>
             <toc-element topic="cbt_create_melee_attacks.md"/>
             <toc-element topic="cbt_create_attack_combo.md"/>
@@ -80,7 +80,7 @@
         <toc-element topic="ipt_input_detection.md"/>
         <toc-element topic="ipt_input_buffer.md"/>
         <toc-element topic="ipt_debugger_and_logs.md"/>
-        <toc-element toc-title="How-To">
+        <toc-element toc-title="How-To" hidden="true">
             <toc-element topic="ipt_replace_default_inputs.md"/>
             <toc-element topic="ipt_manage_contexts.md"/>
         </toc-element>
@@ -132,7 +132,7 @@
         </toc-element>
         <toc-element topic="inv_save_and_load.md"/>
         <toc-element topic="inv_debugger_and_logs.md"/>
-        <toc-element toc-title="How-To">
+        <toc-element toc-title="How-To" hidden="true">
             <toc-element topic="inv_create_containers.md"/>
             <toc-element topic="inv_create_item.md"/>
             <toc-element topic="inv_configure_inventory_manager.md"/>

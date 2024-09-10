@@ -4,62 +4,44 @@
 <tldr>
     <ul>
         <li><b>Download</b> and <b>install</b> the plugin.</li>
-        <li>Make sure that all <b>pre-requisites</b> are executed before configuring the Combat System.</li>
-        <li>If your project uses <b>C++</b>, make sure to add the correct <b>modules</b> to your <code>Build.cs</code> file.</li>
+        <li>Ensure that all <b>pre-requisites</b> are completed before configuring the Combat System.</li>
+        <li>If your project uses <b>C++</b> make sure to add the correct <b>modules</b> to your `Build.cs` file.</li>
         <li>Configure the <b>Ability System</b> elements used by the Combat System.</li>
-        <li>Add the necessary <b>Components</b> and <b>Interfaces</b> to your Character.</li>
+        <li>Add the necessary <b>components</b> and <b>interfaces</b> to your character.</li>
     </ul>
 </tldr>
 
 This page will walk you through the **pre-requisites** and **steps** necessary to enable the **Ninja Combat** plugin.
 
 ## Pre-Requisites
+
 Before setting up the component, there are some pre-requisites to address.
 
-First, a working **Gameplay Ability System** setup:
+First, ensure you have a working **Gameplay Ability System** setup:
 1. Add the **Ability System Component** to your Pawn or Player State.
 2. Properly implement the **Ability System Interface** on your base class.
-3. You should be able to add **Attribute Sets**, **Gameplay Effects** and **Gameplay Abilities**.
+3. Ensure that you can add **Attribute Sets**, **Gameplay Effects**, and **Gameplay Abilities**.
 4. If you are using [Ninja G.A.S.](gas_overview.md), configure it first.
 
-Then, make sure that you have the **Input** configured:
+Next, make sure you have the **input** configured:
 1. Your Player Character is ready to handle **Input Actions**.
 2. If you are using [Ninja Input](ipt_overview.md), configure it first.
 
 ## Installing the Plugin
 
-Once acquired, the plugin can be installed via the **Epic Games Launcher**. As with any **Code Plugin**, it can be
-installed to any compatible engine version.
+Once acquired, you can install the plugin via the **Epic Games Launcher**. Like any **code plugin**, it can be installed 
+to any compatible engine version.
 
-Once installed, create or open your project and navigate to **Edit** and then **Plugins**. In the search bar, type
-_Combat_ and the **Ninja Combat** plugin should appear. Tick the checkbox and restart the engine.
+Once installed, create or open your project and navigate to **Edit** and then **Plugins**. In the search bar, type _Combat_ 
+and the **Ninja Combat** plugin should appear. Tick the checkbox and restart the engine.
 
 ## C++ Modules
 
-If you plan to work with C++ and use classes from the Combat System, ensure you add the following modules to your
-`Build.cs` file:
+If you're working with C++ and using classes from the Combat System, ensure you add the following modules to your `Build.cs` file:
 
 <tabs group="sample">
     <tab title="Build.cs">
-        <code-block lang="c#">
-        PublicDependencyModuleNames.AddRange(new []
-        {
-            "CommonUI",
-            "GameplayAbilities",
-            "GameplayTags",
-            "GameplayTasks",
-            "InputCore",
-            "ModelViewViewModel",
-            "NinjaCombat",
-            "NinjaCombatCamera",
-            "NinjaCombatCore",
-            "NinjaCombatActorPool",
-            "NinjaCombatUI",
-            "NinjaCombatActorWeapon",
-            "StructUtils",
-            "UMG"
-        });
-        </code-block>
+        <code-block lang="c#" src="cbt_build.cs"/>
     </tab>
 </tabs>
 
@@ -157,3 +139,24 @@ character, either in C++ or in your Blueprint.
 
 You are not required to use this Movement Component in your project, and it is also fine to use a completely different
 Movement Solution.
+
+## Migration: 1.0 to 2.0
+
+Version 2.0 introduced many updates to the Combat System. It also drastically simplified the configuration. It’s easier to have a separate copy for the migration, so you can paste some contents over.
+
+> **Back up first!** 
+> 
+>Before migrating to version 2.0, it is highly recommended that you back up your project!  
+{style="warning"}
+
+1. Many combat components were **merged**. You only need to add `NinjaCombatManagerComponent` and `NinjaCombatWeaponManagerComponent`, along with the `CombatSystemInterface` to get started.
+2. The **Weapon Manager** was improved to be usable out-of-the-box. Review extensions to this component, as they may no longer be needed.
+3. The **Opportunity Manager**, along with all related components, was removed from the system. Please check the new Opportunity System to learn how to configure Opportunity Attacks.
+4. **Weapon Actors** have a default Scene Component and already implement Melee and Projectile interfaces. They have many properties available to adjust their behaviors.
+5. Functions for **Weapon Cosmetics**, from Melee and Ranged interfaces, had their signature changed. If you have custom implementations for these interfaces, review them accordingly.
+6. In a C++ project, make sure to review your modules in the `Build.cs` file.
+7. The **death flow** was reviewed to be more uniform across different sources of fatal damage. Review any changes to this flow.
+8. The Poise and Stagger system was inverted, so Poise decreases, instead of increasing. This addresses an issue where characters would not react to damage in version 1.0. Be sure to review your **Combat Attributes** using the new JSON reference.
+9. The **Dissolve Handler** is more flexible, supporting multiple parameters and curves.
+10. The **Forward Reference** can be any Scene Component, and it can be created automatically.
+11. The Movement Manager has been converted into a Character Movement Component.
