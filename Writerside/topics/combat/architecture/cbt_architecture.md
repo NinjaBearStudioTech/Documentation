@@ -16,5 +16,5 @@ walk you through these, and related objects, so you can extend and integrate the
 performance by reducing the cost of frequently spawning and destroying actors.
 
 **[User Interface](cbt_user_interface.md)**
-: The Combat System manages key information, including 'vitals', 'damage', and other status effects. UMG View Models
+: The Combat System manages key information, including 'vitals', 'damage', and other status effects. UMG Viewmodels
 are available to expose such information to your user interface.

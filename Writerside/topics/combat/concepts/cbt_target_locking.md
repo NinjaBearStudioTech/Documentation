@@ -1,4 +1,4 @@
-# Target Lock Ability
+# Target Locking
 <primary-label ref="combat"/>
 
 <tldr>
@@ -26,6 +26,8 @@ also end the Target Lock Ability's execution.
 
 ## Target Manager Component
 
+The main **Combat Manager** component is the default implementation for the Target Manager, which is defined by the
+`CombatTargetManager` Interface.
 
 ## Combat Marker Actor
 

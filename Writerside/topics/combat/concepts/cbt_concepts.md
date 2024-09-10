@@ -27,3 +27,7 @@ Blocking, and Invincibility are considered to determine the final damage output.
 **[Poise and Stagger](cbt_poise_and_stagger.md)**
 : A system that works in tandem with the Damage system, but can be enabled or disabled as needed. It is commonly used in 
 conjunction with the Opportunity System.
+
+**[Target Locking](cbt_target_locking.md)**
+: The Target Locking functionality allows combatants, players or AI, to lock on a target, which helps with Motion Warping
+and targeting, plus it can also notify current targets, so they can be considered _in combat_.
