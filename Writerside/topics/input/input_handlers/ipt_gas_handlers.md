@@ -4,14 +4,24 @@
 These Input Handlers are meant to be used with the **Gameplay Ability System**, to **Activate** or **Cancel** Abilities
 and **Send Gameplay Events**.
 
-> **Accessing the Ability System Component**
-> 
-> Input Handlers related to the Gameplay Ability System can retrieve the owner's Ability System Component from the **Input
+## Accessing the Ability System Component
+
+Input Handlers related to the Gameplay Ability System can retrieve the owner's Ability System Component from the **Input
 Manager**, which is a valid implementation of `AbilitySystemInterface`.
->
+
+> **ASC Source**
+> 
 > By default, the Input Manager provides the Ability System Component assigned to the **Pawn** related to it, regardless
 > if it was added to a **Controller** or a **Pawn**.
-{style="note"}
+
+<tabs group="sample">
+    <tab title="Blueprint">
+        <img src="ipt_retrieve_asc.png" alt="Retrieving the ASC" thumbnail="true" border-effect="line"/>
+    </tab>
+    <tab title="C++">
+        <code-block lang="c++" src="ipt_retrieve_asc.cpp"/>
+    </tab>
+</tabs>
 
 ## Activate Abilities
 
