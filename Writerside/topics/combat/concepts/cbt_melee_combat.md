@@ -82,11 +82,100 @@ Montage** played by the Attack Ability.
 
 ### Melee Scan Notify State
 
+The most common way to trigger the appropriate **Melee Scan Gameplay Events** are using the equivalent **Animation Notify
+State**, added to the **Animation Montage** set in the Attack Ability.
 
+<img src="cbt_melee_anim_notify.png" alt="Melee Scan Notify State" border-effect="line" thumbnail="true"/>
 
-### Melee Scan Transfer Object
+This Animation Notify State has important properties to know about:
+
+| Property           | Description                                                                                                                   |
+|--------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| Source             | Determines if this Melee Scan happens from the **owner** or from a **weapon**.                                                |
+| Weapon Query       | For Melee Scans happening from the **weapon**, this query is used to retrieve the correct weapon from the **Weapon Manager**. |
+| Scan Socket Prefix | A prefix used to collect all sockets in the source, user to perform the scan.                                                 |
+| Scan Channel       | Channel used for the scan. You probably created a dedicated channel during the [initial setup](cbt_setup.md).                 |
+| Scan Mode          | How the scan is performed (i.e. _line traces_ or _shape sweeps_. Appropriate settings will be shown for each option.          |
+| Melee Hit Override | An optional **Gameplay Effect** that overrides the one set in the Ability or provided by the Source.                          |
+| Melee Scan Class   | The class containing the Melee Scan data and logic.                                                                           |
+
+### Melee Scan Instances
+
+This object is used to transfer data from the animation and the correct mesh, to the Attack Ability and its internal Melee 
+Scan Task. It also contains the logic to perform scans using the values provided to its properties.
+
+If you need to **modify the Melee Scan logic**, this is the place to look into. You can set a Melee Scan Class to **each**
+Melee Scan Animation Notify State, or **globally**, in the **Project Settings** for Ninja Combat.
+
+> **Modifying the Melee Scan**
+> 
+> You can modify the Melee Scan logic executed by the Melee Scan Class in the `ScanForTargets` function. This function
+> can be modified in Blueprints or C++.
+
+## Motion Warping
+
+Melee Attacks can benefit from **Motion Warping**, which is a technique where the **Root Motion** of the animation is 
+modified to reach or rotate to a give target.
+
+Use this feature to achieve "_stickiness_" in combat, ensuring that attackers will reach their targets and connect their
+hits. 
+
+### Motion Warping Component
+
+Motion Warping is an **optional feature**. To opt-in, first you need to add the `NinjaCombatMotionWarpingComponent`, or
+another component that implements `CombatMotionWarpingInterface` to your character, and then return this component from 
+the `GetMotionWarpingComponent` function, in the `CombatSystemInterface`.
+
+### Motion Warping Notify State
+
+Next, you must add the **Motion Warping Notify State** to your animation and set the appropriate values to it. This
+Notify State is provided by the default Motion Warping implementation in Unreal Engine, and you can read more about it
+in the [official documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/motion-warping-in-unreal-engine).
+
+<img src="cbt_melee_motion_warping.png" alt="Motion Warping Notify State" border-effect="line" thumbnail="true"/>
+
+Here are a few important notes, related to the Combat System design:
+
+1. Make sure that the **Warp Target Name** matches between the Notify State and the Attack Ability.
+2. The length of the Notify State determines how fast your character will reach its target. You probably want to make that happen **before the Melee Scan**.
+3. Depending on your animation, you might want to use yet another Motion Warping Notify State to allow the character to continue tracking the target **during the attack**.
+4. The Attack Ability can apply an **offset** to the target, so it can better adjust to certain weapon ranges.
+
+### Motion Warp Target Provider
+
+Back to the Attack Ability, you need to make sure that Motion Warping is **Enabled**, the **Warp Target Name** matches
+your Notify State, any **Warp Offset** is configured if applicable and finally, the appropriate **Warp Target Provider**.
+
+The **Default Target Provider** will simply collect the current **Combat Target**, usually acquired by the [Target Lock System](cbt_target_locking.md).
+This can be enough for some scenarios, but depending on how you configure your ranges, this can lead to some long root
+motion stretches.
+
+In cases where you need some fine-tuning for the target, you can use the **Targeting System Provider**. This alternative
+uses a **Targeting Preset** to determine the best target to warp to.
+
+> **Targeting Presets**
+> 
+> These are **Data Assets** created from the `TargetingPreset` class. This is part of the Unreal Engine's 
+> [Gameplay Targeting System](https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-targeting-system-in-unreal-engine).
+
+The Combat System provides additional **Selectors** and **Filters** for the Targeting System that can be used in this
+scenario.
+
+<img src="cbt_melee_targeting_preset.png" alt="Motion Warping Notify State" border-effect="line" thumbnail="true"/>
+
+The example above uses two tasks.
+
+1. A task that **selects** the current target acquired by the [Target Lock System](cbt_target_locking.md).
+2. A task that **filters** targets by distance. If the target is too far, then the attacker should not warp. 
+
+> **Prioritizing Current Targets**
+> 
+> For Melee Attacks using the Targeting System, make sure that **Prioritize Current Targets** in the Ability is disabled.
+> That would always prioritize the current target and discard the Targeting Preset.
 
 ## Melee Weapon Interface
+
+
 
 ### Melee Hit Cosmetics
 

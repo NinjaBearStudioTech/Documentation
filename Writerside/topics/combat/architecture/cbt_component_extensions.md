@@ -35,8 +35,10 @@ You only need to **override functions that are relevant to your new components**
 
 ## Conditional Component Creation
 
-Another way to provide custom components, but when some per-character logic is required, is to override the appropriate
-**Factory Methods** in the **Combat Manager Component**. All appropriate Factory Methods are listed in the table.
+Another way to provide custom components, when some per-character logic is required, is to override the appropriate
+**Factory Methods** in the **Combat Manager Component**. 
+
+All appropriate Factory Methods are listed in the table above.
 
 ## Movement Component
 
