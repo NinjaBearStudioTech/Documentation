@@ -14,6 +14,40 @@
 The **Combo System** is designed to create fluid and dynamic **combat sequences** by chaining attacks together, based on 
 **player input**. It supports **branching** into different attacks, based on certain pre-defined **conditions**.
 
+<code-block lang="mermaid">
+sequenceDiagram
+    PlayerInput->>ComboAbility: input received
+    activate ComboAbility
+        ComboAbility->>ComboManager: start combo
+        activate ComboManager
+            ComboManager->>ComboSetupData: get FSM
+            ComboManager-->>ComboAbility: combo FSM
+        deactivate ComboManager
+        loop In Combo
+            ComboAbility->>ComboManager: in combo window?
+            ComboManager-->>ComboAbility: yes
+            ComboAbility->>ComboManager: advance combo
+            activate ComboManager
+                ComboManager->>ComboManager: increment combo
+                ComboManager->>ComboFSM: trigger transition event
+                activate ComboFSM
+                    ComboFSM->CombatAbility: activate
+                    activate CombatAbility
+                        CombatAbility->>CombatAbility: do stuff
+                        CombatAbility-->>ComboFSM: finish state
+                    deactivate CombatAbility
+                deactivate ComboFSM    
+            deactivate ComboManager
+        end
+        activate ComboFSM
+            ComboFSM-->>ComboManager: finish execution
+        deactivate ComboFSM
+        activate ComboManager
+            ComboManager-->>ComboAbility: end ability
+        deactivate ComboManager
+    deactivate ComboAbility
+</code-block>
+
 ## Combo Manager
 
 The **Combo Manager** Component is responsible for controlling the **Combo Window** state, the **Combo Count** and

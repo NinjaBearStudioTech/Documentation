@@ -15,6 +15,16 @@ Action to be provided as one of the Payload's **Optional Objects**, so it can de
 This entire setup, along with all payload requirements, is implemented by default on Ninja Input, so no additional 
 input handling code is required.
 
+## Disable Input
+
+Some Gameplay Abilities will automatically add tags to their avatar that are recognized by **Ninja Input**.
+
+The **Opportunity Attack Ability** adds tags to its owner that, by default, disables inputs for **movement** and **camera**.
+This is done since the Opportunity Attack is expected to take control over both the character's movement and camera. 
+
+The **Target Lock Ability** adds tags to its owner that, by default, disables inputs for the **camera**. This is done
+since the Target Lock is expected to always focus on the current target, so the camera must be still.
+
 ## Input Buffer
 
 Ninja Input also provides an **[Animation-Based Input Buffer](ipt_input_buffer.md)**, a common requirement for certain 
