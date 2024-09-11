@@ -14,20 +14,26 @@
 
 ### Targeting Presets
 
+
+
 ### Gameplay Events
 
 The **Target Lock** ability can receive a new target or clear its current one via **Gameplay Events**.
 
-A **new target** can be set by sending a Gameplay Event using the `Combat.Event.Target.Acquired`. The new target will be
-obtained from the first **optional object**.
+| Gameplay Event                  | Description                                                                                  |
+|---------------------------------|----------------------------------------------------------------------------------------------|
+| `Combat.Event.Target.Acquired`  | A **new target** is set, obtained from the first **Optional Object** in the event's Payload. |
+| `Combat.Event.Target.Dismissed` | The current target is **cleared**. This will also end the Target Lock Ability's execution.   |
 
-The current target can be **cleared** by sending a Gameplay Event using the `Combat.Event.Target.Dismissed`. This will
-also end the Target Lock Ability's execution.
 
 ## Target Manager Component
 
 The main **Combat Manager** component is the default implementation for the Target Manager, which is defined by the
-`CombatTargetManager` Interface.
+`CombatTargetManager` Interface. This implementation provides the following properties that can adjust the Target Lock's
+behavior:
+
+- **Control Rotation**: Enables or disables automatic rotation of the Controller to face the current target.
+- **Predict Target**: Allows the local player to predict the target, before waiting for server confirmation.
 
 ## Combat Marker Actor
 
