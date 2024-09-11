@@ -41,11 +41,14 @@ Setups** and **routing Input Actions to appropriate Input Handlers**.
 > In OOP terms, the Input Manager implements the **Chain of Responsibility** pattern. It allows all Handlers to evaluate
 > incoming Inputs to decide on whether they will execute or ignore them.
 
-The Input Manager is also an implementation of the **Ability System Interface**. It will attempt to retrieve the Ability
-System Component from the current **Pawn** (regardless if the Input Manager is added to a Pawn or Controller).
+The Input Manager can be added to the **Player Controller**, which is recommended, or **Pawn/Character**. Regardless, 
+you can always access the Pawn related to the Input Manager by calling `GetPawn`.
 
-This also means that within an **Input Handler**, you can always access the Ability System Component from the Input
-Manager provided to all functions.
+The Input Manager is also an implementation of the **Ability System Interface**. It will attempt to retrieve the Ability
+System Component from the current **Pawn**.
+
+In an **Input Handler**, the Ability System Component can be obtained from the **Input Manager**, using the 
+`GetAbilitySystemComponent` function, available in both Blueprint and C++.
 
 ### Component Initialization
 

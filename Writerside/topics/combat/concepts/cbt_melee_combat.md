@@ -3,15 +3,15 @@
 
 <tldr>
     <ul>
-        <li>The Weapon or Character must implement the <b>Melee Interface</b>.</li>
+        <li>The weapon or character must implement the <b>Melee Interface</b>.</li>
         <li>The <b>Attack Ability</b> is used to execute <b>Melee Attacks</b>. Once it activates, it will listen to many <b>Gameplay Events</b>.</li>
         <li><b>Melee Scans</b> events are sent usually by the <b>Melee Scan Notify</b> and will initiate a per-frame <b>Scan</b>.</li>
         <li>At the end of each frame, the <b>Damage Gameplay Effect</b> is applied to all targets collected by the <b>Melee Scan</b>.</li>
     </ul>
 </tldr>
 
-The **Melee Combat** functionality is designed to connect animations, scans and targeting in a cohesive way so that 
-Melee Attacks can be configured in multiple ways, for many types of combat systems.
+The **Melee Combat** functionality is designed to connect animations, scans, and targeting in a cohesive way so that Melee 
+Attacks can be configured in various ways for different types of combat systems.
 
 <code-block lang="mermaid">
 sequenceDiagram
@@ -51,38 +51,34 @@ sequenceDiagram
 
 ## Attack Ability
 
-A Melee Combat starts with the **Attack Ability**. This Ability defines important elements for a **Melee Attack**. 
+A Melee Attack starts with the **Attack Ability**. This Ability defines important elements for a **Melee Attack**.
 
 <img src="cbt_melee_ability.png" alt="Melee Ability" border-effect="line" thumbnail="true"/>
 
-First, the **Animation Provider** determines which animation should be played during the Attack. The default animation
-provider uses a single Animation Montage and a Section Name, but you could create other Animation Providers that will
-pick certain animations using any **criteria**, such as the type of Weapon currently in use.
+First, the **Animation Provider** determines which animation should be played during the attack. The default animation 
+provider uses a single animation montage and section name, but you could create other Animation Providers that will pick certain animations using any **criteria**, such as the type of weapon currently in use.
 
-The next section, **Motion Warping**, allows you to define a way to collect targets, via the **Targeting Preset** to 
-warp the animation. **Motion Warping** is a technique where the animation's **Root Motion** is scaled enough to travel a 
-specific distance and/or to rotate to a certain target. You can also apply a **Warp Offset** that will reduce the 
-distance to travel between the attacker and the target.
+The next section, **Motion Warping**, allows you to define a way to collect targets, via the **Targeting Preset** to warp 
+the animation. **Motion Warping** is a technique where the animation's **Root Motion** is scaled enough to travel a specific distance or rotate to a certain target. You can also apply a **Warp Offset** that will reduce the distance to travel between the attacker and the target.
 
 ## Melee Scan
 
-Once the selected Animation starts, it will listen for certain **Gameplay Events**. The ones relevant to Melee Attacks
-are:
+Once the selected Animation starts, it will listen for certain **Gameplay Events**. The ones relevant to Melee Attacks are:
 
 | Gameplay Event                 | Description                                                                                                                 |
 |--------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | `Combat.Event.MeleeScan.Start` | Starts the Melee Scan Task. The Melee Scan instance must be present in the **Payload**, as one of its **Optional Objects**. |
 | `Combat.Event.MeleeScan.Stop`  | Stops the Melee Scan Task.                                                                                                  |
 
-These Gameplay Events can be triggered by any object in the system, the only requirement is having a valid **Melee Scan
-Transfer Object** in the payload.
+These Gameplay Events can be triggered by any object in the system, the only requirement is having a valid **Melee Scan 
+Instance** in the payload.
 
-The most common way to trigger these events is via the **Melee Scan Notify State**, which can be added to the **Animation
-Montage** played by the Attack Ability.
+The most common way to trigger these events is through the **Melee Scan Notify State**, which can be added to the 
+**Animation Montage** played by the Attack Ability.
 
 ### Melee Scan Notify State
 
-The most common way to trigger the appropriate **Melee Scan Gameplay Events** are using the equivalent **Animation Notify
+The most common way to trigger the appropriate **Melee Scan Gameplay Events** is using the equivalent **Animation Notify 
 State**, added to the **Animation Montage** set in the Attack Ability.
 
 <img src="cbt_melee_anim_notify.png" alt="Melee Scan Notify State" border-effect="line" thumbnail="true"/>
@@ -93,7 +89,7 @@ This Animation Notify State has important properties to know about:
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | Source             | Determines if this Melee Scan happens from the **owner** or from a **weapon**.                                                |
 | Weapon Query       | For Melee Scans happening from the **weapon**, this query is used to retrieve the correct weapon from the **Weapon Manager**. |
-| Scan Socket Prefix | A prefix used to collect all sockets in the source, user to perform the scan.                                                 |
+| Scan Socket Prefix | A prefix used to collect all sockets in the source, used to perform the scan.                                                 |
 | Scan Channel       | Channel used for the scan. You probably created a dedicated channel during the [initial setup](cbt_setup.md).                 |
 | Scan Mode          | How the scan is performed (i.e. _line traces_ or _shape sweeps_. Appropriate settings will be shown for each option.          |
 | Melee Hit Override | An optional **Gameplay Effect** that overrides the one set in the Ability or provided by the Source.                          |
@@ -101,36 +97,34 @@ This Animation Notify State has important properties to know about:
 
 ### Melee Scan Instances
 
-This object is used to transfer data from the animation and the correct mesh, to the Attack Ability and its internal Melee 
-Scan Task. It also contains the logic to perform scans using the values provided to its properties.
+This object is used to transfer data from the animation and the correct mesh, to the Attack Ability and its internal 
+Melee Scan Task. It also contains the logic to perform scans using the values provided to its properties.
 
-If you need to **modify the Melee Scan logic**, this is the place to look into. You can set a Melee Scan Class to **each**
+If you need to **modify the Melee Scan logic**, this is the place to look into. You can set a Melee Scan Class to **each** 
 Melee Scan Animation Notify State, or **globally**, in the **Project Settings** for Ninja Combat.
 
 > **Modifying the Melee Scan**
-> 
-> You can modify the Melee Scan logic executed by the Melee Scan Class in the `ScanForTargets` function. This function
+>
+> You can modify the Melee Scan logic executed by the Melee Scan Class in the `ScanForTargets` function. This function 
 > can be modified in Blueprints or C++.
 
 ## Motion Warping
 
 Melee Attacks can benefit from **Motion Warping**, which is a technique where the **Root Motion** of the animation is 
-modified to reach or rotate to a give target.
+modified to reach or rotate to a given target.
 
-Use this feature to achieve "_stickiness_" in combat, ensuring that attackers will reach their targets and connect their
-hits. 
+Use this feature to achieve "_stickiness_" in combat, ensuring that attackers will reach their targets and connect their 
+hits.
 
 ### Motion Warping Component
 
-Motion Warping is an **optional feature**. To opt-in, first you need to add the `NinjaCombatMotionWarpingComponent`, or
-another component that implements `CombatMotionWarpingInterface` to your character, and then return this component from 
-the `GetMotionWarpingComponent` function, in the `CombatSystemInterface`.
+Motion Warping is an **optional feature**. To opt-in, first, you need to add the `NinjaCombatMotionWarpingComponent`, or 
+another component that implements `CombatMotionWarpingInterface` to your character, and then return this component from the `GetMotionWarpingComponent` function, in the `CombatSystemInterface`.
 
 ### Motion Warping Notify State
 
-Next, you must add the **Motion Warping Notify State** to your animation and set the appropriate values to it. This
-Notify State is provided by the default Motion Warping implementation in Unreal Engine, and you can read more about it
-in the [official documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/motion-warping-in-unreal-engine).
+Next, you must add the **Motion Warping Notify State** to your animation and set the appropriate values to it. This Notify 
+State is provided by the default Motion Warping implementation in Unreal Engine, and you can read more about it in the [official documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/motion-warping-in-unreal-engine).
 
 <img src="cbt_melee_motion_warping.png" alt="Motion Warping Notify State" border-effect="line" thumbnail="true"/>
 
@@ -141,24 +135,24 @@ Here are a few important notes, related to the Combat System design:
 3. Depending on your animation, you might want to use yet another Motion Warping Notify State to allow the character to continue tracking the target **during the attack**.
 4. The Attack Ability can apply an **offset** to the target, so it can better adjust to certain weapon ranges.
 
-### Motion Warp Target Provider
+### Motion Warping Target Provider
 
-Back to the Attack Ability, you need to make sure that Motion Warping is **Enabled**, the **Warp Target Name** matches
+Back to the Attack Ability, you need to make sure that Motion Warping is **Enabled**, the **Warp Target Name** matches 
 your Notify State, any **Warp Offset** is configured if applicable and finally, the appropriate **Warp Target Provider**.
 
-The **Default Target Provider** will simply collect the current **Combat Target**, usually acquired by the [Target Lock System](cbt_target_locking.md).
-This can be enough for some scenarios, but depending on how you configure your ranges, this can lead to some long root
-motion stretches.
+The **Default Target Provider** will simply collect the current **Combat Target**, usually acquired by the 
+[Target Lock System](cbt_target_locking.md). This can be enough for some scenarios, but depending on how you configure 
+your ranges, this can lead to some long root motion stretches.
 
-In cases where you need some fine-tuning for the target, you can use the **Targeting System Provider**. This alternative
+In cases where you need some fine-tuning for the target, you can use the **Targeting System Provider**. This alternative 
 uses a **Targeting Preset** to determine the best target to warp to.
 
 > **Targeting Presets**
-> 
+>
 > These are **Data Assets** created from the `TargetingPreset` class. This is part of the Unreal Engine's 
 > [Gameplay Targeting System](https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-targeting-system-in-unreal-engine).
 
-The Combat System provides additional **Selectors** and **Filters** for the Targeting System that can be used in this
+The Combat System provides additional **Selectors** and **Filters** for the Targeting System that can be used in this 
 scenario.
 
 <img src="cbt_melee_targeting_preset.png" alt="Motion Warping Notify State" border-effect="line" thumbnail="true"/>
@@ -166,28 +160,78 @@ scenario.
 The example above uses two tasks.
 
 1. A task that **selects** the current target acquired by the [Target Lock System](cbt_target_locking.md).
-2. A task that **filters** targets by distance. If the target is too far, then the attacker should not warp. 
+2. A task that **filters** targets by distance. If the target is too far, then the attacker should not warp.
 
 > **Prioritizing Current Targets**
-> 
-> For Melee Attacks using the Targeting System, make sure that **Prioritize Current Targets** in the Ability is disabled.
+>
+> For Melee Attacks using the Targeting System, make sure that **Prioritize Current Targets** in the Ability is disabled. 
 > That would always prioritize the current target and discard the Targeting Preset.
+
+### Melee Attack Trails
+<secondary-label ref="wip"/>
+
+This Animation Notify State provides a flexible way to play **Niagara Trails** in the animation, regardless of the 
+weapon currently equipped. This allows for a flexible setup, since multiple weapons can provide their own trails and use 
+the same animation.
+
+This Notify State has the following pre-requisites:
+
+1. The **weapon** must implement the **Melee Interface** and provide a valid **mesh** and **attack trails**.
+2. The provided **mesh** must contain the **start and end sockets** set in the Animation Notify State.
+3. The **Niagara System** must be a valid **trail**, with the appropriate parameters for **trail start and end**.
+
+Once the Attack Trail Notify starts, it will activate the Niagara System. Then, on every tick, it will update the 
+location parameters with the current socket locations in the world. Finally, when the Attack Trail Notify ends, it will deactivate the Niagara System.
+
+## Melee Attack Hits
+
+Once an attack hits a target, the [Damage and Defense System](cbt_damage_and_defense.md) takes over to decide if that 
+target will receive damage and if so, how much.
+
+Successful hits may invoke cosmetics functions on the **attacker** or **weapon**, defined by the **Melee Interface**.
 
 ## Melee Weapon Interface
 
+This interface must be implemented by any _object_ able to participate in melee combat: **pawns** or **weapons**. It 
+contains functions that expose important data and objects, used by the Melee System to properly interact with these actors.
 
+The most important functions to keep in mind are:
 
-### Melee Hit Cosmetics
+| Function                     | Description                                                                 |
+|------------------------------|-----------------------------------------------------------------------------|
+| `GetMeleeMesh`               | Provides the mesh used by **Melee Scans**.                                  |
+| `GetHitEffectClass`          | Provides a Gameplay Effect applied when this actor generates a **hit**.     |
+| `GetHitEffectLevel`          | Level for the Gameplay Effect.                                              |
+| `HandleMeleeDamageCosmetics` | Invoked by the Damage System to render **cosmetics** from a registered hit. |
 
-In the Damage Handling flow, you can have a **Damage Handler** to invoke **Combat Interfaces** on the **Damage Causer**,
-which may likely be a **Weapon**. This triggers the `HandleMeleeDamageCosmetics` function, meant to play cosmetics like
-**Sounds** and **Particles**.
-
-The Default Weapon Actor will provide a preliminary structure to handle these assets, allowing you to set them in the
-weapon's **Details Tab**. They are stored as **soft references** load on-demand.
-
-> **Niagara Parameters**
+> **Gameplay Effect Priority**
 >
-> If you need to set parameters to the Niagara Component, override the `ModifyMeleeHitComponent` function. By default,
-> this function will set: **Target**, **Hit Location** and **Hit Normal**.
+> You can define a Gameplay Effect in three places: Attack Ability, Melee Interface, and Melee Scan.
+>
+> If a Gameplay Effect is present in more than one place, the order of preference is **Melee Scan > Melee Interface > Attack Ability**.
 {style="note"}
+
+### Weapon Actor
+
+The Weapon Actor (`NinjaCombatWeaponActor`) is an **abstract class** that can be used as a base for all your weapons. It 
+properly implements the Melee Weapon Interface, executing the expected logic and exposing properties for adjustment.
+
+The Combat System also provides another base class compatible with the **Inventory System**. For more information, check 
+the [Weapon Actor](cbt_weapon_architecture.md#weapon-actor) and [Inventory Integration](cbt_integration_inventory.md) topics.
+
+The Weapon Actor also comes with the **Weapon Cosmetics Component**, used to handle all cosmetic assets registered to the 
+weapon, such as sounds and particles. This component is also integrated with the **Asset Manager**, supporting soft references and loading by demand.
+
+<seealso style="cards">
+    <category ref="related">
+        <a href="cbt_damage_and_defense.md" summary="Details about the Damage and Defense design.">Damage and Defense</a>
+        <a href="cbt_target_locking.md" summary="Details about the Target Locking design.">Target Locking System</a>
+        <a href="cbt_weapon_architecture.md" summary="Details about the Weapon architecture.">Weapon Architecture</a>
+        <a href="cbt_integration_inventory.md" summary="Details about the integration with the Inventory System.">Inventory Integration</a>
+    </category>
+    <category ref="external">
+        <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine" summary="Official documentation for the Gameplay Ability System.">Gameplay Ability System</a>
+        <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-targeting-system-in-unreal-engine" summary="Official documentation for the Gameplay Targeting System.">Gameplay Targeting System</a>
+        <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/motion-warping-in-unreal-engine" summary="Official documentation for Motion Warping.">Motion Warping</a>
+    </category>
+</seealso>

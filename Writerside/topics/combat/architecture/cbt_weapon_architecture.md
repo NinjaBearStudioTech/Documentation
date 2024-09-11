@@ -33,7 +33,7 @@ in how they are described, identifying **usage scenarios** or other **relevant t
 
 ### Default Weapon Actor
 
-You can start implementing your weapons using the provided **Weapon Actor** (`ANinjaCombatWeaponActor`). It implements
+You can start implementing your weapons using the provided **Weapon Actor** (`NinjaCombatWeaponActor`). It implements
 the required **Weapon Interface**, exposing the **Gameplay Tag Container** so it can be easily configured in the **Details
 Tab**, and it also provides the following features:
 
@@ -61,6 +61,20 @@ Component that you need.
 > 
 > You only need to override these functions if you need to provide a Mesh Component based on **dynamic conditions**,
 > specific for certain weapon types.
+
+#### Weapon Cosmetics Component
+
+This additional Component is responsible for handling usual cosmetics for Weapons, such as **Particles**, **Sounds**
+and **Camera Shakes**. It is added by default to all **Weapons** and **Projectiles**. If your pawns are also able to
+perform attacks, then they could benefit from it as well.
+
+This component is also integrated with the **Asset Manager**, supporting **soft references** and loading on demand.
+
+> **Niagara Parameters**
+>
+> If you need to set values to parameters in the Niagara Component, override the `ModifyMeleeHitComponent` function. 
+> By default, this function will set: `user.Target`, `user.HitLocation` and `user.HitNormal`.
+{style="note"}
 
 ### Equipment Weapon Actor
 
@@ -169,11 +183,6 @@ to remove the **Default Weapon Manager** if you added it before, since this adap
 
 Check the **[Inventory Integration](cbt_integration_inventory.md) Topic** for more information about how to integrate
 Ninja Combat and Ninja Inventory.
-
-## Weapon Cosmetics Component
-
-This additional Component is responsible for handling usual cosmetics for Weapons, such as **Particles**, **Sounds** 
-and **Camera Shakes**. It is added by default to all **Weapons**.
 
 <seealso style="cards">
     <category ref="related">
