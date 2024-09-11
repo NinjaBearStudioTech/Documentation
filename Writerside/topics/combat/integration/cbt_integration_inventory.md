@@ -6,21 +6,16 @@ instead of ones registered to the default **Weapon Manager**.
 
 ## Equipment Weapon Manager
 
-In your character class, instead of using the default Weapon Manager, use the **Weapon Equipment Adapter** component 
-(`NinjaCombatEquipmentAdapterComponent`) instead.
-
-1. Replace or remove the original Weapon Manager from your pawn or character.
-2. Return the Weapon Equipment Adapter in the `GetWeaponManagerComponent` function, from `CombatSystemInterface`.
+1. **Replace or remove** the original **Weapon Manager** (`NinjaCombatWeaponManagerComponent`) from your pawn or character.
+2. Implement the `GetWeaponManagerComponent` function, from `CombatSystemInterface`, so it returns the updated Weapon Manager.
 
 ## Weapon Class
 
-Normally, weapons in the Combat System extend from `NinjaCombatWeaponActor`. To integrate with the Inventory System, 
-you need to change that class hierarchy.
+- Modify your Weapon Actors, so they extend from **Equipment Weapon** (`NinjaCombatEquipmentWeaponActor`).
+- Add the `EquipmentActorInterface` to your Weapon Actors. You don't need to implement any functions.
 
-1. Extend from the `NinjaCombatEquipmentWeaponActor` class instead.
-2. Add the `EquipmentActorInterface` to them. 
-
-> **Interface Implementation**
+> **Base Weapon Actor**
 > 
-> You do not need to implement this interface yourself, unless you want to adjust or optimize its functionality.
+> It's highly recommended that you create your base Weapon Class or Blueprint so all your actual Weapon Actors can 
+> extend from it.
 {style=note}

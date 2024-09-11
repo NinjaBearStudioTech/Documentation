@@ -149,14 +149,15 @@ Version 2.0 introduced many updates to the Combat System. It also drastically si
 >Before migrating to version 2.0, it is highly recommended that you back up your project!  
 {style="warning"}
 
-1. Many combat components were **merged**. You only need to add `NinjaCombatManagerComponent` and `NinjaCombatWeaponManagerComponent`, along with the `CombatSystemInterface` to get started.
-2. The **Weapon Manager** was improved to be usable out-of-the-box. Review extensions to this component, as they may no longer be needed.
-3. The **Opportunity Manager**, along with all related components, was removed from the system. Please check the new Opportunity System to learn how to configure Opportunity Attacks.
-4. **Weapon Actors** have a default Scene Component and already implement Melee and Projectile interfaces. They have many properties available to adjust their behaviors.
-5. Functions for **Weapon Cosmetics**, from Melee and Ranged interfaces, had their signature changed. If you have custom implementations for these interfaces, review them accordingly.
-6. In a C++ project, make sure to review your modules in the `Build.cs` file.
-7. The **death flow** was reviewed to be more uniform across different sources of fatal damage. Review any changes to this flow.
-8. The Poise and Stagger system was inverted, so Poise decreases, instead of increasing. This addresses an issue where characters would not react to damage in version 1.0. Be sure to review your **Combat Attributes** using the new JSON reference.
-9. The **Dissolve Handler** is more flexible, supporting multiple parameters and curves.
-10. The **Forward Reference** can be any Scene Component, and it can be created automatically.
-11. The Movement Manager has been converted into a Character Movement Component.
+1. The combat components "Damage", "Defense" and "Target" were **merged** into the unified `NinjaCombatManagerComponent`. You need to add that component, `NinjaCombatWeaponManagerComponent`.
+2. The `CombatSystemInterface` will try to find all components by their interfaces. Right away, you can just implement the getters for the Combat Manager and Weapon Manager. Other functions can be implemented if/when necessary.
+3. The **Weapon Manager** was improved to be usable out-of-the-box. Review extensions to this component, as they may no longer be needed.
+4. The **Opportunity Manager**, along with all related components, was removed from the system. Please check the new Opportunity System to learn how to configure Opportunity Attacks.
+5. **Weapon Actors** have a default Scene Component and already implement Melee and Projectile interfaces. They have many properties available to adjust their behaviors.
+6. Functions for **Weapon Cosmetics**, from Melee and Ranged interfaces, had their signature changed. If you have custom implementations for these interfaces, review them accordingly.
+7. In a C++ project, make sure to review your modules in the `Build.cs` file.
+8. The **death flow** was reviewed to be more uniform across different sources of fatal damage. Review any changes to this flow.
+9. The Poise and Stagger system was inverted, so Poise decreases, instead of increasing. This addresses an issue where characters would not react to damage in version 1.0. Be sure to review your **Combat Attributes** using the new JSON reference.
+10. The **Dissolve Handler** is more flexible, supporting multiple parameters and curves.
+11. The **Forward Reference** can be any Scene Component, and it can be created automatically.
+12. The Movement Manager has been converted into a Character Movement Component.
