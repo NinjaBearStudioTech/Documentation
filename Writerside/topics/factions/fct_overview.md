@@ -15,7 +15,8 @@ not only how your AI Agents react to perceived targets, but also how your world 
 - **Flexible Attitude Resolution**: Attitude Resolution Strategies are extensible, so you can use the provided ones (Simple Team Check and Reputation Tier Check), or create your own.
 - **Designer-Friendly**: Built in C++ but can be configured and extended in Blueprints.
 - **Extensible**: Everything is configurable, extensible or component/interface based. No specific class requirements, which makes it much easier to integrate this plugin with other systems.
-- **Integrated with the Editor**: including a Settings Page, Data Asset Contextual Creation and a new Faction Category for the Gameplay Debugger.
+- **Save System**: Factions can be saved and loaded so players can continue their progress between play sessions.
+- **Integrated with the Editor**: Including a Settings Page, Data Asset Contextual Creation and a new Faction Category for the Gameplay Debugger.
 
 ## Design Pillars
 
@@ -25,4 +26,4 @@ not only how your AI Agents react to perceived targets, but also how your world 
 ## Integrations
 
 - Factions can be used by the **[Ninja Combat](cbt_overview.md)** to enable or disable **Friendly Fire**.
-- Factions can be used by **Ninja Bot** to determine **Attitude** from the **Perception Layer**.
+- Factions can be used by **Ninja Bot** to determine **Attitude** for the **Perception Layer**.
