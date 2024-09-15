@@ -60,7 +60,19 @@
         </toc-element>
     </toc-element>
     <toc-element topic="fct_overview.md">
-        <toc-element toc-title="How-To">
+        <toc-element topic="fct_setup.md"/>
+        <toc-element topic="fct_concepts.md">
+            <toc-element topic="fct_factions_memberships.md"/>
+            <toc-element topic="fct_reputation_tiers.md"/>
+        </toc-element>
+        <toc-element topic="fct_architecture.md">
+            <toc-element topic="fct_faction_database.md"/>
+            <toc-element topic="fct_attitude_solver.md"/>
+            <toc-element topic="fct_bots.md"/>
+            <toc-element topic="fct_save_load.md"/>
+            <toc-element topic="fct_gameplay_debugger.md"/>
+        </toc-element>
+        <toc-element toc-title="How-To" hidden="true">
             <toc-element topic="fct_create_faction.md"/>
             <toc-element topic="fct_configure_tiers.md"/>
             <toc-element topic="fct_configure_memberships.md"/>
@@ -146,5 +158,4 @@
             <toc-element topic="inv_consumables.md"/>
         </toc-element>
     </toc-element>
-    <toc-element topic="guides.md"/>
 </instance-profile>

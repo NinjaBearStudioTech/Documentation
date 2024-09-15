@@ -1,0 +1,72 @@
+[
+  {
+    "Name": "Hated",
+    "DisplayName": "NSLOCTEXT(\"FactionData\", \"tier.hated\", \"Hated\")",
+    "Color":
+    {
+      "B": 25,
+      "G": 0,
+      "R": 190,
+      "A": 255
+    },
+    "MinReputation": 0,
+    "MaxReputation": 999,
+    "Attitude": "Hostile"
+  },
+  {
+    "Name": "Unfriendly",
+    "DisplayName": "NSLOCTEXT(\"FactionData\", \"tier.unfriendly\", \"Unfriendly\")",
+    "Color":
+    {
+      "B": 70,
+      "G": 124,
+      "R": 190,
+      "A": 255
+    },
+    "MinReputation": 1000,
+    "MaxReputation": 1999,
+    "Attitude": "Neutral"
+  },
+  {
+    "Name": "Neutral",
+    "DisplayName": "NSLOCTEXT(\"FactionData\", \"tier.neutral\", \"Neutral\")",
+    "Color":
+    {
+      "B": 52,
+      "G": 177,
+      "R": 190,
+      "A": 255
+    },
+    "MinReputation": 2000,
+    "MaxReputation": 2999,
+    "Attitude": "Neutral"
+  },
+  {
+    "Name": "Friendly",
+    "DisplayName": "NSLOCTEXT(\"FactionData\", \"tier.friendly\", \"Friendly\")",
+    "Color":
+    {
+      "B": 121,
+      "G": 190,
+      "R": 113,
+      "A": 255
+    },
+    "MinReputation": 3000,
+    "MaxReputation": 3999,
+    "Attitude": "Friendly"
+  },
+  {
+    "Name": "Honored",
+    "DisplayName": "NSLOCTEXT(\"FactionData\", \"tier.honored\", \"Honored\")",
+    "Color":
+    {
+      "B": 121,
+      "G": 190,
+      "R": 113,
+      "A": 255
+    },
+    "MinReputation": 4000,
+    "MaxReputation": 4999,
+    "Attitude": "Friendly"
+  }
+]

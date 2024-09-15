@@ -2,7 +2,7 @@
 <primary-label ref="combat"/>
 
 This section includes **high-level concepts** for the Combat System. These elements are provided by an aggregation of 
-multiple technical elements, such as **components** and **abilities**.
+multiple technical elements, such as **components** and **gameplay classes**.
 
 **[Melee Combat](cbt_melee_combat.md)**
 : Melee combat can be executed by a combatant (hand-to-hand combat) or using weapons. The process is the same for both 

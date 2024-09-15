@@ -15,8 +15,17 @@
 The **Opportunity System** is used to implement abilities that can only execute under **certain conditions** and will
 **pair animations** between the **attacker** and **victim**.
 
-## Backstabs and Executions
+## Opportunity Attack Ability
 
+### Finding the Victim
 
+## Contextual Animations
 
-## Parry and Riposte
+### Motion Warping
+
+### Handling Different Targets
+
+## Camera Animations
+
+## Applying Damage
+

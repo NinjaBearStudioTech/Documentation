@@ -51,15 +51,21 @@ sequenceDiagram
 
 ## Attack Ability
 
-A Melee Attack starts with the **Attack Ability**. This Ability defines important elements for a **Melee Attack**.
+A Melee Attack starts with the **Attack Ability**.
 
 <img src="cbt_melee_ability.png" alt="Melee Ability" border-effect="line" thumbnail="true"/>
 
-First, the **Animation Provider** determines which animation should be played during the attack. The default animation 
-provider uses a single animation montage and section name, but you could create other Animation Providers that will pick certain animations using any **criteria**, such as the type of weapon currently in use.
+Within the **Melee Attack** category, you can decide if successful attacks against a target will result in a **Target Lock**,
+and the **Gameplay Effect** to apply on successful hits.
+
+Then, the **Animation Provider** determines which animation should be played during the attack. The default animation 
+provider uses a single animation montage and section name, but you could create other Animation Providers that will pick 
+certain animations using any **criteria**, such as the type of weapon currently in use.
 
 The next section, **Motion Warping**, allows you to define a way to collect targets, via the **Targeting Preset** to warp 
-the animation. **Motion Warping** is a technique where the animation's **Root Motion** is scaled enough to travel a specific distance or rotate to a certain target. You can also apply a **Warp Offset** that will reduce the distance to travel between the attacker and the target.
+the animation. **Motion Warping** is a technique where the animation's **Root Motion** is scaled enough to travel a 
+specific distance or rotate to a certain target. You can also apply a **Warp Offset** that will reduce the distance to 
+travel between the attacker and the target.
 
 ## Melee Scan
 
@@ -107,6 +113,21 @@ Melee Scan Animation Notify State, or **globally**, in the **Project Settings** 
 >
 > You can modify the Melee Scan logic executed by the Melee Scan Class in the `ScanForTargets` function. This function 
 > can be modified in Blueprints or C++.
+
+### Collisions
+
+For Melee Scans, it is ideal to configure your **character meshes** to handle collisions. A good starting point for this
+setup is to have the following settings.
+
+<img src="cbt_melee_collision.png" alt="Melee Collision" border-effect="line" thumbnail="true"/>
+
+1. **Collision Enabled**: You need to _at least_ have **Queries** enabled.
+2. **Collision ResponseS**: Make sure that the **Weapon** channel created during the initial setup is set to **Block**.
+
+> **Ignore Collision on the Capsule**
+>
+> Also make sure to check collisions in your **character capsule**. The **Weapon** channel should be set to **Ignore**.
+{style="note"}
 
 ## Motion Warping
 
@@ -176,9 +197,9 @@ the same animation.
 
 This Notify State has the following pre-requisites:
 
-1. The **weapon** must implement the **Melee Interface** and provide a valid **mesh** and **attack trails**.
-2. The provided **mesh** must contain the **start and end sockets** set in the Animation Notify State.
-3. The **Niagara System** must be a valid **trail**, with the appropriate parameters for **trail start and end**.
+1. The **weapon** must implement the **Melee Interface** and provide a valid **mesh** and **attack trails** implemented as Niagara Systems.
+2. The provided **mesh** must contain the **start and end sockets** set in the Animation Notify State. These are used to update the Niagara System.
+3. The **Niagara System** must be a valid **trail** system, and contain the appropriate parameters for the **trail start and end**.
 
 Once the Attack Trail Notify starts, it will activate the Niagara System. Then, on every tick, it will update the 
 location parameters with the current socket locations in the world. Finally, when the Attack Trail Notify ends, it will deactivate the Niagara System.
