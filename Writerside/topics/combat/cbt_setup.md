@@ -140,6 +140,15 @@ character, either in C++ or in your Blueprint.
 You are not required to use this Movement Component in your project, and it is also fine to use a completely different
 Movement Solution.
 
+<tabs group="sample">
+    <tab title="Blueprint">
+        <img src="cbt_override_movement_component.png" alt="Override default input component" border-effect="line"/>
+    </tab>
+    <tab title="C++">
+        <code-block lang="c++" src="cbt_override_movement_component.cpp"/>
+    </tab>
+</tabs>
+
 ## Migration: 1.0 to 2.0
 
 Version 2.0 introduced many updates to the Combat System. It also drastically simplified the configuration. It’s easier to have a separate copy for the migration, so you can paste some contents over.

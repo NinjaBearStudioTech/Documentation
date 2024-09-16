@@ -26,16 +26,7 @@ If you plan to work with C++ and use classes from the Input System, ensure you a
 
 <tabs group="sample">
     <tab title="Build.cs">
-        <code-block lang="c#">
-        PublicDependencyModuleNames.AddRange(new []
-        {
-            "GameplayAbilities",
-            "GameplayTags",
-            "GameplayTasks",
-            "InputCore",
-            "NinjaInput"
-        });
-        </code-block>
+        <code-block lang="c#" src="ipt_build.cs"/>
     </tab>
 </tabs>
 
