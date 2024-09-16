@@ -41,7 +41,7 @@ If you plan to work with C++ and use classes from the Input System, ensure you a
 
 ## Input Manager
 
-The **[Input Manager](ipt_design_overview.md#input-manager)** must be added to the **Player Controller** or **Character**.
+The **[Input Manager](ipt_input_management.md#input-manager)** must be added to the **Player Controller** or **Character**.
 
 It's usually better to add the Input Manager to the **Player Controller**, but for prototypes or smaller projects, you
 can also add it to the **Player Character**. The advantages for the Player Controller are:

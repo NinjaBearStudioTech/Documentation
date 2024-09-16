@@ -1,6 +1,5 @@
 # Save and Load
 <primary-label ref="inventory"/>
-<secondary-label ref="experimental"/>
 
 ## Saving the Inventory
 To save the Inventory, you need to use the `NinjaInventorySaveGame` class, which is able to serialize the Inventory 
@@ -14,6 +13,7 @@ Here is an example of how to perform a save operation.
 ![Saving the Player Inventory](inv_save.png "Saving the Player Inventory")
 
 ## Loading the Inventory
+<secondary-label ref="wip"/>
 To load the Inventory, once again you need to use the `NinjaInventorySaveGame` class, which is able to deserialize the
 Inventory Manager's properties, along with all Containers, Items and their Fragment Memories.
 

@@ -1,4 +1,4 @@
-# Managing Input Setups
+# Input Setup
 <primary-label ref="input"/>
 
 <tldr>
@@ -10,8 +10,8 @@
     </ul>
 </tldr>
 
-Input Setups bundle a specific **Input Mapping Context** and all its **Input Handlers** together, so they can be added
-to the **Input Manager**.
+Input Setups are **Data Assets** used to bundle an **Input Mapping Context** to all appropriate **Input Handlers**.
+These bundles are provided to the Input Manager either as **default setups** or managed during **runtime**.
 
 You can categorize Input Setups as:
 
