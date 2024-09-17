@@ -64,10 +64,21 @@ will activate and cancel the **Stagger Ability**, which will execute the followi
 2. Block any new actions for the duration of the state.
 3. Cancel Poise Recovery.
 
-> **Looping Animation**
->
-> For the Stagger State, it is recommended that you use an Animation Montage with a Looping section configured. This is
-> useful since the duration of the Stagger State is **dynamic**.
+### Looping Animation
+
+For the Stagger State, it is recommended that you use an Animation Montage with a Looping section configured. This is
+useful since the duration of the Stagger State is **dynamic**. 
+
+The **Animation Instance** provided by the Combat System, `NinjaCombatAnimInstance` already tracks this state, which is
+exposed by the `bStaggered` property.
+
+<img src="cbt_stagger_anim_instance.png" alt="Animation State for Stagger" thumbnail="true" border-effect="line"/>
+
+## Gameplay Effects
+
+The Combat System provides many **Gameplay Effects** used to implement Poise and Stagger.
+
+
 
 ## Tracking Poise and Stagger
 

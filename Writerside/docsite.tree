@@ -16,14 +16,16 @@
             <toc-element topic="cbt_melee_combat.md"/>
             <toc-element topic="cbt_ranged_combat.md"/>
             <toc-element topic="cbt_combo_system.md"/>
-            <toc-element topic="cbt_opportunity_system.md"/>
+            <toc-element topic="cbt_target_locking.md"/>
             <toc-element topic="cbt_damage_and_defense.md"/>
             <toc-element topic="cbt_poise_and_stagger.md"/>
-            <toc-element topic="cbt_target_locking.md"/>
+            <toc-element topic="cbt_opportunity_system.md"/>
         </toc-element>
         <toc-element topic="cbt_architecture.md">
             <toc-element topic="cbt_component_extensions.md"/>
             <toc-element topic="cbt_weapon_architecture.md"/>
+            <toc-element topic="cbt_movement_component.md"/>
+            <toc-element topic="cbt_animation_elements.md"/>
             <toc-element topic="cbt_actor_pooling.md"/>
             <toc-element topic="cbt_user_interface.md"/>
         </toc-element>
@@ -33,6 +35,7 @@
             <toc-element topic="cbt_abilities.md">
                 <toc-element topic="cbt_ability_cast.md"/>
                 <toc-element topic="cbt_ability_evade.md"/>
+                <toc-element topic="cbt_ability_hit_reaction.md"/>
             </toc-element>
         </toc-element>
         <toc-element topic="cbt_integration.md">

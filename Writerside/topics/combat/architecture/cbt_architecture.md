@@ -11,6 +11,14 @@ This section will guide you through these elements, their roles, and how to exte
 : The Weapon Manager and Weapon Actor are two of the most important elements in the Combat System. This topic will 
 walk you through these, and related objects, so you can extend and integrate them with other systems.
 
+**[Animation Elements](cbt_animation_elements.md)**
+: The Combat System provides and uses multiple animation elements in its implementation. This topic will cover them,
+and provide details on how they can be used.
+
+**[Movement Component](cbt_movement_component.md)**
+: Abilities such as the **Target Lock** or **Blocking** are usually tied to changes in the Movement Component, such as
+alternating between "Strafing" and "Forward-Facing" movement, or changing the current maximum speed.
+
 **[Actor Pooling](cbt_actor_pooling.md)**
 : The Actor Pool Manager enables reusing actors such as Projectiles and Targeting Actors, so your project can save 
 performance by reducing the cost of frequently spawning and destroying actors.

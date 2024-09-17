@@ -105,3 +105,16 @@ As usual, damage is applied using **Gameplay Effects**. You have two Animation N
 - **Opportunity Damage**: This Animation Notify can be used to apply immediate damage, regardless of weapon collisions. 
 
 [1]: https://vorixo.github.io/devtricks/contextual-anim/
+
+<seealso style="cards">
+    <category ref="related">
+        <a href="cbt_melee_combat.md" summary="Details about the Melee Combat design.">Melee Combat</a>
+        <a href="cbt_poise_and_stagger.md" summary="Details about the Poise and Stagger design.">Poise and Stagger</a>
+    </category>
+    <category ref="external">
+        <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine" summary="Official documentation for the Gameplay Ability System.">Gameplay Ability System</a>
+        <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-targeting-system-in-unreal-engine" summary="Official documentation for the Gameplay Targeting System.">Gameplay Targeting System</a>
+        <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/motion-warping-in-unreal-engine" summary="Official documentation for Motion Warping.">Motion Warping</a>
+        <a href="https://vorixo.github.io/devtricks/contextual-anim/" summary="Excellent introduction to Contextual Animations, by Vorixo.">Contextual Animation</a>
+    </category>
+</seealso>

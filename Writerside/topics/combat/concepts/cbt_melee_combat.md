@@ -95,7 +95,7 @@ This Animation Notify State has important properties to know about:
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | Source             | Determines if this Melee Scan happens from the **owner** or from a **weapon**.                                                |
 | Weapon Query       | For Melee Scans happening from the **weapon**, this query is used to retrieve the correct weapon from the **Weapon Manager**. |
-| Scan Socket Prefix | A prefix used to collect all sockets in the source, used to perform the scan.                                                 |
+| Scan Socket Prefix | A prefix for all sockets in the source mesh, used to perform the scan.                                                        |
 | Scan Channel       | Channel used for the scan. You probably created a dedicated channel during the [initial setup](cbt_setup.md).                 |
 | Scan Mode          | How the scan is performed (i.e. _line traces_ or _shape sweeps_. Appropriate settings will be shown for each option.          |
 | Melee Hit Override | An optional **Gameplay Effect** that overrides the one set in the Ability or provided by the Source.                          |
@@ -173,20 +173,12 @@ uses a **Targeting Preset** to determine the best target to warp to.
 > These are **Data Assets** created from the `TargetingPreset` class. This is part of the Unreal Engine's 
 > [Gameplay Targeting System](https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-targeting-system-in-unreal-engine).
 
-The Combat System provides additional **Selectors** and **Filters** for the Targeting System that can be used in this 
-scenario.
-
 <img src="cbt_melee_targeting_preset.png" alt="Motion Warping Notify State" border-effect="line" thumbnail="true"/>
 
 The example above uses two tasks.
 
 1. A task that **selects** the current target acquired by the [Target Lock System](cbt_target_locking.md).
-2. A task that **filters** targets by distance. If the target is too far, then the attacker should not warp.
-
-> **Prioritizing Current Targets**
->
-> For Melee Attacks using the Targeting System, make sure that **Prioritize Current Targets** in the Ability is disabled. 
-> That would always prioritize the current target and discard the Targeting Preset.
+2. A task that **filters** targets by distance. If the target is too far, **then the attacker should not warp**.
 
 ### Melee Attack Trails
 <secondary-label ref="wip"/>
@@ -240,8 +232,22 @@ properly implements the Melee Weapon Interface, executing the expected logic and
 The Combat System also provides another base class compatible with the **Inventory System**. For more information, check 
 the [Weapon Actor](cbt_weapon_architecture.md#weapon-actor) and [Inventory Integration](cbt_integration_inventory.md) topics.
 
-The Weapon Actor also comes with the **Weapon Cosmetics Component**, used to handle all cosmetic assets registered to the 
-weapon, such as sounds and particles. This component is also integrated with the **Asset Manager**, supporting soft references and loading by demand.
+The Base Weapon Actor comes with the **Weapon Cosmetics Component**, used to handle all cosmetic assets registered to the 
+weapon, such as sounds and particles. This component is also integrated with the **Asset Manager**, supporting soft 
+references and loading on demand.
+
+Here is an example of a Melee Weapon configured using the framework classes, adding particle and sound effects to hits.
+
+<img src="cbt_melee_weapon.png" alt="Weapon Setup" border-effect="line" thumbnail="true"/>
+
+In the Weapon's Mesh, the correct **sockets** were added, as expected by the **Melee Scan**. Having three sockets spread
+across a blade is a good starting point for scans.
+
+<img src="cbt_melee_weapon_sockets.png" alt="Weapon Sockets" border-effect="line" thumbnail="true"/>
+
+> **Weapon Mesh Collisions**
+>
+> For Melee Scans, no collisions in the Weapon Mesh are necessary.
 
 <seealso style="cards">
     <category ref="related">

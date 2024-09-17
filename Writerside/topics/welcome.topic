@@ -41,7 +41,7 @@
         <secondary>
             <title>Other Topics</title>
             <a href="guides.md" summary="Guides based on the Showcase project.">Guides</a>
-            <a href="https:://ninjabear.studio" summary="Technical deep-dives for games built using our technology.">Ninja Bear Studio Inc.</a>
+            <a href="https://ninjabear.studio" summary="Technical deep-dives for games built using our technology.">Ninja Bear Studio Inc.</a>
         </secondary>
     </section-starting-page>
 </topic>

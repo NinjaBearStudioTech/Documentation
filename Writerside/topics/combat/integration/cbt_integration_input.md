@@ -23,7 +23,8 @@ The **Opportunity Attack Ability** adds tags to its owner that, by default, disa
 This is done since the Opportunity Attack is expected to take control over both the character's movement and camera. 
 
 The **Target Lock Ability** adds tags to its owner that, by default, disables inputs for the **camera**. This is done
-since the Target Lock is expected to always focus on the current target, so the camera must be still.
+since the Target Lock is expected to always focus on the current target, so the camera must be locked, at least on the 
+**yaw** axis.
 
 ## Input Buffer
 
