@@ -9,11 +9,36 @@ knowing, between both systems.
 First, **Ninja Input** greatly simplifies [activating **Gameplay Abilities** and sending **Gameplay Events**](ipt_gas_handlers.md),
 including the option to send Gameplay Events if an Ability is already active, which is very useful for the Combo System.
 
-The **[Combo System](cbt_combo_system.md)** uses **Gameplay Events** to advance the ongoing combo. It requires the Input
-Action to be provided as one of the Payload's **Optional Objects**, so it can determine the appropriate combo branch.
+The **[Combo System](cbt_combo_system.md)** uses **Gameplay Events** to advance the ongoing combo and in some scenarios,
+it may also require the Input Action to be provided as one of the Payload's **Optional Objects**.
 
-This entire setup, along with all payload requirements, is implemented by default on Ninja Input, so no additional 
-input handling code is required.
+You have two ways to implement this using Ninja Input.
+
+### Single Input Handler
+
+You can use an Ability Activation Input Handler and enable the option to **Send Gameplay Events if Active**. This checks 
+if the Gameplay Ability being activated is already active, and if so, sends a Gameplay Event instead.
+
+<img src="cbt_integration_input_combo_01.png" alt="Single Input Handler" thumbnail="true"/>
+
+This is a good approach if your Input Handler directly activates the Combo Ability.
+
+### Two Input Handlers
+
+Alternatively, you can use an Ability Activation Input Handler and a Send Gameplay Event handler. The first one is used
+to activate the Ability and the second one is used to send Gameplay Events.
+
+<img src="cbt_integration_input_combo_02a.png" alt="Activation Input Handler" thumbnail="true"/>
+
+<img src="cbt_integration_input_combo_02b.png" alt="Event Input Handler" thumbnail="true"/>
+
+This is a good approach if you are using the Opportunity Attack and then a combo as a fallback, or others scenarios 
+where the main ability cannot know for sure if the Combo Ability is Active.
+
+> **Event Handlers in Other Keys**
+> 
+> You can also add Event Handlers to other keys, when your combo supports multiple inputs. For example, sending a
+> Gameplay Event with the same button as the Secondary Attack.
 
 ## Disable Input
 

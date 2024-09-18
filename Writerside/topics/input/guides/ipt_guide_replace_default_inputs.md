@@ -1,6 +1,6 @@
 # Replace Default Inputs
 <primary-label ref="input"/>
-<secondary-label ref="how-to"/>
+<secondary-label ref="guide"/>
 
 This how-to will show you how to replace all inputs from the default **Third Person Template** with the equivalent
 **Input Handlers** provided by Ninja Input.
@@ -13,7 +13,7 @@ This how-to will show you how to replace all inputs from the default **Third Per
 
 <procedure title="Configure the Input Setup" collapsible="true">
     <step>In the <b>Content Browser</b>, navigate to your <b>Input</b> folder.</step>
-    <step>Right click to open the <b>Context Menu</b>, navigate to the <b>Input</b> category and select <b>Ninja Input Setup</b>. Name it in a way that it correlates with your <b>Input Mapping Context</b>, for example: <code>IMC_SciFi</code> &rightarrow; <code>IS_SciFi</code>.</step>
+    <step>Right click to open the <b>Context Menu</b>, navigate to the <b>Input</b> category and select <b>Ninja Input Setup</b>. Name it in a way that it correlates with your <b>Input Mapping Context</b>, for example: <code>IMC_Gameplay</code> &rightarrow; <code>IS_Gameplay</code>.</step>
     <step>Open the new <b>Input Setup</b> and add your <b>Input Mapping Context</b>.</step>
     <step>Add three new entries to the <b>Input Handlers</b> list, selecting: <code>Character: Move</code>, <code>Character: Look</code> and <code>Character: Jump</code>.</step>
     <step>For each one of these entries, expand their properties and add the appropriate <b>Input Action</b>.</step>

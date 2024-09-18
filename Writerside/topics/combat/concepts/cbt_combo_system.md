@@ -117,7 +117,7 @@ this example we have `Combat.Event.Combo.Attack.Primary` and `Combat.Event.Combo
 
 ## Combo Ability
 
-The **Combo Ability** orchestrates the **Combo Window Effect** and forwards **Inputs** to the correct **Combo Events**.
+The **Combo Ability** orchestrates the **Combo Window Effect** and forwards **Input Events** to the correct **Combo Events**.
 It can also add other Gameplay Abilities required by the Combo to execute correctly.
 
 <img src="cbt_combo_ability.png" alt="Combo Ability" border-effect="line" thumbnail="true"/>
@@ -127,9 +127,28 @@ least as a _prefix_ to your tag.
 
 In the Combo Section, you will find the following properties:
 
-1. The **State Tree** containing all attacks and their transitions.
-2. The mapping between **Input Actions** and **Combo Events**, allowing primary, secondary or other **branching options**.
-3. **Additional Abilities** required by the combo. They are **added and removed** with the Combo Ability itself.
+| Property                  | Description                                                                                                                  |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| Combo Tree                | The **State Tree Asset** containing all attacks and their transitions.                                                       |
+| Ability Classes           | **Additional Abilities** required by the combo. They are **automatically added and removed**, with the Combo Ability itself. |
+| Event Mode                | How events are transferred to the combo. You can choose between a direct transfer, or a mapping of inputs.                   |
+| Combo Window Effect Class | Gameplay Effect applied to the owner, when the Combo Window is open.                                                         |
+
+### Gameplay Tag Event Mode
+
+When using this **Event Mode**, any incoming Gameplay Events starting with `Combat.Event.Combo` will be forwarded to the
+**State Tree Component**, so it can trigger state transitions for certain events, such as `Combat.Event.Combo.Attack.02`.
+
+This is the **recommended** event mode for most scenarios.
+
+### Input Action Event Mode
+
+<img src="cbt_combo_ability_input.png" alt="Combo Ability Input" border-effect="line" thumbnail="true"/>
+
+When using this **event Mode**, the **Input Action** in the **Event Payload**, obtained from either Optional Object, is
+mapped to a certain Gameplay Tag that will be sent to the **State Tree Component**.
+
+This method is useful for complex combo transitions, where Gameplay Tags are not enough to identify the transitions.
 
 ## Combo Window
 

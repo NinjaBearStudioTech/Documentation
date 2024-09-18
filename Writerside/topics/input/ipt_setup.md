@@ -55,5 +55,5 @@ can also add it to the **Player Character**. The advantages for the Player Contr
 
 The plugin is ready and the next step is to configure your Input Handlers and Setup. 
 
-You can go straight to that by following this **[how-to guide](ipt_replace_default_inputs.md)**, or you can continue to 
+You can go straight to that by following this **[guide](ipt_guide_replace_default_inputs.md)**, or you can continue to 
 the next session to learn more about the system. 
