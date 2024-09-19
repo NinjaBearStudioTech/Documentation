@@ -46,3 +46,12 @@ The Movement Component is a special case, since it overrides the **Character Mov
 created, or directly used by the **Combat Manager Component**.
 
 You can replace the Movement Component using C++ or in your Blueprint. 
+
+<tabs group="sample">
+    <tab title="Blueprint">
+        <img src="cbt_override_movement_component.png" alt="Override default input component" border-effect="line"/>
+    </tab>
+    <tab title="C++">
+        <code-block lang="c++" src="cbt_override_movement_component.cpp"/>
+    </tab>
+</tabs>

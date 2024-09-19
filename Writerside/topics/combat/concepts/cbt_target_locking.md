@@ -120,7 +120,7 @@ whether the owner has a locked target or not.
 
 <seealso style="cards">
     <category ref="related">
-        <a href="cbt_animation_elements.md" summary="Information about animation elements.">Animation Elements</a>
+        <a href="cbt_character_animation.md" summary="Information about animation elements.">Animation Elements</a>
         <a href="cbt_movement_component.md" summary="Details about the Movement Component.">Movement Support</a>
         <a href="cbt_integration_input.md" summary="Integration with Ninja Input.">Ninja Input Integration</a>
     </category>

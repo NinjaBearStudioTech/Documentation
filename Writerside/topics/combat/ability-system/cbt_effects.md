@@ -33,7 +33,13 @@ current Gameplay Attributes. This Calculation is very flexible and supports the 
 
 1. Uses the Base Damage, Critical Hit Change and Critical Hit Damage from Gameplay Attributes.
 2. Allows all these values to be overridden by _Set By Caller Magnitudes_ using the following tags: `Combat.Data.Damage`, `Combat.Data.CriticalHitChance`, `Combat.Data.CriticalHitMultiplier`.
-3. It also allows a deliberate damage modifier that can be used to reduce or boost damage for certain Gameplay Effects.
+3. It also allows a deliberate **Damage Modifier** that can be used to reduce or boost damage for certain Gameplay Effects.
+
+> **Critical Damage**
+> 
+> If you decide to replace the Damage Calculation class, make sure to tag the Gameplay Spec with `Combat.Effect.Damage.Critical`,
+> whenever a Critical Hit happens, so the system can differentiate those hits and react accordingly.
+{style="note"}
 
 ## Defense
 
