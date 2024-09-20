@@ -158,7 +158,7 @@ Version 2.0 introduced many updates to the Combat System. It also drastically si
 >Before migrating to version 2.0, it is highly recommended that you back up your project!  
 {style="warning"}
 
-1. The combat components "Damage", "Defense" and "Target" were **merged** into the unified `NinjaCombatManagerComponent`. You need to add that component, `NinjaCombatWeaponManagerComponent`.
+1. The combat components "Damage", "Defense" and "Target" were **merged** into the unified `NinjaCombatManagerComponent`. To get started with the new system, you only need to add that component and a `NinjaCombatWeaponManagerComponent`.
 2. The `CombatSystemInterface` will try to find all components by their interfaces. Right away, you can just implement the getters for the Combat Manager and Weapon Manager. Other functions can be implemented if/when necessary.
 3. The **Weapon Manager** was improved to be usable out-of-the-box. Review extensions to this component, as they may no longer be needed.
 4. The **Opportunity Manager**, along with all related components, was removed from the system. Please check the new Opportunity System to learn how to configure Opportunity Attacks.
