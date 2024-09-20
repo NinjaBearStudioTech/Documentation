@@ -56,14 +56,6 @@ A Ranged Attack starts with the **Attack Ability**.
 
 <img src="cbt_melee_ability.png" alt="Ranged Ability" border-effect="line" thumbnail="true"/>
 
-First, the **Animation Provider** determines which animation should be played during the attack. The default animation
-provider uses a single animation montage and section name, but you could create other Animation Providers that will pick 
-certain animations using any **criteria**, such as the type of weapon currently in use.
-
-The next section, **Motion Warping**, allows you to define a way to collect targets, via the **Targeting Preset** to warp
-the animation. **Motion Warping** is a technique where the animation's **Root Motion** is scaled enough to travel a specific distance or rotate to a certain target. You can also apply a **Warp Offset** that will reduce the distance to travel between the attacker and the target.
-
-
 ## Projectiles
 
 ### Launch Projectile Notify

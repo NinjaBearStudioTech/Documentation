@@ -113,3 +113,30 @@ system provides the following handlers, and you can create your own from `NinjaC
 | Combat Interfaces  | Invokes the Melee and Ranged Combat Interfaces on the **damage source**, to play their own cosmetics.  |
 | Dissolve           | Dissolves the character, using the `NinjaCombatDissolveComponent` which will be created automatically. |
 | Physical Animation | Triggers a Physical Animation, using a component implementing `CombatPhysicalAnimationInterface`.      |
+
+## Damage Gameplay Cues
+
+While working with the Damage Handlers, or any other objects related to damage cosmetics, such as certain methods in the
+combat interfaces, you can gather information about the damage type from the Gameplay Cue's **Aggregated Source Tags**.
+
+Any Gameplay Tags from the attacker, weapon and Gameplay Effects are available. The Combat System includes the following 
+types of damage:
+
+| Damage Type                      | Description                                            |
+|----------------------------------|--------------------------------------------------------|
+| `Combat.Effect.Damage.Blocked`   | The attack was blocked.                                |
+| `Combat.Effect.Damage.Breaker`   | The attack broke the blocking state.                   |
+| `Combat.Effect.Damage.Critical`  | The attack was a critical hit.                         |
+| `Combat.Effect.Damage.Fatal`     | The attack applied fatal damage.                       |
+| `Combat.Effect.Damage.Knockback` | The attack was strong enough to result in a knockback. |
+| `Combat.Effect.Damage.LastStand` | The attack was fatal but triggered a last stand.       |
+| `Combat.Effect.Damage.Mitigated` | The attack was mitigated by a defense mechanism.       |
+| `Combat.Effect.Damage.Melee`     | The attack was a melee attack.                         |
+| `Combat.Effect.Damage.Ranged`    | The attack was a ranged attack.                        |
+| `Combat.Effect.Damage.Stagger`   | The attack result in a stagger.                        |
+
+> **Multiple Damage Types**
+> 
+> The same attack can contain multiple types of damage, such as "Melee" and "Blocked", or "Ranged" and "Fatal". You can
+> filter tags by "Combat.Effect.Damage" to learn everything about the incoming damage, whenever necessary.
+{style="note"}
