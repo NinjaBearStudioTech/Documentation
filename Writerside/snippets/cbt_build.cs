@@ -12,7 +12,6 @@ PublicDependencyModuleNames.AddRange(new string[]
     "NinjaCombatCore",
     "NinjaCombatActorPool",
     "NinjaCombatUI",
-    "NinjaCombatActorWeapon",
     "StructUtils",
     "UMG"
 });
