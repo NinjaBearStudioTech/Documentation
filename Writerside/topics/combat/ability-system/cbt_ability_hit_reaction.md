@@ -1,6 +1,14 @@
 # Hit Reaction Ability
 <primary-label ref="combat"/>
 
+<tldr>
+    <ul>
+        <li>Activated on each successful hit, even if damage was <b>zero</b>.</li>        
+        <li>Supports a default animation and other animations specific to certain damage types.</li>
+        <li>Supports directional hit reactions, that may consider the hit location or attacker as a reference.</li>
+    </ul>
+</tldr>
+
 The **Hit Reaction Ability** supports directional hit reactions and maps certain incoming damage types to specific 
 animations. This ability is typically activated via **Gameplay Events**, so it should always be added to the character 
 by default.
