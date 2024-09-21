@@ -13,6 +13,8 @@
 The **Melee Combat** functionality is designed to connect animations, scans, and targeting in a cohesive way so that Melee 
 Attacks can be configured in various ways for different types of combat systems.
 
+Here is a Sequence Diagram showing how all the participants in the **Melee Combat** are related.
+
 <code-block lang="mermaid">
 sequenceDiagram
     ASC->>AttackAbility: activate
@@ -58,9 +60,8 @@ A Melee Attack starts with the **Attack Ability**.
 Within the **Melee Attack** category, you can decide if successful attacks against a target will result in a **Target Lock**,
 and the **Gameplay Effect** to apply on successful hits.
 
-Then, the **Animation Provider** determines which animation should be played during the attack. The default animation 
-provider uses a single animation montage and section name, but you could create other Animation Providers that will pick 
-certain animations using any **criteria**, such as the type of weapon currently in use.
+Then, the [**Animation Provider**](cbt_character_animation.md#animation-providers) determines which animation should be
+played during the attack. The default animation provider uses a single animation montage and section name.
 
 The next section, **Motion Warping**, allows you to define a way to collect targets, via the **Targeting Preset** to warp 
 the animation. **Motion Warping** is a technique where the animation's **Root Motion** is scaled enough to travel a 
@@ -107,7 +108,7 @@ This object is used to transfer data from the animation and the correct mesh, to
 Melee Scan Task. It also contains the logic to perform scans using the values provided to its properties.
 
 If you need to **modify the Melee Scan logic**, this is the place to look into. You can set a Melee Scan Class to **each** 
-Melee Scan Animation Notify State, or **globally**, in the **Project Settings** for Ninja Combat.
+Melee Scan Animation Notify State or **globally**, in the **Project Settings** for Ninja Combat.
 
 > **Modifying the Melee Scan**
 >
@@ -227,7 +228,7 @@ The most important functions to keep in mind are:
 ### Weapon Actor
 
 The Weapon Actor (`NinjaCombatWeaponActor`) is an **abstract class** that can be used as a base for all your weapons. It 
-properly implements the Melee Weapon Interface, executing the expected logic and exposing properties for adjustment.
+properly implements the **Melee Weapon Interface**, executing the expected logic and exposing properties for adjustment.
 
 The Combat System also provides another base class compatible with the **Inventory System**. For more information, check 
 the [Weapon Actor](cbt_weapon_architecture.md#weapon-actor) and [Inventory Integration](cbt_integration_inventory.md) topics.
