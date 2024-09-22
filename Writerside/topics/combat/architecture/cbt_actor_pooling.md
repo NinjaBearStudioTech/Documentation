@@ -4,11 +4,12 @@
 
 <tldr>
     <ul>
-      <li>Combat Pawns can activate their Actor Pool by declaring a <code>NinjaCombatActorPoolComponent</code>.</li>
-      <li>Combat Pawns with a valid Actor Pool must implement <code>CombatPoolProviderInterface</code>.</li>
-      <li>The Actor Pool supports any Actor, but they must implement <code>CombatPoolableActorInterface</code>.</li>
-      <li>The <code>NinjaCombatPoolableActor</code> is a default implementation that supports replication.</li>
-      <li>The pool is replicated, and pooled actors behave as if they were placed in the map.</li>
+        <li>Combat Pawns can use the Actor Pool by declaring a <code>NinjaCombatActorPoolComponent</code>.</li>
+        <li>Combat Pawns with a valid Actor Pool must implement <code>CombatPoolProviderInterface</code>.</li>
+        <li>The Actor Pool supports any Actor implementing <code>CombatPoolableActorInterface</code>.</li>
+        <li>The <code>NinjaCombatPoolableActor</code> is a default implementation that supports replication.</li>
+        <li>The pool is replicated, and pooled actors behave as if they were placed in the map.</li>
+        <li>Actors from the pool must implement <b>On Activation</b> and <b>On Deactivation</b> analogous to <b>Begin Play</b> and <b>End Play</b>.</li>
     </ul>
 </tldr>
 
@@ -25,6 +26,21 @@ actors that will be pooled and specify how many instances will be available.
 
 Combatants using an Actor Pool must implement the `CombatPoolProviderInterface` to provide the component, allowing 
 external functionalities, such as the Projectile Request, to quickly retrieve and use the pool.
+
+<tabs group="sample">
+    <tab title="Blueprint">
+        <p>Add the <b>Actor Pool</b> component to your character.</p>
+        <img src="cbt_actor_pool_component.png" alt="Actor Pool Component" thumbnail="true" border-effect="line"/>
+        <br/>
+        <p>Add the <b>Provider Interface</b> and return the component, from the appropriate function.</p>
+        <img src="cbt_actor_pool_provider.png" alt="Actor Pool Provider" thumbnail="true" border-effect="line"/>
+    </tab>
+    <tab title="C++">
+        <code-block lang="c++" src="cbt_add_actor_pool_component.h"/>
+        <br/>
+        <code-block lang="c++" src="cbt_add_actor_pool_component.cpp"/>
+    </tab>
+</tabs>
 
 ## Poolable Actors
 
@@ -43,6 +59,26 @@ instances to initialize.
 
 ![Actor Pool Setup](cbt_actor_pool_setup.png "Actor Pool Setup")
 
+### Actor Lifecycle
+
+When you use Poolable Actors, it is important to keep in mind how the Actor lifecycle changes.
+
+Functions like **Begin Play** and **End Play** will be called when the Poolable Actor is created and destroyed, making
+them inadequate places to handle events that should happen whenever the actor is retrieved from the pool.
+
+For those situations, you should use **On Activation** and **On Deactivation** instead. Here are some examples of 
+functionalities that should be handled by these events:
+
+1. Playing a **Particle Effect** from the start.
+2. Playing a **Sound Effect** from the start.
+3. Adding **velocity** to a projectile.
+
+> **Call Parent/Super**
+> 
+> When extending `OnActivation` or `OnDeactivation`, make sure to call their parent/super implementations!
+{style="note"}
+
 ### Supported Actors
 
-Currently, **Projectiles** and **Cast** actors are supported by default.
+Currently, **Projectiles** and **Cast** actors are supported by default. You can find more details about their
+implementations in their specific [Ability pages](cbt_abilities.md).
