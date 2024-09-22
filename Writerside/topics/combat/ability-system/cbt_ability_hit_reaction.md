@@ -27,6 +27,10 @@ on the hit direction.
 
 <img src="cbt_damage_directional_animation.png" alt="Hit Reaction Animation" thumbnail="true" border-effect="line"/>
 
+> When using montage sections, make sure to break their links in the Montage Section panel. Otherwise, all sections will 
+> play in sequence!
+{style="note"}
+
 ## Hit Angle Calculation
 
 The **Hit Reaction Animation Provider** calculates the hit angle using two sources: the **Hit Result Location** and the 
