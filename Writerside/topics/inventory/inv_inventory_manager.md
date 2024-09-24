@@ -124,9 +124,22 @@ Items can be **added** to the inventory in a few different ways:
 - From a **Pickup Actor**.
 - From **Selected Loot**.
 
+Whenever an item is added, a validation process will happen and, based on the fragments configured for the item, and the
+current state of the Inventory, the item will be **accepted** or **rejected**.
+
+> If an item is **rejected**, check your logs. You will find details on what fragment has rejected the item. This entry 
+> will be displayed under `LogNinjaInventory` with a `Verbose` level. 
+> 
+> Make sure to enable that visibility in your `DefaultEngine.ini`, with the following lines:
+> 
+> ```
+> [Core.Log]
+> LogNinjaInventory=Verbose
+> ```
+
 #### Add Item Data
 
-First, by the `AddItem` function, which allows you to set **optional** default memories to the item
+First, by the `AddItem` function, which allows you to set **optional** default memories to the item.
 
 <tabs group="sample">
     <tab title="Blueprint" group-key="bp">
