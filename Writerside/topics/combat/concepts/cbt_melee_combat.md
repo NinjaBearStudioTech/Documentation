@@ -252,10 +252,10 @@ across a blade is a good starting point for scans.
 
 <seealso style="cards">
     <category ref="related">
-        <a href="cbt_damage_and_defense.md" summary="Details about the Damage and Defense design.">Damage and Defense</a>
-        <a href="cbt_target_locking.md" summary="Details about the Target Locking design.">Target Locking System</a>
-        <a href="cbt_weapon_architecture.md" summary="Details about the Weapon architecture.">Weapon Architecture</a>
-        <a href="cbt_integration_inventory.md" summary="Details about the integration with the Inventory System.">Inventory Integration</a>
+        <a href="cbt_damage_and_defense.md" summary="Details about the Damage and Defense design."/>
+        <a href="cbt_target_locking.md" summary="Details about the Target Locking design."/>
+        <a href="cbt_weapon_architecture.md" summary="Details about the Weapon architecture."/>
+        <a href="cbt_integration_inventory.md" summary="Details about the integration with the Inventory System."/>
     </category>
     <category ref="external">
         <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine" summary="Official documentation for the Gameplay Ability System.">Gameplay Ability System</a>

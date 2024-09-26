@@ -68,7 +68,8 @@ The following table contains all attributes available in the Combat System's Att
 
 You can use this Json to facilitate the creation the Data Table used to initialize the Combat Attributes.
 
-The Data Table Row type used to create Attribute Set Data for initialization is provided by the Gameplay Ability System
-You can create your data table using the `AttributeMetaData` structure.
+The Data Table Row type used to create the Attribute Set Data for initialization, `AttributeMetaData`, is provided by 
+the **Gameplay Ability System**. Once your Data Table is created, you can import the following Json to have an initial,
+complete, set of attribute values.
 
 <code-block lang="json" src="cbt_attributes.json" collapsible="true" collapsed-title="Combat Attributes"/>

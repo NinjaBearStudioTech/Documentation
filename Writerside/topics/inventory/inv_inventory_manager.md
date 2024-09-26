@@ -127,6 +127,8 @@ Items can be **added** to the inventory in a few different ways:
 Whenever an item is added, a validation process will happen and, based on the fragments configured for the item, and the
 current state of the Inventory, the item will be **accepted** or **rejected**.
 
+> **Rejection Messages**
+> 
 > If an item is **rejected**, check your logs. You will find details on what fragment has rejected the item. This entry 
 > will be displayed under `LogNinjaInventory` with a `Verbose` level. 
 > 

@@ -31,7 +31,6 @@ Multiple Notifies and Notify States are available to handle multiple aspects of 
 | Melee Scan         | Notify State | Sends **Gameplay Events** to the **Attack Ability** to start and stop melee scans.               |
 | Opportunity Damage | Notify       | Sends a **Gameplay Event** to the **Opportunity Attack Ability** to apply any deliberate damage. |
 | Parry Window       | Notify State | Defines a part of an **attack** that can be **parried**.                                         |
-| Weapon Trail       | Notify State | Executes **weapon trails** on the weapon obtained from a **query**.                              |
 
 Notifies are a great way to connect gameplay events to something visual that can be easily identified by players. But
 keep in mind that Animation Notifies are **frame-rate dependant** and might be skipped during low FPS scenarios. 
