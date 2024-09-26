@@ -136,7 +136,7 @@ Here are some examples of operations supported by fragments:
 All operations provided by fragments have their **factory methods** available to Blueprints and C++ via the Inventory 
 Gameplay function library. More details are available in each fragment's reference page.
 
-<seealso>
+<seealso style="cards">
     <category ref="external">
         <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/asset-management-in-unreal-engine">Asset Manager Documentation</a>
         <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Plugins/StructUtils/TInstancedStruct/InstancedStruct">Instanced Struct Documentation</a>

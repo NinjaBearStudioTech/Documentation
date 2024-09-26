@@ -61,7 +61,7 @@ Both **Equipment Queries** used by the Equipment Manager are used by functions t
 the **Inventory Layout**. It's important to different **cosmetic** and **non-cosmetic** slots, especially while 
 calculating the current **Equipment Level**.
 
-Check the [Equipment Slots](inv_equipment_slots.md) page for more information.
+Check the [](inv_equipment.md#equipment-slots) page for more information.
 
 ### Slot Socket Mapping
 
@@ -71,7 +71,7 @@ case for **Actors** that are added by the equipment.
 Actors are only attached to a **socket**, yet the system has to be able to find them by Slot Tags, which is why this
 configuration is important.
 
-Check the [Equipment Slots](inv_equipment_slots.md) page for more information.
+Check the [](inv_equipment.md#equipment-slots) page for more information.
 
 ### Initialization
 
@@ -85,7 +85,7 @@ represent the base character, such as a _shirt_ or _naked torso_.
 
 They are added and removed based on the presence of an item, or deliberately, depending on the **state configuration**.
 
-Check the [Equipment Slots](inv_equipment_slots.md) page for more information.
+Check the [](inv_equipment.md#equipment-slots) page for more information.
 
 ## Replication
 
