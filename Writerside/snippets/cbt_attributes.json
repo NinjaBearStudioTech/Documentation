@@ -192,6 +192,14 @@
     "bCanStack": false
   },
   {
+    "Name": "NinjaCombatAttributeSet.BlockCooldown",
+    "BaseValue": 3,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
     "Name": "NinjaCombatAttributeSet.EvadeStaminaCost",
     "BaseValue": 20,
     "MinValue": 0,

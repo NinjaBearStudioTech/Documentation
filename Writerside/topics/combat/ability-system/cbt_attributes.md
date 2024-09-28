@@ -50,6 +50,7 @@ The following table contains all attributes available in the Combat System's Att
 | `BlockAngle`             | Maximum angle where block is effective.                  | Block             |
 | `BlockLimit`             | Flat limit of damage that can be mitigated.              | Block             |
 | `BlockStaminaCostRate`   | The cost in stamina, to block each point of damage.      | Block             |
+| `BlockCooldown`          | Block cooldown, usually as penalty from a breaker hit    | Block             |
 | `EvadeStaminaCost`       | Stamina cost to perform an evade.                        | Evade             |
 | `EvadeCooldown`          | Cooldown applied before a new evade can be performed.    | Evade             |
 | `DefenseChance`          | Chance to defend an incoming attack in {0, 1} range.     | Defense           |
