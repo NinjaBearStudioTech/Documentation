@@ -1,6 +1,6 @@
 # Create a Melee Weapon
 <primary-label ref="combat"/>
-<secondary-label ref="how-to"/>
+<secondary-label ref="guide"/>
 
 This how-to will show you how to create your first **Melee Weapon** and assign it to the default **Weapon Manager**.
 
