@@ -1,6 +1,6 @@
 # Handle Incoming Hits
 <primary-label ref="combat"/>
-<secondary-label ref="how-to"/>
+<secondary-label ref="guide"/>
 
 ## Goal
 

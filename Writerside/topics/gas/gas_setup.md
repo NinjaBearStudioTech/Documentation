@@ -1,6 +1,5 @@
 # Setup
 <primary-label ref="gas"/>
-<secondary-label ref="wip"/>
 
 <tldr>
     <ul>
@@ -61,4 +60,4 @@ Once configured, your entry in the Asset Manager should look like this:
 ## Ability System Initialization
 
 Projects using the Gameplay Ability System must initialize the **Global Data**. This framework will automatically do that,
-when its **Subsystem** initializes. No additional steps are necessary.
+when its **Subsystem** initializes. **No additional steps are necessary**.
