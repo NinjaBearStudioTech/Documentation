@@ -11,3 +11,14 @@ This section includes **deep dive** on important **technical aspects** of the GA
 : This topic will walk you through all the **base classes** that can be used to create your Actors, Pawns or Characters.
 They will provide an Ability System Component out of the box for you, ready-to-use.
 
+**[](gas_artificial_intelligence.md)**
+: If you have AI Agents in your projects, then most likely you will need them to activate abilities or other tasks that
+might require attribute information. Ninja GAS provides such features for both **Behavior and State Trees**.
+
+**[](gas_batch_activation.md)**
+: In some cases, you might need to activate **multiple abilities together**, but considering that each local activation
+will trigger an RPC, it is a good practice to activate them together. Ninja GAS supports batch activation.
+
+**[](gas_local_gameplay_cues.md)**
+: Similar to the Batch Activation, Gameplay Cues may be heavy on the network and since these are cosmetics, the Gameplay
+Ability System will reinforce certain limitations. To circumvent that, we can use **local Gameplay Cues**.

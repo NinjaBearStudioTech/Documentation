@@ -96,6 +96,9 @@
         <toc-element topic="gas_architecture.md">
             <toc-element topic="gas_data_asset.md"/>
             <toc-element topic="gas_base_classes.md"/>
+            <toc-element topic="gas_artificial_intelligence.md"/>
+            <toc-element topic="gas_local_gameplay_cues.md"/>
+            <toc-element topic="gas_batch_activation.md"/>
         </toc-element>
     </toc-element>
     <toc-element topic="ipt_overview.md">
