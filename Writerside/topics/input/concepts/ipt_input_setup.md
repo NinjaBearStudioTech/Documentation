@@ -107,3 +107,8 @@ without the need to remove/add current **Setups**.
     </tab>
 </tabs>
 
+<seealso style="cards">
+   <category ref="related">
+        <a href="p01g01_configure_inputs.md" summary="Configure Input Handlers in your project, from scratch."/>
+    </category>
+</seealso>

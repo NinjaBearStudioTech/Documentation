@@ -44,5 +44,5 @@ The component will automatically initialize and, if assigned to a **Player Contr
 
 ### Input Buffering
 
-The Input Manager is a valid implementation of the **[Input Buffer](ipt_input_buffer.md)**. It can capture player inputs 
+The Input Manager is a valid implementation of the **[](ipt_input_buffer.md)**. It can capture player inputs 
 while the buffer is open, and executing them later on once the buffer closes.

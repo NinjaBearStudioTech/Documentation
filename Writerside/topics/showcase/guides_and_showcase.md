@@ -1,9 +1,9 @@
-# Showcase Project
+# Guides and Showcase 
 
 <img src="sc_banner_01.png" alt="Showcase"/>
 
 The **Showcase Project** can be downloaded so you can test the tech by playing a small, yet fully realized game project.
-You can also use the showcase as a guide on your learning path, with the following guides.
+The showcase is also the reference project used in the following **guides**.
 
 ## Part 1
 
