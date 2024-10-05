@@ -21,11 +21,11 @@ First, ensure you have a working **Gameplay Ability System** setup:
 1. Add the **Ability System Component** to your Pawn or Player State.
 2. Properly implement the **Ability System Interface** on your base class.
 3. Ensure that you can add **Attribute Sets**, **Gameplay Effects**, and **Gameplay Abilities**.
-4. If you are using [Ninja G.A.S.](gas_overview.md), configure it first.
+4. If you are using [](gas_overview.md), configure it first.
 
 Next, make sure you have the **input** configured:
 1. Your Player Character is ready to handle **Input Actions**.
-2. If you are using [Ninja Input](ipt_overview.md), configure it first.
+2. If you are using [](ipt_overview.md), configure it first.
 
 ## Installing the Plugin
 
@@ -121,7 +121,7 @@ System Interface**. Make sure to return the **Combat Manager** from the `GetComb
 
 ### Weapon Manager
 
-Create the appropriate **[Weapon Manager](cbt_weapon_architecture.md#weapon-manager)** and make sure to return it in the 
+Create the appropriate **[](cbt_weapon_architecture.md#weapon-manager)** and make sure to return it in the 
 **Combat System Interface**. By default, you have **two options** available for the Weapon Manager type:
 
 - **Default**: A basic Weapon Manager that can be used as-is for simpler scenarios.

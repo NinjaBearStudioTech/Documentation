@@ -1,4 +1,4 @@
-# Create a Melee Weapon
+# Create Melee Weapons
 <primary-label ref="combat"/>
 <secondary-label ref="guide"/>
 
@@ -39,7 +39,7 @@ This how-to will show you how to create your first **Melee Weapon** and assign i
                 <br/>
                 <p>In the <b>Class Settings</b> view, add the <b>Combat System Interface</b>.</p>
                 <br/>
-                <img src="cbt_add_weapon_system_interface.png" alt="Combat System Interface" border-effect="line"/>
+                <img src="p01g03_weapon_system_interface.png" alt="Combat System Interface" border-effect="line"/>
                 <br/>
                 <p>In the <b>Blueprints</b> tab, expand the <b>Combat System Interface</b> and double-click <code>Get Weapon Manager Component</code>. Implement it returning the Weapon Manager.</p>
                 <br/>
@@ -62,7 +62,7 @@ This how-to will show you how to create your first **Melee Weapon** and assign i
     </step>
     <step>
         <p>Add your weapons to the Weapon Manager's <b>Details Tab</b> and configure them to the correct sockets in your <b>Character's Mesh Skeleton</b>.</p>
-        <img src="cbt_add_weapons_to_manager.png" alt="Adding Weapons to the Weapon Manager" border-effect="line"/>
+        <img src="p01g03_add_weapons_to_weapon_manager.png" alt="Adding Weapons to the Weapon Manager" border-effect="line"/>
     </step>
 </procedure>
 

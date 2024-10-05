@@ -5,10 +5,11 @@
 #include "Interfaces/CombatSystemInterface.h"
 #include "PluginLabsCharacter.generated.h"
 
+class UNinjaCombatManagerComponent;
 class UNinjaCombatWeaponManagerComponent;
 
 UCLASS()
-class PLUGINLABS_API APluginLabsCharacter : public ACharacter, public ICombatSystemInterface
+class PLUGINLABS_API APluginLabsCharacter : public ANinjaGASPlayerCharacter, public ICombatSystemInterface
 {
 
 	GENERATED_BODY()
@@ -19,15 +20,15 @@ public:
 
 	// -- Begin Combat System Implementation.
 	virtual USkeletalMeshComponent* GetCombatMesh_Implementation() const override;
+	virtual UNinjaCombatManagerComponent* GetCombatManagerComponent_Implementation() const override;
 	virtual UActorComponent* GetWeaponManagerComponent_Implementation() const override;
 	// -- End Combat System Implementation.
 
-
 private:
 
-	/** Main character mesh following the hidden mannequin for animations. */
+	/** Main Manager for the Combat System. */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Components", meta = (AllowPrivateAccess = true))
-	TObjectPtr<USkeletalMeshComponent> LeaderMesh;
+	TObjectPtr<UNinjaCombatManagerComponent> CombatManager;
 
 	/** Weapon Manager component that will manage weapons for this character. */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Components", meta = (AllowPrivateAccess = true))

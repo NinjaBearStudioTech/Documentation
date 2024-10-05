@@ -1,4 +1,4 @@
-# Configure your Input Handlers
+# Configure Input Handlers
 <secondary-label ref="guide"/>
 
 Configure **Ninja Input** and replace the default configuration from a project, such as the Third Person Template, so

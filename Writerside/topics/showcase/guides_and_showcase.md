@@ -7,17 +7,17 @@ The showcase is also the reference project used in the following **guides**.
 
 ## Part 1
 
-**P01.G01: Configure your inputs**  
+**[P01.G01: Configure Input Handlers](p01g01_configure_inputs.md)**  
 : Configure **Ninja Input** and replace the default configuration from a project, such as the Third Person Template, so 
 it will use **Input Handlers** and an **Input Setup**.
 
-**P01.G02: Configure the Gameplay Ability System**  
+**[P01.G02: Configure the Gameplay Ability System](p01g02_configure_gas.md)**  
 : Using **Ninja GAS**, you can configure the Gameplay Ability System in your project and prepare your Player Character, 
 so it can use the Combat Attribute Set provided by **Ninja Combat**.
 
-**P01.G03: Create your first weapon**  
+**[P01.G03: Create Melee Weapons](p01g03_create_melee_weapons.md)**  
 : After configuring the initial **Combat Components**, the first step in Ninja Combat is to prepare your character for 
-**Melee Attacks** or create a **Melee Weapon**, which can be registered with the **Weapon Manager**.
+**Melee Attacks** using a **Melee Weapon**, which must be registered with the **Weapon Manager**.
 
 **P01.G04: Create light and heavy attacks**  
 : With a weapon properly configured, the next step is to create a **light** and a **heavy** attack using the **Attack 
