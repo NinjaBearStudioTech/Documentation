@@ -7,13 +7,31 @@ This page contains an extensive list of all Gameplay Effects used by Ninja Comba
 
 The following Gameplay Effects are related to main **vital stats**. 
 
-| Effect                      | Description                                                                                         |
-|-----------------------------|-----------------------------------------------------------------------------------------------------|
-| `ReplenishHealth`           | Automatic Health regeneration, based on Gameplay Attributes. Can be cancelled via Gameplay Tags.    |
-| `ReplenishStamina`          | Automatic Stamina regeneration, based on Gameplay Attributes. Can be cancelled via Gameplay Tags.   |
-| `ReplenishMagic`            | Automatic Magic regeneration, based on Gameplay Attributes. Can be cancelled via Gameplay Tags.     |
-| `CancelStaminaRegeneration` | Applies the Gameplay Tag to cancel Stamina regeneration. Used by certain abilities, such as Evades. |
-| `Dead`                      | Tentatively applied by damage effects. Sets the Dead tag and removes other Gameplay Effects.        |
+| Effect                      | Description                                                                                        |
+|-----------------------------|----------------------------------------------------------------------------------------------------|
+| `ReplenishHealth`           | Automatic Health regeneration, based on Gameplay Attributes. Can be cancelled via Gameplay Tags.   |
+| `ReplenishStamina`          | Automatic Stamina regeneration, based on Gameplay Attributes. Can be cancelled via Gameplay Tags.  |
+| `ReplenishMagic`            | Automatic Magic regeneration, based on Gameplay Attributes. Can be cancelled via Gameplay Tags.    |
+| `CancelStaminaRegeneration` | Applies the Gameplay Tag to cancel Stamina regeneration. Duration is based on the Delay Attribute. |
+| `CancelMagicRegeneration`   | Applies the Gameplay Tag to cancel Magic regeneration. Duration is based on the Delay Attribute.   |
+| `Dead`                      | Tentatively applied by damage effects. Sets the Dead tag and removes other Gameplay Effects.       |
+
+### Cancel Regeneration
+
+These effects are meant to be used as an **additional effect**, applied with **costs**. That way, whenever an ability is
+commited and its cost is successfully applied, the cancellation effect is applied as well and a resource replenishment
+is interrupted for a while.
+
+To add these effects to a cost, you need to do the following:
+
+1. Add the **Gameplay Effect Component** for Gameplay Effects.
+2. Configure the correct **Effect Class**, setting the desired cancellation Gameplay Effect.
+3. Configure the cost as usual, setting the proper attribute to deduct a value from ("Stamina" for example).
+
+<img src="cbt_effect_replenish_cancellation.png" alt="Cancel Regeneration Example" border-effect="line"/>
+
+The Cancellation will take the appropriate **Regen Delay** Gameplay Attribute configured for the owner, and interrupt 
+the resource regeneration for that amount of time.
 
 ## Damage
 
@@ -33,13 +51,23 @@ current Gameplay Attributes. This Calculation is very flexible and supports the 
 
 1. Uses the Base Damage, Critical Hit Change and Critical Hit Damage from Gameplay Attributes.
 2. Allows all these values to be overridden by _Set By Caller Magnitudes_ using the following tags: `Combat.Data.Damage`, `Combat.Data.CriticalHitChance`, `Combat.Data.CriticalHitMultiplier`.
-3. It also allows a deliberate **Damage Modifier** that can be used to reduce or boost damage for certain Gameplay Effects.
+3. It also allows a deliberate **Damage Modifier** that can be used to boost or reduce damage for certain Gameplay Effects.
 
 > **Critical Damage**
 > 
 > If you decide to replace the Damage Calculation class, make sure to tag the Gameplay Spec with `Combat.Effect.Damage.Critical`,
 > whenever a Critical Hit happens, so the system can differentiate those hits and react accordingly.
 {style="note"}
+
+#### Damage Modifier
+
+The **Damage Modifier** is a special **Backing Data** available in the `CombatExecution_Damage` calculation class. It
+allows you to **boost** or **reduce** damage applied by the Gameplay Effect. It can be based on a Scalable Float, 
+Backing Attribute, Set By Caller or yet another custom Calculation Class.
+
+This is also a good way to **scale damage** based on something like _weapon level_. In this example, if the weapon level 
+is translated to the Gameplay Effect level, you can have a **Curve Table** providing the modifiers, making this a very
+flexible way to adjust the base damage.
 
 ## Defense
 

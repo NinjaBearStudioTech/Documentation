@@ -56,7 +56,7 @@ With our **melee weapons** configured, the next step is to create a **primary** 
 </procedure>
 
 <procedure title="Configure the primary attack ability" collapsible="true">
-    <step>Create a new <b>Gameplay Ability</b> for your <b>primary attack</b>, using <code>CombatAbility_Attack</code> as the base.</step>
+    <step>Create a new <b>Gameplay Ability</b> for your <b>primary attack</b>, using <code>CombatAbility_Attack</code> as the base class.</step>
     <step>Set the <b>Animation Montage</b> for the <b>primary attack</b> in the <b>Default Animation Montage</b>.</step>
     <step>Disable <b>Motion Warping</b>.</step>
     <step>Enable <b>debugging</b>.</step>
@@ -65,11 +65,29 @@ With our **melee weapons** configured, the next step is to create a **primary** 
     <img src="p01g04_primary_gameplay_ability.png" alt="Primary Attack Ability" border-effect="line" thumbnail="true" width="600"/>
 </procedure>
 
+<procedure title="Configure a damage Gameplay Effect" collapsible="true">
+    <step>Create a new <b>Gameplay Effect</b> using <code>CombatEffect_MeleeHit</code> as the base class. It will be used by the secondary attack.</step>
+    <step>Add <code>Combat.Effect.Damage.Knockback</code> to the list of Gameplay Tags <b>Added to the Effect</b>.</step>
+    <step>In the <b>Execution list</b>, add a <b>Calculation Modifier</b> using <code>Combat.Data.Damage.Multiplier</code> and set a <b>Scalable Float</b> with a <b>Magnitude</b> of <code>1.5</code>.</step>
+    <img src="p01g04_knockback_gameplay_effect.png" alt="Knockback Gameplay Effect" border-effect="line" thumbnail="true" width="600"/>
+    <tip>Make sure to read about the <b><a href="cbt_effects.md#damage-modifier">Damage Modifier</a></b>, if you need a recap on why we are setting this value in this Gameplay Effect.</tip>
+</procedure>
+
+<procedure title="Configure a cost Gameplay Effect" collapsible="true">
+    <step>Create a new <b>Gameplay Effect</b> using <code>GameplayEffect</code> as the base class. It will be used for by secondary attack.</step>
+    <step>Add the <b>Additional Effects Gameplay Effect Component</b> and include <b>Cancel Stamina Regeneration</b> in the <b>On Application Gameplay Effects</b> list.</step>
+    <step>Add a <b>Modifier</b> to reduce stamina by <code>5</code>.</step>
+    <img src="p01g04_cost_gameplay_effect.png" alt="Cost Gameplay Effect" border-effect="line" thumbnail="true" width="600"/>
+    <tip>Make sure to read about the <b><a href="cbt_effects.md#cancel-regeneration">Regeneration Cancellation</a></b>, if you need a recap on why we are adding the additional Gameplay Effect.</tip>
+</procedure>
+
 <procedure title="Configure the secondary attack ability" collapsible="true">
-    <step>Create a new <b>Gameplay Ability</b> for your <b>secondary attack</b>, using <code>CombatAbility_Attack</code> as the base.</step>
+    <step>Create a new <b>Gameplay Ability</b> for your <b>secondary attack</b>, using <code>CombatAbility_Attack</code> as the base class.</step>
+    <step>Set the new <b>Damage Gameplay Effect</b>, configured on the previous step, as the <b>Melee Damage Effect Class</b>.</step>
     <step>Set the <b>Animation Montage</b> for the <b>secondary attack</b> in the <b>Default Animation Montage</b>.</step>
     <step>Disable <b>Motion Warping</b>.</step>
     <step>Enable <b>debugging</b>.</step>
+    <step>Set the new <b>Cost Gameplay Effect</b>, configured on the previous step, as the <b>Cost Effect Class</b>.</step>
     <step>Add <code>Ability.Attack.Secondary</code> to the <b>Ability Tags</b>, so it can be used for the activation.</step>
     <step>Add <code>Ability.Attack.Primary</code> to the list of <b>Block Abilities with Tag</b>, to ensure your attacks won't interrupt each other.</step>
     <img src="p01g04_secondary_gameplay_ability.png" alt="Secondary Attack Ability" border-effect="line" thumbnail="true" width="600"/>

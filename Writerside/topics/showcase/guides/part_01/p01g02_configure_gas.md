@@ -41,6 +41,10 @@ so it can use the Combat Attribute Set provided by **Ninja Combat**.
 
 <procedure title="Reparent the Player Character" collapsible="true">
     <step>Open your <b>Character Blueprint</b> and reparent it to <code>NinjaGASPlayerCharacter</code>.</step>
+    <step>
+        <p>In your player <b>Animation Blueprint</b>, add a <b>slot</b> for the Attack Abilities, such as <b>Default Slot</b> or <b>Full Body</b> for example.</p>
+        <img src="p01g02_animation_blueprint.png" alt="Player State and ASC Setup" thumbnail="true" border-effect="line" width="600"/>
+    </step>
     <tip>You can also create a new character if you prefer. If you do, then make sure to set the proper base class and configure it in your Game Mode!</tip>
 </procedure>
 

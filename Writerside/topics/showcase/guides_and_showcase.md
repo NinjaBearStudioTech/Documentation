@@ -5,6 +5,10 @@
 The **Showcase Project** can be downloaded so you can test the tech by playing a small, yet fully realized game project.
 The showcase is also the reference project used in the following **guides**.
 
+These guides are focused on the **Ninja Bear Studio plugins** and expect previous knowledge on other aspects of the 
+Unreal Engine, such as creating common objects and their hierarchies, working with Animation Blueprints, basics of the
+Gameplay Ability System, and so on.
+
 ## Part 1
 
 **[P01.G01: Configure Input Handlers](p01g01_configure_inputs.md)**  
@@ -23,7 +27,7 @@ so it can use the Combat Attribute Set provided by **Ninja Combat**.
 : With our **melee weapons** configured, the next step is to create a **primary** and a **secondary** attack using the 
 **Attack Ability**, and then add these abilities to your character using **Ninja GAS**.
 
-**P01.G05: React to player damage**  
+**[P01.G05: React to Player Damage](p01g05_react_to_player_damage.md)**  
 : To make sure that our attacks work, we need an enemy. Using concepts established before, we will create a new enemy 
 character that properly **reacts to incoming damage** and eventually dies.
 
@@ -140,3 +144,4 @@ acquire a **mount** that will make it easier to travel between the vendor area a
 **P04.G08: Respawn and Save System**  
 : We haven't properly handled **Player Death** and the **save and load** systems. Let's implement that to finish this 
 first pass on the main game loop.
+
