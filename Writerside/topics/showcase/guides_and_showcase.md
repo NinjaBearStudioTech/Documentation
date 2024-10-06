@@ -19,9 +19,9 @@ so it can use the Combat Attribute Set provided by **Ninja Combat**.
 : After configuring the initial **Combat Components**, the first step in Ninja Combat is to prepare your character for 
 **Melee Attacks** using a **Melee Weapon**, which must be registered with the **Weapon Manager**.
 
-**P01.G04: Create light and heavy attacks**  
-: With a weapon properly configured, the next step is to create a **light** and a **heavy** attack using the **Attack 
-Ability**, and then add these abilities to your character using **Ninja GAS**.
+**[P01.G04: Create Melee Attacks](p01g04_create_melee_attacks.md)**  
+: With our **melee weapons** configured, the next step is to create a **primary** and a **secondary** attack using the 
+**Attack Ability**, and then add these abilities to your character using **Ninja GAS**.
 
 **P01.G05: React to player damage**  
 : To make sure that our attacks work, we need an enemy. Using concepts established before, we will create a new enemy 
@@ -37,13 +37,13 @@ Once again, using **Viewmodels**, we will create progress bars for **Health**, *
 
 **P01.G08: Create a combo**  
 : For now, we only have a light and a heavy attack. Here we will replace the primary attack with a **combo** that will 
-activate a different light attack after each button press.
+activate a different **light attack** after each button press and optionally, a **heavy attack**.
 
 ## Part 2
 
-**P02.G01: Update the Combo with a Cast**  
-: To make things more interesting, we will add a **combo branch** that allows players to trigger a special attack based 
-on the **Cast Ability**, which will trigger a **knockback**.
+**P02.G01: Motion Warping**  
+: Motion Warping can adjust **root motion animations** to **shorten** or **stretch** their movement so it will properly
+reach certain targets. Let's add this to our attacks so they are more **precise**.
 
 **P02.G02: Configure the Inventory**  
 : To create our **secondary weapon**, we should have **Ninja Inventory** configured. So this is our next task: perform the 

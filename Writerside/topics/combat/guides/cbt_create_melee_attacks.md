@@ -85,7 +85,7 @@ This how-to will show you how to create your first **Attacks**, using a **Melee 
     <step>Set the correct <b>Input Actions</b> for each attack, and the correct Ability Tags defined earlier: <code>Ability.Attack.Primary</code> and <code>Ability.Attack.Secondary</code>.</step>
     <step>
         <p>When you are done, your <b>Input Setup Data Asset</b> should be similar to the following image.</p>  
-        <img src="cbt_melee_attack_inputs.png" alt="Melee Attack Inputs" border-effect="line" thumbnail="true"/>
+        <img src="p01g04_attack_inputs.png" alt="Melee Attack Inputs" border-effect="line" thumbnail="true"/>
     </step>
 </procedure>
 

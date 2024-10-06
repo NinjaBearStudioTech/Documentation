@@ -13,6 +13,7 @@
                 <toc-element topic="p01g01_configure_inputs.md"/>
                 <toc-element topic="p01g02_configure_gas.md" toc-title="Configure G.A.S."/>
                 <toc-element topic="p01g03_create_melee_weapons.md"/>
+                <toc-element topic="p01g04_create_melee_attacks.md"/>
             </toc-element>
         </toc-element>
     </toc-element>
