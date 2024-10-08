@@ -9,7 +9,7 @@ it will use **Input Handlers** and an **Input Setup**.
     <step>Set your <b>Player Controller</b> to your <b>Game Mode</b> either in your <b>Level Details</b>, or in your <b>Maps and Modes</b> page in the <b>Project Settings</b>.</step>
 </procedure>
 
-<procedure title="Remove the original input handling from the character" collapsible="true">
+<procedure title="Remove the original input handling logic" collapsible="true">
     <step>Open your <b>Project Settings</b>, navigate to <b>Enhanced Input</b> and make sure that there are no <b>Default Mapping Contexts</b>.</step>    
     <step>Navigate to your <b>Character Blueprint</b>, open it and go to the <b>Event Graph</b>.</step>
     <step>Remove all input-related nodes, including the ones connected to <b>Begin Play</b>.</step>
