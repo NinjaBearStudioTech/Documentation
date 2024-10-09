@@ -38,19 +38,43 @@ required stamina (or other relevant resources) to block effectively.
 Blocking is frequently integrated with other systems within the Combat System, such as **Movement**, **Animation**, and 
 **Hit Reactions**.
 
-- **Movement**: Blocking can affect movement, often reducing the character's movement speed to a _walking speed_. You 
-can implement this by listening to the Defense Component's **Blocking State Changed** delegate, or by using the 
-provided `NinjaCombatCharacterMovementComponent`, which automatically handles movement adjustments during blocking.
+### Movement
 
-- **Animation**: When blocking, characters may switch to a different movement state, reflecting the defensive stance. 
-You can track this state through the same delegate or by using the `NinjaCombatAnimInstance`, which includes a 
-`Blocking` property to represent the current blocking state.
+Blocking can affect movement, often reducing the character's movement speed to a _walking speed_. You can implement this 
+by listening to the Defense Component's **Blocking State Changed** delegate, or by using the provided 
+`NinjaCombatCharacterMovementComponent`, which automatically handles movement adjustments during blocking.
 
-- **Hit Reactions**: You can define custom hit reactions for blocked hits by creating a specific Animation Montage for 
-when a character blocks incoming damage. Similarly, a different reaction can be triggered for **breaker hits** 
-(when a block is interrupted).
+### Animation
+
+When blocking, characters may switch to a different movement state, reflecting the defensive stance. You can track this 
+state through the same delegate or by using the `NinjaCombatAnimInstance`, which includes a `Blocking` property to 
+represent the current blocking state.
+
+Here's an example showing how to use the 'Blocking' property to switch between animation sequences.
+
+<img src="cbt_blocking_anim_blend_bool.png" alt="Blending by Bool" thumbnail="true" border-effect="line" />
+
+Here's another example, using a **Chooser Table** to select the correct **Motion Matching** database.
+
+<img src="cbt_blocking_anim_chooser_table.png" alt="Chooser Table for Blocking" thumbnail="true" border-effect="line" />
+
+### Hit Reactions
+
+You can define custom hit reactions for blocked hits by creating a specific Animation Montage for when a character 
+blocks incoming damage. Similarly, a different reaction can be triggered for **breaker hits** (when a block is 
+interrupted).
 
 | Gameplay Tag                   | Context                              |
 |--------------------------------|--------------------------------------|
 | `Combat.Effect.Damage.Blocked` | The hit was blocked.                 |
 | `Combat.Effect.Damage.Breaker` | The blocking stance was interrupted. |
+
+Here's an example of a **Hit Reaction Ability** that includes **blocked** and **breaker** hits.
+
+<img src="cbt_blocking_hit_reaction.png" alt="Hit Reaction with Blocking" thumbnail="true" border-effect="line" />
+
+<seealso style="cards">
+    <category ref="external">
+        <a href="https://dev.epicgames.com/community/learning/tutorials/lwlG/unreal-engine-your-first-60-minutes-with-motion-matching" summary="Official documentation for Motion Matching and Chooser Tables.">Motion Matching</a>
+    </category>
+</seealso>
