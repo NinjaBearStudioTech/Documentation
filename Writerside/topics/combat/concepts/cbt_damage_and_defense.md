@@ -91,12 +91,13 @@ Unless it's a **fatal damage**, in which case a **Gameplay Event** will activate
 
 ### Damage Data
 
-The Damage Manager Component can also receive a **Data Asset**, based on `NinjaCombatDamageDataAsset`, to customize
-certain aspects of the "death flow" and add cosmetics to each hit that has been received.
+The **Damage Manager Component** (the default Combat Manager, or a component override) requires a **Data Asset**, based 
+on `NinjaCombatDamageDataAsset`, to customize certain aspects of the "death flow" and add cosmetics to each hit that has 
+been received.
 
 <img src="cbt_damage_data.png" alt="Damage Data" thumbnail="true"/>
 
-This asset has the following properties:
+This data asset is set to the Combat Component's **Damage Data**. It contains the following properties:
 
 | Property          | Description                                                                                      |
 |-------------------|--------------------------------------------------------------------------------------------------|

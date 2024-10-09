@@ -24,7 +24,6 @@ The following list represents the recommended order to have them configured in y
 5. Ninja Factions: AI team management.
 6. Ninja Bot: AI Perception, behavior and strategy.
 
-
 ## Support Server
 If you need support, please reach out via **e-mail** or access the **Discord server**. You can find the contact 
 information in the **Plugin Card** for all plugins, inside **Unreal Engine**.
