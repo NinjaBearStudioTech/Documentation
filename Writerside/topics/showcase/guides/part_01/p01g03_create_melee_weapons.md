@@ -1,6 +1,8 @@
 # Create Melee Weapons
 <secondary-label ref="guide"/>
 
+<video src="https://youtu.be/IGUBRVY6MAM" preview-src="sc_thumbnail_p01g03.png" width="800" />
+
 After configuring the initial **Combat Components**, the first step in Ninja Combat is to prepare your character for
 **Melee Attacks** using a **Melee Weapon**, which must be registered with the **Weapon Manager**.
 
