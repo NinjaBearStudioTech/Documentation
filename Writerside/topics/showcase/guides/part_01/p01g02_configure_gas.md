@@ -1,6 +1,8 @@
 # Configure the Gameplay Ability System
 <secondary-label ref="guide"/>
 
+<video src="https://youtu.be/T_rtZjQz-9A" preview-src="sc_thumbnail_p01g02.png" width="800" />
+
 Using **Ninja GAS**, you can configure the Gameplay Ability System in your project and prepare your Player Character,
 so it can use the Combat Attribute Set provided by **Ninja Combat**.
 
