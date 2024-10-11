@@ -24,8 +24,9 @@ so it can use the Combat Attribute Set provided by **Ninja Combat**.
 **Melee Attacks** using a **Melee Weapon**, which must be registered with the **Weapon Manager**.
 
 **[P01.G04: Create Melee Attacks](p01g04_create_melee_attacks.md)**  
-: With our **melee weapons** configured, the next step is to create a **primary** and a **secondary** attack using the 
-**Attack Ability**, and then add these abilities to your character using **Ninja GAS**.
+: With the **melee weapons** configured, the next step is to create a **primary** and a **secondary** attack using the
+**Attack Ability**, add these abilities to the player character using **Ninja GAS** and configuring their inputs using
+**Ninja Input**.
 
 **[P01.G05: React to Player Damage](p01g05_react_to_player_damage.md)**  
 : To make sure that our attacks work, we need an enemy. Using concepts established before, we will create a new enemy 
