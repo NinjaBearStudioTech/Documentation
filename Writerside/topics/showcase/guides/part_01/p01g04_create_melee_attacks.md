@@ -4,7 +4,7 @@
 <video src="https://youtu.be/3LzloincIuc" preview-src="sc_thumbnail_p01g04.png" width="800" />
 
 With the **melee weapons** configured, the next step is to create a **primary** and a **secondary** attack using the 
-**Attack Ability**, add these abilities to the player character using **Ninja GAS** and configuring their inputs using 
+**Attack Ability**, add these abilities to the player character using **Ninja GAS** and configure their inputs using 
 **Ninja Input**.
 
 <procedure title="Add sockets for Melee Scans" collapsible="true">

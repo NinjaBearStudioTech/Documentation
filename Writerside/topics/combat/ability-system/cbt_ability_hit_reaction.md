@@ -4,8 +4,8 @@
 <tldr>
     <ul>
         <li>Activated on each successful hit, even if damage was <b>zero</b>.</li>        
-        <li>Supports a default animation and other animations specific to certain damage types.</li>
-        <li>Supports directional hit reactions, that may consider the hit location or attacker as a reference.</li>
+        <li>Supports a default animation and other animations specific to certain <b>damage types</b>.</li>
+        <li>Supports <b>directional hit reactions</b>, with a flexible calculation system.</li>
     </ul>
 </tldr>
 
@@ -17,8 +17,8 @@ by default.
 
 ## Directional Hit Reactions
 
-The **Hit Reaction Ability** uses the **Hit Reaction Animation Provider**, which can select a specific Animation Montage 
-or Montage Section based on certain angle ranges:
+The **Hit Reaction Ability** uses the **Directional Hits** Animation Provider, which can select a specific Animation 
+Montage or Montage Section based on certain angle ranges:
 
 <img src="cbt_damage_hit_directions.png" alt="Hit Reaction Angles" thumbnail="true" border-effect="line"/>
 
@@ -40,4 +40,20 @@ properties.
 This flexibility allows you to **fully consider**, **fully ignore**, or create a **blended angle** based on both sources. 
 The following image illustrates this concept:
 
-<img src="cbt_damage_hit_angle.png" alt="Hit Reaction Animation" thumbnail="true"/>
+<img src="cbt_damage_hit_angle.png" alt="Hit Reaction Calculation" thumbnail="true"/>
+
+## Contextual Hit Reactions
+
+The Animation Provider also supports different **Hit Reaction Contexts**. These are mappings between Gameplay Tags in
+the incoming damage and specific Animation Montages.
+
+<img src="cbt_damage_hit_directions_context.png" alt="Hit Reaction Animation" thumbnail="true" border-effect="line"/>
+
+In the example above, two contextual animations were set, one for **knockback** attacks and another one for **stagger**
+damage. The animations set to these contexts will also respect the main configuration for directional attacks.
+
+> If no context matches the incoming damage, then the **default** Animation Montage set in the Animation Provider is used.
+{style="tip"}
+
+The Hit Reaction will determine the context by filtering Gameplay Tags present in the damage **instigator** and **target**,
+considering the Gameplay Tags set in the equivalent properties, **Instigator Tags Filter** and **Target Tags Filter**.

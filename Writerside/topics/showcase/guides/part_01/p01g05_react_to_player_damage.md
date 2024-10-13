@@ -17,6 +17,12 @@ character that properly **reacts to incoming damage** and eventually dies.
     <tip>Even though this step only uses a single Animation Sequence, you could also have directional animations if you have them.</tip>
 </procedure>
 
+<procedure title="Configure death animations" collapsible="true">
+    <step>Create an <b>Animation Montage</b> for the <b>heavy reaction</b>.</step>
+    <img src="p01g05_hit_reaction_montage_strong.png" alt="Knockback Hit Reaction Animation Montage" thumbnail="true" border-effect="line" width="600"/>
+    <tip>Even though this step only uses a single Animation Sequence, you could also have directional animations if you have them.</tip>
+</procedure>
+
 <procedure title="Configure the hit reaction ability" collapsible="true">
     <img src="p01g05_hit_reaction_ability.png" alt="Hit Reaction Gameplay Ability" thumbnail="true" border-effect="line" width="600"/>
 </procedure>

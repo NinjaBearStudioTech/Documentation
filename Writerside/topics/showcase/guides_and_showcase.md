@@ -25,7 +25,7 @@ so it can use the Combat Attribute Set provided by **Ninja Combat**.
 
 **[P01.G04: Create Melee Attacks](p01g04_create_melee_attacks.md)**  
 : With the **melee weapons** configured, the next step is to create a **primary** and a **secondary** attack using the
-**Attack Ability**, add these abilities to the player character using **Ninja GAS** and configuring their inputs using
+**Attack Ability**, add these abilities to the player character using **Ninja GAS** and configure their inputs using
 **Ninja Input**.
 
 **[P01.G05: React to Player Damage](p01g05_react_to_player_damage.md)**  
