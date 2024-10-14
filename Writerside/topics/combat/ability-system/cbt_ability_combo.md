@@ -17,8 +17,9 @@ for the **Combo Ability**, including the required **[State Tree](cbt_combo_syste
 
 ## Ability Properties
 
-<img src="cbt_combo_ability.png" alt="Combo Input" thumbnail="true" border-effect="line"/>
+The following attributes adjust the behavior of the Combo Ability.
 
+<img src="cbt_combo_ability.png" alt="Combo Input" thumbnail="true" border-effect="line"/>
 
 | Property                  | Description                                                                                                                  |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------|

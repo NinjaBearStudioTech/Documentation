@@ -31,6 +31,7 @@
             <toc-element topic="cbt_damage_and_defense.md"/>
             <toc-element topic="cbt_poise_and_stagger.md"/>
             <toc-element topic="cbt_opportunity_system.md"/>
+            <toc-element topic="cbt_forward_reference.md"/>
         </toc-element>
         <toc-element topic="cbt_architecture.md">
             <toc-element topic="cbt_component_extensions.md"/>

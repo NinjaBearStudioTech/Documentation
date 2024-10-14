@@ -96,9 +96,27 @@ the **locked target**. The following properties adjust this behavior.
 ## Combat Marker Actor
 
 This Actor is used to represent the Player's **current target**. It can provide a **cosmetic** elements such as the 
-target's health bar or status effects.
+target's health bar or status effects. The **Target Manager Component** manages the Combat Marker Actor's lifecycle. 
 
-The Target Manager Component manages the Combat Marker Actor's lifecycle.
+### Placement
+
+The Combat Marker Actor attached to a **Scene Component** present on the target. This Scene Component should be placed
+in the appropriate location, above the character's head, for example.
+
+Any Scene Component or subcomponents can be used. Regardless of the component type, it must be tagged with 
+`Combat.Component.TargetLockAnchor`. 
+
+<img src="cbt_target_marker_placement.png" alt="Target Lock Placement" thumbnail="true" border-effect="line"/>
+
+### Widgets
+
+It will usually contain certain widgets that informs the player which target is currently selected. A common feature in 
+this actor is a **Widget Component**, hosting a widget that might benefit from the **[Combat Viewmodels](cbt_user_interface.md#umg-viewmodels)**.
+
+The following example demonstrates a widget that can be used in a Marker Actor. Notice the Viewmodels bound to multiple
+components in the widget.
+
+<img src="cbt_target_marker_widget.png" alt="Target Lock Widget" thumbnail="true" border-effect="line"/>
 
 ## Integrated Systems
 

@@ -31,3 +31,7 @@ conjunction with the Opportunity System.
 **[](cbt_target_locking.md)**
 : The Target Locking functionality allows combatants, players or AI, to lock on a target, which helps with Motion Warping
 and targeting, plus it can also notify current targets, so they can be considered _in combat_.
+
+**[](cbt_forward_reference.md)**
+: The Target Locking functionality allows combatants, players or AI, to lock on a target, which helps with Motion Warping
+and targeting, plus  it can also notify current targets, so they can be considered _in combat_.
