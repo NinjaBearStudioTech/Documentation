@@ -12,7 +12,7 @@ After configuring the initial **Combat Components**, the first step in Ninja Com
         <tip>If you want to create a <b>base Blueprint</b> for your <b>melee weapons</b>, you can also do that. Then, extend this Blueprint to create the sword Actor.</tip>
     </step>
     <step>
-        <p>Set <code>Inventory.Item.Type.Shield</code> to the <b>Weapon Tags</b> container.</p>
+        <p>Set <code>Inventory.Item.Type.Sword</code> to the <b>Weapon Tags</b> container.</p>
         <img src="p01g03_sword_item_tag.png" alt="Sword Tags" thumbnail="true" border-effect="line" width="600"/>
     </step>
     <step>
