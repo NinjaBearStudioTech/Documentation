@@ -30,11 +30,11 @@ so it can use the Combat Attribute Set provided by **Ninja Combat**.
 
 **[P01.G05: React to Incoming Damage](p01g05_react_to_player_damage.md)**  
 : To make sure that our attacks work, we need an enemy. Using concepts established before, we will create a new enemy 
-character that properly **reacts to incoming damage** and eventually dies.
+character that properly **reacts to incoming damage** from player attacks.
 
 **P01.G06: React to Fatal Damage**  
-: To make sure that our attacks work, we need an enemy. Using concepts established before, we will create a new enemy
-character that properly **reacts to incoming damage** and eventually dies.
+: Continuing the damage handling, we will handle fatal damage, which starts the death flow and activates the 
+**Death Ability**.
 
 **P01.G07: Create a Combo**  
 : For now, we only have a light and a heavy attack. Here we will replace the primary attack with a **combo** that will
