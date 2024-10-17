@@ -1,6 +1,8 @@
 # React to Fatal Damage
 <secondary-label ref="guide"/>
 
+<video src="https://youtu.be/koGpsk_2F-s" preview-src="sc_thumbnail_p01g06.png" width="800" />
+
 Continuing the damage handling, we will handle fatal damage, which starts the death flow and activates the
 **Death Ability**.
 
@@ -11,7 +13,7 @@ Continuing the damage handling, we will handle fatal damage, which starts the de
     <img src="p01g05_hit_reaction_montage_default.png" alt="Default Hit Reaction Animation Montage" thumbnail="true" border-effect="line" width="600"/>
 </procedure>
 
-<procedure title="Configure the Death Montage" collapsible="true">
+<procedure title="Configure the Death Gameplay Ability" collapsible="true">
 </procedure>
 
 <procedure title="Update the Damage Data Asset" collapsible="true">
