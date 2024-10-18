@@ -31,9 +31,6 @@ This will give you an overview of the combo system, its configuration and main o
 <procedure title="Configure combo inputs" collapsible="true">
 </procedure>
 
-<procedure title="Configure combo inputs" collapsible="true">
-</procedure>
-
 <procedure title="Add the Combo Manager" collapsible="true">
 </procedure>
 
