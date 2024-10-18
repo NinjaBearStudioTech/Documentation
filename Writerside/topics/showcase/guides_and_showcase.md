@@ -47,12 +47,12 @@ will be used to create an execution with **paired animations** and a **cinematic
 ## Part 2
 
 **P02.G01: Target Lock System**  
-: The **Target Lock Ability** helps with camera focus and melee precision. This allows us to move the enemy overhead widget
-to a **Marker Actor** that is assigned to any actor being focused on by the player.
+: The **Target Lock Ability** helps with camera focus, precision and add visual indicators to a target. This system uses 
+Unreal Engine's **Gameplay Targeting System** to collect targets.
 
 **P02.G02: Motion Warping**  
-: Motion Warping can adjust **root motion animations** to **shorten** or **stretch** their movement so it will properly
-reach certain targets. Let's add this to our attacks so they are more **precise**.
+: Motion Warping can adjust **root motion animations** to **shorten** or **stretch** their movement, so they will 
+properly reach targets. 
 
 **P01.G03: Track enemy attributes**  
 : Going a step further in the enemy configuration, it is now time to learn how to use the provided **Widgets** and
@@ -75,8 +75,8 @@ setup, update the **Weapon Manager**, and convert our weapons into **Items** and
 it, utilizing the camera as an **aiming mechanism**.
 
 **P02.G08: Area of effect and targeting**  
-: Let's look into the secondary ability to the ranged weapon. It will allow us to explore the integration with the G.A.S.
-**Targeting System**, used in conjunction with the **Cast Ability**.
+: Let's look into the secondary ability to the ranged weapon. It will allow us to explore the integration with the **Gameplay
+Ability System Targeting**, in conjunction with the **Cast Ability**.
 
 ## Part 3
 
