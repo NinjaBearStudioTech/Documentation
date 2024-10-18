@@ -42,7 +42,7 @@ it will use **Input Handlers** and an **Input Setup**.
     </step>
 </procedure>
 
-<procedure title="Test your Input Setup" collapsible="true">
+<procedure title="Test everything" collapsible="true">
     <step>Hit <b>Play</b> and all your inputs should work as expected: you should be able to <b>move</b>, <b>look around</b> and <b>jump</b>.</step>
     <img src="p01g01_outcome.gif" alt="Finished initial setup"/>
 </procedure>

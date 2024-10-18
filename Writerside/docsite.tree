@@ -16,6 +16,7 @@
                 <toc-element topic="p01g04_create_melee_attacks.md"/>
                 <toc-element topic="p01g05_react_to_player_damage.md"/>
                 <toc-element topic="p01g06_react_to_fatal_damage.md"/>
+                <toc-element topic="p01g07_create_primary_combo.md"/>
             </toc-element>
         </toc-element>
     </toc-element>

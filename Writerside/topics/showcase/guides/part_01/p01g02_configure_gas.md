@@ -50,7 +50,7 @@ so it can use the Combat Attribute Set provided by **Ninja Combat**.
     <tip>You can also create a new character if you prefer. If you do, then make sure to set the proper base class and configure it in your Game Mode!</tip>
 </procedure>
 
-<procedure title="Test your GAS setup" collapsible="true">
+<procedure title="Test everything" collapsible="true">
     <step>Press <b>play</b>, you should see your <b>Player Character</b>, as usual.</step>
     <step>Type the following command in your <b>Console</b>: <code>showdebug AbilitySystem</code></step>
     <step>

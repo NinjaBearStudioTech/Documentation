@@ -114,7 +114,7 @@ With the **melee weapons** configured, the next step is to create a **primary** 
     </step>
 </procedure>
 
-<procedure title="Test your melee attacks" collapsible="true">
+<procedure title="Test everything" collapsible="true">
     <step>Click the <b>Play</b> button and execute your <b>primary</b> and <b>secondary</b> attacks, pressing the appropriate buttons.</step>
     <step>
         <p>Both your attacks should execute correctly, and you should see scan lines for the <b>debug</b>.</p>

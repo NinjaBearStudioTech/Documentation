@@ -53,7 +53,7 @@ character that properly **reacts to incoming damage** and eventually dies.
     <note>When setting the <b>Animation Blueprint</b>, make sure to add a slot that can play the <b>Animation Montages</b>.</note>
 </procedure>
 
-<procedure title="Test the hit reactions" collapsible="true">
+<procedure title="Test everything" collapsible="true">
     <step>Place your enemy blueprint in the map.</step>    
     <step>Press <b>play</b> and attack the enemy, your hit reactions should be played.</step>
     <img src="p01g05_results.gif" alt="Enemy Blueprint" thumbnail="true" border-effect="line" width="600"/>

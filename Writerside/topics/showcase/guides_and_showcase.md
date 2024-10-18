@@ -36,9 +36,9 @@ character that properly **reacts to incoming damage** from player attacks.
 : Continuing the damage handling, we will handle fatal damage, which starts the death flow and activates the 
 **Death Ability**.
 
-**P01.G07: Create a Combo**  
-: For now, we only have a light and a heavy attack. Here we will replace the primary attack with a **combo** that will
-activate a different **light attack** after each button press and optionally, a **heavy attack**.
+**[P01.G07: Create a Combo](p01g07_create_primary_combo.md)**  
+: The **Combo System** is used to trigger attack sequences that can even branch out depending on different inputs. In this
+guide you will learn more about it and how to mix **Attack** and **Cast** abilities in a combo.
 
 **P01.G08: Opportunity System**  
 : Since enemies can be consistently staggered, this is a good moment to introduce the **Opportunity Attack** system. It
@@ -46,13 +46,13 @@ will be used to create an execution with **paired animations** and a **cinematic
 
 ## Part 2
 
-**P02.G01: Motion Warping**  
-: Motion Warping can adjust **root motion animations** to **shorten** or **stretch** their movement so it will properly
-reach certain targets. Let's add this to our attacks so they are more **precise**.
-
-**P02.G02: Target Lock System**  
+**P02.G01: Target Lock System**  
 : The **Target Lock Ability** helps with camera focus and melee precision. This allows us to move the enemy overhead widget
 to a **Marker Actor** that is assigned to any actor being focused on by the player.
+
+**P02.G02: Motion Warping**  
+: Motion Warping can adjust **root motion animations** to **shorten** or **stretch** their movement so it will properly
+reach certain targets. Let's add this to our attacks so they are more **precise**.
 
 **P01.G03: Track enemy attributes**  
 : Going a step further in the enemy configuration, it is now time to learn how to use the provided **Widgets** and

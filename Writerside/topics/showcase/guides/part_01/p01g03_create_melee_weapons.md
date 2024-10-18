@@ -90,7 +90,7 @@ After configuring the initial **Combat Components**, the first step in Ninja Com
     </step>
 </procedure>
 
-<procedure title="Test your weapon setup" collapsible="true">
+<procedure title="Test everything" collapsible="true">
     <step>Press <b>play</b>, you should see your <b>Player Character</b>, as usual.</step>
     <step>Your character should have a sword and a shield attacked to the correct sockets.</step>
     <img src="p01g03_results.png" alt="Weapons added to the character" thumbnail="true" border-effect="line" width="600"/>
