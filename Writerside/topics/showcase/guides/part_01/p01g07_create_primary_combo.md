@@ -6,6 +6,8 @@ guide you will learn more about it and how to mix **Attack** and **Cast** abilit
 
 ## Create a basic Combo
 
+<video src="https://youtu.be/2dghAUw1v5s" preview-src="sc_thumbnail_p01g07a.png" width="800" />
+
 In this first part of the Combo guide, the default **Attack Ability** created before will be converted into a combo.
 This will give you an overview of the combo system, its configuration and main objects.
 
