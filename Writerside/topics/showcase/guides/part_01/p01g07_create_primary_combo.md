@@ -12,7 +12,6 @@ In this first part of the Combo guide, the default **Attack Ability** created be
 This will give you an overview of the combo system, its configuration and main objects.
 
 <procedure title="Configure the Combo Window" collapsible="true">
-    x
 </procedure>
 
 <procedure title="Configure additional attack animations" collapsible="true">
@@ -44,7 +43,10 @@ This will give you an overview of the combo system, its configuration and main o
 In this second part of the Combo guide, a new **Cast Ability** will be created to show different kinds of abilities 
 being added to the combo. Then we can use it to **branch** between **primary** and **heavy** attacks.
 
-<procedure title="Configure the cast animation" collapsible="true">
+<procedure title="Create the additional attack ability" collapsible="true">
+</procedure>
+
+<procedure title="Configure the cast attack animation" collapsible="true">
 </procedure>
 
 <procedure title="Create a Cast Actor" collapsible="true">
