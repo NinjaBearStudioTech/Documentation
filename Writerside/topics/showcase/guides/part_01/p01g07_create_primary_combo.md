@@ -40,6 +40,8 @@ This will give you an overview of the combo system, its configuration and main o
 
 ## Cast Ability and Combo Branching
 
+<video src="https://youtu.be/-la0XirPPyc" preview-src="sc_thumbnail_p01g07b.png" width="800" />
+
 In this second part of the Combo guide, a new **Cast Ability** will be created to show different kinds of abilities 
 being added to the combo. Then we can use it to **branch** between **primary** and **heavy** attacks.
 
