@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rules SYSTEM "https://resources.jetbrains.com/writerside/1.0/redirection-rules.dtd">
+<rules>
+    <!-- format is as follows
+    <rule id="<unique id>">
+        <accepts>page.html</accepts>
+    </rule>
+    -->
+    <rule id="9a393a4">
+        <description>Created after removal of "Overview" from Ninja Bear Studio Plugins</description>
+        <accepts>overview.html</accepts>
+    </rule>
+    <rule id="272fa17">
+        <description>Created after removal of "Ninja Input" from Ninja Bear Studio Plugins</description>
+        <accepts>index_md.html</accepts>
+    </rule>
+    <rule id="795266e9">
+        <description>Created after removal of "Overview" from Ninja Bear Studio Plugins</description>
+        <accepts>overview.html</accepts>
+    </rule>
+    <rule id="19aaa98d">
+        <description>Created after removal of "Ninja Input" from Ninja Bear Studio Plugins</description>
+        <accepts>index_md.html</accepts>
+    </rule>
+    <rule id="1616ae0">
+        <description>Created after removal of "Ninja Input" from Ninja Bear Studio Plugins</description>
+        <accepts>input_index.html</accepts>
+    </rule>
+    <rule id="97b316b">
+        <description>Created after removal of "Fragment Reference" from Ninja Bear Studio Plugins</description>
+        <accepts>inv_items.html</accepts>
+    </rule>
+    <rule id="570538f7">
+        <description>Created after removal of "gas_Overview" from Ninja Bear Studio Plugins</description>
+        <accepts>gas-Overview.html</accepts>
+    </rule>
+    <rule id="2757d716">
+        <description>Created after removal of "Fragment Reference" from Ninja Bear Studio Plugins</description>
+        <accepts>inv_fragment_reference.html</accepts>
+    </rule>
+    <rule id="57aaf446">
+        <description>Created after removal of "Manage Equipment States" from Ninja Bear Studio Plugins</description>
+        <accepts>inv_manage_equipment_states.html</accepts>
+    </rule>
+    <rule id="3d1caa46">
+        <description>Created after removal of "Animation Support" from Ninja Bear Studio Plugins</description>
+        <accepts>inv_animation.html</accepts>
+    </rule>
+    <rule id="1b64f160">
+        <description>Created after removal of "Function Library" from Ninja Bear Studio Plugins</description>
+        <accepts>inv_function_library.html</accepts>
+    </rule>
+    <rule id="1369c54e">
+        <description>Created after removal of "Reference" from Ninja Bear Studio Plugins</description>
+        <accepts>Reference.html</accepts>
+    </rule>
+    <rule id="408d0b29">
+        <description>Created after removal of "Plugin Summary" from Ninja Bear Studio Plugins</description>
+        <accepts>plugin-summary.html</accepts>
+    </rule>
+    <rule id="314e91d6">
+        <description>Created after removal of "Plugin Summary" from Ninja Bear Studio Plugins</description>
+        <accepts>plugin_summary.html</accepts>
+    </rule>
+    <rule id="2fe9c217">
+        <description>Created after removal of "Configuration" from Ninja Bear Studio Plugins</description>
+        <accepts>inv_configuration.html</accepts>
+    </rule>
+    <rule id="45473d52">
+        <description>Created after removal of "Generate and Assign Loot" from Ninja Bear Studio Plugins</description>
+        <accepts>inv_generate_loot.html</accepts>
+    </rule>
+    <rule id="2ec90a2d">
+        <description>Created after removal of "Build an Inventory Window" from Ninja Bear Studio Plugins</description>
+        <accepts>inv_building_ui.html</accepts>
+    </rule>
+    <rule id="36fe375b">
+        <description>Created after removal of "Create an Item Fragment for Gameplay Effects" from Ninja Bear Studio
+            Plugins
+        </description>
+        <accepts>inv_create_fragment_effects.html</accepts>
+    </rule>
+    <rule id="101c20c8">
+        <description>Created after removal of "Set Dynamic Values to Equipment Gameplay Effects" from Ninja Bear Studio
+            Plugins
+        </description>
+        <accepts>inv_set_dynamic_effect_values.html</accepts>
+    </rule>
+    <rule id="d27735c">
+        <description>Created after removal of "Combo Manager" from Ninja Bear Studio Plugins</description>
+        <accepts>cbt_combo_manager.html</accepts>
+    </rule>
+    <rule id="2d83c339">
+        <description>Created after removal of "Combat Components" from Ninja Bear Studio Plugins</description>
+        <accepts>cbt_components.html</accepts>
+    </rule>
+    <rule id="489d7334">
+        <description>Created after removal of "Weapon Manager" from Ninja Bear Studio Plugins</description>
+        <accepts>cbt_weapon_manager.html</accepts>
+    </rule>
+</rules>

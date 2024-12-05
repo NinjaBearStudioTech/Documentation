@@ -1,0 +1,26 @@
+[
+  {
+    "Name": "NinjaInventoryAttributeSet.Wealth",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaInventoryAttributeSet.WeightLimit",
+    "BaseValue": 100,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaInventoryAttributeSet.BackpackSlots",
+    "BaseValue": 12,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  }
+]

@@ -1,0 +1,314 @@
+[
+  {
+    "Name": "NinjaCombatAttributeSet.Health",
+    "BaseValue": 100,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.MaxHealth",
+    "BaseValue": 100,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.MaxHealthAdd",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.MaxHealthPercent",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.HealthRegenRate",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.Stamina",
+    "BaseValue": 100,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.MaxStamina",
+    "BaseValue": 100,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.MaxStaminaAdd",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.MaxStaminaPercent",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.StaminaRegenRate",
+    "BaseValue": 10,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.StaminaRegenDelay",
+    "BaseValue": 5,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.Magic",
+    "BaseValue": 100,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.MaxMagic",
+    "BaseValue": 100,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.MaxMagicAdd",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.MaxMagicPercent",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.MagicRegenRate",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.MagicRegenDelay",
+    "BaseValue": 5,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.BaseDamage",
+    "BaseValue": 10,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.CriticalHitChance",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.CriticalHitMultiplier",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.BlockChance",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.BlockMitigation",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.BlockAngle",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.BlockLimit",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.BlockStaminaCostRate",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.BlockCooldown",
+    "BaseValue": 3,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.EvadeStaminaCost",
+    "BaseValue": 20,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.EvadeCooldown",
+    "BaseValue": 0.2,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.DefenseChance",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.DefenseMitigation",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.DefenseStaminaCostRate",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.ArmorReduction",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.LastStandCount",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.LastStandHealthPercent",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.Poise",
+    "BaseValue": 100,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.PoiseDamage",
+    "BaseValue": 0,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.PoiseRecovery",
+    "BaseValue": 100,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.PoiseRecoveryInterval",
+    "BaseValue": 10,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  },
+  {
+    "Name": "NinjaCombatAttributeSet.StaggerDuration",
+    "BaseValue": 5,
+    "MinValue": 0,
+    "MaxValue": 0,
+    "DerivedAttributeInfo": "",
+    "bCanStack": false
+  }
+]

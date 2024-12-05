@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="docsite"
+                  name="Ninja Bear Studio Plugins"
+                  start-page="getting_started.md">
+
+    <toc-element topic="getting_started.md" toc-title="Welcome"/>
+    <toc-element topic="guides_and_showcase.md">
+        <toc-element toc-title="Guides">
+            <toc-element toc-title="Part 1">
+                <toc-element topic="p01g01_configure_inputs.md"/>
+                <toc-element topic="p01g02_configure_gas.md" toc-title="Configure G.A.S."/>
+                <toc-element topic="p01g03_create_melee_weapons.md"/>
+                <toc-element topic="p01g04_create_melee_attacks.md"/>
+                <toc-element topic="p01g05_react_to_player_damage.md"/>
+                <toc-element topic="p01g06_react_to_fatal_damage.md"/>
+                <toc-element topic="p01g07_create_primary_combo.md"/>
+                <toc-element topic="p01g08_create_finisher.md"/>
+            </toc-element>
+            <toc-element toc-title="Part 2">
+                <toc-element topic="p02g01_target_lock.md"/>
+                <toc-element topic="p02g02_motion_warping.md"/>
+            </toc-element>
+        </toc-element>
+    </toc-element>
+    <toc-element topic="bot_overview.md">
+        <toc-element topic="bot_setup.md"/>
+        <toc-element topic="bot_concepts.md">
+            <toc-element topic="bot_agents_design.md"/>
+            <toc-element topic="bot_perception.md"/>
+            <toc-element topic="bot_tokens.md"/>
+            <toc-element topic="bot_strategy.md"/>
+        </toc-element>
+        <toc-element topic="bot_architecture.md">
+            <toc-element topic="bot_ai_systems.md">
+                <toc-element topic="bot_controller.md"/>
+                <toc-element topic="bot_behavior_trees.md"/>
+                <toc-element topic="bot_state_trees.md"/>
+            </toc-element>
+            <toc-element topic="bot_token_system.md"/>
+            <toc-element topic="bot_strategy_system.md">
+                <toc-element topic="bot_health_monitor.md"/>
+                <toc-element topic="bot_strategy_actor.md"/>
+                <toc-element topic="bot_strategy_volume.md"/>
+                <toc-element topic="bot_strategy_spawn.md"/>
+                <toc-element topic="bot_strategy_subsystem.md"/>
+                <toc-element topic="bot_strategy_state_tree.md"/>
+            </toc-element>
+            <toc-element topic="bot_user_interface.md"/>
+        </toc-element>
+        <toc-element topic="bot_integration.md">
+            <toc-element topic="bot_integration_combat.md"/>
+            <toc-element topic="bot_integration_factions.md"/>
+        </toc-element>
+    </toc-element>
+    <toc-element topic="cbt_overview.md">
+        <toc-element topic="cbt_setup.md"/>
+        <toc-element topic="cbt_concepts.md">
+            <toc-element topic="cbt_melee_combat.md"/>
+            <toc-element topic="cbt_ranged_combat.md"/>
+            <toc-element topic="cbt_combo_system.md"/>
+            <toc-element topic="cbt_target_locking.md"/>
+            <toc-element topic="cbt_damage_and_defense.md"/>
+            <toc-element topic="cbt_poise_and_stagger.md"/>
+            <toc-element topic="cbt_opportunity_system.md"/>
+            <toc-element topic="cbt_forward_reference.md"/>
+        </toc-element>
+        <toc-element topic="cbt_architecture.md">
+            <toc-element topic="cbt_component_extensions.md"/>
+            <toc-element topic="cbt_weapon_architecture.md"/>
+            <toc-element topic="cbt_movement_component.md"/>
+            <toc-element topic="cbt_character_animation.md"/>
+            <toc-element topic="cbt_actor_pooling.md"/>
+            <toc-element topic="cbt_user_interface.md"/>
+            <toc-element topic="cbt_targeting_system.md"/>
+            <toc-element topic="cbt_motion_warping.md"/>
+            <toc-element topic="cbt_artificial_intelligence.md"/>
+        </toc-element>
+        <toc-element topic="cbt_ability_system.md">
+            <toc-element topic="cbt_attributes.md"/>
+            <toc-element topic="cbt_effects.md"/>
+            <toc-element topic="cbt_abilities.md">
+                <toc-element topic="cbt_ability_attack.md"/>
+                <toc-element topic="cbt_ability_block.md"/>
+                <toc-element topic="cbt_ability_cast.md"/>
+                <toc-element topic="cbt_ability_combo.md"/>
+                <toc-element topic="cbt_ability_death.md"/>
+                <toc-element topic="cbt_ability_evade.md"/>
+                <toc-element topic="cbt_ability_hit_reaction.md"/>
+                <toc-element topic="cbt_ability_opportunity_attack.md"/>
+                <toc-element topic="cbt_ability_stagger.md"/>
+                <toc-element topic="cbt_ability_target_lock.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element topic="cbt_integration.md">
+            <toc-element topic="cbt_integration_factions.md"/>
+            <toc-element topic="cbt_integration_input.md"/>
+            <toc-element topic="cbt_integration_inventory.md"/>
+        </toc-element>
+        <toc-element topic="cbt_troubleshooting.md"/>
+        <toc-element topic="cbt_changelog.md"/>
+    </toc-element>
+    <toc-element topic="fct_overview.md">
+        <toc-element topic="fct_setup.md"/>
+        <toc-element topic="fct_concepts.md">
+            <toc-element topic="fct_factions_memberships.md"/>
+            <toc-element topic="fct_reputation_tiers.md"/>
+        </toc-element>
+        <toc-element topic="fct_architecture.md">
+            <toc-element topic="fct_faction_database.md"/>
+            <toc-element topic="fct_attitude_solver.md"/>
+            <toc-element topic="fct_bots.md"/>
+            <toc-element topic="fct_save_load.md"/>
+            <toc-element topic="fct_gameplay_debugger.md"/>
+        </toc-element>
+        <toc-element toc-title="How-To" hidden="true">
+            <toc-element topic="fct_create_faction.md"/>
+            <toc-element topic="fct_configure_tiers.md"/>
+            <toc-element topic="fct_configure_memberships.md"/>
+            <toc-element topic="fct_add_reputation.md"/>
+            <toc-element topic="fct_manage_memberships.md"/>
+        </toc-element>
+        <toc-element topic="fct_changelog.md"/>
+    </toc-element>
+    <toc-element topic="gas_overview.md">
+        <toc-element topic="gas_setup.md"/>
+        <toc-element topic="gas_architecture.md">
+            <toc-element topic="gas_data_asset.md"/>
+            <toc-element topic="gas_base_classes.md"/>
+            <toc-element topic="gas_artificial_intelligence.md"/>
+            <toc-element topic="gas_local_gameplay_cues.md"/>
+            <toc-element topic="gas_batch_activation.md"/>
+        </toc-element>
+        <toc-element topic="gas_changelog.md"/>
+    </toc-element>
+    <toc-element topic="ipt_overview.md">
+        <toc-element topic="ipt_setup.md"/>
+        <toc-element topic="ipt_concepts.md">
+            <toc-element topic="ipt_input_management.md"/>
+            <toc-element topic="ipt_input_setup.md"/>
+            <toc-element topic="ipt_input_buffer.md"/>
+        </toc-element>
+        <toc-element topic="ipt_architecture.md">
+            <toc-element topic="ipt_input_handlers.md">
+                <toc-element topic="ipt_character_handlers.md"/>
+                <toc-element topic="ipt_gas_handlers.md"/>
+                <toc-element topic="ipt_ui_handlers.md"/>
+            </toc-element>
+            <toc-element topic="ipt_forward_reference.md"/>
+            <toc-element topic="ipt_input_detection.md"/>
+            <toc-element topic="ipt_common_ui.md"/>
+        </toc-element>
+        <toc-element topic="ipt_troubleshooting.md"/>
+        <toc-element topic="ipt_changelog.md"/>
+    </toc-element>
+    <toc-element topic="int_overview.md"/>
+    <toc-element topic="inv_overview.md">
+        <toc-element topic="inv_setup.md"/>
+        <toc-element topic="inv_concepts.md">
+            <toc-element topic="inv_container_and_layout.md"/>
+            <toc-element topic="inv_items_and_fragments.md"/>
+            <toc-element topic="inv_inventory_manager.md"/>
+            <toc-element topic="inv_equipment.md"/>
+            <toc-element topic="inv_equipment_manager.md"/>
+            <toc-element topic="inv_loot_management.md"/>
+        </toc-element>
+        <toc-element topic="inv_architecture.md">
+            <toc-element topic="inv_fragment_reference.md">
+                <toc-element topic="inv_consumable_fragment.md"/>
+                <toc-element topic="inv_container_fragment.md"/>
+                <toc-element topic="inv_durability_fragment.md"/>
+                <toc-element topic="inv_economy_fragment.md"/>
+                <toc-element topic="inv_equipment_fragment.md"/>
+                <toc-element topic="inv_gameplay_effect_fragment.md"/>
+                <toc-element topic="inv_level_fragment.md"/>
+                <toc-element topic="inv_loot_fragment.md"/>
+                <toc-element topic="inv_pickup_fragment.md"/>
+                <toc-element topic="inv_quality_fragment.md"/>
+                <toc-element topic="inv_stack_fragment.md"/>
+                <toc-element topic="inv_user_interface_fragment.md"/>
+                <toc-element topic="inv_weight_fragment.md"/>
+            </toc-element>
+            <toc-element topic="inv_save_and_load.md"/>
+            <toc-element topic="inv_user_interface.md">
+                <toc-element topic="inv_widgets.md"/>
+                <toc-element topic="inv_viewmodels.md">
+                    <toc-element topic="inv_core_attributes_mvvm.md"/>
+                    <toc-element topic="inv_core_items_mvvm.md"/>
+                    <toc-element topic="inv_core_layout_mvvm.md"/>
+                    <toc-element topic="inv_item_durability_mvvm.md"/>
+                    <toc-element topic="inv_item_economy_mvvm.md"/>
+                    <toc-element topic="inv_item_equipment_mvvm.md"/>
+                    <toc-element topic="inv_item_level_mvvm.md"/>
+                    <toc-element topic="inv_item_quality_mvvm.md"/>
+                    <toc-element topic="inv_item_stack_mvvm.md"/>
+                    <toc-element topic="inv_item_ui_mvvm.md"/>
+                    <toc-element topic="inv_item_weight_mvvm.md"/>
+                </toc-element>
+            </toc-element>
+            <toc-element topic="inv_assembling_meshes.md"/>
+        </toc-element>
+        <toc-element topic="inv_ability_system.md">
+            <toc-element topic="inv_attributes.md"/>
+            <toc-element topic="inv_effects.md"/>
+            <toc-element topic="inv_abilities.md"/>
+        </toc-element>
+        <toc-element toc-title="How-To">
+            <toc-element topic="inv_create_containers.md"/>
+            <toc-element topic="inv_create_item.md"/>
+            <toc-element topic="inv_configure_inventory_manager.md"/>
+            <toc-element topic="inv_configure_stored_equipment.md"/>
+            <toc-element topic="inv_activate_stored_equipment.md"/>
+            <toc-element topic="inv_add_items_gameplay.md"/>
+            <toc-element topic="inv_consumables.md"/>
+        </toc-element>
+        <toc-element topic="inv_troubleshooting.md"/>
+        <toc-element topic="inv_changelog.md"/>
+    </toc-element>
+</instance-profile>

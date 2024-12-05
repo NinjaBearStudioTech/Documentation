@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE buildprofiles SYSTEM "https://resources.jetbrains.com/writerside/1.0/build-profiles.dtd">
+<buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <build-profile instance="docsite">
+        <variables>
+            <custom-favicons>nb_logo_favico.png</custom-favicons>
+            <header-logo>nb_logo_transparent.png</header-logo>
+            <noindex-content>true</noindex-content>
+            <primary-color>#326c5a</primary-color>
+            <color-preset>contrast</color-preset>
+            <custom-css>custom.css</custom-css>
+            <download-title>Seller Profile on Fab</download-title>
+            <download-page>https://www.fab.com/sellers/Ninja%20Bear%20Studio</download-page>
+            <showDownloadButton>true</showDownloadButton>
+            <include-in-head>static/include_in_head.html</include-in-head>
+            <algolia-id>1VNI46BYQK</algolia-id>
+            <algolia-index>nbs_tech_site_index</algolia-index>
+            <algolia-api-key>$ALGOLIA_KEY_MARKER</algolia-api-key>
+        </variables>
+        <footer>
+            <copyright>2022-2024 Ninja Bear Studio Inc.</copyright>
+            <social type="email" href="mailto:support@ninjabear.studio"/>
+            <social type="linkedin" href="https://www.linkedin.com/company/ninja-bear-studio"/>
+            <social type="youtube" href="https://www.youtube.com/ninjabearstudio"/>
+        </footer>
+    </build-profile>
+</buildprofiles>
