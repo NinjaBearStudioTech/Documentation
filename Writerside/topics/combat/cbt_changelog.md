@@ -214,11 +214,12 @@ First release for Unreal Engine 5.3.
 [bugfix] Fixed property visibility for State Tree nodes, so they can be used for property binding.
 ```
 
-## 2.19.45
+## 2.19.46
 <secondary-label ref="wip"/>
 ```
 [added] Option to collect specific Melee Scan meshes, via Gameplay Tags.
 [improvement] Support for additional roles in the Opportunity Attack ability.
 [improvement] Exposed optional settings for Damage and Poise Consumption in weapons and projectiles.
 [bugfix] Removed all warnings regarding Ability Tags, introduced in Unreal Engine 5.5. 
+[bugfix] Fixed a crash that could happen while executing an animation ability, with Motion Warping, and closing the game before ability ends.
 ```

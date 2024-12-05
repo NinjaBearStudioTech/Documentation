@@ -33,6 +33,7 @@ Unreal Engine's **Gameplay Targeting System** to collect targets.
 <procedure title="Create a Marker Actor" collapsible="true">
     <step>Create a new <b>Blueprint</b> using <code>NinjaCombatMarkerActor</code> as the base class.</step>
     <step>Add the widget created in the previous step to this actor's <b>Target Lock Widget Component</b>.</step>
+    <step>Set the new Blueprint to your player character, in its <b>Combat Manager Component</b>, in the <b>Target Marker Actor Class</b>.</step>
     <img src="p02g01_marker_actor.png" alt="Targeting Preset" thumbnail="true" border-effect="line" width="600"/>
 </procedure>
 
