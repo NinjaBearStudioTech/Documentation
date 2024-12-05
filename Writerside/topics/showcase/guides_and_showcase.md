@@ -59,11 +59,11 @@ Unreal Engine's **Gameplay Targeting System** to collect targets.
 : Motion Warping can adjust **root motion animations** to **shorten** or **stretch** their movement, so they will 
 properly reach targets. 
 
-**P01.G03: Track Player Attributes**  
-: Still in the **user interface** topic, let's create more visual elements, but this time to track the **Player's Vitals**.
-Once again, using **Viewmodels**, we will create progress bars for **Health**, **Stamina**, and **Magic**.
+**[P02.G03: Track Player Attributes](p02g03_player_attributes.md)**  
+: The combat system provides **Viewmodels** to support your **user interface**. Let's get started with that topic, by
+creating some progress bars that will track the player's main attributes: **Health**, **Stamina**, and **Magic**.
 
-**P01.G04: Track Enemy Attributes**  
+**P02.G04: Track Enemy Attributes**  
 : Going a step further in the enemy configuration, it is now time to learn how to use the provided **Widgets** and
 **Viewmodels** to track the enemy's **health**, **stagger**, and **incoming damage**.
 
