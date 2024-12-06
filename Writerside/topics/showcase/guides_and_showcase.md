@@ -14,6 +14,8 @@ These guides are focused on the **Ninja Bear Studio plugins** and expect previou
 Unreal Engine, such as creating common objects and their hierarchies, working with Animation Blueprints, basics of the
 Gameplay Ability System, and so on.
 
+To check all assets used in the showcase project, please check the [**credits page**](showcase_credits.md).
+
 ## Part 1
 
 **[P01.G01: Configure Input Handlers](p01g01_configure_inputs.md)**  
@@ -63,11 +65,11 @@ properly reach targets.
 : The combat system provides **Viewmodels** to support your **user interface**. Let's get started with that topic, by
 creating some progress bars that will track the player's main attributes: **Health**, **Stamina**, and **Magic**.
 
-**P02.G04: Track Enemy Attributes**  
-: Going a step further in the enemy configuration, it is now time to learn how to use the provided **Widgets** and
-**Viewmodels** to track the enemy's **health**, **stagger**, and **incoming damage**.
+**[P02.G04: Track Enemy Attributes](p02g04_enemy_overhead.md)**  
+: Now that we created the first **Combat Widget**, let's create a more advanced one, the **Overhead Info**. It will be 
+used with the enemy character, to show **attributes** and **status effects**.
 
-**P02.G05: Configure the Inventory**  
+**P02.G05: Configure the Inventory** 
 : To create our **secondary weapon**, we should have **Ninja Inventory** configured. So this is our next task: perform the 
 setup, update the **Weapon Manager**, and convert our weapons into **Items** and **Equipment**.
 

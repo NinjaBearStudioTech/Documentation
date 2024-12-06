@@ -48,6 +48,8 @@ Unreal Engine's **Gameplay Targeting System** to collect targets.
     <step>Add the new Input Action to your <b>Input Mapping Context</b> asset, mapping it to an appropriate key.</step>
     <step>Create a new <b>Input Handler</b> or add one directly to your <b>Input Setup</b>, using the <b>Activate Ability by Tags</b> as base.</step>
     <step>Add <code>Ability.TargetLock</code> to the <b>Ability Tags</b>.</step>
+    <step>Set <b>Toggle Activation</b>, so the ability is activated and then deactivated on input.</step>
+    <img src="p02g01_input_handler.png" alt="Input Handler" thumbnail="true" border-effect="line" width="600"/>
 </procedure>
 
 <procedure title="Test Everything" collapsible="true">

@@ -80,6 +80,7 @@ behavior:
 
 - **Control Rotation**: Enables or disables automatic rotation of the Controller to face the current target.
 - **Predict Target**: Allows the local player to predict the target, before waiting for server confirmation.
+- **Target Marker Class**: The class used as the "Target Lock" marker.
 
 ### Controller Rotation
 
@@ -97,6 +98,12 @@ the **locked target**. The following properties adjust this behavior.
 
 This Actor is used to represent the Player's **current target**. It can provide a **cosmetic** elements such as the 
 target's health bar or status effects. The **Target Manager Component** manages the Combat Marker Actor's lifecycle. 
+
+> **Setting the Marker Actor**
+> 
+> The default Marker Actor has not inherent visuals, so you will most likely create your own. You can define the Marker
+> Actor used by the combat system in the **Combat Manager Component**, which is the default **Target Manager** implementation.
+{style="note"}
 
 ### Placement
 
