@@ -8,8 +8,9 @@ APluginLabsCharacter::APluginLabsCharacter(const FObjectInitializer& ObjectIniti
 	static const FName CombatManagerName = TEXT("CombatManager");
 	CombatManager = CreateDefaultSubobject<UNinjaCombatManagerComponent>(CombatManagerName);
 
+    // Create this as an optional sub-object, so we may change later on for the Inventory integration.
 	static const FName WeaponManagerName = TEXT("WeaponManager");
-	WeaponManager = CreateDefaultSubobject<UNinjaCombatWeaponManagerComponent>(WeaponManagerName);
+	WeaponManager = CreateOptionalDefaultSubobject<UNinjaCombatWeaponManagerComponent>(WeaponManagerName);
 }
 
 USkeletalMeshComponent* APluginLabsCharacter::GetCombatMesh_Implementation() const

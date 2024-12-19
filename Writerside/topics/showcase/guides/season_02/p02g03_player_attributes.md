@@ -49,6 +49,6 @@ creating some progress bars that will track the player's main attributes: **Heal
 </procedure>
 
 <procedure title="Test Everything" collapsible="true">
-    <step>Hit <b>Play</b> and notice your progress bars are filled based on the attribute values.</step>
+    <step>Press <b>Play</b> and notice your progress bars are filled based on the attribute values.</step>
     <step>Modify your initial health, magic or stamina and see these changes in your UI.</step>
 </procedure>

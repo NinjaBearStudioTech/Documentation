@@ -87,7 +87,7 @@ Also, review the [Abilities](inv_abilities.md) to learn more about abilities tha
 
 ## Inventory Manager
 
-The **[Inventory Manager](inv_inventory_manager.md)** is the primary component that must be added to any actor with an 
+The **[](inv_inventory_manager.md)** is the primary component that must be added to any actor with an 
 inventory.
 
 The Inventory Manager can be added to a **Player State** or **Pawn**. Both are equally viable and the decisive factor 

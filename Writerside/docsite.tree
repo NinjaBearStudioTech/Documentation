@@ -24,6 +24,7 @@
                 <toc-element topic="p02g02_motion_warping.md"/>
                 <toc-element topic="p02g03_player_attributes.md"/>
                 <toc-element topic="p02g04_enemy_overhead.md"/>
+                <toc-element topic="p02g05_configure_inventory.md"/>
             </toc-element>
         </toc-element>
         <toc-element topic="showcase_credits.md"/>

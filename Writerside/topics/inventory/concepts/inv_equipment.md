@@ -39,7 +39,15 @@ While configuring your assets for each state, keep the following general concept
 - **Slot Tag**: Refers to a **Container/Mesh Component** or **Socket** that can be used as the placement anchor.
 - **Socket Name**: Applicable to **Mesh Components** that must be attached to different sockets.
 - **Compatibility Checks**: You can use or create checks that must be valid for the asset to be used. This is useful to handle things like different _body types_.
-- **Scene Component Selector**: Allow you to determine where a given Slot should be encountered. By default, this is the Character Mesh, but you might want to use other selection rules.
+- **Scene Component Selector**: Allows you to determine where a given Slot should be encountered. By default, this is the Character Mesh, but you might want to use other selection rules.
+
+The following scene selectors are available:
+
+| Scene Selector     | Description                                                                                                                                          |
+|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Attached Actor     | Selects a component in an attached actor, by a given component tag. <br/> Useful if you want to attach an item to another actor, such as a backpack. |
+| Character Mesh     | Returns the default Mesh from a character, or another scene component using the optional Gameplay Tag.                                               |
+| Provider Interface | Invokes the selection method from `EquipmentSceneComponentProviderInterface`. Supports advanced logic.                                               |
 
 ## Equipment Instance
 
@@ -125,7 +133,8 @@ equipment representation is a **Skeletal or Static Mesh**.
 ### Sockets
 
 **Sockets** provide another method for defining **Equipment Slots**. They are particularly useful when your Equipment is
-represented by an **Actor**, making traditional **Mesh Components** less viable.
+represented by an **Actor**, making traditional **Mesh Components** less viable, since these actors would actually be
+attacked to the owner.
 
 The mapping between **Slot Tags** and **Skeleton Sockets** is done in the **[Equipment Manager](inv_equipment_manager.md#configuration)**.
 A common use case would be for weapons that are implemented using **Actors**.

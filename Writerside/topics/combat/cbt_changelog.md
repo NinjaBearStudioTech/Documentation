@@ -214,12 +214,18 @@ First release for Unreal Engine 5.3.
 [bugfix] Fixed property visibility for State Tree nodes, so they can be used for property binding.
 ```
 
-## 2.19.46
+## 2.19.51
 <secondary-label ref="wip"/>
 ```
 [added] Option to collect specific Melee Scan meshes, via Gameplay Tags.
 [improvement] Support for additional roles in the Opportunity Attack ability.
 [improvement] Exposed optional settings for Damage and Poise Consumption in weapons and projectiles.
+[improvement] Added an extension point for opportunity attacks, before starting the paired animation.
+[improvement] Added a more flexible way to select melee impact particles, sounds and shakes in the Base Weapon actor.
+[improvement] Added a more flexible way to select melee impact particles and sounds in the Base Projectile actor.
+[improvement] Exposed the default widget visibility in the base Combat Widget. 
 [bugfix] Removed all warnings regarding Ability Tags, introduced in Unreal Engine 5.5. 
 [bugfix] Fixed a crash that could happen while executing an animation ability, with Motion Warping, and closing the game before ability ends.
+[bugfix] Fixed the ragdoll being invoked, even when no ragdoll settings were enabled.
+[bugfix] Fixed cancel regen tag application for max health, stamina and magic.
 ```

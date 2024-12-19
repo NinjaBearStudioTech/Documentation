@@ -29,9 +29,11 @@ First release for Unreal Engine 5.3 and 5.4.
 [bugfix] Fixed the Equipment State Changed broadcast not being called.
 ```
 
-## 1.1.16
+## 1.2.17
 <secondary-label ref="wip"/>
 ```
+[added] New Scene Selector (`EquipmentSceneComponentProvider`) based on an interface, for advanced logic.
 [improvement] Added the source to pickup actors.
+[improvement] Exposed consumable objects in the Consumable Ability.
 [bugfix] Fixed `IsSuccessful` in the `FInventoryItemContext`.
 ```

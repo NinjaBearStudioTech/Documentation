@@ -69,33 +69,33 @@ creating some progress bars that will track the player's main attributes: **Heal
 : Now that we created the first **Combat Widget**, let's create a more advanced one, the **Overhead Info**. It will be 
 used with the enemy character, to show **attributes** and **status effects**.
 
-**P02.G05: Configure the Inventory** 
+**[P02.G05: Configure the Inventory](p02g05_configure_inventory.md)** 
 : To create our **secondary weapon**, we should have **Ninja Inventory** configured. So this is our next task: perform the 
 setup, update the **Weapon Manager**, and convert our weapons into **Items** and **Equipment**.
 
-**P02.G06: Switch Weapons**  
-: Let's create a new weapon that will enable us to work with projectiles. Once that is done, we will configure the 
-**Equipment Ability** to switch weapons and also their **Abilities** and **Animation Layers**.
+**P02.G06: Create the Inventory UI**
+: Let's create the first part of the Inventory UI, so it can display our current weapons and their slots, along with the
+Backpack region. For this, we'll use provided base Inventory Widgets and Viewmodels.
 
-**P02.G07: Create a Projectile**  
+**P02.G07: Create the Bow Weapon**  
 : With the new weapon configured and usable, we will create a **Projectile** and the appropriate **Attack Ability** to use 
 it, utilizing the camera as an **aiming mechanism**.
 
-**P02.G08: Area of effect and targeting**  
-: Let's look into the secondary ability to the ranged weapon. It will allow us to explore the integration with the **Gameplay
-Ability System Targeting**, in conjunction with the **Cast Ability**.
+**P02.G08: Switch Weapons**  
+: Let's create a new weapon that will enable us to work with projectiles. Once that is done, we will configure the
+**Equipment Ability** to switch weapons and also their **Abilities** and **Animation Layers**.
 
 ## Part 3
 
-**P03.G01: Actor Pooling**  
+**P03.G01: Area of effect and targeting**  
+: Let's look into the secondary ability to the ranged weapon. It will allow us to explore the integration with the **Gameplay
+Ability System Targeting**, in conjunction with the **Cast Ability**.
+
+**P03.G02: Actor Pooling**  
 : We have recurring actors for projectiles and the Cast ability in the Combo. Let's use the **Actor Pooling** to make sure
 that these are pre-spawned, and we can avoid the constant spawning/destruction overhead.
 
-**P03.G02: Configure the Weapon UI**  
-: Using Inventory Widgets, we can create a simple user interface that indicates which weapon is currently in use and
-other features, such as arrows for the bow.
-
-**P03.G03: Inventory interface**  
+**P03.G03: Create Armor Sets**  
 : With two armor sets and two weapon sets, we can build our **Inventory UI** to allow managing these properly. This will
 use the **Inventory Viewmodels**, including their **drag and drop** functionality.
 
