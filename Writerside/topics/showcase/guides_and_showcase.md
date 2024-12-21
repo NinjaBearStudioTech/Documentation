@@ -73,9 +73,9 @@ used with the enemy character, to show **attributes** and **status effects**.
 : To create our **secondary weapon**, we should have **Ninja Inventory** configured. So this is our next task: perform the 
 setup, update the **Weapon Manager**, and convert our weapons into **Items** and **Equipment**.
 
-**P02.G06: Create the Inventory UI**
-: Let's create the first part of the Inventory UI, so it can display our current weapons and their slots, along with the
-Backpack region. For this, we'll use provided base Inventory Widgets and Viewmodels.
+**[P02.G06: Create the Inventory UI](p02g06_create_inventory_ui.md)**
+: Let's create the first part of the Inventory UI, so it can display the weapon slots and the backpack. These will be 
+built using the base Inventory Widgets and UMG Viewmodels.
 
 **P02.G07: Create the Bow Weapon**  
 : With the new weapon configured and usable, we will create a **Projectile** and the appropriate **Attack Ability** to use 

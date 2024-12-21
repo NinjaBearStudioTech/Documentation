@@ -6,9 +6,10 @@ frameworks in Unreal Engine - **Behavior Trees** and **State Trees**.
 
 ## Behavior Trees
 
-| Node           | Type      | Description                                                              |
-|----------------|-----------|--------------------------------------------------------------------------|
-| Combatant Dead | Decorator | Checks if a combat actor is dead, based on **Damage Manager** condition. |
+| Node           | Type      | Description                                                                             |
+|----------------|-----------|-----------------------------------------------------------------------------------------|
+| Combatant Dead | Decorator | Checks if a combat actor is dead, based on **Damage Manager** condition.                |
+| Advance Combo  | Service   | Advances the combo either via Input or Gameplay Tag. Can be extended for dynamic logic. |
 
 ## State Trees
 

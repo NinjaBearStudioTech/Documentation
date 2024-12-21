@@ -4,6 +4,15 @@
 To create our **secondary weapon**, we should have **Ninja Inventory** configured. So this is our next task: perform the
 setup, update the **Weapon Manager**, and convert our weapons into **Items** and **Equipment**.
 
+<procedure title="Add the Inventory Attribute Set">
+    <step>Create a <b>Data Table</b> for <b>Inventory Attributes</b>, using the base data from <a href="inv_attributes.md"/>.</step>
+    <step>Change the initial <b>Backpack Attribute</b> to <code>20</code>, or any other value that you prefer.</step>
+    <step>
+        <p>Add the <b>Inventory Attribute Set</b> to the player, via the <b>Ability Definition</b>.</p>
+        <img src="p02g05_inventory_attribute_set.png" alt="Inventory Attribute Set" thumbnail="true" border-effect="line" width="600"/>
+    </step>
+</procedure>
+
 <procedure title="Configure the Equipment Manager Component" collapsible="true">
     <step>Add the <b>Equipment Manager Component</b> to the Player Character.</step>
     <step>
@@ -49,7 +58,7 @@ setup, update the **Weapon Manager**, and convert our weapons into **Items** and
 <procedure title="Create the Weapon Item Definition" collapsible="true">
     <step>Create a new <b>Item Definition</b>, from the <b>Content Menu</b>, for the <b>Sword and Shield</b>.</step>
     <step>Set a Gameplay Tag that identifies this item - <code>Inventory.Item.Weapon.SwordAndShield</code>.</step>
-    <step>Add the <b>User Interface Fragment</b>, set the <b>Display Name</b> ("<i>Sword and Shield</i>") and <b>Display Type</b> (<i>Weapon</i>).</step>
+    <step>Add the <b>User Interface Fragment</b>, set the <b>Display Name</b> ("<i>Sword and Shield</i>"), <b>Display Type</b> (<i>Weapon</i>) and an Icon.</step>
     <step>Add the <b>Stack Fragment</b>, set the <b>Stack Limit</b> as <b>1</b> and <b>Maximum Limit</b> as 1.</step>
     <step>
         <p>Add the <b>Container Fragment</b>, set the <b>Preferred Container Query</b> to indicate the <b>Weapon Container</b>.</p>
@@ -59,7 +68,7 @@ setup, update the **Weapon Manager**, and convert our weapons into **Items** and
     <img src="p02g05_item_definition.png" alt="Item Definition" thumbnail="true" border-effect="line" width="600"/>
 </procedure>
 
-<procedure title="Create the Backpack Item Container" collapsible="true">
+<procedure title="Create the Backpack container" collapsible="true">
     <step>Create a new <b>Container Definition</b>, from the <b>Content Menu</b>, for the <b>Backpack</b> container.</step>
     <step>
         <p>Set the <b>Display Name</b> as <b>Backpack</b>, and add <code>Inventory.Container.Backpack</code> and <code>Inventory.Container.Default</code> Gameplay Tags.</p>
@@ -68,20 +77,21 @@ setup, update the **Weapon Manager**, and convert our weapons into **Items** and
             <p>The <code>Inventory.Container.Default</code> is provided by the system and indicates a default container, used when no better option is available.</p>
         </tip>
     </step>
+    <step>Set the <b>Priority</b> to <code>100</code>, so this container will have low priority in comparison with other compatible containers.</step>
     <step>
         <p>Set the <code>NinjaInventoryAttributeSet.BackpackSlots</code> as the <b>Slots Attribute</b>.</p>
         <tip>
-            <p><b>Default Backpack Attribute Value</b></p>
-            <p>The Backpack Attribute is initialized with <code>12</code>, when you import the initial data from the <a href="inv_attributes.md"/> page.</p>
+            <p><b>Backpack Attribute Value</b></p>
+            <p>This attribute is part of the <b>Ninja Inventory Attribute Set</b>, and it was previously initialized in this guide.</p>
         </tip>
     </step>
     <img src="p02g05_backpack_definition.png" alt="Backpack Definition" thumbnail="true" border-effect="line" width="600"/>
 </procedure>
 
-<procedure title="Create the Weapon Equipment Slot" collapsible="true">
-    <step>Create a new <b>Container Definition</b>, from the <b>Content Menu</b>, for the <b>Weapon</b>.</step>
+<procedure title="Create the Primary Weapon slot" collapsible="true">
+    <step>Create a new <b>Container Definition</b>, from the <b>Content Menu</b>, for the <b>Primary Weapon</b>.</step>
     <step>
-        <p>Set the <b>Display Name</b> as <b>Main Weapon</b>, and add <code>Inventory.Container.Equipment</code> and <code>Inventory.Container.Weapon.Main</code> Gameplay Tags.</p>
+        <p>Set the <b>Display Name</b> as <b>Primary Weapon</b>, and add <code>Inventory.Container.Equipment</code> and <code>Inventory.Container.Weapon.Main</code> Gameplay Tags.</p>
         <tip>
             <p><b>Equipment Container</b></p>
             <p>The <code>Inventory.Container.Equipment</code> is provided by the system and indicates an equipment slot, used to store equipment instances.</p>
@@ -93,12 +103,19 @@ setup, update the **Weapon Manager**, and convert our weapons into **Items** and
         <p>Set the <b>Item Compatibility Query</b> so it filters items tagged as <b>Weapons</b>.</p>
         <img src="p02g05_weapon_slot_query.png" alt="Weapon Slot Query" thumbnail="true" border-effect="line" width="600"/>
     </step>
-    <img src="p02g05_weapon_slot_definition.png" alt="Weapon Definition" thumbnail="true" border-effect="line" width="600"/>
+    <img src="p02g05_primary_weapon_definition.png" alt="Primary Weapon Definition" thumbnail="true" border-effect="line" width="600"/>
+</procedure>
+
+<procedure title="Create the Secondary Weapon slot" collapsible="true">
+    <step>Create a new <b>Container Definition</b>, from the <b>Content Menu</b>, for the <b>Secondary Weapon</b>.</step>
+    <step>Repeat the steps above, defining the <b>Secondary Weapon</b> slot.</step>
+    <step>Set the <b>Priority</b> to <code>2</code> to prioritize the <b>Primary Weapon</b> equipment slot.</step>
+    <img src="p02g05_secondary_weapon_definition.png" alt="Secondary Weapon Definition" thumbnail="true" border-effect="line" width="600"/>
 </procedure>
 
 <procedure title="Configure the Inventory Layout" collapsible="true">
     <step>Create a new <b>Inventory Layout</b>, from the <b>Context Menu</b>.</step>
-    <step>Add both <b>Container Definitions</b> to this layout.</step>
+    <step>Add all <b>Container Definitions</b> created in the previous step to the list of <b>Container Definitions</b>.</step>
     <img src="p02g05_inventory_layout.png" alt="Inventory Layout" thumbnail="true" border-effect="line" width="600"/>
 </procedure>
 
@@ -115,7 +132,7 @@ setup, update the **Weapon Manager**, and convert our weapons into **Items** and
     </step>
 </procedure>
 
-<procedure title="Add Default Items" collapsible="true">
+<procedure title="Add default items" collapsible="true">
     <step>In the <b>Inventory Manager Component</b>, set the <b>Inventory Layout</b> that was just created.</step>
     <step>
         <p>Add an entry for <b>Default Items</b> and add the <b>Sword and Shield</b> as the <b>Item Data</b>.</p>
@@ -127,7 +144,7 @@ setup, update the **Weapon Manager**, and convert our weapons into **Items** and
     <img src="p02g05_default_items.png" alt="Add Default Items" thumbnail="true" border-effect="line" width="600"/>
 </procedure>
 
-<procedure title="Test Everything" collapsible="true">
+<procedure title="Test everything" collapsible="true">
     <step>Press <b>Play</b> and check the sword and shield added to the correct slots and sockets.</step>
     <step>Open your <b>Gameplay Debugger</b>, by pressing the pre-defined key. You can access the Gameplay Debugger Configuration in the <b>Project Settings</b>, <b>Gameplay Debugger</b> page.</step>
     <step>Expand the <b>Inventory Category</b> and notice that both <b>Containers</b> were added and the <b>Weapon Item</b> is set to the correct slot.</step>

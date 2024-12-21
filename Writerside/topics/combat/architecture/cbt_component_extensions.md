@@ -22,6 +22,33 @@ The following table shows all components that can be swapped on interface level.
 | `TargetManagerInterface`     | Base Combat Manager          | `CreateTargetManagerComponent`     |
 | `WeaponManagerInterface`     | `WeaponManagerComponent`     | `GetAndCacheWeaponManager`         |
 
+## The Combat Manager Component
+
+The Combat Manager Component is the main component in the system. It does not have its own interface, since it's always
+expected to be present in a combatant (including potential subclasses).
+
+This component is the default implementation of other interfaces (see table above) and will create additional components
+as needed. You can always override this behavior by providing your own components implementing the appropriate interfaces.
+In that case, the Combat Manager will find these instances and use them as needed.
+
+The Combat Manager also hosts useful delegates, both from the required interfaces and some of its own. They should be 
+useful when defining your own gameplay features.
+
+| Delegate                        | Source          | Purpose                                                                                       |
+|---------------------------------|-----------------|-----------------------------------------------------------------------------------------------|
+| `OnAttackStarted`               | Combat Manager  | Informs that an attack is starting. Provides the Ability Tags and the locked target (if any). |
+| `OnCombatTargetChanged`         | Target Manager  | Notifies a new target obtained or a target lost.                                              |
+| `OnStaggerStateChanged`         | Damage Manager  | Notifies changes in the _Staggered_ state.                                                    |
+| `OnDamageReceived`              | Damage Manager  | Notifies incoming damage.                                                                     |
+| `OnOwnerFinishedDying`          | Damage Manager  | Notifies the death of a combatant.                                                            |
+| `OnBlockingStateChanged`        | Defense Manager | Notifies changes in the _Blocking_ state.                                                     |
+| `OnInvulnerabilityStateChanged` | Defense Manager | Notifies changes in the _Invulnerability_ state.                                              |
+
+> **Delegate Binding**
+> 
+> Except for delegates exposed directly by the Combat Manager itself, you should use the appropriate interfaces to 
+> bind to other Delegates. You can unbind from them using the interface as well.
+
 ## Providing Custom Components
 
 Custom Components can be created by **implementing the correct Interface**, or **extending the base class**. 
