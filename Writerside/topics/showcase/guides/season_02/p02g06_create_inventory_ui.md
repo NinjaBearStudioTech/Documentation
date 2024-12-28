@@ -12,20 +12,24 @@ the backpack for all other items, and the Inventory Window itself.
 <procedure title="Create the Item Widget" collapsible="true">
     <step>Create a new <b>Widget Blueprint</b> based on <code>NinjaInventoryItemWidget</code>.</step>
     <step>
-        <p>Design the widget, making sure that you have a valid <b>Image Component</b> that will be used for the Icon. Mark this component as a <b>variable</b>.</p>
+        <p>Design the widget, making sure that you have a valid <b>Image Component</b> for the icon and a <b>Text Component</b> for the quantity. Mark these component as a <b>variables</b>.</p>
         <img src="p02g06_item_widget_icon.png" alt="Item Widget Icon" thumbnail="true" border-effect="line" width="600"/>
     </step>
     <step>
-        <p>Go to the <b>Graph</b> and, in the <code>PreConstruct</code> event, hide the Icon component, marking it as <b>collapsed</b>.</p>
+        <p>Go to the <b>Graph</b> and, in the <code>PreConstruct</code> event, hiding components that are not shown by default, marking them as <b>collapsed</b>.</p>
         <img src="p02g06_item_widget_pre_construct.png" alt="Item Widget Pre-Construct" thumbnail="true" border-effect="line" width="600"/>
     </step>
     <step>
         <p>Create a new Blueprint Function, <code>SetIcon</code>, to receive the <b>Icon</b> and set the texture to the correct component. This function will receive a <code>Texture2D</code> object.</p>
         <img src="p02g06_item_widget_set_icon.png" alt="Item Widget Set Icon Function" thumbnail="true" border-effect="line" width="600"/>
     </step>
-    <step>Back to the <b>Widget Designer</b>, add the <b>Item User Interface Viewmodel</b>, and configure the <b>Creation Type</b> to <b>Create Instance</b>.</step>
     <step>
-        <p>Add a <b>View Binding</b> mapping the <code>Icon</code> property from the Viewmodel to the <code>SetIcon</code> function.</p>
+        <p>Create a new Blueprint Function, <code>SetStack</code>, to receive the <b>Quantity</b> and set the value to the correct component. This function will receive an <code>Integer</code> value.</p>
+        <img src="p02g06_item_widget_set_stack.png" alt="Item Widget Set Stack Function" thumbnail="true" border-effect="line" width="600"/>
+    </step>
+    <step>Back to the <b>Widget Designer</b>, add the <b>Item User Interface</b> and <b>Item Stack</b> viewmodels. Configure their <b>Creation Type</b> to <b>Create Instance</b>.</step>
+    <step>
+        <p>Add two <b>View Bindings</b>, mapping the <code>Icon</code> property from the User Interface Viewmodel to the <code>SetIcon</code> function, and <b>Stack Size</b> property from the Item Stack Viewmodel to the <code>SetStack</code> function.</p>
         <img src="p02g06_item_widget_viewmodel.png" alt="Item Widget Viewmodel" thumbnail="true" border-effect="line" width="600"/>
     </step>
 </procedure>
