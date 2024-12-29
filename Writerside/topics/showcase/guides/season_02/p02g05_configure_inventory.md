@@ -91,7 +91,7 @@ setup, update the **Weapon Manager**, and convert our weapons into **Items** and
 <procedure title="Create the Primary Weapon slot" collapsible="true">
     <step>Create a new <b>Container Definition</b>, from the <b>Content Menu</b>, for the <b>Primary Weapon</b>.</step>
     <step>
-        <p>Set the <b>Display Name</b> as <b>Primary Weapon</b>, and add <code>Inventory.Container.Equipment</code> and <code>Inventory.Container.Weapon.Main</code> Gameplay Tags.</p>
+        <p>Set the <b>Display Name</b> as <b>Primary Weapon</b>, and add <code>Inventory.Container.Equipment</code> and <code>Inventory.Container.Weapon.Primary</code> Gameplay Tags.</p>
         <tip>
             <p><b>Equipment Container</b></p>
             <p>The <code>Inventory.Container.Equipment</code> is provided by the system and indicates an equipment slot, used to store equipment instances.</p>
@@ -108,7 +108,8 @@ setup, update the **Weapon Manager**, and convert our weapons into **Items** and
 
 <procedure title="Create the Secondary Weapon slot" collapsible="true">
     <step>Create a new <b>Container Definition</b>, from the <b>Content Menu</b>, for the <b>Secondary Weapon</b>.</step>
-    <step>Repeat the steps above, defining the <b>Secondary Weapon</b> slot.</step>
+    <step>Repeat the steps above, defining the <b>Secondary Weapon</b> slot, setting <code>Inventory.Container.Weapon.Secondary</code>, as the identifying Gameplay Tag.</step>
+    <step>Set the <b>Default State Tag</b> to <code>Equipment.State.Deactivated</code> so items are deactivated by default.</step>
     <step>Set the <b>Priority</b> to <code>2</code> to prioritize the <b>Primary Weapon</b> equipment slot.</step>
     <img src="p02g05_secondary_weapon_definition.png" alt="Secondary Weapon Definition" thumbnail="true" border-effect="line" width="600"/>
 </procedure>

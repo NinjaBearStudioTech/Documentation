@@ -101,7 +101,7 @@ the backpack for all other items, and the Inventory Window itself.
     </step>
 </procedure>
 
-<procedure title ="Update the Gameplay Widget">
+<procedure title ="Update the Gameplay Widget" collapsible="true">
     <step>
         <p>Open the Gameplay Widget previously created for the <b><a href="p02g03_player_attributes.md">Player Attributes</a></b> and add the Inventory Widget, organizing it whenever you see fit.</p>
         <img src="p02g06_gameplay_widget.png" alt="Gameplay Widget" thumbnail="true" border-effect="line" width="600"/>
@@ -114,6 +114,52 @@ the backpack for all other items, and the Inventory Window itself.
     <step>The <b>Secondary Weapon Slot</b> should be empty.</step>
     <step>The <b>Backpack</b> should be empty, but it should display all empty positions as the pre-defined item widget.</step>
     <img src="p02g06_results_01.png" alt="Test the Setup" thumbnail="true" border-effect="line" width="600"/>
+</procedure>
+
+## Inventory Window Visibility
+
+<procedure title="Configure Input Actions and Input Handlers" collapsible="true">
+    <step>
+        <p>Create an <b>Input Action</b> for the Inventory Window and add a <b>Pressed</b> trigger to it.</p>
+        <img src="p02g06_inventory_input_action.png" alt="Inventory Input Action" thumbnail="true" border-effect="line" width="600"/>
+    </step>
+    <step>
+        <p>Add the Input Action to the <b>Input Mapping Context</b>, mapping it to appropriate keys such as <b>I</b> and <b>Gamepad Special Right</b>.</p>
+        <img src="p02g06_input_mapping_context.png" alt="Input Mapping Context" thumbnail="true" border-effect="line" width="600"/>
+    </step>
+    <step>
+        <p>Add a new entry to the <b>Input Setup</b>, with a <b>HUD: Send UI Event</b> handler. Set the correct Input Action and the <code>UI.Action.Inventory</code> Gameplay Tag.</p>
+        <img src="p02g06_input_setup.png" alt="Input Setup" thumbnail="true" border-effect="line" width="600"/>
+    </step>
+</procedure>
+
+<procedure title="Handle interface events in the HUD" collapsible="true">
+    <step>Add <code>HUDEventDispatcherInterface</code> to your <b>Gameplay HUD</b>.</step>
+    <step>Convert your <b>Gameplay Widget instance</b>, in the Gameplay HUD, to a <b>variable</b>.</step>
+    <step>Implement the <code>HandleInputEvent</code> function, so it invokes the same function (interface message call) in the <b>Gameplay Widget Instance</b>.</step>
+</procedure>
+
+<procedure title="Handle interface events in the Widget" collapsible="true">
+    <step>Add <code>HUDEventDispatcherInterface</code> to your <b>Gameplay Widget</b>.</step>
+    <step>
+        <p>In your <b>Construct</b> event, set the <b>Inventory Window visibility</b> to be <b>collapsed</b>.</p>
+        <img src="p02g06_construct_event.png" alt="Construct Event" thumbnail="true" border-effect="line" width="600"/>
+    </step>
+    <step>
+        <p>Create a new <b>function</b>, <code>ToggleInventoryWindow</code> that will adjust the <b>Inventory Window visibility</b> and set the correct <b>Input Mode</b>.</p>
+        <img src="p02g06_toggle_inventory_window.png" alt="Toggle Inventory Window" thumbnail="true" border-effect="line" width="600"/>
+    </step>
+    <step>
+        <p>Implement the <code>HandleInputEvent</code> function from the new interface, routing the <b>Inventory Event</b> to the new function.</p>
+        <img src="p02g06_inventory_event.png" alt="Inventory Event" thumbnail="true" border-effect="line" width="600"/>
+    </step>
+    <step>Open your <b>Inventory Window Widget</b> and remove all <b>visibility-related features</b> created in this guide.</step>
+</procedure>
+
+<procedure title="Test everything" collapsible="true">
+    <step>Press <b>Play</b> and your Inventory Window should be hidden.</step>
+    <step>Press your <b>Inventory Key</b> and your Inventory Window should appear. Your mouse cursor should appear as well.</step>
+    <step>Press your <b>Inventory Key</b> again and your Inventory Window should disappear, along with the mouse cursor.</step>
 </procedure>
 
 ## Drag and Drop and Tooltips
@@ -140,15 +186,4 @@ operations and adding a tooltip for additional item details.
 </procedure>
 
 <procedure title="Test everything" collapsible="true">
-</procedure>
-
-## Show and Hide the Inventory Window
-
-<procedure title="Configure Input Actions and Input Handlers" collapsible="true">
-</procedure>
-
-<procedure title="Update the HUD to handle interface events" collapsible="true">
-</procedure>
-
-<procedure title="Update the main widget to handle interface events" collapsible="true">
 </procedure>
