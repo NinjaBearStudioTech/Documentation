@@ -3,8 +3,8 @@
 <img src="sc_banner_01.png" alt="Showcase"/>
 
 The **Showcase Project** is a project being constantly worked on, that serves as a reference for videos and this documentation.
-It's planned to be released as a _playable_ sample at some point, when it reaches a proper playable state based on the
-list of tutorials below.
+It's planned to be released as a _playable_ project at some point, when it reaches a playable state based on the list of 
+tutorials below.
 
 In the guides, you will find deep-dives on how things were built, following the expected usage when the plugins were
 created. If you have additional questions or requests that could be implemented in this sample (or other future ones),

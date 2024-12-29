@@ -135,6 +135,12 @@ Exposes information about the last damage received, which can be accumulated in 
 | Poise Percent           | The percentage of poise remaining before a stagger occurs. |
 | Stagger Duration        | Duration of the stagger effect.                            |
 
+### Status Effects
+
+| Property              | Description                                                        |
+|-----------------------|--------------------------------------------------------------------|
+| Active Status Effects | Provides all status effects relevant to the Combat User Interface. |
+
 ### Target Lock
 
 | Property               | Description                                                             |

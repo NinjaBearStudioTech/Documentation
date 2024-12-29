@@ -118,6 +118,12 @@ the backpack for all other items, and the Inventory Window itself.
 
 ## Drag and Drop and Tooltips
 
+With the main Inventory UI being shown, it's time to add special features, such as dragging stored items to perform 
+operations and adding a tooltip for additional item details.
+
+<procedure title="Create the Arrow Item" collapsible="true">
+</procedure>
+
 <procedure title="Configure the quality table" collapsible="true">
 </procedure>
 

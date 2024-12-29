@@ -1,8 +1,12 @@
 # Create a Finisher
 <secondary-label ref="guide"/>
+<secondary-label ref="advanced"/>
 
 Let's take a look at the **Opportunity System** by creating a finishing move, that will replace the primary attack,
 whenever the enemy's health is low.
+
+This is an <b>advanced topic</b>, at least during the initial setup, since many steps are necessary to enable the
+Opportunity System. However, additional opportunity attacks should be easier to implement after the intial setup.
 
 ## Contextual Animations
 

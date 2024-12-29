@@ -4,7 +4,7 @@
 The combat system provides **Viewmodels** to support your **user interface**. Let's get started with that topic, by
 creating some progress bars that will track the player's main attributes: **Health**, **Stamina**, and **Magic**.
 
-<procedure title="Review your Player Attributes" collapsible="true">
+<procedure title="Review your Player attributes" collapsible="true">
     <step>Open your <b>Combat Attribute Data Table</b> for the Player. This was configured before, while configuring GAS.</step>
     <step>Check your <b>Health</b> <b>Stamina</b>, and <b>Magic</b>, to ensure they have valid values.</step>
 </procedure>
@@ -48,7 +48,7 @@ creating some progress bars that will track the player's main attributes: **Heal
     <step>Add the new HUD to your <b>Game Mode</b>.</step>
 </procedure>
 
-<procedure title="Test Everything" collapsible="true">
+<procedure title="Test everything" collapsible="true">
     <step>Press <b>Play</b> and notice your progress bars are filled based on the attribute values.</step>
     <step>Modify your initial health, magic or stamina and see these changes in your UI.</step>
 </procedure>

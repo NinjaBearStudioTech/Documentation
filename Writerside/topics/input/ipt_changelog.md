@@ -144,3 +144,9 @@ First release for Unreal Engine 5.0
 [improvement] Refactored "CanXYZ" methods for "Move", "Look" and "Turn", so they also receive the actual value to unify their input value magnitude checks.
 [bugfix] Fixed jump handler so it will correctly consider "blocked tags".
 ```
+
+## 4.8.18
+<secondary-label ref="wip"/>
+```
+[improvement] Added GASP features to Look and Move handlers.
+```

@@ -13,6 +13,12 @@ Unreal Engine's **Gameplay Targeting System** to collect targets.
     <step>Add the <b>Dead</b> Filter Task.</step>
     <step>Add the <b>Sort By Distance</b> Filter Task.</step>
     <img src="p02g01_targeting_preset.png" alt="Targeting Preset" thumbnail="true" border-effect="line" width="600"/>
+    <note>
+        <p><b>Debugging Targeting Presets</b></p>
+        <p>When in doubt, start your Targeting Presets with a valid <b>AOE Selection Task</b>, making sure to ignore the source actor and instigator.</p>
+        <p>Then, add an <b>Actor Class Filter</b>, valid for your enemy hierarchy. This should be a good starting point to create a valid Targeting Preset.</p>
+        <p>You can also check the <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-targeting-system-debugging-in-unreal-engine"><b>Debugging Page</b></a> to learn more about the Gameplay Targeting System's <b>debug features</b>.</p>
+    </note>
 </procedure>
 
 <procedure title="Configure the Target Lock Ability" collapsible="true">

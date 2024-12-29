@@ -1,8 +1,9 @@
 # Credits
 
+## Fantasy Game
 <img src="sc_banner_01.png" alt="Showcase"/>
 
-For the Showcase Project, the following assets were used:
+For this showcase project, the following assets were used:
 
 | Asset                                   | Author                   | Type           |
 |-----------------------------------------|--------------------------|----------------|
