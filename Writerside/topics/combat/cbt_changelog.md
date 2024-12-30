@@ -214,12 +214,12 @@ First release for Unreal Engine 5.3.
 [bugfix] Fixed property visibility for State Tree nodes, so they can be used for property binding.
 ```
 
-## 3.0.0
-<secondary-label ref="wip"/>
+## 3.0.0 - 30/12/2024
 ```
 [major] Combat Delegates were changed to provide the source component whenever applicable.
 [added] An extensible Behavior Tree Service that can send Combo Events to an ongoing Combo Ability branch.
 [added] Option to collect specific Melee Scan meshes, via Gameplay Tags.
+[added] Added "Mac" to the list of Allowed Build Platforms.
 [improvement] Support for additional roles in the Opportunity Attack ability.
 [improvement] Exposed optional settings for Damage and Poise Consumption in weapons and projectiles.
 [improvement] Added an extension point for opportunity attacks, before starting the paired animation.

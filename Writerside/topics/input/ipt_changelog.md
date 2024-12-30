@@ -145,8 +145,8 @@ First release for Unreal Engine 5.0
 [bugfix] Fixed jump handler so it will correctly consider "blocked tags".
 ```
 
-## 4.8.18
-<secondary-label ref="wip"/>
+## 4.8.18 - 30/12/2024
 ```
+[added] Added "Mac" to the list of Allowed Build Platforms.
 [improvement] Added GASP features to Look and Move handlers.
 ```
