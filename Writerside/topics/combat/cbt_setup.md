@@ -149,14 +149,16 @@ Movement Solution.
     </tab>
 </tabs>
 
-## Migration: 1.0 to 2.0
+## Migrations
 
-Version 2.0 introduced many updates to the Combat System. It also drastically simplified the configuration. It’s easier to have a separate copy for the migration, so you can paste some contents over.
-
-> **Back up first!** 
-> 
+> **Back up first!**
+>
 >Before migrating to version 2.0, it is highly recommended that you back up your project!  
 {style="warning"}
+
+### 1.0 to 2.0
+Version 2.0 introduced many updates to the Combat System. It also drastically simplified the configuration. It’s easier 
+to have a separate copy for the migration, so you can paste some contents over.
 
 1. The combat components "Damage", "Defense" and "Target" were **merged** into the unified `NinjaCombatManagerComponent`. To get started with the new system, you only need to add that component and a `NinjaCombatWeaponManagerComponent`.
 2. The `CombatSystemInterface` will try to find all components by their interfaces. Right away, you can just implement the getters for the Combat Manager and Weapon Manager. Other functions can be implemented if/when necessary.
@@ -170,3 +172,8 @@ Version 2.0 introduced many updates to the Combat System. It also drastically si
 10. The **Dissolve Handler** is more flexible, supporting multiple parameters and curves.
 11. The **Forward Reference** can be any Scene Component, and it can be created automatically by the Combat Manager.
 12. The Movement Manager has been converted into an actual Character Movement Component, so you will need to add that to your character, if you want to use the movement capabilities.
+
+### 2.0 to 3.0
+Version 3.0 updated some delegates, to make them more compatible with stateless classes such as AI nodes. Your callbacks
+(C++ and Blueprints) should be reviewed now that most delegates will have an extra value: the component that is broadcasting
+the event.
