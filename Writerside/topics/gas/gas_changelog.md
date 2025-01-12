@@ -9,3 +9,12 @@ First release for Unreal engine 5.3 and 5.4.
 [added] Support for Unreal Engine 5.5.
 [added] Player Pawn class, compatible with the GAS Player State.
 ```
+
+## 1.3.2
+<secondary-label ref="wip"/>
+```
+[added] Support for Lazy ASC initialization for base Actors.
+[improvement] Fixed warnings from Unreal Engine 5.5
+[improvement] Added Mac to the list of allowed platforms.
+[bugfix] Ensured that attribute set classes not set for a default entry won't result in a crash.
+```

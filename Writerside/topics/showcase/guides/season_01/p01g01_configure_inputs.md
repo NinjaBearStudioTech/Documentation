@@ -3,7 +3,7 @@
 
 <video src="https://youtu.be/6B6VPUPXmK0" preview-src="sc_thumbnail_p01g01.png" width="800" />
 
-Configure **Ninja Input** and replace the default configuration from a project, such as the Third Person Template, so
+Configure **Ninja Input** and replace the default configuration from a project, such as the **Third Person Template**, so
 it will use **Input Handlers** and an **Input Setup**.
 
 <procedure title="Add Ninja Input to your project" collapsible="true">

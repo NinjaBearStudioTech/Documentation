@@ -20,7 +20,7 @@
             <algolia-api-key>$ALGOLIA_KEY_MARKER</algolia-api-key>
         </variables>
         <footer>
-            <copyright>2022-2024 Ninja Bear Studio Inc.</copyright>
+            <copyright>2022-2025 Ninja Bear Studio Inc.</copyright>
             <social type="email" href="mailto:support@ninjabear.studio"/>
             <social type="linkedin" href="https://www.linkedin.com/company/ninja-bear-studio"/>
             <social type="youtube" href="https://www.youtube.com/ninjabearstudio"/>

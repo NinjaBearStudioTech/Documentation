@@ -13,7 +13,7 @@
     <primary-label id="progression" name="PGS" short-name="Progression">Ninja Progression</primary-label>
 
     <secondary-label id="wip" name="work-in-progress" color="red">Work in progress, informational only.</secondary-label>
-    <secondary-label id="experimental" name="experimental" color="strawberry">API subject to changes, likely buggy.</secondary-label>
+    <secondary-label id="experimental" name="experimental" color="strawberry">Subject to changes, might have bugs.</secondary-label>
     <secondary-label id="beta" name="beta" color="tangerine">Stable API, but you might find bugs.</secondary-label>
     <secondary-label id="advanced" name="advanced" color="purple">Advanced feature, some experience required.</secondary-label>
     <secondary-label id="guide" name="guide" color="blue">A step-by-step guide, with a specific goal.</secondary-label>

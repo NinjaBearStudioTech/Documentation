@@ -20,6 +20,16 @@ Crouching will not be triggered under the following conditions:
 Triggers the Character's **Jump** and **Stop Jumping** functions. These are executed from **Triggered** and **Completed**
 events, respectively.
 
+The Jump Handler is also compatible with `TraversalMovementInputInterface`, allowing the character to perform a traversal
+movement, such as *vaulting*, before actually executing the jump. 
+
+To implement this functionality, add the `TraversalMovementInputInterface` to the Character, and implement 
+`TryTraversalJumpAction`, that will be invoked by the Jump Handler during **Started** and **Triggered** events. 
+
+Here's an implementation example, based on the GASP source.
+
+<img src="ipt_handler_jump_traversal.png" alt="Traversal Jump example" thumbnail="true" border-effect="line" width="600"/>
+
 ## Look
 
 Moves the Controller's Yaw and Pitch, based on the incoming **2D input values**. It will execute from **Triggered** and 

@@ -10,7 +10,7 @@ Use the following table as a reference, when creating your usual **ASC-related**
 
 | Base Class                | Scenario                                                                             |
 |---------------------------|--------------------------------------------------------------------------------------|
-| `NinjaGASActor`           | **Actors** with their own Ability System Component.                                  |
+| `NinjaGASActor`           | **Actors** with their own Ability System Component. Supports **lazy loading**.       |
 | `NinjaGASPawn`            | **Pawns** with their own Ability System Component.                                   |
 | `NinjaGASCharacter`       | **Characters** with their own Ability System Component.                              |
 | `NinjaGASPlayerCharacter` | **Characters** that will use the Ability System Component from the **Player State**. |

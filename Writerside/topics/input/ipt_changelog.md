@@ -150,3 +150,11 @@ First release for Unreal Engine 5.0
 [added] Added "Mac" to the list of Allowed Build Platforms.
 [improvement] Added GASP features to Look and Move handlers.
 ```
+
+## 4.9.20
+<secondary-label ref="wip"/>
+```
+[added] Added the TraversalMovementInputInterface, providing a viable extension point for GASP's Jump and/or other similar implementations.
+[improvement] Updated the Jump Handler to accommodate the new TraversalMovementInputInterface.
+[improvement] Updated the Crouch Handler to simplify toggle/momentary setup.
+```

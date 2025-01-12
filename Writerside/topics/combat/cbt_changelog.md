@@ -231,3 +231,10 @@ First release for Unreal Engine 5.3.
 [bugfix] Fixed the ragdoll being invoked, even when no ragdoll settings were enabled.
 [bugfix] Fixed cancel regen tag application for max health, stamina and magic.
 ```
+
+## 3.0.2
+<secondary-label ref="wip"/>
+```
+[added] Handling scenarios where a melee attack hits non-combatant actors, such as the environment.
+[bugfix] Ensured that melee cosmetic parameters are properly using the Niagara parameter names set.
+```

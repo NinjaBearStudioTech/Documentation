@@ -200,6 +200,12 @@ target will receive damage and if so, how much.
 
 Successful hits may invoke cosmetics functions on the **attacker** or **weapon**, defined by the **Melee Interface**.
 
+### Environment Hits
+
+Melee Scans can also hit the environment, provided that it also responds to the proper Targeting Presets and collision.
+If a melee attack hits the environment, it will trigger the cosmetics logic on the weapon, providing the special Gameplay
+Tag, `Combat.Target.Environment`, along with the expected **hit result**.
+
 ## Melee Weapon Interface
 
 This interface must be implemented by any _object_ able to participate in melee combat: **pawns** or **weapons**. It 

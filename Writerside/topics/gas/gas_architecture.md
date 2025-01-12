@@ -22,3 +22,7 @@ Ability System will reinforce certain limitations. To circumvent that, we can us
 **[](gas_batch_activation.md)**
 : In some cases, you might need to activate **multiple abilities together**, but considering that each local activation
 will trigger an RPC, it is a good practice to activate them together. Ninja GAS supports batch activation.
+
+**[](gas_lazy_loading.md)**
+: You may have multiple actors in the world that may require their own Ability System Component. However, having multiple
+instances of the ASC can be heavy, potentially leading to performance issues. Lazy Loading can help alleviating that problem.
