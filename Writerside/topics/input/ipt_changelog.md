@@ -151,10 +151,16 @@ First release for Unreal Engine 5.0
 [improvement] Added GASP features to Look and Move handlers.
 ```
 
-## 4.9.20
+## 4.10.25
 <secondary-label ref="wip"/>
 ```
+[added] Added buffer channels to the Input buffer. 
 [added] Added the TraversalMovementInputInterface, providing a viable extension point for GASP's Jump and/or other similar implementations.
 [improvement] Updated the Jump Handler to accommodate the new TraversalMovementInputInterface.
 [improvement] Updated the Crouch Handler to simplify toggle/momentary setup.
+[improvement] Added extension points to define Instigator Tags, Target Tags and the second Optional Object, for the Send Gameplay Event Handler.
+[improvement] Added the option to conditionally cancel the ability for false activations (before, this was always the case).
+[improvement] Exposed the "Rotate to Mouse Cursor" function so it can be used in other locations.
+[bugfix] Improved the Input Buffer Notify, to properly handle different times from scaled animations. Added a fallback logic so it won't rely only on the End Notify event.
+[bugfix] Ensured that the automatic Control Rotation will respect the "Input.Block.Rotation" tag.
 ```

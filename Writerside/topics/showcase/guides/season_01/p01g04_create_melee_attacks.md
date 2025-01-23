@@ -106,7 +106,7 @@ With the **melee weapons** configured, the next step is to create a **primary** 
 <procedure title="Configure Player Inputs" collapsible="true">
     <step>Create an <b>Input Action</b> for the <b>Primary Attack</b>. Add a <b>Pressed</b> trigger. Map this <b>Input Action</b> to your <b>Input Mapping Context</b>, assigning the <b>Left Mouse Button</b> as the key. If you have a Gamepad, also map it to the <b>Face Button Left</b>.</step>
     <step>Create an <b>Input Action</b> for the <b>Secondary Attack</b>. Add a <b>Pressed</b> trigger. Map this <b>Input Action</b> to your <b>Input Mapping Context</b>, assigning the <b>Right Mouse Button</b> as the key. If you have a Gamepad, also map it to the <b>Face Button Top</b>.</step>
-    <step>Add two <b>Input Handlers</b> to your <b>Input Setup Data Asset</b>, using the <b>Activate Ability by Tags</b> as the base.</step>
+    <step>Add two <b>Input Handlers</b> to your <b>Input Setup Data Asset</b>, using the <b>Activate Ability by Tags</b> (<code>InputHandler_AbilityTag</code>) as the base.</step>
     <step>Set the correct <b>Input Actions</b> for each attack, and the correct Ability Tags defined earlier: <code>Ability.Attack.Primary</code> and <code>Ability.Attack.Secondary</code>.</step>
     <step>
         <p>When you are done, your <b>Input Setup Data Asset</b> should be similar to the following image.</p>  

@@ -12,6 +12,3 @@ It also provides functionality to add or remove inputs as needed via the **Input
 : Once your Input Handlers are ready, they can be bundled with the pertinent Input Mapping Context, in an **Input Setup**
 and then added to an Input Manager.
 
-**[](ipt_input_buffer.md)**
-: This **animation-based** Input Buffer stores Input Handlers that cannot be used right away, so they can be used at
-a later moment.

@@ -146,7 +146,6 @@
         <toc-element topic="ipt_concepts.md">
             <toc-element topic="ipt_input_management.md"/>
             <toc-element topic="ipt_input_setup.md"/>
-            <toc-element topic="ipt_input_buffer.md"/>
         </toc-element>
         <toc-element topic="ipt_architecture.md">
             <toc-element topic="ipt_input_handlers.md">
@@ -155,6 +154,7 @@
                 <toc-element topic="ipt_ui_handlers.md"/>
             </toc-element>
             <toc-element topic="ipt_forward_reference.md"/>
+            <toc-element topic="ipt_input_buffer.md"/>
             <toc-element topic="ipt_input_detection.md"/>
             <toc-element topic="ipt_common_ui.md"/>
         </toc-element>
@@ -164,7 +164,9 @@
     <toc-element topic="int_overview.md">
         <toc-element topic="int_setup.md"/>
         <toc-element topic="int_architecture.md">
-            <toc-element topic="int_components.md"/>
+            <toc-element topic="int_manager_component.md"/>
+            <toc-element topic="int_target_component.md"/>
+            <toc-element topic="int_user_interface.md"/>
         </toc-element>
         <toc-element topic="int_ability_system.md">
             <toc-element topic="int_abilities.md"/>

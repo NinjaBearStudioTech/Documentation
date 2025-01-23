@@ -11,6 +11,10 @@ also provides Input Handlers fully integrated with the **Gameplay Ability System
 : This element is important for certain control schemes, such as _twin-stick_ controls, where a constant forward 
 reference is necessary.
 
+**[](ipt_input_buffer.md)**
+: This **animation-based** Input Buffer stores Input Handlers that cannot be used right away, so they can be used at
+a later moment.
+
 **[](ipt_input_detection.md)**
 : Ninja Input provides a native way to detect changes in the input mode - Gamepad or Keyboard and Mouse.
 

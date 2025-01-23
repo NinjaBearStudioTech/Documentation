@@ -37,3 +37,9 @@ First release for Unreal Engine 5.3 and 5.4.
 [improvement] Exposed consumable objects in the Consumable Ability.
 [bugfix] Fixed `IsSuccessful` in the `FInventoryItemContext`.
 ```
+
+## 1.4.17
+<secondary-label ref="wip"/>
+```
+[added] A new Anim Notify State, "Hide Equipment", to hide (and then show) Equipment Actors. Useful for things like interactions.
+```

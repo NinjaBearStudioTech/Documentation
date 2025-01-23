@@ -4,9 +4,10 @@
 
 <tldr>
     <ul>
-        <li>The <b>Input Buffer</b> is an <b>animation-based</b> mechanism, used to store a player input while the buffer is <b>open</b>, and trigger it later when it <b>closes</b>.</li>
+        <li>The <b>Input Buffer</b> is an <b>animation-based</b> mechanism, used to store player input, while the buffer is <b>open</b>, and trigger it later when it <b>closes</b>.</li>
+        <li>The <b>Input Buffer</b> uses <b>channels</b> that can store different types of actions, such as <i>movement</i> and <i>combat</i>.</li>
         <li>It is defined by the <code>InputBufferInterface</code>. The <b>Input Manager Component</b> is a valid implementation of this interface.</li>
-        <li>You can control the buffer state using the <b>Input Buffer</b> Animation Notify State.</li>
+        <li>You can control the buffer state using the <b>Input Buffer</b> Animation Notify State, on <b>Animation Montages</b>.</li>
         <li>The <b>Input Manager Component</b> allows you to decide if you want to capture the <b>first</b> or the <b>last</b> player input.</li>
     </ul>
 </tldr>
@@ -15,6 +16,12 @@ The Input System offers an **Input Buffer** that allows deferring the execution 
 
 This is particularly useful in combat systems where players might press keys during animations that cannot be interrupted, 
 yet the game should still register these inputs to ensure responsiveness.
+
+> **Animation Compatibility**
+>
+> The Input Buffer Anim Notify State can only be used in **Animation Montages**. This ensures full compatibility with 
+> the Ability System Component, and montages that might be played, and also scaled by it.
+{style="note"}
 
 ## Input Buffer Design
 
@@ -46,7 +53,8 @@ making the system highly flexible.
 To buffer actions, follow these steps:
 
 1. Enable the `Can Be Buffered` property on any Input Handlers you wish to add to the Input Buffer.
-2. Add the Notify State to an animation that supports buffering inputs.
+2. Define the correct **Channel** for the buffer. If you don't need multiple channels, just use the default one.
+3. Add the Notify State to an animation that supports buffering inputs.
 
 ### Enabling Input Handlers for Buffering
 
@@ -64,6 +72,7 @@ To allow an Input Handler to be buffered, enable its `Can Be Buffered` property 
 ### Opening and Closing the Input Buffer in Animations
 
 The most straightforward way to open and close the Input Buffer is by using the **Input Buffer** Animation Notify State. 
+Make sure to define the correct **channel** in the Animation Notify State.
 
 ![Placing the Buffer AnimNotifyState](ipt_input_buffer_animation.gif "Placing the Buffer AnimNotifyState")
 

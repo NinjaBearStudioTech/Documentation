@@ -232,9 +232,13 @@ First release for Unreal Engine 5.3.
 [bugfix] Fixed cancel regen tag application for max health, stamina and magic.
 ```
 
-## 3.0.2
+## 3.0.6
 <secondary-label ref="wip"/>
 ```
 [added] Handling scenarios where a melee attack hits non-combatant actors, such as the environment.
+[improvement] Vastly improved how the Combat Framework retrieves Combat Meshes and Anim Instances.
+[bugfix] Ensured that combo delegates are broadcast correctly when the combo is reset, considering interruptions.
 [bugfix] Ensured that melee cosmetic parameters are properly using the Niagara parameter names set.
+[bugfix] Ensured that the play rate set by Animation Providers carries over to the Animation Montage task.
+[bugfix] Fixed the Defend Damage calculation, so it calculates based on the final applied damage.
 ```
