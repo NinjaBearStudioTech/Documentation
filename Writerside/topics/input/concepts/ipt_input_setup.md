@@ -58,10 +58,10 @@ These functions are available in both Blueprints and C++ and can be used as need
 - Inputs granted, based on certain conditions that must be met.
 
 <tabs group="sample">
-    <tab title="Blueprint">
+    <tab title="Blueprint" group-key="bp">
         <img src="ipt_add_remove_setup.png" alt="Adding or Removing Setups" border-effect="line"/>
     </tab>
-    <tab title="C++">
+    <tab title="C++" group-key="c++">
         <code-block lang="c++" src="ipt_add_remove_setups.cpp"/>
     </tab>
 </tabs>
@@ -81,10 +81,10 @@ pawn is unpossessed.
 {style="note"}
 
 <tabs group="sample">
-    <tab title="Blueprint">
+    <tab title="Blueprint" group-key="bp">
         <img src="ipt_setup_provider_interface.png" alt="Using the Input Provider Interface" border-effect="line" thumbnail="true"/>
     </tab>
-    <tab title="C++">
+    <tab title="C++" group-key="c++">
         <code-block lang="c++" src="ipt_provider_interface.h"/>
         <br/>
         <code-block lang="c++" src="ipt_provider_interface.cpp"/>
@@ -99,10 +99,10 @@ This can be useful when doing in-game cutscenes or other similar operations wher
 without the need to remove/add current **Setups**.
 
 <tabs group="sample">
-    <tab title="Blueprint">
+    <tab title="Blueprint" group-key="bp">
         <img src="ipt_global_enable_disable.png" alt="Globally Enable/Disable inputs" border-effect="line" thumbnail="true"/>
     </tab>
-    <tab title="C++">
+    <tab title="C++" group-key="c++">
         <code-block lang="c++" src="ipt_global_enable_disable.cpp"/>
     </tab>
 </tabs>

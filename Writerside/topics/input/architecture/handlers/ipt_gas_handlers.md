@@ -15,10 +15,10 @@ Manager**, which is a valid implementation of `AbilitySystemInterface`.
 > if it was added to a **Controller** or a **Pawn**.
 
 <tabs group="sample">
-    <tab title="Blueprint">
+    <tab title="Blueprint" group-key="bp">
         <img src="ipt_retrieve_asc.png" alt="Retrieving the ASC" thumbnail="true" border-effect="line"/>
     </tab>
-    <tab title="C++">
+    <tab title="C++" group-key="c++">
         <code-block lang="c++" src="ipt_retrieve_asc.cpp"/>
     </tab>
 </tabs>

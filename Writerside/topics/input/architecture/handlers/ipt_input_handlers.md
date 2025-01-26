@@ -13,7 +13,8 @@ Input Handlers are responsible for handling **Player Inputs**. They are mapped t
 
 ## Input Handler Design
 
-Input Handlers extend from `NinjaInputHandler`, which grants them the following **default properties**.
+Input Handlers extend from `NinjaInputHandler`, which grants them the following **default properties**. You can also 
+extend any other handler provided by the framework, to modify its default behavior.
 
 | Property        | Description                                                      |
 |-----------------|------------------------------------------------------------------|
@@ -31,8 +32,8 @@ Input Handlers also contain the following relevant **functions**.
 The `CanHandle` check is purely a **compatibility** check and should not include temporary states. As for the `Handle`
 functions, you only need to implement the ones that are actually used by your handler.
 
-Both functions are marked as `const`, since the Input Handler is not supposed to have a **state**. If that is required,
-then the state must be persisted somewhere else, such as the **Player Controller** or **Character**.
+Both functions are marked as `const`, since the Input Handler is not supposed to have a **state**. If a state is required,
+then it be persisted somewhere else, such as the **Player Controller** or **Character**.
 
 ## Creating Input Handlers
 
@@ -111,3 +112,75 @@ information, that could even be used in the test itself.
 > Do not add _situational_ checks to the `CanHandle` function. Tests done in this function are meant to be _static_, to
 > ensure the compatibility between a handler and an incoming action!
 {style="warning"}
+
+## Handler Examples
+
+Here are some examples on how handlers can be created, in both Blueprint and C++. Once again, they are all extending
+from the base `NinjaInputHandler` class. 
+
+You can create new Input Handlers from your Content Menu, navigating to the **Ninja Bear Studio** category, **Ninja 
+Input** and then selecting **Input Handler**.
+
+### Movement Handler
+
+To move a pawn (or character), you just need to add the incoming input value to the proper world directions. This is
+meant to be used only as a reference, since the framework already provides a more robust [**Move Input Handler**](ipt_character_handlers.md#move-standard).
+
+<tabs group="sample">
+    <tab title="Blueprint" group-key="bp">
+        <img src="ipt_sample_move.png" alt="Move Example" thumbnail="true" border-effect="line"/>
+    </tab>
+    <tab title="C++" group-key="c++">
+        <code-block lang="c++" src="ipt_sample_move.h"/>
+        <br/>
+        <code-block lang="c++" src="ipt_sample_move.cpp"/>
+    </tab>
+</tabs>
+
+### Look Handler
+
+To control the camera assigned to a pawn, you can add the incoming input to the Controller's Pitch and Yaw inputs. Once
+again, this is meant to be used only as a reference, since the framework provides a more robust [**Look Input Handler**](ipt_character_handlers.md#look).
+
+<tabs group="sample">
+    <tab title="Blueprint" group-key="bp">
+        <img src="ipt_sample_look.png" alt="Look Example" thumbnail="true" border-effect="line"/>
+    </tab>
+    <tab title="C++" group-key="c++">
+        <code-block lang="c++" src="ipt_sample_look.h"/>
+        <br/>
+        <code-block lang="c++" src="ipt_sample_look.cpp"/>
+    </tab>
+</tabs>
+
+### Crouch Handler
+
+This example makes a character crouch and stand up, using **Pressed** and **Released** triggers. It's an interesting
+example since it requires a cast, and routing the boolean input value depending on whether it's `true` (Pressed) or
+`false` (Released).
+
+Such approach can be used for many other things, like _jumping_ and _activating abilities_.
+
+The framework provides more robust implementations not only for the [**Crouch Input Handler**](ipt_character_handlers.md#crouch),
+but also for the [**Jump Input Handler**](ipt_character_handlers.md#jump), and multiple [**Ability Handlers**](ipt_gas_handlers.md).
+
+> **The Cast Confusion**
+>
+> There is some confusion about the usage of `Cast` and when it should be used or avoided. Casting might be an issue
+> when you cast into something that might not be loaded into memory, since the `Cast` command will load it.
+>
+> If you don't know if or when the target object will naturally load, or just need reusable functions on, then you are
+> better off using an **interface**. However, if you are certain that the object will be loaded, such as your Player
+> Blueprint, then casting is not a problem.
+{style="note"}
+
+<tabs group="sample" >
+    <tab title="Blueprint" group-key="bp">
+        <img src="ipt_sample_crouch.png" alt="Crouch Example" thumbnail="true" border-effect="line"/>
+    </tab>
+    <tab title="C++" group-key="c++">
+        <code-block lang="c++" src="ipt_sample_crouch.h"/>
+        <br/>
+        <code-block lang="c++" src="ipt_sample_crouch.cpp"/>
+    </tab>
+</tabs>

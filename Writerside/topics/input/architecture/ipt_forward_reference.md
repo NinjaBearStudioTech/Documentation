@@ -22,10 +22,10 @@ You can provide your own Forward Reference by **tagging** a Scene Component with
 the Input Manager Component will acquire and store this reference, when the Pawn is possessed.
 
 <tabs group="sample">
-    <tab title="Blueprint">
+    <tab title="Blueprint" group-key="bp">
         <img src="ipt_forward_arrow.png" alt="Forward Arrow Reference" border-effect="line"/>
     </tab>
-    <tab title="C++">
+    <tab title="C++" group-key="c++">
         <code-block lang="c++" src="ipt_forward_arrow.h"/>
         <br/>
         <code-block lang="c++" src="ipt_forward_arrow.cpp"/>

@@ -27,14 +27,14 @@ Combatants using an Actor Pool must implement the `CombatPoolProviderInterface` 
 external functionalities, such as the Projectile Request, to quickly retrieve and use the pool.
 
 <tabs group="sample">
-    <tab title="Blueprint">
+    <tab title="Blueprint" group-key="bp">
         <p>Add the <b>Actor Pool</b> component to your character.</p>
         <img src="cbt_actor_pool_component.png" alt="Actor Pool Component" thumbnail="true" border-effect="line"/>
         <br/>
         <p>Add the <b>Provider Interface</b> and return the component, from the appropriate function.</p>
         <img src="cbt_actor_pool_provider.png" alt="Actor Pool Provider" thumbnail="true" border-effect="line"/>
     </tab>
-    <tab title="C++">
+    <tab title="C++" group-key="c++">
         <code-block lang="c++" src="cbt_add_actor_pool_component.h"/>
         <br/>
         <code-block lang="c++" src="cbt_add_actor_pool_component.cpp"/>
@@ -109,10 +109,10 @@ To retrieve an actor from the pool, you can use the `TryGetActorFromPool` functi
 Supported actors listed before are already retrieved using this functionality and require no additional work.
 
 <tabs group="sample">
-    <tab title="Blueprint">
+    <tab title="Blueprint" group-key="bp">
         <img src="cbt_actor_pool_retrieval.png" alt="Actor Pool Retrieval" thumbnail="true" border-effect="line"/>
     </tab>
-    <tab title="C++">
+    <tab title="C++" group-key="c++">
         <code-block lang="c++" src="cbt_retrieve_actor_from_pool.cpp"/>
     </tab>
 </tabs>

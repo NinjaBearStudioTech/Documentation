@@ -41,10 +41,10 @@ can also add it to the **Player Character**. The advantages for the Player Contr
 - Support for **different pawns**, providing their own Input Setups when possessed.
 
 <tabs group="sample">
-    <tab title="Blueprint">
+    <tab title="Blueprint" group-key="bp">
         <img src="ipt_add_component.png" alt="Input Manager Component Setup" border-effect="line"/>
     </tab>
-    <tab title="C++">
+    <tab title="C++" group-key="c++">
         <code-block lang="c++" src="ipt_setup_manager_component.h"/>
         <br/>
         <code-block lang="c++" src="ipt_setup_manager_component.cpp"/>
