@@ -149,11 +149,11 @@ Movement Solution.
     </tab>
 </tabs>
 
-## Migrations
+## Framework Upgrades
 
 > **Back up first!**
 >
->Before migrating to version 2.0, it is highly recommended that you back up your project!  
+>Before migrating to a newer version, it is highly recommended that you back up your project first!  
 {style="warning"}
 
 ### 1.0 to 2.0

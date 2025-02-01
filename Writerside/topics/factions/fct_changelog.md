@@ -55,9 +55,9 @@ First release for Unreal Engine 5.0, 5.1 and 5.2.
 [added] Support for Unreal Engine 5.5.
 ```
 
-## 2.2.4
-<secondary-label ref="wip"/>
+## 2.2.5 - 31/01/2025
 ```
 [added] Added support for Mac.
+[improvement] Made all hard checks more permissive, with logging.
 [bugfix] Ensured that the library won't crash when the faction member is null.
 ```

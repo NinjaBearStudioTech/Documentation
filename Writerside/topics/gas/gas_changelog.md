@@ -10,8 +10,7 @@ First release for Unreal engine 5.3 and 5.4.
 [added] Player Pawn class, compatible with the GAS Player State.
 ```
 
-## 1.3.2
-<secondary-label ref="wip"/>
+## 1.3.3 - 31/01/2025
 ```
 [added] Support for Lazy ASC initialization for base Actors.
 [improvement] Fixed warnings from Unreal Engine 5.5

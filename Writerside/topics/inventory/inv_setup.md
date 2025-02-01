@@ -128,6 +128,20 @@ The Equipment Manager must be added to the actual **Pawn**, regardless of where 
 After adding the Equipment Manager to the appropriate pawn, the next step is to add the `EquipmentManagerProviderInterface` 
 and implement the `GetEquipmentManager` function to return the component.
 
+## Framework Upgrades
+
+> **Back up first!**
+>
+>Before migrating to a newer version, it is highly recommended that you back up your project first!  
+{style="warning"}
+
+### 1.0 to 2.0
+Version 2.0 modified some functions to differentiate how they exposed the dynamic Memory and Payload structs. 
+Functions invoking operations using a payload, or accessing item memories in Blueprint and C++ should be reviewed.
+
+Blueprint Functions will always use the `FInstancedStruct` version, while C++ counterparts will use `TInstancedStruct`.
+Default item configurations using default memories are not affected.
+
 <seealso style="cards">
    <category ref="related">
         <a href="inv_troubleshooting.md" summary="Debugging the inventory and accessing the logs.">Debugger and Logs</a>

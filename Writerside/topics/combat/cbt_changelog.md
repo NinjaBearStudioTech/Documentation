@@ -232,8 +232,7 @@ First release for Unreal Engine 5.3.
 [bugfix] Fixed cancel regen tag application for max health, stamina and magic.
 ```
 
-## 3.1.6
-<secondary-label ref="wip"/>
+## 3.1.6 - 31/01/2025
 ```
 [added] Handling scenarios where a melee attack hits non-combatant actors, such as the environment.
 [improvement] Vastly improved how the Combat Framework retrieves Combat Meshes and Anim Instances.

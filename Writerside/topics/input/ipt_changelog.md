@@ -151,8 +151,7 @@ First release for Unreal Engine 5.0
 [improvement] Added GASP features to Look and Move handlers.
 ```
 
-## 4.10.25
-<secondary-label ref="wip"/>
+## 4.10.25 - 31/01/2025
 ```
 [added] Added buffer channels to the Input buffer. 
 [added] Added the TraversalMovementInputInterface, providing a viable extension point for GASP's Jump and/or other similar implementations.

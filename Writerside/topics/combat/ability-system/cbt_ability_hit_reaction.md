@@ -15,6 +15,15 @@ by default.
 
 <img src="cbt_damage_hit_reaction.png" alt="Hit Reaction Ability" thumbnail="true" border-effect="line"/>
 
+## Ability Trigger
+
+By default, the Hit Reaction is activated by the Combat Manager, from the perspective of a _Damage Manager._ 
+
+Incoming hits will be handled and result in the activation of the Hit Reaction, unless it's an effect that overrides it, 
+such as **Fatal Damage**, which would trigger the [**Death Ability**](cbt_ability_death.md) instead.
+
+Since the activation is made via a **Gameplay Effect**, you can also trigger it from other systems if necessary.
+
 ## Directional Hit Reactions
 
 The **Hit Reaction Ability** uses the **Directional Hits** Animation Provider, which can select a specific Animation 

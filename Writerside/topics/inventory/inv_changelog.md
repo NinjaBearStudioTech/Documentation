@@ -38,8 +38,10 @@ First release for Unreal Engine 5.3 and 5.4.
 [bugfix] Fixed `IsSuccessful` in the `FInventoryItemContext`.
 ```
 
-## 1.4.17
+## 2.0.0
 <secondary-label ref="wip"/>
 ```
+[major] Updated Blueprint APIs to use FInstancedStruct, instead of TInstancedStruct, which may change some function signatures.
+[added] Added "Linux" and "Mac" to the list of Allowed Build Platforms.
 [added] A new Anim Notify State, "Hide Equipment", to hide (and then show) Equipment Actors. Useful for things like interactions.
 ```

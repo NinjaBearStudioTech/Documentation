@@ -14,7 +14,7 @@ so the UI will only be notified when data actually changes in the backend.
 > process and the **input routing**.
 {style="note"}
 
-[Inventory Widgets](inv_widgets.md)
+[](inv_widgets.md)
 : Details all Widgets and Components available in the Inventory System, explaining their functionality and usage.
 It's strongly recommended to use these widgets as a foundation for your Inventory UI.
 
