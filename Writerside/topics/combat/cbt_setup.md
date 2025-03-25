@@ -110,6 +110,11 @@ Finally, assign these Collision Channels in your Combat Settings: `Edit` > `Proj
 Your main Character class must have the **Combat Manager** component added to it, along with the appropriate **Combat
 System Interface**. Make sure to return the **Combat Manager** from the `GetCombatManager` function.
 
+The Combat Component also must access the Combat Mesh and the proper Animation Blueprint that should be used for Combat
+Animations. Sometimes, these might be the same, but it is not uncommon for them to be different.
+
+In your base character, implement `GetCombatMesh` providing the main mesh for your combatant and if you are using a
+
 > **How about the other Components and Functions?**
 >
 > You don't need to worry about other components or methods in this interface for now, except for the **Weapon Manager** 

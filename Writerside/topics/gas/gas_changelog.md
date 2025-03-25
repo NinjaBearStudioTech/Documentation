@@ -1,8 +1,15 @@
 # Changelog
 <primary-label ref="gas"/>
 
-## 1.0.0 - 19/10/2024
-First release for Unreal engine 5.3 and 5.4.
+## 1.5.5
+<secondary-label ref="wip"/>
+```
+[added] State Tree task to Activate Gameplay Abilities.
+[added] State Tree task to Cancel Gameplay Abilities.
+[improvement] Support for the "InitialCooldown" tag, used to start an ability immediately on cooldown.
+[improvement] Handled runtime retarget possibilities in the "CurrentMontageStop" function, in the ASC.
+[bugfix] Added a check to ensure that default abilities and effect handles are valid, before storing them. 
+```
 
 ## 1.2.0 - 16/11/2024
 ```
@@ -18,3 +25,6 @@ First release for Unreal engine 5.3 and 5.4.
 [improvement] Added replicated Input Events to the ASC, to ensure Pressed/Released events are triggered.
 [bugfix] Ensured that attribute set classes not set for a default entry won't result in a crash.
 ```
+
+## 1.0.0 - 19/10/2024
+First release for Unreal engine 5.3 and 5.4.

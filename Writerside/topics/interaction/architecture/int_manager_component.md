@@ -2,7 +2,7 @@
 <primary-label ref="interaction"/>
 
 The **Interaction Manager** captures and stores available **Interaction Targets** for a pawn or character. Once captured, 
-these targets can be **focused**, making them eligible for the **Interaction Flow**.
+these targets can be **focused**, making them eligible for **Interaction Flow**. 
 
 ## Collision Components
 

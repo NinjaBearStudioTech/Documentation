@@ -4,14 +4,14 @@
 
 ![Ninja Interaction](int_feature.png "Ninja Interaction")
 
-The **Ninja Interaction** plugin was designed to simplify streamline how interactions can be defined. It is build using
-Smart Objects and Gameplay Behaviors and the Gameplay Ability System. 
-
-It creates a unified design for interactions that can be used by both Player and AI characters, via the Interaction 
-Ability, while also retaining the usual workflow for Smart Objects, if your project needs it.
+The **Ninja Interaction** plugin streamlines the definition and execution of interactions by orchestrating core gameplay 
+systems in the engine, including the **Gameplay Ability System**, **Smart Objects**, **Gameplay Behaviors**, and **State Trees**.
 
 ## Main Features
 
-- **Data-oriented Setup**: Built using **Smart Objects**, interactions are very easy to define, using Data Assets and usual Blueprints.
-- **Gameplay Integration**: Multiple **gameplay modules** integrated to work together for both players and AI characters.
-- **User Interface**: You can bind provided **viewmodels** to your user interface to track your interaction progress. 
+- **Very Flexible**: Use **state machines** to design simple and complex interaction flows for each interactable actor.
+- **Behavior-Driven**: **Smart Objects** and **Gameplay Behaviors** define how each interaction works, including multiple interactions per target.
+- **Player and AI**: Built on Smart Objects, allowing standardized interactions for both players and AI agents.
+- **Extensible**: Interactions are triggered via Gameplay Abilities, making them compatible with other systems.
+- **User Interface**: Bind the provided **ViewModel** to your UI to track interaction progress.
+

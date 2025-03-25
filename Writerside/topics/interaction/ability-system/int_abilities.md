@@ -21,5 +21,10 @@ This Ability Task will select the Interaction Target positioned at the center of
 
 ## Execute Interaction
 
-This Ability effectively triggers the interaction, for a target provided via a **Gameplay Event**. It will orchestrate
-the integration with the **Gameplay Behavior** set in the **Smart Object**.
+Executes an Interaction, ultimately triggering the State Tree for that particular Interaction Target and Slot.
+Should be granted by default.
+
+## Play Animation
+
+Plays an animation, usually requested by the State Tree and synchronizes back as necessary.
+Should be granted by default.

@@ -36,10 +36,12 @@ The following table contains all attributes available in the Combat System's Att
 | `MaxStamina`             | Base maximum amount of stamina available.                | Stamina           |
 | `MaxStaminaAdd`          | Stamina added to the maximum.                            | Stamina           |
 | `MaxStaminaPercent`      | Percent multiplier to stamina in {0, 1} range.           | Stamina           |
+| `StaminaCost`            | Base cost for stamina that can be used by abilities.     | Stamina           |
 | `StaminaRegenRate`       | Stamina regeneration rate.                               | Stamina           |
 | `Magic`                  | Current amount of magic available.                       | Magic             |
 | `MaxMagic`               | Base maximum amount of magic available.                  | Magic             |
 | `MaxMagicAdd`            | Magic added to the maximum.                              | Magic             |
+| `MagicCost`              | Base cost for magic that can be used by abilities.       | Magic             |
 | `MaxMagicPercent`        | Percent multiplier to magic in {0, 1} range.             | Magic             |
 | `MagicRegenRate`         | Magic regeneration rate.                                 | Magic             |
 | `BaseDamage`             | Base damage applied by the character.                    | Damage            |

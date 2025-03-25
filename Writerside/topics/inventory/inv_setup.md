@@ -136,11 +136,13 @@ and implement the `GetEquipmentManager` function to return the component.
 {style="warning"}
 
 ### 1.0 to 2.0
-Version 2.0 modified some functions to differentiate how they exposed the dynamic Memory and Payload structs. 
-Functions invoking operations using a payload, or accessing item memories in Blueprint and C++ should be reviewed.
 
+1. Version 2.0 modified some functions to differentiate how they exposed the dynamic Memory and Payload structs. 
+Functions invoking operations using a payload, or accessing item memories in Blueprint and C++ should be reviewed. 
 Blueprint Functions will always use the `FInstancedStruct` version, while C++ counterparts will use `TInstancedStruct`.
 Default item configurations using default memories are not affected.
+
+2. dsd
 
 <seealso style="cards">
    <category ref="related">
