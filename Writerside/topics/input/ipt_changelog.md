@@ -18,7 +18,7 @@
 [improvement] Added the option to perform a check before sending gameplay events.
 [improvement] Exposed activation and cancellation functions to Blueprints.
 [improvement] Added a function library method to provide the mouse cursor position in world space.
-[improvement] Added methods to confirmation and cancellation handlers to perform additional checks.
+[improvement] Added extra checks for the "Rotate to Mouse Cursor" functionality, so it better integrates with Common UI input modes.
 [bugfix] Added gameplay tag container include to the InputBufferInterface to avoid build issues.
 ```
 

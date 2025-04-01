@@ -1,0 +1,65 @@
+# Installation
+<primary-label ref="combat"/>
+
+<tldr>
+    <p><b>Summary: Installing Ninja Combat</b></p>
+    <br/>
+    <ul>
+        <li>Install <b>Ninja Combat</b> using the <b>Epic Launcher</b> and enable it in your project.</li>
+        <li>Optionally, install the source code from <b>GitHub</b> and <b>enable C++</b> in the project.</li>
+        <li>If using C++, then make sure to add all <b>module dependencies</b> to the <code>Build.cs</code> file.</li>
+    </ul>
+</tldr>
+
+This page will walk you through the **pre-requisites** and **steps** necessary to enable the **Ninja Combat** plugin.
+
+## Pre-Requisites
+Before enabling Ninja Combat, make sure to have the following pre-requisites addressed:
+1. A working setup for the **Gameplay Ability System Component**. If you are using **[](gas_overview.md)**, then make sure to configure it first.
+2. A working setup for the **Enhanced Input**. If you are using **[](ipt_overview.md)**, then make sure to configure it first.
+
+## Installing the Plugin
+Once you are prepared to get started, first you will need to install the plugin to your engine. This is a straightforward
+process that can be done via the **Epic Games Launcher**.
+
+<procedure title="Installing via the Epic Launcher" collapsible="true" default-state="expanded">
+    <step>Open the <b>Epic Games Launcher</b> and locate the <b>Ninja Combat</b> code plugin.</step>
+    <step>
+        <p>Click <b>Install to Engine</b> and select the engine version to install, from the list of compatible versions.</p>
+        <tip>Plugins installed via the Epic Launcher are added to your Engine directory and are available to all projects using that engine version.</tip>
+    </step>
+    <step>Once installed, create or open your project, navigate to <b>Edit</b> &rarr; <b>Plugins</b> and find Ninja Combat on the list. You can search for it in the Search Bar too.</step>
+    <step>Enable the plugin and restart the engine.</step>
+    <step>You are ready to work with <b>Ninja Combat</b>&excl;</step>
+</procedure>
+
+## Working with the Source Code
+<secondary-label ref="advanced"/>
+If you plan to work with the source code, you can copy the plugin to your local engine or install it from GitHub. 
+
+<procedure title="Enable C++ in your Project" collapsible="true" default-state="expanded">
+    <step>Make sure to perform all <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-your-development-environment-for-cplusplus-in-unreal-engine">necessary steps</a> to <b>enable C++</b> in your environment and project.</step>
+    <step>To work with the source code, you will need an editor installed, such as <b>Visual Studio</b> or <b>Rider</b>. Make sure to install your editor of choice.</step>
+    <step>If you did not create a C++ right away, then create at least one C++ class, such as a base Character or Game Mode, via <b>Tools</b> &rarr; <b>New C++ Class</b>.</step>
+</procedure>
+
+<procedure title="GitHub Repository" collapsible="true" default-state="expanded">
+    <step>Ensure that you have access to the Ninja Combat repository on <b>GitHub</b>.</step>
+    <step>In your project, create a <code>Plugins</code> folder if you don't have one. We recommend also creating a <code>NinjaBearStudio</code> folder if you have multiple plugins.</step>
+    <step><b>Clone</b> the Ninja Combat repository into your desired Plugins Folder.</step>
+    <step>Right-click the <code>.uproject</code> file and select <b>Generate Visual Studio project files</b> (or your IDE equivalent).</step>
+</procedure>
+
+<procedure title="Enable C++ Modules" collapsible="true" default-state="expanded">
+    <step>Close your Unreal Engine project if it is currently open.</step>
+    <step>
+        <p>In your IDE of choice, open the <code>Build.cs</code> file, named after your project (e.g., <code>MyGame.Build.cs</code> in the <code>Source/MyGame</code> folder), and <b>add</b> the following contents.</p>
+        <p><code-block lang="c#" src="cbt_build.cs"/></p>
+        <note>Do not <b>override</b> the dependencies that you already have in the project! Add the ones in the list above, avoiding any duplicates.</note>
+    </step>
+    <step>
+        <p>Remove the version installed in the engine, if there is one.</p>
+        <tip>Unreal may load the Engine version of the plugin over the one in your project, leading to version mismatches or undefined behavior. Make sure only one copy is active.</tip>
+    </step>
+    <step><b>Recompile the project</b>. If this is the first time doing that, it might take a while.</step>
+</procedure>

@@ -1,5 +1,6 @@
 PublicDependencyModuleNames.AddRange(new string[]
 {
+    // Ninja Combat
     "CommonUI",
     "GameplayAbilities",
     "GameplayTags",

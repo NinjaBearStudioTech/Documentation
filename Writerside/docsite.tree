@@ -60,6 +60,27 @@
             <toc-element topic="bot_integration_factions.md"/>
         </toc-element>
     </toc-element>
+
+    <toc-element topic="cbt_overview.md">
+        <toc-element toc-title="Setup">
+            <toc-element topic="cbt_installation.md"/>
+            <toc-element topic="cbt_gas_configuration.md"/>
+            <toc-element topic="cbt_collisions.md"/>
+            <toc-element topic="cbt_combat_system.md"/>
+        </toc-element>
+        <toc-element toc-title="Components">
+            <toc-element topic="cbt_component_extensions.md"/>
+        </toc-element>
+        <toc-element topic="cbt_integration.md">
+            <toc-element topic="cbt_integration_factions.md"/>
+            <toc-element topic="cbt_integration_input.md"/>
+            <toc-element topic="cbt_integration_inventory.md"/>
+        </toc-element>        
+        <toc-element topic="cbt_changelog.md"/>
+        <toc-element topic="cbt_version_updates.md"/>
+    </toc-element>
+    
+    <!--
     <toc-element topic="cbt_overview.md">
         <toc-element topic="cbt_setup.md"/>
         <toc-element topic="cbt_concepts.md">
@@ -107,6 +128,7 @@
         <toc-element topic="cbt_troubleshooting.md"/>
         <toc-element topic="cbt_changelog.md"/>
     </toc-element>
+    -->
     <toc-element topic="fct_overview.md">
         <toc-element topic="fct_setup.md"/>
         <toc-element topic="fct_concepts.md">
