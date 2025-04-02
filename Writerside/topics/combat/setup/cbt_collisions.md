@@ -81,4 +81,18 @@ You can still fine-tune them in each notify, as needed.
     </step>
 </procedure>
 
+## C++ Collisions
+In many cases, you may want to reference your collision channels directly in C++. You can create a simple header file 
+(e.g., `CollisionChannels.h`) and define aliases for your custom channels:
+
+<code-block lang="C++" src="cbt_setup_collisions.h" collapsible="true" collapsed-title="CustomCollisionChannels.h"/>
+
+> **C++ and Setup Consistency**
+> 
+> Make sure these values match the channels configured in your Project Settings. If you change them later, be sure to 
+> update this header file accordingly. 
+> 
+> You can check your internal collision settings in the `DefaultEngine.ini` file, in the `Config` folder. Search for 
+> `DefaultChannelResponses` entries, in the `[/Script/Engine.CollisionProfile]` section. 
+
 [1]: https://dev.epicgames.com/documentation/en-us/unreal-engine/collision-in-unreal-engine---overview

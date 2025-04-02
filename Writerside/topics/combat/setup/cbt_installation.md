@@ -54,12 +54,12 @@ If you plan to work with the source code, you can copy the plugin to your local 
     <step>Close your Unreal Engine project if it is currently open.</step>
     <step>
         <p>In your IDE of choice, open the <code>Build.cs</code> file, named after your project (e.g., <code>MyGame.Build.cs</code> in the <code>Source/MyGame</code> folder), and <b>add</b> the following contents.</p>
-        <p><code-block lang="c#" src="cbt_build.cs"/></p>
-        <note>Do not <b>override</b> the dependencies that you already have in the project! Add the ones in the list above, avoiding any duplicates.</note>
+        <code-block lang="c#" src="cbt_setup_build.cs"/>
+        <warning><b>Do not override</b> the dependencies that you already have in the project! Add the ones in the list above, and <b>watch out for duplicates</b> !</warning>
     </step>
     <step>
         <p>Remove the version installed in the engine, if there is one.</p>
-        <tip>Unreal may load the Engine version of the plugin over the one in your project, leading to version mismatches or undefined behavior. Make sure only one copy is active.</tip>
+        <tip>Unreal may load the Engine version of the plugin over the one in your project, leading to <b>version mismatches</b> or <b>undefined behavior</b>. <b>Make sure only one copy is active</b>.</tip>
     </step>
     <step><b>Recompile the project</b>. If this is the first time doing that, it might take a while.</step>
 </procedure>

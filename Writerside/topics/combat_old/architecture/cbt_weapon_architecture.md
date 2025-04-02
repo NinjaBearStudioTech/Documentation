@@ -176,7 +176,7 @@ this method will also be matched with the **Socket Mapping** configuration.
 
 The following image shows how to add weapons that are instantiated, but not already attached.
 
-<img src="cbt_weapon_manager_add.png" alt="Adding external Weapon Actors" border-effect="line" thumbnail="true"/>
+<img src="cbt_weapon_manager_add_class.png" alt="Adding external Weapon Actors" border-effect="line" thumbnail="true"/>
 
 ### Equipment Weapon Adapter
 

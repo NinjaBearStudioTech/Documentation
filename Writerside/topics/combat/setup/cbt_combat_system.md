@@ -8,6 +8,7 @@
         <li>Add the <b>Combat Manager Component</b> to your base character class.</li>
         <li>Optionally, add a <b>Forward Reference</b> to your base character class.</li>
         <li>Optionally, add the <b>Combat Movement Component</b> to your base character class.</li>
+        <li>Optionally, use the <b>Combat Animation Instance</b> as your base Animation Blueprint class.</li>
         <li>Add the <b>Combat System Interface</b> to your base character classes.</li>
         <li>Configure the <b>Combat Mesh</b> and if necessary, the <b>Combat Animation Blueprint</b>.</li>
     </ul>
@@ -63,13 +64,16 @@ then you should create your own, as this is an integration topic. For more detai
 
 ## Combat Movement Component
 
-> **Optional Component**
-> 
-> The **Combat Movement Component** is an **optional** component. You can skip this section if you are not planning on 
-> using it, or using another movement framework such as Mover 2.0.
+Ninja Combat includes the `NinjaCombatCharacterMovementComponent` class, a version of the Character Movement Component 
+that can handle different **movement speeds**, due to changes in **blocking** and **strafing** states.
 
-Ninja Combat includes the `NinjaCombatCharacterMovementComponent`. A version of the Character Movement Component that can
-handle different **movement speeds** due to changes in **blocking** and **strafing** states.
+> **Optional Feature**
+>
+> The **Combat Movement Component** is an **optional** feature. You can skip this section if you are not planning on
+> using it, or using another movement framework such as Mover 2.0.
+>
+> It is still recommended to see how this class operates internally, to learn more about the delegate bindings and how
+> it reacts to character changes.
 
 <procedure title="Set the Combat Character Movement Component" collapsible="true" default-state="expanded">
     <step>
@@ -84,6 +88,27 @@ handle different **movement speeds** due to changes in **blocking** and **strafi
         </tabs>
     </step>
 </procedure>
+
+## Animation Instance
+
+Ninja Combat includes the `NinjaCombatAnimInstance` class, a version of the Animation Instance that can serve as the 
+base class for an Animation Blueprint, handling animation updates related to **blocking** and **strafing** states.
+
+> **Optional Feature**
+>
+> The **Combat Animation Instance** is an **optional** feature. You can skip this section if you are using your own
+> animation or dedicated character locomotion systems.
+> 
+> It is still recommended to see how this class operates internally, to learn more about the delegate bindings and how 
+> it reacts to character changes.
+
+<procedure title="Set the Combat Animation Instance" collapsible="true" default-state="expanded">
+    <step>Create an <b>Animation Blueprint</b>, using <code>NinjaCombatAnimInstance</code> as the base class.</step>
+    <step>Set the new Animation Blueprint to your <b>Character Mesh</b>.</step>
+</procedure>
+
+For more information about the properties and functions available in this Animation Instance class, please check the
+[dedicated Character Animation page](cbt_character_animation.md).
 
 ## Combat System Interface
 The **Combat System Interface** defines the contract that Pawns and Characters must follow, to integrate with **Ninja Combat**.
@@ -119,7 +144,7 @@ All functions in this interface are **optional**, but let's implement some and g
     <step>Implement the <code>GetCombatForwardReference</code> function, so it returns the <b>Forward Reference Component</b> (e.g., the <code>Arrow Component</code>).</step>
     <tabs group="sample">
         <tab title="Blueprint" group-key="bp">
-            <img src="cbt_setup_forward_reference.png" alt="Add the Forward Reference" width="800" thumbnail="true" border-effect="line"/>
+            <img src="cbt_setup_combat_interface.png" alt="Add the Combat System Interface" width="800" thumbnail="true" border-effect="line"/>
         </tab>
         <tab title="C++" group-key="cpp">
             <p><b>Header</b></p>
