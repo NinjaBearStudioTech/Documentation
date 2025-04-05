@@ -1,8 +1,11 @@
 PublicDependencyModuleNames.AddRange(new []
 {
+    "CommonUI",
+    "EnhancedInput",
     "GameplayAbilities",
     "GameplayTags",
     "GameplayTasks",
     "InputCore",
-    "NinjaInput"
+    "NinjaInput",
+    "NinjaInputUI"
 });

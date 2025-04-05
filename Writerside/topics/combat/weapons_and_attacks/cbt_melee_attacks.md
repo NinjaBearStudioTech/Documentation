@@ -54,7 +54,7 @@ references and loading on demand.
     <step>Disable their default collisions, so they won't interfere with your gameplay.</step>
     <step>
         <p>Place sockets along the scan area, such as the blade. These will be used by both <b>melee scans</b> and <b>weapon trails</b>.</p>
-        <img src="cbt_melee_weapon_sockets.png" alt="Weapon Sockets" border-effect="line" thumbnail="true"/>
+        <img src="cbt_wpatk_melee_weapon_sockets.png" alt="Weapon Sockets" border-effect="line" thumbnail="true"/>
         <note>
             <p><b>Naming Convention</b></p>
             <p>All sockets should start with the <b>same prefix</b>, such as <code>sScan</code>, followed by numbers that can be <b>ordered</b> (e.g. <code>sScan1</code>, <code>sScan2</code>, <code>sScan3</code>). This convention is used by the system to determine first/last sockets across the scan area.</p>
@@ -71,11 +71,11 @@ references and loading on demand.
     <step>Open one of your <b>melee weapon Blueprints</b>, such as the <b>Sword Weapon Actor</b>, created in the <b><a href="cbt_weapon_actors.md">Weapon Actors page</a></b>.</step>
     <step>
         <p>Implement the <code>GetMeleeMesh</code> function, returning the <b>Static or Skeletal Mesh</b> that will be used for <b>Melee Scans</b>.</p>
-        <img src="cbt_melee_get_mesh_implementation.png" alt="Weapon Setup" border-effect="line" thumbnail="true"/>
+        <img src="cbt_wpatk_melee_get_mesh_implementation.png" alt="Weapon Setup" border-effect="line" thumbnail="true"/>
     </step>
     <step>
         <p>In the <b>Melee</b> category, in the <b>Defaults panel</b>, add any cosmetics that you'd like, such as the <b>Impact particles and sounds</b>.</p>
-        <img src="cbt_melee_weapon.png" alt="Weapon Setup" border-effect="line" thumbnail="true"/>
+        <img src="cbt_wpatk_melee_weapon.png" alt="Weapon Setup" border-effect="line" thumbnail="true"/>
     </step>
 </procedure>
 
@@ -101,11 +101,11 @@ has a clear separation between the **Animation Notify State**, placed in each **
     <step>Create or open an <b>Animation Montage</b> that represents an <b>attack</b>.</step>
     <step>
         <p>Add the <b>Melee Scan Notify State</b>, covering all frames where the melee scan should occur.</p>
-        <img src="cbt_melee_scan_notify_state.png" alt="Melee Scan Notify State" border-effect="line" thumbnail="true"/>
+        <img src="cbt_wpatk_melee_scan_notify_state.png" alt="Melee Scan Notify State" border-effect="line" thumbnail="true"/>
     </step>
     <step>
         <p>In the <b>Melee Scan</b> details, configure the <b>Gameplay Tag Query</b> used to retrieve the correct weapon from the <b><a href="cbt_weapon_manager.md"/></b>, to retrieve the weapon.</p>
-        <img src="cbt_melee_scan_weapon_query.png" alt="Melee Scan Weapon Query" border-effect="line"/>
+        <img src="cbt_wpatk_melee_scan_weapon_query.png" alt="Melee Scan Weapon Query" border-effect="line"/>
     </step>
     <step>
         <p>Ensure that the selected <b><a href="cbt_collisions.md">Scan Channels</a></b> include <b>CombatObject</b>.</p>
@@ -170,14 +170,14 @@ to handle the start and end of the cue, via the `StartMeleeTrailsCosmetics` and 
 The **Attack Ability** is responsible for **Melee** and **Ranged** attacks. To get started with Melee Attacks, all you
 need to do is setting the **Default Animation Montage** and make sure to assign this Gameplay Ability to your character.
 
-<img src="cbt_melee_ability.png" alt="Melee Ability" border-effect="line" thumbnail="true"/>
+<img src="cbt_wpatk_attack_ability_melee.png" alt="Melee Ability" border-effect="line" thumbnail="true"/>
 
 There are three important **property groups** in this Ability, that are relevant for **melee attacks**.
 
 - **Melee Attack**: All properties that will define the melee attack's behavior. More information about this ability can be found in its [reference page][1].
 - **Animation**: Here you can set your **Animation Provider** and the **Animation Montage**. We'll cover this in more detail in the [Character Animation page][2].
 - **Motion Warping**: Used to improve the **connection between attacker and targets**. We'll cover this in more detail in the [Motion Warping][3] and [Gameplay Targeting System][4] pages. 
-- **Debug**: Enabling debug in this ability will show the trajectory and targets hit by the **melee scan**.
+- **Debug**: Enabling debug in this ability will show the **trajectory** and **targets hit** by the **melee scan**.
 
 [1]: cbt_ability_attack.md
 [2]: cbt_character_animation.md

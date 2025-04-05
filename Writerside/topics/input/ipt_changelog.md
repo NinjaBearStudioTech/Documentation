@@ -1,13 +1,13 @@
 # Changelog
 <primary-label ref="input"/>
 
-## 4.12.32
+## 5.0.0
 <secondary-label ref="wip"/>
 
-> Please pay close attention to the changes made to **Momentary** and **Toggled** abilities!
+> **Important Changes in this version**
 >
-> They are now defined in the actual Ability, using the `Momentary` and `Toggled` input tags. This means
-> that the input can handle such cases dynamically, based on the actual ability.
+> 1. **Momentary** and **Toggled** are not set in the handler anymore. Instead, they are set by ability tags, in each ability.
+> 2. The **Forward Reference Tag** has been changed to `Input.Component.ForwardReference`.
 
 ```
 [added] Input Handler for "Press" and "Hold" activations.
@@ -19,6 +19,7 @@
 [improvement] Exposed activation and cancellation functions to Blueprints.
 [improvement] Added a function library method to provide the mouse cursor position in world space.
 [improvement] Added extra checks for the "Rotate to Mouse Cursor" functionality, so it better integrates with Common UI input modes.
+[improvement] Renamed the Forward Reference Tag, so it matches the naming convention for component tags: `Input.Component.ForwardReference`
 [bugfix] Added gameplay tag container include to the InputBufferInterface to avoid build issues.
 ```
 

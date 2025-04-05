@@ -55,7 +55,7 @@ do that is using **[](gas_overview.md)**, but you can use any other GAS setup th
         </p>
     </step>
     <step>Create a <b>Data Table</b> for your Combat Attributes, using the <code>AttributeMetaData</code> row structure.</step>
-    <step>Download the <b><a href="cbt_attributes.md#initialization-data">Sample Initialization Data</a></b> and use it as the table data.</step>
+    <step>Download the <b><a href="cbt_gameplay_attributes.md#initialization-data">Sample Initialization Data</a></b> and use it as the table data.</step>
     <step>Create a new <b>G.A.S. Setup Data Asset</b> and add a new <b>Default Attribute Set</b> entry.</step>
     <step>Add the <code>Ninja Combat Attribute Set</code> class and the data table as the <b>Attribute Table</b>.</step>
     <step>Set the new GAS Setup Data to your player character's Ability System Component.</step>

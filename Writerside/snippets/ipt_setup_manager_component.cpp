@@ -3,6 +3,6 @@
 
 APluginLabsCharacter::APluginLabsCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
-    static const FName EquipmentComponentName = TEXT("InputManager");
-	InputManager = CreateDefaultSubobject<UNinjaInputManagerComponent>(EquipmentComponentName);
+    static const FName InputManagerName = TEXT("InputManager");
+	InputManager = CreateDefaultSubobject<UNinjaInputManagerComponent>(InputManagerName);
 }

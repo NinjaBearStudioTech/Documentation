@@ -55,7 +55,7 @@ Once your Physical Surfaces are configured, you can create **Physical Materials*
     </step>
     <step>
         <p>Repeat these steps for all <b>Physical Surfaces</b> in your project.</p>
-        <img src="cbt_setup_physical_materials_done.png" alt="Physical Materials Collection" width="800" thumbnail="true" border-effect="line"/>
+        <img src="cbt_setup_physical_materials_collection.png" alt="Physical Materials Collection" width="800" thumbnail="true" border-effect="line"/>
     </step>
 </procedure>
 

@@ -30,6 +30,8 @@
         </toc-element>
         <toc-element topic="showcase_credits.md"/>
     </toc-element>
+
+    <!-- Ninja Bot -->
     <toc-element topic="bot_overview.md">
         <toc-element topic="bot_setup.md"/>
         <toc-element topic="bot_concepts.md">
@@ -61,6 +63,7 @@
         </toc-element>
     </toc-element>
 
+    <!-- Ninja Combat -->
     <toc-element topic="cbt_overview.md">
         <toc-element toc-title="Setup">
             <toc-element topic="cbt_installation.md"/>
@@ -112,60 +115,13 @@
             <toc-element topic="cbt_integration_factions.md"/>
             <toc-element topic="cbt_integration_input.md"/>
             <toc-element topic="cbt_integration_inventory.md"/>
-        </toc-element>        
-        <toc-element topic="cbt_changelog.md"/>
-        <toc-element topic="cbt_version_updates.md"/>
-    </toc-element>
-    
-    <!--
-    <toc-element topic="cbt_overview.md">
-        <toc-element topic="cbt_setup.md"/>
-        <toc-element topic="cbt_concepts.md">
-            <toc-element topic="cbt_melee_combat.md"/>
-            <toc-element topic="cbt_ranged_combat.md"/>
-            <toc-element topic="cbt_combo_system.md"/>
-            <toc-element topic="cbt_target_locking.md"/>
-            <toc-element topic="cbt_damage_and_defense.md"/>
-            <toc-element topic="cbt_poise_and_stagger.md"/>
-            <toc-element topic="cbt_opportunity_system.md"/>
-            <toc-element topic="cbt_forward_reference.md"/>
-        </toc-element>
-        <toc-element topic="cbt_architecture.md">
-            <toc-element topic="cbt_component_extensions.md"/>
-            <toc-element topic="cbt_weapon_architecture.md"/>
-            <toc-element topic="cbt_movement_component.md"/>
-            <toc-element topic="cbt_character_animation.md"/>
-            <toc-element topic="cbt_actor_pooling.md"/>
-            <toc-element topic="cbt_user_interface.md"/>
-            <toc-element topic="cbt_targeting_system.md"/>
-            <toc-element topic="cbt_motion_warping.md"/>
-            <toc-element topic="cbt_artificial_intelligence.md"/>
-        </toc-element>
-        <toc-element topic="cbt_ability_system.md">
-            <toc-element topic="cbt_attributes.md"/>
-            <toc-element topic="cbt_effects.md"/>
-            <toc-element topic="cbt_abilities.md">
-                <toc-element topic="cbt_ability_attack.md"/>
-                <toc-element topic="cbt_ability_block.md"/>
-                <toc-element topic="cbt_ability_cast.md"/>
-                <toc-element topic="cbt_ability_combo.md"/>
-                <toc-element topic="cbt_ability_death.md"/>
-                <toc-element topic="cbt_ability_evade.md"/>
-                <toc-element topic="cbt_ability_hit_reaction.md"/>
-                <toc-element topic="cbt_ability_opportunity_attack.md"/>
-                <toc-element topic="cbt_ability_stagger.md"/>
-                <toc-element topic="cbt_ability_target_lock.md"/>
-            </toc-element>
-        </toc-element>
-        <toc-element topic="cbt_integration.md">
-            <toc-element topic="cbt_integration_factions.md"/>
-            <toc-element topic="cbt_integration_input.md"/>
-            <toc-element topic="cbt_integration_inventory.md"/>
         </toc-element>
         <toc-element topic="cbt_troubleshooting.md"/>
         <toc-element topic="cbt_changelog.md"/>
+        <toc-element topic="cbt_version_updates.md"/>
     </toc-element>
-    -->
+
+    <!-- Ninja Factions -->
     <toc-element topic="fct_overview.md">
         <toc-element topic="fct_setup.md"/>
         <toc-element topic="fct_concepts.md">
@@ -188,6 +144,8 @@
         </toc-element>
         <toc-element topic="fct_changelog.md"/>
     </toc-element>
+
+    <!-- Ninja GAS -->
     <toc-element topic="gas_overview.md">
         <toc-element topic="gas_setup.md"/>
         <toc-element topic="gas_architecture.md">
@@ -200,7 +158,13 @@
         </toc-element>
         <toc-element topic="gas_changelog.md"/>
     </toc-element>
+
+    <!-- Ninja Input -->
     <toc-element topic="ipt_overview.md">
+        <toc-element toc-title="Setup">
+            <toc-element topic="ipt_installation.md"/>
+            <toc-element topic="ipt_input_system.md"/>
+        </toc-element>
         <toc-element topic="ipt_setup.md"/>
         <toc-element topic="ipt_concepts.md">
             <toc-element topic="ipt_input_management.md"/>
@@ -220,6 +184,8 @@
         <toc-element topic="ipt_troubleshooting.md"/>
         <toc-element topic="ipt_changelog.md"/>
     </toc-element>
+
+    <!-- Ninja Interaction -->
     <toc-element topic="int_overview.md">
         <toc-element topic="int_setup.md"/>
         <toc-element topic="int_architecture.md">
@@ -231,6 +197,8 @@
             <toc-element topic="int_abilities.md"/>
         </toc-element>
     </toc-element>
+
+    <!-- Ninja Inventory -->
     <toc-element topic="inv_overview.md">
         <toc-element topic="inv_setup.md"/>
         <toc-element topic="inv_concepts.md">

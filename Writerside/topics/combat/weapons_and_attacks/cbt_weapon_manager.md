@@ -52,7 +52,7 @@ component to your character and configure the weapon class/socket mapping.
         <p>In your <b>combatant Blueprint</b>, add a new <b>Default Weapon Manager Component</b>.</p>
         <tabs group="sample">
             <tab title="Blueprint" group-key="bp">
-                <img src="cbt_weapon_manager_component.png" alt="Adding the Weapon Manager Component" border-effect="line"/>
+                <img src="cbt_wpatk_weapon_manager_component.png" alt="Adding the Weapon Manager Component" border-effect="line"/>
             </tab>
             <tab title="C++" group-key="cpp">
                 <p><b>Header</b></p>
@@ -65,7 +65,7 @@ component to your character and configure the weapon class/socket mapping.
     <step>Implement the <code>GetWeaponManager</code> function, from the <code>Combat System Interface</code>, returning this component.</step>
     <step>
         <p>Navigate to the component's <b>Defaults Panel</b> and map all weapon classes to their sockets.</p>
-        <img src="cbt_weapon_manager_defaults.png" alt="Add Default Weapons" border-effect="line"/>
+        <img src="cbt_wpatk_weapon_manager_defaults.png" alt="Add Default Weapons" border-effect="line"/>
     </step>
     <step>Optionally, add any default <b>Weapon Classes</b> that should be added to the character by default.</step>
 </procedure>
@@ -86,7 +86,7 @@ will be automatically attached to the sockets they are mapped to.
 Weapon Actors that are deliberately spawned and attached to the combatant can be detected and registered by the Weapon
 Manager. For that, you need to call `FindAttachedWeapons`.
 
-<img src="cbt_weapon_manager_scan.png" alt="Automatic Weapon Detection" border-effect="line" thumbnail="true"/>
+<img src="cbt_wpatk_weapon_manager_scan.png" alt="Automatic Weapon Detection" border-effect="line" thumbnail="true"/>
 
 ### Add and Remove Weapons
 You can **add** and **remove** weapons using the Default Weapon Manager, using the following functions.

@@ -1,4 +1,4 @@
-# Combat System Setup
+# Combat System
 <primary-label ref="combat"/>
 
 <tldr>
@@ -42,8 +42,9 @@ we will simply add it to the **base character class**.
 Certain features, such as the Evade Ability, may require a global forward reference, a Scene Component that **always points 
 forward**, typically an Arrow Component with **absolute rotation**. 
 
-The **Combat Manager** can create a default Forward Reference as needed, but if you are using **[](ipt_overview.md)**,
-then you should create your own, as this is an integration topic. For more details, please check  [Input Integration](cbt_integration_input.md#forward-reference)
+The **Combat Manager** can create a default Forward Reference as needed, but if you are using **[](ipt_overview.md)**, then you 
+should create your own, so you can have the flexibility needed for that integration. For more details, please 
+check [Input Integration](cbt_integration_input.md#forward-reference)
 
 <procedure title="Add a Forward Reference component" collapsible="true" default-state="expanded">
     <step>In your <b>Base Character Class</b>, create a new <b>Arrow Component</b>, parented to the <b>Root Component</b>.</step>
@@ -67,7 +68,7 @@ then you should create your own, as this is an integration topic. For more detai
 Ninja Combat includes the `NinjaCombatCharacterMovementComponent` class, a version of the Character Movement Component 
 that can handle different **movement speeds**, due to changes in **blocking** and **strafing** states.
 
-> **Optional Feature**
+> **Optional Step**
 >
 > The **Combat Movement Component** is an **optional** feature. You can skip this section if you are not planning on
 > using it, or using another movement framework such as Mover 2.0.
@@ -80,7 +81,7 @@ that can handle different **movement speeds**, due to changes in **blocking** an
         <p>In your <b>Base Character Class</b>, add the <code>CombatSystemInterface</code>.</p>
         <tabs group="sample">
             <tab title="Blueprint" group-key="bp">
-                <img src="cbt_override_movement_component.png" alt="Override default input component" border-effect="line"/>
+                <img src="cbt_setup_override_movement_component.png" alt="Override default input component" border-effect="line"/>
             </tab>
             <tab title="C++" group-key="cpp">
                 <code-block lang="c++" src="cbt_override_movement_component.cpp"/>
@@ -94,7 +95,7 @@ that can handle different **movement speeds**, due to changes in **blocking** an
 Ninja Combat includes the `NinjaCombatAnimInstance` class, a version of the Animation Instance that can serve as the 
 base class for an Animation Blueprint, handling animation updates related to **blocking** and **strafing** states.
 
-> **Optional Feature**
+> **Optional Step**
 >
 > The **Combat Animation Instance** is an **optional** feature. You can skip this section if you are using your own
 > animation or dedicated character locomotion systems.

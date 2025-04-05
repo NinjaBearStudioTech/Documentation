@@ -1,33 +1,28 @@
 # Installation
-<primary-label ref="combat"/>
+<primary-label ref="input"/>
 
 <tldr>
-    <p><b>Summary: Installing Ninja Combat</b></p>
+    <p><b>Summary: Installing Ninja Input</b></p>
     <br/>
     <ul>
-        <li>Install <b>Ninja Combat</b> using the <b>Epic Launcher</b> and enable it in your project.</li>
+        <li>Install <b>Ninja Input</b> using the <b>Epic Launcher</b> and enable it in your project.</li>
         <li>Optionally, install the source code from <b>GitHub</b> and <b>enable C++</b> in the project.</li>
-        <li>If using C++, then make sure to add all <b>module dependencies</b> to the <code>Build.cs</code> file.</li>
+        <li>If using C++, make sure to add the required <b>module dependencies</b> to your project's <code>Build.cs</code> file.</li>
     </ul>
 </tldr>
 
-This page will walk you through the **pre-requisites** and **steps** necessary to enable the **Ninja Combat** plugin.
-
-## Pre-Requisites
-Before enabling Ninja Combat, make sure to have the following pre-requisites addressed:
-1. A working setup for the **Gameplay Ability System Component**. If you are using **[](gas_overview.md)**, then make sure to configure it first.
-2. A working setup for the **Enhanced Input**. If you are using **[](ipt_overview.md)**, then make sure to configure it first.
+This page will walk you through the **pre-requisites** and **steps** necessary to enable the **Ninja Input** plugin.
 
 ## Installing the Plugin
 To get started, install the plugin to your engine using the **Epic Games Launcher**.
 
 <procedure title="Installing via the Epic Launcher" collapsible="true" default-state="expanded">
-    <step>Open the <b>Epic Games Launcher</b> and locate the <b>Ninja Combat</b> code plugin.</step>
+    <step>Open the <b>Epic Games Launcher</b> and locate the <b>Ninja Input</b> code plugin.</step>
     <step>
         <p>Click <b>Install to Engine</b> and select the engine version to install, from the list of compatible versions.</p>
         <tip>Plugins installed via the Epic Launcher are added to your Engine directory and are available to all projects using that engine version.</tip>
     </step>
-    <step>Once installed, create or open your project, navigate to <b>Edit</b> &rarr; <b>Plugins</b> and find Ninja Combat on the list. You can search for it in the Search Bar too.</step>
+    <step>Once installed, create or open your project, navigate to <b>Edit</b> &rarr; <b>Plugins</b> and find Ninja Input on the list. You can search for it in the Search Bar too.</step>
     <step>Enable the plugin and restart the engine.</step>
 </procedure>
 
@@ -42,9 +37,9 @@ If you plan to work with the source code, you can copy the plugin to your local 
 </procedure>
 
 <procedure title="GitHub Repository" collapsible="true" default-state="expanded">
-    <step>Ensure that you have access to the Ninja Combat repository on <b>GitHub</b>.</step>
+    <step>Ensure that you have access to the Ninja Input repository on <b>GitHub</b>.</step>
     <step>In your project, create a <code>Plugins</code> folder if you don't have one. If you're using multiple Ninja Bear Studio plugins, we recommend organizing them under a <code>NinjaBearStudio</code> folder.</step>
-    <step><b>Clone</b> the Ninja Combat repository into your desired Plugins Folder.</step>
+    <step><b>Clone</b> the Ninja Input repository into your desired Plugins Folder.</step>
     <step>Right-click the <code>.uproject</code> file and select <b>Generate Visual Studio project files</b> (or your IDE equivalent).</step>
     <step>Launch the project. The plugin should now be available in your project's Plugins list.</step>
 </procedure>
@@ -53,8 +48,8 @@ If you plan to work with the source code, you can copy the plugin to your local 
     <step>Close your Unreal Engine project if it is currently open.</step>
     <step>
         <p>In your IDE of choice, open the <code>Build.cs</code> file, named after your project (e.g., <code>MyGame.Build.cs</code> in the <code>Source/MyGame</code> folder), and <b>add</b> the following contents.</p>
-        <code-block lang="c#" src="cbt_setup_build.cs"/>
-        <warning><b>Do not remove or replace any existing dependencies</b>. Just add the ones listed below. Add the ones in the list above, and <b>watch out for duplicates</b>.</warning>
+        <code-block lang="c#" src="ipt_setup_build.cs"/>
+        <warning><b>Do not remove or replace any existing dependencies</b>. Add the additional ones listed above, watching out for duplicates.</warning>
     </step>
     <step>
         <p>Remove the version installed in the engine, if there is one.</p>

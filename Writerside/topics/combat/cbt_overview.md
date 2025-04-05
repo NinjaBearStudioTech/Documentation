@@ -21,7 +21,7 @@ it, it's recommended that you have some familiarity with these base systems. **F
 - **Data-driven and Event-based**: Designer-friendly Combat Combos can be crafted using [State Machines][5].
 - **Advanced Damage and Defense Mechanics**: Includes features such as **Critical Hits**, **Breaker Hits**, **Armor**, **Blocking**, **Poise**, and [Procedural Hit Reactions][6].
 - **Core Attributes**: Provides essential attributes like **Health**, **Magic**, **Stamina**, **Critical Damage**, and **Defense**.
-- **Basic Widgets**: Includes common elements such as Health Bars and Damage Applied, integrated with **[UMG Viewmodels][7]**.
+- **Basic Widgets**: Includes common elements such as Health Bars and Damage Applied, integrated with **[UMG ViewModels][7]**.
 - **Configurable and Extensible**: Highly customizable in both Blueprints and C++.
 - **Clean Code and Thorough Documentation**: Well-documented codebase and comprehensive documentation site.
 
