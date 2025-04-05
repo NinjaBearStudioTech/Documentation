@@ -74,16 +74,13 @@
             <toc-element topic="cbt_weapon_manager.md"/>            
             <toc-element topic="cbt_melee_attacks.md"/>
             <toc-element topic="cbt_ranged_attacks.md"/>
-            <toc-element topic="cbt_damage_and_defense.md"/>
-        </toc-element>
-        <!--
-        <toc-element toc-title="Advanced Attacks">
+            <toc-element topic="cbt_casts.md"/>
             <toc-element topic="cbt_combos.md"/>
             <toc-element topic="cbt_stagger_parry_riposte.md"/>
-            <toc-element topic="cbt_opportunity_attack.md"/>
-            <toc-element topic="cbt_cast.md"/>
+            <toc-element topic="cbt_opportunity_attacks.md"/>
+            <toc-element topic="cbt_damage_and_defense.md"/>
         </toc-element>
-        <toc-element topic="cbt_gameplay.md">
+        <toc-element toc-title="Gameplay">
             <toc-element topic="cbt_gameplay_tags.md"/>
             <toc-element topic="cbt_gameplay_attributes.md"/>
             <toc-element topic="cbt_gameplay_effects.md"/>
@@ -111,11 +108,6 @@
             <toc-element topic="cbt_motion_warping.md"/>
             <toc-element topic="cbt_artificial_intelligence.md"/>            
         </toc-element>                
-        -->
-        <toc-element toc-title="Advanced Topics">
-            <toc-element topic="cbt_component_extensions.md"/>
-            <toc-element topic="cbt_character_animation.md"/>
-        </toc-element>
         <toc-element topic="cbt_integration.md">
             <toc-element topic="cbt_integration_factions.md"/>
             <toc-element topic="cbt_integration_input.md"/>

@@ -6,11 +6,11 @@
 
 > **Important Changes in this version**
 > 
-> 1. Ability tags now have a `combat` prefix, to ensure better organization of combat-related tags.
+> 1. Ability tags now have a `combat` prefix, to ensure better organization of combat-related tags. Make sure to review the Gameplay Tags page for more details.
 > 2. The Melee Scan Notify now supports an array of Object Channels, which simplifies the setup, but will require a review on your Anim Notify configurations.  
 > 3. The Warp Component interface and core implementation was changed to better incorporate maximum distance, offset and final scale. If you have changes in the component or warp providers, please review them.
 > 4. Added support to multiple physical surfaces per impact on weapons and projectiles. Since this was a common extension point in projects, evaluating the new solution is recommended.
-> 5. The combat viewmodels are now to be used in conjunction with the Combat View Model Resolver and won't require any base combat widgets. The "Widget" damage handler has been removed.
+> 5. The combat ViewModels are now to be used in conjunction with the Combat View Model Resolver and won't require any base combat widgets. The "Widget" damage handler has been removed.
 
 ```
 [added] Added a dedicated flow for Parries and Ripostes, based on the active frames of the Melee Scan, or a dedicated Parry Window Notify State.

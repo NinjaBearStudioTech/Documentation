@@ -10,7 +10,7 @@
     </ul>
 </tldr>
 
-The Combat Framework includes its own Attribute Set, containing multiple relevant categories such as **Vitals**, 
+The Combat Framework includes its own Attribute Set, containing multiple relevant categories such as **Vitals**,
 **Damage** and **Defense**.
 
 The Attribute Set is represented by the `NinjaCombatAttributeSet` class, make sure to add it to the Ability System
@@ -71,7 +71,7 @@ The following table contains all attributes available in the Combat System's Att
 
 You can use this Json to facilitate the creation the Data Table used to initialize the Combat Attributes.
 
-The Data Table Row type used to create the Attribute Set Data for initialization, `AttributeMetaData`, is provided by 
+The Data Table Row type used to create the Attribute Set Data for initialization, `AttributeMetaData`, is provided by
 the **Gameplay Ability System**. Once your Data Table is created, you can import the following Json to have an initial,
 complete, set of attribute values.
 

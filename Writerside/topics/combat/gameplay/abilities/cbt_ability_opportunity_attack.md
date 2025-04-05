@@ -20,7 +20,7 @@ The primary role is always meant to be the **victim**, which is collected via th
 The secondary role is always meant to be the **attacker**, which is the Ability Avatar.
 
 ### Additional Roles
-<secondary-label ref="wip"/>
+<secondary-label ref="advanced"/>
 
 If you need additional roles in your scene, such as a third actor, or an environment "prop", then you can override the 
 `CollectAdditionalSceneActors` function, from the Opportunity Attack Ability.

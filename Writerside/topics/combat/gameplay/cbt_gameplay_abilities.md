@@ -13,11 +13,11 @@ attack types in the same ability.
 in other parts of the system, such as **Animation** and **Movement** modules.
 
 **[Cast](cbt_overview.md)**
-: This flexible Gameplay Ability can be used to create multiple types of "spells". These can be **instant** or **targeted**, 
+: This flexible Gameplay Ability can be used to create multiple types of "spells". These can be **instant** or **targeted**,
 and applied on the **caster** or other **selected targets**.
 
 **[Combo](cbt_overview.md)**
-: Orchestrates other Abilities, such as **attacks** or **casts** so they can be executed in sequence, as long as certain 
+: Orchestrates other Abilities, such as **attacks** or **casts** so they can be executed in sequence, as long as certain
 pre-conditions are met, such as certain inputs pressed within a **combo window**.
 
 **[Death](cbt_overview.md)**
@@ -34,7 +34,7 @@ that can be selected based on different damage types and incoming hit directions
 
 **[Opportunity Attacks](cbt_overview.md)**
 : Attacks that can only be performed under certain circumstances and require animations to be **synchronized**
-between the attacker and victim can be created using this Gameplay Ability. It also supports **camera animations** for 
+between the attacker and victim can be created using this Gameplay Ability. It also supports **camera animations** for
 an extra cinematic flavour.
 
 **[Stagger](cbt_overview.md)**

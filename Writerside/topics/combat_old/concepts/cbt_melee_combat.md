@@ -2,6 +2,8 @@
 <primary-label ref="combat"/>
 
 <tldr>
+    <p><b>Summary: Configuring and Executing Melee Attacks</b></p>
+    <br/>
     <ul>
         <li>The weapon or character must implement the <b>Melee Interface</b>.</li>
         <li>The <b>Attack Ability</b> is used to execute <b>Melee Attacks</b>. Once it activates, it will listen to many <b>Gameplay Events</b>.</li>

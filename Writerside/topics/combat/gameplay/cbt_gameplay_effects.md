@@ -1,11 +1,11 @@
 # Gameplay Effects
 <primary-label ref="combat"/>
 
-This page contains an extensive list of all Gameplay Effects used by Ninja Combat, to support its features. 
+This page contains an extensive list of all Gameplay Effects used by Ninja Combat, to support its features.
 
 ## Vital Stats
 
-The following Gameplay Effects are related to main **vital stats**. 
+The following Gameplay Effects are related to main **vital stats**.
 
 | Effect                      | Description                                                                                        |
 |-----------------------------|----------------------------------------------------------------------------------------------------|
@@ -30,7 +30,7 @@ To add these effects to a cost, you need to do the following:
 
 <img src="cbt_effect_replenish_cancellation.png" alt="Cancel Regeneration Example" border-effect="line"/>
 
-The Cancellation will take the appropriate **Regen Delay** Gameplay Attribute configured for the owner, and interrupt 
+The Cancellation will take the appropriate **Regen Delay** Gameplay Attribute configured for the owner, and interrupt
 the resource regeneration for that amount of time.
 
 ## Damage
@@ -46,7 +46,7 @@ The following Gameplay Effects are used to inflict **damage** to the target.
 
 ### Damage Execution Calculation
 
-The Damage effect uses the **Damage Execution Calculation** class, which will calculate Critical Damage, based on the 
+The Damage effect uses the **Damage Execution Calculation** class, which will calculate Critical Damage, based on the
 current Gameplay Attributes. This Calculation is very flexible and supports the following features:
 
 1. Uses the Base Damage, Critical Hit Change and Critical Hit Damage from Gameplay Attributes.
@@ -54,7 +54,7 @@ current Gameplay Attributes. This Calculation is very flexible and supports the 
 3. It also allows a deliberate **Damage Modifier** that can be used to boost or reduce damage for certain Gameplay Effects.
 
 > **Critical Damage**
-> 
+>
 > If you decide to replace the Damage Calculation class, make sure to tag the Gameplay Spec with `Combat.Effect.Damage.Critical`,
 > whenever a Critical Hit happens, so the system can differentiate those hits and react accordingly.
 {style="note"}
@@ -62,7 +62,7 @@ current Gameplay Attributes. This Calculation is very flexible and supports the 
 #### Damage Override
 
 You can override damage entries in the calculation, so you can use other Gameplay Attributes or more complex calculations
-via Modifier Calculation classes. You can do that selecting any **Backing Data** available in the Calculation Execution, 
+via Modifier Calculation classes. You can do that selecting any **Backing Data** available in the Calculation Execution,
 and change it as you see fit.
 
 <img src="cbt_damage_override.png" alt="Damage Override" border-effect="line" width="600" thumbnail="true"/>
@@ -71,7 +71,7 @@ Alternatively, you can use a **Set By Caller Magnitude**, which allows external 
 be useful if you want to use the same Damage Effect for multiple weapons with different damages. For that, you need to
 set the appropriate magnitude data.
 
-If your use case is specifically requiring _weapons_ or _projectiles_ to set this value, then make sure to check the 
+If your use case is specifically requiring _weapons_ or _projectiles_ to set this value, then make sure to check the
 related interfaces (Melee and Ranged), that can provide such values. If they do, the attack abilities provided by the
 framework will set these values for you.
 
@@ -80,10 +80,10 @@ framework will set these values for you.
 #### Damage Modifier
 
 The **Damage Modifier** is a special **Backing Data** available in the `CombatExecution_Damage` calculation class. It
-allows you to **boost** or **reduce** damage applied by the Gameplay Effect. It can be based on a Scalable Float, 
+allows you to **boost** or **reduce** damage applied by the Gameplay Effect. It can be based on a Scalable Float,
 Backing Attribute, Set By Caller or yet another custom Calculation Class.
 
-This is also a good way to **scale damage** based on something like _weapon level_. In this example, if the weapon level 
+This is also a good way to **scale damage** based on something like _weapon level_. In this example, if the weapon level
 is translated to the Gameplay Effect level, you can have a **Curve Table** providing the modifiers, making this a very
 flexible way to adjust the base damage.
 
@@ -144,8 +144,8 @@ The following Gameplay Effects are related to the **Poise and Stagger** function
 | `Stagger`             | Staggers the target, potentially allowing certain Opportunity Attacks or reducing defenses.  |
 
 > **Damage Effects**
-> 
-> The main damage effects, **Melee Hit** and **Ranged Hit** are subclasses of the **Poise Damage**, so they inflict 
-> Poise Damage by default. 
-> 
+>
+> The main damage effects, **Melee Hit** and **Ranged Hit** are subclasses of the **Poise Damage**, so they inflict
+> Poise Damage by default.
+>
 > Usually, you should not need to use the Poise Damage by itself.

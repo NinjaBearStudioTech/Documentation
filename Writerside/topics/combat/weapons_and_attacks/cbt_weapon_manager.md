@@ -2,8 +2,6 @@
 <primary-label ref="combat"/>
 
 <tldr>
-    <p><b>Summary: Using the Weapon Manager</b></p>
-    <br/>
     <ul>
         <li>Actor Component that manages weapons available to a combatant.</li>
         <li>Should be added to any character that can hold a weapon at any moment.</li>

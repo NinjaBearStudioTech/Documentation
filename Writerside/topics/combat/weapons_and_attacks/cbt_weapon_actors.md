@@ -44,21 +44,30 @@ shared between all weapon actors.
 
 <procedure title="Creating a melee weapon: the Sword" collapsible="true" default-state="expanded">
     <step>Create a new <b>Blueprint</b> based on <code>NinjaCombatWeaponActor</code> (or your base Weapon class).</step>
+    <step>Add a <b>weapon mesh</b>, it can be a <b>Static or Skeletal Mesh Component</b>, depending on your weapon requirements.</step>
     <step><b>Disable the collisions</b> from the weapon mesh (or have that done in your base Weapon class).</step>
-    <step>In the <b>Class Defaults</b> panel, add a Gameplay Tag that defines this weapon, such as <code>weapon.type.sword</code>.</step>
+    <step>In the <b>Class Defaults</b> panel, add a Gameplay Tag that defines this weapon, such as <code>Inventory.Item.Type.Sword</code>.</step>
 </procedure>
 
 <procedure title="Creating a defensive weapon: the Shield" collapsible="true" default-state="expanded">
     <step>Create a new <b>Blueprint</b> based on <code>NinjaCombatWeaponActor</code> (or your base Weapon class).</step>
+    <step>Add a <b>weapon mesh</b>, it can be a <b>Static or Skeletal Mesh Component</b>, depending on your weapon requirements.</step>
     <step><b>Disable the collisions</b> from the weapon mesh (or have that done in your base Weapon class).</step>
-    <step>In the <b>Class Defaults</b> panel, add a Gameplay Tag that defines this weapon, such as <code>weapon.type.shield</code>.</step>
+    <step>In the <b>Class Defaults</b> panel, add a Gameplay Tag that defines this weapon, such as <code>Inventory.Item.Type.Shield</code>.</step>
 </procedure>
 
 <procedure title="Creating a ranged weapon: the Rifle" collapsible="true" default-state="expanded">
     <step>Create a new <b>Blueprint</b> based on <code>NinjaCombatWeaponActor</code> (or your base Weapon class).</step>
+    <step>Add a <b>weapon mesh</b>, it can be a <b>Static or Skeletal Mesh Component</b>, depending on your weapon requirements.</step>
     <step><b>Disable the collisions</b> from the weapon mesh (or have that done in your base Weapon class).</step>
-    <step>In the <b>Class Defaults</b> panel, add a Gameplay Tag that defines this weapon, such as <code>weapon.type.rifle</code>.</step>
+    <step>In the <b>Class Defaults</b> panel, add a Gameplay Tag that defines this weapon, such as <code>Inventory.Item.Type.Rifle</code>.</step>
 </procedure>
+
+> **Base Weapon Class**
+>
+> It's highly recommended creating a **base weapon class or blueprint** containing any additional components, properties and logic.
+> You can use `NinjaCombatWeaponActor` as a base class or, if you have a different class hierarchy, implement the appropriate interfaces.
+{style="note"}
 
 > **Melee and Ranged Weapons**
 > 
