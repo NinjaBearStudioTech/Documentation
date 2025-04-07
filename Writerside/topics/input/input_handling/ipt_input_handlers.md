@@ -12,7 +12,6 @@ Input Handlers are responsible for handling **Player Inputs**. They are mapped t
 **Input Setup** and then triggered by the **Input Manager**.
 
 ## Input Handler Design
-
 Input Handlers extend from `NinjaInputHandler`, which grants them the following **default properties**. You can also 
 extend any other handler provided by the framework, to modify its default behavior.
 
@@ -24,26 +23,43 @@ extend any other handler provided by the framework, to modify its default behavi
 
 Input Handlers also contain the following relevant **functions**.
 
-| Function   | Description                                                                                            |
-|------------|--------------------------------------------------------------------------------------------------------|
-| Can Handle | Determines if the Handler is compatible with an **Input Action** and **Input Trigger**.                |
-| Handle     | Multiple Handle functions are available, differentiating the type of trigger that needs to be handled. |
+| Function   | Description                                                                              |
+|------------|------------------------------------------------------------------------------------------|
+| Can Handle | Determines if the Handler is compatible with an **Input Action** and **Input Trigger**.  |
+| Handle     | Multiple `Handle` functions are available, each matching a specific input trigger event. |
 
 The `CanHandle` check is purely a **compatibility** check and should not include temporary states. As for the `Handle`
 functions, you only need to implement the ones that are actually used by your handler.
 
 Both functions are marked as `const`, since the Input Handler is not supposed to have a **state**. If a state is required,
-then it be persisted somewhere else, such as the **Player Controller** or **Character**.
+then it should be persisted somewhere else, such as the **Player Controller** or **Character**.
 
 ## Creating Input Handlers
-
 Input Handlers can be created from the `NinjaInputHandler` class, or any other Handler class available in the system 
-that better fits your goals.
+that better suits your needs. Handlers can be created in **Blueprints** or in **C++**.
 
-### Handler Methods
+<procedure title="Creating an Input Handler" collapsible="true" default-state="expanded">
+    <step>
+        <p>In your Content Browser, create a new Input Handler, by selecting this option in the <b>Ninja Bear Studio context menu</b>.</p>
+        <img src="ipt_handlers_content_menu.png" alt="Creating Input Handlers" border-effect="line" thumbnail="true" width="600"/>
+    </step>
+    <step>Name your Handler and navigate to the <b>Class Defaults</b> panel.</step>
+    <step>Set the <b>Input Actions</b> and <b>Trigger Events</b> that are compatible with the new Input Handler.</step>
+    <step>Navigate to the <b>Class Settings</b> panel and provide the correct <b>Blueprint Display Name</b>.</step>
+    <step>
+        <p>In the list of <b>Functions</b>, select the functions that are relevant to your Handler and implement them as needed.</p>
+        <img src="ipt_handlers_function_overrides.png" alt="Creating Input Handlers" border-effect="line" thumbnail="true" width="600"/>
+        <note>
+            <p><b>Input Handler Examples</b></p>
+            <p>You can find details about each <b>available function</b> in the <b><a href="#overrideable-functions">Overrideable Functions section</a></b> below.</p>
+            <p>You can also find a few <b>Input Handler implementation examples</b> in the dedicated <b><a href="#input-handler-examples">Examples section</a></b> below.</p>
+        </note>
+    </step>
+</procedure>
 
-As previously mentioned, you have multiple **Handle** functions, respective to the main **input events** triggered by 
-the Enhanced Input system:
+### Overrideable Functions
+Input Handlers have multiple **Handle** functions, relative to each one of the main **input events** triggered by the 
+**Enhanced Input** framework.
 
 - **Started**: An input action has started but have not yet triggered. "Started" and "Triggered" may happen during the same frame.
 - **Triggered**: An input action was triggered. The moment when this happens depends on the type of trigger set in the Input Action. For example, the "_Pressed_" trigger will send this event as soon as the actuation happens.
@@ -57,7 +73,7 @@ the Enhanced Input system:
 > tracking _continuous_ inputs, then react to **Triggered** and **Ongoing**.
 {style="note"}
 
-You can determine is a key was pressed or released with the appropriate **Pressed** and **Released** Input Action 
+You can determine whether a key was pressed or released with the appropriate **Pressed** and **Released** Input Action 
 Triggers. They provide appropriate `true` and `false` values that you can use. You can convert the value provided by the
 Handler to a boolean, using the conversion functions provided by the Enhanced Input library.
 
@@ -65,38 +81,42 @@ Handler to a boolean, using the conversion functions provided by the Enhanced In
 
 > **Boolean Value Conversion**
 > 
-> The conversion function is an _autocast_ function, meaning you won't be able to find it in the context menu. Instead, 
-> you must **drag** the Value parameter pin to the Branch's Condition parameter, to automatically create the conversion.
+> The conversion function is an _auto-cast_ function, meaning **you won't be able to find it in the context menu**!
+> 
+> Instead, you must **drag** the Value parameter pin to the Branch's Condition parameter, to automatically create the conversion.
+{style="warning"}
 
-The following image shows the beginning of a custom **Input Handler** along with some strategies to access data from it.
+The following image shows a custom **Input Handler** and some strategies to access contextual data from it, like the player,
+controller and input values.
 
 <img src="ipt_create_handler_event.png" alt="Handler Function Example" thumbnail="true" border-effect="line"/>
 
-In the image above, you can see that the `HandleTriggeredEvent` function was implemented. From its input parameters, you
-can access relevant information:
+Here is a breakdown of each **input parameter** available in the function's signature:
 
 - **Manager**: The Actor Component assigned to the owning character invoking this handler. You can access your **Player Pawn**, **Controller** and **Ability System Component** from this component. 
 - **Value**: Final Action value to be applied to the owning character. Make sure to access the value in a way that is coherent with the Input Action value type.
 - **Input Action**: Additional information about the Input Action that triggered this handler. 
-- **Elapsed Time**: Total time the action has been evaluating triggering. Only relevant for Ongoing and Triggered events.
+- **Elapsed Time**: Total time the action has been evaluating triggering. Only relevant/available for **Ongoing** and **Triggered** events.
 
 > **Migrating Default Functions**
 > 
 > When migrating default input code to Input Handlers, from one of the templates provided by Unreal Engine for example,
-> you will usually need to access the Character or its components. 
+> you will usually need to access the **Character or its components**. 
 > 
-> You can access this instance through the Input Manager reference. Also, consider creating **interfaces** when needed if 
-> you want to reuse Handler between different types of Characters or Pawns.
+> You can access it through the Input Manager reference. Also, consider creating **interfaces** when needed, if you want 
+> to reuse the Handler across different types of Characters or Pawns.
+> 
+> **Interfaces** are especially useful if your handler needs to work across different pawn types **without coupling to a 
+> specific character class**.
 {style="note"}
 
 ### Compatibility Checks
-
 Handlers need to determine if they are compatible with an action or not. This can be done via the `CanHandle` function.
 
 The default handler already provides a behavior that checks if the Input Handler is compatible with the **Input Action** 
 and **Trigger Event**, which are defined by the Handler's default properties, `InputActions` and `TriggerEvents`. 
 
-the following image shows an additional check for a custom Input Action Data Asset that may contain project-specific
+The following image shows an additional check for a custom Input Action Data Asset that may contain project-specific
 information, that could even be used in the test itself.
 
 <img src="ipt_create_handler_check.png" alt="Check Function Example" thumbnail="true" border-effect="line"/>
@@ -109,20 +129,13 @@ information, that could even be used in the test itself.
 
 > **`CanHandle` Logic**
 > 
-> Do not add _situational_ checks to the `CanHandle` function. Tests done in this function are meant to be _static_, to
-> ensure the compatibility between a handler and an incoming action!
+> `CanHandle` should be limited to **static compatibility checks**, avoid adding logic that depends on **runtime state**.
 {style="warning"}
 
-## Handler Examples
+### Input Handler Examples
+Here are some examples of Input Handlers, written in both Blueprints and C++ with some common use-cases.
 
-Here are some examples on how handlers can be created, in both Blueprint and C++. Once again, they are all extending
-from the base `NinjaInputHandler` class. 
-
-You can create new Input Handlers from your Content Menu, navigating to the **Ninja Bear Studio** category, **Ninja 
-Input** and then selecting **Input Handler**.
-
-### Movement Handler
-
+#### Movement Handler
 To move a pawn (or character), you just need to add the incoming input value to the proper world directions. This is
 meant to be used only as a reference, since the framework already provides a more robust [**Move Input Handler**](ipt_character_handlers.md#move-standard).
 
@@ -137,8 +150,7 @@ meant to be used only as a reference, since the framework already provides a mor
     </tab>
 </tabs>
 
-### Look Handler
-
+#### Look Handler
 To control the camera assigned to a pawn, you can add the incoming input to the Controller's Pitch and Yaw inputs. Once
 again, this is meant to be used only as a reference, since the framework provides a more robust [**Look Input Handler**](ipt_character_handlers.md#look).
 
@@ -153,8 +165,7 @@ again, this is meant to be used only as a reference, since the framework provide
     </tab>
 </tabs>
 
-### Crouch Handler
-
+#### Crouch Handler
 This example makes a character crouch and stand up, using **Pressed** and **Released** triggers. It's an interesting
 example since it requires a cast, and routing the boolean input value depending on whether it's `true` (Pressed) or
 `false` (Released).
@@ -169,9 +180,9 @@ but also for the [**Jump Input Handler**](ipt_character_handlers.md#jump), and m
 > There is some confusion about the usage of `Cast` and when it should be used or avoided. Casting might be an issue
 > when you cast into something that might not be loaded into memory, since the `Cast` command will load it.
 >
-> If you don't know if or when the target object will naturally load, or just need reusable functions on, then you are
-> better off using an **interface**. However, if you are certain that the object will be loaded, such as your Player
-> Blueprint, then casting is not a problem.
+> If you don't know if or when the target object will naturally load, or just need reusable functions without relying on 
+> a specific class, then using an **interface** is the best option. However, if you are certain that the object will be 
+> loaded, such as your Player Blueprint, then casting is not a problem.
 {style="note"}
 
 <tabs group="sample" >
