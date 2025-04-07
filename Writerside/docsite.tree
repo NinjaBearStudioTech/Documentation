@@ -165,20 +165,16 @@
             <toc-element topic="ipt_installation.md"/>
             <toc-element topic="ipt_input_system.md"/>
         </toc-element>
-        <toc-element topic="ipt_setup.md"/>
-        <toc-element topic="ipt_concepts.md">
+        <toc-element toc-title="Input Handling">
             <toc-element topic="ipt_input_management.md"/>
-            <toc-element topic="ipt_input_setup.md"/>
-        </toc-element>
-        <toc-element topic="ipt_architecture.md">
             <toc-element topic="ipt_input_handlers.md">
                 <toc-element topic="ipt_character_handlers.md"/>
                 <toc-element topic="ipt_gas_handlers.md"/>
                 <toc-element topic="ipt_ui_handlers.md"/>
             </toc-element>
-            <toc-element topic="ipt_forward_reference.md"/>
+        </toc-element>
+        <toc-element toc-title="Advanced Topics">
             <toc-element topic="ipt_input_buffer.md"/>
-            <toc-element topic="ipt_input_detection.md"/>
             <toc-element topic="ipt_common_ui.md"/>
         </toc-element>
         <toc-element topic="ipt_troubleshooting.md"/>

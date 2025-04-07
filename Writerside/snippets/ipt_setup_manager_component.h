@@ -2,23 +2,24 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
-#include "PluginLabsController.generated.h"
+#include "NBSPlayerController.generated.h"
 
 class UNinjaInputManagerComponent;
 
 UCLASS()
-class PLUGINLABS_API APluginLabsController : public APlayerController
+class NBSTECH_API ANBSPlayerController : public APlayerController
 {
-
+	
     GENERATED_BODY()
 
 public:
 
-    APluginLabsController(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
-
+    ANBSPlayerController(const FObjectInitializer& ObjectInitializer);
+	
 private:
 
-    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess))
+    /** Manages player input, using Enhanced Input/Ninja Input. */
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category=Components, meta=(AllowPrivateAccess=true))
     TObjectPtr<UNinjaInputManagerComponent> InputManager;
-
+	
 };

@@ -2,16 +2,15 @@
 <primary-label ref="input"/>
 
 <tldr>
-    <p><b>Summary: Installing Ninja Input</b></p>
-    <br/>
     <ul>
+        <li>In this page, you will learn how to <b>install and activate Ninja Input</b>.</li>
         <li>Install <b>Ninja Input</b> using the <b>Epic Launcher</b> and enable it in your project.</li>
         <li>Optionally, install the source code from <b>GitHub</b> and <b>enable C++</b> in the project.</li>
         <li>If using C++, make sure to add the required <b>module dependencies</b> to your project's <code>Build.cs</code> file.</li>
     </ul>
 </tldr>
 
-This page will walk you through the **pre-requisites** and **steps** necessary to enable the **Ninja Input** plugin.
+To install the plugin, you can use the **Epic Games Launcher** or **GitHub**. In this page we will cover both options.
 
 ## Installing the Plugin
 To get started, install the plugin to your engine using the **Epic Games Launcher**.

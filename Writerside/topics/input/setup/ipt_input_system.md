@@ -2,15 +2,17 @@
 <primary-label ref="input"/>
 
 <tldr>
-    <p><b>Summary: Input Manager and Handlers</b></p>
-    <br/>
     <ul>
+        <li>This page covers the initial configuration for Ninja Input.</li>
         <li>Add the <b>Input Manager Component</b> to your <b>base character class</b> or <b>player controller</b>.</li>
         <li>Optionally, add a <b>Forward Reference</b> to your base character class.</li>
         <li>Remove default <b>Input Mapping Contexts</b> and <b>input logic</b> from your character class to prevent conflicts.</li>
-        <li>Prepare and configure the <b>Input Setup</b>.</li>
+        <li>Configure the <b>Input Setup</b> and add it to your Input Manager.</li>
     </ul>
 </tldr>
+
+The first step when using Ninja Input is configuring the **Input Manager Component** and setting up your first few
+**Input Handlers**.
 
 ## Input Manager Component
 The Input Manager Component is the most important component in the framework. It is responsible for registering, receiving
@@ -59,7 +61,7 @@ removing them in runtime.
 <procedure title="Remove the original input handling logic" collapsible="true">
     <step>Open your <b>Project Settings</b>, navigate to <b>Enhanced Input</b> and make sure that there are no <b>Default Mapping Contexts</b>.</step>    
     <step>Navigate to your <b>Character Blueprint</b>, open it and go to the <b>Event Graph</b>.</step>
-    <step>Remove all input-related nodes, including the ones connected to <b>Begin Play</b>.</step>
+    <step>Remove all input-related nodes, including the ones connected to <b>Begin Play</b> setting up Input Mapping Contexts.</step>
 </procedure>
 
 <procedure title="Configure the Input Setup" collapsible="true">

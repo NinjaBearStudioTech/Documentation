@@ -1,8 +1,8 @@
-#include "GameFramework/PluginLabsCharacter.h"
+#include "GameFramework/NBSPlayerController.h"
 #include "Components/NinjaInputManagerComponent.h"
 
-APluginLabsCharacter::APluginLabsCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
+ANBSPlayerController::ANBSPlayerController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
-    static const FName InputManagerName = TEXT("InputManager");
-	InputManager = CreateDefaultSubobject<UNinjaInputManagerComponent>(InputManagerName);
+    static const FName InputManagerName = FName("InputManager");
+    InputManager = CreateDefaultSubobject<UNinjaInputManagerComponent>(InputManagerName);
 }

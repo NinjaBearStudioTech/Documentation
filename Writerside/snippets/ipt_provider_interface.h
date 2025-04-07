@@ -16,8 +16,7 @@ class PLUGINLABS_API APluginLabsCharacter : public ACharacter, public IInputSetu
 public:
 
     // -- Begin Input Setup Provider implementation
-    virtual TArray<UNinjaInputSetupDataAsset*> GetAddedSetups_Implementation() const override;
-    virtual TArray<UNinjaInputSetupDataAsset*> GetRemovedSetups_Implementation() const override;
+    virtual TArray<UNinjaInputSetupDataAsset*> GetInputSetups_Implementation() const override;
     // -- End Input Setup Provider implementation
 
 protected:
