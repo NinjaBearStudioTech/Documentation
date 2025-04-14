@@ -1,11 +1,12 @@
 # Changelog
 <primary-label ref="gas"/>
 
-## 1.5.5
+## 1.6.5
 <secondary-label ref="wip"/>
 ```
 [added] State Tree task to Activate Gameplay Abilities.
 [added] State Tree task to Cancel Gameplay Abilities.
+[added] Dedicated function to fully reset the ASC. Can optionally be used when the pawn restarts.
 [improvement] Support for the "InitialCooldown" tag, used to start an ability immediately on cooldown.
 [improvement] Handled runtime retarget possibilities in the "CurrentMontageStop" function, in the ASC.
 [bugfix] Added a check to ensure that default abilities and effect handles are valid, before storing them. 

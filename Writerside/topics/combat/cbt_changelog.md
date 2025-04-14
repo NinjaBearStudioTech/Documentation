@@ -8,18 +8,18 @@
 > 
 > 1. Ability tags now have a `combat` prefix, to ensure better organization of combat-related tags. Make sure to review the Gameplay Tags page for more details.
 > 2. The Melee Scan Notify now supports an array of Object Channels, which simplifies the setup, but will require a review on your Anim Notify configurations.  
-> 3. The Warp Component interface and core implementation was changed to better incorporate maximum distance, offset and final scale. If you have changes in the component or warp providers, please review them.
+> 3. The Warp Component interface and core implementation was changed to improve setup and tracking of moving targets.
 > 4. Added support to multiple physical surfaces per impact on weapons and projectiles. Since this was a common extension point in projects, evaluating the new solution is recommended.
 > 5. The combat ViewModels are now to be used in conjunction with the Combat View Model Resolver and won't require any base combat widgets. The "Widget" damage handler has been removed.
 
 ```
+[major] The Motion Target setup was changed to track ongoing targets with more control.
+[major] A viewmodel Resolver that removes the need of using combat-related widgets. Widgets will be deprecated and removed in a future release.
+[major] Melee Scans will support multiple trace channels. The Melee Scan class will now allow you to override Object and Trace parameters separately.
 [added] Added a dedicated flow for Parries and Ripostes, based on the active frames of the Melee Scan, or a dedicated Parry Window Notify State.
 [added] Non-dynamic multicast delegates added to the Combat Manager, so they can be used with lambdas (i.e. State Tree Tasks).
 [added] Non-dynamic multicast delegates added to the Combo Manager, so they can be used with lambdas (i.e. State Tree Tasks).
 [added] A direct call to the source of damage, to notify damage applied to a target. Useful for XP, specific attack notifies, etc.
-[added] A viewmodel Resolver that removes the need of using combat-related widgets. Widgets will be deprecated and removed in a future release.
-[added] An optional maximum distance to motion warping providers. It will limit the warp distance to avoid jarring teleports.
-[added] Melee Scans will support multiple trace channels. The Melee Scan class will now allow you to override Object and Trace parameters separately.
 [added] An extensible State Tree Task that can send Combo Events to an ongoing Combo Ability task.
 [added] Support for impact data tables that can automatically override the default impact cosmetics, based on the surface that was hit.
 [added] Handling scenarios where a projectiles hit non-combatant actors, such as the environment.
@@ -48,6 +48,7 @@
 [improvement] Added a block tag for Hit Reactions.
 [improvement] Added an option for Cast Actors to manage application and removal of infinite Gameplay Effects while actors are colliding with them.
 [improvement] Added an option for Cast Abilities to commit after the cast has been completed.
+[improvement] Reviewed and improved how the Physical Animation Component works for hit reactions.
 [bugfix] Fixed the cancel regeneration tags being applied incorrectly.
 [bugfix] Ensured that predicted rep-notifies in the combat manager won't broadcast twice (for prediction and replication).
 [bugfix] Ensured warp targets are cleared when animation abilities end.
@@ -60,6 +61,8 @@
 [bugfix] Fixed hard requirement for poolable actors in the Cast Ability.
 [bugfix] Removed the duplicated damage calculation from the ranged damage effect.
 [bugfix] Correctly handling stacks in the Status Effect ViewModel.
+[bugfix] Added missing calls to super in Notifies and States.
+[bugfix] Fixed the logic for "Actors Hit" in the projectile Targeting Filter Task.
 ```
 
 ## 3.1.6 - 31/01/2025

@@ -106,10 +106,11 @@
         <toc-element toc-title="Advanced Topics">
             <toc-element topic="cbt_component_extensions.md"/>
             <toc-element topic="cbt_character_animation.md"/>
-            <toc-element topic="cbt_actor_pooling.md"/>
-            <toc-element topic="cbt_user_interface.md"/>          
             <toc-element topic="cbt_motion_warping.md"/>
-            <toc-element topic="cbt_artificial_intelligence.md"/>            
+            <toc-element topic="cbt_physical_animations.md"/>
+            <toc-element topic="cbt_actor_pooling.md"/>
+            <toc-element topic="cbt_artificial_intelligence.md"/>
+            <toc-element topic="cbt_user_interface.md"/>
         </toc-element>                
         <toc-element topic="cbt_integration.md">
             <toc-element topic="cbt_integration_factions.md"/>

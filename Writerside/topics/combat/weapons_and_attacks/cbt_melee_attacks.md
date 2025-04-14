@@ -2,12 +2,10 @@
 <primary-label ref="combat"/>
 
 <tldr>
-    <p><b>Summary: Configuring Melee Attacks</b></p>
-    <br/>
     <ul>
         <li>The <b>weapon</b> or <b>character</b> performing the attack must implement the <b>Melee Interface</b>.</li>
         <li>The <b>Attack Ability</b> is used to execute <b>Melee Attacks</b>. Once it activates, it will listen to many <b>Melee Scan Events</b>.</li>
-        <li><b>Melee Scans</b> events are sent usually using the <b>Melee Scan Notify</b> start and stop the scan, executed each frame while active.</li>
+        <li><b>Melee Scans</b> events are sent usually using the <b>Melee Scan Notify State</b> to start and stop the scan.</li>
         <li>At the end of each frame, the <b>Damage Gameplay Effect</b> is applied to all targets collected by the <b>Melee Scan</b>.</li>
     </ul>
 </tldr>
@@ -16,7 +14,7 @@
 **Animation Montages** and **Gameplay Abilities**, collecting potential targets, and applying specified **Damage Effects**.
 
 ## Melee Weapon Interface
-Any object - such as **Pawns** or **Weapons** - meant to execute **melee attacks** must implement `CombatMeleeInterface`.
+Any object, such as **Pawns** or **Weapons**, meant to execute **melee attacks** must implement `CombatMeleeInterface`.
 It contains functions meant to expose relevant data and objects used by the combat system to process targets and apply damage. 
 
 | Function                     | Description                                                                                                                    |
@@ -26,7 +24,7 @@ It contains functions meant to expose relevant data and objects used by the comb
 | `GetHitEffectClass`          | Provides a **Gameplay Effect** applied when this actor generates a **hit**. Overrides the Ability Hit Effect.                  |
 | `GetHitEffectLevel`          | Level used when instantiating the **Damage Gameplay Effect**.                                                                  |
 | `GetDamage`                  | Optionally provides a **damage** value magnitude set to the Gameplay Effect using `combat.data.damage` as the **data tag**.    |
-| `GetPoiseConsumption`        | Optionally provides a **poise** value magnitude set to the Gameplay Effect using `combat.data.damage` as the **data tag**.     |
+| `GetPoiseConsumption`        | Optionally provides a **poise** value magnitude set to the Gameplay Effect using `combat.data.poise` as the **data tag**.      |
 | `GetMeleeImpactStrength`     | Defines a strength applied when **physical reactions** are enabled.                                                            |
 | `GetAttackTrails`            | Provides **cosmetic trails** that should be activated by the Melee Scan, during a melee attack.                                |
 | `GetImpactTrails`            | Provides **cosmetic impact trails** used when the weapon hits (i.e. blood trails).                                             | 
@@ -64,7 +62,6 @@ references and loading on demand.
             <p>By default, these sockets are shared between <b>melee scans</b> and <b>weapon trails</b>, unless overridden by setting a different prefix in the <b>Scan Notify</b> or <b>Weapon Cosmetics Component</b>.</p>
         </note>
     </step>
-    <step>In the <b>Melee</b> category, in the <b>Defaults panel</b>, add any cosmetics that you'd like, such as the <b>impact particles and sounds</b>.</step>
 </procedure>
 
 <procedure title="Configure a Melee Weapon" collapsible="true" default-state="expanded">
@@ -98,7 +95,7 @@ has a clear separation between the **Animation Notify State**, placed in each **
 **backend that actually scans for targets**.
 
 <procedure title="Configuring a Melee Scan" collapsible="true" default-state="expanded">
-    <step>Create or open an <b>Animation Montage</b> that represents an <b>attack</b>.</step>
+    <step>Create or open an <b>Animation Montage</b> that represents the <b>melee attack</b>.</step>
     <step>
         <p>Add the <b>Melee Scan Notify State</b>, covering all frames where the melee scan should occur.</p>
         <img src="cbt_wpatk_melee_scan_notify_state.png" alt="Melee Scan Notify State" border-effect="line" thumbnail="true"/>
@@ -159,7 +156,7 @@ Melee Scan Animation Notify State or **globally**, in the **Ninja Combat Project
 > filter or modify the final hit list before it's passed to the ability system for damage processing.
 {style=note}
 
-### Scan Cosmetics
+### Cosmetics
 The default Trail Gameplay Cue defined by `GameplayCue.Combat.MeleeTrails` is already handled by the Combat Manager
 Component, using the sound and particle effects set in the Melee Weapon.
 
