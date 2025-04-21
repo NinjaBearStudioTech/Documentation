@@ -120,15 +120,15 @@ projectile is ultimately spawned by the Gameplay Ability.
 
 ### Projectile Request Class
 This object is used to transfer launch data between all the framework layers: **Animation**, **Ability**, and **Task**.
-It contains the logic to **spawn a projectile**, including the option to retrieve it from the **Actor Pool**.
+It contains the logic to **spawn a projectile actor**, including the option to retrieve it from the **Actor Pool**.
 
 The **Launch Projectile Anim Notify** creates an instance of this class which will be used by the **Attack Ability** to 
-ultimately spawn a projectile, from a **gameplay event**.
+ultimately spawn a projectile actor, when the **gameplay event** is received.
 
-> **Modifying the Projectile**
+> **Modifying the Projectile Actor**
 >
-> You can modify the projectile after it is spawned by the system, via the `ModifyProjectileActor`. This function can be
-> extended in Blueprints or C++.
+> You can modify the projectile actor after it is spawned by the system, via the `ModifyProjectileActor`. This function 
+> can be extended in Blueprints or C++.
 {style=note}
 
 ### Projectile Launch and Hit Flow
