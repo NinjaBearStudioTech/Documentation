@@ -173,7 +173,6 @@ There are three important **property groups** in this Ability, that are relevant
 
 - **Melee Attack**: All properties that will define the melee attack's behavior. More information about this ability can be found in its [reference page][1].
 - **Animation**: Here you can set your **Animation Provider** and the **Animation Montage**. We'll cover this in more detail in the [Character Animation page][2].
-- **Motion Warping**: Used to improve the **connection between attacker and targets**. We'll cover this in more detail in the [Motion Warping][3] and [Gameplay Targeting System][4] pages. 
 - **Debug**: Enabling debug in this ability will show the **trajectory** and **targets hit** by the **melee scan**.
 
 [1]: cbt_ability_attack.md
