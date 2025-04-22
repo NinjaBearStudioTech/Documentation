@@ -12,8 +12,8 @@
 The **Combo Ability** is responsible for **orchestrating** abilities based on its own **activation** and also **gameplay
 events**. Any Gameplay Ability can be added to a combo.
 
-You can find information about all participants of the **Combo System** in its [design page](cbt_combo_system.md). As 
-for the **Combo Ability**, including the required **[State Tree](cbt_combo_system.md#combo-state-tree)**.
+You can find information about all participants of the **Combo System** in its design page. As 
+for the **Combo Ability**, including the required State Tree.
 
 ## Ability Properties
 

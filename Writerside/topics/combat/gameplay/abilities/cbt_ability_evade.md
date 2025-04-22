@@ -26,7 +26,7 @@ The following table contains a breakdown of evade properties.
 ## Directional Evade Provider
 
 This **Animation Provider** allows you to map certain animations to a direction. Directions are calculated using the 
-current **movement direction** and the character's **[forward reference](cbt_forward_reference.md)**.
+current **movement direction** and the character's **[forward reference](cbt_installation.md)**.
 
 You can adjust the direction ranges and names so they fit your requirements. You can also remove certain ranges, such as
 the diagonal angles and consolidate them into the four main directions - forward, back, left and right.

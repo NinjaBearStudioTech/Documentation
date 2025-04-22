@@ -8,13 +8,13 @@ so it can use the Combat Attribute Set provided by **Ninja Combat**.
 
 <procedure title="Add Ninja GAS and Combat to your project" collapsible="true">
     <step>Follow the steps from the <b><a href="gas_setup.md">Ninja GAS setup page</a></b>.</step>
-    <step>Follow the steps from the <b><a href="cbt_setup.md">Ninja Combat setup page</a></b>.</step>
+    <step>Follow the steps from the <b><a href="cbt_installation.md">Ninja Combat setup page</a></b>.</step>
 </procedure>
 
 <procedure title="Configure the Combat Attribute Data Table" collapsible="true">
     <step>Create a <b>Data Table</b> using <code>AttributeMetaData</code> as the <b>row type</b>.</step>
     <step>
-        <p>Save the sample <b><a href="cbt_attributes.md#initialization-data">Json data</a></b> to your computer and <b>import it</b> in your Data Table, by pressing the <b>Reimport</b> button.</p>
+        <p>Save the sample <b><a href="cbt_gameplay_attributes.md#initialization-data">Json data</a></b> to your computer and <b>import it</b> in your Data Table, by pressing the <b>Reimport</b> button.</p>
         <img src="p01g02_player_attribute_table.png" alt="Player Attribute Table" thumbnail="true" border-effect="line" width="600"/>
     </step>
 </procedure>
@@ -27,7 +27,7 @@ so it can use the Combat Attribute Set provided by **Ninja Combat**.
     </step>
     <step>
         <p>Open the Data Asset, add a new entry to <b>Default Attribute Sets</b> and set <code>NinjaCombatAttributeSet</code> to <b>Attribute Set Class</b>. As for the <b>Attribute Table</b>, add the Data Table created on the previous step.</p>
-        <p>Add a new entry to <b>Default Gameplay Effects</b> and set <code><a href="cbt_effects.md#vital-stats">CombatEffect_ReplenishStamina</a></code> to <b>Gameplay Effect Class</b>, this will be useful later!</p>
+        <p>Add a new entry to <b>Default Gameplay Effects</b> and set <code><a href="cbt_gameplay_effects.md#vital-stats">CombatEffect_ReplenishStamina</a></code> to <b>Gameplay Effect Class</b>, this will be useful later!</p>
         <img src="p01g02_player_gas_data_asset.png" alt="Configure GAS Data Asset" thumbnail="true" border-effect="line" width="600"/>
     </step>
 </procedure>

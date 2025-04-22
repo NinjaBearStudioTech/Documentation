@@ -93,11 +93,8 @@
             <toc-element topic="cbt_gameplay_abilities.md">
                 <toc-element topic="cbt_ability_attack.md"/>
                 <toc-element topic="cbt_ability_block.md"/>
-                <toc-element topic="cbt_ability_cast.md"/>
                 <toc-element topic="cbt_ability_combo.md"/>
-                <toc-element topic="cbt_ability_death.md"/>
                 <toc-element topic="cbt_ability_evade.md"/>
-                <toc-element topic="cbt_ability_hit_reaction.md"/>
                 <toc-element topic="cbt_ability_opportunity_attack.md"/>
                 <toc-element topic="cbt_ability_parry.md"/>
                 <toc-element topic="cbt_ability_riposte.md"/>

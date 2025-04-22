@@ -82,18 +82,3 @@ the **Motion Warping**, or even the main **Combat Manager**. In this case, repla
 Another way to provide custom components, when some per-character logic is required, is to override the appropriate
 **Factory Methods** in the **Combat Manager Component**. All appropriate Factory Methods are listed in the table above.
 
-## Movement Component
-
-The Movement Component is a special case, since it overrides the **Character Movement Component**, therefore it is not
-created, or directly used by the **Combat Manager Component**.
-
-You can replace the Movement Component in the base C++ Character Class, or in your Character Blueprint. 
-
-<tabs group="sample">
-    <tab title="Blueprint" group-key="bp">
-        <img src="cbt_override_movement_component.png" alt="Override default input component" border-effect="line" thumbnail="true" width="600"/>
-    </tab>
-    <tab title="C++" group-key="c++">
-        <code-block lang="c++" src="cbt_override_movement_component.cpp"/>
-    </tab>
-</tabs>

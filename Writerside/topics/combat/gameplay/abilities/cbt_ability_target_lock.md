@@ -9,7 +9,7 @@
     </ul>
 </tldr>
 
-The **Target Lock Ability** is part of the [Target Lock System](cbt_target_locking.md). It is responsible for collecting
+The **Target Lock Ability** is part of the Target Lock System. It is responsible for collecting
 targets, using the **Gameplay Targeting System** and registering them in the **Target Manager**.
 
 Since a target lock can happen at any time, whenever a key is pressed or an event is received, this ability should be

@@ -73,10 +73,6 @@ After configuring the initial **Combat Components**, the first step in Ninja Com
                     <li>Create an instance of <code>UNinjaCombatWeaponManagerComponent</code> and return it from <code>GetWeaponManagerComponent_Implementation</code></li>
                     <li>Return the character's mesh from <code>GetCombatMesh_Implementation</code></li>                        
                 </ul>
-                <br/>
-                <code-block lang="c++" src="cbt_weapon_manager_setup.h" />
-                <br/>
-                <code-block lang="c++" src="cbt_weapon_manager_setup.cpp" />
             </tab>
         </tabs>
     </step>

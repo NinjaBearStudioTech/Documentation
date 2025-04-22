@@ -7,7 +7,7 @@ Configure **Ninja Input** and replace the default configuration from a project, 
 it will use **Input Handlers** and an **Input Setup**.
 
 <procedure title="Add Ninja Input to your project" collapsible="true">
-    <step>Follow the steps from the <b><a href="ipt_setup.md"/></b> page. In this guide, we will add the <b>Input Manager Component</b> to the <b>Player Controller</b>.</step>    
+    <step>Follow the steps from the <b><a href="ipt_installation.md"/></b> page. In this guide, we will add the <b>Input Manager Component</b> to the <b>Player Controller</b>.</step>    
     <step>Set your <b>Player Controller</b> to your <b>Game Mode</b> either in your <b>Level Details</b>, or in your <b>Maps and Modes</b> page in the <b>Project Settings</b>.</step>
 </procedure>
 

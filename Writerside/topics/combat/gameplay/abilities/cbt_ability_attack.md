@@ -11,11 +11,11 @@
 
 ## Melee Attacks
 
-The Attack Ability can be used for melee attacks. Please take a look at the [](cbt_melee_combat.md) page for more info.
+The Attack Ability can be used for melee attacks. Please take a look at the [](cbt_melee_attacks.md) page for more info.
 
 ## Projectile Attacks
 
-The Attack Ability can launch projectiles. Please take a look at the [](cbt_ranged_combat.md) page for more info.
+The Attack Ability can launch projectiles. Please take a look at the [](cbt_ranged_attacks.md) page for more info.
 
 ### Modifying the Gameplay Effect
 
