@@ -45,7 +45,7 @@ to handle other specific scenarios.
 > You can create **toggle** behaviors with **separate** Input Actions configured with a **Pressed** Event Trigger, and an Input Handler set to **toggle**.
 
 These Input Handlers can also send a **Gameplay Event** to an ability that already has been **activated**. This is useful
-to handle scenarios such as a **combo**, as implemented by the **[Combat System](cbt_combo_system.md)**.
+to handle scenarios such as a **combo**, as implemented by the **[Combat System](cbt_combos.md)**.
 
 This option is enabled by the **SendEventIfActive** property. If enabled, the following properties will become available.
 

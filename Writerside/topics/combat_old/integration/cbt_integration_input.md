@@ -9,7 +9,7 @@ knowing, between both systems.
 First, **Ninja Input** greatly simplifies [activating **Gameplay Abilities** and sending **Gameplay Events**](ipt_gas_handlers.md),
 including the option to send Gameplay Events if an Ability is already active, which is very useful for the Combo System.
 
-The **[](cbt_combo_system.md)** uses **Gameplay Events** to advance the ongoing combo and in some scenarios,
+The **[](cbt_combos.md)** uses **Gameplay Events** to advance the ongoing combo and in some scenarios,
 it may also require the Input Action to be provided as one of the Payload's **Optional Objects**.
 
 You have two ways to implement this using Ninja Input.
