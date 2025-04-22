@@ -98,7 +98,7 @@ Here are some examples of functionalities that should be handled by these events
 ### Supported Actors
 
 Currently, **Projectiles**, **Cast Actors** and **Marker Actors** are supported by default. You can find more details 
-about their implementations in their specific [Ability pages](cbt_abilities.md).
+about their implementations in their specific [Ability pages](cbt_gameplay_abilities.md).
 
 If you need to support new objects, you can do so by extending `NinjaCombatPoolableActor`, which is recommended, or by
 implementing `CombatPoolableActorInterface`. 

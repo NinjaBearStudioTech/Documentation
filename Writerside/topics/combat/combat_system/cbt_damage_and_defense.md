@@ -95,8 +95,8 @@ The Global Damage Modifier has two important functions:
 > Fire**.
 
 ## Handling Damage
-Once received damage is confirmed, a **Gameplay Event** will activate the [**Hit Reaction Ability**](cbt_ability_hit_reaction.md).
-Unless it's a **fatal damage**, in which case a **Gameplay Event** will activate the [**Death Ability**](cbt_ability_death.md) instead.
+Once received damage is confirmed, a **Gameplay Event** will activate the [**Hit Reaction Ability**](cbt_damage_hit_reactions.md).
+Unless it's a **fatal damage**, in which case a **Gameplay Event** will activate the [**Death Ability**](cbt_damage_death.md) instead.
 
 ### Damage Data
 The **Damage Manager Component** (the default Combat Manager, or a component override) requires a **Data Asset**, based

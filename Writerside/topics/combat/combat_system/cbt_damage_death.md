@@ -43,6 +43,6 @@ To do that, configure the **Cancel Abilities With Tag** container in the Death A
 
 > **Opportunity Attacks**
 >
-> If you're using the [](cbt_opportunity_system.md) for executions or similar mechanics,  
+> If you're using the [](cbt_opportunity_attacks.md) for executions or similar mechanics,  
 > prevent the Death Ability from triggering while the `Combat.State.Opportunity.Victim` tag is active.  
 {style="tip"}

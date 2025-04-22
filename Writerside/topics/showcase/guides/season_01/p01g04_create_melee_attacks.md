@@ -73,7 +73,7 @@ With the **melee weapons** configured, the next step is to create a **primary** 
     <step>Add <code>Combat.Effect.Damage.Knockback</code> to the list of Gameplay Tags <b>Added to the Effect</b>.</step>
     <step>In the <b>Execution list</b>, add a <b>Calculation Modifier</b> using <code>Combat.Data.Damage.Multiplier</code> and set a <b>Scalable Float</b> with a <b>Magnitude</b> of <code>1.5</code>.</step>
     <img src="p01g04_knockback_gameplay_effect.png" alt="Knockback Gameplay Effect" border-effect="line" thumbnail="true" width="600"/>
-    <tip>Make sure to read about the <b><a href="cbt_effects.md#damage-modifier">Damage Modifier</a></b>, if you need a recap on why we are setting this value in this Gameplay Effect.</tip>
+    <tip>Make sure to read about the <b><a href="cbt_gameplay_effects.md#damage-modifier">Damage Modifier</a></b>, if you need a recap on why we are setting this value in this Gameplay Effect.</tip>
 </procedure>
 
 <procedure title="Configure a cost Gameplay Effect" collapsible="true">
@@ -81,7 +81,7 @@ With the **melee weapons** configured, the next step is to create a **primary** 
     <step>Add the <b>Additional Effects Gameplay Effect Component</b> and include <b>Cancel Stamina Regeneration</b> in the <b>On Application Gameplay Effects</b> list.</step>
     <step>Add a <b>Modifier</b> to reduce stamina by <code>5</code>.</step>
     <img src="p01g04_cost_gameplay_effect.png" alt="Cost Gameplay Effect" border-effect="line" thumbnail="true" width="600"/>
-    <tip>Make sure to read about the <b><a href="cbt_effects.md#cancel-regeneration">Regeneration Cancellation</a></b>, if you need a recap on why we are adding the additional Gameplay Effect.</tip>
+    <tip>Make sure to read about the <b><a href="cbt_gameplay_effects.md#cancel-regeneration">Regeneration Cancellation</a></b>, if you need a recap on why we are adding the additional Gameplay Effect.</tip>
 </procedure>
 
 <procedure title="Configure the secondary attack ability" collapsible="true">
