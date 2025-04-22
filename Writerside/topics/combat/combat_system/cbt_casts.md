@@ -9,9 +9,9 @@
     </ul>
 </tldr>
 
-The term "Cast" comes from the traditional RPG expression, _spellcasting_. However, this Gameplay Ability can be used as 
-a base to other that requires **complex target selection** (friendly or hostile), **optional target confirmation** and 
-diverse options regarding how to **apply gameplay effects** to these targets.
+The term "Cast" comes from the traditional RPG expression, _spellcasting_. However, this Gameplay Ability can also be 
+used as a base for other abilities that require **complex target selection** (friendly or hostile), **optional target 
+confirmation** and diverse options regarding how to **apply gameplay effects** to these targets.
 
 ## Cast Ability
 The Cast Ability can be configured in many ways to support different design goals. Below is a **property summary**, 
@@ -119,12 +119,11 @@ player, based on the criteria defined in your Targeting Preset.
 
 > **Cosmetics on Hit**
 > 
-> You can apply visual or sound effects to affected targets by configuring Gameplay Cues in the Gameplay Effect used as 
-> the Damage Effect for the Cast Ability.
+> You can apply **visual or sound effects** to affected targets by configuring Gameplay Cues in the **Gameplay Effect** 
+> set in the Cast Ability.
 > {style=note}
 
 ## Spawning a Cast Actor to Apply Damage
-
 The next usage scenario covers spawning a **Cast Actor** that uses its physical presence in the world to **collect targets**
 and apply a **Gameplay Effect**. This is useful for abilities where damage is applied by a spawned actor, such as a
 "Black Hole", "Tornado", or similar effect.
@@ -139,25 +138,6 @@ Actors used by the Cast Ability must implement the `CombatCastInterface`. Ninja 
     <img src="cbt_wpatk_cast_actor_not_pooled.png" alt="Cast Actor" border-effect="line" thumbnail="true"/>
 </procedure>
 
-The base **Cast Actor** includes the following additional properties:
-
-| Property                | Description                                                             |
-|-------------------------|-------------------------------------------------------------------------|
-| Should Ignore Source    | If true, automatically ignores the cast source during collision checks. |
-| Try to Align with Floor | If true, attempts to align the actor with the ground surface.           |
-| Floor Trace Channel     | Trace channel used to detect the ground surface.                        |
-| Floor Offset            | Vertical offset applied after aligning with the floor.                  |
-
-In addition to implementing the base interface, the Cast Actor provides the following helper functions:
-
-| Function               | Description                                                                 |
-|------------------------|-----------------------------------------------------------------------------|
-| Get Cast Source        | Retrieves the actor responsible for this cast.                              |
-| Get Weapon             | Retrieves a weapon from the source using a Gameplay Tag Query.              |
-| Try Align With Floor   | Attempts to align with the floor if enabled.                                |
-| Align With Floor       | Performs the actual trace logic. Can be overridden to customize behavior.   |
-| Apply Effect To Target | Applies the configured Gameplay Effect to a specific target.                |
-
 <procedure title="Create the Cast Ability" collapsible="true" default-state="expanded">
     <step>Open the <b>Cast Ability</b> previously created (or a duplicate of it), and set <b>Targeting</b> to <b>Spawn Actor</b>.</step>
     <step>Assign your Cast Actor to the <b>Cast Actor Class</b>.</step>
@@ -167,16 +147,110 @@ In addition to implementing the base interface, the Cast Actor provides the foll
 If you execute this ability in-game, it should spawn your Cast Actor and apply the configured Gameplay Effect to all
 valid targets detected by the actor’s collision settings.
 
-## Selecting Spawn Location for the Cast Actor
-...
+## Selecting the Spawn Location for the Cast Actor
+Now let’s take the Cast setup one step further by introducing a **Gameplay Ability Target Actor**.  
+The **Gameplay Ability System** uses actors based on `GameplayAbilityTargetActor` to handle **targeting** logic.
+
+The result of this targeting process can be either a **group of actors** or a **location**, depending on the
+**Targeting Mode** set on the **Cast Ability**.
+
+- When set to **Wait for Confirmation**, the Target Actor provides a **list of targets**.
+- When set to **Wait for Confirmation and Spawn Actor**, the Target Actor provides a **location**, which is used to spawn the Cast Actor.
+
+<procedure title="Create the Cast Ability" collapsible="true" default-state="expanded">
+    <step>Open the <b>Cast Ability</b> previously created (or a duplicate of it), and set <b>Targeting</b> to <b>Wait for Confirmation and Spawn Actor</b>.</step>
+    <step>In the <b>Targeting Actor Class</b>, select the <b>Ability System Targeting Actor</b> you want to use.</step>
+    <step>
+        <p>Configure your input system to call <code>LocalInputConfirm</code> on the owner's Ability System Component when confirming the target.</p>
+        <note>
+            <p><b>Ninja Input Handlers</b></p>
+            <p><a href="ipt_overview.md">Ninja Input</a> provides <b>confirmation</b> and <b>cancellation</b> input handlers that can be used for this.</p>
+        </note>
+    </step>
+    <img src="cbt_wpatk_cast_ability_03.png" alt="Cast Gameplay Ability" border-effect="line" thumbnail="true"/>
+</procedure>
+
+> **Modifying the Target Actor**
+> 
+> If you need to **perform per-ability execution modifications on the Target Actor**, you can extend the `ModifyActor`
+> function in the **Cast Ability**, in Blueprint or C++. 
+{style=note}
+
+If you execute this ability in-game, it will spawn your Targeting Actor according to your configuration. 
+
+Once the target location is confirmed, the ability will spawn your Cast Actor and apply the configured Gameplay Effect 
+to all valid targets detected through its collision settings.
+
+## Cast Interface
+Any actor meant to be used with **casting** must implement `CombatCastInterface`. It defines the **source** responsible
+for spawning the actor (e.g. the _combatant_), the **Gameplay Effect Handle** applied and the main execution function.
+
+| Function                  | Description                                                                                                   |
+|---------------------------|---------------------------------------------------------------------------------------------------------------|
+| `GetCastOwner`            | Provides the actor that "owns" this Cast Actor.                                                               |
+| `SetCastOwner`            | Sets the actor that "owns" this Cast Actor. Usually invoked by the Gameplay Ability, when spawning the actor. |
+| `SetGameplayEffectHandle` | Sets the Gameplay Effect Handle applied to targets.                                                           |
+| `StartCast`               | Starts the cast, performing its logic, target collection, etc.                                                |
+
+## Cast Actor
+
+**Cast Actors** are commonly used during **casting**. They are created by the Cast Gameplay Ability (or another ability) and contain a pre-generated **Gameplay Effect** that is applied to targets they collect—typically via **collision**.
+
+The base **Cast Actor** includes the following properties:
+
+| Property                | Description                                                             |
+|-------------------------|-------------------------------------------------------------------------|
+| Should Ignore Source    | If true, automatically ignores the cast source during collision checks. |
+| Try to Align with Floor | If true, attempts to align the actor with the ground surface.           |
+| Floor Trace Channel     | Trace channel used to detect the ground surface.                        |
+| Floor Offset            | Vertical offset applied after aligning with the floor.                  |
+
+In addition to the required interface functions, the base Cast Actor provides the following helpers:
+
+| Function               | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| Get Cast Source        | Retrieves the actor responsible for the cast.                               |
+| Get Weapon             | Retrieves a weapon from the source using a Gameplay Tag Query.              |
+| Try Align With Floor   | Attempts to align with the floor if enabled.                                |
+| Align With Floor       | Executes the trace logic. Can be overridden to customize behavior.          |
+| Apply Effect To Target | Applies the configured Gameplay Effect to a specific target.                |
+
+<img src="cbt_cast_actor.png" alt="Cast Actor" thumbnail="true" border-effect="line"/>
+
+The example above illustrates a typical implementation:
+
+1. Extends the `StartCast` function and calls the logic from **parent**.
+2. Sets the Cast Actor’s location to match the owner’s shield, retrieved via `GetWeapon`.
+3. Binds an event to the Particle System and resets (then activates) the Niagara Component.
+4. Resets and activates the Audio Component.
+5. When the particle effect completes, the actor is deactivated and returned to the pool.
+
+> **Time To Live and Particles**
+>
+> If your Cast Actor is retrieved from the pool, ensure that the **Time to Live Outside Pool** value is **longer** than the particle effect duration. Otherwise, the effect may be cut off prematurely.
+> {style=note}
+
+### Modifying the Gameplay Effect
+
+Cast Actors are designed to be **independent of the owner's Ability System Component**. This ensures they can apply
+Gameplay Effects even if the source ASC is no longer valid at the time of execution.
+
+If you need to modify the **Gameplay Effect Spec** generated by the Gameplay Ability, you can do so using
+**Set By Caller Magnitudes**, **Curve Modifiers**, or **Dynamic Tags**.
+
+You can implement the following functions for customization:
+
+- `GetDynamicGameplayTags`: Adds dynamic Gameplay Tags to the effect spec as targets are acquired.
+- `GetAdditionalSetByCallerMagnitudes`: Injects or overrides magnitudes in the spec using Set By Caller data.
+
+If you need deeper customization of the **Effect Handle** itself, you can override:
+
+- `ApplyGameplayEffectToData`: Full control over how the spec is applied to each target, _available only in C++._
 
 ## Actor Pooling
-CAst Actors are a common candidate for **Actor Pooling**. This reduces the cost of **spawning** and **garbage collecting**
-these actors, when constantly used in the game.
+**Cast Actors** and **Targeting Actors** and are good candidates for **Actor Pooling**. This helps reduce the cost of 
+**spawning** and **garbage collecting** these actors when they are frequently used in the game.
 
-Ninja Combat has an **[Actor Pool](cbt_actor_pooling.md)** and the default **Cast Actor** is also a **Poolable Actor**.
-The default spawn logic in the Cast Gameplay Ability will take that into consideration and will try to retrieve an
-actor from the pool, before spawning a new one in the world.
-
-Check the **[Actor Pool page](cbt_actor_pooling.md)** for more information about enabling the Actor Pool and registering the cast actor 
-to it.
+Both actors are **Poolable Actors**, ready to be used in conjunction with the **[Actor Pool](cbt_actor_pooling.md)** 
+provided by Ninja Combat. For more information on enabling the pool and registering your Cast Actor, check the 
+**[Actor Pool page](cbt_actor_pooling.md)**.

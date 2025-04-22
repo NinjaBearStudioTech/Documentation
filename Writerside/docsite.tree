@@ -72,7 +72,7 @@
             <toc-element topic="cbt_physical_materials.md"/>
             <toc-element topic="cbt_combat_system.md"/>
         </toc-element>
-        <toc-element toc-title="Weapons and Attacks">
+        <toc-element toc-title="Combat System">
             <toc-element topic="cbt_weapon_actors.md"/>
             <toc-element topic="cbt_weapon_manager.md"/>            
             <toc-element topic="cbt_melee_attacks.md"/>
@@ -81,7 +81,10 @@
             <toc-element topic="cbt_combos.md"/>
             <toc-element topic="cbt_stagger_parry_riposte.md"/>
             <toc-element topic="cbt_opportunity_attacks.md"/>
-            <toc-element topic="cbt_damage_and_defense.md"/>
+            <toc-element topic="cbt_damage_and_defense.md">
+                <toc-element topic="cbt_damage_hit_reactions.md"/>
+                <toc-element topic="cbt_damage_death.md"/>
+            </toc-element>
         </toc-element>
         <toc-element toc-title="Gameplay">
             <toc-element topic="cbt_gameplay_tags.md"/>
@@ -111,11 +114,11 @@
             <toc-element topic="cbt_actor_pooling.md"/>
             <toc-element topic="cbt_artificial_intelligence.md"/>
             <toc-element topic="cbt_user_interface.md"/>
-        </toc-element>                
-        <toc-element topic="cbt_integration.md">
-            <toc-element topic="cbt_integration_factions.md"/>
-            <toc-element topic="cbt_integration_input.md"/>
-            <toc-element topic="cbt_integration_inventory.md"/>
+            <toc-element topic="cbt_integration.md">
+                <toc-element topic="cbt_integration_factions.md"/>
+                <toc-element topic="cbt_integration_input.md"/>
+                <toc-element topic="cbt_integration_inventory.md"/>
+            </toc-element>            
         </toc-element>
         <toc-element topic="cbt_troubleshooting.md"/>
         <toc-element topic="cbt_changelog.md"/>
