@@ -1,9 +1,7 @@
 # Changelog
 <primary-label ref="input"/>
 
-## 5.0.0
-<secondary-label ref="wip"/>
-
+## 5.0.0 - 21/04/2025
 > **Important Changes in this version**
 >
 > 1. **Momentary** and **Toggled** are not set in the handler anymore. Instead, they are set by ability tags, in each ability.

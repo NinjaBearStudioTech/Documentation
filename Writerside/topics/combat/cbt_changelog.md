@@ -1,8 +1,14 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 4.0.0
+## 4.0.1
 <secondary-label ref="wip"/>
+
+```
+[bugfix] Added guard condition to avoid editor crashes in the `AnimNotify_Cast`.
+```
+
+## 4.0.0 - 21/04/2025
 
 > **Important Changes in this version**
 > 
