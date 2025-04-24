@@ -83,7 +83,7 @@
                 <toc-element topic="cbt_combos_ai.md"/>
                 <toc-element topic="cbt_combos_branching.md"/>
             </toc-element>    
-            <toc-element topic="cbt_stagger_parry_riposte.md"/>
+            <toc-element topic="cbt_parry_riposte.md"/>
             <toc-element topic="cbt_opportunity_attacks.md"/>
             <toc-element topic="cbt_damage_and_defense.md">
                 <toc-element topic="cbt_damage_hit_reactions.md"/>
@@ -99,8 +99,6 @@
                 <toc-element topic="cbt_ability_block.md"/>
                 <toc-element topic="cbt_ability_evade.md"/>
                 <toc-element topic="cbt_ability_opportunity_attack.md"/>
-                <toc-element topic="cbt_ability_parry.md"/>
-                <toc-element topic="cbt_ability_riposte.md"/>
                 <toc-element topic="cbt_ability_stagger.md"/>
                 <toc-element topic="cbt_ability_target_lock.md"/>
             </toc-element>
