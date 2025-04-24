@@ -21,13 +21,8 @@ In the example above:
 
 The **Event Tag** you send depends on the **Event Mode** configured in your Combo Ability:
 
-- **GameplayTag Mode**:  
-  Send the exact **Gameplay Tag** used by your State Tree transitions (e.g. `Combat.Event.Combo.Attack.Primary`).  
-  You do **not** need to send the Input Action in this mode.
-
-- **InputAction Mode**:  
-  Always send the gameplay event with the tag `Combat.Event.Combo.Attack`.  
-  Include the **Input Action** in the payload. The Combo Ability will map it to a transition tag defined in the State Tree.
+- **Gameplay Tag Mode**: Send the exact **Gameplay Tag** used by your State Tree transitions (e.g. `Combat.Event.Combo.Attack.Primary`). You do **not** need to send the Input Action in this mode.
+- **Input Action Mode**: Always send the gameplay event with the tag `Combat.Event.Combo.Attack`. Include the **Input Action** in the payload. The Combo Ability will map it to a transition tag defined in the State Tree.
 
 > **Ninja Input Integration**
 >
