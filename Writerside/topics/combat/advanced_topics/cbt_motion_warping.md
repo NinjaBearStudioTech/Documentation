@@ -126,6 +126,29 @@ rules. When sending contexts directly to the Motion Warping Component, the follo
 > Calling `ClearCombatWarpTarget` will also stop tracking the target, so you do not need to call both functions.
 {style="note"}
 
+## Modifying Warp Calculations
+The default Motion Warping component calculates warp **location** and **rotation** using the `CalculateWarpLocation` and
+`CalculateWarpRotation` functions. These can be overridden to modify or completely replace the default behavior.
+
+Additionally, you can fine-tune warp **adjustments** by customizing `ApplyMeleeOptimalDistance` and `ApplyWarpLocationScale`.
+
+### Melee Optimal Distance
+Some Combat Abilities define an **optimal distance** for execution. The Warp Component respects this by modifying the
+warp location only when the source is **farther** than the threshold.
+
+If the source is already within the optimal distance, the warp location remains unchanged.
+
+To alter this behavior, override the `ApplyMeleeOptimalDistance` function in either Blueprints or C++.
+
+### Warp Location Scale
+The default component includes a `WarpScale` property that scales the **delta** between the warp location and the 
+avatar's current position.
+
+This can be especially useful for axis adjustments, such as **removing vertical offset (Z-axis)**, to ensure the 
+character remains grounded when warping.
+
+To customize this logic, override the `ApplyWarpLocationScale` function in Blueprints or C++.
+
 ## Debug Mode
 To enable a visual representation of each warp target and calculation, enable **Debug Mode** in the component's **Details Panel**.
 
