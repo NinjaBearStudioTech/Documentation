@@ -127,25 +127,29 @@ rules. When sending contexts directly to the Motion Warping Component, the follo
 {style="note"}
 
 ## Modifying Warp Calculations
-The default Motion Warping component calculates warp **location** and **rotation** using the `CalculateWarpLocation` and
-`CalculateWarpRotation` functions. These can be overridden to modify or completely replace the default behavior.
+The default Motion Warping Component calculates warp **location** and **rotation** using the `CalculateWarpLocation` 
+and `CalculateWarpRotation` functions. These can be overridden to modify or completely replace the default behavior.
 
 Additionally, you can fine-tune warp **adjustments** by customizing `ApplyMeleeOptimalDistance` and `ApplyWarpLocationScale`.
 
 ### Melee Optimal Distance
-Some Combat Abilities define an **optimal distance** for execution. The Warp Component respects this by modifying the
-warp location only when the source is **farther** than the threshold.
+Some Combat Abilities define an **optimal distance** for execution. The Warp Component respects this by modifying the 
+warp location only when the avatar is **farther** than that distance.
 
-If the source is already within the optimal distance, the warp location remains unchanged.
+If the avatar is already within the optimal distance, the warp location remains unchanged **by default**.
 
-To alter this behavior, override the `ApplyMeleeOptimalDistance` function in either Blueprints or C++.
+To change this behavior and allow the avatar to be **pushed back** to exactly the optimal distance, enable the 
+`bAllowMeleePushback` flag on the Motion Warping Component. When this flag is set, the warp will adjust the location 
+even if the avatar is already too close.
+
+To customize or extend this behavior, override the `ApplyMeleeOptimalDistance` function in Blueprints or C++.
 
 ### Warp Location Scale
 The default component includes a `WarpScale` property that scales the **delta** between the warp location and the 
 avatar's current position.
 
-This can be especially useful for axis adjustments, such as **removing vertical offset (Z-axis)**, to ensure the 
-character remains grounded when warping.
+This can be especially useful for axis adjustments, such as removing vertical offset (Z-axis), to ensure the character 
+remains grounded when warping.
 
 To customize this logic, override the `ApplyWarpLocationScale` function in Blueprints or C++.
 
