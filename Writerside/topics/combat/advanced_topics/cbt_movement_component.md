@@ -1,6 +1,6 @@
 # Movement Component
 <primary-label ref="combat"/>
-<<secondary-label ref="advanced"/>
+<secondary-label ref="advanced"/>
 
 Certain features in the Combat System may affect the **character movement**. For that integration, Ninja Combat provides 
 its own **optional** version of the **Character Movement Component**.
@@ -29,7 +29,7 @@ this framework is production ready, it might see changes to this behavior (or th
 the new Movement Framework in Unreal engine, **Mover 2.0** becomes more popular.
 
 ### Contextual Animation System
-This module is used by the [](cbt_opportunity_system.md) to execute **Paired Animations**. Its core
+This module is used by the [](cbt_opportunity_attacks.md) to execute **Paired Animations**. Its core
 component integrates with the Character Movement Component to modify certain settings and then to revert them later.
 
 For now, the methods doing that are not virtual so there's no way to modify that behavior, so it can use a different type
