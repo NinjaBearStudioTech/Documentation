@@ -40,6 +40,7 @@ The default Motion Warping Component provided by Ninja Combat also provides the 
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Transform Calculation | The target **location** and **rotation** can be extended by overriding `CalculateWarpLocation` and `CalculateWarpRotation`.                                                                                      |
 | Melee Attack Range    | When warping **melee attack animations** the ability's **optimal distance** is taken into consideration.                                                                                                         |
+| Adjustment Threshold  | Adjustments in the Motion Warping, considering an attack's **optimal distance** are only done if the adjustment is meaningful, which is determined by `MinimalAdjustmentThreshold`.                              |
 | Warp Scale            | You can **scale the final warp value**, per-axis, to fine-tune the warp effect (e.g., disable vertical warping for large enemies). This can be done via `WarpScale` or dynamically via `ApplyWarpLocationScale`. |
 | Debug Mode            | Enabling debug mode, per component, renders spheres and arrows that visually represent the **warp location and rotation**.                                                                                       |
 

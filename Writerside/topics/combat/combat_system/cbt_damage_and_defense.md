@@ -1,4 +1,4 @@
-# Dealing and Defending Damage
+# Damage Pipeline
 <primary-label ref="combat"/>
 
 <tldr>

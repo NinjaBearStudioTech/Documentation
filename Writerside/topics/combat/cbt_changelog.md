@@ -1,13 +1,13 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 4.1.2
-<secondary-label ref="wip"/>
+## 4.1.3 - 25/04/2025
 
 ```
 [added] Added `GetAdditionalCombatMagnitudes` to attacks and casts, allowing more flexibility regarding damage effect magnitudes.
 [improvement] Introduced the `bAllowMeleePushback` property in the Motion Warping Component, to allow melee pushback from the optimal distance.
 [bugfix] Added guard condition to avoid editor crashes in the `AnimNotify_Cast`.
+[bugfix] Fixed the guard condition for the Targeting Subsystem in the Motion Warping component.
 ```
 
 ## 4.0.0 - 21/04/2025

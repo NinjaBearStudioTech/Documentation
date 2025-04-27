@@ -64,7 +64,6 @@ check [Input Integration](cbt_integration_input.md#forward-reference)
 </procedure>
 
 ## Combat Movement Component
-
 Ninja Combat includes the `NinjaCombatCharacterMovementComponent` class, a version of the Character Movement Component 
 that can handle different **movement speeds**, due to changes in **blocking** and **strafing** states.
 

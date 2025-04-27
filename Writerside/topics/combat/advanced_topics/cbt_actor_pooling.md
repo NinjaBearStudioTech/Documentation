@@ -96,15 +96,16 @@ Here are some examples of functionalities that should be handled by these events
 {style="note"}
 
 ### Supported Actors
+Currently, the following actors are supported by default by the Actor Pool:
 
-Currently, **Projectiles**, **Cast Actors** and **Marker Actors** are supported by default. You can find more details 
-about their implementations in their specific [Ability pages](cbt_gameplay_abilities.md).
+- **Projectiles** used by the [Attack Ability](cbt_ranged_attacks.md).
+- **Cast Actors** and **Targeting Actors** used by the [Cast Ability](cbt_casts.md).
+- **Marker Actors** used by the [Target Lock Ability](cbt_target_lock.md).
 
 If you need to support new objects, you can do so by extending `NinjaCombatPoolableActor`, which is recommended, or by
 implementing `CombatPoolableActorInterface`. 
 
 ## Retrieving Actors
-
 To retrieve an actor from the pool, you can use the `TryGetActorFromPool` function, from the **Actor Pool Function Library**.
 Supported actors listed before are already retrieved using this functionality and require no additional work.
 
