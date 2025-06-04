@@ -134,28 +134,6 @@ The following options are available for the **Scan Mode**:
 - **Capsule Sweep**: Creates a capsule shape, with the provided extent, centered at the defined socket.
 - **Sphere Sweep**: Creates a sphere shape, with the provided radius, centered at the defined socket.
 
-### Weapon and Owner Scans
-Both scan types support the same set of functionalities. However, for **owner-based** scans, you may need to adjust your
-base class to include the same elements already provided by Ninja Combat’s base **weapon class**:
-
-- **Melee Interface**: Implements relevant attributes and functionalities for melee combat.
-- **Cosmetics Component**: Handles visual and audio effects such as particles, sounds, and camera shakes.
-
-<procedure title="Configuring a Character for Melee Attacks" collapsible="true" default-state="expanded">
-    <step>Open your base character class in C++ or Blueprint.</step>
-    <step>Add a <code>NinjaCombatCosmeticsComponent</code> to your character.</step>
-    <step>Add the <code>CombatMeleeInterface</code> to your character.</step>
-    <step>Implement <code>GetMeleeMesh</code> from the Melee Interface. This should return the main visible mesh from your character, which will be used for <b>melee scans</b>.</step>
-    <step>
-        <p>Implement <code>HandleMeleeDamageCosmetics</code> from the Melee Interface. This function should pass relevant data to the component's <code>HandleImpactDamageCosmetics</code> method using a <code>CombatImpactCosmetics</code> structure.</p>
-        <note>
-            <p><b>Impact Cosmetics Data</b></p>
-            <p>If you want to reuse specific Niagara or Sound components to avoid spawning a new one on each impact, you can define those components in your character and include them in the <code>CombatImpactCosmetics</code> structure.</p>
-        </note>
-    </step>
-    <step>If your owner-based melee attacks include weapon trails, implement <code>StartMeleeTrailsCosmetics</code> and <code>StopMeleeTrailsCosmetics</code>, and call the corresponding functions on the cosmetics component.</step>
-</procedure>
-
 ### Melee Scan Request Class
 This object is used to transfer melee scan data between all the framework layers: **Animation**, **Ability**, and **Task**.
 It also contains the logic to perform scans and consolidate targets. 
@@ -177,6 +155,28 @@ Melee Scan Animation Notify State or **globally**, in the **Ninja Combat Project
 > In this function, you can customize how targets are collected per frame. The method receives scan parameters and can 
 > filter or modify the final hit list before it's passed to the ability system for damage processing.
 {style=note}
+
+### Weapon and Owner Scans
+Both scan types support the same set of functionalities. However, for **owner-based** scans, you may need to adjust your
+base class to include the same elements already provided by Ninja Combat’s base **weapon class**:
+
+- **Melee Interface**: Implements relevant attributes and functionalities for melee combat.
+- **Cosmetics Component**: Handles visual and audio effects such as particles, sounds, and camera shakes.
+
+<procedure title="Configuring a Character for Melee Attacks" collapsible="true" default-state="expanded">
+    <step>Open your base character class in C++ or Blueprint.</step>
+    <step>Add a <code>NinjaCombatCosmeticsComponent</code> to your character.</step>
+    <step>Add the <code>CombatMeleeInterface</code> to your character.</step>
+    <step>Implement <code>GetMeleeMesh</code> from the Melee Interface. This should return the main visible mesh from your character, which will be used for <b>melee scans</b>.</step>
+    <step>
+        <p>Implement <code>HandleMeleeDamageCosmetics</code> from the Melee Interface. This function should pass relevant data to the component's <code>HandleImpactDamageCosmetics</code> method using a <code>CombatImpactCosmetics</code> structure.</p>
+        <note>
+            <p><b>Impact Cosmetics Data</b></p>
+            <p>If you want to reuse specific Niagara or Sound components to avoid spawning a new one on each impact, you can define those components in your character and include them in the <code>CombatImpactCosmetics</code> structure.</p>
+        </note>
+    </step>
+    <step>If your owner-based melee attacks include weapon trails, implement <code>StartMeleeTrailsCosmetics</code> and <code>StopMeleeTrailsCosmetics</code>, and call the corresponding functions on the cosmetics component.</step>
+</procedure>
 
 ### Cosmetics
 The default Trail Gameplay Cue, defined as `GameplayCue.Combat.MeleeTrails`, is handled automatically by the **Combat 
