@@ -54,7 +54,7 @@ If you plan to work with the source code, you can copy the plugin to your local 
     <step>
         <p>In your IDE of choice, open the <code>Build.cs</code> file, named after your project (e.g., <code>MyGame.Build.cs</code> in the <code>Source/MyGame</code> folder), and <b>add</b> the following contents.</p>
         <code-block lang="c#" src="cbt_setup_build.cs"/>
-        <warning><b>Do not remove or replace any existing dependencies</b>. Just add the ones listed below. Add the ones in the list above, and <b>watch out for duplicates</b>.</warning>
+        <warning><b>Do not remove or replace any existing dependencies</b>. Add the ones in the list above, and <b>watch out for duplicates</b>.</warning>
     </step>
     <step>
         <p>Remove the version installed in the engine, if there is one.</p>

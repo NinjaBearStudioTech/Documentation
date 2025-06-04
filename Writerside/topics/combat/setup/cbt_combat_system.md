@@ -90,7 +90,6 @@ that can handle different **movement speeds**, due to changes in **blocking** an
 </procedure>
 
 ## Animation Instance
-
 Ninja Combat includes the `NinjaCombatAnimInstance` class, a version of the Animation Instance that can serve as the 
 base class for an Animation Blueprint, handling animation updates related to **blocking** and **strafing** states.
 

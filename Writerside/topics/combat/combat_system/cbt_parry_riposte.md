@@ -61,6 +61,34 @@ the parry opportunity.
 
 As long as your Attack Ability is already configured, this is all that's needed to make the attack vulnerable to parries.
 
+### Parry Window Gameplay Cue
+The **Parry Window Animation Notify State** applies a **Gameplay Cue** to the owner, which can trigger cosmetics that 
+communicate the active Parry Window to players—such as **particles**, **sounds**, or other visual effects.
+
+Ninja Combat provides a base **Static Gameplay Cue Notify** that can be used to represent the Parry Window. To use it, 
+your **Combat Mesh** should have appropriate **sockets** where the cue’s visual elements will attach.
+
+<procedure title="Registering the Parry Window Cue" collapsible="true" default-state="expanded">
+    <step>Open your character’s <b>Mesh</b> and create a socket named <code>sParryNotify</code> where the cue should appear.</step>
+    <step>Create a new Blueprint or C++ class based on <code>GameplayCueNotify_ParryWindow</code>.</step>
+    <step>Add any desired <b>particles</b> and <b>sounds</b> to the notify.</step>
+</procedure>
+
+You can also support multiple types of cues on the same character, such as one for a _Left Hand_ attack and another for 
+a _Right Hand_ attack. To handle scenarios like this, create the corresponding **sockets** and set distinct **Gameplay Cue Tags**.
+
+<procedure title="Handling Multiple Parry Cues" collapsible="true" default-state="expanded">
+    <step>Create all necessary sockets on your character’s <b>Mesh</b> to anchor each unique <b>Parry Window Cue</b>.</step>
+    <step>In the <b>Animation Montage</b>, open the <b>Parry Window Notify State</b> and set a Gameplay Tag that reflects the specific window, such as <code>GameplayCue.Combat.Parry.Window.RH</code> for a right-hand attack.</step>
+    <step>Create a new Parry Window Cue (as before), setting the correct <b>socket</b> and <b>Gameplay Cue Tag</b> to match the notify state.</step>
+</procedure>
+
+> **Modifying the Gameplay Cue**
+>
+> You can extend the <code>HandleParryWindow</code> function to add custom logic to your Gameplay Cue. For deeper 
+> customization in C++, you can override <code>PlayParticles</code> and <code>PlaySound</code> to control exactly how effects are played.
+{style="note"}
+
 ## Parry Scans
 With the **Parry Window** configured on the attacker, it’s time to handle the **defender's side** who will be executing 
 a **Parry Counter**. This is done using a **Parry Scan**, which works similarly to a Melee Scan.

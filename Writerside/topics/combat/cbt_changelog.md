@@ -1,6 +1,34 @@
 # Changelog
 <primary-label ref="combat"/>
 
+## 4.7.21
+<secondary-label ref="wip"/>
+
+```
+[added] New Shoot ability that can handle Hit-Scans and Projectiles, in a "firearms" context.
+[added] New Magnitude Calculation that can consider the current combo count.
+[added] New Static Gameplay Cue Notify for Parry Windows.
+[added] New Gameplay Effect Requirement that checks for actual participants in the Combat System.
+[added] Added a dedicated ViewModel for the Riposte State.
+[added] Added the option to use Chooser Tables for Hit Reactions.
+[improvement] Included guard conditions to avoid ticking in invalid component states.
+[improvement] Updated Gameplay Targeting "Target Lock Filter Task" so it won't filter actors when there's no lock-on.
+[improvement] Included option to perform an AOE selection in the Gameplay Targeting "Select Combat Target Task".
+[improvement] Exposed floor distance setting for the Cast Actor.
+[improvement] Tracking death/destroyed for warp targets to remove them from the component faster.
+[improvement] Implemented the time-stretching guard conditions for all Anim Notify states.
+[improvement] Included option to opt in/out of physical animations for recurring damage.
+[improvement] Exposed the trace channel used by Cast Actors to detect Hit Results.
+[improvement] Changed the Physical Reaction Damage Handler, so it's tag-based. 
+[bugfix] Fixed the calculation for the Motion Warping pushback.
+[bugfix] Fixed the starting bone for the Physical Animation Component.
+[bugfix] Fixed dangling warping targets that might be invalid.
+[bugfix] Fixed crashes that might happen when closing the game while blocking.
+[bugfix] Fixed scenarios where the effect context proxy would incorrectly discard zero damage. 
+[bugfix] Fixed Target Lock event handling and source lock effect application. 
+[bugfix] Fixed Invulnerability calculation, to actually reset the damage on the Defense Manager. 
+```
+
 ## 4.1.3 - 25/04/2025
 
 ```

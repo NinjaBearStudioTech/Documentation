@@ -67,6 +67,9 @@ asset, and its list of **Damage Handlers**.
 The **Physical Animation** handler can be used to trigger the Physical Animation on a character, when any **melee** or
 **ranged** damage is applied.
 
+By default, the Damage Handler will not execute from **recurring damage** - which are recurring effects set to a given
+interval. If such reactions are desirable, then they be enabled via the handler's exposed properties. 
+
 ## Physical Animation Settings
 The default **Physical Animation** system uses `FCombatPhysicalAnimationSettings` to store the context for an animation.
 The table below shows possible adjustments that can be obtained from this data structure.

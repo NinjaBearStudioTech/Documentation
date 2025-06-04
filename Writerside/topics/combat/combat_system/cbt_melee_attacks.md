@@ -134,6 +134,28 @@ The following options are available for the **Scan Mode**:
 - **Capsule Sweep**: Creates a capsule shape, with the provided extent, centered at the defined socket.
 - **Sphere Sweep**: Creates a sphere shape, with the provided radius, centered at the defined socket.
 
+### Weapon and Owner Scans
+Both scan types support the same set of functionalities. However, for **owner-based** scans, you may need to adjust your
+base class to include the same elements already provided by Ninja Combat’s base **weapon class**:
+
+- **Melee Interface**: Implements relevant attributes and functionalities for melee combat.
+- **Cosmetics Component**: Handles visual and audio effects such as particles, sounds, and camera shakes.
+
+<procedure title="Configuring a Character for Melee Attacks" collapsible="true" default-state="expanded">
+    <step>Open your base character class in C++ or Blueprint.</step>
+    <step>Add a <code>NinjaCombatCosmeticsComponent</code> to your character.</step>
+    <step>Add the <code>CombatMeleeInterface</code> to your character.</step>
+    <step>Implement <code>GetMeleeMesh</code> from the Melee Interface. This should return the main visible mesh from your character, which will be used for <b>melee scans</b>.</step>
+    <step>
+        <p>Implement <code>HandleMeleeDamageCosmetics</code> from the Melee Interface. This function should pass relevant data to the component's <code>HandleImpactDamageCosmetics</code> method using a <code>CombatImpactCosmetics</code> structure.</p>
+        <note>
+            <p><b>Impact Cosmetics Data</b></p>
+            <p>If you want to reuse specific Niagara or Sound components to avoid spawning a new one on each impact, you can define those components in your character and include them in the <code>CombatImpactCosmetics</code> structure.</p>
+        </note>
+    </step>
+    <step>If your owner-based melee attacks include weapon trails, implement <code>StartMeleeTrailsCosmetics</code> and <code>StopMeleeTrailsCosmetics</code>, and call the corresponding functions on the cosmetics component.</step>
+</procedure>
+
 ### Melee Scan Request Class
 This object is used to transfer melee scan data between all the framework layers: **Animation**, **Ability**, and **Task**.
 It also contains the logic to perform scans and consolidate targets. 
@@ -157,11 +179,16 @@ Melee Scan Animation Notify State or **globally**, in the **Ninja Combat Project
 {style=note}
 
 ### Cosmetics
-The default Trail Gameplay Cue defined by `GameplayCue.Combat.MeleeTrails` is already handled by the Combat Manager
-Component, using the sound and particle effects set in the Melee Weapon.
+The default Trail Gameplay Cue, defined as `GameplayCue.Combat.MeleeTrails`, is handled automatically by the **Combat 
+Manager Component**, using the sound and particle effects defined in the Melee Weapon.
 
-The **Combat Manager** handles this Gameplay Cue and forwards it to the Melee Effect Causer - the Weapon or Combatant -
-to handle the start and end of the cue, via the `StartMeleeTrailsCosmetics` and `StopMeleeTrailsCosmetics`.
+The **Combat Manager** triggers this Gameplay Cue and delegates it to the Melee Effect Causer—either the Weapon or the 
+Combatant—which then starts and stops the trail using the `StartMeleeTrailsCosmetics` and `StopMeleeTrailsCosmetics` 
+methods.
+
+You can handle cosmetics using standard **Gameplay Cues**, as defined by the **Gameplay Ability System**. Alternatively, 
+you can use the pipeline provided by Ninja Combat, which still leverages local Gameplay Cues but centralizes default 
+behavior, such as **Niagara Systems**, **Sounds**, and **Camera Shakes**—within the `UNinjaCombatCosmeticsComponent`.
 
 ## Attack Ability
 The **Attack Ability** is responsible for **Melee** and **Ranged** attacks. To get started with Melee Attacks, all you
