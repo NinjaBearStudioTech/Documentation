@@ -40,7 +40,7 @@ The following properties are available and can be accessed by searching for `Get
 
 > **Variable Usage**
 >
-> You don’t need to use all variables—many are provided for convenience and can be modified or ignored depending on your needs.
+> You don't need to use all variables—many are provided for convenience and can be modified or ignored depending on your needs.
 
 All calculations are implemented in dedicated functions, which can be overridden in Blueprint or C++ for further customization.
 
@@ -55,10 +55,10 @@ All calculations are implemented in dedicated functions, which can be overridden
 | `CalculateLocomotionValues`   | Yes       | Calculates all locomotion variables listed above.                                |
 | `CalculateBlendValues`        | Yes       | Calculates blend values (e.g., full-body vs. upper-body). Runs after locomotion. |
 
-> **Variable Usage**
+> **Extending Functionality**
 >
-> You can override any of the listed functions in Blueprint to fully adapt the animation logic without writing C++ code. 
-> The base implementation is designed to be easily extended.
+> You can override any of the listed functions in Blueprint to fully adapt the animation logic without writing C++ code,
+> although you can also use C++ if needed/preferred. The base implementation is designed to be easily extended.
 
 ## Animation Notifies
 Multiple Notifies and Notify States are available to handle multiple aspects of the system.
