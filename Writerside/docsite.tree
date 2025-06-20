@@ -115,11 +115,6 @@
             <toc-element topic="cbt_movement_component.md"/>
             <toc-element topic="cbt_artificial_intelligence.md"/>
             <toc-element topic="cbt_character_animation.md"/>
-            <toc-element topic="cbt_integration.md">
-                <toc-element topic="cbt_integration_factions.md"/>
-                <toc-element topic="cbt_integration_input.md"/>
-                <toc-element topic="cbt_integration_inventory.md"/>
-            </toc-element>            
         </toc-element>
         <toc-element topic="cbt_troubleshooting.md"/>
         <toc-element topic="cbt_changelog.md"/>
@@ -201,65 +196,63 @@
 
     <!-- Ninja Inventory -->
     <toc-element topic="inv_overview.md">
-        <toc-element topic="inv_setup.md"/>
-        <toc-element topic="inv_concepts.md">
-            <toc-element topic="inv_container_and_layout.md"/>
-            <toc-element topic="inv_items_and_fragments.md"/>
-            <toc-element topic="inv_inventory_manager.md"/>
-            <toc-element topic="inv_equipment.md"/>
-            <toc-element topic="inv_equipment_manager.md"/>
-            <toc-element topic="inv_loot_management.md"/>
+        <toc-element toc-title="Setup">
+            <toc-element topic="inv_installation.md"/>
+            <toc-element topic="inv_asset_manager.md"/>
+            <toc-element topic="inv_inventory_system.md"/>
         </toc-element>
-        <toc-element topic="inv_architecture.md">
-            <toc-element topic="inv_fragment_reference.md">
-                <toc-element topic="inv_consumable_fragment.md"/>
-                <toc-element topic="inv_container_fragment.md"/>
-                <toc-element topic="inv_durability_fragment.md"/>
-                <toc-element topic="inv_economy_fragment.md"/>
-                <toc-element topic="inv_equipment_fragment.md"/>
-                <toc-element topic="inv_gameplay_effect_fragment.md"/>
-                <toc-element topic="inv_level_fragment.md"/>
-                <toc-element topic="inv_loot_fragment.md"/>
-                <toc-element topic="inv_pickup_fragment.md"/>
-                <toc-element topic="inv_quality_fragment.md"/>
-                <toc-element topic="inv_stack_fragment.md"/>
-                <toc-element topic="inv_user_interface_fragment.md"/>
-                <toc-element topic="inv_weight_fragment.md"/>
+        <toc-element toc-title="Inventory System">
+            <toc-element topic="inv_inventory_management.md"/>
+            <toc-element topic="inv_inventory_containers.md"/>
+            <toc-element topic="inv_inventory_items.md"/>
+            <toc-element topic="inv_inventory_fragments.md">
+                <toc-element topic="inv_fragment_activation.md"/>
+                <toc-element topic="inv_fragment_attributes.md"/>
+                <toc-element topic="inv_fragment_consumable.md"/>
+                <toc-element topic="inv_fragment_container.md"/>
+                <toc-element topic="inv_fragment_durability.md"/>
+                <toc-element topic="inv_fragment_economy.md"/>
+                <toc-element topic="inv_fragment_gameplay_effect.md"/>
+                <toc-element topic="inv_fragment_loot.md"/>
+                <toc-element topic="inv_fragment_pickup.md"/>
+                <toc-element topic="inv_fragment_quality.md"/>
+                <toc-element topic="inv_fragment_user_interface.md"/>
+                <toc-element topic="inv_fragment_weight.md"/>
             </toc-element>
+        </toc-element>
+        <toc-element toc-title="Equipment System">
+            <toc-element topic="inv_equipment_management.md"/>
+            <toc-element topic="inv_equipment_instances.md"/>
+            <toc-element topic="inv_equipment_activation.md"/>
+        </toc-element>
+        <toc-element toc-title="Gameplay">
+            <toc-element topic="inv_gameplay_attributes.md"/>
+            <toc-element topic="inv_gameplay_abilities.md"/>
+            <toc-element topic="inv_gameplay_effects.md"/>
+            <toc-element topic="inv_gameplay_debugger.md"/>
+        </toc-element>
+        <toc-element toc-title="User Interface">
+            <toc-element topic="inv_ui_widgets.md"/>
+            <toc-element topic="inv_ui_view_models.md"/>
+            <toc-element topic="inv_mvvm_containers.md"/>
+            <toc-element topic="inv_mvvm_item.md"/>
+            <toc-element topic="inv_mvvm_fragments.md"/>
+        </toc-element>
+        <toc-element toc-title="Advanced Topics">
+            <toc-element topic="inv_container_layouts.md"/>
+            <toc-element topic="inv_item_events.md"/>
             <toc-element topic="inv_save_and_load.md"/>
-            <toc-element topic="inv_user_interface.md">
-                <toc-element topic="inv_widgets.md"/>
-                <toc-element topic="inv_viewmodels.md">
-                    <toc-element topic="inv_core_attributes_mvvm.md"/>
-                    <toc-element topic="inv_core_items_mvvm.md"/>
-                    <toc-element topic="inv_core_layout_mvvm.md"/>
-                    <toc-element topic="inv_item_durability_mvvm.md"/>
-                    <toc-element topic="inv_item_economy_mvvm.md"/>
-                    <toc-element topic="inv_item_equipment_mvvm.md"/>
-                    <toc-element topic="inv_item_level_mvvm.md"/>
-                    <toc-element topic="inv_item_quality_mvvm.md"/>
-                    <toc-element topic="inv_item_stack_mvvm.md"/>
-                    <toc-element topic="inv_item_ui_mvvm.md"/>
-                    <toc-element topic="inv_item_weight_mvvm.md"/>
-                </toc-element>
-            </toc-element>
-            <toc-element topic="inv_assembling_meshes.md"/>
+            <toc-element topic="inv_advanced_fragments.md"/>
+            <toc-element topic="inv_drag_and_drop.md"/>
         </toc-element>
-        <toc-element topic="inv_ability_system.md">
-            <toc-element topic="inv_attributes.md"/>
-            <toc-element topic="inv_effects.md"/>
-            <toc-element topic="inv_abilities.md"/>
-        </toc-element>
-        <toc-element toc-title="How-To">
-            <toc-element topic="inv_create_containers.md"/>
-            <toc-element topic="inv_create_item.md"/>
-            <toc-element topic="inv_configure_inventory_manager.md"/>
-            <toc-element topic="inv_configure_stored_equipment.md"/>
-            <toc-element topic="inv_activate_stored_equipment.md"/>
-            <toc-element topic="inv_add_items_gameplay.md"/>
-            <toc-element topic="inv_consumables.md"/>
-        </toc-element>
-        <toc-element topic="inv_troubleshooting.md"/>
         <toc-element topic="inv_changelog.md"/>
     </toc-element>
+
+    <!-- Integrations -->
+    <toc-element topic="cbt_integration.md">
+        <toc-element topic="itg_combat_factions.md"/>
+        <toc-element topic="itg_combat_input.md"/>
+        <toc-element topic="itg_combat_inventory.md"/>
+    </toc-element>
+    
 </instance-profile>

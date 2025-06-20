@@ -76,12 +76,23 @@ The Default Projectile Actor has the following **properties** that can be used t
 The **Aiming Mode** supports the following options:
 - **Forward**: The projectile is launched forward, from its origin socket.
 - **Targeting System**: The projectile is launched towards a target collecting via a **targeting preset**, from the Gameplay Targeting System.
-- **Location**: The projectile is launched towards the location set by `SetInitialLocation`, most likely called calculated and called in `PrepareLaunch`.
+- **Location**: The projectile is launched towards the location set by `SetInitialLocation`, which should be called from `PrepareLaunch`.
+
+> **Targeting Fallback**
+>
+> When using the **Targeting System**, whenever a target is found by the Targeting Preset, the projectile actor will be
+> launched to the target following the `LaunchToTarget` function. If a target is not found, then `HandleTargetNotFound`
+> is executed.
+> 
+> By default, `HandleTargetNotFound` will execute `LaunchForward`, but you can extend or modify this logic to handle 
+> missing targets in any other way that best suits your project. 
+{style="note"}
 
 > **Camera Aiming**
-> 
+>
 > You can implement **Camera Aiming** using the **Location Aiming Mode** performing the calculations in the `PrepareLaunch`
-> function, and setting the desired final location via `SetInitialLocation`.  
+> function, and then setting the desired final location via `SetInitialLocation`.
+{style="note"}
 
 <procedure title="Prepare the Weapon for Projectiles" collapsible="true" default-state="expanded">
     <step>Open the <b>Static or Skeletal Meshes</b> used to represent your ranged weapons.</step>
@@ -103,7 +114,16 @@ The **Aiming Mode** supports the following options:
     </step>
 </procedure>
 
-The Projectile Actor can be **extended** for other specific behaviors such as "Homing Projectiles", "Damage on Path", etc.
+On top of the functions defined by the Projectile Interface, there are multiple functions marked as `BlueprintNativeEvent`, 
+so they can be extended in Blueprint or C++. The table below lists some of the most relevant ones.
+
+| Function               | Description                                                               |
+|------------------------|---------------------------------------------------------------------------|
+| `LaunchForward`        | Launches the projectile forward, considering the Initial Rotation.        |
+| `LaunchToTarget`       | Launches towards the provided target actor.                               |
+| `HandleTargetNotFound` | Launches the projectile when no target was found by the targeting preset. |
+| `LaunchToLocation`     | Launches towards the location, most likely set in `PrepareLaunch`.        |
+| `GetInitialRotation`   | Defines the initial rotation, when the projectile is launched forward.    | 
 
 ## Projectile Requests
 Projectile Requests are used to **launch projectiles** during an attack. While animation triggers the launch event, the 

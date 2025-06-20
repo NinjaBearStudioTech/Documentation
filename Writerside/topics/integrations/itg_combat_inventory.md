@@ -1,5 +1,5 @@
 # Inventory Integration
-<primary-label ref="combat"/>
+<primary-label ref="integrations"/>
 
 Combat and Inventory can be integrated via the Weapon Manager and Weapon classes. You can do so using Blueprints or C++.
 This guide will walk you through the steps necessary to integrate both systems. 

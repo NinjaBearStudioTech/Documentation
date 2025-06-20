@@ -1,5 +1,5 @@
 # Factions Integration
-<primary-label ref="combat"/>
+<primary-label ref="integrations"/>
 
 Integrating **Ninja Combat** and **Ninja Factions** allows you to control **friendly fire** based on the **Faction** and
 **Alignment** between the Attacker and Target.

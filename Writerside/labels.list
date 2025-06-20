@@ -8,6 +8,7 @@
     <primary-label id="factions" short-name="FCT" name="Factions">Ninja Factions</primary-label>
     <primary-label id="gas" short-name="GAS" name="G.A.S.">Ninja GAS</primary-label>
     <primary-label id="input" short-name="IPT" name="Input">Ninja Input</primary-label>
+    <primary-label id="integrations" name="ITG" short-name="Integrations">Integrations</primary-label>
     <primary-label id="interaction" name="INT" short-name="Interaction">Ninja Interaction</primary-label>
     <primary-label id="inventory" short-name="INV" name="Inventory">Ninja Inventory</primary-label>
     <primary-label id="progression" name="PGS" short-name="Progression">Ninja Progression</primary-label>

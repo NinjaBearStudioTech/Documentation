@@ -1,7 +1,7 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 4.7.21
+## 4.7.22
 <secondary-label ref="wip"/>
 
 ```
@@ -20,6 +20,7 @@
 [improvement] Included option to opt in/out of physical animations for recurring damage.
 [improvement] Exposed the trace channel used by Cast Actors to detect Hit Results.
 [improvement] Changed the Physical Reaction Damage Handler, so it's tag-based. 
+[improvement] Introduced a fallback method for projectiles launched when an actor was not obtained by the targeting system. 
 [bugfix] Fixed the calculation for the Motion Warping pushback.
 [bugfix] Fixed the starting bone for the Physical Animation Component.
 [bugfix] Fixed dangling warping targets that might be invalid.

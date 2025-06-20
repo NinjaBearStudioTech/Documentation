@@ -39,14 +39,6 @@ it, it's recommended that you have some familiarity with these base systems. **F
 - Pickups can be created as Interaction Actors from **[Ninja Interaction][8]**. 
 - Inventory Abilities can be triggered using Input Handlers from **[Ninja Input][9].** 
 
-<seealso style="cards">
-    <category ref="external">
-        <a href="https://www.unrealengine.com/marketplace/en-US/product/ninja-inventory"><card-summary>Ninja Inventory page on the Unreal Marketplace</card-summary></a>
-        <a href="https://www.youtube.com/playlist?list=PLGmepN49WUKY1Sfad6Wk2-YmBVsgD055C"><card-summary>Ninja Inventory playlist on YouTube</card-summary></a>
-        <a href="https://discord.gg/TbccDhR2A7"><card-summary>Invite link for the Discord support server</card-summary></a>
-    </category>
-</seealso>
-
 [1]: https://www.unrealengine.com/marketplace/product/ninja-inventory
 [2]: https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine
 [3]: https://dev.epicgames.com/documentation/en-us/unreal-engine/asset-management-in-unreal-engine

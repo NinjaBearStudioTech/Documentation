@@ -1,15 +1,19 @@
 # Changelog
 <primary-label ref="gas"/>
 
-## 1.6.5
+## 1.8.7
 <secondary-label ref="wip"/>
 ```
 [added] State Tree task to Activate Gameplay Abilities.
 [added] State Tree task to Cancel Gameplay Abilities.
 [added] Dedicated function to fully reset the ASC. Can optionally be used when the pawn restarts.
+[added] Added useful clamp macros for Attribute Sets in C++.
+[added] New State Tree Evaluator for ability activation, which can be used to count the activation streak.
+[added] New State Tree Consideration to provide utility scores based on Ability Cooldowns.
 [improvement] Support for the "InitialCooldown" tag, used to start an ability immediately on cooldown.
 [improvement] Handled runtime retarget possibilities in the "CurrentMontageStop" function, in the ASC.
-[bugfix] Added a check to ensure that default abilities and effect handles are valid, before storing them. 
+[bugfix] Added a check to ensure that default abilities and effect handles are valid, before storing them.
+[bugfix] Ensured that passive abilities are properly cancelled when changing an avatar.
 ```
 
 ## 1.2.0 - 16/11/2024

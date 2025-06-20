@@ -44,7 +44,7 @@ forward**, typically an Arrow Component with **absolute rotation**.
 
 The **Combat Manager** can create a default Forward Reference as needed, but if you are using **[](ipt_overview.md)**, then you 
 should create your own, so you can have the flexibility needed for that integration. For more details, please 
-check [Input Integration](cbt_integration_input.md#forward-reference)
+check [Input Integration](itg_combat_input.md#forward-reference)
 
 <procedure title="Add a Forward Reference component" collapsible="true" default-state="expanded">
     <step>In your <b>Base Character Class</b>, create a new <b>Arrow Component</b>, parented to the <b>Root Component</b>.</step>

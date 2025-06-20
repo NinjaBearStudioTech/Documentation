@@ -1,6 +1,16 @@
 # Changelog
 <primary-label ref="input"/>
 
+## 5.0.5
+<secondary-label ref="wip"/>
+```
+[improvement] Default Combo Check and dedicated Combo Tags/Events for the Default/Hold/Combo handler.
+[improvement] An options to provide hold-durations as Gameplay Event magnitudes.
+[improvement] New Elapsed Time function parameter for Completed and Cancelled handler functions.
+[improvement] Option to add standalone Input Mapping Contexts, not related to an Input Setup.
+[improvement] Exposed a gameplay tag container to the Input Manager that blocks mouse rotation.
+```
+
 ## 5.0.0 - 21/04/2025
 > **Important Changes in this version**
 >

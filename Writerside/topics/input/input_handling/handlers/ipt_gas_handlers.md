@@ -5,7 +5,6 @@ These Input Handlers are meant to be used with the **Gameplay Ability System**, 
 and **Send Gameplay Events**.
 
 ## Accessing the Ability System Component
-
 Input Handlers related to the Gameplay Ability System can retrieve the owner's Ability System Component from the **Input
 Manager**, which is a valid implementation of `AbilitySystemInterface`.
 
@@ -24,7 +23,6 @@ Manager**, which is a valid implementation of `AbilitySystemInterface`.
 </tabs>
 
 ## Activate Abilities
-
 You can activate and interrupt Gameplay Abilities using any methods currently supported by the Gameplay Ability System:
 **Class**, **Ability Tags** and **Input IDs**, each one with its respective Input Handler. However, all these Input 
 Handlers operate in the same way.
@@ -37,12 +35,6 @@ Certain Event Triggers like **Tap** and **Double Tap** need a special check to d
 
 For that purpose, the `NinjaInputAbilityActivationCheck`, which handles these specific cases. You can extend this class
 to handle other specific scenarios.
-
-> **Planning Event Triggers**
->
-> You can create **activate/cancel** behaviors with **one** Input Action configured with **Pressed** and **Released** Event Triggers.
->
-> You can create **toggle** behaviors with **separate** Input Actions configured with a **Pressed** Event Trigger, and an Input Handler set to **toggle**.
 
 These Input Handlers can also send a **Gameplay Event** to an ability that already has been **activated**. This is useful
 to handle scenarios such as a **combo**, as implemented by the **[Combat System](cbt_combos.md)**.
