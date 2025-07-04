@@ -26,7 +26,6 @@ setup, update the **Weapon Manager**, and convert our weapons into **Items** and
         <tip>
             <p><b>Slot/Socket Mapping</b></p>
             <p>Since our weapons are <b>Actors</b>, they are directly attached to the character. We need to map <b>Slots</b> to the <b>Sockets</b> previously created for the original <b>Weapon Manager</b>.</p>
-            <p>For more information about the <b>Slot/Socket Mapping</b>, please check the <a href="inv_equipment.md#sockets">Equipment</a> page.</p>
         </tip>
     </step>
 </procedure>
@@ -51,7 +50,6 @@ setup, update the **Weapon Manager**, and convert our weapons into **Items** and
         <p><b>Scene Component Selector</b></p>
         <p>For a regular character, you can use the <b>Character Mesh</b> selector, or even setting a Gameplay Tag to find another Scene Component.</p>
         <p>For more complex characters, using something like realtime IK Retargeting or multiple possible meshes from a Leader Pose Component, you might want to use the <b>Provider Interface</b> selector.</p>
-        <p>More information about these selectors can be found in the <a href="inv_equipment.md#configuring-assets-for-states">Equipment</a> page.</p>
     </tip>
 </procedure>
 
@@ -121,7 +119,7 @@ setup, update the **Weapon Manager**, and convert our weapons into **Items** and
 </procedure>
 
 <procedure title="Configure the Inventory Manager Component" collapsible="true">
-    <step>Make sure that Ninja Inventory is added to your project and your <b>Asset Manager</b> was configured, as instructed by the <a href="inv_setup.md"/> page.</step>    
+    <step>Make sure that Ninja Inventory is added to your project and your <b>Asset Manager</b> was configured, as instructed by the <a href="inv_inventory_system.md"/> page.</step>    
     <step>
         <p>Create a <b>Player State</b> using <code>NinjaGASPlayerState</code> as the base class (or a subclass of it). Set it to your <b>Game Mode</b></p>
         <tip>You probably have a Player State already configured, from the <a href="p01g02_configure_gas.md">GAS setup guide</a>.</tip>

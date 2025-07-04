@@ -110,4 +110,4 @@ loading on demand, when applicable.
 
 ## Inventory Integration
 To integrate weapons with an Inventory Manager, they must be converted into **Equipment Actors**. To learn how to 
-integrate with **[](inv_overview.md)**, see the **[](cbt_integration_inventory.md)** guide. 
+integrate with **[](inv_overview.md)**, see the **[](itg_combat_inventory.md)** guide. 

@@ -91,7 +91,7 @@ The Global Damage Modifier has two important functions:
 
 > **Ninja Factions Integration**
 >
-> Ninja Combat can be [integrated with Ninja Factions](cbt_integration_factions.md) to automatically disable **Friendly
+> Ninja Combat can be [integrated with Ninja Factions](itg_combat_factions.md) to automatically disable **Friendly
 > Fire**.
 
 ## Handling Damage

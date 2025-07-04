@@ -133,4 +133,4 @@ assign the appropriate Gameplay Tag.
 > **Integration With Ninja Combat**
 >
 > If you are also using **Ninja Combat**, then you can use the same Forward Reference for both systems. For additional
-> details, please check Ninja Combat's [Input Integration page](cbt_integration_input.md#forward-reference).
+> details, please check Ninja Combat's [Input Integration page](itg_combat_input.md#forward-reference).

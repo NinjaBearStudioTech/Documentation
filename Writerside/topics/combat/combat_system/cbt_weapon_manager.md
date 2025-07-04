@@ -100,4 +100,4 @@ You can **add** and **remove** weapons using the Default Weapon Manager, using t
 
 ## Inventory Integration
 The **Weapon Manager** is the perfect bridge to integrate the Combat System with an Inventory Manager. To learn how to 
-integrate with **[](inv_overview.md)**, see the **[](cbt_integration_inventory.md)** guide. 
+integrate with **[](inv_overview.md)**, see the **[](itg_combat_inventory.md)** guide. 
