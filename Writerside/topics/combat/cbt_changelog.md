@@ -1,11 +1,15 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 4.7.22
-<secondary-label ref="wip"/>
-
+## 5.0.0
+> **Important Changes in this version**
+>
+> 1. Due to the changes in the Combo Ability Task, you will need to reconfigure your combo tasks.
+> 2. The native Inventory Integration is disabled, and we'll be restored for Inventory 2.0.
+> 3. The Shoot Ability and Camera Aiming are still work-in-progress.
 ```
-[added] New Shoot ability that can handle Hit-Scans and Projectiles, in a "firearms" context.
+[major] Rewrote the Combo Ability Task, using the native base class, to align with the recent changes in UE 5.6. 
+[added] New Shoot ability that can handle Hit-Scans and Projectiles, in a "firearms" context (wip)
 [added] New Magnitude Calculation that can consider the current combo count.
 [added] New Static Gameplay Cue Notify for Parry Windows.
 [added] New Gameplay Effect Requirement that checks for actual participants in the Combat System.
@@ -31,7 +35,6 @@
 ```
 
 ## 4.1.3 - 25/04/2025
-
 ```
 [added] Added `GetAdditionalCombatMagnitudes` to attacks and casts, allowing more flexibility regarding damage effect magnitudes.
 [improvement] Introduced the `bAllowMeleePushback` property in the Motion Warping Component, to allow melee pushback from the optimal distance.
@@ -40,7 +43,6 @@
 ```
 
 ## 4.0.0 - 21/04/2025
-
 > **Important Changes in this version**
 > 
 > 1. Ability tags now have a `combat` prefix, to ensure better organization of combat-related tags. Make sure to review the Gameplay Tags page for more details.
@@ -48,7 +50,6 @@
 > 3. The Warp Component interface and core implementation was changed to improve setup and tracking of moving targets.
 > 4. Added support to multiple physical surfaces per impact on weapons and projectiles. Since this was a common extension point in projects, evaluating the new solution is recommended.
 > 5. The combat ViewModels are now to be used in conjunction with the Combat View Model Resolver and won't require any base combat widgets. The "Widget" damage handler has been removed.
-
 ```
 [major] The Motion Target setup was changed to track ongoing targets with more control.
 [major] A viewmodel Resolver that removes the need of using combat-related widgets. Widgets will be deprecated and removed in a future release.
