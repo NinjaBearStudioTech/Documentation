@@ -8,6 +8,6 @@ Each topic in this section will delve into the three main pillars of functionali
 >
 > Before exploring these features, ensure that the Gameplay Ability System framework is added and configured in your project!
 >
-> For more information on setting up GAS for the Inventory System, please refer to the [](inv_setup.md) section.
+> For more information on setting up GAS for the Inventory System, please refer to the [](int_setup.md) section.
 {style="note"}
 
