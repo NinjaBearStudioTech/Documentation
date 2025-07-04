@@ -5,7 +5,7 @@ To create our **secondary weapon**, we should have **Ninja Inventory** configure
 setup, update the **Weapon Manager**, and convert our weapons into **Items** and **Equipment**.
 
 <procedure title="Add the Inventory Attribute Set">
-    <step>Create a <b>Data Table</b> for <b>Inventory Attributes</b>, using the base data from <a href="inv_attributes.md"/>.</step>
+    <step>Create a <b>Data Table</b> for <b>Inventory Attributes</b>, using the base data from <a href="inv_gameplay_attributes.md"/>.</step>
     <step>Change the initial <b>Backpack Attribute</b> to <code>20</code>, or any other value that you prefer.</step>
     <step>
         <p>Add the <b>Inventory Attribute Set</b> to the player, via the <b>Ability Definition</b>.</p>
