@@ -42,7 +42,7 @@ For example, it excludes container placement memory since pickup placement will 
 {style="note"}
 
 ## Event Payload
-This fragment emits the following event, using InventoryItemDropPayload as the payload structure.
+This fragment emits the following event, using `InventoryItemDropPayload` as the payload structure.
 
 | Event                                       | Description                                                                      |
 |---------------------------------------------|----------------------------------------------------------------------------------|

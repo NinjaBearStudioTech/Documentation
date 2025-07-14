@@ -37,10 +37,10 @@ This fragment exposes the following operations.
 | `Repair`               | Restores the item's durability to full.                           |
 
 ## Memory
-This fragment uses `FInventoryItemFragmentDurabilityMemory`, to store the current **durability**.
+This fragment uses `InventoryItemFragmentDurabilityMemory`, to store the current **durability**.
 
 ## Event Payload
-This fragment emits the following events, using `FInventoryItemDurabilityPayload` as the payload structure.
+This fragment emits the following events, using `InventoryItemDurabilityPayload` as the payload structure.
 
 | Event                                    | Description                              |
 |------------------------------------------|------------------------------------------|

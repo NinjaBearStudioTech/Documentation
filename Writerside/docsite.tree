@@ -116,6 +116,11 @@
             <toc-element topic="cbt_artificial_intelligence.md"/>
             <toc-element topic="cbt_character_animation.md"/>
         </toc-element>
+        <toc-element topic="cbt_integration.md">
+            <toc-element topic="itg_combat_factions.md"/>
+            <toc-element topic="itg_combat_input.md"/>
+            <toc-element topic="itg_combat_inventory.md"/>
+        </toc-element>        
         <toc-element topic="cbt_troubleshooting.md"/>
         <toc-element topic="cbt_changelog.md"/>
         <toc-element topic="cbt_version_updates.md"/>
@@ -215,10 +220,11 @@
                 <toc-element topic="inv_fragment_economy.md"/>
                 <toc-element topic="inv_fragment_equipment.md"/>
                 <toc-element topic="inv_fragment_gameplay_effect.md"/>
+                <!-- <toc-element topic="inv_fragment_loot.md"/> -->
                 <toc-element topic="inv_fragment_quality.md"/>
                 <toc-element topic="inv_fragment_stack.md"/>
                 <toc-element topic="inv_fragment_user_interface.md"/>
-                <toc-element topic="inv_fragment_weight.md"/>
+                <!-- <toc-element topic="inv_fragment_weight.md"/> -->
             </toc-element>
         </toc-element>
         <toc-element toc-title="Equipment System">
@@ -247,12 +253,4 @@
         </toc-element>
         <toc-element topic="inv_changelog.md"/>
     </toc-element>
-
-    <!-- Integrations -->
-    <toc-element topic="cbt_integration.md">
-        <toc-element topic="itg_combat_factions.md"/>
-        <toc-element topic="itg_combat_input.md"/>
-        <toc-element topic="itg_combat_inventory.md"/>
-    </toc-element>
-    
 </instance-profile>
