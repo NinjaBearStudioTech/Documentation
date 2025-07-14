@@ -72,18 +72,18 @@ owner that does not implement the interface, having its **Pawn** implementing th
 While initializing, the Inventory will go through several states, each representing a distinct step in the process. The  
 current state can be viewed through the [**Gameplay Debugger**](inv_gameplay_debugger.md).
 
-| State                           | Description                                                                      |
-|---------------------------------|----------------------------------------------------------------------------------|
-| NotInitialized                  | Initialization has not started yet.                                              |
-| WaitingForAbilitySystem         | Inventory is waiting for the Ability System Component (ASC) to become available. |
-| BoundToAbilitySystem            | Inventory is connected to the ASC and will begin initializing items.             |
-| InitializingFromSaveGame        | Inventory is loading data from a saved game file.                                |
-| InitializedFromSaveGame         | Inventory successfully initialized using saved game data.                        |
-| InitializingFromDefaultSettings | Inventory is initializing from default containers and items.                     |
-| InitializedFromDefaultSettings  | Inventory successfully initialized using default settings.                       |
-| InitializingItems               | Items and fragments are being fully initialized.                                 |
-| Initialized                     | Inventory has completed initialization and is ready to use.                      |
-| FailedToInitialize              | An error occurred and the inventory failed to initialize.                        |
+| State                             | Description                                                                      |
+|-----------------------------------|----------------------------------------------------------------------------------|
+| `NotInitialized`                  | Initialization has not started yet.                                              |
+| `WaitingForAbilitySystem`         | Inventory is waiting for the Ability System Component (ASC) to become available. |
+| `BoundToAbilitySystem`            | Inventory is connected to the ASC and will begin initializing items.             |
+| `InitializingFromSaveGame`        | Inventory is loading data from a saved game file.                                |
+| `InitializedFromSaveGame`         | Inventory successfully initialized using saved game data.                        |
+| `InitializingFromDefaultSettings` | Inventory is initializing from default containers and items.                     |
+| `InitializedFromDefaultSettings`  | Inventory successfully initialized using default settings.                       |
+| `InitializingItems`               | Items and fragments are being fully initialized.                                 |
+| `Initialized`                     | Inventory has completed initialization and is ready to use.                      |
+| `FailedToInitialize`              | An error occurred and the inventory failed to initialize.                        |
 
 You can query the current initialization state using the following functions from the Inventory Manager:
 
