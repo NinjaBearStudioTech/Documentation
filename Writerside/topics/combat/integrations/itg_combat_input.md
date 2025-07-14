@@ -1,5 +1,5 @@
 # Input Integration
-<primary-label ref="integrations"/>
+<primary-label ref="combat"/>
 
 There is no direct integration between **Ninja Combat** and **Ninja Input**. However, there are some synergies worth
 knowing, between both systems.

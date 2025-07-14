@@ -203,19 +203,20 @@
         </toc-element>
         <toc-element toc-title="Inventory System">
             <toc-element topic="inv_inventory_management.md"/>
-            <toc-element topic="inv_inventory_containers.md"/>
-            <toc-element topic="inv_inventory_items.md"/>
-            <toc-element topic="inv_inventory_fragments.md">
-                <toc-element topic="inv_fragment_activation.md"/>
-                <toc-element topic="inv_fragment_attributes.md"/>
+            <toc-element topic="inv_inventory_containers.md">
+                <toc-element topic="inv_layout_simple.md"/>
+                <toc-element topic="inv_layout_equipment.md"/>
+            </toc-element>
+            <toc-element topic="inv_inventory_items.md">
                 <toc-element topic="inv_fragment_consumable.md"/>
                 <toc-element topic="inv_fragment_container.md"/>
+                <toc-element topic="inv_fragment_drop.md"/>
                 <toc-element topic="inv_fragment_durability.md"/>
                 <toc-element topic="inv_fragment_economy.md"/>
+                <toc-element topic="inv_fragment_equipment.md"/>
                 <toc-element topic="inv_fragment_gameplay_effect.md"/>
-                <toc-element topic="inv_fragment_loot.md"/>
-                <toc-element topic="inv_fragment_pickup.md"/>
                 <toc-element topic="inv_fragment_quality.md"/>
+                <toc-element topic="inv_fragment_stack.md"/>
                 <toc-element topic="inv_fragment_user_interface.md"/>
                 <toc-element topic="inv_fragment_weight.md"/>
             </toc-element>
@@ -239,7 +240,6 @@
             <toc-element topic="inv_mvvm_fragments.md"/>
         </toc-element>
         <toc-element toc-title="Advanced Topics">
-            <toc-element topic="inv_container_layouts.md"/>
             <toc-element topic="inv_item_events.md"/>
             <toc-element topic="inv_save_and_load.md"/>
             <toc-element topic="inv_advanced_fragments.md"/>
