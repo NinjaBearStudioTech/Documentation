@@ -58,7 +58,7 @@ removed at runtime. To know more about containers, please check the correspondin
 
 Containers can be managed using the following transactional functions:
 
-| Method                     | Authoritative | Description                                                                                                                |
+| Function                   | Authoritative | Description                                                                                                                |
 |----------------------------|---------------|----------------------------------------------------------------------------------------------------------------------------|
 | `AddContainer`             | Yes           | Adds a container from a `ContainerData` asset. Returns a GUID for the new instance.                                        |
 | `AddContainerWithCallback` | Yes           | Adds a container and invokes a callback with direct access to the new Container Instance. Returns a GUID for the instance. |
@@ -66,7 +66,7 @@ Containers can be managed using the following transactional functions:
 
 Containers can be queried using the following read-only functions:
 
-| Method                 | Description                                                                    |
+| Function               | Description                                                                    |
 |------------------------|--------------------------------------------------------------------------------|
 | `CountContainers`      | Returns the number of containers currently assigned to this inventory.         |
 | `GetContainer`         | Finds and returns a container by its unique GUID.                              |
