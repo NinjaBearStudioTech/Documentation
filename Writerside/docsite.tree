@@ -231,7 +231,6 @@
         <toc-element toc-title="Equipment System">
             <toc-element topic="inv_equipment_management.md"/>
             <toc-element topic="inv_equipment_instances.md"/>
-            <toc-element topic="inv_equipment_activation.md"/>
         </toc-element>
         <toc-element toc-title="Gameplay">
             <toc-element topic="inv_gameplay_attributes.md"/>
