@@ -1,17 +1,16 @@
 # G.A.S. Handlers
 <primary-label ref="input"/>
 
-These Input Handlers are meant to be used with the **Gameplay Ability System**, to **Activate** or **Cancel** Abilities
-and **Send Gameplay Events**.
+These Input Handlers are designed to work with the **Gameplay Ability System (GAS)**.
 
 ## Accessing the Ability System Component
-Input Handlers related to the Gameplay Ability System can retrieve the owner's Ability System Component from the **Input
-Manager**, which is a valid implementation of `AbilitySystemInterface`.
+Input Handlers related to GAS can retrieve the owner's Ability System Component (ASC) via the **Input Manager**, which 
+implements `AbilitySystemInterface`.
 
 > **ASC Source**
-> 
-> By default, the Input Manager provides the Ability System Component assigned to the **Pawn** related to it, regardless
-> if it was added to a **Controller** or a **Pawn**.
+>
+> By default, the Input Manager provides the ASC assigned to the **Pawn** associated with it, even if the manager is added to a **Controller** or a **Pawn**.
+{style="note"}
 
 <tabs group="sample">
     <tab title="Blueprint" group-key="bp">
@@ -22,55 +21,55 @@ Manager**, which is a valid implementation of `AbilitySystemInterface`.
     </tab>
 </tabs>
 
-## Activate Abilities
-You can activate and interrupt Gameplay Abilities using any methods currently supported by the Gameplay Ability System:
-**Class**, **Ability Tags** and **Input IDs**, each one with its respective Input Handler. However, all these Input 
-Handlers operate in the same way.
+## Ability Activation
+Gameplay Abilities can be activated using any of the standard GAS mechanisms: **Class**, **Ability Tags**, or **Input IDs**. 
+Each method has a corresponding Input Handler, but all operate under the same behavior model:
 
-- By default, they react to the `Triggered` event, usually from a `Pressed` Input Trigger. That **Activates** the ability.
-- If set to **Toggle**, on a second successful `Pressed` event, the Input Handler will check if an Ability is active and, if so, **cancel** it.
--Alternatively, adding a `Released` Input Trigger also will **cancel** the ability.
+- On a **Pressed** Input Trigger, the ability will activate.
+- If the ability is **Momentary**, it will be cancelled when a **Released** trigger is received.
+- If the ability is **Toggled**, a second **Pressed** trigger will cancel the ability.
 
-Certain Event Triggers like **Tap** and **Double Tap** need a special check to determine if the actuation truly happened.
+Some triggers, such as **Tap** and **Double Tap**, require more nuanced handling to detect the intended behavior. For 
+those cases, use the `NinjaInputAbilityActivationCheck` class, which you can subclass to define custom logic.
 
-For that purpose, the `NinjaInputAbilityActivationCheck`, which handles these specific cases. You can extend this class
-to handle other specific scenarios.
+### Toggled and Momentary Tags
+All Ability Activation Handlers automatically detect the following tags on the activating ability:
 
-These Input Handlers can also send a **Gameplay Event** to an ability that already has been **activated**. This is useful
-to handle scenarios such as a **combo**, as implemented by the **[Combat System](cbt_combos.md)**.
+- `Input.Ability.Momentary`: Activates on **Pressed** and ends on **Released**.
+- `Input.Ability.Toggled`: Activates on the first **Pressed** and cancels on a second **Pressed**, if still active.
 
-This option is enabled by the **SendEventIfActive** property. If enabled, the following properties will become available.
+### Sending Events to Active Abilities
+All Ability Activation Handlers optionally support sending a **Gameplay Event** to an **already active** ability. This 
+feature is controlled via the **SendEventIfActive** property. If enabled, the following properties are used:
 
-| Property                | Purpose                                     |
-|-------------------------|---------------------------------------------|
-| ActiveEventTag          | Gameplay Tag representing the Event.        |
-| Trigger Event Locally   | Triggers the Event on the **Local Client**. |
-| Trigger Event On Server | Triggers the event on the **Server**.       |
+| Property                | Purpose                                      |
+|-------------------------|----------------------------------------------|
+| ActiveEventTag          | Gameplay Tag representing the event.         |
+| Trigger Event Locally   | Triggers the event on the **local client**.  |
+| Trigger Event On Server | Triggers the event on the **server**.        |
 
-The **Event Payload** will be configured like the one send from the **[Send Gameplay Event](#send-gameplay-event)** Input Handler.
+The payload follows the same structure used in the **[Send Gameplay Event](#send-gameplay-event)** Input Handler.
 
-## Cancel Abilities
+## Ability Interruption
+Abilities can be **interrupted** using the same methods as activation: **Class**, **Ability Tags**, and **Input IDs**.
 
-Abilities can be **interrupted** using the same methods supported for activation, **Class**, **Ability Tags** and 
-**Input IDs**.
+For conditional interruption, these handlers expose a `CanCancelAbility` function, called on each cancellation attempt. 
+Returning `true` will allow the ability to be cancelled.
 
 ## Target Confirmation
+Some abilities may wait for the player to **Confirm** or **Cancel** a target. GAS exposes specific functions for this 
+purpose, and the following Input Handlers support it:
 
-Gameplay Abilities can wait for the player to **Confirm** or **Cancel** a target. This requires specific functions in 
-the **Ability System Component** to be called. For that, the following Input Handlers are available:
-
-- **Ability Target Confirm**: Sends a Confirmation Input to the Ability Component.
-- **Ability Target Cancel**: Sends a Cancellation Input to the Ability Component.
+- **Ability Target Confirm**: Sends a **Confirm** signal to the Ability Component.
+- **Ability Target Cancel**: Sends a **Cancel** signal to the Ability Component.
 
 ## Send Gameplay Event
-
-Sends a **Gameplay Event** to the owner's **Ability System Component**. Events sent from this Input Handler will contain
-the following information in their **Payload**
+This Input Handler sends a **Gameplay Event** to the owner's ASC. The payload contains the following parameters:
 
 | Parameter       | Value                                      |
 |-----------------|--------------------------------------------|
-| Instigator      | Actor that triggered the Input.            |
-| Target          | Actor that triggered the Input.            |
-| EventTag        | Gameplay Tag provided to the Handler.      |
-| Event Magnitude | Magnitude of the Input Value.              |
+| Instigator      | Actor that triggered the input.            |
+| Target          | Actor that triggered the input.            |
+| EventTag        | Gameplay Tag configured on the handler.    |
+| Event Magnitude | Magnitude of the input value.              |
 | Optional Object | The Input Action that triggered the event. |
