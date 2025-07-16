@@ -225,7 +225,7 @@
                 <toc-element topic="inv_fragment_quality.md"/>
                 <toc-element topic="inv_fragment_stack.md"/>
                 <toc-element topic="inv_fragment_user_interface.md"/>
-                <!-- <toc-element topic="inv_fragment_weight.md"/> -->
+                <toc-element topic="inv_fragment_weight.md"/>
             </toc-element>
         </toc-element>
         <toc-element toc-title="Equipment System">
