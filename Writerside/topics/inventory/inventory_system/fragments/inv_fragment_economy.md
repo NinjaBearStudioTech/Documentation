@@ -19,15 +19,34 @@ attribute set), and may broadcast events based on inventory changes (such as add
 ## Properties
 This fragment has the following property.
 
-| Property                  | Description                                                        |
-|---------------------------|--------------------------------------------------------------------|
-| `CanBeBought`             | Whether the item can be bought by a target inventory manager.      |
-| `RemoveWhenBought`        | If `true`, removes the item from the source when it's bought.      |
-| `BuyPrice`                | Price for one unit of the item (if `CanBeBought` is `true`).       |
-| `CanBeSold`               | Whether the item can be sold to a target inventory manager.        |
-| `SellPrice`               | Price for one unit of the item (if `CanBeSold` is `true`).         |
-| `WealthChangeEffectClass` | Gameplay Effect class applied when wealth changes occur.           |
-| `WealthAttribute`         | Gameplay attribute used to read and apply wealth during purchases. |
+| Property                  | Description                                                                                           |
+|---------------------------|-------------------------------------------------------------------------------------------------------|
+| `CanBeBought`             | Whether the item can be bought by a target inventory manager.                                         |
+| `RemoveWhenBought`        | If `true`, removes the item from the source when it's bought.                                         |
+| `BuyPrice`                | Price for one unit of the item (if `CanBeBought` is `true`).                                          |
+| `CanBeSold`               | Whether the item can be sold to a target inventory manager.                                           |
+| `SellPrice`               | Price for one unit of the item (if `CanBeSold` is `true`).                                            |
+| `WealthAttribute`         | Gameplay attribute used to read and apply wealth during purchases.                                    |
+| `WealthChangeMode`        | Determines if wealth is changed using a Gameplay Effect or directly modifying the Gameplay Attribute. |
+| `WealthChangeEffectClass` | Gameplay Effect class applied when wealth changes occur.                                              |
+
+While deciding the best `WealthChangeMode` for your project, please consider the following table with **pros** and **cons**,
+so you can consider them against your design requirements.
+
+- **Gameplay Effect**
+    - :white_check_mark: Supports Gameplay Effect prediction systems.
+    - :white_check_mark: Integrates with Attribute Set pre-change and post-change hooks.
+    - :white_check_mark: Allows extensions via tags, conditions, and custom calculations.
+    - :x: Slightly more expensive in terms of performance.
+
+- **Direct Attribute**
+    - :white_check_mark: Simple and efficient; applies changes directly.
+    - :white_check_mark: Requires no additional assets or setup.
+    - :x: Bypasses modifiers and other GAS mechanics.
+    - :x: Does not trigger attribute gameplay events or tag-based effects.
+
+Use **Gameplay Effect** when you want rich GAS integration and modifiers.
+Use **Direct Attribute** when you need quick, lightweight transactions without complex behavior.
 
 ## Operations
 This fragment exposes the following operations.
