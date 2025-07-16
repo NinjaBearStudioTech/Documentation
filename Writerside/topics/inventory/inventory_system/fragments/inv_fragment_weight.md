@@ -6,7 +6,7 @@ It integrates with **[stack size](inv_fragment_stack.md)** to calculate total we
 when encumbrance limits are exceeded.
 
 This fragment interacts with Gameplay Attributes using a lightweight approach based on **attribute aggregators**, avoiding 
-the need for persistent Gameplay Effects.
+the need for persistent Gameplay Effects. By default, it synchronizes with the default [**Encumbrance Attribute**](inv_gameplay_attributes.md).
 
 > **Encumbrance Tracking**
 >
