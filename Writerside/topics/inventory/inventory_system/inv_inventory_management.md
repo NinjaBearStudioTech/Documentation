@@ -99,6 +99,7 @@ Items can be queried using the following read-only functions:
 | Method                | Description                                                                                          |
 |-----------------------|------------------------------------------------------------------------------------------------------|
 | `CountItems`          | Returns the number of item instances in the inventory (does not account for stack sizes or volumes). |
+| `GetAllItems`         | Retrieves all items stored in the Inventory.                                                         |
 | `GetItemsByData`      | Retrieves all items that match a specific `ItemDataAsset`.                                           |
 | `GetItemsByQuery`     | Retrieves all items that match a `GameplayTagQuery`.                                                 |
 | `GetFirstItemByQuery` | Returns the first item that matches a given `GameplayTagQuery`.                                      |

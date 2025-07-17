@@ -51,18 +51,18 @@ Use **Direct Attribute** when you need quick, lightweight transactions without c
 ## Operations
 This fragment exposes the following operations.
 
-| Function            | Description                                                         |
-|---------------------|---------------------------------------------------------------------|
-| `CanBeBought`       | Returns `true` if the item is marked as buyable.                    |
-| `CanBeSold`         | Returns `true` if the item is marked as sellable.                   |
-| `CanBuy`            | Checks if the target manager has enough wealth to buy the item.     |
-| `CanSell`           | Checks if the item can be sold by the source manager to the target. |
-| `GetBuyPrice`       | Returns the unitary buy price.                                      |
-| `GetSellPrice`      | Returns the unitary sell price.                                     |
-| `GetTotalBuyPrice`  | Returns total buy price considering stack.                          |
-| `GetTotalSellPrice` | Returns total sell price considering stack.                         |
-| `Buy`               | Transfers item to the target and deducts wealth, if valid.          |
-| `Sell`              | Transfers item to the target and adds wealth to source, if valid.   |
+| Function            | Description                                                                             |
+|---------------------|-----------------------------------------------------------------------------------------|
+| `CanBeBought`       | Returns `true` if the item is marked as buyable.                                        |
+| `CanBeSold`         | Returns `true` if the item is marked as sellable and does not have the **Bound** trait. |
+| `CanBuy`            | Checks if the target manager has enough wealth to buy the item.                         |
+| `CanSell`           | Checks if the item can be sold by the source manager to the target.                     |
+| `GetBuyPrice`       | Returns the unitary buy price.                                                          |
+| `GetSellPrice`      | Returns the unitary sell price.                                                         |
+| `GetTotalBuyPrice`  | Returns total buy price considering stack.                                              |
+| `GetTotalSellPrice` | Returns total sell price considering stack.                                             |
+| `Buy`               | Transfers item to the target and deducts wealth, if valid.                              |
+| `Sell`              | Transfers item to the target and adds wealth to source, if valid.                       |
 
 ## Memory
 This fragment does not define or use a memory struct. Instead, it interacts with other systems such as the Stack fragment 
