@@ -75,8 +75,8 @@ This runtime object is responsible for:
 - Managing updates to layout and internal state.
 - Participating in save/load operations.
 
-Each container instance is assigned a unique **GUID**, which can be used to query, reference, or remove it dynamically  
-at runtime via the **[Inventory Manager](inv_inventory_management.md#container-management)**.
+Each container instance is assigned a unique **GUID**, which can be used to query, reference, or remove it dynamically at 
+runtime via the **[Inventory Manager](inv_inventory_management.md#container-management)**.
 
 For **advanced use cases**, you can override the behavior of container instances by specifying a custom class in the 
 container's Data Asset. This allows you to extend or replace native _runtime_ functionality to fit your game's specific 
