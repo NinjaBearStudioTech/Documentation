@@ -25,16 +25,18 @@ This fragment has the following properties.
 ## Operations
 This fragment exposes the following operations.
 
-| Function               | Description                                                       |
-|------------------------|-------------------------------------------------------------------|
-| `CanBreak`             | Returns `true` if the item is allowed to break.                   |
-| `IsBroken`             | Returns `true` if the given item instance is currently broken.    |
-| `IsIndestructible`     | Returns `true` if this fragment marks the item as indestructible. |
-| `GetMaximumDurability` | Returns the maximum durability value defined in this fragment.    |
-| `GetDurability`        | Returns the current durability of the given item instance.        |
-| `SetDurability`        | Sets the durability value of the item.                            |
-| `AddWear`              | Decreases durability by a given wear amount.                      |
-| `Repair`               | Restores the item's durability to full.                           |
+| Function                         | Description                                                           |
+|----------------------------------|-----------------------------------------------------------------------|
+| `CanBreak`                       | Returns `true` if the item is allowed to break.                       |
+| `IsBroken`                       | Returns `true` if the given item instance is currently broken.        |
+| `IsBrokenFromDefaultMemory`      | Returns whether the specified default item data is in a broken state. |
+| `IsIndestructible`               | Returns `true` if this fragment marks the item as indestructible.     |
+| `GetMaximumDurability`           | Returns the maximum durability value defined in this fragment.        |
+| `GetDurability`                  | Returns the current durability of the given item instance.            |
+| `GetDurabilityFromDefaultMemory` | Provides the current durability for a default item data structure.    |
+| `SetDurability`                  | Sets the durability value of the item.                                |
+| `AddWear`                        | Decreases durability by a given wear amount.                          |
+| `Repair`                         | Restores the item's durability to full.                               |
 
 ## Memory
 This fragment uses `InventoryItemFragmentDurabilityMemory`, to store the current **durability**.
