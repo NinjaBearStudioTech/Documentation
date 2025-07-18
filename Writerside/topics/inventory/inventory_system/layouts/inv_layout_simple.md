@@ -28,8 +28,8 @@ This layout uses the `Index` **position type**, where each item's position is re
 ## Slot Count Types
 The number of available slots can be determined in two different ways:
 
-- **Fixed Property** – A constant value defined directly in the asset.
-- **Gameplay Attribute** – A dynamic value pulled from an owning `AttributeSet` (e.g., an “Inventory Size” attribute).
+- **Fixed Property**: A constant value defined directly in the asset.
+- **Gameplay Attribute**: A dynamic value pulled from an owning `AttributeSet`.
 
 This allows for both static and player-scaled inventories.
 

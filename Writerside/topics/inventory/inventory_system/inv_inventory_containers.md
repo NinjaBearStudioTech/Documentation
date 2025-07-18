@@ -60,7 +60,7 @@ layout can have its own exclusive properties, every layout defines at least the 
 Choosing the correct **position type** is essential, as it defines how items are stored and retrieved from container instances.
 
 - **Index**: Represents a single numeric index. Ideal for list-like containers or sequences.
-- **Grid**: Represents a 2D coordinate (X, Y). Ideal for spatial inventories and jigsaw layouts.
+- **Grid**: Represents a 2D coordinate (X, Y). Ideal for spatial inventories where item dimensions are relevant.
 - **Single**: Allows only one item. Ideal for simple slot-based systems like equipment containers.
 
 The system provides several built-in layouts you can use right away. You can also implement your own by subclassing 

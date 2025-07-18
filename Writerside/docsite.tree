@@ -212,6 +212,7 @@
             <toc-element topic="inv_inventory_containers.md">
                 <toc-element topic="inv_layout_simple.md"/>
                 <toc-element topic="inv_layout_equipment.md"/>
+                <toc-element topic="inv_layout_spatial.md"/>
             </toc-element>
             <toc-element topic="inv_inventory_items.md">
                 <toc-element topic="inv_fragment_consumable.md"/>

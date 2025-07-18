@@ -9,8 +9,8 @@ with state transitions managed through gameplay tags.
 
 > **Equipment Integration**
 >
-> This layout is designed to work alongside the `UItemFragment_Equipment` fragment and requires an **Equipment Manager**
-> component (`UNinjaEquipmentManagerComponent`) on the owning character.
+> This layout is designed to work alongside the [**Equipment Fragment**](inv_fragment_equipment.md) and requires an 
+> [**Equipment Manager**](inv_equipment_management.md) component on the owning character.
 {style="note"}
 
 This layout provides:
