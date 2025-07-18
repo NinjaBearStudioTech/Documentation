@@ -34,7 +34,7 @@ This fragment exposes the following operations.
 | `TryMergeIntoExistingStacks` | Attempts to merge the item's stack into existing incomplete stacks. |
 
 ## Memory
-This fragment uses `InventoryItemFragmentStackMemory ` to store the current **stack size**.
+This fragment uses `InventoryItemFragmentStackMemory` to store the current **stack size**.
 
 ## Event Payload
 This fragment emits the following event, using `InventoryItemStackAndQuantityPayload` as the payload structure.

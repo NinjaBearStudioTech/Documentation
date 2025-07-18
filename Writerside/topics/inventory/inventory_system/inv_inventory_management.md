@@ -58,11 +58,12 @@ removed at runtime. To know more about containers, please check the correspondin
 
 Containers can be managed using the following transactional functions:
 
-| Function                   | Authoritative | Description                                                                                                                |
-|----------------------------|---------------|----------------------------------------------------------------------------------------------------------------------------|
-| `AddContainer`             | Yes           | Adds a container from a `ContainerData` asset. Returns a GUID for the new instance.                                        |
-| `AddContainerWithCallback` | Yes           | Adds a container and invokes a callback with direct access to the new Container Instance. Returns a GUID for the instance. |
-| `RemoveContainer`          | Yes           | Removes a container using its GUID.                                                                                        |
+| Function                   | Authoritative | Description                                                                                                                             |
+|----------------------------|---------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| `AddContainer`             | Yes           | Adds a container from a `ContainerData` asset. Returns a GUID for the new instance.                                                     |
+| `AddContainerWithCallback` | Yes           | Adds a container and invokes a callback with direct access to the new Container Instance. Returns a GUID for the instance.              |
+| `AddNestedContainer`       | Yes           | Adds a nested container related to an inventory item. Useful to represents items that are container themselves, like _pots_ or _boxes_. |
+| `RemoveContainer`          | Yes           | Removes a container using its GUID.                                                                                                     |
 
 Containers can be queried using the following read-only functions:
 
@@ -70,9 +71,10 @@ Containers can be queried using the following read-only functions:
 |------------------------|--------------------------------------------------------------------------------|
 | `CountContainers`      | Returns the number of containers currently assigned to this inventory.         |
 | `GetContainer`         | Finds and returns a container by its unique GUID.                              |
-| `GetContainersByData`  | Returns all container instances created from a specific `ContainerData` asset. |
 | `GetDefaultContainers` | Retrieves containers that are flagged as default for this inventory instance.  |
+| `GetContainersByData`  | Returns all container instances created from a specific `ContainerData` asset. |
 | `GetContainersByQuery` | Retrieves all containers matching a `GameplayTagQuery`.                        |
+| `GetContainersByItem`  | Retrieves all containers owned by an Inventory Item (nested containers).       |
 
 ## Item Management
 Even though items are ultimately stored in their assigned containers, the Inventory Manager is completely aware of them,

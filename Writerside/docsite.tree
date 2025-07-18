@@ -222,6 +222,7 @@
                 <toc-element topic="inv_fragment_equipment.md"/>
                 <toc-element topic="inv_fragment_gameplay_effect.md"/>
                 <toc-element topic="inv_fragment_loot.md"/>
+                <toc-element topic="inv_fragment_nested_container.md"/>
                 <toc-element topic="inv_fragment_quality.md"/>
                 <toc-element topic="inv_fragment_stack.md"/>
                 <toc-element topic="inv_fragment_user_interface.md"/>
