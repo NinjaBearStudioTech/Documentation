@@ -65,7 +65,7 @@ The **Inventory Item View Model** exposes **Item Instances** and **Item Views** 
     </step>
     <step>
         <p>Add the <b>Inventory Item View Model</b> to the widget. Set its <b>Creation Type</b> to <code>Resolver</code>, and choose <code>Inventory View Model Resolver</code> as the resolver class.</p>
-        <img src="inv_ui_mvvm_creation_details.png" alt="Item View Model Creation" border-effect="line"/>
+        <img src="inv_ui_mvvm_item_creation_details.png" alt="Item View Model Creation" border-effect="line"/>
     </step>
     <step>
         <p>
@@ -76,7 +76,7 @@ The **Inventory Item View Model** exposes **Item Instances** and **Item Views** 
     <step><b>Compile and save</b> your widget, so all View Model entries will be available in the <b>View Bindings</b> panel.</step>
     <step>
         <p>In the <b>View Bindings</b> panel, configure the bindings, setting the <b>Item Instance</b> and <b>Item View</b> from the <b>Item View Model</b> to each <b>Fragment View Model</b>.</p>
-        <img src="inv_ui_mvvm_data_pipeline.png" alt="Data Pipeline" width="800" border-effect="line"/>
+        <img src="inv_ui_mvvm_item_data_pipeline.png" alt="Data Pipeline" width="800" border-effect="line"/>
         <note>The base <b>Item Widget</b> provided by the framework can do that automatically for you. Later we will look into replacing this step.</note>
     </step>
     <step>
@@ -96,12 +96,51 @@ propagates item data to all child View Models.
     <step>Reparent your Item Widget to <code>NinjaInventoryItemWidget</code>.</step>
     <step>
          <p>Update your ViewModel bindings so that the <b>Item View Model</b> updates the functions <code>SetItemInstance</code> and <code>SetItemView</code>, which are provided by the base class.</p>
-        <img src="inv_ui_mvvm_data_pipeline_base_widget.png" alt="Data Pipeline with Base Widget" width="800" border-effect="line"/>
+        <img src="inv_ui_mvvm_item_data_pipeline_base_widget.png" alt="Data Pipeline with Base Widget" width="800" border-effect="line"/>
     </step>
 </procedure>
 
 ### Container View Model
 
+With an **Item Widget** ready, the next natural step is to prepare a **Container Widget** that represents an **Inventory 
+Container** in the UI, such as a _Backpack_ or _Equipment Panel_.
+
+The steps below will guide you through setting up a fully reactive container using the **Inventory Container View Model** 
+and the **ViewModel Extension** workflow.
+
+<procedure title="Preparing the Backpack Container Widget" collapsible="true" default-state="expanded">
+    <step>
+        <p>Create a new Container Widget by extending from <code>UserWidget</code>.</p>
+        <note>Ninja Inventory provides a base <b>Container Widget</b>, but for this example, we’ll build it from scratch to better understand the concepts involved.</note>
+    </step>
+    <step>
+        <p>Add the <b>Inventory Container View Model</b> to the widget. Set its <b>Creation Type</b> to <code>Resolver</code>, and select <code>Inventory View Model Resolver</code> as the resolver class.</p>
+        <img src="inv_ui_mvvm_container_creation_details.png" alt="Container View Model Creation" border-effect="line"/>
+    </step>
+    <step>
+        <p>In your <b>Widget Graph</b>, initialize the Container View Model by retrieving the desired <b>Container Instance</b> from the <b>Inventory Manager</b> and passing it to the ViewModel.</p>
+        <img src="inv_ui_mvvm_container_initialization.png" alt="Container Initialization" width="800" border-effect="line"/>
+    </step>
+    <step>
+        <p>Design your Container Widget layout using a <b>WrapBox</b> to display items. Adjust its size, spacing, and style as needed. Once the layout is complete, click <b>Add ViewModel Extension</b>.</p>
+    </step>
+    <step>
+        <p>In the ViewModel Extension panel, set the <b>Entry Widget Class</b> to your <b>Item Widget</b>, and assign the <b>Inventory Item View Model</b> as the <b>Entry ViewModel</b>.</p>
+        <img src="inv_ui_mvvm_container_mvvm_extension.png" alt="Container ViewModel Extension" width="800" border-effect="line"/>
+    </step>
+    <step>
+        <p><b>Compile and save</b> your widget to ensure the new ViewModel Extension is registered and accessible in the <b>View Bindings</b> panel.</p>
+    </step>
+    <step>
+        <p>In the <b>View Bindings</b> panel, connect the <code>GetItems</code> function from the <b>Container View Model</b> to the <code>SetItems</code> function provided by the <b>ViewModel Extension</b>.</p>
+        <img src="inv_ui_mvvm_container_bindings.png" alt="Container List Binding" width="800" border-effect="line"/>
+    </step>
+    <note>
+        <p><b>Representing Empty Slots</b></p>
+        <p>Grid-based UIs (e.g., a Backpack) may benefit from displaying empty slots, while list-style containers (e.g., Loot Lists) typically should not.</p>
+        <p>This behavior is controlled by the <code>bFillEmptyEntries</code> setting in the <b>Container View Model</b>.</p>
+    </note>
+</procedure>
 
 
 ## Widgets
