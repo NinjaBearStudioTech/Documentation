@@ -134,18 +134,21 @@ and the **ViewModel Extension** workflow.
     <step>
         <p>In the <b>View Bindings</b> panel, connect the <code>GetItems</code> function from the <b>Container View Model</b> to the <code>SetItems</code> function provided by the <b>ViewModel Extension</b>.</p>
         <img src="inv_ui_mvvm_container_bindings.png" alt="Container List Binding" width="800" border-effect="line"/>
+        <note>
+            <p><b>Representing Empty Slots</b></p>
+            <p>Grid-based UIs (e.g., a Backpack) may benefit from displaying empty slots, while list-style containers (e.g., Loot Lists) typically should not.</p>
+            <p>This behavior is controlled by the <code>bFillEmptyEntries</code> setting in the <b>Container View Model</b>.</p>
+        </note>
     </step>
-    <note>
-        <p><b>Representing Empty Slots</b></p>
-        <p>Grid-based UIs (e.g., a Backpack) may benefit from displaying empty slots, while list-style containers (e.g., Loot Lists) typically should not.</p>
-        <p>This behavior is controlled by the <code>bFillEmptyEntries</code> setting in the <b>Container View Model</b>.</p>
-    </note>
+    <step>
+        <p>Still in the <b>View Bindings</b> panel, you can optionally connect the <code>GetContainerName</code> function from the <b>Container View Model</b> to a <b>Text Block</b> in your widget.</p>
+        <img src="inv_ui_mvvm_container_bindings_cont.png" alt="Container Name Binding" width="800" border-effect="line"/>
+    </step>
 </procedure>
-
 
 ## Widgets
 
-The first part of the hierarchy is the **Item Widget**.
+The first part of the **widget hierarchy** is the **Item Widget**.
 
 - Root widget that owns the Item View Model (data entry-point).
 - Child view models (e.g., stack, rarity) bind to the entry-point.
