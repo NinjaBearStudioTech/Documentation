@@ -64,7 +64,7 @@ The **Inventory Item View Model** exposes **Item Instances** and **Item Views** 
         <note>Ninja Inventory provides a base <b>Item Widget</b>, but right now, we want to create everything from scratch, so the concept can be fully explained.</note>
     </step>
     <step>
-        <p>Add the <b>Inventory Item View Model</b> to the widget. Set its <b>Creation Type</b> to <code>Resolver</code>, and choose <code>Inventory View Model Resolver</code> as the resolver class.</p>
+        <p>Add the <b>Inventory Item View Model</b> to the widget. Set its <b>Creation Type</b> to <code>Manual</code>, since it will be provided later on by a View Model extension.</p>
         <img src="inv_ui_mvvm_item_creation_details.png" alt="Item View Model Creation" border-effect="line"/>
     </step>
     <step>
@@ -86,8 +86,17 @@ The **Inventory Item View Model** exposes **Item Instances** and **Item Views** 
     </step>
 </procedure>
 
-As shown in the steps above, binding the Item View Model directly to every Fragment View Model can become repetitive and 
-error-prone, especially as your UI grows.
+To recap, we have two important View Model responsibilities in this widget:
+
+- **Data Entry Point**:
+  - The Item View Model receives data from external sources (e.g., the **container**) and broadcasts an **Item Instance or View** to **Data Processors**. 
+  - Since a **View Model Extension** will provide a valid instance, the **Creation Type** should be set to `Manual`.
+- **Data Processor**:
+  - Fragment View Models will receive data from the **Entry Point** and perform their own data collection and processing.
+  - Since these instances are not created externally, their **Creation Type** should use the provided **Resolver**, the `Inventory View Model Resolver`.
+    
+However, as shown in the steps above, binding the Item View Model directly to every Fragment View Model can become repetitive 
+and error-prone, especially as your UI becomes more complex.
 
 To simplify this, the Inventory System provides a built-in **Base Item Widget** (`NinjaInventoryItemWidget`) that automatically 
 propagates item data to all child View Models.
@@ -95,7 +104,7 @@ propagates item data to all child View Models.
 <procedure title="Using the Base Item Widget" collapsible="true" default-state="expanded">
     <step>Reparent your Item Widget to <code>NinjaInventoryItemWidget</code>.</step>
     <step>
-         <p>Update your ViewModel bindings so that the <b>Item View Model</b> updates the functions <code>SetItemInstance</code> and <code>SetItemView</code>, which are provided by the base class.</p>
+         <p>Update your <b>ViewModel bindings</b> in the <b>View Bindings panel</b> so that the Item View Model calls the functions <code>SetItemInstance</code> and <code>SetItemView</code>, which are provided by the base class.</p>
         <img src="inv_ui_mvvm_item_data_pipeline_base_widget.png" alt="Data Pipeline with Base Widget" width="800" border-effect="line"/>
     </step>
 </procedure>
@@ -145,6 +154,33 @@ and the **ViewModel Extension** workflow.
         <img src="inv_ui_mvvm_container_bindings_cont.png" alt="Container Name Binding" width="800" border-effect="line"/>
     </step>
 </procedure>
+
+To simplify the setup, the Inventory System provides a built-in **Base Container Widget** (`NinjaInventoryContainerWidget`) 
+that automatically manages the **target container** and its ViewModel lifecycle.
+
+This removes the need to set up the container manually during `OnConstruct`, and exposes a `ContainerDataAsset` property 
+that can be set directly in the Designer.
+
+<procedure title="Using the Base Container Widget" collapsible="true" default-state="expanded">
+    <step>Reparent your Container Widget to <code>NinjaInventoryContainerWidget</code>.</step>
+    <step>
+        <p>Open the widget’s <b>Designer</b> tab and select the root widget. In the <b>Details</b> panel, locate the <b>Container Data Asset</b> property and assign the appropriate container definition.</p>
+        <img src="inv_ui_mvvm_container_data_pipeline_base_widget.png" alt="Container Binding with Base Widget" width="800" border-effect="line"/>
+    </step>
+    <step>
+        <p>Remove any manual logic from your <b>OnConstruct</b> or <b>Widget Graph</b> that was used to initialize the container manually. The base widget will now handle initialization and ViewModel binding automatically.</p>
+    </step>
+</procedure>
+
+### Quick Recap: ViewModels & Base Widgets
+
+Here's a quick summary of how Item and Container ViewModels work together in the MVVM system, and how base widgets 
+streamline the process:
+
+- **Item Widgets** use an **Inventory Item View Model** (set to **Manual**) to expose **item data**, and **optional Fragment View Models** (e.g., Stack, Quality) set to **Resolver**.
+- **Container Widgets** use an **Inventory Container View Model** (set to **Resolver**) to **manage item lists and container metadata**.
+- **ViewModel Extensions** are used to **bind item entries in containers**, connecting GetItems → SetItems, with each entry using the Item View Model.
+- Base Widgets (`NinjaInventoryItemWidget` and `NinjaInventoryContainerWidget`) simplify setup by **auto-assigning data and ViewModels**, to reduce manual logic and bindings.
 
 ## Widgets
 
