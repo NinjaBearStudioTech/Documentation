@@ -1,4 +1,4 @@
-# Level
+# Level Fragment
 <primary-label ref="inventory"/>
 
 The **Level** Fragment defines the power level for an item, which can also be used to determine the Gameplay Effect

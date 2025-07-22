@@ -1,4 +1,4 @@
-# Durability
+# Durability Fragment
 <primary-label ref="inventory"/>
 
 The **Durability** Fragment determines whether an item can wear down and break over time, based on its usage. 

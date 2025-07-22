@@ -1,4 +1,4 @@
-# Container Placement
+# Container Fragment
 <primary-label ref="inventory"/>
 
 The **Container Placement** fragment determines where an item is stored in the inventory. It handles the selection of a 

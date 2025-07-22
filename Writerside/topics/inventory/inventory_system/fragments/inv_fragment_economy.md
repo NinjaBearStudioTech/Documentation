@@ -1,4 +1,4 @@
-# Economy
+# Economy Fragment
 <primary-label ref="inventory"/>
 
 The **Economy** fragment enables an item to be bought or sold by inventory owners. It defines both unitary prices and 

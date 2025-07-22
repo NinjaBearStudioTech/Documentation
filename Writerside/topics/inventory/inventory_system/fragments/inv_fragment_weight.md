@@ -1,4 +1,4 @@
-# Weight
+# Weight Fragment
 <primary-label ref="inventory"/>
 
 The **Weight** fragment defines how heavy an item is and contributes to **encumbrance tracking** for the owning inventory. 

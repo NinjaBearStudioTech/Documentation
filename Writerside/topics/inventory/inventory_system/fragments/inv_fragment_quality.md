@@ -1,4 +1,4 @@
-# Quality
+# Quality Fragment
 <primary-label ref="inventory"/>
 
 The **Quality** fragment defines the quality tier of an item, such as _Common_, _Rare_, or _Legendary_. It provides a 

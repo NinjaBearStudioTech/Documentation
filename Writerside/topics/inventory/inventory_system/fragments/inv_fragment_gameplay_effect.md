@@ -1,4 +1,4 @@
-# Gameplay Effect
+# Gameplay Effect Fragment
 <primary-label ref="inventory"/>
 
 The **Gameplay Effect** fragment allows an inventory item to apply a Gameplay Effect to its owner under **specific conditions**.

@@ -1,4 +1,4 @@
-# Drop
+# Drop Fragment
 <primary-label ref="inventory"/>
 
 The **Drop** fragment allows an item to be placed into the world as a Pickup Actor, using an **environment query** to 

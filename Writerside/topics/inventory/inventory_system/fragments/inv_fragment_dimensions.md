@@ -1,4 +1,4 @@
-# Dimensions
+# Dimensions Fragment
 <primary-label ref="inventory"/>
 
 The **Dimensions** Fragment defines the **2D spatial footprint** for items placed within containers that use a [](inv_layout_spatial.md).

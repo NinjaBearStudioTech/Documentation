@@ -1,4 +1,4 @@
-# Nested Container
+# Nested Container Fragment
 <primary-label ref="inventory"/>
 
 The **Nested Container** fragment grants an item its own internal inventory container when it is added to an inventory.  

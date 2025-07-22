@@ -1,4 +1,4 @@
-# Loot
+# Loot Fragment
 <primary-label ref="inventory"/>
 
 The **Loot** fragment allows items within an inventory to be considered for **loot selection**. 

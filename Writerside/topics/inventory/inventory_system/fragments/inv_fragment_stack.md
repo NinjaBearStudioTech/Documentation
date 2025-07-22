@@ -1,4 +1,4 @@
-# Stack and Quantity
+# Stack and Quantity Fragment
 <primary-label ref="inventory"/>
 
 The **Stack and Quantity** fragment determines how many items can be grouped into a **stack** and the **total number** of 

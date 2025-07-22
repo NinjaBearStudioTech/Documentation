@@ -1,4 +1,4 @@
-# Consumable
+# Consumable Fragment
 <primary-label ref="inventory"/>
 
 The **Consumable** fragment allows an item to be used or consumed, applying a Gameplay Effect to the owning actor 

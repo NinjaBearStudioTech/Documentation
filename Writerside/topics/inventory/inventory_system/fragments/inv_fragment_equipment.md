@@ -1,4 +1,4 @@
-# Equipment
+# Equipment Fragment
 <primary-label ref="inventory"/>
 
 The **Equipment** Fragment defines how an inventory item behaves when used as equipment. It integrates directly with the 

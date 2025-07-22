@@ -1,4 +1,4 @@
-# User Interface
+# User Interface Fragment
 <primary-label ref="inventory"/>
 
 The **User Interface** fragment defines how an item appears in UI elements such as tooltips, inventory slots, or detail 
