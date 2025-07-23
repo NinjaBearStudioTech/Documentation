@@ -87,6 +87,12 @@ item's rarity or quality visually and textually.
 | `QualityText`  | Localized display text for the item's quality.                           |
 | `QualityColor` | A display color associated with the item's quality level.                |
 
+When using the **Quality Color** as a background or visual indicator, you may want to define a fallback color for when 
+no item is assigned. By default, the color is set to **transparent**, but you can customize this by setting the **Default 
+Color** property on the ViewModel.
+
+<img src="inv_ui_mvvm_fragment_quality_default_color.png" alt="Default Quality Color"/>
+
 ## Stack Notifies
 
 This ViewModel exposes data from the [**Stack Fragment**](inv_fragment_stack.md), allowing the UI to represent item 
