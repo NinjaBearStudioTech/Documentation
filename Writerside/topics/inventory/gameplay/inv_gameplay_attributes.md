@@ -22,8 +22,7 @@ The following table contains all attributes available in the Inventory System's 
 | Attribute               | Description                                                                             | Meta |
 |-------------------------|-----------------------------------------------------------------------------------------|------|
 | `Wealth`                | Current wealth for the character. Can represent any type of in-game currency.           | No   |
-| `EquipmentLevel`        | Aggregation of the level from all equipment pieces in use. Maintained automatically.    | Yes  |
-| `AverageEquipmentLevel` | Average Equipment Level. Maintained automatically.                                      | Yes  |
+| `EquipmentLevel`        | Average Equipment Level, considering all active equipment. Maintained automatically.    | Yes  |
 | `WeightLimit`           | Maximum weight capacity for this inventory.                                             | No   |
 | `Encumbrance`           | Weight currently carried by the avatar, considering stacks. Maintained automatically.   | Yes  |
 | `BackpackSlots`         | Slots available for the Backpack container. Provided for convenience, but not required. | No   |

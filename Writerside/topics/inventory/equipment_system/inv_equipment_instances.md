@@ -12,6 +12,7 @@
 </tldr>
 
 ## Equipment Instances
+
 When an eligible item is added to an Equipment Container, the **Equipment Manager** automatically creates an `NinjaInventoryEquipment` 
 instance to represent its presence in the world. These instances are tracked and updated based on the item's state and container configuration.
 
@@ -26,6 +27,7 @@ usage. For example: a weapon might be an Actor, with a skeletal mesh and dedicat
 static mesh while stored.
 
 ### Equipment Actors
+
 When using actors for equipment:
 
 - There are no requirements on actor hierarchy (base classes or interfaces).
@@ -35,10 +37,12 @@ This component receives a reference to the `UNinjaInventoryEquipment` instance t
 to access the **owning equipment and item**, the **equipment manager** and the **inventory manager*.. 
 
 ### Custom Equipment Logic
+
 You can subclass `NinjaInventoryEquipment` to implement custom logic and assign your subclass directly to the [**Equipment Fragment**](inv_fragment_equipment.md). 
 This enables additional gameplay systems, data storage, and access to custom behavior per equipment instance.
 
 ## Equipment States
+
 Equipment States define how each `NinjaInventoryEquipment` is represented in the world, based on the item's current 
 equipment **state tag**.
 
@@ -69,3 +73,10 @@ Each `InventoryEquipmentState` provides detailed control over how the item shoul
 | `AttributeSets`                  | Attribute sets granted to the avatar while in this equipment state.                                |
 | `GameplayEffects`                | Gameplay Effects applied to the avatar when entering this state.                                   |
 | `Containers`                     | Additional containers granted while this state is active (e.g., ammo pouches or sheath slots).     |
+
+## Changing States
+
+The Inventory System provides the following options so you can change equipment state:
+
+- **[](inv_fragment_equipment.md)**: Provides the `SetEquipmentState` function that can be used to update the item's equipment state.
+- **[](inv_ability_equip.md)**: Integrates the Equipment Fragment with Animations Montages and support for Gameplay Events.  

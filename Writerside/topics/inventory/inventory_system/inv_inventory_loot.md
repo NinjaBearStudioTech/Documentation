@@ -1,8 +1,8 @@
-# Loot System
+# Loot Management
 <primary-label ref="inventory"/>
 
 <tldr>
-    <p><b>Summary: Loot System</b></p>
+    <p><b>Summary: Loot Management</b></p>
     <br/>
     <ul>
         <li>The Loot System is an integration between two Inventory Managers, one <b>requesting loot</b> and one <b>generating it</b>.</li>
@@ -23,7 +23,7 @@ Loot flows between a **requester** and a **source** Inventory Manager.
 1. The **requester** initiates the process by invoking `GenerateLoot` on a **source** Inventory Manager.
 2. **Loot is generated** by a **loot selector** configured on the **source**, returning a list of `InventoryDefaultItem` entries.
 3. **Loot is sent** to the requester via `ReceiveLoot`, which stores the loot for validation and broadcasts events that can be tracked by the user interface.
-4. **Loot is visualized** by the UI using the appropriate **Inventory Loot ViewModel**.
+4. **Loot is visualized** by the UI using the appropriate **Inventory Loot ViewModel**. It will convert loot entries into the UI-oriented `UNinjaInventoryDetachedItemView` object.
 5. **Selected loot is transferred** back to the requester using `TransferLoot`. This can also be done via the ViewModel.
 
 ## Loot Generation

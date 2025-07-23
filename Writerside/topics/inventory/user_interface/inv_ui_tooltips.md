@@ -1,2 +1,2 @@
-# Case Studies
+# Tooltips
 <primary-label ref="inventory"/>

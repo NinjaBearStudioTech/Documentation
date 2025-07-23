@@ -19,13 +19,15 @@ This fragment does not contribute any gameplay tags.
 
 ## Operations
 
-| Function            | Description                                                                                                               |
-|---------------------|---------------------------------------------------------------------------------------------------------------------------|
-| `GetBaseDimensions` | Returns the original dimensions defined by the fragment, ignoring any current rotation.                                   |
-| `GetDimensions`     | Returns the current item dimensions, accounting for its rotation state (if applicable).                                   |
-| `CanRotate`         | Checks whether the item supports rotation, based on its shape and the `CanRotate` flag.                                   |
-| `IsRotated`         | Returns whether the item is currently rotated.                                                                            |
-| `SetRotated`        | Sets the item's rotation state. Requires authority and valid memory.                                                      |
+| Function                         | Description                                                                                              |
+|----------------------------------|----------------------------------------------------------------------------------------------------------|
+| `GetBaseDimensions`              | Returns the original dimensions defined by the fragment, ignoring any current rotation.                  |
+| `GetDimensions`                  | Returns the current item dimensions, accounting for its rotation state (if applicable).                  |
+| `GetDimensionsFromDefaultMemory` | Returns the dimensions for a default item, accounting for its rotation state (if a memory is available). |
+| `CanRotate`                      | Checks whether the item supports rotation, based on its shape and the `CanRotate` flag.                  |
+| `IsRotated`                      | Returns whether the item is currently rotated.                                                           |
+| `IsRotatedFromDefaultMemory`     | Returns whether the default item is currently rotated, based on a memory.                                |
+| `SetRotated`                     | Sets the item's rotation state. Requires authority and valid memory.                                     |
 
 ## Memory
 This fragment uses the `FInventoryItemFragmentDimensionsMemory` structure to track the **rotation state** of the item at runtime.
