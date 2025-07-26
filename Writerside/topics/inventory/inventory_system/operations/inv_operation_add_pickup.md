@@ -14,7 +14,7 @@ with the inventory system’s queuing, stacking, and placement logic.
 This gives you full control over how pickups behave, while still benefiting from the Inventory system’s item lifecycle
 and automation.
 
-## Using the Provided Pickup Actor
+## Provided Pickup Actor
 
 <procedure title="Adding Items from a Pickup Actor" collapsible="true" default-state="expanded">
     <step>Create a new Actor that inherits from <b>ANinjaInventoryPickupActor</b>.</step>
@@ -28,7 +28,7 @@ and automation.
     </step>
 </procedure>
 
-## Creating Custom Pickups
+## Custom Pickup Actor
 <secondary-label ref="advanced"/>
 
 If you'd like to build a custom pickup actor (e.g., for complex interactions, scripted behavior, or special effects), you
