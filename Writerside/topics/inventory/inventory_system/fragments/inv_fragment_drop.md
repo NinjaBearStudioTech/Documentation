@@ -22,6 +22,18 @@ This fragment has the following properties.
 | `QueryConfig`      | Parameters passed to the EQS query. Must match any named params in the query.                 | 
 | `RunMode`          | EQS run mode, defining how results are prioritized (e.g., `RandomBest25Pct`).                 | 
 
+The **Query Configuration** property dynamically matches any parameters exposed by the assigned **Placement Query** asset.
+This is useful when multiple items share the same EQS asset but require different settings, such as grid size or spacing, 
+to reflect their physical footprint in the world.
+
+For example, here's an Environment Query that exposes **Grid Size** as a parameter:
+
+<img src="inv_fragment_drop_eqs.png" alt="Item Placement EQS" width="800" border-effect="line"/>
+
+If this asset is assigned to the Drop Fragment, the exposed parameters will appear automatically in the **Query Configuration** field:
+
+<img src="inv_fragment_drop_eqs_parameters.png" alt="Drop EQS Parameters" width="800" border-effect="line"/>
+
 ## Operations
 This fragment exposes the following operation.
 

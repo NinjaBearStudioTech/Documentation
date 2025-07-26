@@ -4,9 +4,13 @@
 The **Quality** fragment defines the quality tier of an item, such as _Common_, _Rare_, or _Legendary_. It provides a 
 quality tag, localized text, and a representative color.
 
+## Quality Data Table
+
 This fragment relies on a **centralized Data Table**, configured in `Project Settings > Ninja Inventory`, under the 
 "Quality Mapping Table" section. This table must use the `InventoryItemQualityMappingTableRow` structure and define all 
 supported quality tags and their attributes.
+
+<img src="inv_fragment_quality_table.png" alt="Quality Table" width="800" border-effect="line"/>
 
 ## Fragment Tags
 This fragment adds the corresponding `Inventory.Item.Quality.*` tag to the item, based on the fragment configuration.

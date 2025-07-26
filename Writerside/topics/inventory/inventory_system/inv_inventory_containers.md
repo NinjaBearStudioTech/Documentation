@@ -21,6 +21,7 @@ A container is implemented by the following objects:
 - **Container Instance**: Individual runtime logic, persistence and data replication.
 
 ## Container Data Asset
+
 Containers are defined by a **Primary Data Asset**, and as such, it must be added to the **Asset Manager** configuration
 as covered during the [Asset Manager setup](inv_asset_manager.md#container-data-assets).
 
@@ -43,6 +44,7 @@ You can create a container Data Asset either extending from `NinjaInventoryConta
 <img src="inv_overview_container_data.png" alt="Container Data Asset" width="800" border-effect="line"/>
 
 ## Container Layout
+
 Each container uses a **layout**, which defines how item positions are tracked, what spatial rules apply, and how data 
 is persisted.
 
@@ -59,14 +61,21 @@ layout can have its own exclusive properties, every layout defines at least the 
 
 Choosing the correct **position type** is essential, as it defines how items are stored and retrieved from container instances.
 
-- **Index**: Represents a single numeric index. Ideal for list-like containers or sequences.
-- **Grid**: Represents a 2D coordinate (X, Y). Ideal for spatial inventories where item dimensions are relevant.
+- **Index**: Represents a single numeric index. Ideal for list-like containers or sequences and also grids without dimensional support.
+- **Grid**: Represents a 2D coordinate (X, Y). Ideal for spatial inventories where [**item dimensions**](inv_fragment_dimensions.md) are relevant to the presentation grid.
 - **Single**: Allows only one item. Ideal for simple slot-based systems like equipment containers.
+
+> **Changing Position Types**
+>
+> Layouts may restrict changes to their **Position Type** for several reasons, most commonly because a specific position
+> type is incompatible with the layout's structure or rules.
+{style="note"}
 
 The system provides several built-in layouts you can use right away. You can also implement your own by subclassing 
 `UNinjaInventoryContainerLayout`. For more information on specific layouts, see their dedicated pages.
 
 ## Container Instances
+
 When a container is added to an Inventory Manager, it becomes a **container instance**, represented by `UNinjaInventoryContainer`.  
 This runtime object is responsible for:
 
