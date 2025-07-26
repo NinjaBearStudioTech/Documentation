@@ -209,7 +209,8 @@
         </toc-element>
         <toc-element toc-title="Inventory System">
             <toc-element topic="inv_inventory_management.md">
-                <toc-element topic="inv_operation_add_item.md"/>
+                <toc-element topic="inv_operation_add_default_item.md"/>
+                <toc-element topic="inv_operation_add_pickup.md"/>
             </toc-element>
             <toc-element topic="inv_inventory_containers.md">
                 <toc-element topic="inv_layout_simple.md"/>

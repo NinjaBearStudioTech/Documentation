@@ -89,6 +89,24 @@ Items can be managed using the following transactional functions:
 | `AddItemsFromPickupActor` | Yes           | Adds items from a Pickup Actor that implements `InventoryPickupInterface`. Returns item GUIDs. |
 | `RemoveItem`              | Yes           | Removes an item from the inventory. Optionally drops it if a valid fragment supports dropping. |
 
+When you add an item to the Inventory Manager, the system will automatically determine container placement, stacking, 
+and other behaviors based on your configuration.
+
+You can influence this process using:
+
+- **Preferred Container Query** on the Container Placement Fragment, used to suggest preferred containers for a given item.
+- **Item Eligibility Query** on containers, to filter valid items, plus the container's **priority**.
+- **Default Placement Memories** (e.g., Container Position), which the system will try to honor if possible (i.e. no items already occupying the position).
+
+>**Let the Inventory Handle It**
+> 
+>**Avoid manually assigning items to containers**. Let the processor and configuration handle it for more robust and 
+>predictable results. 
+>
+> That said, **direct container assignment is still possible**. Use it only if you're confident that it won't interfere 
+> with the inventory's logic or lifecycle.
+{style="note"}
+
 Items can be queried using the following read-only functions:
 
 | Method                | Description                                                                                          |
@@ -98,6 +116,17 @@ Items can be queried using the following read-only functions:
 | `GetItemsByData`      | Retrieves all items that match a specific `ItemDataAsset`.                                           |
 | `GetItemsByQuery`     | Retrieves all items that match a `GameplayTagQuery`.                                                 |
 | `GetFirstItemByQuery` | Returns the first item that matches a given `GameplayTagQuery`.                                      |
+
+## Item Processor
+
+The logic responsible for processing new items is separated from the Inventory Manager, so developers can easily adjust
+their own flows if needed, without having to extend large pieces of the main component.
+
+Item processors are created by extending `UNinjaInventoryItemProcessor`.
+
+The processor will use your configuration (e.g., queries, default memories) to determine valid placement and stacking. 
+For most cases, you won’t need to override this unless you're building a custom flow (e.g., forced container injection or 
+loot-specific routing).
 
 ## Stranded Items
 A **stranded item** is an item that no longer has a valid container. This can happen if:

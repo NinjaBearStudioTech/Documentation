@@ -1,10 +1,10 @@
-# Adding Items
+# Adding Default Items
 <primary-label ref="inventory"/>
 
-Items can be added to the Inventory through different sources, such as a Default Item Data Structure, a Pickup, or Loot 
-that has been selected. This page explores those methods in detail, along with advanced usage patterns.
+Items can be added to the Inventory through different sources, such as a Default Item Data Structure. It uses the **Item
+Data Asset** and optional **Fragment Memories** to represent the item being added to the inventory.
 
-## Add Default Item
+## Adding a Default Item
 
 <procedure title="Adding an Item to the Inventory" collapsible="true" default-state="expanded">
     <step>
@@ -31,8 +31,7 @@ that has been selected. This page explores those methods in detail, along with a
 >
 > Items are processed in order, asynchronously (off the game thread), and eventually added to the inventory, or dropped if allocation fails.
 
-### Adding Items and Event Tracking
-
+## Event Tracking
 <secondary-label ref="advanced"/>
 
 In some cases, it might be useful to react to items being added to the inventory. In those cases you can use a **callback**
@@ -61,10 +60,3 @@ to the inventory.
         </tabs>
     </step>
 </procedure>
-
-### Item Processor
-
-The logic responsible for processing new items is separated from the Inventory Manager, so developers can easily adjust
-their own flows if needed, without having to extend large pieces of the main component.
-
-Item processors are created by extending `UNinjaInventoryItemProcessor`.
