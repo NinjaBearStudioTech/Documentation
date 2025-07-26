@@ -85,16 +85,9 @@ Items can be managed using the following transactional functions:
 | Method                    | Authoritative | Description                                                                                    |
 |---------------------------|---------------|------------------------------------------------------------------------------------------------|
 | `AddItem`                 | Yes           | Adds a new item using the given `ItemInfo` struct. Returns a GUID for the new item instance.   |
+| `AddItemWithCallback`     | Yes           | Adds a new `ItemInfo` and receives a callback executed during main **initialization events**.  |
 | `AddItemsFromPickupActor` | Yes           | Adds items from a Pickup Actor that implements `InventoryPickupInterface`. Returns item GUIDs. |
 | `RemoveItem`              | Yes           | Removes an item from the inventory. Optionally drops it if a valid fragment supports dropping. |
-
-> **Asynchronous Item Queue**
-> 
-> Even though a GUID is immediately assigned to an item, items are not added to the inventory _immediately_. There is 
-> a processing queue that activates when there are pending items. 
-> 
-> These items are processed in order, out of the game thread, and eventually added to the Inventory (or maybe dropped if 
-> allocation is not possible).
 
 Items can be queried using the following read-only functions:
 

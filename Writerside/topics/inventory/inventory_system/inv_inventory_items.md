@@ -82,3 +82,10 @@ At runtime, an item becomes a `NinjaInventoryItem` instance. These are instanced
 
 You can customize item behavior further by subclassing `NinjaInventoryItem` and assigning the new class in the Item Data 
 Asset’s `ItemInstanceClass` property.
+
+When added to an inventory, items have a **registration process**, that can inform where in the initialization an item
+currently is. Possible values are:
+
+- **Accepted**: The item was accepted and will be processed by the inventory.
+- **Fragments Initialized**: Fragments will initialize and prepare their initial memories.
+- **Fragments Activated**: Fragments have been initialized and executed any activation logic.

@@ -1,12 +1,16 @@
-void UInventoryExamples::AddItem(const UNinjaInventoryItemDataAsset* ItemData, const TArray<FInventoryDefaultItemMemory>& DefaultMemories)
+void UInventoryExamples::AddItem(const UNinjaInventoryItemDataAsset* ItemData, int32 StackSize)
 {
-	FInventoryItemContext ItemContext, ResultContext;
-	ItemContext = UNinjaInventoryFunctionLibrary::CreateItemContext(ItemData, DefaultMemories);
+    TArray<FInventoryDefaultItemMemory> DefaultMemories;
+
+    FInventoryDefaultItemMemory StackMemory = UNinjaInventoryFunctionLibrary::CreateStackMemory(StackSize);
+    Memories.Add(StackMemory);
+
+	FInventoryDefaultItem DefaultItem = UNinjaInventoryFunctionLibrary::CreateDefaultItem(ItemData, DefaultMemories);
 
 	UNinjaInventoryManagerComponent* InventoryManager = GetInventoryManager();
-	InventoryManager->AddItem(ItemContext, ResultContext);
+	FGuid ItemId = InventoryManager->AddItem(DefaultItem);
 
-	if (ResultContext.IsSuccessful())
+	if (ItemId.IsValid())
 	{
 		UE_LOG(LogTemp, Log, TEXT("Item added!"));
 	}
