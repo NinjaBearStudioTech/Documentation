@@ -39,6 +39,7 @@ item's durability status and display appropriate UI feedback.
 | `bIsBroken`         | Indicates whether the item is broken (durability has reached zero). |
 | `Durability`        | The current durability value of the item.                           |
 | `MaximumDurability` | The maximum durability this item can have.                          |
+| `DurabilityPercent` | Durability percent considering current/maximum.                     |
 
 ## Economy Notifies
 
