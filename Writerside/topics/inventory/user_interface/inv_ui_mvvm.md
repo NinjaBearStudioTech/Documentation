@@ -98,7 +98,7 @@ and the **ViewModel Extension** workflow.
 <procedure title="Preparing the Backpack Container Widget" collapsible="true" default-state="expanded">
     <step>
         <p>Create a new Container Widget by extending from <code>UserWidget</code>.</p>
-        <note>Ninja Inventory provides a base <b>Container Widget</b>, but for this example, we’ll build it from scratch to better understand the concepts involved.</note>
+        <note>Ninja Inventory provides a base <b>Container Widget</b>, but for this example, we'll build it from scratch to better understand the concepts involved.</note>
     </step>
     <step>
         <p>Add the <b>Inventory Container ViewModel</b> to the widget. Set its <b>Creation Type</b> to <code>Resolver</code>, and select <code>Inventory Resolver</code> as the resolver class.</p>
@@ -142,7 +142,7 @@ that can be set directly in the Designer.
 <procedure title="Using the Base Container Widget" collapsible="true" default-state="expanded">
     <step>Reparent your Container Widget to <code>NinjaInventoryContainerWidget</code>.</step>
     <step>
-        <p>Open the widget’s <b>Designer</b> tab and select the root widget. In the <b>Details</b> panel, locate the <b>Container Data Asset</b> property and assign the appropriate container definition.</p>
+        <p>Open the widget's <b>Designer</b> tab and select the root widget. In the <b>Details</b> panel, locate the <b>Container Data Asset</b> property and assign the appropriate container definition.</p>
         <img src="inv_ui_mvvm_container_data_pipeline_base_widget.png" alt="Container Binding with Base Widget" width="800" border-effect="line"/>
     </step>
     <step>
