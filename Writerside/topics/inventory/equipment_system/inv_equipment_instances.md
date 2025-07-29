@@ -34,7 +34,7 @@ When using actors for equipment:
 - The actor must include a `NinjaEquipmentActorComponent`.
 
 This component receives a reference to the `UNinjaInventoryEquipment` instance that spawned it and provides support functions  
-to access the **owning equipment and item**, the **equipment manager** and the **inventory manager*.. 
+to access the **owning equipment and item**, the **equipment manager** and the **inventory manager*.
 
 ### Custom Equipment Logic
 

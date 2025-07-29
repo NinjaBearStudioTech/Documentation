@@ -79,3 +79,17 @@ Manager. This allows the system to retrieve the component directly.
         </tab>
     </tabs>
 </procedure>
+
+The `EquipmentSystemInterface` not only streamlines retrieval of the Equipment Manager, but also allows you to define 
+how the **Main Avatar Mesh** is selected.
+
+This is especially useful in more complex setups, such as characters using a real-time retargeting system, modular pawn 
+assemblies, or gameplay-driven mesh changes.
+
+When calling `GetAvatarMesh` through the interface, the following logic is used:
+
+1. **Tagged Component Search**: The system will first search for a USkeletalMeshComponent tagged with `Inventory.Component.Mesh`
+2. **Character Fallback**: If no component is explicitly tagged, and the avatar is a `ACharacter`, the system will fall back to using the `GetMesh()` result.
+
+This mechanism ensures flexibility while providing a sensible default for common character setups. You may override this 
+logic in your own implementation if your avatar requires special handling.
