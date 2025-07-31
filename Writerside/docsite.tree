@@ -234,6 +234,7 @@
                 <toc-element topic="inv_fragment_user_interface.md"/>
                 <toc-element topic="inv_fragment_weight.md"/>
             </toc-element>
+            <toc-element topic="inv_inventory_events.md"/>
             <toc-element topic="inv_inventory_loot.md"/>
             <toc-element topic="inv_save_and_load.md"/>
         </toc-element>

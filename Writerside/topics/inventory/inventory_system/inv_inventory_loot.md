@@ -57,8 +57,15 @@ When creating the resulting `InventoryDefaultItem` array, follow these rules:
 
 The Inventory Manager broadcasts the following events to support gameplay systems, UI, and scripting integration:
 
-| Event               | Description                                                                         |
-|---------------------|-------------------------------------------------------------------------------------|
-| `OnLootGenerated`   | Broadcast when loot is generated on the authoritative Inventory Manager.            |
-| `OnLootReceived`    | Broadcast when loot is received by the requester (both authority and local client). |
-| `OnLootTransferred` | Broadcast after loot is successfully transferred from the source.                   |
+| Event                                   | Description                                                                         |
+|-----------------------------------------|-------------------------------------------------------------------------------------|
+| `Inventory.Event.Loot.ItemsDiscarded`   | Broadcast when loot is discarded by the receiver (but can be used later).           |
+| `Inventory.Event.Loot.ItemsReceived`    | Broadcast when loot is received by the requester (both authority and local client). |
+| `Inventory.Event.Loot.ItemsSelected`    | Broadcast after loot is selected for a player.                                      |
+| `Inventory.Event.Loot.ItemsTransferred` | Broadcast after loot is successfully transferred from the source.                   |
+
+All loot events will provide the following properties:
+
+- **Requester**: Inventory that requested the loot.
+- **EventTag**: Gameplay Tag representing the loot event.
+- **Loot**: Array containing the selected loot, if applicable.
