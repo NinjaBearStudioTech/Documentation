@@ -33,11 +33,14 @@ This layout implementation defines the following properties:
 | `DefaultStateTag`         | Equipment state tag applied to items added to this container. Determines how the item is treated on initial add (e.g., `equipped`, `stored`).                     |
 | `DefaultEquipSocketName`  | Default socket name for items in the **equipped** state. Used to attach actors to the skeletal mesh (e.g., `"RightHandSocket"`). Can be overridden per equipment. |
 | `DefaultStoredSocketName` | Default socket name for items in the **stored** state. Common for sheathed or holstered positions. Can be overridden per equipment.                               |
-| `LinkedContainerData`     | Optional reference to a **linked container**. Used when an item occupies more than one container. Example: a two-handed weapon using both weapon slots.           |
-| `LinkedItemQuery`         | Gameplay tag query that determines if an item should also occupy the **linked container**. Evaluated only when `LinkedContainerData` is set.                      |
 
 ## Position Type
 This layout uses the `Single` **position type**, since only one item can be added to an equipment slot.
+
+## Linked Containers
+This layout integrates with the [**Linked Container fragment**](inv_fragment_linked_container.md), allowing you to define
+connections between a primary container, to which the equipment is added to, and a linked container (such as "off-hand")
+that will also be occupied by the item.
 
 ## Example Use Cases
 This layout is ideal for:
