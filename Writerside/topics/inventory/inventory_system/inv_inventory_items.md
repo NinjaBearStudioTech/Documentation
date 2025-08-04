@@ -26,12 +26,13 @@ described in the [Asset Manager setup](inv_asset_manager.md#item-data-assets).
 
 The Item Data Asset contains essential properties that define the identity and behavior of the item.
 
-| Property            | Description                                                                                             |
-|---------------------|---------------------------------------------------------------------------------------------------------|
-| `DisplayName`       | Internal name for the item (used for debugging/logging). UI name should come from a fragment.           |
-| `GameplayTags`      | Tags that categorize the item for filtering, searching, and querying.                                   |
-| `ItemInstanceClass` | Default class used for the runtime instance of this item. Usually left as the default.                  |
-| `Fragments`         | List of item fragments that define how the item behaves (e.g., stackable, equipable, consumable, etc.). |
+| Property            | Description                                                                                                                                                     |
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `DisplayName`       | Internal name for the item (used for debugging/logging). UI name should come from a fragment.                                                                   |
+| `GameplayTags`      | Tags that categorize the item for filtering, searching, and querying. Items should have at least one identifying tag, even if they simply represent a category. |
+| `DynamicTags`       | A cache of all tags added by fragments. These are merged with the Gameplay Tags, and are used to further identify the item.                                     |
+| `ItemInstanceClass` | Default class used for the runtime instance of this item. Usually left as the default.                                                                          |
+| `Fragments`         | List of item fragments that define how the item behaves (e.g., stackable, equipable, consumable, etc.).                                                         |
 
 You can create an Item Data Asset by right-clicking in the **Content Browser**, navigating to **Ninja Bear Studio > Ninja 
 Inventory**, and selecting **Item Definition**.

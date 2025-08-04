@@ -17,6 +17,7 @@ This fragment does not add additional gameplay tags by default, but your contain
 are used to resolve the **Primary Container Query** and **Linked Container Query**.
 
 ## Properties
+
 This fragment has the following properties.
 
 | Property                | Description                                                                                          |
@@ -25,6 +26,7 @@ This fragment has the following properties.
 | `LinkedContainerQuery`  | The container query used to identify the **secondary container** that will be automatically updated. |
 
 ## Operations
+
 This fragment exposes the following operations.
 
 | Function                  | Description                                                                                   |
@@ -48,6 +50,7 @@ When the item is **removed from the primary container**, the mirror in the linke
 > Currently, placing the item directly into the linked container is not supported and will not trigger reverse placement.
 
 ## Memory
+
 This fragment uses `FInventoryItemFragmentContainerMemory` to store the item’s **linked container reference** and position.
 It does not interfere with the container memory from the primary ContainerPlacement fragment.
 
