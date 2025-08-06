@@ -31,6 +31,8 @@ This fragment exposes the following operations.
 | `GetStackSize`                  | Returns the current stack size of a specific item.                  |
 | `GetStackSizeFromDefaultMemory` | Provides the current stack size for a default item data.            |
 | `SetStackSize`                  | Sets the stack size of a specific item (authority-only).            |
+| `MergeStacks`                   | Merges two stacks, if possible (authority-only).                    |
+| `SplitStack`                    | Splits an item stack, for the desired quantity (authority-only).    |
 | `CountItemQuantity`             | Returns the total quantity of a specific item across the inventory. |
 | `TryMergeIntoExistingStacks`    | Attempts to merge the item's stack into existing incomplete stacks. |
 

@@ -23,17 +23,19 @@ This fragment has the following property.
 ## Operations
 This fragment exposes the following operations.
 
-| Function                            | Description                                                                  |
-|-------------------------------------|------------------------------------------------------------------------------|
-| `GetDefaultContainer`               | Returns the default container for the item based on the fragment memory.     |
-| `GetContainer`                      | Returns the container where the item is currently placed.                    |
-| `GetPosition`                       | Returns the position of the item in its current container.                   |
-| `SetContainerAndPosition`           | Manually sets the item's container and position.                             |
-| `GetOrSelectContainerForItem`       | Tries to use memory/default/preferred container, or selects one dynamically. |
-| `SelectContainerForItem`            | Finds the best container for the item using the provided criteria.           |
-| `SelectPositionForItem`             | Returns a valid position for the item in its current container.              |
-| `SelectPositionForItemInContainer`  | Returns a valid position for the item in the provided container.             |
-| `FindPreferredContainers`           | Finds containers matching the preferred tag query.                           |
+| Function                           | Description                                                                  |
+|------------------------------------|------------------------------------------------------------------------------|
+| `GetDefaultContainer`              | Returns the default container for the item based on the fragment memory.     |
+| `GetContainer`                     | Returns the container where the item is currently placed.                    |
+| `GetPosition`                      | Returns the position of the item in its current container.                   |
+| `SetContainerAndPosition`          | Manually sets the item's container and position.                             |
+| `GetOrSelectContainerForItem`      | Tries to use memory/default/preferred container, or selects one dynamically. |
+| `SelectContainerForItem`           | Finds the best container for the item using the provided criteria.           |
+| `SelectPositionForItem`            | Returns a valid position for the item in its current container.              |
+| `SelectPositionForItemInContainer` | Returns a valid position for the item in the provided container.             |
+| `TryAddItem`                       | Adds an item to a container, in the provided position.                       |
+| `TryMoveItem`                      | Moves an item to a new position. Swap items if needed.                       |
+| `TrySwapItems`                     | Swaps two items in the container.                                            |
 
 ## Memory
 This fragment uses `InventoryItemFragmentContainerMemory` to store the current **container** and **position**.
