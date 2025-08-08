@@ -7,6 +7,7 @@
                   start-page="getting_started.md">
 
     <toc-element topic="getting_started.md" toc-title="Welcome"/>
+    <!--
     <toc-element topic="guides_and_showcase.md">
         <toc-element toc-title="Guides">
             <toc-element toc-title="Part 1">
@@ -30,6 +31,7 @@
         </toc-element>
         <toc-element topic="showcase_credits.md"/>
     </toc-element>
+    -->
 
     <!-- Ninja Bot -->
     <toc-element topic="bot_overview.md">
