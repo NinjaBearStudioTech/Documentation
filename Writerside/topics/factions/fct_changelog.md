@@ -1,8 +1,7 @@
 # Changelog
 <primary-label ref="factions"/>
 
-## 2.3.7
-<secondary-label ref="wip"/>
+## 2.3.7 - 04/07/2025
 ```
 [added] Gameplay Effect Requirements for attitude checks.
 [Improvement] Modified the Attitude State Tree Condition, to be C++ based and check an actor, instead of a source attitude.

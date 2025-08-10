@@ -1,7 +1,7 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 5.0.0
+## 5.0.0 - 04/07/2025
 > **Important Changes in this version**
 >
 > 1. Due to the changes in the Combo Ability Task, you will need to reconfigure your combo tasks.

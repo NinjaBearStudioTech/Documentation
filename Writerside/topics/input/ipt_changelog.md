@@ -1,8 +1,7 @@
 # Changelog
 <primary-label ref="input"/>
 
-## 5.0.5
-<secondary-label ref="wip"/>
+## 5.0.5 - 04/07/2025
 ```
 [improvement] Default Combo Check and dedicated Combo Tags/Events for the Default/Hold/Combo handler.
 [improvement] An options to provide hold-durations as Gameplay Event magnitudes.

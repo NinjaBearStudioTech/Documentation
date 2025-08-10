@@ -1,8 +1,13 @@
 # Changelog
 <primary-label ref="gas"/>
 
-## 1.8.7
+## 1.8.7 - 04/07/2025
 <secondary-label ref="wip"/>
+```
+[added] Added support for Local and Server Attribute Sets.
+```
+
+## 1.7.7 - 04/07/2025
 ```
 [added] State Tree task to Activate Gameplay Abilities.
 [added] State Tree task to Cancel Gameplay Abilities.
