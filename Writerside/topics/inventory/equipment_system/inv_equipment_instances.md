@@ -74,6 +74,15 @@ Each `InventoryEquipmentState` provides detailed control over how the item shoul
 | `GameplayEffects`                | Gameplay Effects applied to the avatar when entering this state.                                   |
 | `Containers`                     | Additional containers granted while this state is active (e.g., ammo pouches or sheath slots).     |
 
+> **Granting Gameplay Abilities**
+>
+> You can grant multiple abilities by using the **"Grant Gameplay Abilities"** Gameplay Effect Component, and then 
+> applying that Gameplay Effect in a specific Equipment State.
+>
+> The **Gameplay Effect's level** is used in the Data Table mapping, allowing you to **set or transfer the Ability level** 
+> based on the level at which the Gameplay Effect is applied, which can also be the **Item Level** itself!
+{style="note"}
+
 ## Changing States
 
 The Inventory System provides the following options so you can change equipment state:

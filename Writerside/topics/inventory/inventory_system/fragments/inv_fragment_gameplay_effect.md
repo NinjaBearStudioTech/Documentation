@@ -12,9 +12,10 @@ Once the item is removed, or conditions are no longer met, the Gameplay Effect w
 > **Ability Granting and Activation**
 > 
 > For more complex functionality, you can also use a Gameplay Effect granting **passive abilities** that auto-activate 
-> when the item is added to an inventory and its conditions are met.
+> when the item is added to an inventory and its conditions are met. 
 > 
-> [**Ninja GAS**](gas_overview.md) can provide a default implementation for **passive abilities**.
+> To this end, you can leverage the **"Grant Gameplay Abilities"** GE Component and [**Ninja GAS**](gas_overview.md) can 
+> provide a default implementation for **passive abilities**.
 {style=note}
 
 ## Fragment Tags
