@@ -19,6 +19,7 @@
 [improvement] Handled runtime retarget possibilities in the "CurrentMontageStop" function, in the ASC.
 [bugfix] Added a check to ensure that default abilities and effect handles are valid, before storing them.
 [bugfix] Ensured that passive abilities are properly cancelled when changing an avatar.
+[Deprecation] Dropped support for Unreal Engine 5.4 to avoid version branching and ensure full compatibility with new State Tree utility-based features.
 ```
 
 ## 1.2.0 - 16/11/2024
