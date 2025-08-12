@@ -225,6 +225,7 @@
                 <toc-element topic="inv_fragment_dimensions.md"/>
                 <toc-element topic="inv_fragment_drop.md"/>
                 <toc-element topic="inv_fragment_durability.md"/>
+                <toc-element topic="inv_fragment_dynamic_attributes.md"/>
                 <toc-element topic="inv_fragment_economy.md"/>
                 <toc-element topic="inv_fragment_equipment.md"/>
                 <toc-element topic="inv_fragment_gameplay_effect.md"/>
