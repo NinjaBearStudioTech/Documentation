@@ -41,6 +41,30 @@ item's durability status and display appropriate UI feedback.
 | `MaximumDurability` | The maximum durability this item can have.                          |
 | `DurabilityPercent` | Durability percent considering current/maximum.                     |
 
+## Dynamic Attributes
+
+This ViewModel exposes all [**Dynamic Attributes**](inv_fragment_dynamic_attributes.md) assigned to an item, allowing 
+them to be fully displayed, including relevant configuration details, in the user interface.
+
+The ViewModel exposes the following fields:
+
+| Field                   | Description                                                 |
+|-------------------------|-------------------------------------------------------------|
+| `bHasDynamicAttributes` | Indicates whether the item includes any dynamic attributes. |
+| `GetDynamicAttributes`  | Provides a list of dynamic attribute information.           |
+
+And the list of dynamic attributes includes the following properties:
+
+| Property        | Description                                            |
+|-----------------|--------------------------------------------------------|
+| `AttributeTag`  | Gameplay tag that uniquely identifies the attribute.   |
+| `Value`         | Current value for the attribute.                       |
+| `MinValue`      | For ranged values, this is the minimum possible value. |
+| `MaxValue`      | For ranged values, this is the maximum possible value. |
+| `ValueMode`     | Value mode for this attribute (fixed or ranged).       |
+| `AttributeName` | The attribute name set in the Data Asset.              |
+| `Description`   | The attribute description set in the Data Asset.       |
+
 ## Economy Notifies
 
 This ViewModel exposes data from the [**Economy Fragment**](inv_fragment_economy.md), allowing your UI to represent 
