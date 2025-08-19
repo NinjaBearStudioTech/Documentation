@@ -36,21 +36,15 @@ This fragment exposes the following operations.
 | `MatchesLinkedContainer`  | Returns true if the given container matches the `LinkedContainerQuery`.                       |
 
 ## Behavior
+When an item with Linked Container is placed in the primary equipment container:
 
-When an item with this fragment is placed into the primary container:
-
-- The fragment will automatically place a **mirror of the item** into the **linked container**.
-- If the linked container’s mirror position is **already occupied**, the current item in that slot will be **evicted to a default container**, if available.
-- If no valid position can be found, the placement may fail silently.
-
-When the item is **removed from the primary container**, the mirror in the linked container is also removed.
-
-> **Reverse Placement**
-> 
-> Currently, placing the item directly into the linked container is not supported and will not trigger reverse placement.
+- The fragment creates a **mirror** (not a duplicate) of the item in the linked container Since equipment uses single-slot semantics the position is always defined as `single`.
+- If the linked slot is already occupied, the occupant is evicted to a default container (e.g., Backpack) when possible. If no default container can accept it, the mirror is not created and the original placement in the primary remains; a verbose log is emitted (no extra events).
+- If the item is placed directly into the linked container first, the fragment redirects it to the primary container (evicting the primary's occupant to a default container if needed), then establishes the mirror in the linked container.
+- When the item leaves the primary (unequipped/moved/removed), the linked mirror is cleared.
+- When the linked container is removed, the fragment clears the mirror and the system unequips the item (it is moved to a default container), keeping state consistent.
 
 ## Memory
-
 This fragment uses `FInventoryItemFragmentContainerMemory` to store the item’s **linked container reference** and position.
 It does not interfere with the container memory from the primary ContainerPlacement fragment.
 
