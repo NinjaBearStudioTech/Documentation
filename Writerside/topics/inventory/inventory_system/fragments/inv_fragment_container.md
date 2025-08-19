@@ -43,7 +43,19 @@ This fragment uses `InventoryItemFragmentContainerMemory` to store the current *
 ## Event Payload
 This fragment emits the following events, using `InventoryItemContainerPlacementPayload` as the payload structure.
 
-| Event                                   | Description                                                   |
-|-----------------------------------------|---------------------------------------------------------------|
-| `Inventory.Event.Item.ContainerChanged` | The container storing the item has been changed.              |
-| `Inventory.Event.Item.PositionChanged`  | The position of the item, in the container, has been changed. |
+| Event                                       | Description                                                   |
+|---------------------------------------------|---------------------------------------------------------------|
+| `Inventory.Event.Item.PlacementInitialized` | The fragment is active and the placement was initialized.     |
+| `Inventory.Event.Item.ContainerChanged`     | The container storing the item has been changed.              |
+| `Inventory.Event.Item.PositionChanged`      | The position of the item, in the container, has been changed. |
+
+### Placement vs. Change events
+`PlacementInitialized` fires **once** when the fragment creates the initial container/position for the item, whether that 
+comes from a fresh selection or a valid default memory.
+
+`ContainerChanged` and `PositionChanged` fire only when the resolved container/position **differ from the previous ones**. 
+On first initialization, these may also fire if the provided default memory had to be corrected (e.g., invalid container 
+or out-of-range position). 
+
+In that case, the payload's PreviousContainer/PreviousPosition reflect the defaults and Container/Position reflect the 
+final placement. If the defaults are already viable, you'll get PlacementInitialized and no change events.
