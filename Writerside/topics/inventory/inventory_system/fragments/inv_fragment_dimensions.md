@@ -25,6 +25,7 @@ This fragment does not contribute any gameplay tags.
 | `GetDimensions`                  | Returns the current item dimensions, accounting for its rotation state (if applicable).                  |
 | `GetDimensionsFromDefaultMemory` | Returns the dimensions for a default item, accounting for its rotation state (if a memory is available). |
 | `CanRotate`                      | Checks whether the item supports rotation, based on its shape and the `CanRotate` flag.                  |
+| `CanRotateItemInPlace`           | Checks if the fragment supports rotation and if the item can be rotated in the occupied space.           |
 | `IsRotated`                      | Returns whether the item is currently rotated.                                                           |
 | `IsRotatedFromDefaultMemory`     | Returns whether the default item is currently rotated, based on a memory.                                |
 | `SetRotated`                     | Sets the item's rotation state. Requires authority and valid memory.                                     |
@@ -33,13 +34,17 @@ This fragment does not contribute any gameplay tags.
 This fragment uses the `FInventoryItemFragmentDimensionsMemory` structure to track the **rotation state** of the item at runtime.
 
 ## Occupancy Masks
-When enabled, this fragment can also define an **Occupancy Mask**, allowing for non-rectangular item shapes (e.g. crosses, circles, Tetris-style pieces).
+Occupancy Masks let items use non-rectangular footprints (crosses, L-pieces, circles, Tetris-like shapes) when placed 
+inside [grid-based containers](inv_layout_spatial.md). The layout/placement logic treats only the true cells of the mask 
+as occupied, enabling richer packing and equipment silhouettes.
 
-- The mask is a `TArray<bool>` representing which cells in the item's dimensions are considered occupied.
-- When rotated, the fragment automatically interprets the mask in rotated space.
-- If no mask is defined, the item defaults to occupying all cells in its width * height rectangle.
+- A mask is a **grid** (Width x Height) stored as a `TArray<bool>` (row-major).
+- Setting a cell to `true` means the cell is occupied by the item; `false` means cell is empty and ignored for collisions.
+- If no mask is defined, the item occupies its **full rectangle** (Width x Height, all `true`).
+- Masks respect **rotation**: the framework evaluates collisions using the mask transformed into the item’s current orientation.
+- A mask requires at least one occupied cell. The asset validation will fail for empty masks.  
 
-> A future version will include UI tools to visually edit these masks in-editor.
+<img src="inv_fragment_dimensions_occupancy_mask.png" alt="Occupancy Mask" width="800" border-effect="line"/>
 
 ## Event Payloads
 This fragment emits events using the `FInventoryItemDimensionsPayload` structure.

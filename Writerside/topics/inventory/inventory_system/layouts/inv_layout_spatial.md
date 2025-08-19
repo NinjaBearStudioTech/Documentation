@@ -18,11 +18,12 @@ also supports **item rotation**, when enabled.
 
 The following properties control the grid layout:
 
-| Property        | Description                                                                                                                                    |
-|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Width`         | The **number of columns** in the grid. Used for placement logic and UI layout.                                                                 |
-| `Height`        | The **number of rows** in the grid. Only used if `SlotCountType` is set to **Property**.                                                       |
-| `SlotCountType` | Defines how the total number of usable slots is determined. Options include **Property** (fixed values) or **Gameplay Attribute** (dynamic).   |
+| Property        | Description                                                                                                                                   |
+|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| `GridWidth`     | The **number of columns** in the grid. Used for placement logic and UI layout.                                                                |
+| `GridHeight`    | The **number of rows** in the grid. Only used if `SlotCountType` is set to **Property**.                                                      |
+| `FitAlgorithm`  | Algorithm used to test fit and item collisions.                                                                                               |
+| `SlotCountType` | Defines how the total number of usable slots is determined. Options include **Property** (fixed values) or **Gameplay Attribute** (dynamic).  |
 | `SlotAttribute` | A reference to a `GameplayAttribute` used to determine slot count at runtime. Used only when `SlotCountType` is set to **Gameplay Attribute**. |
 
 > **Height and Slot Attributes**
@@ -46,3 +47,30 @@ The layout supports two modes of determining total slots:
 - **Gameplay Attribute**: A runtime attribute defines the total number of slots. The layout uses `Width` and derives `Height` dynamically.
 
 This enables both static containers (e.g. a small chest) and dynamic ones (e.g. a player’s bag scaling with level or strength).
+
+## Fit Algorithm
+
+The spatial layout's fit algorithm decides whether an item can be placed at a candidate position given its size, rotation, 
+and occupancy mask, while respecting container bounds and existing items. It's called by CanAcceptItemAtPosition and by 
+search routines that try alternative slots when the first choice fails.
+
+### PerCell
+This algorithm iterates each occupied cell of the item's mask, including rotation support, and tests that cell against 
+the container grid.
+
+Best for small–medium items or containers where shapes vary a lot (Tetris-like pieces, irregular masks). It’s simple, 
+exact, and easy to reason about. Great default when you value clarity over raw throughput.
+
+### BitSetRows
+Treats each container row as a bitset and checks the item's occupied cells with fast bitwise operations (shift-and-AND) 
+per row.
+
+Ideal for large grids or heavy search (auto-fit, mass packing). Row-level bit operations drastically reduce inner-loop work, 
+making it much faster when scanning many positions or handling wide items.
+
+### Custom
+Lets you plug in your own fit logic for special layouts or heuristics. Extend the layout and override the virtual 
+`TestWithCustomAlgorithm` hook to implement your algorithm. 
+
+> This is a C++-only extension point for performance reasons; it's called in tight loops, so keep allocations to a 
+> minimum and prefer cache-friendly data structures.
