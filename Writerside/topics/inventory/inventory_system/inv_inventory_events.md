@@ -72,7 +72,11 @@ and **available attributes**.
 
 ### Container Events
 
-All container event payloads are `FInventoryContainerEventPayload` or specific subtypes.
+All container event payloads are `FInventoryContainerEventPayload` or specific subtypes. The following events are 
+broadcast by the Inventory Manager.
+
+Additionally, the **Container Instance** exposes the `HandleContainerEvent` function that allows the instance to handle
+its own events, as those are triggered by the Inventory Manager.
 
 <table>
     <tr>
@@ -101,7 +105,24 @@ All container event payloads are `FInventoryContainerEventPayload` or specific s
 
 ### Item Events
 
-All item event payloads are `FInventoryItemEventPayload` or specific subtypes.
+All item events are delivered with a payload derived from `FInventoryItemEventPayload` (via `FInstancedStruct`).
+
+Events are emitted in two stages:
+
+1. **Item-scoped dispatch**: The Inventory Manager calls `HandleItemEvent` on the **item**. The Item then forwards the event to each of its **assigned fragments**.
+2. **Global broadcast**: After the item-scoped dispatch, the manager emits the same event on its delegates `Native_OnItemEvent` (C++) and `OnItemEvent` (Blueprint), for systems that observe all items (UI, analytics, etc.).
+
+> **Dispatch Order**
+> 
+> Item-scoped handling runs before the global broadcast. Global listeners may assume the item and its fragments have 
+> already updated their internal state.
+
+> **Fragment Event Filter**
+> 
+> An **Item Fragment** opts in to events via its `WatchedEventTags` property. The related item will only forward the event
+> if the event tag is added to this container.
+
+The following table lists all events and their respective payload types.
 
 <table>
     <tr>
@@ -165,6 +186,15 @@ All item event payloads are `FInventoryItemEventPayload` or specific subtypes.
     <tr>
         <td>
             <ul>
+                <li><code>Inventory.Event.Item.PlacementInitialized</code></li>
+                <li><code>FInventoryItemContainerPlacementPayload</code></li>
+            </ul>
+        </td>
+        <td>Item, Container, Previous Container, Position, Previous Position</td>
+    </tr>
+    <tr>
+        <td>
+            <ul>
                 <li><code>Inventory.Event.Item.PositionChanged</code></li>
                 <li><code>FInventoryItemContainerPlacementPayload</code></li>
             </ul>
@@ -199,5 +229,3 @@ All item event payloads are `FInventoryItemEventPayload` or specific subtypes.
         <td>Item, StackSize</td>
     </tr>
 </table>
-
-

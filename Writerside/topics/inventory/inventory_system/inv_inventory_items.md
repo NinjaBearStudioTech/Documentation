@@ -44,7 +44,7 @@ traits directly as **item tags**, or via **fragments**. Some fragments are alrea
 the traits they represent.
 
 ## Item Fragments
-Items are composed via **aggregation** of **fragments**—small pieces of logic and data that define item behavior.
+Items are composed via **aggregation** of **fragments**, small pieces of logic and data that define item behavior.
 
 Each fragment is tied to the Data Asset and **shared** across all instances of that item.
 
@@ -69,7 +69,8 @@ Fragments are automatically initialized when an item is created and can perform 
 {style="note"}
 
 Each fragment may also broadcast **events** via the **Inventory Manager**, which can be used to trigger logic such as UI 
-updates, animations, or gameplay effects.
+updates, animations, or gameplay effects. Fragments may also **handle events** from a specific item, via the `HandleItemEvent`
+function.
 
 Refer to each fragment's documentation for specific behavior, memory structure, and event payloads.
 
