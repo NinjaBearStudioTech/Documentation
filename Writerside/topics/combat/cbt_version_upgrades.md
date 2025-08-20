@@ -1,4 +1,4 @@
-# Version Updates
+# Version Upgrades
 <primary-label ref="combat"/>
 
 > **Back up first!**

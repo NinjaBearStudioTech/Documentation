@@ -37,9 +37,10 @@ If this asset is assigned to the Drop Fragment, the exposed parameters will appe
 ## Operations
 This fragment exposes the following operation.
 
-| Function                         | Description                                                               |
-|----------------------------------|---------------------------------------------------------------------------|
-| `Drop`                           | Spawns the Pickup Actor and removes the item from the inventory.          |
+| Function         | Description                                                                                                       |
+|------------------|-------------------------------------------------------------------------------------------------------------------|
+| `Drop`           | Spawns the Pickup Actor and removes the item from the inventory. Uses the Environment Query to define a location. |
+| `DropAtLocation` | Spawns the Pickup Actor at a pre-defined location.                                                                |
 
 ## Memory
 This fragment does not use its own memory but selectively includes other fragment memories when creating the Pickup Actor. 

@@ -125,7 +125,7 @@
         </toc-element>        
         <toc-element topic="cbt_troubleshooting.md"/>
         <toc-element topic="cbt_changelog.md"/>
-        <toc-element topic="cbt_version_updates.md"/>
+        <toc-element topic="cbt_version_upgrades.md"/>
     </toc-element>
 
     <!-- Ninja Factions -->
@@ -270,5 +270,6 @@
             <toc-element topic="inv_ui_drag_and_drop.md"/>
         </toc-element>
         <toc-element topic="inv_changelog.md"/>
+        <toc-element topic="inv_version_upgrades.md"/>
     </toc-element>
 </instance-profile>

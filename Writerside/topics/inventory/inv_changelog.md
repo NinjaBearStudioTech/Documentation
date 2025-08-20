@@ -1,19 +1,35 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.0.0
+## 2.0.0 - 22/08/2025
 <secondary-label ref="wip"/>
 ```
-[major] Moved all inventory and fragment delegates to the Inventory Subsystem. 
-[major] Updated Blueprint APIs to use FInstancedStruct, instead of TInstancedStruct, which may change some function signatures.
-[major] Removed all base widgets and converted the entire UI into View Models and the Inventory Resolver.
-[added] Added "Linux" and "Mac" to the list of Allowed Build Platforms.
-[added] A new Anim Notify State, "Hide Equipment", to hide (and then show) Equipment Actors. Useful for things like interactions.
-[improvement] Added more logs and comments to the Consume ability to properly explain why it could be cancelling its activation.
-[improvement] Replaced ensure condition for Equipment Managers in the Attribute Set, for a check/warning.
-[bugfix] Fixed a crash when removing items without stacks fragments. 
-[bugfix] Fixed the condition to consume items from gameplay events. 
-[bugfix] Ensure that the Equipment State ability will end correctly when no animation is found.
+[major] Moved all inventory and fragment delegates to the Inventory Manager.
+[major] Updated Blueprint APIs to use FInstancedStruct (replaces TInstancedStruct in select signatures).
+[major] Converted mostly the entire UI to View Models + Inventory Resolver.
+[major] Container Placement: memory-driven initialization with salvage; deterministic container/position selection.
+[major] Container Placement: new PlacementInitialized event; refined ContainerChanged/PositionChanged gating.
+[major] Container Placement: accurate payloads (previous/current container & position); swap-aware add/move.
+[major] Linked Container: primary and linked mirroring (equipment single-slot semantics).
+[major] Linked Container: redirect when placed in linked first; move owner to primary, then mirror.
+[major] Nested Container: auto-create on activation; lifecycle tied to owner; auto-remove on owner removal.
+[added] Allowed build platforms: Linux and Mac.
+[added] Spatial layout: PerCell and BitSetRows fit algorithms; custom hook via TestWithCustomAlgorithm (C++).
+[added] Occupancy Masks with rotation support and in-editor mask UI (paint/mirror/rotate/validate).
+[added] Drag & Drop: UNinjaInventoryDropZoneWidget + UNinjaInventoryDragDropOperation integration for world/container drops.
+[added] Automated test suite covering placement, events, swaps, nested/linked, eviction, container removal.
+[improvement] Container Placement: single graceful retry path (TryPlaceWithRetry) for transient failures.
+[improvement] Container Placement: ResolveById for authoritative container instance resolution.
+[improvement] Linked Container: listens to item + container events; clears mirror on container removal/unequip.
+[improvement] Consume ability: expanded logs/comments to clarify cancellation causes.
+[improvement] Attribute Set: replaced ensure with check/warning for Equipment Managers.
+[improvement] Test utilities consolidated into shared event listeners and helpers.
+[bugfix] Crash when removing items without stacks fragments.
+[bugfix] Consume from gameplay events condition corrected.
+[bugfix] Equipment State ability now ends correctly when no animation is found.
+[bugfix] Linked Container: prevented duplicate subscriptions and stale mirror memory on deactivate.
+[bugfix] Nested Container: prevented duplicate creation on re-activation or load.
+[bugfix] Crash when loading inventory with certain stack values.
 ```
 
 ## 1.3.17 - 30/12/2024
