@@ -3,15 +3,6 @@
 
 ![Ninja Inventory](inv_feature.png "Ninja Inventory")
 
-> **Major Upgrade!**
-> 
-> Inventory 2.0 is the next version for our Inventory System. Many parts were rebuilt to include optimizations, simplifications 
-> quality-of-life, based on community feedback.
-> 
-> The new version is planned for late July/early August 2025 and will also refresh the integration with Ninja Combat.
-> The documentation is already been updated to support the new features.
-{style="note"}
-
 The **Ninja Inventory** plugin was inspired by concepts introduced by Epic's project "Lyra", such as definitions, instances, 
 and fragments. These concepts are quite powerful for an inventory system, as they promote defining items through _aggregation_ 
 instead of the classic _inheritance_ approach.

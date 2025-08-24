@@ -2,7 +2,6 @@
 <primary-label ref="inventory"/>
 
 ## 2.0.0 - 22/08/2025
-<secondary-label ref="wip"/>
 ```
 [major] Moved all inventory and fragment delegates to the Inventory Manager.
 [major] Updated Blueprint APIs to use FInstancedStruct (replaces TInstancedStruct in select signatures).

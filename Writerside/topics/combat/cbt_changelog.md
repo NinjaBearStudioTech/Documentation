@@ -1,6 +1,12 @@
 # Changelog
 <primary-label ref="combat"/>
 
+## 5.1.1 - 23/08/2025
+```
+[improvement] Updated integration with Ninja Inventory, to match version 2.0.0.
+[improvement] Exposed binding/unbinding function in the base Anim BP, to support deferred initialization.
+```
+
 ## 5.0.0 - 04/07/2025
 > **Important Changes in this version**
 >
