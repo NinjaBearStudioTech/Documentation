@@ -18,12 +18,12 @@ also supports **item rotation**, when enabled.
 
 The following properties control the grid layout:
 
-| Property        | Description                                                                                                                                   |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| `GridWidth`     | The **number of columns** in the grid. Used for placement logic and UI layout.                                                                |
-| `GridHeight`    | The **number of rows** in the grid. Only used if `SlotCountType` is set to **Property**.                                                      |
-| `FitAlgorithm`  | Algorithm used to test fit and item collisions.                                                                                               |
-| `SlotCountType` | Defines how the total number of usable slots is determined. Options include **Property** (fixed values) or **Gameplay Attribute** (dynamic).  |
+| Property        | Description                                                                                                                                    |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| `GridWidth`     | The **number of columns** in the grid. Used for placement logic and UI layout.                                                                 |
+| `GridHeight`    | The **number of rows** in the grid. Only used if `SlotCountType` is set to **Property**.                                                       |
+| `FitAlgorithm`  | Algorithm used to test fit and item collisions.                                                                                                |
+| `SlotCountType` | Defines how the total number of usable slots is determined. Options include **Property** (fixed values) or **Gameplay Attribute** (dynamic).   |
 | `SlotAttribute` | A reference to a `GameplayAttribute` used to determine slot count at runtime. Used only when `SlotCountType` is set to **Gameplay Attribute**. |
 
 > **Height and Slot Attributes**
@@ -36,8 +36,26 @@ The following properties control the grid layout:
 
 ## Position Type
 
-This layout uses the `Grid` position type, where each item occupies a **2D coordinate** on the container (starting at `0,0`).  
+This layout uses the `Grid` position type, where each item occupies a **2D coordinate** on the container (starting at `0,0`). 
 The layout behaves like a **matrix**, with collision and fit checks performed across rows and columns.
+
+To better illustrate how items interact with the spatial grid, the following example shows two scenarios, in a `10x4`grid.
+
+**Example 1**: An L-shaped item and a 1x1 item are placed on the grid, on positions `0,0` and `1,0` respectively. The 
+L-shaped item cannot rotate because the 1x1 item blocks one of its required cells.
+
+<img src="inv_layout_spatial.png" alt="Grid with L-shaped and 1x1 item, rotation blocked" width="600"/>
+
+**Example 2**: After moving the 1x1 item to a different position, `2,0`, the L-shaped item can rotate freely. This 
+demonstrates how the fit algorithm checks collisions against existing occupants and container bounds.
+
+<img src="inv_layout_spatial_rotated.png" alt="Grid after moving 1x1 item, rotation allowed" width="600"/>
+
+> **Item Dimensions**
+> 
+> Complex item shapes (such as L-forms) are defined by the [**Dimensions Fragment**](inv_fragment_dimensions.md).
+> This fragment defines the item's **occupancy mask** and whether **rotation** is allowed.
+{style="note"}
 
 ## Slot Count Types
 
