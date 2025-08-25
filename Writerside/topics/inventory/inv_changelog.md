@@ -1,6 +1,14 @@
 # Changelog
 <primary-label ref="inventory"/>
 
+## 2.0.3 
+<secondary-label ref="wip"/>
+```
+[improvement] Added a dedicated transfer function for inventory items.
+[improvement] Updated arrays with raw object pointers to use TObjectPtr instead.
+[fix] Build issue from FInventoryItemContainerPlacementOperation.
+```
+
 ## 2.0.0 - 22/08/2025
 ```
 [major] Moved all inventory and fragment delegates to the Inventory Manager.
@@ -23,12 +31,12 @@
 [improvement] Consume ability: expanded logs/comments to clarify cancellation causes.
 [improvement] Attribute Set: replaced ensure with check/warning for Equipment Managers.
 [improvement] Test utilities consolidated into shared event listeners and helpers.
-[bugfix] Crash when removing items without stacks fragments.
-[bugfix] Consume from gameplay events condition corrected.
-[bugfix] Equipment State ability now ends correctly when no animation is found.
-[bugfix] Linked Container: prevented duplicate subscriptions and stale mirror memory on deactivate.
-[bugfix] Nested Container: prevented duplicate creation on re-activation or load.
-[bugfix] Crash when loading inventory with certain stack values.
+[fix] Crash when removing items without stacks fragments.
+[fix] Consume from gameplay events condition corrected.
+[fix] Equipment State ability now ends correctly when no animation is found.
+[fix] Linked Container: prevented duplicate subscriptions and stale mirror memory on deactivate.
+[fix] Nested Container: prevented duplicate creation on re-activation or load.
+[fix] Crash when loading inventory with certain stack values.
 ```
 
 ## 1.3.17 - 30/12/2024
@@ -37,7 +45,7 @@
 [added] New Scene Selector (`EquipmentSceneComponentProvider`) based on an interface, for advanced logic.
 [improvement] Added the source to pickup actors.
 [improvement] Exposed consumable objects in the Consumable Ability.
-[bugfix] Fixed `IsSuccessful` in the `FInventoryItemContext`.
+[fix] Fixed `IsSuccessful` in the `FInventoryItemContext`.
 ```
 
 ## 1.1.14 - 16/11/2024
@@ -45,7 +53,7 @@
 [added] Support for Unreal Engine 5.5.
 [improvement] Added the appropriate Editor Category for all Inventory Assets in the Content Browser.
 [improvement] Improved the logic for the Inventory Animation Ability activation check.
-[bugfix] Fixed the Equipment State Changed broadcast not being called.
+[fix] Fixed the Equipment State Changed broadcast not being called.
 ```
 
 ## 1.0.11 - 08/09/2024
@@ -58,11 +66,11 @@
 [improvement] Organizing the code to eventually auto-generate Mesh Components for slots.
 [improvement] Added a component that enables direct integration with Ninja Combat.
 [improvement] Added a function that can assume the container from an item in safe scenarios.
-[bugfix] Fixed initial memories for Level and Quality fragments.
-[bugfix] Fixed filters for Data Tables.
-[bugfix] Fixed a crash while checking for empty Inventory Avatars.
-[bugfix] Fixed a corner-case of adding items to the first position in a container, without a pre-set container and multiple stacks.
-[bugfix] Fixed the helper function that checks the result of an item context and provides a path.
+[fix] Fixed initial memories for Level and Quality fragments.
+[fix] Fixed filters for Data Tables.
+[fix] Fixed a crash while checking for empty Inventory Avatars.
+[fix] Fixed a corner-case of adding items to the first position in a container, without a pre-set container and multiple stacks.
+[fix] Fixed the helper function that checks the result of an item context and provides a path.
 ```
 
 ## 1.0.0 - 12/08/2024

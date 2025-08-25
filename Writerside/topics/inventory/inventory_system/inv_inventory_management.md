@@ -87,6 +87,7 @@ Items can be managed using the following transactional functions:
 | `AddItem`                 | Yes           | Adds a new item using the given `ItemInfo` struct. Returns a GUID for the new item instance.   |
 | `AddItemWithCallback`     | Yes           | Adds a new `ItemInfo` and receives a callback executed during main **initialization events**.  |
 | `AddItemsFromPickupActor` | Yes           | Adds items from a Pickup Actor that implements `InventoryPickupInterface`. Returns item GUIDs. |
+| `TransferItem`            | Yes           | Transfers an item from one inventory to another, returning the new item GUID.                  |
 | `RemoveItem`              | Yes           | Removes an item from the inventory. Optionally drops it if a valid fragment supports dropping. |
 
 When you add an item to the Inventory Manager, the system will automatically determine container placement, stacking, 
