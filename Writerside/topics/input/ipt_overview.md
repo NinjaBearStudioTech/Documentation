@@ -16,6 +16,7 @@ in **Blueprints** or **C++**. The system offers a variety of handlers out-of-the
 - **Handler Collection**: Offers numerous Input Handlers out-of-the-box and a clean API design to create new ones as needed, either in C++ or Blueprints.
 - **Trigger Abilities**: Fully integrated with the Gameplay Ability System, allowing it to activate and cancel Abilities and send Gameplay Events.
 - **Animation-Based Input Buffer**: Includes an animation-based Input Buffer to ensure that player input is not dropped, enhancing game responsiveness.
+- **Input Remapping**: Provides an end-to-end framework to support Key Remapping, using the Enhanced Input framework.
 - **Integrated with the Editor**: Enables the creation of relevant assets with proper contextual menus and the configuration of important aspects in the Project Settings page.
 
 ## Design Pillars
