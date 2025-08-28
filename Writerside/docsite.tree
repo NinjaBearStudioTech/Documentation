@@ -184,10 +184,10 @@
             <toc-element topic="ipt_remapping_setup.md"/>
             <toc-element topic="ipt_remapping_functions.md"/>
             <toc-element topic="ipt_remapping_ui.md"/>
-        </toc-element>        
+        </toc-element>
         <toc-element toc-title="Advanced Topics">
+            <toc-element topic="ipt_user_settings.md"/>
             <toc-element topic="ipt_input_buffer.md"/>
-            <toc-element topic="ipt_common_ui.md"/>
         </toc-element>
         <toc-element topic="ipt_troubleshooting.md"/>
         <toc-element topic="ipt_changelog.md"/>

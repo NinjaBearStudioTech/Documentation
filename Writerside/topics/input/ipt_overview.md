@@ -3,33 +3,54 @@
 
 ![Ninja Input](ipt_feature.png "Ninja Input")
 
-The **Ninja Input** plugin is designed to separate the code used to handle **Player Input**, which is captured by Unreal 
-Engine's **[Enhanced Input System][1]**.
+**Ninja Input** is a focused layer on top of Unreal Engine's **[Enhanced Input System][1]**. It cleanly separates input
+handling from your Character and Pawn code, while giving you a fast, extensible path in Blueprints or C++.
 
-For each Input Action, you can use any of the many **Input Handlers** provided by the system or easily create your own 
-in **Blueprints** or **C++**. The system offers a variety of handlers out-of-the-box, including full integration with the **[Gameplay Ability System][2]**.
+Out of the box, it includes a robust **Input Manager**, a library of **Input Handlers**, **GAS** hooks, an **animation-aware 
+input buffer**, **input remapping**, and support for player **user settings**.
 
 ## Main Features
 
-- **Enhanced Input System**: Fully integrated with Unreal Engine's official Input System.
-- **Input Manager**: The Input Manager Component handles all the boilerplate functionality necessary to configure inputs.
-- **Handler Collection**: Offers numerous Input Handlers out-of-the-box and a clean API design to create new ones as needed, either in C++ or Blueprints.
-- **Trigger Abilities**: Fully integrated with the Gameplay Ability System, allowing it to activate and cancel Abilities and send Gameplay Events.
-- **Animation-Based Input Buffer**: Includes an animation-based Input Buffer to ensure that player input is not dropped, enhancing game responsiveness.
-- **Input Remapping**: Provides an end-to-end framework to support Key Remapping, using the Enhanced Input framework.
-- **Integrated with the Editor**: Enables the creation of relevant assets with proper contextual menus and the configuration of important aspects in the Project Settings page.
+- **Enhanced Input integration**  
+  Works directly with Epic's actions, triggers, modifiers, and mapping contexts. Keep using your existing EI assets.
+
+- **Input Manager component**  
+  Centralizes mapping context install/uninstall, handler dispatch, and lifecycle hooks to cut boilerplate.
+
+- **Handler collection**  
+  Ready-made handlers for common patterns (pressed/held/repeat, axis driving, toggles, gameplay events), extendable in BP/C++.
+
+- **GAS integration**  
+  Activate/cancel abilities and fire gameplay events with minimal glue. Plays nicely with **[Ninja GAS][3]** and **[Ninja Combat][4]**.
+
+- **Animation-based input buffer**  
+  Buffer windows aligned with montages/notify windows to avoid dropped inputs during transitions.
+
+- **User settings & modifiers**  
+  Built-in settings for invert XY and sensitivity (mouse X/Y, gamepad), with matching Input Modifiers that read from the settings object.
+
+- **Input remapping pipeline**  
+  End-to-end remapping workflow (UI → ViewModels → save/apply) on top of Enhanced Input. See the [remapping setup](ipt_remapping_setup.md).
+
+- **Editor integration**  
+  Contextual asset menus and a Project Settings page for quick configuration.
 
 ## Design Pillars
 
-- **Separation of Concerns**: Separates Input Handling code from Character code.
-- **Fast Iteration**: Faster iterations and prototyping with many common input handling code already provided.
-- **GAS Integration**: Simple way to trigger abilities from user input.
+- **Separation of concerns**  
+  Keep input orchestration out of Character classes.
+
+- **Fast iteration**  
+  Prototype quickly with ready-made handlers and clean extension points.
+
+- **GAS-first gameplay**  
+  A straightforward path from user input to abilities and gameplay events.
 
 ## Integrations
 
-- The Gameplay Ability System can be configured using **[Ninja GAS][3]**.
-- It can trigger abilities and send events to the Combo Manager from **[Ninja Combat][4]**.
-- It can trigger abilities from **[Ninja Inventory][5]**.
+- Configure the Gameplay Ability System with **[Ninja GAS][3]**.
+- Drive combo inputs and send events to **[Ninja Combat][4]**.
+- Trigger Inventory-driven abilities via **[Ninja Inventory][5]**.
 
 [1]: https://dev.epicgames.com/documentation/en-us/unreal-engine/enhanced-input-in-unreal-engine
 [2]: https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine

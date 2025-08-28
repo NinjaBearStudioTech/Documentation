@@ -19,7 +19,6 @@ it, it's recommended that you have some familiarity with these base systems. **F
 - **Extensive Inventory and Equipment Domain**: Provides a comprehensive domain for managing inventory and equipment.
 - **Gameplay Ability System Integration**: Uses Gameplay Abilities, Effects, and Attribute Sets for enhanced functionality.
 - **Asset Manager Integration**: Loads assets when needed and unloads them when not, optimizing performance.
-- **Aggregation and Inversion of Control**: Items and equipment pieces are declared via _aggregation_ and _inversion of control_, promoting flexibility and modularity.
 - **UI Module**: Built using the [Common UI][4] and the [UMG Viewmodel][5] frameworks, for a robust and responsive user interface.
 - **Flexibility and Extensibility**: Designed to support various types of projects.
 - **Quality and Support**: Features clean, well-documented code, a thorough documentation site and a Discord support channel.
@@ -27,6 +26,7 @@ it, it's recommended that you have some familiarity with these base systems. **F
 ## Design Pillars
 
 - **Separation of Concerns**: The Inventory domain is self-contained and affect other domains such as "Locomotion", "Combat", "Interaction", etc.
+- **Aggregation and Inversion of Control**: Items and equipment pieces are declared via _aggregation_ and _inversion of control_, promoting flexibility and modularity.
 - **Flexibility**: The Inventory System is flexible enough to be used in multiple projects, from simple weapon wheels to RPG games.
 - **Extensibility**: Multiple extension points are available so the Inventory System can be adapted to many situations.
 - **Designer Friendly**: You can configure and operate the entire Inventory System using Data Assets and Blueprints. Deeper customization might require C++.

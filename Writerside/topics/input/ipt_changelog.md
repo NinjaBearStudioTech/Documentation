@@ -1,13 +1,16 @@
 # Changelog
 <primary-label ref="input"/>
 
-## 5.2.8 
+## 5.4.9 
 <secondary-label ref="wip"/>
 ```
+[added] Introduced a custom Input User Settings that includes common input modifiers (mouse sensitivity, gamepad sensitivity, etc.)
+[added] Input Modifiers that apply values from the settings class to the Input Actions. 
 [added] Introduced settings, functionalities ViewModels related to key remapping.
 [added] Input Handler to print debug strings. Meant to be used in the editor, while testing input setups.
 [improvement] You can provide your own "ModifyContextOptions", per Input Mapping Context, when registering these data assets.
 [improvement] Added DefaultToSelf metadata to relevant functions in the BP library.
+[improvement] Organized internal folders for input files, so they are grouped under `Input`.
 [fix] Added missing descriptions for the DefaultHoldCombo handler.
 ```
 

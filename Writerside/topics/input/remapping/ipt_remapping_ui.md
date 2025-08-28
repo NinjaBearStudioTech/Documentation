@@ -64,16 +64,17 @@ should be set to **Manual**.
 This ViewModel provides a list of all **Key Mapping Categories** configured in the game. From each category, you can 
 then access its aggregated bindings.
 
-| Field           | Description                                                                             |
-|-----------------|-----------------------------------------------------------------------------------------|
-| `GetCategories` | Retrieves a list of all categories, represented as **Key Mapping Category ViewModels**. |
+| Field              | Description                                                                             |
+|--------------------|-----------------------------------------------------------------------------------------|
+| `IsSavingSettings` | Notifies that a saving operation is currently happening.                                |
+| `GetCategories`    | Retrieves a list of all categories, represented as **Key Mapping Category ViewModels**. |
 
 This is a **two-way** ViewModel, meaning you can both read its properties and call its functions, either via data binding
 or directly in your widget. These functions automatically invoke the Input Remapping backend on your behalf.
 
-| Function            | Description                                |
-|---------------------|--------------------------------------------|
-| `SaveInputSettings` | Saves all bindings in their current state. |
+| Function            | Description                                                                                  |
+|---------------------|----------------------------------------------------------------------------------------------|
+| `SaveInputSettings` | Saves all bindings in their current state. Blocked if another save operation is in progress. |
 
 This ViewModel is often used in combination with a **ViewModel Extension** on widget containers such as a **Vertical Box**, 
 **Grid**, or **List**. Once the extension is enabled on a component, you can link its `SetItems` function to the `GetCategories` 

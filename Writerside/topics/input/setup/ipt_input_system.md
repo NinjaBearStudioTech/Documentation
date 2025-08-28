@@ -108,7 +108,8 @@ the **Camera** or an **Arrow Component**. To mark a component as the Forward Ref
 `Input.Component.ForwardReference` component tag it.
 
 The **Input Manager** component can automatically create a Forward Reference for you. You can enable that behavior by
-setting the `ShouldCreateForwardReference` property to `true`, in the Input Manager defaults panel.
+setting the `ShouldCreateForwardReference` property to `true`, in the Input Manager defaults panel. You can also modify
+the default creation logic, by overriding the `CreateForwardReference` function.
 
 If you need more control over your Forward Reference component, then you can create your own Forward Reference and 
 assign the appropriate Gameplay Tag.

@@ -15,6 +15,9 @@ Setting up your project to support remapping is straightforward and involves thr
 To enable Input Remapping with Ninja Input, you first need to ensure the correct **Settings Classes** are
 configured in your project. You can use the classes provided by the framework **or your own subclasses**.
 
+> You'll also do this when enabling [the custom User Settings class](ipt_user_settings.md), so you may have completed it 
+> already.
+
 <procedure title="Enabling Input Remapping" collapsible="true" default-state="expanded">
     <step>In the engine, open the <b>Project Settings</b> window.</step>
     <step>Navigate to <b>Engine</b> &rarr; <b>Enhanced Input</b>, and expand the <b>User Settings</b> category.</step>
