@@ -83,6 +83,13 @@ input needs (e.g., vehicles, turrets, or UI-driven characters).
     </step>
 </procedure>
 
+## Input Mapping Settings
+When adding an input mapping, you may need to provide additional **context options**. In the **Enhanced Input**
+framework, this is handled by passing a `FModifyContextOptions` struct when adding your Input Mapping Context.
+
+You can fine-tune the values in this struct—either globally or per mapping context—by overriding the
+`CreateModifyContextOptions` function in Blueprints or C++.
+
 ## Runtime Management
 Input Setups can be added and removed at runtime. This is useful when you want certain inputs to only become available
 when specific gameplay elements happen.

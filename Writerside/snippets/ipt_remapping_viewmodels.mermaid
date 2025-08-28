@@ -1,0 +1,39 @@
+classDiagram
+    
+    
+    class KeyMappings {
+        <<Root ViewModel>>
+        +GetCategories(): TArray
+        +SaveInputSettings(): void
+        CreationType = Input Resolver
+    }
+    
+    class KeyMappingCategory {
+        <<Aggregator ViewModel>>
+        +GetBindings(): TArray
+        +GetGamepadBindings(): TArray
+        +GetKeyboardAndMouseBindings(): TArray
+        +DisplayCategory: FText
+        Created by: KeyMappings
+        CreationType = Manual
+    }
+    
+    class KeyMappingEntry {
+        <<Leaf ViewModel>>
+        +IsCustomized: bool
+        +CurrentKey: FKey
+        +DefaultKey: FKey
+        +MappingName: FName
+        +DisplayName: FText
+        +DisplayCategory: FText
+        +Tooltip: FText
+        +IconBrush: FSlateBrush
+        +RebindKey(args: FMapPlayerKeyArgs): void
+        +RebindKeyToFirstSlot(key: FKey): void
+        +ResetKeyBinding(): void
+        Created by: KeyMappingCategory
+        CreationType = Manual
+    }    
+    
+    KeyMappings "1" --> "*" KeyMappingCategory : provides categories
+    KeyMappingCategory "1" --> "*" KeyMappingEntry : provides entries

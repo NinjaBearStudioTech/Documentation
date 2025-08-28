@@ -1,6 +1,16 @@
 # Changelog
 <primary-label ref="input"/>
 
+## 5.2.8 
+<secondary-label ref="wip"/>
+```
+[added] Introduced settings, functionalities ViewModels related to key remapping.
+[added] Input Handler to print debug strings. Meant to be used in the editor, while testing input setups.
+[improvement] You can provide your own "ModifyContextOptions", per Input Mapping Context, when registering these data assets.
+[improvement] Added DefaultToSelf metadata to relevant functions in the BP library.
+[fix] Added missing descriptions for the DefaultHoldCombo handler.
+```
+
 ## 5.0.5 - 04/07/2025
 ```
 [improvement] Default Combo Check and dedicated Combo Tags/Events for the Default/Hold/Combo handler.

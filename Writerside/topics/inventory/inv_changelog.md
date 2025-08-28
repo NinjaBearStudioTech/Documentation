@@ -1,12 +1,16 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.0.3 
+## 2.0.7 
 <secondary-label ref="wip"/>
 ```
-[improvement] Added a dedicated transfer function for inventory items.
+[improvement] Exposed dedicated transfer function for inventory items.
 [improvement] Updated arrays with raw object pointers to use TObjectPtr instead.
+[improvement] Simplified the ASC binding flow to remove the confusing "bShouldFailFromASC" flag.
+[improvement] Modified fragment initialization signature to avoid unnecessary copying of the initial memory struct.
 [fix] Build issue from FInventoryItemContainerPlacementOperation.
+[fix] Corrected the description to match the purpose of the Drag and Drop ViewModel.
+[fix] Added missing call to "Super" in the Inventory View Model resolver.
 ```
 
 ## 2.0.0 - 22/08/2025
