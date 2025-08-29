@@ -58,12 +58,19 @@ removed at runtime. To know more about containers, please check the correspondin
 
 Containers can be managed using the following transactional functions:
 
-| Function                   | Authoritative | Description                                                                                                                             |
-|----------------------------|---------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| `AddContainer`             | Yes           | Adds a container from a `ContainerData` asset. Returns a GUID for the new instance.                                                     |
-| `AddContainerWithCallback` | Yes           | Adds a container and invokes a callback with direct access to the new Container Instance. Returns a GUID for the instance.              |
-| `AddNestedContainer`       | Yes           | Adds a nested container related to an inventory item. Useful to represents items that are container themselves, like _pots_ or _boxes_. |
-| `RemoveContainer`          | Yes           | Removes a container using its GUID.                                                                                                     |
+| Function                   | Description                                                                                                                                                          |
+|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `AddContainer`             | Adds a container from a `ContainerData` asset. Returns a GUID for the new instance.                                                                                  |
+| `AddContainerWithCallback` | Adds a container and invokes a callback with direct access to the new Container Instance. Returns a GUID for the instance. Must be called on authority.              |
+| `AddNestedContainer`       | Adds a nested container related to an inventory item. Useful to represents items that are container themselves, like _pots_ or _boxes_. Must be called on authority. |
+| `RemoveContainer`          | Removes a container from the inventory.                                                                                                                              |
+| `RemoveContainerById`      | Removes a container using its unique identifier as a target criteria.                                                                                                |
+
+> **Server Authority**
+>
+> All functions listed above require **server authority**, and will trigger a server RPC when invoked from a locally
+> controlled autonomous client (unless marked otherwise).
+{style="note"}
 
 Containers can be queried using the following read-only functions:
 
@@ -82,13 +89,22 @@ and it's also the entry-point for item maintenance. To know more about items, pl
 
 Items can be managed using the following transactional functions:
 
-| Method                    | Authoritative | Description                                                                                    |
-|---------------------------|---------------|------------------------------------------------------------------------------------------------|
-| `AddItem`                 | Yes           | Adds a new item using the given `ItemInfo` struct. Returns a GUID for the new item instance.   |
-| `AddItemWithCallback`     | Yes           | Adds a new `ItemInfo` and receives a callback executed during main **initialization events**.  |
-| `AddItemsFromPickupActor` | Yes           | Adds items from a Pickup Actor that implements `InventoryPickupInterface`. Returns item GUIDs. |
-| `TransferItem`            | Yes           | Transfers an item from one inventory to another, returning the new item GUID.                  |
-| `RemoveItem`              | Yes           | Removes an item from the inventory. Optionally drops it if a valid fragment supports dropping. |
+| Method                            | Description                                                                                                                   |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| `AddItem`                         | Adds a new item using the given `ItemInfo` struct. Returns a GUID for the new item instance.                                  |
+| `AddItemWithCallback`             | Adds a new `ItemInfo` and receives a callback executed during main **initialization events**. Authority only (no server RPC). |
+| `AddItemsFromPickupActor`         | Adds items from a Pickup Actor that implements `InventoryPickupInterface`. Returns item GUIDs.                                |
+| `TransferItem`                    | Transfers an item from one inventory to another, returning the new item GUID.                                                 |
+| `TransferItemWithMemoryOverrides` | Transfers an item, overriding or adding new memories to it.                                                                   |
+| `TransferDefaultItem`             | Transfers a default item structure, which must include a source item and inventory.                                           |
+| `RemoveItem`                      | Removes an item from the inventory. Optionally drops it if set to do so and the item has a valid drop fragment.               |
+| `RemoveItemById`                  | Removes an item using its unique identifier as a target criteria.                                                             |
+
+> **Server Authority**
+> 
+> All functions listed above require **server authority**, and will trigger a server RPC when invoked from a locally 
+> controlled autonomous client (unless marked otherwise).
+{style="note"}
 
 When you add an item to the Inventory Manager, the system will automatically determine container placement, stacking, 
 and other behaviors based on your configuration.
