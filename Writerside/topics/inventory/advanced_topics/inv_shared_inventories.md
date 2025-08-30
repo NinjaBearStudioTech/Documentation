@@ -9,8 +9,8 @@ Unlike the player's personal inventory, a shared inventory's data and operations
 and be executed **authoritatively on the server**. Use a shared inventory when:
 
 - More than one player should be able to see and/or modify the same set of items.
-- The container “lives in the world” (placed actor, persistent stash, town vendor), not on a specific player.
-- You need synchronized state across clients (e.g., one player moves an item and everyone else’s UI updates).
+- The container "lives in the world" (placed actor, persistent stash, town vendor), not on a specific player.
+- You need synchronized state across clients (e.g., one player moves an item and everyone else's UI updates).
 
 However, this approach is **not ideal for single-user storage scenarios**. If you only need a "storage box" for a single 
 player (whether playing solo or in multiplayer), it's often simpler and more performant to:
@@ -21,7 +21,7 @@ player (whether playing solo or in multiplayer), it's often simpler and more per
 This avoids world-ownership, cross-ownership RPCs, and multi-user synchronization. It's the recommended pattern for 
 per-player lockers, "mailbox" style storage, or quest caches that do not need to be shared.
 
-## Technical Walkthrough
+## Main Concepts
 
 To support shared containers, Ninja Inventory includes the following **building blocks**:
 
@@ -30,6 +30,8 @@ To support shared containers, Ninja Inventory includes the following **building 
 - **Transfer Pipeline**: Cross-inventory transfers (e.g., player to/from chest) use a server-authoritative flow.
 - **Network Proxy (per-player)**: A lightweight, server-spawned, owner-only actor that lets a client invoke server operations even when the target inventory isn't locally owned.
 - **Session Handshake (Authorization)**: Before any external inventory can act on a shared inventory, it must open a session.
+
+## Technical Walkthrough
 
 ### Shared Inventory Manager Component
 
