@@ -89,14 +89,14 @@ and it's also the entry-point for item maintenance. To know more about items, pl
 
 Items can be managed using the following transactional functions:
 
-| Method                            | Description                                                                                                                   |
+| Function                          | Description                                                                                                                   |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | `AddItem`                         | Adds a new item using the given `ItemInfo` struct. Returns a GUID for the new item instance.                                  |
 | `AddItemWithCallback`             | Adds a new `ItemInfo` and receives a callback executed during main **initialization events**. Authority only (no server RPC). |
 | `AddItemsFromPickupActor`         | Adds items from a Pickup Actor that implements `InventoryPickupInterface`. Returns item GUIDs.                                |
-| `TransferItem`                    | Transfers an item from one inventory to another, returning the new item GUID.                                                 |
-| `TransferItemWithMemoryOverrides` | Transfers an item, overriding or adding new memories to it.                                                                   |
-| `TransferDefaultItem`             | Transfers a default item structure, which must include a source item and inventory.                                           |
+| `TransferItem`                    | Transfers an item from one inventory to another, returning the new item GUID. Requires an **authorization session**.          |
+| `TransferItemWithMemoryOverrides` | Transfers an item, overriding or adding new memories to it. Requires an **authorization session**.                            |
+| `TransferDefaultItem`             | Transfers a default item structure, which must include a source item and inventory. Requires an **authorization session**.    |
 | `RemoveItem`                      | Removes an item from the inventory. Optionally drops it if set to do so and the item has a valid drop fragment.               |
 | `RemoveItemById`                  | Removes an item using its unique identifier as a target criteria.                                                             |
 
@@ -126,13 +126,31 @@ You can influence this process using:
 
 Items can be queried using the following read-only functions:
 
-| Method                | Description                                                                                          |
+| Function              | Description                                                                                          |
 |-----------------------|------------------------------------------------------------------------------------------------------|
 | `CountItems`          | Returns the number of item instances in the inventory (does not account for stack sizes or volumes). |
 | `GetAllItems`         | Retrieves all items stored in the Inventory.                                                         |
 | `GetItemsByData`      | Retrieves all items that match a specific `ItemDataAsset`.                                           |
 | `GetItemsByQuery`     | Retrieves all items that match a `GameplayTagQuery`.                                                 |
 | `GetFirstItemByQuery` | Returns the first item that matches a given `GameplayTagQuery`.                                      |
+
+## Authorization Sessions
+
+The Inventory Manager provides functions used to authorize an external inventory to perform certain operations, the 
+most common example being the **item transfer**. 
+
+Before executing operations between **two distinct Inventory Managers** you need to initiate a _handshake_ resulting in
+an **authorization session**. This is only necessary in the authoritative inventory. Also, keep in mind that a session
+allows an operation to happen from **either direction**.
+
+| Function                | Description                                        |
+|-------------------------|----------------------------------------------------|
+| `IsInventoryAuthorized` | Checks if an Inventory Manager is authorized.      |
+| `OpenSession`           | Opens an authorization session for an inventory.   |
+| `CloseSession`          | Closes the authorization session for an inventory. |
+
+When managing your own inventory, operations like "move", "swap" and so on won't require this session, even in multiplayer,
+since an Inventory Manager is **always authorized** to interact with itself.
 
 ## Item Processor
 

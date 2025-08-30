@@ -1,9 +1,10 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.0.8 
+## 2.1.8 
 <secondary-label ref="wip"/>
 ```
+[added] Introduced a network proxy and authorized inventory checkers.
 [improvement] Exposed dedicated transfer function for inventory items.
 [improvement] Updated arrays with raw object pointers to use TObjectPtr instead.
 [improvement] Simplified the ASC binding flow to remove the confusing "bShouldFailFromASC" flag.
