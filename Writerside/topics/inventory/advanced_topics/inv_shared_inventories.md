@@ -55,7 +55,7 @@ that the owning actor is **set to replicate**.
 - Exposes helper methods to check, open, and close a session with a requester.
 - Plays nicely with your per-player RPC network proxy and fragment operations.
 
-Using this actor is **optional**, but since it does not have any gameplay aspects (like meshes or collisions), it's use
+Using this actor is **optional**, but since it does not have any gameplay aspects (like meshes or collisions), its use
 is **highly recommended**, since it already provides important functions to **establish sessions between inventories**.
 
 These functions are analogous to the ones exposed by the [Inventory Manager](inv_inventory_management.md#authorization-sessions).

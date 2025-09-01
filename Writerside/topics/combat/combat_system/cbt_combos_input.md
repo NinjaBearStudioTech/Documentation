@@ -26,6 +26,6 @@ The **Event Tag** you send depends on the **Event Mode** configured in your Comb
 
 > **Ninja Input Integration**
 >
-> Ninja Input provides built-in input handlers that simplify this process, automatically sending the correct Gameplay 
-> Event for each configured action.
+> Ninja Input provides built-in input handlers, including the specific **Combat Combo** handler that provides this exact
+> behavior.
 {style="tip"}

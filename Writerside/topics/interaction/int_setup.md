@@ -72,7 +72,7 @@ The **Source Preset** is set as follows:
 - The **Object Type** is set to **Interaction Object**.
 - All **Collision Responses are set to **Ignore**, except for **Interaction Object**, which is set to **Overlap**.
 
-<img src="int_setup_collision_preset_source.png" alt="Collision Source Preset" thumbnail="true" border-effect="line"/>
+<img src="int_setup_collision_preset_source.png" alt="Collision Source Preset" border-effect="line"/>
 
 The **Target Preset** is set as follows:
 
@@ -80,7 +80,7 @@ The **Target Preset** is set as follows:
 - The **Object Type** is set to **Interaction Object**.
 - All **Collision Responses are set to **Ignore**, except for **Interaction Trace** and **Interaction Object**, which are set to **Block**.
 
-<img src="int_setup_collision_preset_target.png" alt="Collision Target Preset" thumbnail="true" border-effect="line"/>
+<img src="int_setup_collision_preset_target.png" alt="Collision Target Preset" border-effect="line"/>
 
 ## Ability System
 
