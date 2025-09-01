@@ -1,7 +1,7 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.1.8 
+## 2.1.9 
 <secondary-label ref="wip"/>
 ```
 [added] Introduced a network proxy and authorized inventory checkers.
@@ -10,6 +10,7 @@
 [improvement] Simplified the ASC binding flow to remove the confusing "bShouldFailFromASC" flag.
 [improvement] Modified fragment initialization signature to avoid unnecessary copying of the initial memory struct.
 [improvement] Automatic server RPC management for item and container functions.
+[improvement] Tag-based visibility for Equipment Actors.
 [fix] Build issue from FInventoryItemContainerPlacementOperation.
 [fix] Corrected the description to match the purpose of the Drag and Drop ViewModel.
 [fix] Added missing call to "Super" in the Inventory View Model resolver.

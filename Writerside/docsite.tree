@@ -276,6 +276,7 @@
             <toc-element topic="inv_ui_drag_and_drop.md"/>
         </toc-element>
         <toc-element toc-title="Advanced Topics">
+            <toc-element topic="inv_tag_visibility.md"/>
             <toc-element topic="inv_shared_inventories.md"/>
         </toc-element>
         <toc-element topic="inv_changelog.md"/>

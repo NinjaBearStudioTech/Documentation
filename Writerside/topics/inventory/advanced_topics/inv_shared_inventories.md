@@ -2,6 +2,17 @@
 <primary-label ref="inventory"/>
 <secondary-label ref="advanced"/>
 
+<tldr>
+    <p><b>Summary: Shared Inventories</b></p>
+    <ul>
+        <li>Inventories owned by a <b>world actor</b> (e.g., chest, stash, vendor, guild bank) that can be accessed by multiple players at the same time.</li>
+        <li>All operations replicate and are executed <b>authoritatively on the server</b>, keeping clients synchronized.</li>
+        <li>Use when storage must be <b>shared between players</b> and live in the world, not bound to a single player.</li>
+        <li>For single-user storage (e.g., a personal chest), prefer a <b>hidden container</b> in the player's own inventory for better performance.</li>
+        <li>Includes building blocks like <b>Shared Manager Components</b>, <b>Session Authorization</b>, <b>Network Proxies</b>, and a ready-to-use <b>Shared Storage Actor</b>.</li>
+    </ul>
+</tldr>
+
 **Shared inventories** are inventories owned by a world actor (e.g., a storage chest, stash, vendor, guild bank) that can 
 be viewed and manipulated by multiple players at the same time. 
 
