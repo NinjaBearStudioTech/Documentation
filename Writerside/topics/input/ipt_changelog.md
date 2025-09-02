@@ -1,8 +1,7 @@
 # Changelog
 <primary-label ref="input"/>
 
-## 5.5.9 
-<secondary-label ref="wip"/>
+## 5.5.9 - 01/09/2025
 ```
 [added] Introduced a custom Input User Settings that includes common input modifiers (mouse sensitivity, gamepad sensitivity, etc.)
 [added] Input Modifiers that apply values from the settings class to the Input Actions. 

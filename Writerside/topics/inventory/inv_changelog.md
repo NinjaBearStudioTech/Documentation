@@ -1,8 +1,7 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.1.9 
-<secondary-label ref="wip"/>
+## 2.1.9 - 01/09/2025
 ```
 [added] Introduced a network proxy and authorized inventory checkers.
 [improvement] Exposed dedicated transfer function for inventory items.
