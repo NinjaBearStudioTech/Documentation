@@ -1,6 +1,12 @@
 # Changelog
 <primary-label ref="combat"/>
 
+## 5.3.1 
+```
+[improvement] Rewrote integration with Ninja Inventory, using reflection instead of compiler conditions. 
+[improvement] Rewrote integration with Ninja Factions, using reflection instead of compiler conditions.
+```
+
 ## 5.1.1 - 23/08/2025
 ```
 [improvement] Updated integration with Ninja Inventory, to match version 2.0.0.

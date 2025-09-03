@@ -1,6 +1,13 @@
 # Changelog
 <primary-label ref="factions"/>
 
+## 2.3.10 - 03/09/2025
+```
+[improvement] Exposed IsFriendly helper function, to check the alignment between two targets.
+[improvement] Exposed IsNeutral helper function, to check the alignment between two targets.
+[improvement] Exposed IsHostile helper function, to check the alignment between two targets.
+```
+
 ## 2.3.7 - 04/07/2025
 ```
 [added] Gameplay Effect Requirements for attitude checks.

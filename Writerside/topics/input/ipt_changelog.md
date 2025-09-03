@@ -1,6 +1,9 @@
 # Changelog
 <primary-label ref="input"/>
 
+## 5.5.10 - 03/09/2025
+[fix] Added missing plugin dependency ModelViewViewModel.
+
 ## 5.5.9 - 01/09/2025
 ```
 [added] Introduced a custom Input User Settings that includes common input modifiers (mouse sensitivity, gamepad sensitivity, etc.)

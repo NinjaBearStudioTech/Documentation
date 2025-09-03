@@ -1,6 +1,13 @@
 # Changelog
 <primary-label ref="inventory"/>
 
+## 2.1.12
+```
+[improvement] Marked container GetTotalSlots as virtual.
+[fix] Ensured that the equipment manager queries equipment instances, not items.
+[fix] Reintroduced missing blueprint attributes for inventory item, equipment and components. 
+```
+
 ## 2.1.9 - 01/09/2025
 ```
 [added] Introduced a network proxy and authorized inventory checkers.
