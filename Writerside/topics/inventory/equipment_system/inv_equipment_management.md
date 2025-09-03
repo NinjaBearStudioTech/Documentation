@@ -69,7 +69,7 @@ The system includes several built-in finders:
 |------------------------------------|---------------------------------------------------------------------------------|
 | `UAttachFinder_CharacterMesh`      | Always returns the avatar’s main mesh (e.g., `GetMesh()` on characters).        |
 | `UAttachFinder_ComponentTag`       | Searches the avatar for a component with a matching `ComponentTag`.             |
-| `UAttachFinder_InventoryInterface` | Calls `GetInventoryMesh()` from the `InventorySystemInterface`, if implemented. |
+| `UAttachFinder_InventoryInterface` | Calls `GetInventoryMesh()` from the `EquipmentSystemInterface`, if implemented. |
 
 ### Custom Finders
 You can create your own finder by subclassing `NinjaEquipmentAttachParentFinder` and overriding the `FindAttachParent` method.
