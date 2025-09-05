@@ -1,10 +1,11 @@
 # Changelog
 <primary-label ref="gas"/>
 
-## 1.8.7 - 04/07/2025
+## 1.9.7 - 04/07/2025
 <secondary-label ref="wip"/>
 ```
-[added] Added support for Local and Server Attribute Sets.
+[added] Support for Local and Server Attribute Sets.
+[added] Support for Respawn Policy in Attribute Sets.
 ```
 
 ## 1.7.7 - 04/07/2025
