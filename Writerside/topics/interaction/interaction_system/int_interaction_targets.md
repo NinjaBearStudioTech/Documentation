@@ -172,9 +172,9 @@ Ninja Interaction includes a core abstract base class and two ready-to-use subcl
 - `ANinjaInteractionActor_StaticMesh`: Interaction actor represented by a **Static Mesh**.
 - `ANinjaInteractionActor_SkeletalMesh`: Interaction actor represented by a **Skeletal Mesh**.  
 
-## Creating an Interaction Target
+## Configuring an Interaction Target
 
-To put these concepts into practice, we'll walk through the process of building a fully functional **Interaction Target**.  
+To put these concepts into practice, we'll walk through the process of building a fully functional **Interaction Target**. 
 This involves three main steps:
 
 1. Create a **State Tree** that defines the flow of the interaction when triggered by a source. We'll start with a simple, generic interaction tree.
