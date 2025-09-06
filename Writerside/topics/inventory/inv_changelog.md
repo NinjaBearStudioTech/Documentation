@@ -1,9 +1,10 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.1.12
+## 2.1.13
 ```
 [improvement] Marked container GetTotalSlots as virtual.
+[improvement] Added an option to still execute item actions, even when an ability animation is missing. 
 [fix] Ensured that the equipment manager queries equipment instances, not items.
 [fix] Reintroduced missing blueprint attributes for inventory item, equipment and components. 
 ```

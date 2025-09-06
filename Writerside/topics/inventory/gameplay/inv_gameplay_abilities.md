@@ -23,14 +23,15 @@ and **consume**. These abilities are designed to accomplish the following tasks:
 All Ninja Inventory abilities derive from the shared base class: `UNinjaInventoryAnimationAbility`. This base introduces
 several key properties that configure the ability’s behavior:
 
-| Property                  | Description                                                                                                                  |
-|---------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| `DefaultAnimationChooser` | Chooser Table used to determine the animation montage to play. Can be overridden via the provided interface.                 |
-| `ActionTag`               | The verb describing the animation action (e.g., equip, store, consume). Can be used to match animation events and responses. |
-| `AnimationCriteriaClass`  | Class used to build the Chooser Table criteria object.                                                                       |
-| `ItemQuery`               | Optional query used to locate an item if none is provided in the activation payload or as a context object.                  |
-| `TriggerPolicy`           | Defines when the action should occur: at animation start, upon a Gameplay Event, or when the animation ends.                 |
-| `EventTag`                | The Gameplay Event that will trigger the action, used only if the trigger policy is set to "Gameplay Event".                 |
+| Property                                | Description                                                                                                                  |
+|-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| `DefaultAnimationChooser`               | Chooser Table used to determine the animation montage to play. Can be overridden via the provided interface.                 |
+| `ActionTag`                             | The verb describing the animation action (e.g., equip, store, consume). Can be used to match animation events and responses. |
+| `AnimationCriteriaClass`                | Class used to build the Chooser Table criteria object.                                                                       |
+| `ShouldTriggerActionOnMissingAnimation` | If set to true, will still execute the underlying action when no montage is available.                                       |
+| `ItemQuery`                             | Optional query used to locate an item if none is provided in the activation payload or as a context object.                  |
+| `TriggerPolicy`                         | Defines when the action should occur: at animation start, upon a Gameplay Event, or when the animation ends.                 |
+| `EventTag`                              | The Gameplay Event that will trigger the action, used only if the trigger policy is set to "Gameplay Event".                 |
 
 Inventory abilities often require their actions to occur at a specific point during execution. To support varying project
 needs, Ninja Inventory introduces the concept of a **Trigger Policy**. Supported values include:
