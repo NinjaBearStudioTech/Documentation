@@ -1,8 +1,9 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 5.3.1 
+## 5.4.1 - 10/09/2025
 ```
+[added] New strafe-related functions, integrated with the Target Manager.
 [improvement] Rewrote integration with Ninja Inventory, using reflection instead of compiler conditions. 
 [improvement] Rewrote integration with Ninja Factions, using reflection instead of compiler conditions.
 ```

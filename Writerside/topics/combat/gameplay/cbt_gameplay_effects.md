@@ -113,14 +113,13 @@ The following Gameplay Effects are related to the **Combo** functionality.
 |------------------|-----------------------------------------------------------------------------|
 | `LockedOnTarget` | Indicates that the receiver has a locked target. Usually triggers strafing. |
 
-## Target Lock
+## Locomotion
 
-The following Gameplay Effects are related to the **Target Lock** functionality.
+The following Gameplay Effects are meant to enable integrations with external locomotion systems.
 
-| Effect        | Description                               |
-|---------------|-------------------------------------------|
-| `ComboWindow` | When applied, allows a combo to continue. |
-
+| Effect     | Description                                                                                       |
+|------------|---------------------------------------------------------------------------------------------------|
+| `Strafing` | Indicates that the character is strafing from an external source, such as a Locomotion framework. |
 
 ## Opportunity Attacks
 
@@ -149,3 +148,20 @@ The following Gameplay Effects are related to the **Poise and Stagger** function
 > Poise Damage by default.
 >
 > Usually, you should not need to use the Poise Damage by itself.
+{style="note"}
+
+## Target Lock
+
+The following Gameplay Effects are related to the **Target Lock** functionality.
+
+| Effect           | Description                                                                    |
+|------------------|--------------------------------------------------------------------------------|
+| `LockedBySource` | When applied, indicates that the owner has been locked by the effect's source. |
+| `LockedOnTarget` | When applied, indicates that the owner is locked on a target.                  |
+
+> **Strafe Integration**
+>
+> If the Combat Manager is set to grant "strafe ownership" to the target lock, via the `bTargetingControlsStrafingState`
+> property, then locking on a target will also enable strafing, which is then broadcast to combat listeners, such as
+> the [**Movement Component**](cbt_movement_component.md) or [**Animation Instance**](cbt_character_animation.md#animation-instance).
+{style="note"}

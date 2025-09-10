@@ -30,7 +30,7 @@ The following properties are available and can be accessed by searching for `Get
 | Speed                 | `float`   | Locomotion | The 2D magnitude of the character's velocity.                            |
 | DisplacementSpeed     | `float`   | Locomotion | Distance moved since last frame (useful for root motion blending).       |
 | Velocity              | `vector`  | Locomotion | The velocity vector (direction and magnitude).                           |
-| Strafing              | `boolean` | Combat     | Indicates if the character is strafing (based on Combat System updates). |
+| Strafing              | `boolean` | Locomotion | Indicates if the character is strafing (based on Combat System updates). |
 | Blocking              | `boolean` | Combat     | Indicates if the character is currently blocking.                        |
 | Staggered             | `boolean` | Combat     | Indicates if the character is staggered.                                 |
 | Dead                  | `boolean` | Combat     | Indicates if the character has died.                                     |
