@@ -1,12 +1,15 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.1.13
+## 2.1.16 - 10/09/2025
 ```
-[improvement] Marked container GetTotalSlots as virtual.
-[improvement] Added an option to still execute item actions, even when an ability animation is missing. 
+[improvement] Marked container function GetTotalSlots as virtual.
+[improvement] Added an option to still execute item actions, even when an ability animation is missing.
+[improvement] The inventory Subsystem will support registering inventories using either the avatar or owner.
+[improvement] Added a GetInventoryAnimInstance function in the Equipment Interface, to support realtime retargeting scenarios. 
 [fix] Ensured that the equipment manager queries equipment instances, not items.
-[fix] Reintroduced missing blueprint attributes for inventory item, equipment and components. 
+[fix] Reintroduced missing blueprint attributes for inventory item, equipment and components.
+[fix] Corrected the logic to determine the attach socket for the equipment actor, so it correctly addresses optional overrides. 
 ```
 
 ## 2.1.9 - 01/09/2025

@@ -35,6 +35,17 @@ Equipment Manager will usually coexist as follows:
 > Alternatively, you can subscribe to the `OnBoundToInventory` event, which will broadcast once binding completes.
 {style="note"}
 
+## Equipment Interface
+Similar to the Inventory owner, you can add implement `IEquipmentSystemInterface` in your avatar. This interface provides
+direct access to the avatar's **mesh** and **animation instance**, so these are correctly selected by the Equipment Manager, 
+when an equipment instance is being attached or an animation layer is being linked.
+
+> **Runtime Retargeting**
+> 
+> In common scenarios, this interface is optional yet useful. However, this interface becomes mandatory in a scenario where
+> you have **runtime retargeting**, where your **Avatar Mesh** is not the one providing the **Primary Animation Instance**.
+{style="note"}
+
 ## Item Eligibility
 The Equipment Manager watches for items being **added** or **removed** from the inventory. If the item meets the  
 equipment eligibility criteria, it will be processed automatically.
