@@ -46,9 +46,10 @@ always listen to Gameplay Events represented by these gameplay tags:
 | `Combat.Event.Target.Acquired`  | Requests the ability to lock on a target in the payload. |
 | `Combat.Event.Target.Dismissed` | Requests the ability to unlock from the current target.  |
 
-> **Ninja Bot Integration**
+> **Ninja Perception Integration**
 >
-> [](bot_overview.md) can automatically send the Gameplay Event to lock and unlock targets obtained via the **Perception System**.
+> Ninja Perception can automatically send the Gameplay Event to lock and unlock targets obtained via the **Perception System**,
+> by utilizing the correct Gameplay Tags.
 
 ### Target Acquired Gameplay Event
 
