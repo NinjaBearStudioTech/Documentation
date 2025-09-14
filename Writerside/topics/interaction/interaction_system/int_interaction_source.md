@@ -35,12 +35,8 @@ or interacted with.
 |-----------------------------------|-----------------------------------------------------------------------------|
 | `OnInteractableActorRegistered`   | Fired when an interactable actor is detected and registered.                |
 | `OnInteractableActorUnregistered` | Fired when an interactable actor is no longer detected and is unregistered. |
-| `OnFocusApplied`                  | Fired when an actor gains focus from this interaction source.               |
-| `OnFocusRemoved`                  | Fired when an actor loses focus from this interaction source.               |
-| `OnInteractionStarted`            | Fired when an interaction begins with a focused target.                     |
-| `OnInteractionCommited`           | Fired when an interaction is committed (action confirmed).                  |
-| `OnInteractionFinished`           | Fired when an interaction successfully completes.                           |
-| `OnInteractionCancelled`          | Fired when an interaction in progress is cancelled.                         |
+| `OnFocusStateChanged`             | Fired when an the focus state changes for a registered target.              |
+| `OnInteractionStateChanged`       | Fired when an the interaction state changes for a focused target.           |
 
 The `UNinjaInteractionManagerComponent` also exposes several **Blueprint-accessible functions** used to query the actor's
 awareness of interaction targets and to control the interaction flow.
@@ -54,8 +50,8 @@ awareness of interaction targets and to control the interaction flow.
 | `HasInteractionTargetActor`                    | Checks if the given actor is registered as an interaction target.                                                        |
 | `HasInteractionTargetComponent`                | Checks if the given component is registered as an interaction target.                                                    |
 | `HasLineOfSightWithInteractionTargetComponent` | Checks if there is line-of-sight to the given interaction target component, even if it is not registered.                |
-| `ApplyFocusToTarget`                           | Applies focus to a specific interaction target.                                                                          |
-| `RemoveFocusFromTarget`                        | Removes focus from a specific interaction target.                                                                        |
+| `ApplyFocusToTarget`                           | Applies focus to a specific interaction target, setting the focus state from `eligible` to `focused`.                    |
+| `RemoveFocusFromTarget`                        | Removes focus from a specific interaction target, setting the focus state to `none`.                                     |
 | `StartInteraction`                             | Starts an interaction based on a given request. Returns the activation result.                                           |
 | `CommitCurrentInteraction`                     | Commits the current interaction, if one is in progress.                                                                  |
 | `TryCancelCurrentInteraction`                  | Attempts to cancel the current interaction, optionally providing a Gameplay Tag that represents the cancellation reason. |
@@ -114,11 +110,11 @@ and once focused, transition into a series of **Interaction States**.
 
 ### Focus States
 
-| State        | Description                                                                       |
-|--------------|-----------------------------------------------------------------------------------|
-| **None**     | No focus is applied to the target.                                                |
-| **Eligible** | The target can receive focus. Used by certain scan flows, but not always applied. |
-| **Focused**  | The target is currently focused by the manager.                                   |
+| State        | Description                                                                                                                                               |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **None**     | The target is registered, but no focus is applied to the target.                                                                                          |
+| **Eligible** | The target passed a pre-requisite criteria (e.g. it's colliding with the proximity box) and is ready to receive focus by a "focus event".                 |
+| **Focused**  | The target received a focus event from the Inventor Manager (e.g. closest to the player, or aimed at by the player camera) and can accept an interaction. |
 
 ### Interaction States
 
@@ -134,10 +130,11 @@ When a target reaches the **Focused** state, it becomes eligible for interaction
 
 ## Configuring an Interaction Source
 
-To set up an **Interaction Source** (instigator), you’ll need to combine collision, abilities, and the interaction manager
+To set up an **Interaction Source** (instigator), you'll need to combine collision, abilities, and the interaction manager
 into a working flow. At a high level, this involves three main tasks:
 
 1. Add the **Interaction Manager Component** to your pawn or character, making it the backbone for detecting and managing interaction targets.
 2. Configure the **Collision Components** (scan and optional focus colliders) so the manager can register and track interaction targets in the world.
-3. Ensure the actor’s **Ability System Component** is granted the required **Interaction Abilities**, so it can scan for targets and execute interactions.
+3. Ensure the actor's **Ability System Component** receives the required **Interaction Abilities**, so it can scan for targets and execute interactions.
+
 

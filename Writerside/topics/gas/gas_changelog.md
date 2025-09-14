@@ -1,11 +1,12 @@
 # Changelog
 <primary-label ref="gas"/>
 
-## 1.9.7 - 04/07/2025
+## 1.9.8
 <secondary-label ref="wip"/>
 ```
 [added] Support for Local and Server Attribute Sets.
 [added] Support for Respawn Policy in Attribute Sets.
+[improvement] Ability data assets from the owner and avatar are handled separately, as an aggregation. 
 ```
 
 ## 1.7.7 - 04/07/2025
@@ -20,7 +21,7 @@
 [improvement] Handled runtime retarget possibilities in the "CurrentMontageStop" function, in the ASC.
 [bugfix] Added a check to ensure that default abilities and effect handles are valid, before storing them.
 [bugfix] Ensured that passive abilities are properly cancelled when changing an avatar.
-[Deprecation] Dropped support for Unreal Engine 5.4 to avoid version branching and ensure full compatibility with new State Tree utility-based features.
+[deprecation] Dropped support for Unreal Engine 5.4 to avoid version branching and ensure full compatibility with new State Tree utility-based features.
 ```
 
 ## 1.2.0 - 16/11/2024

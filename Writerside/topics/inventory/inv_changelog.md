@@ -1,6 +1,13 @@
 # Changelog
 <primary-label ref="inventory"/>
 
+## 2.1.17
+<secondary-label ref="wip"/>
+```
+[fix] Send Inventory Event notify won't trigger ensure assertion on editor.
+[fix] Added platform allow list for the test module.
+```
+
 ## 2.1.16 - 10/09/2025
 ```
 [improvement] Marked container function GetTotalSlots as virtual.

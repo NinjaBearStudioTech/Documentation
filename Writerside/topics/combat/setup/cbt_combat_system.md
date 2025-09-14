@@ -16,10 +16,16 @@
 
 ## Combat Manager Component
 The Combat Manager Component is the most important component in the framework. It is the backbone for all other components
-and actors to operate, and should be present in every Pawn or Character considered a _combatant_. 
+and actors to operate, and should be present in every **Pawn** or **Character** considered a _combatant_. 
 
-For more information about how to extend this component, please check the [](cbt_component_extensions.md) page. For now,
-we will simply add it to the **base character class**.
+> **Combat Manager Location**
+> 
+> The Combat Manager should always be added to the **Pawn** or **Character**, regardless of the location of the related
+> Ability System Component, which can be added to the Pawn or Player State, as usual.
+{style=note}
+
+For more information about how to extend this component, please check the [](cbt_component_extensions.md) page. For now, we will simply add it to 
+the **base character class**.
 
 <procedure title="Add the Combat Manager Component" collapsible="true" default-state="expanded">
     <step>
