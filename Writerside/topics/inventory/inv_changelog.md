@@ -1,11 +1,12 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.1.17
+## 2.1.19
 <secondary-label ref="wip"/>
 ```
 [fix] Send Inventory Event notify won't trigger ensure assertion on editor.
-[fix] Added platform allow list for the test module.
+[fix] Added platform allowlist for the test module.
+[fix] Ensure that dynamic magnitudes are always applied, regardless of a previous application that happened before.
 ```
 
 ## 2.1.16 - 10/09/2025

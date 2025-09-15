@@ -10,6 +10,11 @@ Each attribute can be assigned a **fixed value** or a **random range** that is r
 > These are not Gameplay Attributes (GAS). Instead, they are custom item-level attributes that can also be exported to 
 > Gameplay Effects as Set By Caller magnitudes if desired.
 
+## Application
+This fragment implements `IInventoryItemMagnitudeInterface`, which is used by an Item Instance to set magnitudes to any 
+gameplay effect applied either from the [**Gameplay Effect Fragment**](inv_fragment_gameplay_effect.md) or by an active 
+[**Equipment State**](inv_equipment_instances.md).
+
 ## Fragment Tags
 This fragment does not introduce any specific gameplay tags by default.
 

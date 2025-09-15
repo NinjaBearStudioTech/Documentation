@@ -77,9 +77,9 @@ Refer to each fragment's documentation for specific behavior, memory structure, 
 ## Item Instances
 At runtime, an item becomes a `NinjaInventoryItem` instance. These are instanced objects that:
 
-- Store runtime state (container, position, equipment state, etc.).
+- Stores runtime state (container, position, equipment state, etc.).
 - Reference the original Data Asset and all resolved fragments.
-- Include a unique **GUID** used for save/load and networking.
+- Includes a unique **GUID** used for save/load and networking.
 - Support **replicated memory** for multiplayer scenarios.
 
 You can customize item behavior further by subclassing `NinjaInventoryItem` and assigning the new class in the Item Data 
@@ -91,3 +91,17 @@ currently is. Possible values are:
 - **Accepted**: The item was accepted and will be processed by the inventory.
 - **Fragments Initialized**: Fragments will initialize and prepare their initial memories.
 - **Fragments Activated**: Fragments have been initialized and executed any activation logic.
+
+## Dynamic Magnitudes
+Items can automatically apply `SetByCaller` magnitudes to any Gameplay Effect applied from the item (e.g., Fragments). 
+
+Whenever a Gameplay Effect is about to be applied by the item, any dynamic attributes will be collected from all fragments 
+implementing `IInventoryItemMagnitudeInterface`, such as the [**Dynamic Attributes fragment**](inv_fragment_dynamic_attributes.md).
+
+If you need to apply these magnitudes to an external Gameplay Effect, not applied by the item, then you can request the
+item to do so, by calling `ApplyMagnitudesToSpec`.
+
+> **Conditional Application**
+> 
+> You can fine-tune which Gameplay Effect specs will receive certain magnitudes by overriding `ShouldApplyMagnitudeToSpec`,
+> exposed by the Item Instance class.
