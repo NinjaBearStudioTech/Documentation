@@ -103,6 +103,11 @@ The dedicated ability pages will cover these in detail, including how to customi
 ensure that both abilities are added to your actor's **Ability System Component** by default, so they are always available 
 when the **Interaction Manager** triggers its events.
 
+> **Interaction Abilities**
+> 
+> For more details about all Gameplay Abilities provided by the Interaction System, please check the 
+> related ability section.
+
 ## Interaction Target States
 
 From the Interaction Manager's perspective, a **registered Interaction Target** can exist in a few possible **Focus States**,
