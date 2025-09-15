@@ -160,7 +160,7 @@
                 <toc-element topic="int_interaction_source.md"/>
             </toc-element>
             <toc-element toc-title="Gameplay">
-                <toc-element topic="int_abilities.md">
+                <toc-element toc-title="Abilities">
                     <toc-element topic="int_ability_find_interactable_actor.md"/>
                     <toc-element topic="int_ability_execute_interaction.md"/>
                     <toc-element topic="int_ability_play_animation.md"/>
