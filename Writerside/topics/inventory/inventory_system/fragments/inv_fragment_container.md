@@ -10,6 +10,12 @@ logically placed.
 It works in conjunction with container layouts and can define preferred containers using a tag query. If no preferred 
 container is available, the system selects the most appropriate option based on layout, compatibility, and priority.
 
+> **Required Fragment**
+> 
+> All layouts provided by the framework rely on this fragment to store item positions. If you are using these layouts, 
+> always add this fragment to your items.
+{style="note"}
+
 ## Fragment Tags
 This fragment does not add any traits to the item, but it relies on container tags and layout compatibility to work correctly.
 
