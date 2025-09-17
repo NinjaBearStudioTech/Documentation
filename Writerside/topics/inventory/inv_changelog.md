@@ -1,12 +1,13 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.1.19
+## 2.1.20
 <secondary-label ref="wip"/>
 ```
 [fix] Send Inventory Event notify won't trigger ensure assertion on editor.
 [fix] Added platform allowlist for the test module.
-[fix] Ensure that dynamic magnitudes are always applied, regardless of a previous application that happened before.
+[fix] Ensured that dynamic magnitudes are always applied, regardless of a previous application that happened before.
+[fix] Changed direct call to interface call in NinjaInventoryDropZoneWidget.
 ```
 
 ## 2.1.16 - 10/09/2025
