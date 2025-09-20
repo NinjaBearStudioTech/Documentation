@@ -24,18 +24,19 @@ This fragment does not add any traits to the item, but Gameplay Effects can add 
 ## Properties
 This fragment has the following properties.
 
-| Name                    | Description                                                                                   |
-|-------------------------|-----------------------------------------------------------------------------------------------|
-| `AlwaysApplyEffect`     | If `true`, always applies the effect during activation. When false, conditions are evaluated. |
-| `UseContainerCondition` | If `true`, checks a container tag query before applying the effect.                           |
-| `ContainerQuery`        | The tag query used to validate the container.                                                 |
-| `UseItemCondition`      | If `true`, checks an item tag query before applying the effect.                               |
-| `ItemQuery`             | The tag query used to validate the item.                                                      |
-| `UseOwnerCondition`     | If `true`, checks the owner's ability system component against a tag query.                   |
-| `OwnerQuery`            | The tag query used to validate the owner.                                                     |
-| `LevelMode`             | Determines how the effect level is calculated.                                                |
-| `DirectLevelValue`      | Direct float value used when `LevelMode` is set to `DirectValue`.                             |
-| `LevelCurve`            | Curve used to evaluate level from the Level Fragment when `LevelMode` is `Curve`.             |
+| Name                    | Description                                                                                                                                                |
+|-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `AlwaysApplyEffect`     | If `true`, always applies the effect during activation. When false, conditions are evaluated.                                                              |
+| `UseContainerCondition` | If `true`, checks a container tag query before applying the effect.                                                                                        |
+| `ContainerQuery`        | The tag query used to validate the container.                                                                                                              |
+| `UseItemCondition`      | If `true`, checks an item tag query before applying the effect.                                                                                            |
+| `ItemQuery`             | The tag query used to validate the item.                                                                                                                   |
+| `UseOwnerCondition`     | If `true`, checks the owner's ability system component against a tag query.                                                                                |
+| `OwnerQuery`            | The tag query used to validate the owner.                                                                                                                  |
+| `LevelMode`             | Determines how the effect level is calculated.                                                                                                             |
+| `DirectLevelValue`      | Direct float value used when `LevelMode` is set to `DirectValue`.                                                                                          |
+| `LevelCurve`            | Curve used to evaluate level from the Level Fragment when `LevelMode` is `Curve`.                                                                          |
+| `StackIntegration`      | Determines how the Gameplay Effect integrates with a Stack Fragment, allowing the effect to be applied only once, or have a stack that matches the item's. | 
 
 ## Operations
 This fragment exposes the following operations.

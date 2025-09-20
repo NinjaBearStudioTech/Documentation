@@ -19,6 +19,7 @@ This ViewModel currently supports the following inventory-related attributes:
 
 | Field            | Description                                                     |
 |------------------|-----------------------------------------------------------------|
+| `HasAttributes`  | Informs if the ViewModel is connected to an Attribute Set.      |
 | `Wealth`         | Tracks the player's current amount of **currency**.             |
 | `EquipmentLevel` | Reflects the average level of all currently **equipped items**. |
 | `Encumbrance`    | Shows the current **carried weight**.                           |

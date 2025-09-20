@@ -1,6 +1,17 @@
 # Changelog
 <primary-label ref="inventory"/>
 
+## 2.3.26
+<secondary-label ref="wip"/>
+```
+[added] Encumbrance Gameplay Effect for convenience.
+[improvement] Gameplay Effect fragment can interact with the Stack fragment.
+[improvement] Ensure the Weight fragment always synchronizes with new stack sizes.
+[improvement] Clean-up the Wealth Gameplay Effect, so it can be properly extended.
+[fix] Replication for Dynamic Attributes is kept during inventory transfers.
+[fix] Items fully merged will be deleted instead of dropped.
+```
+
 ## 2.2.21 - 19/09/2025
 ```
 [added] ViewModel exposing Inventory Attributes, such as Encumbrance and Wealth.
