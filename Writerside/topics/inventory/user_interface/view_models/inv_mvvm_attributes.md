@@ -23,4 +23,5 @@ This ViewModel currently supports the following inventory-related attributes:
 | `EquipmentLevel` | Reflects the average level of all currently **equipped items**. |
 | `Encumbrance`    | Shows the current **carried weight**.                           |
 | `WeightLimit`    | Shows the **maximum carry weight** the player can support.      |
+| `WeightPercent`  | Represents the relation between encumbrance and weight limit.   |
 

@@ -1,9 +1,10 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.1.20
-<secondary-label ref="wip"/>
+## 2.2.21 - 19/09/2025
 ```
+[added] ViewModel exposing Inventory Attributes, such as Encumbrance and Wealth.
+[improvement] Modified Equipment Load callback to make it more robust for precompiled libraries plus deep hierarchies.
 [fix] Send Inventory Event notify won't trigger ensure assertion on editor.
 [fix] Added platform allowlist for the test module.
 [fix] Ensured that dynamic magnitudes are always applied, regardless of a previous application that happened before.
