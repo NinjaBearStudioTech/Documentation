@@ -24,17 +24,18 @@ This fragment has the following properties.
 ## Operations
 This fragment exposes the following operations.
 
-| Function                        | Description                                                         |
-|---------------------------------|---------------------------------------------------------------------|
-| `GetMaximumQuantity`            | Returns the maximum allowed quantity of the item in the inventory.  |
-| `GetStackLimit`                 | Returns the maximum number of items allowed in one stack.           |
-| `GetStackSize`                  | Returns the current stack size of a specific item.                  |
-| `GetStackSizeFromDefaultMemory` | Provides the current stack size for a default item data.            |
-| `SetStackSize`                  | Sets the stack size of a specific item (authority-only).            |
-| `MergeStacks`                   | Merges two stacks, if possible (authority-only).                    |
-| `SplitStack`                    | Splits an item stack, for the desired quantity (authority-only).    |
-| `CountItemQuantity`             | Returns the total quantity of a specific item across the inventory. |
-| `TryMergeIntoExistingStacks`    | Attempts to merge the item's stack into existing incomplete stacks. |
+| Function                        | Description                                                                                                                                     |
+|---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| `CanMergeStacks`                | Checks if two items can be merged. By default considers that both items are based on the same type and the target item's stack has enough room. |
+| `GetMaximumQuantity`            | Returns the maximum allowed quantity of the item in the inventory.                                                                              |
+| `GetStackLimit`                 | Returns the maximum number of items allowed in one stack.                                                                                       |
+| `GetStackSize`                  | Returns the current stack size of a specific item.                                                                                              |
+| `GetStackSizeFromDefaultMemory` | Provides the current stack size for a default item data.                                                                                        |
+| `SetStackSize`                  | Sets the stack size of a specific item (authority-only).                                                                                        |
+| `MergeStacks`                   | Merges two stacks, if possible (authority-only).                                                                                                |
+| `SplitStack`                    | Splits an item stack, for the desired quantity (authority-only).                                                                                |
+| `CountItemQuantity`             | Returns the total quantity of a specific item across the inventory.                                                                             |
+| `TryMergeIntoExistingStacks`    | Attempts to merge the item's stack into existing incomplete stacks.                                                                             |
 
 ## Memory
 This fragment uses `InventoryItemFragmentStackMemory` to store the current **stack size**.

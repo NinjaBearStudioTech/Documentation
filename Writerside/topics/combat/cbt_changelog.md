@@ -1,6 +1,14 @@
 # Changelog
 <primary-label ref="combat"/>
 
+## 5.4.4
+<secondary-label ref="wip"/>
+```
+[improvement] Combat Animation Montage will change sections using the ASC.
+[fix] Deferred ASC initialization in the base ViewModel will obtain world from the owning actor.
+[fix] Combat ViewModel resolver was renamed to follow the correct naming convention.
+```
+
 ## 5.4.1 - 10/09/2025
 ```
 [added] New strafe-related functions, integrated with the Target Manager.

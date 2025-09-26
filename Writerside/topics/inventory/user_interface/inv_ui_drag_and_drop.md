@@ -15,6 +15,20 @@ It provides the following methods for this, and by overriding them, you can cust
 | `EvaluateTargetItemOperation` | Evaluates an operation specifically between two items.        |
 | `PerformOperation`            | Executes the chosen operation once validated.                 |
 
+Once an operation is evaluated, the possible outcomes are determined, from the following scenarios:
+
+| Operation Outcome       | Condition / Description                                                                                                                                         |
+|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Invalid**             | Missing required data (invalid item/container), operation not permitted, item cannot be placed/swapped, or fails other conditions.                              |
+| **NoChange**            | Source container and target container are the same, and the source position equals the target position. Basically a "sanity check".                             |
+| **DropToWorld**         | Source item is not *Bound* and the target widget is a recognized “Drop Zone Widget.”                                                                            |
+| **MergeStacks**         | Source and target items are of the same type, have a valid `UItemFragment_StackAndQuantity`, and `CanMergeStacks()` returns true.                               |
+| **CombineItems**        | Source item's `CanCombineItem(TargetItem)` returns true.                                                                                                        |
+| **SwapItems**           | Both items are valid, not mergeable/combining, so default fallback when dragging onto another item.                                                             |
+| **MoveWithinContainer** | Source and target are the same container, target item is invalid, and `TargetContainer->CanAcceptItemAtPosition(SourceItem, TargetPosition)` is true.           |
+| **MoveToContainer**     | Source and target containers belong to the same inventory, target accepts item at position, and no item-specific interaction applies.                           |
+| **TransferToInventory** | Source and target containers belong to different inventories, item not bound *or* the source inventory authorizes the target inventory, and placement is valid. |
+
 ## World Drops
 
 Dropping items in the world to generate **pickups** is automatically supported. The custom operation class will detect
