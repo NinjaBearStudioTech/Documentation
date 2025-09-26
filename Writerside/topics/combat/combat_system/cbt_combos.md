@@ -66,7 +66,7 @@ At this stage, you can create your **Gameplay Abilities**. These can be [](cbt_m
 {style=warning}
 
 ## State Tree
-With all Gameplay Abilities prepared, it’s time to create the **State Tree** that defines how the combo flows, including
+With all Gameplay Abilities prepared, it's time to create the **State Tree** that defines how the combo flows, including
 attack order, branching paths, and looping options.
 
 <procedure title="Creating a Combo Tree" collapsible="true" default-state="expanded">
@@ -100,7 +100,7 @@ attack order, branching paths, and looping options.
         <img src="cbt_wpatk_combo_state_tree_05.png" alt="State Tree Combo State Attack 05" border-effect="line" thumbnail="true"/>
     </step>
     <step>
-        <p>Repeat for all states, using the same <b>Event Tag</b>, but adjusting the <b>Next State</b> each time. For the <b>last attack</b>, add an <b>On State Complete</b> transition to <b>Tree Succeeded</b>.</p>
+        <p>Repeat for all states, using the same <b>Event Tag</b>, but adjusting the <b>Next State</b> each time. Additionally, for <b>each attack</b>, add an <b>On State Complete</b> transition to <b>Tree Succeeded</b>.</p>
         <img src="cbt_wpatk_combo_state_tree_06.png" alt="State Tree Combo State Attack 06" border-effect="line" thumbnail="true"/>
         <tip>
             <p><b>Non-Looping Combo</b></p>
@@ -109,7 +109,7 @@ attack order, branching paths, and looping options.
     </step>
 </procedure>
 
-We’ll revisit this State Tree later to explore more advanced features like branching, conditions, and loopable sequences.
+We'll revisit this State Tree later to explore more advanced features like branching, conditions, and loopable sequences.
 For now, you have a **linear combo** that flows cleanly from one attack to the next and **ends the combo** after the final hit.
 
 ## Combo Ability
@@ -135,7 +135,7 @@ The Combo Ability expects two types of input:
 
 The exact gameplay event used depends on the configured **Event Mode**:
 
-- **Gameplay Tag**: The received gameplay event’s tag is forwarded directly to the State Tree. This tag must match one of the **transition tags** defined in the State Tree (e.g. `Combat.Event.Combo.Attack.Primary`).
+- **Gameplay Tag**: The received gameplay event's tag is forwarded directly to the State Tree. This tag must match one of the **transition tags** defined in the State Tree (e.g. `Combat.Event.Combo.Attack.Primary`).
 - **Input Action**: The received gameplay event should use the tag `Combat.Event.Combo.Attack`. The **payload** must include the `InputAction` that triggered it. This input is then mapped to a specific **event tag** used by the State Tree.
 
 If you're using **Ninja Input**, or any other input system, the next chapter covers how to set up input actions and 
