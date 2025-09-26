@@ -35,8 +35,8 @@ those cases, use the `NinjaInputAbilityActivationCheck` class, which you can sub
 ### Toggled and Momentary Tags
 All Ability Activation Handlers automatically detect the following tags on the activating ability:
 
-- `Input.Ability.Momentary`: Activates on **Pressed** and ends on **Released**.
-- `Input.Ability.Toggled`: Activates on the first **Pressed** and cancels on a second **Pressed**, if still active.
+- `Input.Ability.Momentary`: Activates the ability when a **Pressed Trigger** fires, and ends the ability when a **Released Trigger** fires.
+- `Input.Ability.Toggled`: Activates the ability when a **Pressed Trigger** fires, and ends the ability when another **Pressed Trigger** fires, if the ability is still active.
 
 ### Sending Events to Active Abilities
 All Ability Activation Handlers optionally support sending a **Gameplay Event** to an **already active** ability. This 
