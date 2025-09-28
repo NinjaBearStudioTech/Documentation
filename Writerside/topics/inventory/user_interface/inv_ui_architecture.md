@@ -1,4 +1,4 @@
-# User Interface Architecture
+# UI Architecture
 <primary-label ref="inventory"/>
 
 <tldr>

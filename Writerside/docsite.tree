@@ -155,7 +155,7 @@
                 <toc-element topic="int_installation.md"/>
                 <toc-element topic="int_collisions.md"/>
             </toc-element>
-            <toc-element toc-title="Interaction System">
+            <toc-element topic="int_interaction_system.md">
                 <toc-element topic="int_interaction_targets.md"/>
                 <toc-element topic="int_interaction_source.md"/>
             </toc-element>

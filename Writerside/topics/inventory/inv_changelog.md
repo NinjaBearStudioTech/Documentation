@@ -1,17 +1,18 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.3.28
-<secondary-label ref="wip"/>
+## 2.3.30 - 27/09/2025
 ```
 [added] Encumbrance Gameplay Effect for convenience.
 [improvement] Gameplay Effect fragment can interact with the Stack fragment.
 [improvement] Ensure the Weight fragment always synchronizes with new stack sizes.
 [improvement] Clean-up the Wealth Gameplay Effect, so it can be properly extended.
 [improvement] Gameplay Debugger also allows displaying item IDs.
+[improvement] Reviewed equipment state callback functions to avoid potential race conditions. 
 [fix] Replication for Dynamic Attributes is kept during inventory transfers.
 [fix] Items fully merged will be deleted instead of dropped.
-[fix] The drag and drop operation will correctly trigger a swap for items of same type, when the target item has a full stack. 
+[fix] The drag and drop operation will correctly trigger a swap for items of same type, when the target item has a full stack.
+[fix] Ensured that swap logic will always sanitize position types and prioritize swapped items before finding alternative positions.
 ```
 
 ## 2.2.21 - 19/09/2025
