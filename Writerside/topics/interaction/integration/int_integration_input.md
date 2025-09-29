@@ -3,52 +3,40 @@
 
 <tldr>
     <ul>
-        <li>Use <b>Ninja Input</b> to send <b>gameplay events</b> into the Interaction Source’s <b>Ability</b>.</li>
-        <li><b>Pressed</b> → start interaction (e.g., <code>Interaction.Event.RequestInteraction</code>).</li>
-        <li><b>Released</b> → attempt to cancel/interrupt (e.g., <code>Interaction.Event.CancelledButtonPress</code>).</li>
-        <li>Implement by extending Ninja Input’s <b>Send Gameplay Event</b> handler and mapping it to your Input Action.</li>
-        <li><b>Released</b> is optional; only add it for <b>hold-to-activate</b> or <b>cancellable</b> interactions.</li>
+        <li>Use <b>Ninja Input</b> to invoke the appropriate interaction functions on the <b>Interaction Manager</b>.</li>
+        <li>The <b>Pressed</b> trigger should attempt to <b>start</b> an interaction with the current eligible target.</li>
+        <li>If timed interactions are supported, the <b>Released</b> trigger should attempt to <b>interrupt</b> any ongoing interaction.</li>
     </ul>
 </tldr>
 
-Use **Ninja Input** to forward button events to the Interaction pipeline. The handler translates the current input state
-into a **gameplay event tag** that your **Interaction Ability** listens for, so a **press** starts an interaction and a
-**release** cancels it when applicable.
+Use **Ninja Input** to forward button events to the **Interaction Manager**, so it attempts to start an interaction with
+an eligible target and, optionally, interrupt an ongoing interaction that hasn’t been **committed** yet.
 
 ## Creating the Input Handler
-
-<procedure title="Create and wire the Input Handler" collapsible="true" default-state="expanded">
+<procedure title="Creating the Input Handler" collapsible="true" default-state="expanded">
     <step>
         <b>Create an Input Action</b> (e.g., <code>IA_Interact</code>).
         <ul>
             <li>Add a <b>Pressed</b> trigger.</li>
-            <li><i>Optional:</i> Add a <b>Released</b> trigger for hold/cancellable interactions.</li>
+            <li><i>Optional:</i> add a <b>Released</b> trigger for hold-to-activate / cancellable interactions.</li>
         </ul>
     </step>
     <step>
-        <b>Create a Handler Blueprint</b> that <b>extends</b> <code>Send Gameplay Event</code> (from Ninja Input), and open
-        <code>HandleTriggeredEvent(Manager, Value, InputAction, ElapsedTime)</code>.
+        <b>Create an Input Handler</b> that <b>extends</b> <code>NinjaInputHandler</code> (from Ninja Input), and implement
+        <code>HandleTriggeredEvent</code>.
     </step>
     <step>
-        <b>Convert</b> <code>InputActionValue</code> &rarr; <b>Bool</b> ("pressed?").
-        <b>Select</b> the gameplay event tag based on that boolean:
+        Retrieve the <b>Interaction Manager</b> from the pawn associated with the <b>Input Manager</b>, and verify it is valid.
+    </step>
+    <step>
+        <p>Branch on the incoming <b>Input Action Value</b> (convert to bool):</p>
         <ul>
-            <li><code>true</code> &rarr; <code>Interaction.Event.RequestInteraction</code> (start)</li>
-            <li><code>false</code> &rarr; <code>Interaction.Event.CancelledButtonPress</code> (cancel)</li>
-        </ul>
-        <note>Use your project’s tags if they differ. The tags above are common defaults shipped with Ninja Interaction.</note>
-    </step>
-    <step>
-        <b>Call</b> <code>Send Gameplay Event</code> with the following parameters:
-        <ul>
-            <li><b>Manager</b>: Interaction Manager reference</li>
-            <li><b>Value</b>: the original input value</li>
-            <li><b>Input Action</b>: the <code>IA_Interact</code> action</li>
-            <li><b>Gameplay Event Tag</b>: the selected tag from the previous step</li>
+            <li><code>true</code> &rarr; call <code>TryInitializeInteractionWithCurrentTarget</code></li>
+            <li><code>false</code> &rarr; call <code>TryCancelCurrentInteraction</code> with reason tag <code>Interaction.Event.CancelledButtonPress</code></li>
         </ul>
     </step>
     <step>
-        <b>Bind the Handler</b> in your input setup (mapping context / action bindings) so it runs for <code>IA_Interact</code>.
+        <b>Bind the handler</b> in your input setup (mapping context / action bindings) so it runs for <code>IA_Interact</code>.
     </step>
-    <img src="int_integration_input_handler.png" alt="Select tag and call Send Gameplay Event" border-effect="line" thumbnail="true"/>
+    <p><img src="int_integration_input_handler.png" alt="Input handler branching to start/cancel via Interaction Manager" border-effect="line" thumbnail="true"/></p>
 </procedure>

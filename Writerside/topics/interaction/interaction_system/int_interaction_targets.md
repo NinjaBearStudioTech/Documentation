@@ -217,7 +217,10 @@ The following procedures will guide you through each step in detail.
     <step>Configure the <b>Interaction Type Tag</b> with a tag that uniquely identifies this interaction for this Smart Object, for example <code>Interaction.Type.Open</code>.</step>
     <step>Optionally set a <b>Display Text</b> for this interaction, which will be shown by the user interface when displaying interaction prompts.</step>
     <step>Assign the <b>State Tree</b> created earlier as the <b>Interaction Tree</b>.</step>
-    <step>Set a <b>Duration</b> of <code>0.8</code> seconds for this interaction. This defines how long the user must press a button, to interact with the target.</step>
+    <step>
+        <p>Set a <b>Duration</b> of <code>0</code> seconds for this interaction. This makes the interaction happen instantly.</p>
+        <note>You can find more information about interactions with a duration in the <a href="int_adv_interaction_duration.md"><b>Interaction Duration page</b></a>.</note>
+    </step>
     <img src="int_target_smart_object.png" alt="Smart Object Setup" border-effect="line" thumbnail="true"/>
 </procedure>
 
