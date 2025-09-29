@@ -7,7 +7,6 @@ PublicDependencyModuleNames.AddRange(new string[]
     "GameplayTasks", 
     "ModelViewViewModel",
     "NinjaInteraction",
-    "NinjaInteractionGameplay",
     "NinjaInteractionUI",
     "SmartObjectsModule",
     "UMG"
