@@ -57,4 +57,42 @@ For the State Tree, we need to **wait** for the interaction’s **Duration** to 
 {style="note"}
 
 ## Interaction Prompt
-_soon_
+Now update the Interaction Prompt you added on the actor in the [](int_ui_mvvm.md) page.
+
+<procedure title="Updating the Interaction Prompt on the Actor" collapsible="true" default-state="expanded">
+    <step>
+        <b>Add the Active Interaction ViewModel</b> to the widget.
+        Set <b>Creation Type</b> to <b>Resolver</b> and select the <b>Interaction Resolver</b>.
+        <p><img src="int_adv_target_mvvm_active_interaction.png" alt="Active Interaction VM with Resolver factory" border-effect="line" thumbnail="true"/></p>
+    </step>
+    <step>
+        <b>Add the Interaction Summary ViewModel</b> to the widget.
+        For this one, set <b>Creation Type</b> to <b>Manual</b> (it will use an instance provided by the Active Interaction ViewModel).
+        <p><img src="int_adv_target_mvvm_summary.png" alt="Interaction Summary VM with Manual creation" border-effect="line" thumbnail="true"/></p>
+    </step>
+    <step>
+        <b>Add a Progress Bar</b> (or equivalent progress indicator) to the widget. We'll configure the binding later.
+        <p><img src="int_adv_target_widget_progress_bar.png" alt="Progress Bar added to the prompt widget" border-effect="line" thumbnail="true"/></p>
+    </step>
+    <step>
+        <b>Update the Event Graph</b> to hide the Progress Bar by default.
+        <p><img src="int_adv_target_widget_event_graph.png" alt="Event Graph default hides the progress bar" border-effect="line" thumbnail="true"/></p>
+    </step>
+    <step>
+        <b>Update</b> <code>SetInteractionState</code> to also hide the Progress Bar when no interaction is in progress.
+        <p><img src="int_adv_target_widget_set_interaction_state.png" alt="SetInteractionState hides the progress bar when idle" border-effect="line" thumbnail="true"/></p>
+    </step>
+    <step>
+        <b>Create</b> <code>SetCurrentTarget</code>.
+        This function receives the current target actor, sets the <b>active summary</b> on the widget, and shows the Progress Bar.
+        <p><img src="int_adv_target_widget_set_current_target.png" alt="SetCurrentTarget updates the progress bar and bindings" border-effect="line" thumbnail="true"/></p>
+    </step>
+    <step>
+        <b>Add bindings</b> so the widget reacts automatically:
+        <ul>
+            <li><code>ActiveInteraction.GetCurrentInteractionTarget</code> &rarr; <code>SetCurrentTarget</code></li>
+            <li><code>InteractionSummary.GetElapsedTimePercent</code> &rarr; <code>ProgressBar.Percent</code></li>
+        </ul>
+        <p><img src="int_adv_target_mvvm_bindings.png" alt="Bindings for current target and elapsed percent" border-effect="line" thumbnail="true"/></p>
+    </step>
+</procedure>
