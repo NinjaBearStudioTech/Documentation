@@ -79,6 +79,10 @@ Now update the Interaction Prompt you added on the actor in the [](int_ui_mvvm.m
         <p><img src="int_adv_target_widget_event_graph.png" alt="Event Graph default hides the progress bar" border-effect="line" thumbnail="true"/></p>
     </step>
     <step>
+        <b>Update</b> <code>SetFocusState</code> to also hide the Progress Bar when no focus is applied.
+        <p><img src="int_adv_target_widget_set_focus_state.png" alt="SetFocusState hides the progress bar when idle" border-effect="line" thumbnail="true"/></p>
+    </step>
+    <step>
         <b>Update</b> <code>SetInteractionState</code> to also hide the Progress Bar when no interaction is in progress.
         <p><img src="int_adv_target_widget_set_interaction_state.png" alt="SetInteractionState hides the progress bar when idle" border-effect="line" thumbnail="true"/></p>
     </step>
