@@ -68,16 +68,23 @@ awareness of interaction targets and to control the interaction flow.
 On initialization, the **Interaction Manager Component** will search the owning actor for specific collider components
 (`UShapeComponent`) that act as the entry point for detecting [**Interaction Targets**](int_interaction_targets.md).
 
-Two types of colliders can be configured:
+Two types of colliders can be configured: the **Scan Collider**, used to register active targets and the **Focus Collider**,
+optionally used to apply focus based on proximity.
 
-1. **Interactable Scan Collider (required)**  
-   - A shape component (commonly a box or sphere) used to **register interaction targets** so they can later be focused and interacted with.  
-   - This collider must be identified by the Component Tag: `Interaction.Component.InteractableScan`.  
+### Interactable Scan Collider
+- **Required**. Must be present on each interaction source actor.
+- A shape component (commonly a box or sphere) used to **register interaction targets** so they can later be focused and interacted with.  
+- This collider must be identified by the **Component Tag** `Interaction.Component.InteractableScan`.
+- This collider's **Object Type** should be `InteractionObject`, created during the [collision setup](int_collisions.md).
+<p><img src="int_source_component_scan.png" alt="Interactable Scan Collider" thumbnail="true" width="800" border-effect="line"/></p>
 
-2. **Interactable Focus Collider (optional)**
-   - A smaller shape component used when interaction targets should become eligible for focus purely by **proximity**.  
-   - This allows targets to be detected based on the source being within range.  
-   - This collider must be identified by the Component Tag: `Interaction.Component.InteractableFocus`.  
+### Interactable Focus Collider
+- **Optional**. Required when focus is determined by proximity.
+- Usually, a smaller shape component used when interaction targets should become eligible for focus purely by **proximity**.  
+- This allows targets to be detected based on the source being within range, so it can be ignored if you are using camera traces to apply focus.
+- This collider must be identified by the Component Tag: `Interaction.Component.InteractableFocus`.
+- Once again, this collider's **Object Type** should be `InteractionObject`.
+<p><img src="int_source_component_focus.png" alt="Interactable Focus Collider" thumbnail="true" width="800" border-effect="line"/></p>
 
 > **Initialization and Binding**
 > 
