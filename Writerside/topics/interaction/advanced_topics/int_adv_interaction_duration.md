@@ -2,6 +2,15 @@
 <primary-label ref="interaction"/>
 <secondary-label ref="advanced"/>
 
+<tldr>
+    <ul>
+        <li>Set a non-zero <b>Duration</b> on the interaction’s <b>Interaction Behavior</b> (Smart Object) to make it <b>hold-to-activate</b> (0 = instant).</li>
+        <li>In the <b>State Tree</b>, add a <b>Wait</b> state (Delay Task) bound to the Evaluator’s <b>Duration</b>, and transition when <b>ElapsedTime ≥ Duration</b>; support cancel on release.</li>
+        <li>Update the actor’s <b>Interaction Prompt</b> to show a <b>progress bar</b> during the hold: use <b>Active Interaction</b> (Resolver) + <b>Interaction Summary</b> (Manual) ViewModels and bind <b>ElapsedTimePercent → Progress</b>; hide on finish/cancel.</li>
+        <li>Input: <b>Pressed</b> starts the interaction; include an optional <b>Released</b> trigger to allow cancel/interrupt during the hold window.</li>
+    </ul>
+</tldr>
+
 Many interactions are **hold-to-activate**: the player must press a button for a set **duration** before the interaction 
 actually occurs. The Interaction System supports this pattern with minimal changes to assets you've already created—no 
 new gameplay concepts required.

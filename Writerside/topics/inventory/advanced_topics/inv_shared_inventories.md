@@ -3,7 +3,6 @@
 <secondary-label ref="advanced"/>
 
 <tldr>
-    <p><b>Summary: Shared Inventories</b></p>
     <ul>
         <li>Inventories owned by a <b>world actor</b> (e.g., chest, stash, vendor, guild bank) that can be accessed by multiple players at the same time.</li>
         <li>All operations replicate and are executed <b>authoritatively on the server</b>, keeping clients synchronized.</li>

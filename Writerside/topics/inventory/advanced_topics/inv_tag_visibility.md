@@ -3,7 +3,6 @@
 <secondary-label ref="advanced"/>
 
 <tldr>
-    <p><b>Summary: Tag-Based Visibility</b></p>
     <ul>
         <li>Control whether an equipment actor is visible by tracking a specific <b>Gameplay Tag</b>.</li>
         <li>Visibility is automatically toggled on <b>GameplayTagAdded</b> / <b>GameplayTagRemoved</b> events.</li>
