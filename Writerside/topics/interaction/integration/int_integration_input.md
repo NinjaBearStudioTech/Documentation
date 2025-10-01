@@ -40,3 +40,12 @@ an eligible target and, optionally, interrupt an ongoing interaction that hasnâ€
     </step>
     <p><img src="int_integration_input_handler.png" alt="Input handler branching to start/cancel via Interaction Manager" border-effect="line" thumbnail="true"/></p>
 </procedure>
+
+## Blocking Input
+While [**playing interaction animations**](int_ability_play_animation.md), you can block inputs via the **Gameplay Effect** 
+applied during the animation ability's execution. The default effect adds tags that **Ninja Input** recognizes automatically:
+
+| Gameplay Tag           | Outcome                                                 |
+|------------------------|---------------------------------------------------------|
+| `Input.Block.Movement` | Blocks character movement in Movement Input Handlers.   |
+| `Input.Block.Rotation` | Blocks camera/actor rotation in related Input Handlers. | 
