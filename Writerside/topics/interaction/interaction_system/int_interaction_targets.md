@@ -85,14 +85,15 @@ the actor to override, while others are **required** and must always be implemen
 These functions have **neutral defaults**. They can be left unimplemented unless the actor needs to customize how it
 responds to availability, focus, or registration events.
 
-| Function                    | Description                                                                      |
-|-----------------------------|----------------------------------------------------------------------------------|
-| `IsAvailableForInteraction` | Checks if the target can currently be focused. Default: always available.        |
-| `CanHandleInteraction`      | Checks if the target can handle a given interaction type. Default: always true.  |
-| `HandleTargetRegistered`    | Called when the target is registered by an interaction source. Default: no-op.   |
-| `HandleTargetUnregistered`  | Called when the target is unregistered by an interaction source. Default: no-op. |
-| `HandleFocusApplied`        | Called when focus is applied by an interaction source. Default: no-op.           |
-| `HandleFocusRemoved`        | Called when focus is removed by an interaction source. Default: no-op.           |
+| Function                       | Description                                                                      |
+|--------------------------------|----------------------------------------------------------------------------------|
+| `IsAvailableForInteraction`    | Checks if the target can currently be focused. Default: always available.        |
+| `CanHandleInteraction`         | Checks if the target can handle a given interaction type. Default: always true.  |
+| `GetDisplayTextForInteraction` | Allows the target to override the display text for a given interaction type.     |
+| `HandleTargetRegistered`       | Called when the target is registered by an interaction source. Default: no-op.   |
+| `HandleTargetUnregistered`     | Called when the target is unregistered by an interaction source. Default: no-op. |
+| `HandleFocusApplied`           | Called when focus is applied by an interaction source. Default: no-op.           |
+| `HandleFocusRemoved`           | Called when focus is removed by an interaction source. Default: no-op.           |
 
 > **Interface Usage**
 >

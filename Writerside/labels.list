@@ -11,7 +11,8 @@
     <primary-label id="integrations" name="ITG" short-name="Integrations">Integrations</primary-label>
     <primary-label id="interaction" name="INT" short-name="Interaction">Ninja Interaction</primary-label>
     <primary-label id="inventory" short-name="INV" name="Inventory">Ninja Inventory</primary-label>
-    <primary-label id="progression" name="PGS" short-name="Progression">Ninja Progression</primary-label>
+    <primary-label id="perception" name="PCP" short-name="Perception">Ninja Perception</primary-label>
+    <primary-label id="tokens" short-name="TKN" name="Tokens">Ninja Tokens</primary-label>
 
     <secondary-label id="wip" name="work-in-progress" color="red">Work in progress, informational only.</secondary-label>
     <secondary-label id="experimental" name="experimental" color="strawberry">Subject to changes, might have bugs.</secondary-label>
