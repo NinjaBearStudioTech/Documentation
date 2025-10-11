@@ -1,6 +1,11 @@
 # Changelog
 <primary-label ref="input"/>
 
+## 5.5.11 - 03/09/2025
+```
+[fix] Remove assertion for Enhanced Input Subsystem on endplay.
+```
+
 ## 5.5.10 - 03/09/2025
 ```
 [fix] Added missing plugin dependency ModelViewViewModel.

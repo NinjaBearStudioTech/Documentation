@@ -56,23 +56,23 @@ need to be represented visually - only those listed in the fragment will be crea
 
 Each `InventoryEquipmentState` provides detailed control over how the item should appear or behave in a specific state.
 
-| Property                         | Description                                                                                        |
-|----------------------------------|----------------------------------------------------------------------------------------------------|
-| `EquipmentStateTags`             | All equipment state tags covered by this configuration. Multiple tags can share the same settings. |
-| `EquipmentType`                  | Determines if this state uses an `Actor`, `StaticMesh`, or `SkeletalMesh`.                         |
-| `ActorClass`                     | Actor class to spawn for this state (if type is `Actor`).                                          |
-| `StaticMesh`                     | Static mesh to display for this state (if type is `StaticMesh`).                                   |
-| `SkeletalMesh`                   | Skeletal mesh to display for this state (if type is `SkeletalMesh`).                               |
-| `bFollowsParentMesh`             | Whether the skeletal mesh should follow the parent avatar’s mesh as a follower (leader pose).      |
-| `SkeletalMeshAnimClass`          | Animation blueprint to use if the skeletal mesh is not using a leader pose.                        |
-| `bOverridesParentFinderStrategy` | If true, overrides the default Attach Parent Finder.                                               |
-| `AttachParentFinderClass`        | Custom `NinjaEquipmentAttachParentFinder` used to determine the parent component for attachments.  |
-| `bOverrideContainerSocket`       | Whether to override the socket defined in the Equipment Container.                                 |
-| `AttachSocketName`               | Name of the socket to use when attaching the actor or mesh.                                        |
-| `EquipmentAnimLayerClass`        | Animation layer class added to the avatar when this state is active.                               |
-| `AttributeSets`                  | Attribute sets granted to the avatar while in this equipment state.                                |
-| `GameplayEffects`                | Gameplay Effects applied to the avatar when entering this state.                                   |
-| `Containers`                     | Additional containers granted while this state is active (e.g., ammo pouches or sheath slots).     |
+| Property                         | Description                                                                                                |
+|----------------------------------|------------------------------------------------------------------------------------------------------------|
+| `EquipmentStateTags`             | All equipment state tags covered by this configuration. Multiple tags can share the same settings.         |
+| `EquipmentType`                  | Determines if this state uses an `Actor`, `StaticMesh`, or `SkeletalMesh`.                                 |
+| `ActorClass`                     | Actor class to spawn for this state (if type is `Actor`).                                                  |
+| `StaticMesh`                     | Static mesh to display for this state (if type is `StaticMesh`).                                           |
+| `SkeletalMesh`                   | Skeletal mesh to display for this state (if type is `SkeletalMesh`).                                       |
+| `bFollowsParentMesh`             | Whether the skeletal mesh should follow the parent avatar’s mesh as a follower (leader pose).              |
+| `SkeletalMeshAnimClass`          | Animation blueprint to use if the skeletal mesh is not using a leader pose.                                |
+| `bOverridesParentFinderStrategy` | If true, overrides the default Attach Parent Finder.                                                       |
+| `AttachParentFinderClass`        | Custom `NinjaEquipmentAttachParentFinder` used to determine the parent component for attachments.          |
+| `bOverrideContainerSocket`       | Whether to override the socket defined in the Equipment Container.                                         |
+| `AttachSocketName`               | Name of the socket to use when attaching the actor or mesh.                                                |
+| `EquipmentAnimLayerClass`        | [Linked Animation Graph][1] add as a layer to the avatar's Animation Blueprint, while the state is active. |
+| `AttributeSets`                  | Attribute sets granted to the avatar while in this equipment state.                                        |
+| `GameplayEffects`                | Gameplay Effects applied to the avatar when entering this state.                                           |
+| `Containers`                     | Additional containers granted while this state is active (e.g., ammo pouches or sheath slots).             |
 
 > **Granting Gameplay Abilities**
 >
@@ -89,3 +89,7 @@ The Inventory System provides the following options so you can change equipment 
 
 - **[](inv_fragment_equipment.md)**: Provides the `SetEquipmentState` function that can be used to update the item's equipment state.
 - **[](inv_ability_equip.md)**: Integrates the Equipment Fragment with Animations Montages and support for Gameplay Events.  
+
+
+
+[1]: https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-linking-in-unreal-engine
