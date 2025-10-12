@@ -2,12 +2,10 @@
 <primary-label ref="inventory"/>
 
 <tldr>
-    <p><b>Summary: Store Ability</b></p>
-    <br/>
     <ul>
         <li>Transitions one or more items to their <b>Stored</b> state.</li>
         <li>Requires an <b>Equipment Fragment</b> to define behavior and current state.</li>
-        <li>Supports both <b>per-item activations</b> and <b>generic slot-based bindings</b>.</li>
+        <li>Supports equipping <b>specific items</b> from a payload or query-based searches triggered by <b>input bindings</b>.</li>
     </ul>
 </tldr>
 

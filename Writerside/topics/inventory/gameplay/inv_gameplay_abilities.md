@@ -2,8 +2,6 @@
 <primary-label ref="inventory"/>
 
 <tldr> 
-    <p><b>Summary: Gameplay Abilities</b></p> 
-    <br/>
     <ul> 
         <li>Each item can provide one or more <b>Gameplay Abilities</b> to its owner.</li> 
         <li>Abilities follow a <b>shared class hierarchy</b> that provides built-in support for inventory, equipment, and animation integration.</li> 

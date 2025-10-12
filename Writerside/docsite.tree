@@ -182,7 +182,8 @@
             </toc-element>
             <toc-element toc-title="Integrations">
                 <toc-element topic="int_integration_input.md"/>
-            </toc-element>         
+            </toc-element>
+            <toc-element topic="int_changelog.md"/>
         </toc-element>
         <!-- Ninja Inventory -->
         <toc-element topic="inv_overview.md">
