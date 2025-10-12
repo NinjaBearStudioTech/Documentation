@@ -164,11 +164,12 @@ needing to define them in code. For example, in the same game you can have:
 Interaction State Trees should always be created using the `NinjaInteractionComponentSchema`, and you can use the following
 State Tree features provided by the Interaction System.
 
-| State Tree Feature | Description                                                                                                                                    |
-|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| `PlayAnimation`    | Sends the gameplay event that activates the [Play Animation Ability][1], optionally defining a specific Animation Montage asset.               |
-| `ReachTarget`      | Performs a simple interpolation of the source's location and rotation, to match the provided transform (usually the Smart Object's transform). |
-| `TriggerBehavior`  | Triggers the actual interaction behavior on the Interaction Target, defined by `FinishInteractionEvent`.                                       |
+| State Tree Feature | Type      | Description                                                                                                                                    |
+|--------------------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| `InteractionState` | Evaluator | Exposes information related to the current interaction target and active interaction.                                                          |
+| `PlayAnimation`    | Task      | Sends the gameplay event that activates the [Play Animation Ability][1], optionally defining a specific Animation Montage asset.               |
+| `ReachTarget`      | Task      | Performs a simple interpolation of the source's location and rotation, to match the provided transform (usually the Smart Object's transform). |
+| `TriggerBehavior`  | Task      | Triggers the actual interaction behavior on the Interaction Target, defined by `FinishInteractionEvent`.                                       |
 
 ## Interaction Actor
 
