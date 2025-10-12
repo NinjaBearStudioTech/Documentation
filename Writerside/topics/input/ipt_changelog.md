@@ -1,7 +1,7 @@
 # Changelog
 <primary-label ref="input"/>
 
-## 5.5.11 - 03/09/2025
+## 5.5.11 - 13/10/2025
 ```
 [fix] Remove assertion for Enhanced Input Subsystem on endplay.
 ```
