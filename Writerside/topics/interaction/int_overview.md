@@ -1,6 +1,5 @@
 # Ninja Interaction
 <primary-label ref="interaction"/>
-<secondary-label ref="wip"/>
 
 ![Ninja Interaction](int_feature.png "Ninja Interaction")
 
