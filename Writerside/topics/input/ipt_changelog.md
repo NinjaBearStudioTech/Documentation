@@ -1,9 +1,11 @@
 # Changelog
 <primary-label ref="input"/>
 
-## 5.5.11 - 13/10/2025
+## 5.5.13 - 13/10/2025
 ```
+[improvement] Expanded logs and organized their locations to promote category reusability.
 [fix] Remove assertion for Enhanced Input Subsystem on endplay.
+[fix] Ensured that the Input Buffer only activates on the local player.
 ```
 
 ## 5.5.10 - 03/09/2025

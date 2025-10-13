@@ -1,9 +1,11 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 5.4.4
+## 5.5.5
 <secondary-label ref="wip"/>
 ```
+[added] New network prediction strategy for Combos (open/close window, advance combo).
+[improvement] Added Combo State Tree validation for 5.6+.
 [improvement] Combat Animation Montage will change sections using the ASC.
 [fix] Deferred ASC initialization in the base ViewModel will obtain world from the owning actor.
 [fix] Combat ViewModel resolver was renamed to follow the correct naming convention.

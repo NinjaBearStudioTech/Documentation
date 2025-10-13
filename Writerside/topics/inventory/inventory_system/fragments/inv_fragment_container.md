@@ -4,16 +4,17 @@
 The **Container Placement** fragment determines where an item is stored in the inventory. It handles the selection of a 
 container and position, and stores the result in a fragment memory.
 
-This fragment is essential for jigsaw inventory, equipment slots, or any system where items must be physically or 
-logically placed.
+This fragment is **fundamental** for any item stored within a container, defining its position inside the inventory. While 
+it is typically present in **every item**, it remains a separate fragment to allow flexible customization of storage behavior. 
 
-It works in conjunction with container layouts and can define preferred containers using a tag query. If no preferred 
-container is available, the system selects the most appropriate option based on layout, compatibility, and priority.
+It's designed to work in conjunction with **container layouts** and can define preferred containers using a tag query. If 
+no preferred container is available, the system selects the **most appropriate option** based on layout, compatibility, 
+and priority.
 
 > **Required Fragment**
 > 
 > All layouts provided by the framework rely on this fragment to store item positions. If you are using these layouts, 
-> always add this fragment to your items.
+> always add this fragment to your items (or a compatible subclass).
 {style="note"}
 
 ## Fragment Tags
