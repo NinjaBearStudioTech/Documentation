@@ -31,6 +31,12 @@ Here's an implementation example, based on the GASP source.
 
 <img src="ipt_handler_jump_traversal.png" alt="Traversal Jump example" thumbnail="true" border-effect="line" width="600"/>
 
+> **Jump Handler Settings**
+> 
+> Make sure to update your **Jump Handler** to track `IA_Jump` and `IA_Traverse` **Input Actions** and `Started` and
+> `Triggered` **Trigger Events**
+{style=note}
+
 ## Look
 Moves the Controller's Yaw and Pitch, based on the incoming **2D input values**. It will execute from **Triggered** and 
 **Ongoing** events. Supports blocking the camera, via the presence of **Gameplay Tags**.
