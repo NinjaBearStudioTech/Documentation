@@ -1,8 +1,10 @@
 # Changelog
 <primary-label ref="input"/>
 
-## 5.5.13 - 13/10/2025
+## 5.6.13
+<secondary-label ref="wip"/>
 ```
+[added] Action-to-Handlers cache to improve access time to eligible handlers. 
 [improvement] Expanded logs and organized their locations to promote category reusability.
 [fix] Remove assertion for Enhanced Input Subsystem on endplay.
 [fix] Ensured that the Input Buffer only activates on the local player.

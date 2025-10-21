@@ -1,12 +1,15 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 5.5.5
+## 5.7.6
 <secondary-label ref="wip"/>
 ```
 [added] New network prediction strategy for Combos (open/close window, advance combo).
+[added] New ability task for Net Sync with pre-defined server timeouts.
 [improvement] Added Combo State Tree validation for 5.6+.
 [improvement] Combat Animation Montage will change sections using the ASC.
+[improvement] Combo Manager will track combo window durations and fallback-close them, since notifies might not end correctly on dedicated servers.
+[improvement] Updated declarations using raw pointers, replacing them with TObjectPtr.
 [fix] Deferred ASC initialization in the base ViewModel will obtain world from the owning actor.
 [fix] Combat ViewModel resolver was renamed to follow the correct naming convention.
 ```

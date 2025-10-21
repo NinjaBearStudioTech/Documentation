@@ -105,14 +105,6 @@ The following Gameplay Effects are used to **defend** against incoming damage.
 | `Invulnerability` | Makes the target invulnerable, immune to any damage.                                                                |
 | `LastStand`       | If the Last Stand aspect is configured, replenishes health by a certain amount and reduces charges for the aspect.  |
 
-## Combo
-
-The following Gameplay Effects are related to the **Combo** functionality.
-
-| Effect           | Description                                                                 |
-|------------------|-----------------------------------------------------------------------------|
-| `LockedOnTarget` | Indicates that the receiver has a locked target. Usually triggers strafing. |
-
 ## Locomotion
 
 The following Gameplay Effects are meant to enable integrations with external locomotion systems.
