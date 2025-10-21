@@ -1,8 +1,7 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 5.7.6
-<secondary-label ref="wip"/>
+## 5.7.6 - 21/10/2025
 ```
 [added] New network prediction strategy for Combos (open/close window, advance combo).
 [added] New ability task for Net Sync with pre-defined server timeouts.

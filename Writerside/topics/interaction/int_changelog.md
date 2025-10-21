@@ -1,8 +1,7 @@
 # Changelog
 <primary-label ref="interaction"/>
 
-## 1.0.1
-<secondary-label ref="wip"/>
+## 1.0.1 - 21/10/2025
 ```
 [fix] Current/previous state tracking to ensure interaction events are triggered in the right order.
 ```

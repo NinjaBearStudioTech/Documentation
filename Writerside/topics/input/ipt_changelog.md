@@ -1,8 +1,7 @@
 # Changelog
 <primary-label ref="input"/>
 
-## 5.6.13
-<secondary-label ref="wip"/>
+## 5.6.13 - 21/10/2025
 ```
 [added] Action-to-Handlers cache to improve access time to eligible handlers. 
 [improvement] Expanded logs and organized their locations to promote category reusability.
