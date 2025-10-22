@@ -46,6 +46,11 @@
             <toc-element toc-title="Token System">
                 <toc-element topic="tkn_token_management.md"/>
                 <toc-element topic="tkn_usage_behavior_tree.md"/>
+                <toc-element topic="tkn_usage_state_tree.md"/>
+            </toc-element>
+            <toc-element toc-title="Advanced Topics">
+                <toc-element topic="tkn_visual_logger.md"/>
+                <toc-element topic="tkn_advanced_stats.md"/>
             </toc-element>
             <toc-element topic="tkn_changelog.md"/>
         </toc-element>

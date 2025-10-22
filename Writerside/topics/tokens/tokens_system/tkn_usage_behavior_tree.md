@@ -77,7 +77,7 @@ When evaluated, the decorator queries the associated Token Provider and determin
 Depending on the configuration, the decorator can **abort either the current branch, lower-priority branches, or both**, 
 allowing flexible control over AI flow when token availability changes.
 
-## Behavior Tree Example
+## Implementation Example
 
 The following Behavior Tree demonstrates a simple but practical combat flow, integrating token-based coordination between AI agents.
 
