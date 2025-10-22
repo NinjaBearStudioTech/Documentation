@@ -1,7 +1,7 @@
 # Ninja Tokens
 <primary-label ref="tokens"/>
 
-![Ninja Tokens](bot_feature.png "Ninja Tokens")
+![Ninja Tokens](tkn_feature.png "Ninja Tokens")
 
 **Ninja Tokens** is a **lightweight coordination** layer for AI. It solves the classic "too many agents do the same thing 
 at once" problem by giving targets a **token budget** and letting agents **request** or **queue** access to actions through 
