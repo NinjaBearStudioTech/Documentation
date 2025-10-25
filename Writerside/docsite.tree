@@ -9,6 +9,9 @@
     <toc-element topic="getting_started.md" toc-title="Welcome"/>
     
     <toc-element toc-title="Artificial Intelligence">
+        <!-- Ninja Bot -->
+        <toc-element toc-title="Ninja Perception">
+        </toc-element>
         <!-- Ninja Factions -->
         <toc-element topic="fct_overview.md">
             <toc-element topic="fct_setup.md"/>
@@ -31,13 +34,7 @@
                 <toc-element topic="fct_manage_memberships.md"/>
             </toc-element>
             <toc-element topic="fct_changelog.md"/>
-        </toc-element>
-        <!-- Ninja Perception -->
-        <toc-element toc-title="Ninja Perception">
-        </toc-element>
-        <!-- Ninja Strategy -->
-        <toc-element toc-title="Ninja Strategy">
-        </toc-element>
+        </toc-element>        
         <!-- Ninja Tokens -->
         <toc-element topic="tkn_overview.md">
             <toc-element toc-title="Setup">
@@ -54,6 +51,9 @@
             </toc-element>
             <toc-element topic="tkn_changelog.md"/>
         </toc-element>
+        <!-- Ninja Strategy -->
+        <toc-element toc-title="Ninja Strategy">
+        </toc-element>        
     </toc-element>
 
     <toc-element toc-title="Foundation">

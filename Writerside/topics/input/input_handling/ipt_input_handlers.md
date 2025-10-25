@@ -84,7 +84,7 @@ Handler to a boolean, using the conversion functions provided by the Enhanced In
 > The conversion function is an _auto-cast_ function, meaning **you won't be able to find it in the context menu**!
 > 
 > Instead, you must **drag** the Value parameter pin to the Branch's Condition parameter, to automatically create the conversion.
-{style="warning"}
+{style="note"}
 
 The following image shows a custom **Input Handler** and some strategies to access contextual data from it, like the player,
 controller and input values.

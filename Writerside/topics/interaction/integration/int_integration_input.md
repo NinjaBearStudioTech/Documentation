@@ -39,6 +39,11 @@ an eligible target and, optionally, interrupt an ongoing interaction that hasnâ€
         <b>Bind the handler</b> in your input setup (mapping context / action bindings) so it runs for <code>IA_Interact</code>.
     </step>
     <p><img src="int_integration_input_handler.png" alt="Input handler branching to start/cancel via Interaction Manager" border-effect="line" thumbnail="true"/></p>
+    <note>
+        <p>Boolean Value Conversion</p>
+        <p>The conversion function is an <i>auto-cast</i> function, meaning <b>you won't be able to find it in the context menu!</b></p>
+        <p>Instead, you must <b>drag</b> the Value parameter pin to the Branch's Condition parameter, to automatically create the conversion.</p>
+    </note>
 </procedure>
 
 ## Blocking Input
