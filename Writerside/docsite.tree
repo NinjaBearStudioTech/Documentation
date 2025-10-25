@@ -183,6 +183,7 @@
                 <toc-element topic="int_ui_mvvm.md"/>
             </toc-element>
             <toc-element toc-title="Advanced Topics">
+                <toc-element topic="int_adv_interaction_traits.md"/>
                 <toc-element topic="int_adv_interaction_duration.md"/>
                 <toc-element topic="int_adv_interaction_animations.md"/>
             </toc-element>
