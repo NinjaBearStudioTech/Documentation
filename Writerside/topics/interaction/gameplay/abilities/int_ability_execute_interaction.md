@@ -16,6 +16,14 @@ the **Smart Object** and the desired **Behavior** (selected from a slot inside a
 It should be present on the **Interaction Source** by default, so when the **Request Interaction** event is triggered
 (by the Scan/Find ability plus input), this ability begins execution.
 
+## Properties
+
+This ability exposes the following properties that can modify its base behavior.
+
+| Property               | Description                                                                        |
+|------------------------|------------------------------------------------------------------------------------|
+| `ClaimPriority`        | Optional override for the Claim Priority set in the Interaction Manager component. |
+
 ## Functions
 
 You can introduce custom logic at key points by overriding these functions (Blueprint or C++):

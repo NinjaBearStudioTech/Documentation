@@ -20,7 +20,6 @@ This ability exposes the following properties that can modify its base behavior.
 
 | Property               | Description                                                             |
 |------------------------|-------------------------------------------------------------------------|
-| `ClaimPriority`        | Claim priority applied when starting interactions from this ability.    |
 | `InteractionTaskClass` | The gameplay task that discovers/chooses interactable actors. (NoClear) |
 | `bInDebugMode`         | Enables debug visuals/logs for applicable tasks.                        |
 
@@ -31,7 +30,6 @@ You can customize this ability's behavior end-to-end by overriding its core func
 | Function                           | Description                                                                      | 
 |------------------------------------|----------------------------------------------------------------------------------|
 | `InitializeInteractionAbilityTask` | Create & initialize the **search/selection task**.                               |      
-| `GetClaimPriority`                 | Provide the **Smart Object claim priority** for this context.                    | 
 | `InitializeGameplayEventTask`      | Create the **Wait Gameplay Event** task for confirm/cancel input.                |
 | `InitializeInteractionRequest`     | Build the **interaction request** added to the payload.                          | 
 | `HandleInteractionTargetFound`     | React to a newly **found/focused** target.                                       | 
