@@ -1,6 +1,12 @@
 # Changelog
 <primary-label ref="combat"/>
 
+## 5.7.7
+<secondary-label ref="wip"/>
+```
+[fix] Corrected projectile handling to allow multiple projectiles from the same ability activation.
+```
+
 ## 5.7.6 - 21/10/2025
 ```
 [added] New network prediction strategy for Combos (open/close window, advance combo).

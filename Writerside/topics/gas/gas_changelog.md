@@ -1,11 +1,13 @@
 # Changelog
 <primary-label ref="gas"/>
 
-## 1.9.8 - 13/10/2025
+## 1.9.10
 ```
 [added] Support for Local and Server Attribute Sets.
 [added] Support for Respawn Policy in Attribute Sets.
-[improvement] Ability data assets from the owner and avatar are handled separately, as an aggregation. 
+[improvement] Ability data assets from the owner and avatar are handled separately, as an aggregation.
+[improvement] Added ability task helper functions to base ability.
+[improvement] Adjusted addition/removal of loose replicated tags for 5.7 support.
 ```
 
 ## 1.7.7 - 04/07/2025

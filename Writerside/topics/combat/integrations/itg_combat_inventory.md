@@ -21,6 +21,12 @@ Once set up:
 - The Combat system **no longer directly manages weapons**. Instead, it requests the correct weapon actor for each equipment slot.
 - You can define **weapon-specific behavior** through **item fragments**, such as projectile behavior, combo tables, special abilities, or socket attachments.
 
+> **Weapon Queries**
+> 
+> Differently than the default Weapon Manager, Weapon queries will be executed against the Item Data Asset, and not the 
+> weapon class!
+{style="note"}
+
 ## Weapon Actors
 To make your weapon actors compatible with the Inventory + Combat integration, choose one of the following options:
 
