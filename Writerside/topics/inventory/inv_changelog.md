@@ -1,6 +1,12 @@
 # Changelog
 <primary-label ref="inventory"/>
 
+## 2.3.31
+<secondary-label ref="wip"/>
+```
+[fix] Ensure that presence is updated when state changes, so sockets are updated.
+```
+
 ## 2.3.30 - 27/09/2025
 ```
 [added] Encumbrance Gameplay Effect for convenience.

@@ -1,10 +1,11 @@
 # Changelog
 <primary-label ref="gas"/>
 
-## 1.9.10
+## 1.10.10
 ```
 [added] Support for Local and Server Attribute Sets.
 [added] Support for Respawn Policy in Attribute Sets.
+[added] Async task to wait for an Ability to end.
 [improvement] Ability data assets from the owner and avatar are handled separately, as an aggregation.
 [improvement] Added ability task helper functions to base ability.
 [improvement] Adjusted addition/removal of loose replicated tags for 5.7 support.
