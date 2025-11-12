@@ -90,3 +90,7 @@ This allows you to define custom rules, such as attachment based on item tags, a
 > 
 > Keep your Attachment Finders **stateless** and **fast**, as they may be called during animation events or frequent updates.
 {style="note"}
+
+### Component Destruction
+When the Equipment Manager component reaches its `EndPlay` lifecycle function, which usually means that the owner was
+destroyed, any equipment presence active equipment instances will be destroyed. 

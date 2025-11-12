@@ -1,8 +1,7 @@
 # Changelog
 <primary-label ref="interaction"/>
 
-## 1.1.3
-<secondary-label ref="wip"/>
+## 1.1.3 - 13/11/2025
 ```
 [added] Support for automatic and disposable interaction traits. 
 [fix] Created dedicated blueprint variants for GetInteractionSummary and GetInteractionSummaryForTarget in the Interaction Manager component.

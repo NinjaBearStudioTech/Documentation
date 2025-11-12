@@ -1,7 +1,7 @@
 # Changelog
 <primary-label ref="gas"/>
 
-## 1.10.10
+## 1.10.10 - 13/11/2025
 ```
 [added] Support for Local and Server Attribute Sets.
 [added] Support for Respawn Policy in Attribute Sets.

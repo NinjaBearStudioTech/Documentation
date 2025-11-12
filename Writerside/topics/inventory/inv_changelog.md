@@ -1,10 +1,19 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.3.31
+## 2.5.34
 <secondary-label ref="wip"/>
 ```
+[improvement] Removed the order requirement for container and equipment fragments.
+```
+
+## 2.5.33 - 13/11/2025
+```
+[added] "InventoryInitializationWatcherInterface" to track final inventory states on an owner or avatar.
+[added] "EquipmentAnimationInterface" allows Equipment Animation Blueprints to receive the equipment and avatar.
+[improvement] Consolidated interface names to be categorized in a better hierarchy.
 [fix] Ensure that presence is updated when state changes, so sockets are updated.
+[fix] Ensure that all active equipment presences are removed when equipment manager ends play.
 ```
 
 ## 2.3.30 - 27/09/2025

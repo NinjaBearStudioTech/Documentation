@@ -209,3 +209,52 @@ which will be evaluated during item processing.
 > For more details, refer to the [**Save and Load** documentation](inv_save_and_load.md).
 {style="note"}
 
+## Deferred Initialization
+When the Inventory component is added to the **Player State**, it may take a few frames before it fully replicates to the 
+Inventory Avatar. 
+
+During this short delay, it's common for the avatar to need its own exclusive items, that are not meant to be shared across 
+different avatar types, and therefore should not be added directly to the Player State's inventory.
+
+This creates a situation where the avatar must wait for the Inventory system to finish initializing before it can safely 
+add those items. Since this process doesn't complete immediately after Begin Play, a **deferred initialization flow** is 
+required.
+
+There are two recommended ways to handle this:
+
+1. Use an **asynchronous task** that waits for the inventory system to finish initializing.
+2. Implement the **Initialization Watcher Interface** to receive a callback when initialization completes (or fails).
+
+> **Selecting the Best Approach**
+>
+> The asynchronous task is ideal for one-off scenarios where you have a single avatar type that needs to add some items
+> or execute blueprint-friendly logic.
+> 
+> If you have multiple possible avatar types and want something more streamlined, implement the interface in your base
+> avatar class or blueprint type to ensure consistent behavior across all variations.
+{style="note"}
+
+### Async Inventory Initialization Task
+You can use the built-in **Wait For Inventory System** task, which automatically notifies you when the inventory has
+_successfully_ initialized and is ready for item operations.
+
+<img src="inv_management_wait_and_add.png" alt="Asynchronous Initialization" width="800" border-effect="line"/>
+
+When using this task, keep the following in mind:
+
+1. Set a reasonable pooling interval and also a timeout.
+2. Always retrieve the Inventory Manager via the **Inventory Function Library**.
+3. Add items only from the **authoritative instance** (the server, in most cases).
+
+### Initialization Watcher Interface
+For simpler or event-driven setups, you can instead use the `InventoryInitializationWatcherInterface`. This interface 
+can be implemented by either the **inventory owner** or the **inventory avatar**.
+
+When the Inventory system reaches a final initialization state, the interface functions will be automatically invoked, 
+allowing you to react immediately without polling or tasks.
+
+| Function                            | Description                                             |
+|-------------------------------------|---------------------------------------------------------|
+| `OnInventoryInitializationFinished` | Called when the inventory has successfully initialized. |
+| `OnInventoryInitializationFailed`   | Called when the inventory fails to initialize.          |
+

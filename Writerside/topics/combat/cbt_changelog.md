@@ -1,10 +1,10 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 5.7.7
-<secondary-label ref="wip"/>
+## 5.7.8 - 13/11/2025
 ```
 [fix] Corrected projectile handling to allow multiple projectiles from the same ability activation.
+[fix] Ensured that clients running UAbilityTask_WaitTargetDataWithActorCallback will receive the replicated target.
 ```
 
 ## 5.7.6 - 21/10/2025

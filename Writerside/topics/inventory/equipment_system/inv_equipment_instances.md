@@ -41,6 +41,15 @@ to access the **owning equipment and item**, the **equipment manager** and the *
 You can subclass `NinjaInventoryEquipment` to implement custom logic and assign your subclass directly to the [**Equipment Fragment**](inv_fragment_equipment.md). 
 This enables additional gameplay systems, data storage, and access to custom behavior per equipment instance.
 
+## Animation Blueprints
+
+Equipment instances represented by **Skeletal Meshes** can receive an Animation Instance class to manage their animation.
+The Animation Instance can data from the **equipment** or **avatar** via the `EquipmentAnimationInterface`. 
+
+This interface provides two functions that allow the Animation Instance to receive the **Equipment Instance** and the
+**Avatar Actor** related to the inventory. Both functions are optional, so you only need to implement the one that is
+relevant to your scenario.
+
 ## Equipment States
 
 Equipment States define how each `NinjaInventoryEquipment` is represented in the world, based on the item's current 
@@ -88,8 +97,6 @@ Each `InventoryEquipmentState` provides detailed control over how the item shoul
 The Inventory System provides the following options so you can change equipment state:
 
 - **[](inv_fragment_equipment.md)**: Provides the `SetEquipmentState` function that can be used to update the item's equipment state.
-- **[](inv_ability_equip.md)**: Integrates the Equipment Fragment with Animations Montages and support for Gameplay Events.  
-
-
+- **[](inv_ability_equip.md)**: Integrates the Equipment Fragment with Animations Montages and support for Gameplay Events.
 
 [1]: https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-linking-in-unreal-engine
