@@ -1,6 +1,12 @@
 # Changelog
 <primary-label ref="interaction"/>
 
+## 1.2.3
+<secondary-label ref="wip"/>
+```
+[added] A default "Openable Actor" that supports unlock/open/close interactions. Integrated with Keys on Ninja Inventory. 
+```
+
 ## 1.1.3 - 13/11/2025
 ```
 [added] Support for automatic and disposable interaction traits. 
