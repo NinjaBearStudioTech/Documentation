@@ -1,10 +1,12 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.5.34
+## 2.6.35
 <secondary-label ref="wip"/>
 ```
+[added] Key fragment with accompanying unlock operation class.
 [improvement] Removed the order requirement for container and equipment fragments.
+[improvement] Equipment Manager is compatible with inventory avatar changes during gameplay.
 ```
 
 ## 2.5.33 - 13/11/2025
