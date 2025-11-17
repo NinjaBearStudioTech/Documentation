@@ -1,12 +1,12 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.6.35
-<secondary-label ref="wip"/>
+## 2.6.36 - 17/11/2025
 ```
 [added] Key fragment with accompanying unlock operation class.
 [improvement] Removed the order requirement for container and equipment fragments.
 [improvement] Equipment Manager is compatible with inventory avatar changes during gameplay.
+[build] Added support to Unreal Engine 5.7, removed Unreal Engine 5.4 support
 ```
 
 ## 2.5.33 - 13/11/2025

@@ -1,6 +1,12 @@
 # Changelog
 <primary-label ref="gas"/>
 
+## 1.10.12 - 17/11/2025
+```
+[improvement] Additional support for Animation Montages played on Anim BPs disconnected from the main Mesh.
+[build] Added support to Unreal Engine 5.7, removed Unreal Engine 5.4 support
+```
+
 ## 1.10.10 - 13/11/2025
 ```
 [added] Support for Local and Server Attribute Sets.

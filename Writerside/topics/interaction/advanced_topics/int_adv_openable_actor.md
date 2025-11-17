@@ -17,7 +17,7 @@ This system is fully replicated, extensible, and decoupled from any inventory im
 The `ANinjaInteractionOpenableActor` maintains two replicated states: **Locked** / **Unlocked** and **Open** / **Closed**.
 These states have the corresponding **cosmetic blueprint events** defined below:
 
-| Event                | Description                                         |
+| Function             | Description                                         |
 |----------------------|-----------------------------------------------------|
 | `ApplyLockedState`   | Indicates that the actor is currently **locked**.   |
 | `ApplyUnlockedState` | Indicates that the actor is currently **unlocked**. |
@@ -32,6 +32,23 @@ Additionally, to ensure proper communication of these states, this actor will:
 The Openable Actor also optionally supports **auto-unlocking** when triggering an Open action, if a matching key exists.
 Key resolution is delegated to a separate, interchangeable **Key Resolver** object, so there are no direct dependencies
 with any **inventory backend**.
+
+## Gameplay Behavior
+You can introduce your own gameplay behaviors, related to the **open** or **close** events, by extending these functions,
+in Blueprints or C++. When doing so, **make sure to call their parent/super** versions to keep the original behavior.
+
+These events are only invoked in the **authoritative version** and should not be used for cosmetics. However, you might
+want to trigger **client RPCs** to execute things such as opening user interface windows (e.g. inventory items).
+
+| Function | Description                                                           |
+|----------|-----------------------------------------------------------------------|
+| `Open`   | The actor has been open on the server and the state will replicate.   |
+| `Close`  | The actor has been closed on the server and the state will replicate. |
+
+> **Call Parent/Super**
+> 
+> When extending these behaviors, make sure to call parent or super implementations in Blueprint or C++!
+{style="note"}
 
 ## Properties
 The following properties will adjust this actor's behavior, related to its **internal states**:

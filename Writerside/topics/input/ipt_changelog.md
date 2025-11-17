@@ -1,6 +1,11 @@
 # Changelog
 <primary-label ref="input"/>
 
+## 5.6.14 - 17/11/2025
+```
+[build] Added support to Unreal Engine 5.7, removed Unreal Engine 5.4 support
+```
+
 ## 5.6.13 - 21/10/2025
 ```
 [added] Action-to-Handlers cache to improve access time to eligible handlers. 

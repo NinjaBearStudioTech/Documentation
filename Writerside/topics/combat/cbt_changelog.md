@@ -1,6 +1,11 @@
 # Changelog
 <primary-label ref="combat"/>
 
+## 5.7.9 - 17/11/2025
+```
+[build] Added support to Unreal Engine 5.7, removed Unreal Engine 5.4 support
+```
+
 ## 5.7.8 - 13/11/2025
 ```
 [fix] Corrected projectile handling to allow multiple projectiles from the same ability activation.

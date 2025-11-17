@@ -1,6 +1,12 @@
 # Changelog
 <primary-label ref="factions"/>
 
+## 2.3.12 - 17/11/2025
+```
+[improvement] Added features for Bot integration.
+[build] Added support to Unreal Engine 5.7, removed Unreal Engine 5.4 support
+```
+
 ## 2.3.10 - 03/09/2025
 ```
 [improvement] Exposed IsFriendly helper function, to check the alignment between two targets.
