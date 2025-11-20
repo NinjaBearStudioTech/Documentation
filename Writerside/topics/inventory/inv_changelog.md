@@ -1,6 +1,12 @@
 # Changelog
 <primary-label ref="inventory"/>
 
+## 2.6.37
+<secondary-label ref="wip"/>
+```
+[fix] Get Inventory from the Function Library will be able to navigate Pawn/Player States/Controllers for inventory search. 
+```
+
 ## 2.6.36 - 17/11/2025
 ```
 [added] Key fragment with accompanying unlock operation class.

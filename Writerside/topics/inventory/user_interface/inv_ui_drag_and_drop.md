@@ -29,13 +29,42 @@ Once an operation is evaluated, the possible outcomes are determined, from the f
 | **MoveToContainer**     | Source and target containers belong to the same inventory, target accepts item at position, and no item-specific interaction applies.                           |
 | **TransferToInventory** | Source and target containers belong to different inventories, item not bound *or* the source inventory authorizes the target inventory, and placement is valid. |
 
+## Dragging Item Widgets
+
+Drag and Drop behavior is usually implemented in your **Item Widget**.
+
+<procedure title="Creating a Drag and Drop Widget" collapsible="true" default-state="expanded">
+    <step>
+        <p>
+        Create a widget based on <code>UNinjaInventoryItemCommonWidget</code> or <code>NinjaInventoryItemWidget</code>, 
+        depending on whether you are using Common UI in your project or not.
+        </p>
+    </step>
+    <step>
+        <p>
+        Design your widget as desired, adding any relevant components to represent your Inventory Item, including all
+        relevant <a href="inv_ui_mvvm.md">Inventory ViewModels</a> needed to support the widget.
+        </p>
+    </step>
+    <step>
+        <p>
+        In the widget's <b>root settings</b>, navigate to the <b>Inventory</b> category and under <b>settings</b>, set
+        the <b>Drag Widget Class</b> which will represent the item while being dragged.
+        </p>
+        <note>
+        To get started, you can simply use the same Item Widget. If your widget is based on the base Item Widget classes
+        provided by the framework, all ViewModels will be automatically configured.
+        </note>
+    </step>
+</procedure>
+
 ## World Drops
 
 Dropping items in the world to generate **pickups** is automatically supported. The custom operation class will detect
 a target widget that implements the expected interface, `InventoryDropZoneWidgetInterface`, so it's recognized as a 
 viable **drop zone**.
 
-The position provided by the interface is then send to the [**Drop Fragment**](inv_fragment_drop.md), along with the
-selected world location, to generate the pickup representation.
+The position provided by the interface is then send to the [**Drop Fragment**](inv_fragment_drop.md), along with the selected world 
+location, to generate the pickup representation.
 
 Ninja Inventory provides a base widget implementing this interface, `UNinjaInventoryDropZoneWidget`.

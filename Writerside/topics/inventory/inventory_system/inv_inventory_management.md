@@ -17,6 +17,7 @@ The `NinjaInventoryManagerComponent` is the core of the Ninja Inventory System. 
 This page provides an overview of the key systems and methods available to developers.
 
 ## Initialization
+
 The Inventory Manager must be **initialized** before it can be used. Initialization is usually performed automatically 
 during the component's `InitializeComponent` function, which is invoked as part of the standard **Actor Lifecycle**.
 
@@ -26,6 +27,7 @@ complex inventory interactions—such as **chests**, **vendors**, or other non-p
 To know more about the Inventory Setup, please check the corresponding [setup page](inv_inventory_system.md).
 
 ## Inventory Events
+
 The Inventory Manager exposes several events that can be used so other systems can react to changes at runtime:
 
 | Event Name                           | Description                                                  |
@@ -53,6 +55,7 @@ This distinction matters for gameplay logic that relies on the owner of items or
 effects or evaluating interactions.
 
 ## Container Management
+
 Containers are dynamic structures that hold items and define available inventory space or rules. They can be added and 
 removed at runtime. To know more about containers, please check the corresponding [Container page](inv_inventory_containers.md).
 
@@ -84,6 +87,7 @@ Containers can be queried using the following read-only functions:
 | `GetContainersByItem`  | Retrieves all containers owned by an Inventory Item (nested containers).       |
 
 ## Item Management
+
 Even though items are ultimately stored in their assigned containers, the Inventory Manager is completely aware of them,
 and it's also the entry-point for item maintenance. To know more about items, please check the corresponding [Item page](inv_inventory_items.md).
 
@@ -164,6 +168,7 @@ For most cases, you won’t need to override this unless you're building a custo
 loot-specific routing).
 
 ## Stranded Items
+
 A **stranded item** is an item that no longer has a valid container. This can happen if:
 
 - A container is **removed** while still holding items.
@@ -210,6 +215,7 @@ which will be evaluated during item processing.
 {style="note"}
 
 ## Deferred Initialization
+
 When the Inventory component is added to the **Player State**, it may take a few frames before it fully replicates to the 
 Inventory Avatar. 
 

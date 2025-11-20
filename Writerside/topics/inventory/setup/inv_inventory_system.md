@@ -19,11 +19,12 @@ It should be added to an **Actor** or **Player State**, depending on your design
 - **Player State**: Players that require an inventory to persist over multiple levels should have the Inventory Manager added to the Player State.
 
 ## Inventory Manager Component
-The Inventory Manager Component is the main component in the system and should be added to any actor or player state that needs access to an inventory.
+The Inventory Manager Component is the main component in the system and should be added to any **actor** or **player state** 
+that needs access to an inventory.
 
 <procedure title="Add the Inventory Manager Component" collapsible="true" default-state="expanded">
     <step>
-        <p>In your <b>Base Player State</b>, add the <b>Inventory Manager Component</b>.</p>
+        <p>In your <b>Pawn</b> or <b>Player State</b>, add the <b>Inventory Manager Component</b>.</p>
         <p>The component can be added using either Blueprint or C++:</p>
         <tabs group="sample">
             <tab title="Blueprint" group-key="bp">
@@ -94,13 +95,14 @@ You can query the current initialization state using the following functions fro
 | `WasLoadedFromSaveSlot`           | Informs if the inventory was loaded from a **save slot**.            |
 
 ## Inventory System Interface
+
 The recommended way to retrieve the Inventory Manager is by using the `GetInventoryManager` function in the `NinjaInventoryFunctionLibrary`.
 
 This function can retrieve the Inventory Manager from Actors, Controllers, and Player States, by searching in the most 
 likely locations.
 
-To avoid repeated component lookups, you can optionally implement the `InventorySystemInterface` on the actor or player 
-state that owns the Inventory Manager.
+However, to avoid repeated component lookups, you can optionally have the Actor or Player State implement `InventorySystemInterface`,
+which is recommended.
 
 <procedure title="Add the Inventory System Interface" collapsible="true" default-state="expanded">
     <step>In your <b>inventory owner</b> (Actor or Player State), add the <code>InventorySystemInterface</code>.</step>

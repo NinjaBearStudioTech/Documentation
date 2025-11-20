@@ -1,6 +1,11 @@
 # Changelog
 <primary-label ref="combat"/>
 
+## 5.7.10 - 17/11/2025
+```
+[fix] Removed TScriptInterface types from Projectile and Melee Scan notifies, to match the Weapon Manager interface.
+```
+
 ## 5.7.9 - 17/11/2025
 ```
 [build] Added support to Unreal Engine 5.7, removed Unreal Engine 5.4 support
