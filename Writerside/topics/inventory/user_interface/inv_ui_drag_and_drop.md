@@ -36,7 +36,7 @@ Drag and Drop behavior is usually implemented in your **Item Widget**.
 <procedure title="Creating a Drag and Drop Widget" collapsible="true" default-state="expanded">
     <step>
         <p>
-        Create a widget based on <code>UNinjaInventoryItemCommonWidget</code> or <code>NinjaInventoryItemWidget</code>, 
+        Create a widget based on <code>UNinjaInventoryItemCommonWidget</code> or <code>UNinjaInventoryItemWidget</code>, 
         depending on whether you are using Common UI in your project or not.
         </p>
     </step>

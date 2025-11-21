@@ -31,3 +31,20 @@ propagate throughout the system.
 > 
 > Widget layouts, styling, and interaction logic are left to the project level. To support this flexibility, the system 
 > includes **optional base widget classes and utility helpers**, but the actual UI design is entirely up to you.
+
+## Inventory Widget Overview
+
+When designing your Inventory User Interface, we recommend a bottom-up approach: start with the smallest building blocks 
+and work your way up to the full Inventory Window.
+
+1. **Item Tooltip**: Displays detailed information about an item. Extends from `UNinjaInventoryItemCommonWidget` or `UNinjaInventoryItemWidget`.
+2. **Item Drag**: Represents an item while it is being dragged (if drag-and-drop is supported). In many setups, you can skip this widget entirely and reuse the **Item widget** during dragging.
+3. **Item**: Represents an item within a container. Receives configuration about which Tooltip and Drag widgets to use. Also extends from `UNinjaInventoryItemCommonWidget` or `UNinjaInventoryItemWidget`.
+4. **Containers**: Represents each container (backpack, equipment slots, etc.). Uses a ViewModel extension that links each container to the Item ViewModel used in the Item widget. Extends from `UNinjaInventoryContainerCommonWidget` or `UNinjaInventoryContainerWidget`.
+5. **Inventory Window**: The main window that aggregates all containers. You are free to use any base class for this, as Ninja Inventory does not provide one.
+
+In the next pages, you will ll find more details about:
+- All provided [**Base Widgets**](inv_ui_widgets.md).
+- How to se the provided [**UMG ViewModels**](inv_ui_mvvm.md).
+- Working with [**tooltips**](inv_ui_tooltips.md).
+- Details and customizations for [**Drag and Drop**](inv_ui_drag_and_drop.md).
