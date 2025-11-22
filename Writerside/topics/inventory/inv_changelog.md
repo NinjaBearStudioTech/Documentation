@@ -1,10 +1,13 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.6.37
+## 2.7.39
 <secondary-label ref="wip"/>
 ```
+[added] Item prerequisites that can be applied when the item is being added to the inventory or an equipment state is being set.
+[improved] Removed timer from Equipment Manager used to wait for a controller. Added broadcasts for avatars and owners to the Inventory Subsystem.
 [fix] Get Inventory from the Function Library will be able to navigate Pawn/Player States/Controllers for inventory search. 
+[fix] Ensured that items with equipment without a presence for their initial state are always initialized. 
 ```
 
 ## 2.6.36 - 17/11/2025

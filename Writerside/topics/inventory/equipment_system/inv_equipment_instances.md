@@ -68,6 +68,7 @@ Each `InventoryEquipmentState` provides detailed control over how the item shoul
 | Property                         | Description                                                                                                  |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------|
 | `EquipmentStateTags`             | All equipment state tags covered by this configuration. Multiple tags can share the same settings.           |
+| `Prerequisites`                  | All prerequisites evaluated before an equipment state can be changed to `Equipped`.                          |
 | `EquipmentType`                  | Determines if this state uses an `Actor`, `StaticMesh`, or `SkeletalMesh`.                                   |
 | `ActorClass`                     | Actor class to spawn for this state (if type is `Actor`).                                                    |
 | `StaticMesh`                     | Static mesh to display for this state (if type is `StaticMesh`).                                             |
@@ -83,6 +84,12 @@ Each `InventoryEquipmentState` provides detailed control over how the item shoul
 | `GameplayEffects`                | Gameplay Effects applied to the avatar when entering this state.                                             |
 | `Containers`                     | Additional containers granted while this state is active (e.g., ammo pouches or sheath slots).               |
 
+> **Fallback State for Prerequisites**
+>
+> If prerequisites block the equipment state change, while trying to change it to `Equipped`, then the state will always 
+> fallback to `Stored`.
+{style="note"}
+ 
 > **Granting Gameplay Abilities**
 >
 > You can grant multiple abilities by using the **"Grant Gameplay Abilities"** Gameplay Effect Component, and then 
