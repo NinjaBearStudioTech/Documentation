@@ -1,6 +1,6 @@
 # Linked Container Fragment
 <primary-label ref="inventory"/>
-<secondary-label ref="experimental"/>
+<secondary-label ref="beta"/>
 
 The **Linked Container** fragment allows an item to **occupy multiple containers** simultaneously, typically to represent
 equipment that spans multiple slots, such as **two-handed weapons** that require both a main-hand and off-hand slot.
@@ -11,10 +11,19 @@ This fragment works in conjunction with a **primary container** (the one explici
 linked container, which is automatically updated based on the primary's state. For example, equipping a greatsword
 into the main-hand slot will also reserve space in the off-hand slot.
 
-## Fragment Tags
+> **Placement Fragment**
+>
+> This fragment is a specialized variation of the regular [**Container Placement Fragment**](inv_fragment_container.md)!
+>
+> If an item needs to link to another container, use this fragment instead of the default one.
+>
+>Do not add both the Container Placement and Linked Container fragments to the same item!. hey are mutually exclusive 
+> and will conflict with each other. 
+{style="note"}
 
-This fragment does not add additional gameplay tags by default, but your containers or layouts may define tags that
-are used to resolve the **Primary Container Query** and **Linked Container Query**.
+## Fragment Tags
+This fragment adds the `Inventory.Item.Trait.Linked` tag to an item, which can be used to clarify that this is a 
+"_two-handed item_", or other similar gameplay concepts.
 
 ## Properties
 
@@ -54,7 +63,8 @@ The fragment does not broadcast custom events.
 ## Equipment System Integration
 
 The Linked Container Fragment is designed to work seamlessly with the **Equipment Container** and **Equipment Layout**.
-This allows for elegant support of items that require multiple equipment slots (e.g., two-handed weapons).
+This allows for elegant support of items that require multiple equipment slots (e.g., two-handed weapons). Make sure to
+use both classes in your equipment container when using this fragment!
 
 ### Equipment Container
 The `UNinjaInventoryEquipmentContainer` class is aware of this fragment and uses it to:

@@ -17,7 +17,7 @@ All Fragment ViewModels should be created using the `Inventory Resolver`.
 > quality, etc.) and updates automatically as the item changes.
 {style="note"}
 
-## Dimensions Notifies
+## Dimensions
 
 This ViewModel exposes data from the [**Dimensions Fragment**](inv_fragment_dimensions.md), including the item's 
 footprint and rotation state.
@@ -27,7 +27,7 @@ footprint and rotation state.
 | `bIsRotated` | Indicates whether the item is currently rotated in its container.              |
 | `Dimensions` | Returns the item's width and height as a `FVector2D`, accounting for rotation. |
 
-## Durability Notifies
+## Durability
 
 This ViewModel exposes data from the [**Durability Fragment**](inv_fragment_durability.md), allowing you to monitor an 
 item's durability status and display appropriate UI feedback.
@@ -65,7 +65,7 @@ And the list of dynamic attributes includes the following properties:
 | `AttributeName` | The attribute name set in the Data Asset.              |
 | `Description`   | The attribute description set in the Data Asset.       |
 
-## Economy Notifies
+## Economy
 
 This ViewModel exposes data from the [**Economy Fragment**](inv_fragment_economy.md), allowing your UI to represent 
 buy/sell permissions and pricing.
@@ -80,7 +80,21 @@ buy/sell permissions and pricing.
 | `UnitSellPrice`  | The per-unit price to sell this item.                       |
 | `TotalSellPrice` | The total sell price, including the current stack quantity. |
 
-## Level Notifies
+## Linked Container
+
+This ViewModel notifies when an item is in a **linked** state, meaning the item is a mirror position, in a linked
+container, configured by the [**Linked Container Fragment**](inv_fragment_linked_container.md).
+
+| Field          | Description                                  |
+|----------------|----------------------------------------------|
+| `bIsLinked`    | Informs if the item is in a linked scenario. |
+
+Using this ViewModel requires a reference container, which must be set by the **Item ViewModel**. This is a **one-time** 
+binding that establishes which container the ViewModel should compare against when determining whether the item is currently linked.
+
+<img src="inv_ui_mvvm_linked_container_binding.png" alt="Linked Container Binding"/>
+
+## Level
 
 This ViewModel exposes data from the [**Level Fragment**](inv_fragment_level.md), allowing you to display and track an 
 item's level progression.
@@ -91,7 +105,7 @@ item's level progression.
 | `Level`        | The current level assigned to the item.               |
 | `MaximumLevel` | The maximum level this item can reach.                |
 
-## Nested Container Notifies
+## Nested Container
 
 This ViewModel exposes data from the [**Nested Container Fragment**](inv_fragment_nested_container.md), allowing you to 
 access a container stored inside an item (e.g., a bag or box).
@@ -100,7 +114,7 @@ access a container stored inside an item (e.g., a bag or box).
 |----------------------|-------------------------------------------------------------------------|
 | `GetNestedContainer` | Returns the `Inventory Container` associated with the item, if present. |
 
-## Quality Notifies
+## Quality
 
 This ViewModel exposes data from the [**Quality Fragment**](inv_fragment_quality.md), allowing your UI to reflect the 
 item's rarity or quality visually and textually.
@@ -118,7 +132,7 @@ Color** property on the ViewModel.
 
 <img src="inv_ui_mvvm_fragment_quality_default_color.png" alt="Default Quality Color"/>
 
-## Stack Notifies
+## Stack
 
 This ViewModel exposes data from the [**Stack Fragment**](inv_fragment_stack.md), allowing the UI to represent item 
 quantities, limits, and stack display behavior.
@@ -130,7 +144,7 @@ quantities, limits, and stack display behavior.
 | `StackLimit`      | The maximum number of items allowed in a single stack.                    |
 | `MaximumQuantity` | The maximum quantity allowed across the entire inventory.                 |
 
-## User Interface Notifies
+## User Interface
 
 This ViewModel exposes data from the [**User Interface Fragment**](inv_fragment_user_interface.md), allowing your 
 widgets to display localized text and icons for the item.
@@ -142,7 +156,7 @@ widgets to display localized text and icons for the item.
 | `Description` | Localized description text, often used for tooltips or item details.  |
 | `Icon`        | UI texture representing the item visually.                            |
 
-## Weight Notifies
+## Weight
 
 This ViewModel exposes data from the [**Weight Fragment**](inv_fragment_weight.md), allowing the UI to display item 
 weight and calculate encumbrance effects.
