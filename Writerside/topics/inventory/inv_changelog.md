@@ -1,19 +1,22 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.11.41
+## 2.11.44
 <secondary-label ref="wip"/>
 ```
 [added] Item prerequisites that can be applied when the item is being added to the inventory or an equipment state is being set.
 [added] Support for Customizable Objects (Mutable) for Equipment State Representations.
 [added] Preliminary checks for pickups, before adding them to inventories. Includes stack change and synchronization for pickup quantities.
 [added] Introduced a new specialized base widget for grid-based containers.
+[added] Offhand placement fragment including a fast-access cache in the Equipment Manager.
 [improvement] Removed timer from Equipment Manager used to wait for a controller. Added broadcasts for avatars and owners to the Inventory Subsystem.
 [improvement] Helper function to move equipment items between storage and equipment containers (i.e. "right click equip").
 [improvement] Introduced an option to create a brush based on the icon, for the User Interface ViewModel.
 [improvement] Promoted spatial layouts and linked containers from experimental to beta.
+[improvement] Consumable fragment is more deliberate about its use mode, supporting unlimited and single use directly.
 [fix] Get Inventory from the Function Library will be able to navigate Pawn/Player States/Controllers for inventory search. 
-[fix] Ensured that items with equipment without a presence for their initial state are always initialized. 
+[fix] Ensured that items with equipment without a presence for their initial state are always initialized.
+[fix] Ensured that the item is removed from the inventory when the last item stack is consumed. 
 ```
 
 ## 2.6.36 - 17/11/2025

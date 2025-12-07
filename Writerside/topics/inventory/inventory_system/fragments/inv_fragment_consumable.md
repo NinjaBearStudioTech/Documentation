@@ -4,9 +4,10 @@
 The **Consumable** fragment allows an item to be used or consumed, applying a Gameplay Effect to the owning actor 
 (typically the player).
 
-It can optionally interact with **[Stack](inv_fragment_stack.md)** and **[Durability](inv_fragment_durability.md)** fragments
-to control how many uses are available. If no stack or durability limits are defined, the item is considered to have 
-**unlimited** uses.
+It supports multiple consumption modes, including **single-use**, [**stack-based charges**](inv_fragment_stack.md), 
+[**durability-based charges**](inv_fragment_durability.md) or **unlimited** use.
+
+If the mode requires stacks or durability, the corresponding fragment must also exist on the item.
 
 ## Fragment Tags
 This fragment adds the `Inventory.Item.Trait.Consumable` tag to an item, which introduces the **Consumable** trait.
@@ -14,14 +15,24 @@ This fragment adds the `Inventory.Item.Trait.Consumable` tag to an item, which i
 ## Properties
 This fragment has the following properties.
 
-| Property           | Description                                                                    |
-|--------------------|--------------------------------------------------------------------------------|
-| `ConsumableEffect` | Gameplay Effect to apply when consumed.                                        |
-| `EffectLevel`      | Level used when applying the Gameplay Effect. Defaults to `1.0`.               |
-| `ReduceStack`      | Whether consuming this item should reduce its stack.                           |
-| `QuantityPerUse`   | Stack quantity to consume (only if `ReduceStack` is true).                     |
-| `ReduceDurability` | Whether consuming this item should apply durability wear.                      |
-| `WearPerUse`       | Amount of durability wear applied on use (only if `ReduceDurability` is true). |
+| Property           | Description                                                                                        |
+|--------------------|----------------------------------------------------------------------------------------------------|
+| `ConsumableEffect` | Gameplay Effect to apply when consumed.                                                            |
+| `EffectLevel`      | Level used when applying the Gameplay Effect. Defaults to `1.0`.                                   |
+| `UseMode`          | Defines how the consumable behaves. Determines whether charges, wear, or single-use logic applies. |
+| `QuantityPerUse`   | Stack quantity to consume (only if `ReduceStack` is true).                                         |
+| `WearPerUse`       | Amount of durability wear applied on use (only if `ReduceDurability` is true).                     |
+
+## Consumption Modes
+
+The `UseMode` property determines how many times the item can be consumed:
+
+| Mode                  | Description                                                                     |
+|-----------------------|---------------------------------------------------------------------------------|
+| `Unlimited`           | Can be consumed indefinitely. No stack or durability is reduced.                |
+| `SingleUse`           | Consumed exactly one time. The item is removed after use.                       |
+| `Charges: Stack`      | Consumes from the stack using `QuantityPerUse`. Requires a **Stack** fragment.  |
+| `Charges: Durability` | Applies durability wear using `WearPerUse`. Requires a **Durability** fragment. |
 
 ## Operations
 This fragment exposes the following operations.

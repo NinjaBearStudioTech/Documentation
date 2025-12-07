@@ -228,6 +228,7 @@
                         <toc-element topic="inv_fragment_linked_container.md"/>
                         <toc-element topic="inv_fragment_loot.md"/>
                         <toc-element topic="inv_fragment_nested_container.md"/>
+                        <toc-element topic="inv_fragment_offhand.md"/>
                         <toc-element topic="inv_fragment_prerequisites.md"/>
                         <toc-element topic="inv_fragment_quality.md"/>
                         <toc-element topic="inv_fragment_stack.md"/>

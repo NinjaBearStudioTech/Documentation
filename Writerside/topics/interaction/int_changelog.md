@@ -1,6 +1,12 @@
 # Changelog
 <primary-label ref="interaction"/>
 
+## 1.2.7
+<secondary-label ref="wip"/>
+```
+[improvement] Added a "toggleable" option for the Openable Actor.
+```
+
 ## 1.2.6 - 17/11/2025
 ```
 [added] A default Openable Actor that supports unlock/open/close interactions. Integrated with Keys on Ninja Inventory.
