@@ -1,6 +1,14 @@
 # Changelog
 <primary-label ref="combat"/>
 
+## 5.7.12
+<secondary-label ref="wip"/>
+```
+[improvement] Added flags to better control when attack animations should be canceled. This helps to avoid idle poses while net-synchronizing combos.
+[fix] Ensured that the attack task already binds to the projectile task before any setup.
+```
+
+
 ## 5.7.10 - 17/11/2025
 ```
 [fix] Removed TScriptInterface types from Projectile and Melee Scan notifies, to match the Weapon Manager interface.

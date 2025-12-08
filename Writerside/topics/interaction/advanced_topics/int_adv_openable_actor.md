@@ -47,17 +47,19 @@ want to trigger **client RPCs** to execute things such as opening user interface
 
 > **Call Parent/Super**
 > 
-> When extending these behaviors, make sure to call parent or super implementations in Blueprint or C++!
+> When extending these behaviors, **make sure to call parent or super implementations** in Blueprint or C++, as the
+> base behavior must be kept, along with your extensions.
 {style="note"}
 
 ## Properties
 The following properties will adjust this actor's behavior, related to its **internal states**:
 
-| Property                    | Description                                                                              |
-|-----------------------------|------------------------------------------------------------------------------------------|
-| `StartsLocked`              | Determines if the actor begins in a locked state.                                        |
-| `CanBeClosedViaInteraction` | Allows or disallows “Close” interactions.                                                |
-| `OpenCanAutoUnlock`         | If enabled, attempting to *Open* will automatically try to unlock the actor using a key. |
+| Property                      | Description                                                                                                   |
+|-------------------------------|---------------------------------------------------------------------------------------------------------------|
+| `StartsLocked`                | Determines if the actor begins in a locked state.                                                             |
+| `OpenCanAutoUnlock`           | If enabled, attempting to *Open* will automatically try to unlock the actor using a key.                      |
+| `CanBeClosedViaInteraction`   | Allows or disallows "Close" interactions.                                                                     |
+| `CanToggleOpenAndCloseStates` | Establishes a **toggle behavior**, allowing interactions to **alternate** between "open" and "closed" states. |
 
 And the following properties will adjust this actor's behavior, related to the **key resolution**:
 
