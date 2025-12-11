@@ -6,7 +6,7 @@
     <br/>
     <ul>
         <li>Equipment Instances are created automatically by the Equipment Manager when eligible items are added to <b>Equipment Containers</b>.</li>
-        <li>Each instance can represent an <b>Actor</b> or a <b>Mesh</b> in the world, depending on configuration.</li>
+        <li>Each instance can be represented by an <b>Actor</b>, a <b>Mesh</b> or a <b>Mutable Customizable Object</b> in the world, depending on the equipment configuration.</li>
         <li>Equipment States define how each presence is represented per equipment state tag.</li>
     </ul>
 </tldr>
@@ -21,6 +21,7 @@ Equipment can be represented in two main ways:
 
 - **Actor**: For complex interactions, behaviors and multi-mesh representations.
 - **Mesh**: For simpler visual representation (static or skeletal mesh).
+- **Mutable**: You can use customizable objects to implement armor pieces and similar equipment types.
 
 The chosen type is defined per **Equipment State**, allowing different representations depending on the item's current 
 usage. For example: a weapon might be an Actor, with a skeletal mesh and dedicated animation while equipped, but a simple

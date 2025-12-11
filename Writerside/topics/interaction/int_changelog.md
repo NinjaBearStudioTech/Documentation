@@ -1,10 +1,11 @@
 # Changelog
 <primary-label ref="interaction"/>
 
-## 1.2.7
+## 1.2.8
 <secondary-label ref="wip"/>
 ```
-[improvement] Added a "toggleable" option for the Openable Actor.
+[improvement] Provided a "toggleable" option for the Openable Actor.
+[improvement] Provided an "auto-close" option for the Openable Actor.
 ```
 
 ## 1.2.6 - 17/11/2025

@@ -1,11 +1,13 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 5.7.12
+## 5.7.14
 <secondary-label ref="wip"/>
 ```
 [improvement] Added flags to better control when attack animations should be canceled. This helps to avoid idle poses while net-synchronizing combos.
+[improvement] Integration with Ninja GAS new "Play Animation" features, which are better fitted for IK retargeting scenarios.
 [fix] Ensured that the attack task already binds to the projectile task before any setup.
+[fix] Using the correct class to notify damage instigators about the damage they applied.
 ```
 
 

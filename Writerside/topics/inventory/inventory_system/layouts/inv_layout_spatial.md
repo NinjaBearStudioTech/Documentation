@@ -1,6 +1,5 @@
 # Spatial Layout
 <primary-label ref="inventory"/>
-<secondary-label ref="experimental"/>
 
 The **Spatial Layout** is a specialized container layout that supports **2D spatial positioning** of items, enabling 
 grid-based organization.
@@ -73,6 +72,7 @@ and occupancy mask, while respecting container bounds and existing items. It's c
 search routines that try alternative slots when the first choice fails.
 
 ### PerCell
+<secondary-label ref="beta"/>
 This algorithm iterates each occupied cell of the item's mask, including rotation support, and tests that cell against 
 the container grid.
 
@@ -80,6 +80,7 @@ Best for small–medium items or containers where shapes vary a lot (Tetris-like
 exact, and easy to reason about. Great default when you value clarity over raw throughput.
 
 ### BitSetRows
+<secondary-label ref="experimental"/>
 Treats each container row as a bitset and checks the item's occupied cells with fast bitwise operations (shift-and-AND) 
 per row.
 
@@ -90,5 +91,5 @@ making it much faster when scanning many positions or handling wide items.
 Lets you plug in your own fit logic for special layouts or heuristics. Extend the layout and override the virtual 
 `TestWithCustomAlgorithm` hook to implement your algorithm. 
 
-> This is a C++-only extension point for performance reasons; it's called in tight loops, so keep allocations to a 
+> For performance reasons, this is a C++ only extension point; it's called in tight loops, so keep allocations to a 
 > minimum and prefer cache-friendly data structures.

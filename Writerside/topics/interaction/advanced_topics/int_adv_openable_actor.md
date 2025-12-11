@@ -60,6 +60,7 @@ The following properties will adjust this actor's behavior, related to its **int
 | `OpenCanAutoUnlock`           | If enabled, attempting to *Open* will automatically try to unlock the actor using a key.                      |
 | `CanBeClosedViaInteraction`   | Allows or disallows "Close" interactions.                                                                     |
 | `CanToggleOpenAndCloseStates` | Establishes a **toggle behavior**, allowing interactions to **alternate** between "open" and "closed" states. |
+| `TimeToCloseAutomatically`    | If enabled and greater than zero, closes an open actor automatically, after the set interval.                 |
 
 And the following properties will adjust this actor's behavior, related to the **key resolution**:
 

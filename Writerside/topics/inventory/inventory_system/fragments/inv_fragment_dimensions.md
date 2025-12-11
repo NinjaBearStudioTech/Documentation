@@ -34,6 +34,8 @@ This fragment does not contribute any gameplay tags.
 This fragment uses the `FInventoryItemFragmentDimensionsMemory` structure to track the **rotation state** of the item at runtime.
 
 ## Occupancy Masks
+<secondary-label ref="experimental"/>
+
 Occupancy Masks let items use non-rectangular footprints (crosses, L-pieces, circles, Tetris-like shapes) when placed 
 inside [grid-based containers](inv_layout_spatial.md). The layout/placement logic treats only the true cells of the mask 
 as occupied, enabling richer packing and equipment silhouettes.

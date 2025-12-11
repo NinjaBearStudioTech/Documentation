@@ -76,14 +76,21 @@ To recap, we have two important ViewModel responsibilities in this widget:
 However, as shown in the steps above, binding the Item ViewModel directly to every Fragment ViewModel can become repetitive
 and error-prone, especially as your UI becomes more complex.
 
-To simplify this, the Inventory System provides a built-in **Base Item Widget** (`NinjaInventoryItemWidget`) that automatically
-propagates item data to all child ViewModels.
+### Bindings with the Item Widget
+
+To simplify this, the Inventory System provides a built-in **Base Item Widget** (`NinjaInventoryItemWidget` or its **Common
+UI** counterpart) that automatically propagates item data to all child ViewModels, so you don't need to bind to each fragment
+representation.
 
 <procedure title="Using the Base Item Widget" collapsible="true" default-state="expanded">
     <step>Reparent your Item Widget to <code>NinjaInventoryItemWidget</code>.</step>
     <step>
-         <p>Update your <b>ViewModel bindings</b> in the <b>View Bindings panel</b> so that the Item ViewModel calls the functions <code>SetItemInstance</code> and <code>SetItemView</code>, which are provided by the base class.</p>
+        <p>Update your <b>ViewModel bindings</b> in the <b>View Bindings panel</b> so that the Item ViewModel calls the functions <code>SetItemInstance</code> and <code>SetItemView</code>, which are provided by the base class.</p>
         <img src="inv_ui_mvvm_item_data_pipeline_base_widget.png" alt="Data Pipeline with Base Widget" width="800" border-effect="line"/>
+    </step>
+    <step>
+        <p>Add a <b>one-time binding</b> from the Item ViewModel to the widget, setting the <b>owning container</b>.</p>
+        <img src="inv_ui_mvvm_item_data_pipeline_container.png" alt="Container Binding" width="800" border-effect="line"/>
     </step>
 </procedure>
 
@@ -154,7 +161,7 @@ that can be set directly in the Designer.
 
 Ninja Inventory provides a modular **library of ViewModels** that you can use to build flexible, data-driven user interfaces.
 
-All concepts introduced in this chapter apply across the entire ViewModel library, which is organized into the following 
+All concepts introduced in this chapter apply across the entire ViewModel library, which is organized into the following
 categories:
 
 - **Attributes**: Exposes **Gameplay Attribute** values from the Inventory Manager.

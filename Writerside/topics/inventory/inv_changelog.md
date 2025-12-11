@@ -1,14 +1,19 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.11.44
-<secondary-label ref="wip"/>
+## 2.12.44 - 11/12/2025
+> **Important Changes in this version**
+>
+> 1. Item Widgets will require an additional **one-time binding** for the **owning container**. Please check [here](inv_ui_mvvm.md#bindings-with-the-item-widget) for more info.
+> 2. **Spatial Layouts** and **Linked Containers** are in beta, meaning they are not production ready, but their API should be stable.
+> 3. **Mutable** is now support as an equipment type, along with meshes and actors. This integration is still experimental.
 ```
 [added] Item prerequisites that can be applied when the item is being added to the inventory or an equipment state is being set.
 [added] Support for Customizable Objects (Mutable) for Equipment State Representations.
 [added] Preliminary checks for pickups, before adding them to inventories. Includes stack change and synchronization for pickup quantities.
 [added] Introduced a new specialized base widget for grid-based containers.
 [added] Offhand placement fragment including a fast-access cache in the Equipment Manager.
+[added] Loot persistency policies used by loot generation (none, requester, source). 
 [improvement] Removed timer from Equipment Manager used to wait for a controller. Added broadcasts for avatars and owners to the Inventory Subsystem.
 [improvement] Helper function to move equipment items between storage and equipment containers (i.e. "right click equip").
 [improvement] Introduced an option to create a brush based on the icon, for the User Interface ViewModel.
