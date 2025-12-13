@@ -1,6 +1,14 @@
 # Changelog
 <primary-label ref="inventory"/>
 
+## 2.15.44
+<secondary-label ref="wip"/>
+```
+[added] Dedicated (optional) Loot Handler that can handle received loot on client and server.
+[added] Dynamic Attributes will support level-based curve tables to update their values.
+[added] Dynamic Attribute ViewModel to be used in conjunction with the equivalent List version. 
+```
+
 ## 2.12.44 - 11/12/2025
 > **Important Changes in this version**
 >

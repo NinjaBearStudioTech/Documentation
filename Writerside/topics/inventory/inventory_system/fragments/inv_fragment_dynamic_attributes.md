@@ -26,11 +26,27 @@ This can define multiple attributes, each with the following properties.
 | `AttributeDataTag`     | Unique tag identifying the attribute.                                                      |
 | `Name`                 | A localized name that can be used internally or with the user interface.                   |
 | `Description`          | A localized description that can be used internally or with the user interface.            |
-| `ValueMode`            | Determines if the attribute’s value is fixed or randomly resolved from a range.            |
+| `ValueMode`            | Determines how the value is determined for this attribute.                                 |
 | `FixedValue`           | Value assigned when `ValueMode` is set to **Fixed**.                                       |
 | `MinValue`             | Minimum possible value when `ValueMode` is set to **Range**.                               |
 | `MaxValue`             | Maximum possible value when `ValueMode` is set to **Range**.                               |
+| `AttributeCurve`       | A level/value curve used, when `ValueMode` is set to **Table**.                            |
 | `bExportAsSetByCaller` | If true, this attribute will be exported to Gameplay Effects as a Set By Caller magnitude. |
+
+## Value Modes
+This fragment supports the following value modes:
+
+| Value Mode | Description                                                                         |
+|------------|-------------------------------------------------------------------------------------|
+| `Fixed`    | The dynamic attribute starts with a fixed, pre-defined, value.                      |
+| `Range`    | The dynamic attribute starts with a random value in a given range (Min/Max Values). |
+| `Table`    | The dynamic attribute starts and updates its value from a level-based table.        |
+
+> **Level-Based Table**
+> 
+> This is a **Curve Table** asset, where each line represents an attribute. Indexes are defined by the **Item Level**,
+> provided by the [**Level Fragment**](inv_fragment_level.md).
+{style="note"}
 
 ## Memory
 The fragment supports default memories via the `FInventoryItemFragmentAttributeMemory` struct.

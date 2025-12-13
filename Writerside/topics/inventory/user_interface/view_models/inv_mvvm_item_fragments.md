@@ -19,13 +19,24 @@ All Fragment ViewModels should be created using the `Inventory Resolver`.
 
 ## Dimensions
 
-This ViewModel exposes data from the [**Dimensions Fragment**](inv_fragment_dimensions.md), including the item's 
-footprint and rotation state.
+This ViewModel exposes data from the [**Dimensions Fragment**](inv_fragment_dimensions.md), including the item's footprint and rotation state.
 
-| Field        | Description                                                                    |
-|--------------|--------------------------------------------------------------------------------|
-| `bIsRotated` | Indicates whether the item is currently rotated in its container.              |
-| `Dimensions` | Returns the item's width and height as a `FVector2D`, accounting for rotation. |
+When combined with the base [**Item Widget**](inv_ui_widgets.md) classes, it will have the base item size set, which
+allows the ViewModel to correctly calculate the Width and Height considering the grid host.
+
+If you are not using the base Item Widgets, you can still define the base size by calling `SetBaseSize`.
+
+| Field        | Description                                                                     |
+|--------------|---------------------------------------------------------------------------------|
+| `bIsRotated` | Indicates whether the item is currently rotated in its container.               |
+| `Dimensions` | Returns the item's width and height as a `FVector2D`, accounting for rotation.  |
+| `GetWidth`   | Absolute width considering the **Item Dimensions** and the **base dimensions**. | 
+| `GetHeight`  | Absolute width considering the **Item Dimensions** and the **base dimensions**. | 
+
+Once fully configured, the **Width** and **Height** values can be fed directly into a **Size Box**. These dimensions
+already take into consideration the rotation state so you don't need to worry about that.
+
+<img src="inv_ui_mvvm_dimensions_bindings.png" alt="Dimensions Binding" width="800" border-effect="line"/>
 
 ## Durability
 
@@ -41,6 +52,32 @@ item's durability status and display appropriate UI feedback.
 | `MaximumDurability` | The maximum durability this item can have.                          |
 | `DurabilityPercent` | Durability percent considering current/maximum.                     |
 
+## Dynamic Attribute
+
+This ViewModel exposes a specific [**Dynamic Attribute**](inv_fragment_dynamic_attributes.md). It's usually created by
+the **Dynamic Attributes** ViewModel, which is responsible for providing a list with all dynamic attributes assigned
+to an item.
+
+When used in that context, the **Creation Type** should be set to **Manual** since the Dynamic Attributes ViewModel will
+be responsible for creating each instance.
+
+This ViewModel exposes the following details:
+
+| Property        | Description                                            |
+|-----------------|--------------------------------------------------------|
+| `AttributeTag`  | Gameplay tag that uniquely identifies the attribute.   |
+| `Value`         | Current value for the attribute.                       |
+| `MinValue`      | For ranged values, this is the minimum possible value. |
+| `MaxValue`      | For ranged values, this is the maximum possible value. |
+| `ValueMode`     | Value mode for this attribute (fixed or ranged).       |
+| `AttributeName` | The attribute name set in the Data Asset.              |
+| `Description`   | The attribute description set in the Data Asset.       |
+
+This ViewModel is most likely set to a single widget that simply represents one attribute. The most common use case
+would have bindings for the **attribute name** and its **current value**.
+
+<img src="inv_ui_mvvm_dynamic_attribute_binding.png" alt="Dynamic Attribute Binding" width="600" border-effect="line"/>
+
 ## Dynamic Attributes
 
 This ViewModel exposes all [**Dynamic Attributes**](inv_fragment_dynamic_attributes.md) assigned to an item, allowing 
@@ -53,17 +90,16 @@ The ViewModel exposes the following fields:
 | `bHasDynamicAttributes` | Indicates whether the item includes any dynamic attributes. |
 | `GetDynamicAttributes`  | Provides a list of dynamic attribute information.           |
 
-And the list of dynamic attributes includes the following properties:
+The `GetDynamicAttributes` function provides a list of **Dynamic Attribute** ViewModels. This means you can use this
+ViewModel with a **ViewModel Extension**, along with components such as a **Vertical Box**. The following image shows
+how the extension can be configured, pointing to a widget that represents **a single attribute** and its ViewModel. 
 
-| Property        | Description                                            |
-|-----------------|--------------------------------------------------------|
-| `AttributeTag`  | Gameplay tag that uniquely identifies the attribute.   |
-| `Value`         | Current value for the attribute.                       |
-| `MinValue`      | For ranged values, this is the minimum possible value. |
-| `MaxValue`      | For ranged values, this is the maximum possible value. |
-| `ValueMode`     | Value mode for this attribute (fixed or ranged).       |
-| `AttributeName` | The attribute name set in the Data Asset.              |
-| `Description`   | The attribute description set in the Data Asset.       |
+<img src="inv_ui_mvvm_dynamic_attributes_extension.png" alt="Dynamic Attributes Extension" width="600" border-effect="line"/>
+
+This will create an **extension** property in the widget, with a single `SetItems` function. You can bind the provided
+`GetDynamicAttributes` function to it, so all required attribute widgets are created and populated correctly.
+
+<img src="inv_ui_mvvm_dynamic_attributes_binding.png" alt="Dynamic Attributes Binding" width="800" border-effect="line"/>
 
 ## Economy
 
@@ -92,7 +128,7 @@ container, configured by the [**Linked Container Fragment**](inv_fragment_linked
 Using this ViewModel requires a reference container, which must be set by the **Item ViewModel**. This is a **one-time** 
 binding that establishes which container the ViewModel should compare against when determining whether the item is currently linked.
 
-<img src="inv_ui_mvvm_linked_container_binding.png" alt="Linked Container Binding"/>
+<img src="inv_ui_mvvm_linked_container_binding.png" alt="Linked Container Binding" border-effect="line"/>
 
 ## Level
 
@@ -130,7 +166,7 @@ When using the **Quality Color** as a background or visual indicator, you may wa
 no item is assigned. By default, the color is set to **transparent**, but you can customize this by setting the **Default 
 Color** property on the ViewModel.
 
-<img src="inv_ui_mvvm_fragment_quality_default_color.png" alt="Default Quality Color"/>
+<img src="inv_ui_mvvm_fragment_quality_default_color.png" alt="Default Quality Color" border-effect="line"/>
 
 ## Stack
 
