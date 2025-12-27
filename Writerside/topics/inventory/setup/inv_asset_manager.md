@@ -2,7 +2,7 @@
 <primary-label ref="inventory"/>
 
 <tldr>
-    <p><b>Summary:Asset Manager and Data Assets</b></p>
+    <p><b>Summary: Asset Manager and Data Assets</b></p>
     <br/>
     <ul>
         <li>Players will have their Inventory Manager in the <b>Player State</b>. Other pawns and actors will have it in their actual classes.</li>
