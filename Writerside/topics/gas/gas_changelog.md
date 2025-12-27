@@ -1,6 +1,12 @@
 # Changelog
 <primary-label ref="gas"/>
 
+## 1.12.14
+```
+[improvement] Incorporated a dedicated flow for animation montages in different meshes.
+[improvement] Organized/standardized all function categories.
+```
+
 ## 1.10.12 - 17/11/2025
 ```
 [improvement] Additional support for Animation Montages played on Anim BPs disconnected from the main Mesh.

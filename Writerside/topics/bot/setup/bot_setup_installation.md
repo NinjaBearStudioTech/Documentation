@@ -1,2 +1,2 @@
-# Token System
+# Installation
 <primary-label ref="bot"/>

@@ -1,12 +1,17 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.15.44
+## 2.16.47
 <secondary-label ref="wip"/>
 ```
 [added] Dedicated (optional) Loot Handler that can handle received loot on client and server.
 [added] Dynamic Attributes will support level-based curve tables to update their values.
-[added] Dynamic Attribute ViewModel to be used in conjunction with the equivalent List version. 
+[added] Dynamic Attribute ViewModel to be used in conjunction with the equivalent List version.
+[added] Interface-based Loot Table provider, which allow instance-editable tables.
+[improvement] New event that notifies when an item has been fully initialized.
+[improvement] Organized/standardized all function categories.
+[fix] Connected the loot handler, routing the correct methods to server and client.
+[fix] Ensured that animation layers are re-linked if an animation instance is re-instantiated.
 ```
 
 ## 2.12.44 - 11/12/2025

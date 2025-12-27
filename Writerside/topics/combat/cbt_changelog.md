@@ -1,15 +1,17 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 5.7.14
+## 5.8.16
 <secondary-label ref="wip"/>
 ```
+[added] Knockout state that can be triggered before death.
 [improvement] Added flags to better control when attack animations should be canceled. This helps to avoid idle poses while net-synchronizing combos.
 [improvement] Integration with Ninja GAS new "Play Animation" features, which are better fitted for IK retargeting scenarios.
+[improvement] Organized/standardized all function categories.
 [fix] Ensured that the attack task already binds to the projectile task before any setup.
 [fix] Using the correct class to notify damage instigators about the damage they applied.
+[fix] Reviewed ragdoll flow to ensure it will properly trigger on host and clients.
 ```
-
 
 ## 5.7.10 - 17/11/2025
 ```

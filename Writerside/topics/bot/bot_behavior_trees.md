@@ -1,4 +1,2 @@
-# Setup
+# Behavior Trees
 <primary-label ref="bot"/>
-
-Coming soon...

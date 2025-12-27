@@ -10,7 +10,30 @@
     
     <toc-element toc-title="Artificial Intelligence">
         <!-- Ninja Bot -->
-        <toc-element toc-title="Ninja Perception">
+        <toc-element topic="bot_overview.md">
+            <toc-element toc-title="Setup">
+                <toc-element topic="bot_setup_installation.md"/>
+                <toc-element topic="bot_setup_asset_manager.md"/>
+                <toc-element topic="bot_setup_settings.md"/>
+            </toc-element>
+            <toc-element topic="bot_perception_and_awareness.md"/>
+            <toc-element topic="bot_controller_and_data.md"/>
+            <toc-element topic="bot_behavior_trees.md"/>
+            <toc-element topic="bot_state_trees.md"/>
+            <toc-element topic="bot_user_interface.md"/>
+            <toc-element toc-title="Advanced Topics">
+                <toc-element topic="bot_advanced_patrol_paths.md"/>
+                <toc-element topic="bot_advanced_awareness_target.md"/>
+                <toc-element topic="bot_advanced_ninja_factions.md"/>
+            </toc-element>
+            <toc-element toc-title="Guides">
+                <toc-element topic="bot_guide_first_ten_minutes.md"/>
+                <toc-element topic="bot_guide_awareness_design.md"/>
+                <toc-element topic="bot_guide_create_patrols.md"/>
+                <toc-element topic="bot_guide_bt_samples.md"/>
+                <toc-element topic="bot_guide_st_samples.md"/>
+            </toc-element>
+            <toc-element topic="bot_changelog.md"/>
         </toc-element>
         <!-- Ninja Factions -->
         <toc-element topic="fct_overview.md">
@@ -270,6 +293,7 @@
             <toc-element toc-title="Advanced Topics">
                 <toc-element topic="inv_tag_visibility.md"/>
                 <toc-element topic="inv_shared_inventories.md"/>
+                <toc-element topic="inv_mutable_equipment.md"/>
             </toc-element>
             <toc-element topic="inv_changelog.md"/>
             <toc-element topic="inv_version_upgrades.md"/>

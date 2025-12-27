@@ -1,2 +1,2 @@
-# Strategy Subsystem
+# Settings
 <primary-label ref="bot"/>

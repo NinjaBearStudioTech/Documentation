@@ -1,6 +1,26 @@
 # Changelog
 <primary-label ref="interaction"/>
 
+## 1.6.20
+```
+[added] New interaction bookeping to better support multiple interactions from same target.
+[added] New Interaction Task to Wait for Interaction, meant to replace the ootb Delay one.
+[added] Base Interaction Widget that can be used as a base for both HUD and Actor prompts.
+[added] Ability Task to detect interaction targets under the mouse cursor. 
+[improvement] Reinforced policy for "wait interaction duration" task design in the state tree. 
+[improvement] Organized/standardized all function categories.
+[improvement] Cached interaction behaviors to reduce network requirements.
+[improvement] Interaction Targets can broadcast changes in their internal state.
+[improvement] Reviewed ViewModels to better handle scenarios where the pawn is not available yet (high latency).
+[improvement] Reviewed ViewModels to remove distinction between actor-based and HUD-based widgets.
+[improvement] Interaction Widget Component will natively/optionally support rotation to face the camera.
+[improvement] Summary ViewModel will dynamically update the interaction text.
+[improvement] Openable Interaction Actor will provide a dynamic prompt, based on its internal state.
+[fix] Attempts to start an interaction with a current target respects its availability.
+[fix] Elapsed time is always reset on clients before a new interaction starts.
+[fix] Display Text is correctly stored by the Interaction Manager component. 
+```
+
 ## 1.2.8 - 11/12/2025
 ```
 [improvement] Provided a "toggleable" option for the Openable Actor.
