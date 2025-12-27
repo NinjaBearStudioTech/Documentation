@@ -294,7 +294,7 @@
             <toc-element toc-title="Advanced Topics">
                 <toc-element topic="inv_tag_visibility.md"/>
                 <toc-element topic="inv_shared_inventories.md"/>
-                <toc-element topic="inv_mutable_equipment.md"/>
+                <!--<toc-element topic="inv_mutable_equipment.md"/>-->
             </toc-element>
             <toc-element topic="inv_changelog.md"/>
             <toc-element topic="inv_version_upgrades.md"/>
