@@ -1,7 +1,7 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.16.47
+## 2.16.49
 <secondary-label ref="wip"/>
 ```
 [added] Dedicated (optional) Loot Handler that can handle received loot on client and server.
@@ -12,6 +12,8 @@
 [improvement] Organized/standardized all function categories.
 [fix] Connected the loot handler, routing the correct methods to server and client.
 [fix] Ensured that animation layers are re-linked if an animation instance is re-instantiated.
+[fix] Corrected order in which equipments add GAS-related objects, so a potential actor causer is ready. 
+[fix] Ensured that loaded items register for lifecycle updates so they can be added to the internal list.
 ```
 
 ## 2.12.44 - 11/12/2025

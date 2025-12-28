@@ -91,7 +91,7 @@ providers are readily available:
 | Directional Evade Provider | Selects the animation using an angle calculated from the Character Movement and Forward Reference.                                                                    |
 | Hit Reaction Provider      | Selects the animation using an angle calculated from the Target and an incoming hit, or using a **Chooser Table**.                                                    |
 | Random Animation Provider  | Randomly selects on animation montage from a list of possible choices.                                                                                                |
-| Weapon Animation Provider  | Retrieves an Animation from the source object (usually the weapon) for the ability. <br/> The source object must implement `CombatAnimationContextProviderInterface`. |
+| Weapon Animation Provider  | Retrieves an Animation from the source object (usually the weapon) for the ability. <br/> The source object must implement `CombatAnimationMontageProviderInterface`. |
 
 ### Animation Montage Provider Interface
 This interface can be added to any **Gameplay Ability** using an Animation Provider. When added, it can provide default

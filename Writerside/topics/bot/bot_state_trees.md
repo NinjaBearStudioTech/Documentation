@@ -40,6 +40,21 @@ When used this way, State Trees can behave in a more **reaction-driven manner**,
 retaining the structural benefits of state-based execution. This makes State Trees a flexible option that can support both
 **deterministic, transition-driven AI**, and **reactive, utility-influenced decision-making**.
 
+## Dynamic State Tree Injection
+
+Ninja Bot extends standard State Tree usage by supporting **dynamic subtree injection** through the Bot Data Asset.
+Rather than authoring entirely separate trees, designers can:
+
+- Define a base tree that handles **shared behavior** such as navigation
+- Inject **specialized subtrees** at runtime based on gameplay tags
+
+Dynamic injection allows behavior variation to be expressed through data rather than controller subclasses, keeping AI
+logic modular, reusable, and designer-friendly. Common examples include:
+
+- Injecting melee or ranged attack logic into a shared "Attack" state
+- Swapping investigation or combat behaviors based on equipment or role
+- Injecting complex subtrees for bosses or elites
+
 ## State Tree Evaluators
 
 Ninja Bot provides a small set of **State Tree evaluators** that expose perception and awareness data to State Trees. 
