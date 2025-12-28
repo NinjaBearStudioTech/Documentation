@@ -11,11 +11,11 @@
     </ul>
 </tldr>
 
-Ninja Bot integrates with Unreal Engine's Behavior Tree system by treating it as a **consumer of interpreted perception 
+Ninja Bot integrates with Unreal Engine's **Behavior Tree** system by treating it as a **consumer of interpreted perception 
 and awareness**, rather than as a driver of sensing logic. Perception, awareness, and target selection are handled by the 
 framework, while Behavior Trees focus exclusively on **decision-making and action execution**.
 
-## Why Use Behavior Trees
+## When to Use Behavior Trees
 
 Behavior Trees are particularly well suited for **reactive AI behavior**, where decisions must **adapt quickly to changing 
 conditions** exposed to the tree, through a **Blackboard**.
@@ -78,8 +78,7 @@ The **Sensor Data** is an optional service that exposes detailed stimulus data f
 intended for more intricate behavior where raw sense information is required, such as reacting differently to sound strength, 
 stimulus age, or tagged events.
 
-This service does not select targets. Instead, it **reads the sensed actor from the Blackboard** and exposes sense-specific 
-data for that actor.
+Multiple Sensor Data services can be used simultaneously to query different senses registered with the agent.
 
 > Since this service reads from the Blackboard, you can also query perceptual data from actors that are not the one 
 > currently selected by the sense/awareness evaluation.
