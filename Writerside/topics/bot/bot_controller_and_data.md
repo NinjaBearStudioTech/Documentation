@@ -84,6 +84,13 @@ with the Asset Manager. Once registered:
 
 This allows multiple bots to safely share the same configuration without duplicating data or code.
 
+### Creating a Bot Setup
+
+A Bot Setup Asset can be created in either of the following ways:
+
+- From the Content Browser: Ninja Bear Studio → Ninja Bot → **Bot Setup**
+- By creating a Data Asset directly from `UNinjaBotSetupDataAsset`
+
 ### Brain Configuration
 
 The Bot Data Asset defines which **decision system** is used as the bot's brain. Ninja Bot supports multiple brain types, 
