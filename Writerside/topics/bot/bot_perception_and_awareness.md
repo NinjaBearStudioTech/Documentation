@@ -26,6 +26,20 @@ The component relies on two primary configuration assets:
 
 Together, these assets allow perception and awareness behavior to be **reused, tuned, and extended without modifying code**.
 
+## Perception and Awareness Data Flow
+
+Ninja Bot evaluates sensory input in stages, separating **detection**, **interpretation**, and **consumption**. World 
+stimuli are first sensed by Unreal Engine and aggregated per actor into perception entries. 
+
+Each sense is evaluated **independently**, **normalized**, and **optionally shaped by distance, strength, and time-based 
+modifiers** to produce a unified perception score.
+
+This score is accumulated over time into a continuous **awareness value**, which is then mapped to discrete **awareness 
+states**. AI decision systems and presentation layers consume this interpreted awareness, ensuring that behavior and 
+feedback are driven by stable, explainable state rather than raw perception events.
+
+<img src="bot_perception_flow.png" alt="Perception Flow" width="800" border-effect="line"/>
+
 ## Sense Setup
 
 Sense setup is responsible for defining how a bot **detects and evaluates stimuli from the world**. This includes which 
@@ -101,7 +115,7 @@ Ninja Bot supports three independent curve types:
 - **Time Since Sensed**: X axis is time in seconds since the stimulus was first sensed; Y axis is the multiplier applied to perception strength
 
 #### Strength Response Curve
-<img src="bot_perception_curve_strength.png" alt="Strength Modifier Curve Sample" width="800"/>
+<img src="bot_perception_curve_strength.png" alt="Strength Modifier Curve Sample" width="800" border-effect="line"/>
 
 The Strength Response Curve **directly modifies the normalized strength value produced by a sense**. Unlike the other
 curves, this one does not depend on distance or time. It is applied immediately after normalization and before weighting,
@@ -116,7 +130,7 @@ Typical use cases include:
 - Ensure that **weak stimuli remain insignificant**, even if frequent
 
 #### Distance Multiplier Curve
-<img src="bot_perception_curve_distance.png" alt="Distance Modifier Curve Sample" width="800"/>
+<img src="bot_perception_curve_distance.png" alt="Distance Modifier Curve Sample" width="800" border-effect="line"/>
 
 The Distance Multiplier Curve **scales perception strength based on the distance between the AI agent and the sensed target**.
 
@@ -129,7 +143,7 @@ Typical use cases include:
 - **Biasing focus toward closer targets** in combat encounters
 
 #### Time Since Sensed Multiplier Curve
-<img src="bot_perception_curve_time.png" alt="Strength Modifier Curve Sample" width="800"/>
+<img src="bot_perception_curve_time.png" alt="Strength Modifier Curve Sample" width="800" border-effect="line"/>
 
 The Time Since Sensed Multiplier Curve **scales perception strength based on how long the stimulus has been present**.
 
