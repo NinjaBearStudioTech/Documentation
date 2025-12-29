@@ -17,6 +17,7 @@ compatible with Unreal Engine and the Ninja plugin ecosystem.
 - Aggregates multiple senses into **normalized awareness data**.
 - Exposes meaningful inputs to **Behavior Trees** and **State Trees**.
 - Provides additional gameplay features such as **Patrol Points**.
+- Provides a dedicated and optional module for **Threat Management**.
 - Integrated with the User Interface, via base **UMG widgets** and **ViewModels**.
 - Integrates seamlessly with [**Ninja Factions**][1].
 
