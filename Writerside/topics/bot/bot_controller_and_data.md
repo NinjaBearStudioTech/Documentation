@@ -117,3 +117,23 @@ implemented.
 
 Ninja Bot provides a default adapter compatible with **Character Movement Components**. Projects are free to implement 
 their own adapters by extending `UNinjaBotMovementAdapter`, enabling support for other locomotion systems.
+
+## Team Resolution
+
+Ninja Bot uses a **Team Provider** to resolve alignment and attitude between pawns during perception and target selection.
+This logic is handled by a Team Provider class, which can be configured in the plugin's [**global settings**](bot_setup_settings.md).
+
+### Default Team Provider
+
+The default Team Provider expects pawns to implement `IGenericTeamAgentInterface`. Each pawn provides a **Team ID** via the
+interface's `GetGenericTeamId` function. Attitude resolution can also be implemented through the same interface.
+
+### Factions Team Provider
+
+Ninja Bot also provides a Team Provider compatible with [**Ninja Factions**](fct_overview.md). You can find more details
+about this integration in the [**Ninja Factions Integration**](bot_advanced_ninja_factions.md) page.
+
+### Custom Resolution
+
+You can implement custom team resolution behavior by extending `UNinjaBotTeamProvider`, either natively or in Blueprint,
+and implementing the required functions: `GetTeamId` and `GetTeamAttitude`.
