@@ -38,7 +38,7 @@ This score is accumulated over time into a continuous **awareness value**, which
 states**. AI decision systems and presentation layers consume this interpreted awareness, ensuring that behavior and 
 feedback are driven by stable, explainable state rather than raw perception events.
 
-<img src="bot_perception_flow.png" alt="Perception Flow" width="800" border-effect="line"/>
+<img src="bot_perception_flow.png" alt="Perception Flow" width="800"/>
 
 ## Sense Setup
 

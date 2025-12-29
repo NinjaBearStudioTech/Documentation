@@ -25,7 +25,8 @@
             <toc-element toc-title="Advanced Topics">
                 <toc-element topic="bot_advanced_patrol_paths.md"/>
                 <toc-element topic="bot_advanced_awareness_target.md"/>
-                <toc-element topic="bot_movement_modes.md"/>
+                <toc-element topic="bot_advanced_movement_modes.md"/>
+                <toc-element topic="bot_advanced_threat_manager.md"/>
                 <toc-element topic="bot_advanced_ninja_factions.md"/>
                 <toc-element topic="bot_advanced_ninja_combat.md"/>
             </toc-element>
