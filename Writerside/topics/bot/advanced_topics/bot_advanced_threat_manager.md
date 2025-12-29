@@ -1,7 +1,7 @@
 # Threat Manager
 <primary-label ref="bot"/>
 <secondary-label ref="advanced"/>
-<secondary-label ref="beta"/>
+<secondary-label ref="experimental"/>
 
 The **Threat Manager** is an opt-in system that enables **threat assessment** and **threat-based** target selection. This 
 evaluation model is commonly used in RPG-style gameplay, where an agent may choose between multiple targets based on factors 
@@ -35,8 +35,8 @@ The accumulated threat table is normalized, and the actor with the highest resul
 threat target. When a new threat target is determined, **a Threat Sense event is emitted**.
 
 In addition to damage-driven threat, gameplay systems may **deliberately inject threat** by calling `RegisterThreatSource`, 
-providing a source actor and an explicit threat score. This allows threat to be influenced by abilities, taunts, or 
-scripted events.
+providing a source actor and an explicit threat score. This allows non-damaging actors to contribute to threat generation,
+which is often the case for certain RPG roles like _healers_.
 
 ## Threat Sense
 
@@ -51,8 +51,12 @@ stimulus**. This allows threat relevance to be authored using the **same tools**
 weighting, normalization, and awareness contribution. As a result, **threat can be tuned per perception archetype** and 
 blended naturally with other sensory inputs.
 
-> The Threat Sense must be registered in the bot’s Sense Configuration. It is handled as any other sense by the Perception System.
+> The Threat Sense must be registered in the bot's Sense Configuration. It is handled as any other sense by the Perception System.
 {style="note"}
+
+You can send one-off Threat events, using the static function provided by the Threat Sense class. This function can be
+used natively or in Blueprints, and it's useful to trigger external, specific events that are supposed to **force threat**
+like a "_taunt_".
 
 ## Threat Modifier Interface
 
@@ -62,5 +66,5 @@ generate. This interface allows actors to:
 - Increase their threat contribution
 - Reduce or dampen their perceived threat
 
-This is particularly useful for role-based gameplay, such as **implementing class archetypes** like tanks or damage dealers, 
-where threat generation is **intentionally biased**. 
+This is particularly useful for role-based gameplay, such as **implementing class archetypes** like _tanks_ or _damage 
+dealers_, where threat generation is **intentionally biased**. 
