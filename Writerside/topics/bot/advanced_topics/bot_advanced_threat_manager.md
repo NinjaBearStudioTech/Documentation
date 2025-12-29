@@ -10,6 +10,14 @@ such as **damage dealt** or **deliberate threat generation**.
 When enabled, the Threat Manager evaluates threat independently of perception strength and **broadcasts the highest-threat 
 target back into the perception system**, allowing standard awareness and decision logic to react accordingly.
 
+## Threat vs Awareness
+
+Threat and awareness are **evaluated independently** and serve different purposes. **Awareness** determines whether a 
+target is known and can be acted upon. **Threat** determines which known target should be prioritized.
+
+Keeping these systems separate allows detection and prioritization to be tuned independently while still feeding into 
+the same **perception and decision logic**.
+
 ## Threat Manager Component
 
 The **Threat Manager Component** should be added to the **AI Controller**. Once enabled, it automatically integrates with 
