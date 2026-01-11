@@ -13,6 +13,7 @@ Before starting, make sure the following **pre-requisites** are completed:
 
 1. **Install and configure Ninja Bot**, including the [**Asset Manager setup**](bot_setup_asset_manager.md).
 2. Use a template, such as the Combat Third Person Template, and verify that a **Navigation Mesh** is present in the map.
+3. Some guides may _suggest_ using **Gameplay Abilities**. Having a base character already configured for GAS can be helpful.
 
 It is also recommended that your **Gameplay Debugger** is configured, so you can inspect the Bot’s perception data and 
 evaluate its active AI states during gameplay.

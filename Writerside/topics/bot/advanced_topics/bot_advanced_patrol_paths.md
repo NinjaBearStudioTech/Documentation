@@ -76,7 +76,7 @@ progression can be composed with both native and Ninja Bot nodes.
 <img src="bot_advanced_patrol_bt_example.png" alt="Patrol Example in Behavior Trees" width="800" border-effect="line"/>
 
 > A detailed breakdown of Blackboard keys, services, tasks, and execution flow is available in the Guides section under 
-> [**Creating Patrolling Agents**](bot_guide_create_patrols.md).
+> [**Creating Patrolling Agents**](bot_guide_05_create_patrols.md).
 {style="note"}
 
 ## State Tree Integration
@@ -116,7 +116,7 @@ progression can be composed with both native and Ninja Bot tasks.
 <img src="bot_advanced_patrol_st_example.png" alt="Patrol Example in State Trees" width="800" border-effect="line"/>
 
 > A detailed breakdown of context setup, evaluators, tasks, and execution flow is available in the Guides section under
-> [**Creating Patrolling Agents**](bot_guide_create_patrols.md).
+> [**Creating Patrolling Agents**](bot_guide_05_create_patrols.md).
 {style="note"}
 
 ## Smart Objects Integration
