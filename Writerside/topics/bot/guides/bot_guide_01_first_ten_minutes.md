@@ -96,11 +96,11 @@ evaluate its active AI states during gameplay.
 </step>
 <step>
     <p>From the top Selector node, create another <b>Sequence</b> composite node for <b>Roam</b>. Add a <b>Run EQS Query</b> task using the Environment Query created earlier, and configure it to write its result to the <b>RoamLocation</b> key. Add another <b>Move To</b> task using the <b>RoamLocation</b> key as the <b>Target Location</b>.</p>
-    <img src="bot_guide_behavior_tree_combat_branch_03.png" alt="Behavior Tree, Roam Branch" width="780" border-effect="line"/>
+    <img src="bot_guide_behavior_tree_roam_branch.png" alt="Behavior Tree, Roam Branch" width="780" border-effect="line"/>
 </step>
 <step>
     <p>Complete the Behavior Tree with another <b>Sequence</b> composite node for <b>Idle</b>. Add a <b>Wait</b> task set to <code>5 seconds</code>.</p>
-    <img src="bot_guide_behavior_tree_combat_branch_03.png" alt="Behavior Tree, Idle Branch" width="780" border-effect="line"/>
+    <img src="bot_guide_behavior_tree_idle_branch.png" alt="Behavior Tree, Idle Branch" width="780" border-effect="line"/>
 </step>
 </procedure>
 <!-- END: BEHAVIOR TREE CONFIGURATION -->
