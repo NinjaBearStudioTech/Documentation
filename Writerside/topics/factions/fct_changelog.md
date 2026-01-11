@@ -1,6 +1,12 @@
 # Changelog
 <primary-label ref="factions"/>
 
+## 2.3.14 - 17/11/2025
+```
+[improvement] Added features for plugin integrations.
+[improvement] Organized/standardized all function categories.
+```
+
 ## 2.3.12 - 17/11/2025
 ```
 [improvement] Added features for Bot integration.

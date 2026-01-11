@@ -1,14 +1,20 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 5.8.17
+## 5.11.20
 <secondary-label ref="wip"/>
 ```
 [added] Knockout state that can be triggered before death.
+[added] Animation Provider compatible with Equipment Instances, where weapons are the "effect causer".
+[added] Introduced an entirely new firearm system that pairs with the overhauled Shoot gameplay ability.
+[added] New melee scan mode for component overlap.
 [improvement] Added flags to better control when attack animations should be canceled. This helps to avoid idle poses while net-synchronizing combos.
 [improvement] Integration with Ninja GAS new "Play Animation" features, which are better fitted for IK retargeting scenarios.
 [improvement] Organized/standardized all function categories.
 [improvement] Removed unused/duplicated weapon animation interface.
+[improvement] Added an output string that summarizes the combo state. Can be used with bindable texts in the Debug state tree task.
+[improvement] Added a hook in the Combo Ability, PrepareToActivateCombo, that can be used to perform tasks on granted abilities, before the combo starts.
+[improvement] Integrated Combat Data Asset with the editor, to simplify the creation of relevant assets.
 [fix] Ensured that the attack task already binds to the projectile task before any setup.
 [fix] Using the correct class to notify damage instigators about the damage they applied.
 [fix] Reviewed ragdoll flow to ensure it will properly trigger on host and clients.

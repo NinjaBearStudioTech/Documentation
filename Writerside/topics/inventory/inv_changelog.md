@@ -1,15 +1,17 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 2.16.49
+## 2.16.48
 <secondary-label ref="wip"/>
 ```
 [added] Dedicated (optional) Loot Handler that can handle received loot on client and server.
 [added] Dynamic Attributes will support level-based curve tables to update their values.
 [added] Dynamic Attribute ViewModel to be used in conjunction with the equivalent List version.
 [added] Interface-based Loot Table provider, which allow instance-editable tables.
+[added] Helper function to provide the equipment actor for an item.
 [improvement] New event that notifies when an item has been fully initialized.
 [improvement] Organized/standardized all function categories.
+[improvement] Added owner tags to the Chooser Animation Criteria. 
 [fix] Connected the loot handler, routing the correct methods to server and client.
 [fix] Ensured that animation layers are re-linked if an animation instance is re-instantiated.
 [fix] Corrected order in which equipments add GAS-related objects, so a potential actor causer is ready. 
