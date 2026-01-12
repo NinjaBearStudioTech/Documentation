@@ -1,8 +1,7 @@
 # Changelog
 <primary-label ref="input"/>
 
-## 5.6.16
-<secondary-label ref="wip"/>
+## 5.6.16 - 12/01/2026
 ```
 [improvement] Creating new Input Handler blueprints will open a class selection modal.
 [improvement] Organized/standardized all function categories.

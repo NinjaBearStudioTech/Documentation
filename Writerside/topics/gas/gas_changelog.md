@@ -1,7 +1,7 @@
 # Changelog
 <primary-label ref="gas"/>
 
-## 1.12.14
+## 1.12.14 - 12/01/2026
 ```
 [improvement] Incorporated a dedicated flow for animation montages in different meshes.
 [improvement] Organized/standardized all function categories.

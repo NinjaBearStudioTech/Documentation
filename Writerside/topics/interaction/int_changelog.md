@@ -1,7 +1,7 @@
 # Changelog
 <primary-label ref="interaction"/>
 
-## 1.6.20
+## 1.6.20 - 12/01/2026
 ```
 [added] New interaction bookeping to better support multiple interactions from same target.
 [added] New Interaction Task to Wait for Interaction, meant to replace the ootb Delay one.

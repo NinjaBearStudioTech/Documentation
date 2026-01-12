@@ -1,8 +1,7 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 5.11.20
-<secondary-label ref="wip"/>
+## 5.11.20 - 12/01/2026
 ```
 [added] Knockout state that can be triggered before death.
 [added] Animation Provider compatible with Equipment Instances, where weapons are the "effect causer".
