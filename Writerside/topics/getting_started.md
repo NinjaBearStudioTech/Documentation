@@ -23,9 +23,9 @@ The following list represents the recommended order to have them configured in y
 
 1. **Ninja Input**: Handles player input. Includes GAS integrations.
 2. **Ninja G.A.S.**: Setup of the Gameplay Ability System for Players and AI.
-3. **Ninja Combat**: Combat features built with GAS.
-4. **Ninja Interaction**: Allows GAS-based interaction between actors.
-5. **Ninja Inventory**: Inventory functionality built with GAS.
+3. **Ninja Inventory**: Inventory functionality built with GAS.
+4. **Ninja Combat**: Combat features built with GAS.
+5. **Ninja Interaction**: Allows GAS-based interaction between actors.
 6. **Ninja Factions**: AI team management.
 7. **Ninja Bot**: AI Perception, behavior and strategy.
 
