@@ -1,6 +1,26 @@
 # Changelog
 <primary-label ref="inventory"/>
 
+## 3.0.0
+> **Important Changes in this version**
+> 
+> 1. Due to changes in the Pickup Actor and introduction of a Pickup Component, you'll need to reconfigure your Pickup blueprint.
+> 2. Beta version of a Vendor Component was added, used in conjunction with the economy fragment.
+<secondary-label ref="wip"/>
+```
+[added] Firearm fragment, integrated with Combat Firearms.
+[added] Global Stack observers, available from the Subsystem and Function Library. Useful for the incoming hotbar module.
+[added] Option to set a range for random stack sizes, when setting default memories (including loot).
+[added] Option to generate pickup contents from a loot table. 
+[added] A vendor component that provides a gameplay API to buy and sell items to a non-inventory, catalog-based actor. 
+[improvement] Refactored the base Pickup actor for easier integration with Interaction.
+[improvement] Inventory Items can be filtered before serialization.
+[improvement] Inventory will notify Player Controllers and HUD classes during initialization, via IInventoryInitializationWatcherInterface.
+[improvement] Moved Gameplay Debugger to Gameplay module, so it can be used in packaged builds.
+[improvement] Added a new "AddItems" function to the Inventory Manager.
+[fix] Changed raw pointers in FInventoryContainerPosition to TObjectPtr.
+```
+
 ## 2.16.50 - 12/01/2026
 ```
 [added] Dedicated (optional) Loot Handler that can handle received loot on client and server.
@@ -16,7 +36,6 @@
 [fix] Corrected order in which equipment instances add GAS-related objects, so a potential actor causer is ready. 
 [fix] Ensured that loaded items register for lifecycle updates so they can be added to the internal list.
 [fix] Corrected condition for items in queue check.
-
 ```
 
 ## 2.12.44 - 11/12/2025

@@ -1,6 +1,18 @@
 # Changelog
 <primary-label ref="combat"/>
 
+## 5.15.24
+<secondary-label ref="wip"/>
+```
+[added] Ammo tracking for the firearm component, and a ViewModel to display ammo count.
+[added] Reload Gameplay Ability, along with Animation Provider and Reload Gameplay Event Animation Notify.
+[added] Aim assist for firearm/shoot ability.
+[improvement] Added near blast settings for firearms and a pre-defined gameplay effect.
+[improvement] Pass on integration/reflection layer for Inventory and Factions.
+[improvement] Improved the Combat Status Effect UI data, added a new ViewModel for an individual Status Effect. 
+[fix] Fixed duplicated gameplay tag implementation.
+```
+
 ## 5.11.20 - 12/01/2026
 ```
 [added] Knockout state that can be triggered before death.

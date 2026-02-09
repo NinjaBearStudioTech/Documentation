@@ -33,7 +33,8 @@ To get started, install the plugin to your engine using the **Epic Games Launche
 
 ## Working with the Source Code
 <secondary-label ref="advanced"/>
-If you plan to work with the source code, you can copy the plugin to your local engine or install it from GitHub. 
+If you plan to work with the source code, you can copy the plugin to your local engine or install it from GitHub, if you
+have access to the repository (Content Creators, Collaborators, Patreons, etc.).
 
 <procedure title="Enable C++ in your Project" collapsible="true" default-state="expanded">
     <step>Make sure to perform all <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-your-development-environment-for-cplusplus-in-unreal-engine">necessary steps</a> to <b>enable C++</b> in your environment and project.</step>

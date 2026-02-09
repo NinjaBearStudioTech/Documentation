@@ -21,18 +21,17 @@ getting help from the support server, since you may be asked to provide a sample
 
 The following list represents the recommended order to have them configured in your project. 
 
-1. **Ninja Input**: Handles player input. Includes GAS integrations.
-2. **Ninja G.A.S.**: Setup of the Gameplay Ability System for Players and AI.
+1. **Ninja G.A.S.**: Setup of the Gameplay Ability System for Players and AI.
+2. **Ninja Input**: Handles player input. Includes GAS integrations.
 3. **Ninja Inventory**: Inventory functionality built with GAS.
 4. **Ninja Combat**: Combat features built with GAS.
 5. **Ninja Interaction**: Allows GAS-based interaction between actors.
 6. **Ninja Factions**: AI team management.
 7. **Ninja Bot**: AI Perception, behavior and strategy.
+8. **Ninja Tokens**: Fine-tuning for AI Behaviors.
+9. **Ninja Strategy**: Spawn Points, AI Director, overseeing gameplay logic.
 
 ## Getting Help
 If you need support, please reach out via **e-mail** or access the **Discord Server**. You can find the contact 
 information in the **Plugin Card** for all plugins, inside **Unreal Engine**.
-
-You can also request access to the **source code** for your owned plugins in the **Discord Server**. For that, please
-check the **verification** channel.
 

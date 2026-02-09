@@ -1,7 +1,13 @@
 # Changelog
 <primary-label ref="gas"/>
 
-## 1.12.14 - 12/01/2026
+## 1.11.14
+<secondary-label ref="wip"/>
+```
+[added] Paper2D variations of the main character classes.
+```
+
+## 1.10.14 - 12/01/2026
 ```
 [improvement] Incorporated a dedicated flow for animation montages in different meshes.
 [improvement] Organized/standardized all function categories.

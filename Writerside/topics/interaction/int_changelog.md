@@ -1,6 +1,30 @@
 # Changelog
 <primary-label ref="interaction"/>
 
+## 2.0.0
+> **Important Changes in this version**
+>
+> 1. Changes in LoS checks (due to a better target scoring system) inverted the collision trace setup, please review the Collision Setup page for more details.
+> 2. Sample interaction assets are available in the content folder: Generic Smart Object, Generic State Tree and a fully configured Prompt Widget.
+> 3. The Openable Actor has been simplified and some of its original flags were converted to implementable functions.
+<secondary-label ref="wip"/>
+```
+[added] New task to move player characters to the Interaction Target, using the Navigation Mesh.
+[added] New task to rotate players to face the target while moving towards it.
+[added] Support for configurable interaction time tracking, instead of always automatic.
+[added] New tasks to automatically release the interaction handle.
+[added] Pre-configured assets for interaction: Smart Object, Interaction Trees and an Interaction Prompt Widget.  
+[improvement] Exposed lock settings to instances. Added a lock setter for other systems.
+[improvement] Added "CanHandleInteraction" considerations to scan and prompt.
+[improvement] Improved scoring for distance-based interactions and focus tracking.
+[improvement] Added support to animations and lifecycle events to the base Prompt Widget.
+[improvement] Interaction Manager will update overlaps on begin play.
+[improvement] Openable Actors will now use different SO slots to handle open/close states and enable/disable them correctly.
+[fix] Corrected reflection logic for the Inventory Key/Lock integration.
+[fix] Visibility scan will always aim at the actual target.
+[fix] Openable Actors will correctly execute gameplay logic on Listen Servers, but "snap to end" on Dedicated Servers.
+```
+
 ## 1.6.20 - 12/01/2026
 ```
 [added] New interaction bookeping to better support multiple interactions from same target.
