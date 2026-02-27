@@ -149,28 +149,6 @@ Interaction** behavior (or a custom subtype). This behavior exposes the followin
 | `Duration`               | Duration of the interaction in seconds. Clamped to zero or higher. A value of zero means "immediate".                                                                                                                                           |
 | `bCanBeDestroyed`        | If true, the interaction will succeed if the target actor is destroyed during execution. If false, the interaction will be cancelled when the target actor is destroyed. Useful for cases like doors or portals being unloaded mid-interaction. |
 
-## Interaction State Tree
-
-The **Interaction State Tree** is provided by **Interaction Targets**, to an **Interaction Source**. It defines all
-steps that will happen during the interaction, once activated.
-
-By defining the interaction steps in a State Tree, you can have very different interaction steps in the game, without
-needing to define them in code. For example, in the same game you can have:
-
-1. A _chest_ that will place the player at a specific position, play an Animation Montage and then trigger the interaction on the chest actor.
-2. A _door_ that will remove a key from the player's inventory, find and set the IK for the door handle in the player Animation and play an Animation Montage.
-3. A _switch_ that will check the world to see if power was enabled and if so, will find something like an elevator actor and bring it to the current level.
-
-Interaction State Trees should always be created using the `NinjaInteractionComponentSchema`, and you can use the following
-State Tree features provided by the Interaction System.
-
-| State Tree Feature | Type      | Description                                                                                                                                    |
-|--------------------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| `InteractionState` | Evaluator | Exposes information related to the current interaction target and active interaction.                                                          |
-| `PlayAnimation`    | Task      | Sends the gameplay event that activates the [Play Animation Ability][1], optionally defining a specific Animation Montage asset.               |
-| `ReachTarget`      | Task      | Performs a simple interpolation of the source's location and rotation, to match the provided transform (usually the Smart Object's transform). |
-| `TriggerBehavior`  | Task      | Triggers the actual interaction behavior on the Interaction Target, defined by `FinishInteractionEvent`.                                       |
-
 ## Interaction Actor
 
 An **Interaction Actor** is the actual interactable object placed in the world. It serves as the concrete implementation
@@ -261,3 +239,5 @@ The following procedures will guide you through each step in detail.
     </step>
     <tip>Start with something simple and familiar (like debug strings or a basic effect). Once you confirm the setup works, expand with custom logic such as opening UIs or triggering gameplay effects.</tip>
 </procedure>
+
+[1]: int_ability_play_animation.md

@@ -1,15 +1,27 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 5.15.24
+## 6.0.0
 <secondary-label ref="wip"/>
+> **Important Changes in this version**
+>
+> 1. Damage mitigation has been moved into dedicated objects, but its actual behavior hasn't changed. If you modified the mitigation pipeline, please review it to adhere to the new format.
+> 2. To follow this new approach, the function name, in the Defense Interface, has been renamed from "DefendDamage" to "MitigateDamage". 
+> 3. Damage Handlers were renamed to Damage Cosmetics. There are internal core redirectors to avoid configurations breaking and child Blueprints. You'll need to review C++ classes, if any.
+> 4. Damage Outcomes are gameplay (auth/client) behaviors triggered from damage. Parts of the combat manager were migrated into them.
+> 5. Both Damage Cosmetics and Damage Outcomes are added to the Damage Setup data asset.
 ```
+[major] Damage mitigation is now a separated pipeline that can be modified, without extending the Combat Manager.
+[major] Damage can now trigger Damage Outcomes (gameplay) Damage Cosmetics (vfx, sfx, etc.).
+[major] A new data asset for damage mitigation has been introduced, analogous to the damage handling asset.
 [added] Ammo tracking for the firearm component, and a ViewModel to display ammo count.
 [added] Reload Gameplay Ability, along with Animation Provider and Reload Gameplay Event Animation Notify.
 [added] Aim assist for firearm/shoot ability.
+[added] Damage Absorption attributes (Absorption/MaxAbsorption) used during damage mitigation.
 [improvement] Added near blast settings for firearms and a pre-defined gameplay effect.
 [improvement] Pass on integration/reflection layer for Inventory and Factions.
-[improvement] Improved the Combat Status Effect UI data, added a new ViewModel for an individual Status Effect. 
+[improvement] Improved the Combat Status Effect UI data, added a new ViewModel for an individual Status Effect.
+[improvement] Reviewed the design of FNinjaCombatGameplayEffectContext to facilitate extensions.
 [fix] Fixed duplicated gameplay tag implementation.
 ```
 

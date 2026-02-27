@@ -39,5 +39,5 @@ temporary or one-shot interactions (for example, consumable items or destructibl
 
 You can define additional traits to support **custom logic** or [animation contexts](int_adv_interaction_animations.md). For example:
 
-- Add a tag like `Interaction.Trait.Crouch` to inform the Animation System that the item is short, prompting a crouch animation.
+- Since these tags are transferred to the Animation Chooser, add a tag like `Interaction.Trait.Crouch` to inform the Animation System that the item is short, prompting a crouch animation.
 - Use a custom trait like `Interaction.Trait.SpecialEvent` to synchronize with gameplay-specific blueprints or C++ logic.

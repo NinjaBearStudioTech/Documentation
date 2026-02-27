@@ -4,15 +4,15 @@
 
 <tldr>
     <ul>
-        <li>Set a non-zero <b>Duration</b> on the interaction’s <b>Interaction Behavior</b> (Smart Object) to make it <b>hold-to-activate</b> (0 = instant).</li>
-        <li>In the <b>State Tree</b>, add a <b>Wait</b> state (Delay Task) bound to the Evaluator’s <b>Duration</b>, and transition when <b>ElapsedTime ≥ Duration</b>; support cancel on release.</li>
-        <li>Update the actor’s <b>Interaction Prompt</b> to show a <b>progress bar</b> during the hold: use <b>Active Interaction</b> (Resolver) + <b>Interaction Summary</b> (Manual) ViewModels and bind <b>ElapsedTimePercent → Progress</b>; hide on finish/cancel.</li>
+        <li>Set a non-zero <b>Duration</b> on the interaction's <b>Interaction Behavior</b> (Smart Object) to make it <b>hold-to-activate</b> (0 = instant).</li>
+        <li>In the <b>State Tree</b>, add a <b>Wait</b> state (Delay Task) bound to the Evaluator's <b>Duration</b>, and transition when <b>ElapsedTime ≥ Duration</b>; support cancel on release.</li>
+        <li>Update the actor's <b>Interaction Prompt</b> to show a <b>progress bar</b> during the hold: use <b>Active Interaction</b> (Resolver) + <b>Interaction Summary</b> (Manual) ViewModels and bind <b>ElapsedTimePercent → Progress</b>; hide on finish/cancel.</li>
         <li>Input: <b>Pressed</b> starts the interaction; include an optional <b>Released</b> trigger to allow cancel/interrupt during the hold window.</li>
     </ul>
 </tldr>
 
 Many interactions are **hold-to-activate**: the player must press a button for a set **duration** before the interaction 
-actually occurs. The Interaction System supports this pattern with minimal changes to assets you've already created—no 
+actually occurs. The Interaction System supports this pattern with minimal changes to assets you've already created, no 
 new gameplay concepts required.
 
 - **Smart Object / Interaction Behavior**  
@@ -41,12 +41,12 @@ keeps the interaction **instant**.
 </procedure>
 
 ## State Tree
-For the State Tree, we need to **wait** for the interaction’s **Duration** to complete before executing the behavior.
+For the State Tree, we need to **wait** for the interaction's **Duration** to complete before executing the behavior.
 
 <procedure title="Waiting for the Duration in the State Tree" collapsible="true" default-state="expanded">
     <step>Open the <b>State Tree</b> previously created and assigned to the Interaction Target.</step>
     <step>
-        <p>Add a new child state (e.g., <b>Wait</b>) directly under the <b>Root</b>, and add a <b>Delay Task</b> to it. Bind the task’s <b>Duration</b> to the value exposed by the <b>Interaction State</b> evaluator.</p>
+        <p>Add a new child state (e.g., <b>Wait</b>) directly under the <b>Root</b>, and add a <b>Delay Task</b> to it. Bind the task's <b>Duration</b> to the value exposed by the <b>Interaction State</b> evaluator.</p>
     </step>
     <step>
         In the <b>Wait</b> state, add a transition with an <b>OnTick</b> trigger to the next executable state (typically <b>Execute Interaction</b>).  

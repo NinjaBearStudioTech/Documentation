@@ -23,6 +23,7 @@
 [fix] Corrected reflection logic for the Inventory Key/Lock integration.
 [fix] Visibility scan will always aim at the actual target.
 [fix] Openable Actors will correctly execute gameplay logic on Listen Servers, but "snap to end" on Dedicated Servers.
+[fix] Ensured that the Interaction Target Component will initialize its FastReplicationArrays will initialize in subclasses.
 ```
 
 ## 1.6.20 - 12/01/2026

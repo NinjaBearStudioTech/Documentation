@@ -1,5 +1,6 @@
 # Input Integration
 <primary-label ref="interaction"/>
+<secondary-label ref="advanced"/>
 
 <tldr>
     <ul>
