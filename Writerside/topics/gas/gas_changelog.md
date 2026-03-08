@@ -1,10 +1,11 @@
 # Changelog
 <primary-label ref="gas"/>
 
-## 1.11.14
+## 1.11.15
 <secondary-label ref="wip"/>
 ```
 [added] Paper2D variations of the main character classes.
+[improvement] Replication of Ability Montages and Sections for different meshes will use Fast Array Replication.
 ```
 
 ## 1.10.14 - 12/01/2026

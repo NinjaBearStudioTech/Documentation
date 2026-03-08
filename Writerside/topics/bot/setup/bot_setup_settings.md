@@ -10,8 +10,8 @@
     </ul>
 </tldr>
 
-Ninja Bot exposes a small set of global settings through Unreal Engine’s Developer Settings system. These settings affect 
-the behavior of all bots using the framework and are intended for high-level configuration rather than per-bot customization.
+Ninja Bot exposes its global configuration through Unreal Engine's Developer Settings system. These settings affect the 
+behavior of all bots using the framework and are intended for high-level configuration rather than per-bot customization.
 
 <img src="bot_setup_settings.png" alt="Bot Settings" thumbnail="true" width="800" border-effect="line"/>
 

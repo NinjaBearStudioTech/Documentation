@@ -2,7 +2,6 @@
 <primary-label ref="combat"/>
 
 ## 6.0.0
-<secondary-label ref="wip"/>
 > **Important Changes in this version**
 >
 > 1. Damage mitigation has been moved into dedicated objects, but its actual behavior hasn't changed. If you modified the mitigation pipeline, please review it to adhere to the new format.

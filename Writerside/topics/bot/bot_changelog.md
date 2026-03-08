@@ -4,7 +4,8 @@
 ## 1.0.2
 <secondary-label ref="wip"/>
 ```
-[fix] 
+[fix] Direct interface call on the Bot AI Controller.
+[fix] Added perception callback invocation, to broadcast targets to the owning AI Controller. 
 ```
 
 ## 1.0.0 - 12/01/2026

@@ -13,6 +13,9 @@
 
 This page will walk you through the **pre-requisites** and **steps** necessary to enable the **Ninja Bot** plugin.
 
+## Pre-Requisites
+No pre-requisites for Ninja Bot.
+
 ## Installing the Plugin
 To get started, install the plugin to your engine using the **Epic Games Launcher**.
 

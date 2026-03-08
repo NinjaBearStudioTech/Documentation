@@ -30,6 +30,7 @@ it, it's recommended that you have some familiarity with these base systems. **F
 - **Flexibility**: The Inventory System is flexible enough to be used in multiple projects, from simple weapon wheels to RPG games.
 - **Extensibility**: Multiple extension points are available so the Inventory System can be adapted to many situations.
 - **Designer Friendly**: You can configure and operate the entire Inventory System using Data Assets and Blueprints. Deeper customization might require C++.
+- **Connectivity**: Parts of the system that must integrate with other domains are designed to be integration-friendly, with interfaces, blueprint events and so on.
 - **Engine Parity**: As much as possible, reuses features already available in the engine, without "reinventing the wheel".
 
 ## Integrations

@@ -9,9 +9,10 @@ PublicDependencyModuleNames.AddRange(new string[]
     "ModelViewViewModel",
     "Niagara",
     "NinjaCombat",
+    "NinjaCombatActorPool",
     "NinjaCombatCamera",
     "NinjaCombatCore",
-    "NinjaCombatActorPool",
+    "NinjaCombatFirearm",
     "NinjaCombatUI",
     "StructUtils",
     "UMG"

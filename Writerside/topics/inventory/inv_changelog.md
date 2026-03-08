@@ -8,16 +8,18 @@
 > 2. Beta version of a Vendor Component was added, used in conjunction with the economy fragment.
 <secondary-label ref="wip"/>
 ```
+[major] Refactored the base Pickup actor for easier integration with Interaction.
+[added] A vendor component that provides a gameplay API to buy and sell items to a non-inventory, catalog-based actor.
 [added] Firearm fragment, integrated with Combat Firearms.
 [added] Global Stack observers, available from the Subsystem and Function Library. Useful for the incoming hotbar module.
 [added] Option to set a range for random stack sizes, when setting default memories (including loot).
 [added] Option to generate pickup contents from a loot table. 
-[added] A vendor component that provides a gameplay API to buy and sell items to a non-inventory, catalog-based actor. 
-[improvement] Refactored the base Pickup actor for easier integration with Interaction.
+[added] Option to have gameplay-only equipment instances. 
 [improvement] Inventory Items can be filtered before serialization.
 [improvement] Inventory will notify Player Controllers and HUD classes during initialization, via IInventoryInitializationWatcherInterface.
 [improvement] Moved Gameplay Debugger to Gameplay module, so it can be used in packaged builds.
 [improvement] Added a new "AddItems" function to the Inventory Manager.
+[Improvement] Reviewed Combo Management and integrated combo windows with the notify scheduler.
 [fix] Changed raw pointers in FInventoryContainerPosition to TObjectPtr.
 ```
 

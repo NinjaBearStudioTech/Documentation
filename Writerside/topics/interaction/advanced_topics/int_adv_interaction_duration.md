@@ -26,7 +26,7 @@ new gameplay concepts required.
 
 > **Input Integration**
 > 
-> You [already wired](int_integration_input.md) input for **Pressed** (start) and optional **Released** (cancel). With a 
+> You [already wired](int_adv_integration_input.md) input for **Pressed** (start) and optional **Released** (cancel). With a 
 > non-zero Duration, that same input flow powers hold-to-activate without additional handlers. 
 {style="note"}
 

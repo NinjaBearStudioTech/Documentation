@@ -130,11 +130,11 @@
         <!-- Ninja Combat -->
         <toc-element topic="cbt_overview.md">
             <toc-element toc-title="Setup">
-                <toc-element topic="cbt_installation.md"/>
-                <toc-element topic="cbt_gas_configuration.md"/>
-                <toc-element topic="cbt_collisions.md"/>
-                <toc-element topic="cbt_physical_materials.md"/>
-                <toc-element topic="cbt_combat_system.md"/>
+                <toc-element topic="cbt_setup_installation.md"/>
+                <toc-element topic="cbt_setup_collisions.md"/>
+                <toc-element topic="cbt_setup_gas.md"/>
+                <toc-element topic="cbt_setup_physical_materials.md"/>
+                <toc-element topic="cbt_setup_combat_system.md"/>
             </toc-element>
             <toc-element toc-title="Combat System">
                 <toc-element topic="cbt_weapon_actors.md"/>
