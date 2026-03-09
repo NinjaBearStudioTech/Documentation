@@ -1,7 +1,7 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 6.0.0
+## 6.0.0 - 08/03/2026
 > **Important Changes in this version**
 >
 > 1. Damage mitigation has been moved into dedicated objects, but its actual behavior hasn't changed. If you modified the mitigation pipeline, please review it to adhere to the new format.
