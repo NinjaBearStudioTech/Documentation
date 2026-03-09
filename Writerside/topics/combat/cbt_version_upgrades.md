@@ -6,9 +6,13 @@
 >Before migrating to a newer version, it is highly recommended that you back up your project first!  
 {style="warning"}
 
+## 5.0 to 6.0
+1. If you extended the Damage or Defense parts of the combat manager to change these aspects, they must be reviewed to adhere to the new pipeline.
+2. The Firearm component has evolved and new properties were added to the Firearm Data Asset. Make sure to look into those.
+
 ## 3.0 to 4.0
 1. Review your Ability Tags. Default Ability Tags now have the `combat` prefix, to ensure better organization of combat-related tags.
-2. Check the [](cbt_collisions.md) page for the new **Collision Setup**. Review your Melee Scans, Projectiles and Opportunity tests.
+2. Check the [](cbt_setup_collisions.md) page for the new **Collision Setup**. Review your Melee Scans, Projectiles and Opportunity tests.
 3. The Warp Component interface and core implementation was changed to better incorporate maximum distance, offset and final scale. If you have changes in the component or warp providers, please review them. 
 4. Added support to multiple physical surfaces per impact on weapons and projectiles. Since this was a common extension point in projects, evaluating the new solution is recommended.
 5. The combat **ViewModels** are now to be used in conjunction with the **Combat ViewModel Resolver** and won't require any base combat widgets. The "Widget" damage handler has been removed.
