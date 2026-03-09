@@ -13,7 +13,7 @@ This component implements the `ICombatMovementManagerInterface`, adding the foll
 1. Handling important events in the Combat System that may affect **movement settings**. Currently, this means setting the "walk speed" when the character is **blocking**, and setting "strafing" or "input direction" movement modes when the character is **locked on a target**. 
 2. Exposing appropriate **setters** for properties that might need to be changed during runtime.
 
-As detailed in the [Setup page](cbt_combat_system.md#combat-movement-component), you can add the Combat Component to your Character using **Blueprints** or **C++**.
+As detailed in the [Setup page](cbt_setup_combat_system.md#combat-movement-component), you can add the Combat Component to your Character using **Blueprints** or **C++**.
 
 ## Other Movement Systems
 Even though the Movement Component is only accessed via its **interface**, the Combat System still indirectly relies on

@@ -105,7 +105,7 @@ has a clear separation between the **Animation Notify State**, placed in each **
         <img src="cbt_wpatk_melee_scan_weapon_query.png" alt="Melee Scan Weapon Query" border-effect="line"/>
     </step>
     <step>
-        <p>Ensure that the selected <b><a href="cbt_collisions.md">Scan Channels</a></b> include <b>CombatObject</b>.</p>
+        <p>Ensure that the selected <b><a href="cbt_setup_collisions.md">Scan Channels</a></b> include <b>CombatObject</b>.</p>
         <note>
             <p><b>Default Scan Channels</b></p>
             <p>You can add your default Scan Channels, used by all melee scans, in the <b>Combat Settings</b> page, in your <b>Project Settings</b></p>
