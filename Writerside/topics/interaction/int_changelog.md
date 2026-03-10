@@ -1,13 +1,12 @@
 # Changelog
 <primary-label ref="interaction"/>
 
-## 2.0.0
+## 2.0.0 - 09/03/2026
 > **Important Changes in this version**
 >
 > 1. Changes in LoS checks (due to a better target scoring system) inverted the collision trace setup, please review the Collision Setup page for more details.
 > 2. Sample interaction assets are available in the content folder: Generic Smart Object, Generic State Tree and a fully configured Prompt Widget.
 > 3. The Openable Actor has been simplified and some of its original flags were converted to implementable functions.
-<secondary-label ref="wip"/>
 ```
 [added] New task to move player characters to the Interaction Target, using the Navigation Mesh.
 [added] New task to rotate players to face the target while moving towards it.
