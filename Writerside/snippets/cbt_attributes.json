@@ -288,6 +288,22 @@
         "bCanStack": false
     },
     {
+        "Name": "NinjaCombatAttributeSet.Absorption",
+        "BaseValue": 0,
+        "MinValue": 0,
+        "MaxValue": 0,
+        "DerivedAttributeInfo": "",
+        "bCanStack": false
+    },
+    {
+        "Name": "NinjaCombatAttributeSet.MaxAbsorption",
+        "BaseValue": 0,
+        "MinValue": 0,
+        "MaxValue": 0,
+        "DerivedAttributeInfo": "",
+        "bCanStack": false
+    },    
+    {
         "Name": "NinjaCombatAttributeSet.LastStandCount",
         "BaseValue": 0,
         "MinValue": 0,
@@ -354,6 +370,22 @@
     {
         "Name": "NinjaCombatAttributeSet.RiposteDamageBonusMultiplier",
         "BaseValue": 2,
+        "MinValue": 0,
+        "MaxValue": 0,
+        "DerivedAttributeInfo": "",
+        "bCanStack": false
+    },
+    {
+        "Name": "NinjaCombatAttributeSet.KnockDownDuration",
+        "BaseValue": 10,
+        "MinValue": 0,
+        "MaxValue": 0,
+        "DerivedAttributeInfo": "",
+        "bCanStack": false
+    },
+    {
+        "Name": "NinjaCombatAttributeSet.KnockOutHealthPercent",
+        "BaseValue": 10,
         "MinValue": 0,
         "MaxValue": 0,
         "DerivedAttributeInfo": "",

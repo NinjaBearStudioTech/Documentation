@@ -1,6 +1,18 @@
 # Changelog
 <primary-label ref="interaction"/>
 
+## 2.0.7
+<secondary-label ref="wip"/>
+```
+[improvement] Gameplay or sequencers can force openable actors to unlock without a key, via ForceUnlock.
+[improvement] Improved MoveTo task, so it won't tick.
+[improvement] Organized the Animation Ability class, so the Combat Animation Task (or other animation tasks) can be used.
+[improvement] Target Component has a dedicated "SupportsInteraction" check that can be used by subclasses or external checks.
+[fix] Ensured that the same Interaction Target can have multiple colliders, without being registered multiple times.
+[fix] Ensured that the correct interaction target is registered over network.
+[fix] Added missing FObjectInitializer to ANinjaInteractionOpenableActor constructor.
+```
+
 ## 2.0.0 - 09/03/2026
 > **Important Changes in this version**
 >

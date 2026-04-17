@@ -1,11 +1,14 @@
 # Changelog
 <primary-label ref="gas"/>
 
-## 1.11.15
+## 1.11.19
 <secondary-label ref="wip"/>
 ```
 [added] Paper2D variations of the main character classes.
 [improvement] Replication of Ability Montages and Sections for different meshes will use Fast Array Replication.
+[improvement] Removed outdated code from the Ability Activation/Cancelation State Tree tasks.
+[fix] Ensured that montages for different meshes replicate play rate and sections to simulated proxies.
+[fix] Fixed order where the ASC and owning character is cached.
 ```
 
 ## 1.10.14 - 12/01/2026

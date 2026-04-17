@@ -35,3 +35,7 @@ perception components.
 | `OnAggregatedAwarenessChanged`        | Dynamic multicast delegate for Blueprint binding.                   |
 | `Native_OnAggregatedAwarenessChanged` | Native delegate variant with lambda support                         |
 
+## Awareness User Interface
+
+It's common for games to represent awareness using a progress bar, or something similar. Ninja Bot provides objects that
+can be used to built that functionality. For more information on them, please check [**User Interface**](bot_user_interface.md).

@@ -9,18 +9,28 @@
 <secondary-label ref="wip"/>
 ```
 [major] Refactored the base Pickup actor for easier integration with Interaction.
+[major] Inventory supports loading save files from clients, which are sent to the server and become authoritative.
+[major] Improved Loot Generation to use a dedicated Default Loot entry, extending from the Default Item.
 [added] A vendor component that provides a gameplay API to buy and sell items to a non-inventory, catalog-based actor.
 [added] Firearm fragment, integrated with Combat Firearms.
 [added] Global Stack observers, available from the Subsystem and Function Library. Useful for the incoming hotbar module.
 [added] Option to set a range for random stack sizes, when setting default memories (including loot).
 [added] Option to generate pickup contents from a loot table. 
 [added] Option to have gameplay-only equipment instances. 
+[added] Option to load inventory data from a network client.
+[added] UI Subsystem for singleton ViewModels.
 [improvement] Inventory Items can be filtered before serialization.
 [improvement] Inventory will notify Player Controllers and HUD classes during initialization, via IInventoryInitializationWatcherInterface.
 [improvement] Moved Gameplay Debugger to Gameplay module, so it can be used in packaged builds.
 [improvement] Added a new "AddItems" function to the Inventory Manager.
-[Improvement] Reviewed Combo Management and integrated combo windows with the notify scheduler.
+[improvement] Added extra methods to Loot ViewModel for individual loot transfers.
+[improvement] Organized the Animation Ability class, so the Combat Animation Task (or other animation tasks) can be used.
+[improvement] Separated the main Inventory Manager implementation file into domain-based ones. 
+[fix] Removed const from the Loot Handler.
 [fix] Changed raw pointers in FInventoryContainerPosition to TObjectPtr.
+[fix] Ensured that loot outcomes are properly handled by standalone "clients".
+[fix] Ensured that transferred loot is properly removed from the source over network.
+[fix] Consume ability has a gameplay event trigger set by default.
 ```
 
 ## 2.16.50 - 12/01/2026

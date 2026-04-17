@@ -1,6 +1,34 @@
 # Changelog
 <primary-label ref="combat"/>
 
+## 6.6.17
+<secondary-label ref="wip"/>
+```
+[added] Moved internal logic from the Combat Manager, into damage outcomes for Knockbacks, Last Stands and Death. 
+[added] Option to delay Cast activations using the "Delayed" trigger.
+[added] Mitigation classes have Tag Containers to indicate damage effects that should skip that mitigation.
+[added] New Combo Task that deliberately opens or closes the Combo Window.
+[added] Support for Passive and Initial Cooldown tags, analogous to Ninja GAS.
+[added] Option do find adjacent targets (left/right) in the Target Lock ability.
+[improvement] Reviewed Cast Ability to unify all flows and avoid corner cases.
+[improvement] Created a separate Poolable Actor Component with primary logic.
+[improvement] Cast Ability will apply a "Waiting For Confirmation" effect state.
+[improvement] The Combat CMC has a new property, "StrafeWhileBlocking", which reinforces strafe while blocking.
+[improvement] The Combat CMC will perform retries when trying to connect to the Combat System.
+[improvement] The Combat Animation Instance will perform retries when trying to connect to the Combat System.
+[improvement] Introduced a catch-all tag for unblockable damage (Combat.Effect.Damage.Unblockable).
+[improvement] Combo Manager Component will reliably block duplicated events within the same scope.
+[improvement] Motion Warping Component has better tracking stability and will stop ticking more precisely. 
+[fix] Ensured that the Combat Manager validation it will add messages to the error window.
+[fix] Ensured that characters will not collide with the camera when they die.
+[fix] Ensured that the animation notify scheduler will always clean up on interruptions.
+[fix] Ensured that the animation notify scheduler will properly store meshes for notifies.
+[fix] Ensured that Cast Actors won't collide with themselves, including other instances of the same class type.
+[fix] Configured stacks for combat effects that cancel regeneration (stamina, poise and mana).
+[fix] Ensured that not setting a block angle correctly means "no angle check".
+[fix] Corrected target validation/binding/unbinding issues in the Target Lock Gameplay Ability and Target Lock ViewModel.
+```
+
 ## 6.0.0 - 08/03/2026
 > **Important Changes in this version**
 >

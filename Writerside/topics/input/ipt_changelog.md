@@ -1,6 +1,14 @@
 # Changelog
 <primary-label ref="input"/>
 
+## 6.0.0
+<secondary-label ref="wip"/>
+```
+[major] Updated internal functions to send gameplay events in the Input Manager, so they are more flexible taking a single struct attribute.
+[improvement] Added support for run threshold and run/walk scale to the Move Handler.
+[fix] Added missing "BlueprintPure = false" to support functions in the Input Manager Component. 
+```
+
 ## 5.6.16 - 12/01/2026
 ```
 [improvement] Creating new Input Handler blueprints will open a class selection modal.
