@@ -1,8 +1,7 @@
 # Changelog
 <primary-label ref="interaction"/>
 
-## 2.0.7
-<secondary-label ref="wip"/>
+## 2.0.7 - 17/04/2026
 ```
 [improvement] Gameplay or sequencers can force openable actors to unlock without a key, via ForceUnlock.
 [improvement] Improved MoveTo task, so it won't tick.

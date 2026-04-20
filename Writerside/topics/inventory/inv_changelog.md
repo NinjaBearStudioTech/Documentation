@@ -1,12 +1,17 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 3.0.0
+## 3.0.2
+```
+[fix] Ensured that Loot updates from transfer are broadcast to the player client.
+[fix] Improved UI clean-up for items changing the container.
+```
+
+## 3.0.0 - 17/04/2026
 > **Important Changes in this version**
 > 
 > 1. Due to changes in the Pickup Actor and introduction of a Pickup Component, you'll need to reconfigure your Pickup blueprint.
 > 2. Beta version of a Vendor Component was added, used in conjunction with the economy fragment.
-<secondary-label ref="wip"/>
 ```
 [major] Refactored the base Pickup actor for easier integration with Interaction.
 [major] Inventory supports loading save files from clients, which are sent to the server and become authoritative.

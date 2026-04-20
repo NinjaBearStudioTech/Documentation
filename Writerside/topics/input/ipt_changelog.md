@@ -1,8 +1,7 @@
 # Changelog
 <primary-label ref="input"/>
 
-## 6.0.0
-<secondary-label ref="wip"/>
+## 6.0.0 - 17/04/2026
 ```
 [major] Updated internal functions to send gameplay events in the Input Manager, so they are more flexible taking a single struct attribute.
 [improvement] Added support for run threshold and run/walk scale to the Move Handler.

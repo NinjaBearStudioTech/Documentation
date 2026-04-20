@@ -1,8 +1,7 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 6.6.17
-<secondary-label ref="wip"/>
+## 6.6.17 - 17/04/2026
 ```
 [added] Moved internal logic from the Combat Manager, into damage outcomes for Knockbacks, Last Stands and Death. 
 [added] Option to delay Cast activations using the "Delayed" trigger.

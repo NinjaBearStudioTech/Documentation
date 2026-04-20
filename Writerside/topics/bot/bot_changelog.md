@@ -1,7 +1,7 @@
 # Changelog
 <primary-label ref="bot"/>
 
-## 1.0.4 - 09/03/2026
+## 1.0.4 - 17/04/2026
 <secondary-label ref="wip"/>
 ```
 [improvement] Settings include an option to set custom State and Behavior Components for the AI Controller.
