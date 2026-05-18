@@ -1,6 +1,14 @@
 # Changelog
 <primary-label ref="combat"/>
 
+## 6.6.20 - 30/04/2026
+```
+[improvement] Additional logs to track reflection bridge between Combat and Inventory.
+[fix] Corrected knockdown condition in the dead effect requirement.
+[fix] Removed hard assertion for missing targets in the Combat Attribute Set.
+[fix] Corrected knockdown integration in the GAS layer.
+```
+
 ## 6.6.17 - 17/04/2026
 ```
 [added] Moved internal logic from the Combat Manager, into damage outcomes for Knockbacks, Last Stands and Death. 
@@ -17,7 +25,7 @@
 [improvement] The Combat Animation Instance will perform retries when trying to connect to the Combat System.
 [improvement] Introduced a catch-all tag for unblockable damage (Combat.Effect.Damage.Unblockable).
 [improvement] Combo Manager Component will reliably block duplicated events within the same scope.
-[improvement] Motion Warping Component has better tracking stability and will stop ticking more precisely. 
+[improvement] Motion Warping Component has better tracking stability and will stop ticking more precisely.  
 [fix] Ensured that the Combat Manager validation it will add messages to the error window.
 [fix] Ensured that characters will not collide with the camera when they die.
 [fix] Ensured that the animation notify scheduler will always clean up on interruptions.

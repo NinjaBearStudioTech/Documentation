@@ -1,10 +1,15 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 3.0.2
+## 3.1.6 - 18/05/2026
 ```
+[improvement] Better handling deferred initialization of containers.
 [fix] Ensured that Loot updates from transfer are broadcast to the player client.
 [fix] Improved UI clean-up for items changing the container.
+[fix] Reviewed and fixed odd states when inventory is loaded from a client.
+[fix] Ensured that singleton ViewModels are reset for new pawns.
+[fix] Function CheckAndResetBlockedMergeFromMemory changed to Blueprint Callable.
+[fix] Corrected race condition leading to memory issues.
 ```
 
 ## 3.0.0 - 17/04/2026
