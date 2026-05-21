@@ -38,26 +38,27 @@ assets and Blueprints, while deeper customization may require C++.
 
 ## Architecture Overview
 
-Ninja Combat is organized around a dedicated combat domain layered on top of the Gameplay Ability System.
+Ninja Combat is organized around a dedicated combat domain layered on top of the Gameplay Ability System. The **combat 
+domain is managed by a set of dedicated components**, orchestrated by a **centralized Combat Manager**.
 
-Combat behavior is usually driven by abilities. Abilities can acquire targets, commit costs, trigger animation, apply 
-damage, spawn projectiles, or route events into other combat systems. Damage is processed through a structured flow that 
-can calculate mitigation, apply gameplay effects, trigger outcomes, and present feedback through Gameplay Cues.
+Combat behavior is usually driven by **Gameplay Abilities**. Abilities can acquire targets, commit costs, trigger animation, 
+apply damage, spawn projectiles, or route events into other combat systems. Damage is processed through a **structured flow** 
+that can calculate mitigation, apply gameplay effects, trigger outcomes, and present feedback through Gameplay Cues. 
 
 A key part of the architecture is the separation between **Damage Outcomes** and **Damage Cosmetics**. Outcomes represent 
 authoritative gameplay results, such as applying damage, reacting to hits, notifying AI, or changing combat state. Cosmetics 
 represent visual and audio presentation, such as hit flashes, floating numbers, camera feedback, or impact effects.
 
-The plugin is designed to integrate with surrounding gameplay systems without owning them. Inventory can provide weapons 
-and equipment, Input can activate combat abilities, Interaction can trigger combat-related abilities, and Ninja G.A.S. 
-can provide the base Ability System setup.
+The plugin is designed to **integrate with surrounding gameplay systems without owning them**. [**Ninja Inventory**][10] 
+can provide weapons and equipment, [**Ninja Input**][9] can activate combat abilities, [**Ninja Interaction**][11] can 
+grant combat-related effects, and [**Ninja G.A.S.**][8] can provide the base Ability System setup.
 
 ## Integrations
 
 - **[Ninja G.A.S.][8]** can provide the Ability System setup used by combat actors and abilities.
 - **[Ninja Input][9]** can activate combat abilities, combos, and gameplay events.
 - **[Ninja Inventory][10]** can provide weapons and equipment actors used by combat systems.
-- **[Ninja Interaction](int_overview.md)** can trigger combat abilities from interaction flows.
+- **[Ninja Interaction][11]** can trigger combat abilities from interaction flows.
 
 [1]: https://www.unrealengine.com/marketplace/product/ninja-combat
 [2]: https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine
@@ -69,3 +70,4 @@ can provide the base Ability System setup.
 [8]: gas_overview.md
 [9]: ipt_overview.md
 [10]: inv_overview.md
+[11]: int_overview.md

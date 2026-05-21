@@ -75,7 +75,7 @@ optionally used to apply focus based on proximity.
 - **Required**. Must be present on each interaction source actor.
 - A shape component (commonly a box or sphere) used to **register interaction targets** so they can later be focused and interacted with.  
 - This collider must be identified by the **Component Tag** `Interaction.Component.InteractableScan`.
-- This collider's **Object Type** should be `InteractionObject`, created during the [collision setup](int_collisions.md).
+- This collider's **Object Type** should be `InteractionObject`, created during the [collision setup](int_setup.md).
 <p><img src="int_source_component_scan.png" alt="Interactable Scan Collider" thumbnail="true" width="800" border-effect="line"/></p>
 
 ### Interactable Focus Collider

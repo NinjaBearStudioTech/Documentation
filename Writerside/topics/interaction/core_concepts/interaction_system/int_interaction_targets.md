@@ -157,7 +157,7 @@ of an interaction target, combining the component, interface, and visual represe
 1. Contains an **Interaction Target Component** with a fully configured Smart Object.
 2. Implements the **Interaction Target Interface**.
 3. Includes a mesh to visually represent the object.
-4. Provides a scene component with its collision set to the [**Interaction Target**](int_collisions.md) preset.
+4. Provides a scene component with its collision set to the [**Interaction Target**](int_setup.md) preset.
 
 Ninja Interaction includes a core abstract base class and two ready-to-use subclasses:
 
@@ -225,7 +225,7 @@ The following procedures will guide you through each step in detail.
     </step>
     <step>Assign your mesh asset, matching the one used in the Smart Object preview.</step>
     <step>
-        Add a collision component (e.g., <b>Box Collision</b>) that matches the object’s shape, and set its <b>Collision Preset</b> to <code>InteractionTarget</code>, as per the <a href="int_collisions.md">collision setup</a>.
+        Add a collision component (e.g., <b>Box Collision</b>) that matches the object’s shape, and set its <b>Collision Preset</b> to <code>InteractionTarget</code>, as per the <a href="int_setup.md">collision setup</a>.
         <p><img src="int_target_actor_02.png" alt="Set Collision Preset" border-effect="line" thumbnail="true"/></p>
     </step>
     <step>
