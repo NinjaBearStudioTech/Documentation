@@ -25,34 +25,27 @@ character, and this combatant class is **compatible with both Players and AI**.
     <step>Set the relevant mesh's <b>Collision Preset</b> to <code>Combat</code>. See note below for hit detection collision.</step>
 </procedure>
 
-<tip>
-    <p><b>Modular Characters</b></p>
-    <p>
-        It's common to have characters with multiple meshes, using <b>Leader Pose Components</b> or <b>Mutable</b>. 
-        Either way, the combat system only needs to know about the <b>primary mesh</b>, which is used for <b>collisions</b>
-        and <b>attachments</b> (when not using the Ninja Inventory).
-    </p>
-</tip>
+> **Modular Characters**
+>
+> It's common to have characters with multiple meshes, using **Leader Pose Components** or **Mutable**.
+> Either way, the combat system only needs to know about the **primary mesh**, which is used for **collisions**
+> and **attachments** (when not using the Ninja Inventory).
+{style="tip"}
 
-<tip>
-    <p><b>Runtime Retargeting</b></p>
-    <p>
-        In some scenarios, such as the GASP sample, the <b>primary mesh</b> is hidden, running the animation and a 
-        <b>visible mesh</b> actually represents the character, using a runtime retargeter to transfer animations.
-    </p>
-    <p>
-        In this scenario, the <b>visible mesh</b> is the one relevant to the Combat System, but the animation instance
-        should be obtained from the <b>primary mesh</b> instead.
-    </p>
-</tip>
+> **Runtime Retargeting**
+>
+> In some scenarios, such as the GASP sample, the **primary mesh** is hidden, running the animation and a
+> **visible mesh** actually represents the character, using a runtime retargeter to transfer animations.
+>
+> In this scenario, the **visible mesh** is the one relevant to the Combat System, but the animation instance
+> should be obtained from the **primary mesh** instead.
+{style="tip"}
 
-<tip>
-    <p><b>Hit Detection Collision</b></p>
-    <p>
-        Instead of setting the relevant mesh's Collision Preset, for more precise hit detection, you can use dedicated 
-        collision components instead of the full mesh. 
-    </p>
-</tip>
+> **Hit Detection Collision**
+>
+> Instead of setting the relevant mesh's Collision Preset, for more precise hit detection, you can use **dedicated
+> collision components** instead of the full mesh.
+{style="tip"}
 
 ### Forward Reference
 <secondary-label ref="optional"/>
@@ -61,9 +54,14 @@ character, and this combatant class is **compatible with both Players and AI**.
 Certain features, such as the **Evade Ability**, need a global forward reference: a Scene Component that always points 
 forward, usually an Arrow Component with **Absolute Rotation** enabled.
 
-The **Combat Manager** can create a default Forward Reference as needed, but if you are using [**Ninja Input**](ipt_overview.md),
-then it is recommended to create your own, so the same reference can be shared by both systems. For more details, please
-check [Input Integration](itg_combat_input.md#forward-reference).
+> **Automatic Creation**
+>
+> The Combat Manager component will **automatically create a Forward Reference**, if no reference is found, but one is 
+> required. You can also modify the default creation logic, by overriding the <code>CreateForwardReference</code> function.
+> 
+> When using [**Ninja Input](ipt_overview.md) it is recommended to create your own component that adheres to the 
+> requirements from both systems. 
+{style="tip"}
 
 <procedure title="Add a Forward Reference component" collapsible="true" default-state="expanded">
     <step>In the <b>Character Class</b>, create a new <b>Arrow Component</b>, parented to the <b>Root Component</b>, the character's <b>Capsule Component</b>.</step>
@@ -126,11 +124,11 @@ some **Gameplay Effects** to replenish certain attributes.
 Ninja Combat provides its own **Attribute Set**, which should be added to each combatant.
 
 <procedure title="Add Combat Attributes using Ninja G.A.S." collapsible="true" default-state="expanded">
-    <step>Create a new <b>Data Table</b> for your Combat Attributes, using the <code>AttributeMetaData</code> as the table row structure.</step>
+    <step>Create a new <b>Data Table</b> for your Combat Attributes, using <code>AttributeMetaData</code> as the table row structure.</step>
     <step>Download the <b><a href="cbt_gameplay_attributes.md#initialization-data">Sample Initialization Data</a></b> and use it as the table data.</step>
     <step>
         <p>Create a new <b>G.A.S. Setup Data Asset</b> and add a new <b>Default Attribute Set</b> entry.</p> 
-        <p>You can do so by right-clicking an empty area in the <b>Content Browser</b>, then navigating to <b>Ninja Bear Studio</b> &rarr; <b>Ninja G.A.S.</b> &rarr; <b>G.A.S. Setup</b></p>
+        <p>You can do so by right-clicking an empty area in the <b>Content Browser</b>, then navigating to <b>Ninja Bear Studio</b> &rarr; <b>Ninja G.A.S.</b> &rarr; <b>G.A.S. Setup</b>.</p>
     </step>
     <step>Add the <b>Ninja Combat Attribute Set</b>, <code>NinjaCombatAttributeSet</code>, and the data table as the <b>Attribute Table</b>.</step>
     <step>Set the new GAS Setup Data to the character's <b>Ability System Component</b>.</step>
@@ -163,5 +161,5 @@ This character has the following features:
 
 From here, you can:
 
-1. Create [**Combat Abilities**](cbt_gameplay_abilities.md) to be used by the character directly, including [**Combos**](cbt_combos.md).
-2. Introduce [**Weapons**](cbt_weapon_actors.md) and configure the [**Weapon Manager**](cbt_weapon_manager.md).
+- Create [**Combat Abilities**](cbt_gameplay_abilities.md) to be used by the character directly, including [**Combos**](cbt_combos.md). 
+- Introduce [**Weapons**](cbt_weapon_actors.md) and configure the [**Weapon Manager**](cbt_weapon_manager.md).
