@@ -3,27 +3,49 @@
 
 ![Ninja Factions](fct_feature.png "Ninja Factions")
 
-The **Ninja Factions** plugin is designed to provide flexibility when establishing the relationship between your **AI Teams**.
+**Ninja Factions** is a team and reputation framework for Unreal Engine. It helps define how AI agents, players, and 
+world systems relate to each other through factions, memberships, attitudes, and reputation.
 
-It introduces the concept of **Factions**, **Memberships** and **Reputation**, creating a very dynamic way to determine
-not only how your AI Agents react to perceived targets, but also how your world can react to players.
+The plugin is designed to work with Unreal Engine's AI Team Agent and AI Perception systems, while remaining flexible 
+enough to support simple team checks, reputation-driven worlds, friendly fire rules, and project-specific attitude logic.
+
+## What It Does
+
+- Provides a reusable framework for **factions**, **memberships**, **reputation**, and **attitude resolution**.
+- Allows AI agents to determine how they should react to perceived targets.
+- Supports dynamic reputation changes that can affect how the world responds to players.
+- Provides data-driven configuration through **Data Assets** and **Data Tables**.
+- Integrates with AI Perception, Combat friendly fire rules, and Bot perception logic.
+- Includes editor and debugging support for faster configuration and testing.
 
 ## Main Features
 
-- **Data Driven**: Configuration for Factions and Reputation Tiers is done in Data Assets and Data Tables.
-- **Flexible Databases**: The default Faction Database uses Data Assets registered in the Asset Manager implementation, but you can also create your databases.
-- **Flexible Attitude Resolution**: Attitude Resolution Strategies are extensible, so you can use the provided ones (Simple Team Check and Reputation Tier Check), or create your own.
-- **Designer-Friendly**: Built in C++ but can be configured and extended in Blueprints.
-- **Extensible**: Everything is configurable, extensible or component/interface based. No specific class requirements, which makes it much easier to integrate this plugin with other systems.
-- **Save System**: Factions can be saved and loaded so players can continue their progress between play sessions.
-- **Integrated with the Editor**: Including a Settings Page, Data Asset Contextual Creation and a new Faction Category for the Gameplay Debugger.
+- **Faction Definitions**: Define factions as data assets that can be registered and reused across the project.
+- **Membership System**: Assign actors to factions and expose their team identity to gameplay and AI systems.
+- **Reputation Tiers**: Use data-driven reputation values and tiers to represent changing relationships.
+- **Flexible Attitude Resolution**: Resolve friendly, neutral, or hostile attitudes through built-in or custom strategies.
+- **AI Perception Support**: Works with Unreal's AI Team Agent flow so perceived actors can be evaluated through faction logic.
+- **Save Support**: Faction and reputation data can be saved and loaded between play sessions.
+- **Editor Integration**: Includes project settings, contextual asset creation, and Gameplay Debugger support.
+- **Extension Points**: Provides component, interface, Blueprint, and C++ hooks for project-specific faction rules.
 
-## Design Pillars
+## Architecture Overview
 
-- **Data and Gameplay Oriented**: Based on **Data Assets** and **Data Tables**. Dynamic Memberships and Reputation altered by Gameplay.
-- **AI Foundation**: Created with the **AI Team Agent** and the **AI Perception** systems in mind. 
+Ninja Factions is organized around the relationship between faction data, actor membership, reputation state, and attitude 
+resolution.
+
+Faction assets define the available groups in the project. Actors can become members of these factions (gain Membership) 
+through components or interfaces, allowing gameplay systems to query their faction identity without requiring a specific 
+actor class. Reputation can then modify how one faction or actor relates to another over time.
+
+When an attitude is requested, the plugin uses an attitude resolution strategy to decide whether the target should be 
+considered friendly, neutral, or hostile. The default strategies support simple team checks and reputation-tier checks, 
+but projects can provide their own logic for more specific rules.
+
+This makes Ninja Factions useful as a foundation for AI perception, combat filtering, social systems, world reactions, 
+and any gameplay feature that needs consistent relationship data between team members.
 
 ## Integrations
 
-- Factions can be used by the **[Ninja Combat](cbt_overview.md)** to enable or disable **Friendly Fire**.
-- Factions can be used by **Ninja Bot** to determine **Attitude** for the **Perception Layer**.
+- **[Ninja Combat](cbt_overview.md)** can use factions to enable, disable, or customize friendly fire behavior.
+- **[Ninja Bot](bot_overview.md)** can use factions to determine perceived target attitude in the perception layer.

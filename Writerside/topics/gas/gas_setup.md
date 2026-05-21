@@ -1,63 +1,25 @@
-# Setup
+# Setting Up Ninja G.A.S.
 <primary-label ref="gas"/>
 
-<tldr>
-    <ul>
-        <li>Install the Ninja G.A.S. plugin using the Epic Games Launcher.</li>
-        <li>Open your project and enable the plugin: <code>Edit</code> &rightarrow; <code>Plugins</code>, search for <i>gas</i>, and tick the checkbox for <b>Ninja G.A.S.</b> and restart the engine.</li>
-        <li>Use the Base Class table to create your Actors, Pawns, Characters and Player States from the correct classes.</li>
-    </ul>
-</tldr>
+This page summarizes the setup required for **Ninja G.A.S.** after the plugin has been installed and enabled.
 
-## Installing the Plugin
+For the general installation process, see the [**Installing Plugins**](installing_plugins.md) guide.
 
-Once acquired, the plugin can be installed via the **Epic Games Launcher**. As with any **Code Plugin**, it can be
-installed to any compatible engine version.
+## Prerequisites
 
-Once installed, create or open your project and navigate to **Edit** and then **Plugins**. In the search bar, type
-_gas_ and the **Ninja G.A.S.** plugin should appear. Tick the checkbox and restart the engine.
+| Requirement             | Notes                                                                                                                                                            |
+|-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Gameplay Ability System | Your project should be using Unreal Engine's Gameplay Ability System.                                                                                            |
+| Attribute Sets          | Ninja G.A.S. does not provide Attribute Sets. You must create your own or use Attribute Sets provided by other plugins, such as Ninja Combat or Ninja Inventory. |
 
-## C++ Libraries
+## Setup Checklist
 
-If you plan to work with C++ and use classes from the GAS System, ensure you add the following modules to your
-`Build.cs` file:
-
-<tabs group="sample">
-    <tab title="Build.cs">
-        <code-block lang="c#">
-        PublicDependencyModuleNames.AddRange(new []
-        {
-            "GameplayAbilities",
-            "GameplayTags",
-            "GameplayTasks",
-            "NinjaGAS"
-        });
-        </code-block>
-    </tab>
-</tabs>
-
-## Asset Manager
-
-The GAS System uses a **Primary Data Asset** and **soft references** to initialize common abilities elements for actors,
-and you need to register this Primary Data Asset to the Asset Manager.
-
-In the Editor, configure the **Asset Manager** by navigating `Edit` > `Project Settings` > `Asset Manager`, and then
-adding the following asset.
-
-| Asset Name          | Base Class           | Description                                                |
-|---------------------|----------------------|------------------------------------------------------------|
-| `AbilityBundleData` | `UNinjaGASDataAsset` | Bundles all Attribute Sets, Effects and Abilities to give. |
-
-Once configured, your entry in the Asset Manager should look like this:
-
-![Ability Bundle Data Asset Setup](gas_setup_data_asset.png "Ability Bundle Data Asset Setup")
-
-> **Asset Directory**
-> 
-> If you have a specific **directory** for your Data Assets, like in the example above, make sure to set that in the
-> Primary Asset type registry as well.
+| Step                          | Required          | Guide                                       |
+|-------------------------------|-------------------|---------------------------------------------|
+| Install and enable the plugin | Yes               | [Installing Plugins](installing_plugins.md) |
+| Add C++ module dependencies   | Yes, if using C++ | [Installing Plugins](installing_plugins.md) |
+| Configure Asset Manager       | Yes               | [Asset Manager](asset_manager.md)           |
 
 ## Ability System Initialization
-
-Projects using the Gameplay Ability System must initialize the **Global Data**. This framework will automatically do that,
-when its **Subsystem** initializes. **No additional steps are necessary**.
+Projects using the Gameplay Ability System must initialize the **Global Data**. Ninja G.A.S. automatically initializes 
+this data when its **Subsystem** initializes. **No additional steps are necessary**.

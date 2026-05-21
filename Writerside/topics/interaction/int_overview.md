@@ -3,39 +3,52 @@
 
 ![Ninja Interaction](int_feature.png "Ninja Interaction")
 
-The **Ninja Interaction** plugin streamlines the definition and execution of interactions by orchestrating core gameplay 
-systems in the engine, including the **Gameplay Ability System**, **Smart Objects**, **Gameplay Behaviors**, and **State Trees**.
+**Ninja Interaction** is an interaction framework for Unreal Engine that helps define, evaluate, and execute interactions 
+between actors.
+
+It orchestrates core engine systems such as the **Gameplay Ability System**, **Smart Objects**, **Gameplay Behaviors**, 
+and **State Trees**, allowing interaction logic to remain modular, reusable, and multiplayer-ready.
+
+## What It Does
+
+- Provides a structured framework for defining interactable actors and interaction flows.
+- Supports simple and complex interactions through **State Trees** and gameplay logic.
+- Uses **Smart Objects** and **Gameplay Behaviors** to standardize interactions for players and AI agents.
+- Triggers interactions through **Gameplay Abilities**, making them compatible with other ability-driven systems.
+- Tracks focus, availability, progress, and interaction state through reusable systems.
+- Provides UI support through widgets and **ViewModels**.
+- Exposes extension points for systems such as **Ninja Inventory**.
 
 ## Main Features
 
-- Use **state machines** to design simple and complex interaction flows for each interactable actor.
-- **Smart Objects** and **Gameplay Behaviors** define how each interaction works, including multiple interactions per target.
-- Built on Smart Objects, allowing standardized interactions for both **players** and **AI agents**.
-- Interactions are triggered via **Gameplay Abilities**, making them compatible with other systems.
-- Bind the provided **ViewModels** to your UI to track interaction progress.
-- Provides **extension points** to other systems, such as [**Ninja Inventory**][1].
+- **Interaction Targets**: Actors can expose one or more interaction options that are evaluated at runtime.
+- **Target Detection and Focus**: Registered targets are scanned, evaluated, and selected based on configurable focus rules.
+- **State Tree Interaction Flows**: Interaction behavior can be authored as simple or complex State Tree-driven flows.
+- **Smart Object Support**: Interactions can use Smart Objects and Gameplay Behaviors to support both players and AI agents.
+- **GAS Integration**: Interactions are triggered through Gameplay Abilities, allowing costs, conditions, gameplay events, and ability logic to participate.
+- **UI Presentation**: ViewModels and widgets can present interaction prompts, progress, and state to the player.
+- **Extension Points**: Blueprint and C++ hooks allow projects to customize target evaluation, interaction outcomes, and external system integration.
 
 ## Architecture Overview
 
-Ninja Interaction is organized around a clear separation of responsibilities between **detecting targets, evaluating
-candidates, managing focus, triggering interactions and executing their outcomes**. Each layer is well-defined and separated, 
-providing **relevant hooks and extension points**.
+Ninja Interaction is organized around a clear flow: targets are registered, candidates are evaluated, focus is resolved, 
+and the selected interaction can be activated.
 
-At a high level, the data flow follows this sequence:
+Interaction targets define what can be done with an actor. Scanner tasks and focus logic determine which target is 
+currently relevant to an instigator. Once activated, the interaction can execute gameplay behavior through State Trees, Gameplay Abilities, Smart Objects, Blueprint logic, or C++ extension points.
 
-<img src="int_overview_architecture.png" alt="Interaction Architecture Overview" width="800"/>
+This separation keeps interaction detection, interaction selection, and interaction execution independent of each other. 
+Designers can author interaction flows using assets and Blueprints, while programmers can extend the framework for 
+project-specific requirements.
 
-- **Triggers**: Gameplay events or elements that may initiate an interaction, by registering an interaction target.
-- **Interaction Definition**: Candidates are evaluated based on their definition, which should reply if the target is viable for a given instigator. 
-- **Ninja Interaction**: Registered targets are continuously evaluated for focus, which is determined by any of the provided (or custom) Scanner Tasks.
-- **Interaction Outcome**: Focused targets can be activated, leading to a gameplay outcome defined by State Trees, and any specific game logic.
-- **UI Presentation**: The entire interaction flow can be tracked per target, using the provided UI widgets and ViewModels.
+The result is a reusable interaction layer that can support simple prompts, pickups, inspections, conversations, Smart 
+Object usage, AI interactions, or more complex gameplay sequences.
 
-This flow allows developers and designers to create both simple and complex interactions by simply **defining the State Tree
-and additional relevant logic in Blueprints (or C++**). These are executed on top of a robust, multiplayer-ready, framework 
-that will handle complexities. 
+## Integrations
 
-However, if needed, programmers can leverage **extension points and hooks** to modify the framework itself, and further 
-accomodate any extra requirements presented by the project.
+- **[Ninja G.A.S.](gas_overview.md)** can provide the Ability System setup used by interaction abilities.
+- **[Ninja Inventory][1]** can use interactions for pickups, containers, inspection flows, or item-driven outcomes.
+- **[Ninja Input](ipt_overview.md)** can trigger interaction abilities through input handlers.
+- **[Ninja Bot](bot_overview.md)** can use interaction flows for AI agents through Smart Objects and behavior logic.
 
 [1]: inv_overview.md

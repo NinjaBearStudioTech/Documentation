@@ -13,9 +13,19 @@
     <primary-label id="inventory" short-name="INV" name="Inventory">Ninja Inventory</primary-label>
     <primary-label id="tokens" short-name="TKN" name="Tokens">Ninja Tokens</primary-label>
 
-    <secondary-label id="wip" name="work-in-progress" color="red">Work in progress, informational only.</secondary-label>
+    <secondary-label id="wip" name="work-in-progress" color="strawberry">Work in progress, informational only.</secondary-label>
     <secondary-label id="experimental" name="experimental" color="strawberry">Subject to changes, might have bugs.</secondary-label>
-    <secondary-label id="beta" name="beta" color="tangerine">Stable API, but you might find bugs.</secondary-label>
-    <secondary-label id="advanced" name="advanced" color="purple">Advanced feature, some experience required.</secondary-label>
+    <secondary-label id="beta" name="beta" color="strawberry">Stable API, but you might find bugs.</secondary-label>
+    <secondary-label id="advanced" name="advanced" color="tangerine">Advanced feature, some experience required.</secondary-label>
     <secondary-label id="guide" name="guide" color="blue">A step-by-step guide, with a specific goal.</secondary-label>
+    <secondary-label id="optional" name="optional" color="purple">An optional step, used to achieve specific goals.</secondary-label>
+    <secondary-label id="recommended" name="recommended" color="purple">Enforces that an optional step is still recommended for most cases.</secondary-label>
+    <secondary-label id="bot-sec" name="Bot" color="green">Ninja Bot</secondary-label>
+    <secondary-label id="combat-sec" name="Combat" color="green">Ninja Combat</secondary-label>
+    <secondary-label id="factions-sec" name="Factions" color="green">Ninja Factions</secondary-label>
+    <secondary-label id="gas-sec" name="G.A.S." color="green">Ninja GAS</secondary-label>
+    <secondary-label id="input-sec" name="Input" color="green">Ninja Input</secondary-label>
+    <secondary-label id="interaction-sec" name="Interaction" color="green">Ninja Interaction</secondary-label>
+    <secondary-label id="inventory-sec" name="Inventory" color="green">Ninja Inventory</secondary-label>
+    
 </labels>

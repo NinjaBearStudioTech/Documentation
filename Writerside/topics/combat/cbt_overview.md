@@ -3,43 +3,61 @@
 
 ![Ninja Combat](cbt_feature.png "Ninja Combat")
 
-The **Ninja Combat** plugin was designed as a layer built on top of Unreal Engine's **Gameplay Ability System**, introducing 
-a **Combat Domain** that can be used in various types of projects, such as _weapons_, _damage_, _vitals_, and many others.
+**Ninja Combat** is a Gameplay Ability System-based combat framework for Unreal Engine. It provides a reusable combat
+domain for attacks, damage, defense, weapons, vitals, reactions, targeting, and combat-driven abilities.
 
-This system provides a robust foundation covering numerous **Abilities**, **Effects**, and **Attributes**, along with 
-other common aspects of a Combat System, such as **Motion Warping**, **Projectile Pooling**, **Physical Reactions**, and more.
+The plugin is designed for projects that need a flexible combat foundation without locking the game into a specific genre 
+or feel. It can support melee combat, ranged combat, action RPGs, shooters, adventure games, and other ability-driven 
+combat systems.
 
-This is an **ample** and **advanced** system, built on top of many Unreal Engine capabilities. To take full advantage of 
-it, it's recommended that you have some familiarity with these base systems. **For advanced usage, you will need to use C++**.
+This is an advanced plugin built on top of multiple Unreal Engine systems. Designers can configure many parts through 
+assets and Blueprints, while deeper customization may require C++.
+
+## What It Does
+
+- Provides a reusable **combat framework** built on top of the Gameplay Ability System.
+- Adds common combat concepts such as **damage**, **defense**, **blocking**, **poise**, **critical hits**, and **vitals**.
+- Supports melee, ranged, projectile, firearm, and ability-driven combat flows.
+- Provides tools for **targeting**, **motion warping**, **projectile pooling**, and **hit reactions**.
+- Separates authoritative combat results from cosmetic presentation.
+- Integrates with Inventory, Input, Interaction, and GAS-based gameplay.
 
 ## Main Features
 
-- **Extensive Combat System Domain**: Includes a wide range of features for building comprehensive combat systems.
-- **Integration with the [Gameplay Ability System][2]**: Seamless integration with Unreal Engine's powerful ability system.
-- **Integration with the [Gameplay Targeting System][3]**: Supports precise targeting mechanisms.
-- **Integration with the [Motion Warping System][4]**: Allows for dynamic and responsive character movement.
-- **Data-driven and Event-based**: Designer-friendly Combat Combos can be crafted using [State Machines][5].
-- **Advanced Damage and Defense Mechanics**: Includes features such as **Critical Hits**, **Breaker Hits**, **Armor**, **Blocking**, **Poise**, and [Procedural Hit Reactions][6].
-- **Firearms and Ammunition**: A data-driven module that allows you to create hit-scan or projectile-based firearms, configure ammunition and use GAS to shoot and reload.
-- **Core Attributes**: Provides essential attributes like **Health**, **Magic**, **Stamina**, **Critical Damage**, and **Defense**.
-- **Basic Widgets**: Includes common elements such as Health Bars and Damage Applied, integrated with **[UMG ViewModels][7]**.
-- **Flexibility and Extensibility**: Designed to support various types of projects.
-- **Quality and Support**: Features clean, well-documented code, a thorough documentation site and a Discord support channel.
+- **Combat Domain**: Provides common combat building blocks such as combat actors, abilities, damage, defense, vitals, and reactions.
+- **GAS Integration**: Uses Gameplay Abilities, Gameplay Effects, Attribute Sets, Gameplay Events, and Gameplay Cues as the foundation for combat behavior.
+- **Damage System**: Supports advanced damage flows with critical hits, breaker hits, armor, blocking, poise, and defense calculations.
+- **Damage Outcomes and Cosmetics**: Separates gameplay results from presentation, allowing authoritative effects and client-side feedback to evolve independently.
+- **Damage and Defense Pipelines**: buildable pipelines to mitigate incoming damage and handle its outcomes.
+- **Targeting Support**: Integrates with Unreal's Gameplay Targeting System for ability targeting and target acquisition.
+- **Motion Warping Support**: Supports responsive combat movement and positioning through Motion Warping.
+- **Projectile and Firearm Support**: Provides systems for projectile-based and hit-scan weapons, ammunition, shooting, and reloading.
+- **Animation and Cues**: Supports combat feedback through animation, Gameplay Cues, hit reactions, widgets, and ViewModels.
+- **Actor Pool**: Actors frequently used, such as projectiles and explosions can be managed by an Actor Pool to avoid spawning and garbage collection hitches.
+- **Extension Points**: Exposes Blueprint and C++ hooks for adapting combat rules, damage handling, targeting, reactions, and equipment integration.
 
-## Design Pillars
+## Architecture Overview
 
-- **Separation of Concerns**: The Combat domain is self-contained and affect other domains such as "Locomotion", "Inventory", "Interaction", etc.
-- **Flexibility**: As a framework, includes multiple tools to support multiple combat modes, such as Adventure, Shooters, Souls-like and Action RPGs.
-- **Extensibility**: Provides many extension points in C++ and Blueprints. Interface-oriented design for components.
-- **Designer Friendly**: You can configure and operate the multiple aspects of the Combat System using Data Assets and Blueprints. Deeper customization might require C++.
-- **Connectivity**: Parts of the system that must integrate with other domains are designed to be integration-friendly, with interfaces, blueprint events and so on.
-- **Engine Parity**: As much as possible, reuses features already available in the engine, without "reinventing the wheel".
+Ninja Combat is organized around a dedicated combat domain layered on top of the Gameplay Ability System.
+
+Combat behavior is usually driven by abilities. Abilities can acquire targets, commit costs, trigger animation, apply 
+damage, spawn projectiles, or route events into other combat systems. Damage is processed through a structured flow that 
+can calculate mitigation, apply gameplay effects, trigger outcomes, and present feedback through Gameplay Cues.
+
+A key part of the architecture is the separation between **Damage Outcomes** and **Damage Cosmetics**. Outcomes represent 
+authoritative gameplay results, such as applying damage, reacting to hits, notifying AI, or changing combat state. Cosmetics 
+represent visual and audio presentation, such as hit flashes, floating numbers, camera feedback, or impact effects.
+
+The plugin is designed to integrate with surrounding gameplay systems without owning them. Inventory can provide weapons 
+and equipment, Input can activate combat abilities, Interaction can trigger combat-related abilities, and Ninja G.A.S. 
+can provide the base Ability System setup.
 
 ## Integrations
 
-- The Gameplay Ability System can be configured using **[Ninja GAS][8]**.
-- Activate abilities and combos with input handlers from **[Ninja Input][9]**.
-- Allows the creation of weapons as Equipment Actors with **[Ninja Inventory][10]**.
+- **[Ninja G.A.S.][8]** can provide the Ability System setup used by combat actors and abilities.
+- **[Ninja Input][9]** can activate combat abilities, combos, and gameplay events.
+- **[Ninja Inventory][10]** can provide weapons and equipment actors used by combat systems.
+- **[Ninja Interaction](int_overview.md)** can trigger combat abilities from interaction flows.
 
 [1]: https://www.unrealengine.com/marketplace/product/ninja-combat
 [2]: https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine

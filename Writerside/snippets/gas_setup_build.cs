@@ -1,6 +1,7 @@
 PublicDependencyModuleNames.AddRange(new string[]
 {
-    "AIModule",
+    "GameplayAbilities",
     "GameplayTags",
-    "NinjaFactions",
+    "GameplayTasks",
+    "NinjaGAS"
 });
