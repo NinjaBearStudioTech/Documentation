@@ -14,7 +14,6 @@
             <download-title>Seller Profile on Fab</download-title>
             <download-page>https://www.fab.com/sellers/Ninja%20Bear%20Studio</download-page>
             <showDownloadButton>true</showDownloadButton>
-            <include-in-head>static/include_in_head.html</include-in-head>
             <algolia-id>1VNI46BYQK</algolia-id>
             <algolia-index>nbs_tech_site_index</algolia-index>
             <algolia-api-key>$ALGOLIA_KEY_MARKER</algolia-api-key>
