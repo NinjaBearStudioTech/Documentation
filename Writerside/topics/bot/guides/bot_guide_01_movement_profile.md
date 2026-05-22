@@ -7,7 +7,7 @@ Movement Component, GASP, Mover 2.0, or other custom movement solutions).
 
 Before starting, make sure the following **pre-requisites** are completed:
 
-1. You have a Bot configured to **roam** and **chase** targets, as described in the [**First Ten Minutes** guide](bot_guide_01_first_ten_minutes.md).
+1. You have a Bot configured to **roam** and **chase** targets, as described in the [**First Steps**](bot_first_steps.md).
 2. Since this guide creates a Movement Adapter for the **Character Movement Component**, your Bot must be based on a **Character**.
 3. Ideally, you should have animation assets, such as an Animation Blendspace, that can properly showcase **walk** and **jog** states.
 
