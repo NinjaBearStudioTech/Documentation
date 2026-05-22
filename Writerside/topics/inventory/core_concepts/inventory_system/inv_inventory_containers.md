@@ -23,7 +23,7 @@ A container is implemented by the following objects:
 ## Container Data Asset
 
 Containers are defined by a **Primary Data Asset**, and as such, it must be added to the **Asset Manager** configuration
-as covered during the [Asset Manager setup](inv_asset_manager.md#container-data-assets).
+as covered during the [Asset Manager setup](asset_manager.md).
 
 The Container Data Asset itself is straightforward and contain few, but important properties.
 

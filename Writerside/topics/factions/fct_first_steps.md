@@ -27,7 +27,7 @@ Engine's Team and Attitude framework.
     <step>
         <p>Set <code>Factions.ID.Players</code> as the <b>Faction Tag</b> and <code>1</code> as the <b>Team ID</b>.</p>
         <p>Notice that <b>Team Attitude Towards My Faction</b> is <b>Friendly</b> and <b>Team Attitude Towards Other Factions</b> is <b>Neutral</b>.</p>
-        <img src="fct_faction_players.png" alt="Players Faction" border-effect="line" thumbnail="true"/>
+        <img src="fct_faction_players.png" alt="Players Faction" border-effect="line"/>
     </step> 
     <step>
         <p>Create another <b>Faction Data Asset</b> named <b>Zombies</b>, or another relevant enemy type.</p>
@@ -35,7 +35,7 @@ Engine's Team and Attitude framework.
     <step>
         <p>Set <code>Factions.ID.Enemies.Zombies</code> as the <b>Faction Tag</b> and <code>10</code> as the <b>Team ID</b>.</p>
         <p>Set <b>Team Attitude Towards My Faction</b> to <b>Neutral</b> and <b>Team Attitude Towards Other Factions</b> to <b>Hostile</b>.</p>
-        <img src="fct_faction_zombies.png" alt="Zombies Faction" border-effect="line" thumbnail="true"/>
+        <img src="fct_faction_zombies.png" alt="Zombies Faction" border-effect="line"/>
     </step>  
 </procedure>
 

@@ -4,7 +4,7 @@
 
 At this point, the Bot is perceiving the player as a **friendly target**, since no team or attitude resolution has been configured.
 
-Ninja Bot separates team resolution logic through the use of [**Team Providers**](bot_advanced_ninja_factions.md). It natively
+Ninja Bot separates team resolution logic through the use of [**Team Providers**](bot_ninja_factions.md). It natively
 supports two options: Unreal Engine’s **Team Agent Interface** and [**Ninja Factions**](fct_overview.md).
 
 Before starting, make sure you have completed the previous steps or have an equivalent setup.
@@ -14,7 +14,7 @@ Before starting, make sure you have completed the previous steps or have an equi
 
 <!-- BEGIN: TEAM INTERFACE SETUP -->
 <note>
-    <p>Your environment must be configured to work with <b>C++</b>, including enabling the <a href="bot_setup_installation.md" alt="Bot Installation"><b>C++ modules used by Ninja Bot</b></a>.</p>
+    <p>Your environment must be configured to work with <b>C++</b>, including enabling the <a href="bot_setup.md" alt="Bot Installation"><b>C++ modules used by Ninja Bot</b></a>.</p>
 </note>
 
 <procedure title="Implement the Team Agent Interface" collapsible="true" default-state="collapsed">

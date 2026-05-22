@@ -51,8 +51,8 @@ You can provide **default input setups** in two ways:
 
 > **Default Input Setups**
 > 
-> Adding default Input Setups to the Input Manager, so they are available to all possessed characters, was covered in 
-> the **[Input System Setup page](ipt_input_system.md)**.
+> Adding default Input Setups to the Input Manager, so they are available to all possessed characters, was covered during 
+> the **[First Steps](ipt_first_steps.md)**.
 
 Providing Input Setups for each pawn is especially useful for games where players possess multiple Pawns with distinct 
 input needs (e.g., vehicles, turrets, or UI-driven characters).

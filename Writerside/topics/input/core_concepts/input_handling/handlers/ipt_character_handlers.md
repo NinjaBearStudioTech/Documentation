@@ -53,7 +53,7 @@ events. Supports blocking the movement, via the presence of **Gameplay Tags**.
 
 > **Forward Reference**
 >
-> For certain setups, such as _top-down with WASD movement_, a **[](ipt_input_system.md#forward-reference)** is required, 
+> For certain setups, such as _top-down with WASD movement_, a **[](ipt_first_steps.md)** is required, 
 > so this it can correctly determine forward and right directions for the relative input.
 {style=note}
 

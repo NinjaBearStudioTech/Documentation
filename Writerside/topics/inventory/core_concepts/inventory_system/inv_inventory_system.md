@@ -20,27 +20,7 @@ It should be added to an **Actor** or **Player State**, depending on your design
 
 ## Inventory Manager Component
 The Inventory Manager Component is the main component in the system and should be added to any **actor** or **player state** 
-that needs access to an inventory.
-
-<procedure title="Add the Inventory Manager Component" collapsible="true" default-state="expanded">
-    <step>
-        <p>In your <b>Pawn</b> or <b>Player State</b>, add the <b>Inventory Manager Component</b>.</p>
-        <p>The component can be added using either Blueprint or C++:</p>
-        <tabs group="sample">
-            <tab title="Blueprint" group-key="bp">
-                <img src="inv_setup_inventory_manager.png" alt="Add the Inventory Manager Component" thumbnail="true" border-effect="line"/>
-            </tab>
-            <tab title="C++" group-key="cpp">
-                <p><b>Header</b></p>
-                <code-block lang="c++" src="inv_setup_inventory_manager_component.h"/>
-                <p><b>Implementation</b></p>
-                <code-block lang="c++" src="inv_setup_inventory_manager_component.cpp"/>
-            </tab>
-        </tabs>
-    </step>
-</procedure>
-
-The Inventory Manager provides important **properties** that can be used to adjust its behavior.
+that needs access to an inventory. The Inventory Manager provides important **properties** that can be used to adjust its behavior.
 
 | Property                                 | Description                                                                                                                                                                                       |
 |------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -103,19 +83,3 @@ likely locations.
 
 However, to avoid repeated component lookups, you can optionally have the Actor or Player State implement `InventorySystemInterface`,
 which is recommended.
-
-<procedure title="Add the Inventory System Interface" collapsible="true" default-state="expanded">
-    <step>In your <b>inventory owner</b> (Actor or Player State), add the <code>InventorySystemInterface</code>.</step>
-    <step>Implement the <code>GetInventoryManager</code> function so it returns the <b>Inventory Manager Component</b>.</step>
-    <tabs group="sample">
-        <tab title="Blueprint" group-key="bp">
-            <img src="inv_setup_inventory_interface.png" alt="Add the Inventory System Interface" width="800" thumbnail="true" border-effect="line"/>
-        </tab>
-        <tab title="C++" group-key="cpp">
-            <p><b>Header</b></p>
-            <code-block lang="c++" src="inv_setup_inventory_system_interface.h"/>
-            <p><b>Implementation</b></p>
-            <code-block lang="c++" src="inv_setup_inventory_system_interface.cpp"/>
-        </tab>
-    </tabs>
-</procedure>

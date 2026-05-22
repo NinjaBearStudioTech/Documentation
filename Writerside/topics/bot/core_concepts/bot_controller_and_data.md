@@ -75,7 +75,7 @@ The Bot Data Asset defines how an AI agent is **configured within the Ninja Bot 
 The asset is provided to the AI Controller via `BotSetupProviderInterface`, which must be implemented by any pawn that 
 participates in the Ninja Bot system. Through this interface, **the pawn supplies the Bot Data Asset that defines its behavior**.
 
-As established during [setup](bot_setup_asset_manager.md), the Bot Data Asset is a **Primary Data Asset** and must be registered 
+As established during [setup](bot_setup.md), the Bot Data Asset is a **Primary Data Asset** and must be registered 
 with the Asset Manager. Once registered:
 
 1. The AI Controller can load the asset on demand
@@ -121,7 +121,7 @@ their own adapters by extending `UNinjaBotMovementAdapter`, enabling support for
 ## Team Resolution
 
 Ninja Bot uses a **Team Provider** to resolve alignment and attitude between pawns during perception and target selection.
-This logic is handled by a Team Provider class, which can be configured in the plugin's [**global settings**](bot_setup_settings.md).
+This logic is handled by a Team Provider class, which can be configured in the plugin's [**global settings**](bot_setup.md).
 
 ### Default Team Provider
 
@@ -131,7 +131,7 @@ interface's `GetGenericTeamId` function. Attitude resolution can also be impleme
 ### Factions Team Provider
 
 Ninja Bot also provides a Team Provider compatible with [**Ninja Factions**](fct_overview.md). You can find more details
-about this integration in the [**Ninja Factions Integration**](bot_advanced_ninja_factions.md) page.
+about this integration in the [**Ninja Factions Integration**](bot_ninja_factions.md) page.
 
 ### Custom Resolution
 

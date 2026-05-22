@@ -22,7 +22,7 @@ or keys. Items can be defined by the following concepts:
 
 ## Item Data Asset
 Items are defined by a **Primary Data Asset**, and as such, must be added to the **Asset Manager** configuration as 
-described in the [Asset Manager setup](inv_asset_manager.md#item-data-assets).
+described in the [Asset Manager setup](asset_manager.md).
 
 The Item Data Asset contains essential properties that define the identity and behavior of the item.
 
