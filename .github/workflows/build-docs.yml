@@ -13,7 +13,7 @@ permissions:
 env:
   INSTANCE: 'Writerside/docsite'
   ARTIFACT: 'webHelpDOCSITE2-all.zip'
-  DOCKER_VERSION: '243.21565'
+  DOCKER_VERSION: '2026.04.8711'
   ALGOLIA_APP_NAME: '1VNI46BYQK'
   ALGOLIA_INDEX_NAME: 'nbs_tech_site_index'
   CONFIG_JSON_PRODUCT: 'docsite'
