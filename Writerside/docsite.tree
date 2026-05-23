@@ -45,57 +45,46 @@
         <toc-element topic="cbt_overview.md">
             <toc-element topic="cbt_setup.md"/>
             <toc-element topic="cbt_first_steps.md"/>
-            <toc-element toc-title="Combat System">
-                <toc-element topic="cbt_weapon_actors.md"/>
-                <toc-element topic="cbt_weapon_manager.md"/>
-                <toc-element topic="cbt_melee_attacks.md"/>
-                <toc-element topic="cbt_ranged_attacks.md"/>
-                <toc-element topic="cbt_casts.md"/>
-                <toc-element topic="cbt_combos.md">
-                    <toc-element topic="cbt_combos_input.md"/>
-                    <toc-element topic="cbt_combos_ai.md"/>
-                    <toc-element topic="cbt_combos_branching.md"/>
+            <toc-element toc-title="Concepts">
+                <toc-element topic="cbt_combat_components.md"/>
+                <toc-element topic="cbt_attributes.md"/>
+                <toc-element topic="cbt_abilities.md">
+                    <toc-element topic="cbt_abilities_attack.md"/>
+                    <toc-element topic="cbt_abilities_block.md"/>
+                    <toc-element topic="cbt_abilities_cast.md"/>
+                    <toc-element topic="cbt_abilities_damage_and_death.md"/>
+                    <toc-element topic="cbt_abilities_evade.md"/>
+                    <toc-element topic="cbt_abilities_opportunity.md"/>
+                    <toc-element topic="cbt_abilities_reload.md"/>
+                    <toc-element topic="cbt_abilities_shoot.md"/>
+                    <toc-element topic="cbt_abilities_target_lock.md"/>
                 </toc-element>
-                <toc-element topic="cbt_parry_riposte.md"/>
-                <toc-element topic="cbt_opportunity_attacks.md"/>
-                <toc-element topic="cbt_damage_and_defense.md">
-                    <toc-element topic="cbt_damage_hit_reactions.md"/>
-                    <toc-element topic="cbt_damage_death.md"/>
-                </toc-element>
-                <toc-element topic="cbt_target_lock.md"/>
-            </toc-element>
-            <toc-element toc-title="Gameplay">
-                <toc-element topic="cbt_gameplay_tags.md"/>
-                <toc-element topic="cbt_gameplay_attributes.md"/>
-                <toc-element topic="cbt_gameplay_effects.md"/>
-                <toc-element topic="cbt_gameplay_abilities.md">
-                    <toc-element topic="cbt_ability_attack.md"/>
-                    <toc-element topic="cbt_ability_block.md"/>
-                    <toc-element topic="cbt_ability_evade.md"/>
-                    <toc-element topic="cbt_ability_opportunity_attack.md"/>
-                    <toc-element topic="cbt_ability_stagger.md"/>
-                    <toc-element topic="cbt_ability_target_lock.md"/>
-                </toc-element>
-                <toc-element topic="cbt_gameplay_targeting_system.md"/>
-            </toc-element>
-            <toc-element toc-title="Advanced Topics">
-                <toc-element topic="cbt_component_extensions.md"/>
-                <toc-element topic="cbt_attack_magnitudes.md"/>
+                <toc-element topic="cbt_effects.md"/>
+                <toc-element topic="cbt_combos.md"/>
+                <toc-element topic="cbt_damage_and_mitigation.md"/>
+                <toc-element topic="cbt_parry_and_riposte.md"/>
+                <toc-element topic="cbt_knockdown.md"/>
+                <toc-element topic="cbt_weapon_management.md"/>
+                <toc-element topic="cbt_firearms.md"/>
                 <toc-element topic="cbt_motion_warping.md"/>
                 <toc-element topic="cbt_physical_animations.md"/>
-                <toc-element topic="cbt_actor_pooling.md"/>
                 <toc-element topic="cbt_user_interface.md"/>
-                <toc-element topic="cbt_movement_component.md"/>
                 <toc-element topic="cbt_artificial_intelligence.md"/>
-                <toc-element topic="cbt_character_animation.md"/>
-            </toc-element>
-            <toc-element toc-title="Integrations">
-                <toc-element topic="itg_combat_factions.md"/>
-                <toc-element topic="itg_combat_input.md"/>
-                <toc-element topic="itg_combat_inventory.md"/>
             </toc-element>
             <toc-element toc-title="Guides">
-                <toc-element topic="cbt_guide_03_cast_aoe.md"/>
+                <toc-element topic="cbt_configuring_melee_attack.md"/>
+                <toc-element topic="cbt_configuring_ranged_attack.md"/>
+                <toc-element topic="cbt_building_cast_flows.md"/>
+                <toc-element topic="cbt_orchestrating_combos.md"/>
+                <toc-element topic="cbt_damage_mitigation.md"/>
+                <toc-element topic="cbt_hit_reactions_and_death.md"/>
+                <toc-element topic="cbt_evading_and_invincibility.md"/>
+                <toc-element topic="cbt_target_locking.md"/>
+                <toc-element topic="cbt_blocking_damage.md"/>
+                <toc-element topic="cbt_parrying_and_riposte.md"/>
+                <toc-element topic="cbt_knockdown_and_recovery.md"/>
+                <toc-element topic="cbt_launching_opportunity_attacks.md"/>
+                <toc-element topic="cbt_configuring_firearms.md"/>
             </toc-element>
             <toc-element topic="cbt_troubleshooting.md"/>
             <toc-element topic="cbt_changelog.md"/>
@@ -284,5 +273,6 @@
     </toc-element>
     
     <toc-element toc-title="Integrations">
+        <toc-element topic="integration_combat_input.md"/>
     </toc-element>
 </instance-profile>

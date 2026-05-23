@@ -20,7 +20,7 @@ mind that an input setup involves the following assets:
 - **Input Handler**: Executes on events triggered by actions. Introduced by **Ninja Input**.
 - **Input Setup**: Maps all actions in an Input Mapping Context asset, to specific handlers. Introduced by **Ninja Input**.
 
-<procedure title="Configure the Input Setup" collapsible="true">
+<procedure title="Configure the Input Setup" collapsible="true" default-state="expanded">
     <step>In the <b>Content Browser</b>, navigate to your <b>Input</b> folder.</step>
     <step>
         <p>Create a new <b>Input Setup</b>.</p> 

@@ -1,0 +1,85 @@
+# Combat and Input
+<primary-label ref="integrations"/>
+<secondary-label ref="combat-sec"/>
+<secondary-label ref="input-sec"/>
+
+[**Ninja Combat**](cbt_overview.md) can benefit from GAS-related **Input Handlers** provided by [**Ninja Input**](ipt_overview.md).
+
+## Forward Reference
+
+Ninja Combat usually needs a **Forward Reference** to determine angles for directional abilities, such as the **Evade Ability**.
+In parallel, Ninja Input might need a **Forward Reference** as well, usually to orient pawns in top-down perspectives.
+
+Both systems can share the same Forward Reference. This is usually a **Scene Component**, such as an Arrow Component,
+configured with **absolute rotation**.
+
+<procedure title="Add a shared Forward Reference component" collapsible="true" default-state="expanded">
+    <step>In the <b>Character Class</b>, create a new <b>Arrow Component</b>, parented to the <b>Root Component</b>, usually the character's <b>Capsule Component</b>.</step>
+    <step>Add the <code>Combat.Component.ForwardReference</code> tag to the list of <b>Component Tags</b>.</step>
+    <step>Add the <code>Input.Component.ForwardReference</code> tag to the list of <b>Component Tags</b>.</step>
+    <step>Set the <b>Transform</b> to use <b>Absolute Rotation</b>, so the component is not affected by its parent rotation.</step>
+    <step>Implement or override the Combat System interface function, <code>GetCombatForwardReference</code>, so it returns the <b>Arrow Component</b>.</step>
+</procedure>
+
+## Gameplay Abilities
+
+Ninja Combat is built on the **Gameplay Ability System** and therefore it is very **ability-centric**. Ninja Input
+provides Input Handlers for **ability activation** and **interruption** that can be used out-of-the-box to activate
+**Combat Abilities**.
+
+## Combo Inputs
+
+The **Combo System** in Ninja Combat is designed to try to **activate a Combo Ability** while outside a **Combo Window**,
+or send a **Gameplay Event** to **advance the combo**, if a Combo Window is open. This is a generic GAS-based design,
+leveraging Gameplay Tags. Because of that, Ninja Input provides a **Combo Input Handler** that can be used out-of-the-box.
+
+## Ability Targeting
+
+The Gameplay Ability System supports **target confirmation and cancellation** by using Targeting Actors. While those
+actors are active, the Ability System Component waits for additional input so it can gather the relevant targets.
+
+Ninja Input provides Input Handlers compatible with this flow. However, by default, they only perform these targeting
+operations at the **Ability System Component** level. Since Ninja Combat keeps track of the Targeting Actor currently
+active, it makes it possible for these flows to also happen at the **Targeting Actor** level, which might be ideal in
+some cases.
+
+<procedure title="Integrate the Target Confirmation Handler" collapsible="true" default-state="expanded">
+    <tabs group="sample">
+        <tab title="Blueprint" group-key="bp">
+            <img src="integration_combat_input_confirm.png" alt="Providing the Targeting Actor" border-effect="line" thumbnail="true" width="720"/>
+        </tab>
+        <tab title="C++" group-key="c++">
+            <code-block lang="c++" src="integration_ability_confirmation_handler.h"/>
+            <p><br/></p>
+            <code-block lang="c++" src="integration_ability_confirmation_handler.cpp"/>
+        </tab>
+    </tabs>
+    <step>Create a new <b>Input Handler</b> based on <code>InputHandler_AbilityConfirm</code>.</step>
+    <step>Override the <code>GetAbilityTargetActor</code> function.</step>
+    <step>Retrieve the <b>Target Manager Component</b> from the Input Manager's Pawn.</step>
+    <step>Return the current <b>Ability Targeting Actor</b> by calling the Target Manager Component's <code>GetAbilityTargetActor</code> function.</step>
+    <step>Optionally, adjust the <b>Ability Targeting Operation</b> to only execute at the actor level.</step>
+</procedure>
+
+<procedure title="Integrate the Target Cancellation Handler" collapsible="true" default-state="expanded">
+    <step>Create a new <b>Input Handler</b> based on <code>InputHandler_AbilityCancel</code>.</step>
+    <step>Repeat the same integration steps from the <b>Target Confirmation Handler</b>.</step>
+    <step>Optionally, adjust the <b>Ability Targeting Operation</b> to only execute at the actor level.</step>
+</procedure>
+
+## Disabling Input
+
+**Ninja Input** can **block movement, camera and rotation input** based on the presence of the respective blocking tags.
+This can be used by certain Gameplay Abilities to block specific input categories. For example:
+
+1. The **Target Lock Ability** has tags to block **camera input**, since while locked on a target, the camera yaw should be locked, facing the target.
+2. The **Opportunity Attack Ability** has tags to block input for **movement** and **camera**, so the participants in the paired animation remain in their predefined positions and the cinematic camera is not affected.
+
+## Input Buffer
+
+Ninja Input provides an **[Animation-Based Input Buffer](ipt_input_buffer.md)**, which is a common requirement for certain combat systems.
+This allows players to be less precise with their inputs while still getting the desired outcome, which tends to create
+a more responsive input feel. Common examples are:
+
+1. Buffering an **attack input** pressed while the Evade Ability is still executing, so the attack starts as soon as the evade can transition.
+2. Buffering a **combo input** pressed slightly before the Combo Window opens, so the next combo step still activates when the window becomes valid.

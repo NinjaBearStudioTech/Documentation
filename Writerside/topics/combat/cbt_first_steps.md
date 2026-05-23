@@ -125,7 +125,7 @@ Ninja Combat provides its own **Attribute Set**, which should be added to each c
 
 <procedure title="Add Combat Attributes using Ninja G.A.S." collapsible="true" default-state="expanded">
     <step>Create a new <b>Data Table</b> for your Combat Attributes, using <code>AttributeMetaData</code> as the table row structure.</step>
-    <step>Download the <b><a href="cbt_gameplay_attributes.md#initialization-data">Sample Initialization Data</a></b> and use it as the table data.</step>
+    <step>Download the <b><a href="cbt_attributes.md#initialization-data">Sample Initialization Data</a></b> and use it as the table data.</step>
     <step>
         <p>Create a new <b>G.A.S. Setup Data Asset</b> and add a new <b>Default Attribute Set</b> entry.</p> 
         <p>You can do so by right-clicking an empty area in the <b>Content Browser</b>, then navigating to <b>Ninja Bear Studio</b> &rarr; <b>Ninja G.A.S.</b> &rarr; <b>G.A.S. Setup</b>.</p>
@@ -161,5 +161,5 @@ This character has the following features:
 
 From here, you can:
 
-- Create [**Combat Abilities**](cbt_gameplay_abilities.md) to be used by the character directly, including [**Combos**](cbt_combos.md). 
-- Introduce [**Weapons**](cbt_weapon_actors.md) and configure the [**Weapon Manager**](cbt_weapon_manager.md).
+- Create [**combat abilities**](cbt_abilities.md) to be used by the character directly, including [**Combos**](cbt_combos.md). 
+- Configure [**weapon management**](cbt_weapon_management.md).
