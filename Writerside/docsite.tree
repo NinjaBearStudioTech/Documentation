@@ -48,8 +48,10 @@
             <toc-element toc-title="Concepts">
                 <toc-element topic="cbt_concepts_components.md"/>
                 <toc-element topic="cbt_concepts_melee_attacks.md"/>
+                <toc-element topic="cbt_concepts_ranged_attacks.md"/>
                 <toc-element topic="cbt_concepts_cast_flows.md"/>
                 <toc-element topic="cbt_concepts_combos.md"/>
+                <toc-element topic="cbt_concepts_target_lock.md"/>
                 <toc-element topic="cbt_damage_and_mitigation.md"/>
                 <toc-element topic="cbt_parry_and_riposte.md"/>
                 <toc-element topic="cbt_knockdown.md"/>

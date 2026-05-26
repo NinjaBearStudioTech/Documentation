@@ -118,7 +118,7 @@ Any `GameplayAbility` - including melee attacks, spells, or custom logic - can b
 
 The Combo Ability can also **automatically grant and remove** any supporting abilities needed by the combo.
 
-<img src="cbt_combo_ability.png" alt="Combo Ability" thumbnail="true" border-effect="line"/>
+<img src="cbt_guide_combo_ability.png" alt="Combo Ability" thumbnail="true" border-effect="line"/>
 
 | Property                  | Description                                                                                                                                |
 |---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|

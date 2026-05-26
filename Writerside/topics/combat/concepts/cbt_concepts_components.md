@@ -46,7 +46,7 @@ your combat setup explicit.
     <step>Implement the <code>GetCombatForwardReference</code> function, so it returns the <b>Forward Reference Component</b> (e.g., the <code>Arrow Component</code>).</step>
     <tabs group="sample">
         <tab title="Blueprint" group-key="bp">
-            <img src="cbt_setup_combat_interface.png" alt="Add the Combat System Interface" width="800" thumbnail="true" border-effect="line"/>
+            <img src="cbt_components_combat_interface.png" alt="Add the Combat System Interface" width="800" thumbnail="true" border-effect="line"/>
         </tab>
         <tab title="C++" group-key="cpp">
             <p><b>Header</b></p>
@@ -115,7 +115,7 @@ when defining your own gameplay features.
         <p>In your <b>Base Character Class</b>, add the <b>Combat Manager Component</b>.</p>
         <tabs group="sample">
             <tab title="Blueprint" group-key="bp">
-                <img src="cbt_setup_combat_manager.png" alt="Add the Combat Manager Component" thumbnail="true" border-effect="line"/>
+                <img src="cbt_components_combat_manager.png" alt="Add the Combat Manager Component" thumbnail="true" border-effect="line"/>
             </tab>
             <tab title="C++" group-key="cpp">
                 <p><b>Header</b></p>
@@ -134,7 +134,7 @@ bind to other delegates. You can unbind from them using the same interface.
 
 <tabs group="sample">
     <tab title="Blueprint" group-key="bp">
-        <img src="cbt_delegate_binding_interfaces.png" alt="Binding via Interfaces" border-effect="line" width="720"/>
+        <img src="cbt_components_delegate_binding.png" alt="Binding via Interfaces" border-effect="line" width="720"/>
     </tab>
     <tab title="C++" group-key="c++">
         <code-block lang="c++" src="cbt_delegate_interface_binding.cpp"/>
@@ -174,7 +174,7 @@ You can replace the default Character Movement Component with the Combat version
 
 <tabs group="sample">
     <tab title="Blueprint" group-key="bp">
-        <img src="cbt_setup_override_movement_component.png" alt="Override default movement component" border-effect="line" width="720"/>
+        <img src="cbt_components_movement_component.png" alt="Override default movement component" border-effect="line" width="720"/>
     </tab>
     <tab title="C++" group-key="cpp">
         <code-block lang="c++" src="cbt_override_movement_component.cpp"/>
