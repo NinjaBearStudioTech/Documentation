@@ -1,3 +1,3 @@
-# Hit Reactions and Death
+# Configuring Target Locking
 <primary-label ref="combat"/>
 <secondary-label ref="guide"/>
