@@ -40,7 +40,18 @@ A **Cast Actor** is used when the ability needs to create an actor in the world,
 explosion volume, or similar world-based cast.
 
 Use `NinjaCombatCastActor` as the base class when possible. The Cast Actor is responsible for collecting targets and
-applying the Gameplay Effect configured by the ability.
+applying the Gameplay Effect configured by the ability. This class provide the following properties:
+
+| Property                   | Description                                                                                                                    |
+|----------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| `ShouldIgnoreSource`       | If set to true, ignores the source whenever a collision is detected.                                                           |
+| `ManageEffectRemoval`      | If set to true, applies and removes the effect while actors are colliding. Not applicable for instant effects.                 |
+| `ReinforceHitResults`      | If set to true, reinforces hit result on targets, using a line trace. Usually only needed for directional Hit/Death reactions. |
+| `HitResultChannel`         | Channel used to reinforce hit results.                                                                                         |
+| `TryToAlignWithFloor`      | If set to true, automatically tries to align the actor with the floor, using a line trace.                                     |
+| `FloorHeightDistanceCheck` | Distance from top to bottom to check for the floor.                                                                            |
+| `FloorTraceChannel`        | Trace Channel used to detect the floor.                                                                                        |
+| `FloorOffset`              | Offset added to the final position before placing on the floor.                                                                |
 
 If you cannot use the provided base class, any actor that implements `CombatCastInterface` can be used instead.
 
