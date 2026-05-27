@@ -56,7 +56,8 @@
                 <toc-element topic="cbt_concepts_target_lock.md"/>
                 <toc-element topic="cbt_concepts_damage_and_mitigation.md"/>
                 <toc-element topic="cbt_parry_and_riposte.md"/>
-                <toc-element topic="cbt_knockdown.md"/>
+                <toc-element topic="cbt_concepts_stagger.md"/>
+                <toc-element topic="cbt_concepts_knockdown.md"/>
                 <toc-element topic="cbt_concepts_firearms.md"/>
                 <toc-element topic="cbt_physical_animations.md"/>
                 <toc-element topic="cbt_user_interface.md"/>
