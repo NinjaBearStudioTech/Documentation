@@ -17,7 +17,7 @@ The following table contains all attributes available in the Combat System's Att
 | `PendingMitigationCost`  | Mitigation cost that must be subtracted from the owner.  | Meta Attributes   |
 | `MaxHealthTotal`         | Total health available, including base/add/percent.      | Meta Attributes   |
 | `MaxStaminaTotal`        | Total stamina available, including base/add/percent.     | Meta Attributes   |
-| `MaxMagicTotal`          | Total magic available, including base/add/percent.       | Meta Attributes   |
+| `MaxManaTotal`           | Total mana available, including base/add/percent.        | Meta Attributes   |
 | `Health`                 | Current amount of health available.                      | Health            |
 | `MaxHealth`              | Base maximum health available.                           | Health            |
 | `MaxHealthAdd`           | Health added to the maximum.                             | Health            |
@@ -29,12 +29,12 @@ The following table contains all attributes available in the Combat System's Att
 | `MaxStaminaPercent`      | Percent multiplier to stamina in {0, 1} range.           | Stamina           |
 | `StaminaCost`            | Base cost for stamina that can be used by abilities.     | Stamina           |
 | `StaminaRegenRate`       | Stamina regeneration rate.                               | Stamina           |
-| `Magic`                  | Current amount of magic available.                       | Magic             |
-| `MaxMagic`               | Base maximum amount of magic available.                  | Magic             |
-| `MaxMagicAdd`            | Magic added to the maximum.                              | Magic             |
-| `MagicCost`              | Base cost for magic that can be used by abilities.       | Magic             |
-| `MaxMagicPercent`        | Percent multiplier to magic in {0, 1} range.             | Magic             |
-| `MagicRegenRate`         | Magic regeneration rate.                                 | Magic             |
+| `Mana`                   | Current amount of mana available.                        | Mana              |
+| `MaxMana`                | Base maximum amount of mana available.                   | Mana              |
+| `MaxManaAdd`             | Mana added to the maximum.                               | Mana              |
+| `ManaCost`               | Base cost for mana that can be used by abilities.        | Mana              |
+| `MaxManaPercent`         | Percent multiplier to mana in {0, 1} range.              | Mana              |
+| `ManaRegenRate`          | Mana regeneration rate.                                  | Mana              |
 | `BaseDamage`             | Base damage applied by the character.                    | Damage            |
 | `CriticalHitChance`      | Critical Hit Chance for applied damage.                  | Damage            |
 | `CriticalHitMultiplier`  | Critical Hit Multiplier for applied damage.              | Damage            |
