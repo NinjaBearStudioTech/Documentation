@@ -46,7 +46,7 @@ The Combo Manager is responsible for:
 > Most projects only need the default Combo Manager, but the system is interface-based so advanced projects can provide
 > their own implementation based on the `CombatComboManagerInterface`.
 >
-> The default combo data asset is still a **State Tree**, so custom managers must preserve that contract, unless they are 
+> The default combo data asset is still a **State Tree**, so custom managers must preserve that contract unless they are 
 > intentionally replacing Ninja Combat's default orchestration model.
 {style="tip"}
 
@@ -146,23 +146,32 @@ The first input usually **starts** the combo, while later inputs **advance** the
 
 ## Player Input
 
-Player input can interact with combos in two modes: **Gameplay Tag** mode or **Input Action** mode.
+Player input can interact with combos in **two stages**: The first input usually **activates** the Combo Ability.
+Follow-up inputs usually **advance** the combo, but only while a combo window is open.
 
-In **Gameplay Tag** mode, the input logic sends the exact event tag expected by the Combo Tree. For example, pressing the 
-primary attack button may send `Combat.Event.Combo.Attack.Primary`.
+For each input action related to the combo, the input logic can check whether the combo window is currently open:
 
-In **Input Action** mode, the input logic sends a generic combo event, usually `Combat.Event.Combo.Attack`. The event 
-payload includes the Input Action that triggered it. The Combo Ability then maps that Input Action to the specific event 
-tag used by the Combo Tree.
+1. If the combo window is **closed**, the input activates the Combo Ability normally.
+2. If the combo window is **open**, the input sends a gameplay event to advance the Combo Tree. If the Combo Ability is set
+   to use **Input Action**, the Input Action should also be provided as one of the **Optional Objects** in the payload.
 
-This mode is useful when multiple input actions should be translated into combo-specific events inside the Combo Ability.
+<img src="cbt_combo_player_input.png" alt="Combo Input" thumbnail="true" border-effect="line"/>
+
+The event sent while the combo window is open depends on the **Event Mode** configured in the Combo Ability.
+
+| Event Mode   | Input Behavior                                                                                                                                           |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Gameplay Tag | Send the **exact Gameplay Tag** used by the Combo Tree transition, such as `Combat.Event.Combo.Attack.Primary` or `Combat.Event.Combo.Attack.Secondary`. |
+| Input Action | Send `Combat.Event.Combo.Attack` and include the **Input Action** in the event payload. The Combo Ability maps it to the correct transition tag.         |
+
+This allows each input action to either start the combo or advance it, depending on the current combo window state.
 
 > **Ninja Input Integration**
 >
-> Ninja Input includes a Combat Combo input handler that already follows this pattern. It checks whether the combo window 
-> is open, sends the correct combo event when possible, and otherwise activates the Combo Ability normally.
-> 
-> For more information, please check the [**Combat and Input Integration**](integration_combat_input.md).
+> Ninja Input provides this behavior out of the box through the **Combat Combo** input handler. When using this integration,
+> no additional input code is required.
+>
+> For more information, see [**Combat and Input Integration**](integration_combat_input.md).
 {style="tip"}
 
 ## Artificial Intelligence
@@ -185,8 +194,8 @@ AI setups, depending on where the decision is made. Advanced combo decisions can
 1. Add the same task or service to multiple AI branches, with each instance configured to send a specific event or payload. In this model, the **Behavior Tree** or **State Tree** decides which combo event should be sent.
 2. **Extend the task or service** so it can decide which combo event should be sent at runtime. In this model, the **task/service** contains the decision logic.
 
-To support runtime decisions, both classes provide functions that can be extended to choose the **Input Action** or
-**Gameplay Tag** used to advance the combo.
+To support runtime decisions, both the task and the service provide functions that can be extended to choose the **Input 
+Action** or **Gameplay Tag** used to advance the combo.
 
 | Task Function         | Description                                                                                                                |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|

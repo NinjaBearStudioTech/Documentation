@@ -11,8 +11,8 @@ For a deeper explanation of the systems and settings used by these examples, see
 
 ### Activatable Abilities
 
-A combo requires abilities that can be activated. These are usually **Attack** or **Cast** Gameplay Abilities, but you
-can activate any type of Ability required by your scenario.
+A combo requires abilities that can be activated. These are usually **Attack** or **Cast** Gameplay Abilities, but you 
+can activate any type of ability required by your scenario.
 
 ### Input Handling
 
@@ -167,8 +167,8 @@ To accomplish this, two things must be configured:
 
 ## Combo Gameplay Ability
 
-The **Combo Ability** owns the Combo Tree and grants the Gameplay Abilities that can be triggered by the combo. Once 
-configured, it acts as the orchestration ability that starts and drives the Combo Manager.
+The **Combo Ability** references the Combo Tree and grants the Gameplay Abilities that can be triggered by the combo. 
+Once configured, it acts as the orchestration ability that starts and drives the Combo Manager.
 
 <procedure title="Configure the Combo Gameplay Ability" collapsible="true" default-state="expanded">
     <img src="cbt_guide_combo_ability.png" alt="Combo Gameplay Ability" border-effect="line" thumbnail="true"/>

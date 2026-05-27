@@ -33,6 +33,25 @@ The **Combo System** in Ninja Combat is designed to try to **activate a Combo Ab
 or send a **Gameplay Event** to **advance the combo**, if a Combo Window is open. This is a generic GAS-based design,
 leveraging Gameplay Tags. Because of that, Ninja Input provides a **Combo Input Handler** that can be used out-of-the-box.
 
+<procedure title="Using Combat Combo Handlers" collapsible="true" default-state="expanded">
+    <img src="integration_combat_input_combo.png" alt="Adding Combo Handlers" border-effect="line" thumbnail="true" width="720"/>
+    <step>
+        <p>Open your <b>Input Setup</b> and add one <b>Combat Combo</b> handler for each supported <b>Input Action</b> (e.g., Primary and Secondary Actions).</p>
+    </step>
+    <step>
+        <p>Configure the <b>Activation Tags</b> so they match your <b>Gameplay Ability Tags</b>.</p>
+        <p>Configure the <b>Advancement Tags</b> so they match your <b>Combo Event Tags</b>.</p>
+    </step>
+    <step>
+        <p>If the <b>Input Buffer</b> is being used to enhance <b>Combo Windows</b>, check <b>Can Be Buffered</b>.</p>
+        <p>Optionally, designate a <b>Buffer Channel Tag</b> for combo inputs.</p>
+    </step>
+    <step>
+        <p>Configure your <b>Input Actions related to your Combo Inputs (e.g., Primary and Secondary Actions).</b></p>
+        <p>Add <b>Triggered</b> to the list of <b>Triggered Events</b>, if necessary.</p>
+    </step>
+</procedure>
+
 ## Ability Targeting
 
 The Gameplay Ability System supports **target confirmation and cancellation** by using Targeting Actors. While those
