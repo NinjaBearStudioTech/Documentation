@@ -62,13 +62,13 @@ need to permanently own every ability used by every combo.
 
 A Combo Ability usually defines:
 
-| Property                  | Purpose                                                              |
-|---------------------------|----------------------------------------------------------------------|
-| Combo Tree                | The State Tree asset that defines the combo sequence.                |
-| Ability Classes           | Supporting abilities required by the combo.                          |
-| Event Mode                | How incoming combo events are interpreted.                           |
-| Event Mappings            | Input Action to Gameplay Tag mappings, when using Input Action mode. |
-| Combo Window Effect Class | Optional Gameplay Effect applied while the combo window is open.     |
+| Property            | Purpose                                                              |
+|---------------------|----------------------------------------------------------------------|
+| Combo Tree          | The State Tree asset that defines the combo sequence.                |
+| Ability Classes     | Supporting abilities required by the combo.                          |
+| Event Mode          | How incoming combo events are interpreted.                           |
+| Event Mappings      | Input Action to Gameplay Tag mappings, when using Input Action mode. |
+| Net Sync Time Limit | Time limit in seconds for the net sync used for client predictions.  |
 
 The Combo Ability receives two kinds of input:
 

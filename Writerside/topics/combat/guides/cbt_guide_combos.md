@@ -29,7 +29,7 @@ default implementation uses the **State Tree Component**, and combos are authore
 To start using the Combo System, add a **Combo Manager Component** to your character and implement the appropriate getter
 function from the **Combat System Interface**.
 
-<procedure title="Add the Combo Manager Component" collapsible="true" default-state="expanded">
+<procedure title="Add the Combo Manager Component" collapsible="true" default-state="collapsed">
     <step>In your Character Blueprint or base class, add <code>NinjaCombatComboManagerComponent</code>.</step>
     <step>Implement <code>GetComboManagerComponent</code> from the <code>CombatSystemInterface</code>, returning your <b>Combo Manager Component</b>.</step>
 </procedure>
@@ -39,7 +39,7 @@ function from the **Combat System Interface**.
 The first step in authoring a combo is configuring the **Animation Montages** used by the combo abilities to include a
 **Combo Window Animation Notify State**, which marks the frames during which transitions to the next combo state are allowed.
 
-<procedure title="Add Combo Windows" collapsible="true" default-state="expanded">
+<procedure title="Add Combo Windows" collapsible="true" default-state="collapsed">
     <step>Open the <b>Animation Montage</b> used by your first <b>Gameplay Ability</b> in the combo (e.g. a melee attack).</step>
     <step>
         <p>Add a <b>Combo Window</b> Notify State to the Animation Montage. It should cover the range of frames during which the next combo input can be triggered.</p>
@@ -64,7 +64,7 @@ The first step in authoring a combo is configuring the **Animation Montages** us
 Combos are defined using a **State Tree** that uses the **Combat Combo Tree Schema**. The simplest type of combo is the
 linear combo, which uses one transition path where each successful combo input advances to the next attack in sequence.
 
-<procedure title="Create a Linear Combo Tree" collapsible="true" default-state="expanded">
+<procedure title="Create a Linear Combo Tree" collapsible="true" default-state="collapsed">
     <img src="cbt_guide_combo_tree_linear_combo.png" alt="Linear Combo State Tree" border-effect="line" thumbnail="true"/>
     <step>
         <p>In your <b>Content Browser</b>, create a new <b>State Tree</b> and set its <b>Schema</b> to <b>Combat Combo</b>.</p>
@@ -109,7 +109,7 @@ linear combo, which uses one transition path where each successful combo input a
 
 A branching combo allows different inputs or events to transition into different follow-up attacks from the same state.
 
-<procedure title="Create a Branching Combo Tree" collapsible="true" default-state="expanded">
+<procedure title="Create a Branching Combo Tree" collapsible="true" default-state="collapsed">
     <img src="cbt_guide_combo_tree_branching_combo.png" alt="Branching Combo State Tree" border-effect="line" thumbnail="true"/>
     <step>
         <p>Duplicate your <b>Linear Combo Tree</b>.</p>
@@ -144,7 +144,7 @@ To accomplish this, two things must be configured:
 1. The **Combo Ability** must activate automatically. This can be done by adding the `Ability.Passive` tag to the list of **Ability Tags**.
 2. The **Combo State Tree** must start in a waiting state that keeps the **Combo Window** open and listens for **Combo Events**.
 
-<procedure title="Create a Combo Tree with Multiple Starting Points" collapsible="true" default-state="expanded">
+<procedure title="Create a Combo Tree with Multiple Starting Points" collapsible="true" default-state="collapsed">
     <img src="cbt_guide_combo_tree_multiple_starting_points.png" alt="Multiple Starting Points Combo State Tree" border-effect="line" thumbnail="true"/>
     <step>
         <p>Duplicate your <b>Branching Combo Tree</b>.</p>
@@ -170,7 +170,7 @@ To accomplish this, two things must be configured:
 The **Combo Ability** references the Combo Tree and grants the Gameplay Abilities that can be triggered by the combo. 
 Once configured, it acts as the orchestration ability that starts and drives the Combo Manager.
 
-<procedure title="Configure the Combo Gameplay Ability" collapsible="true" default-state="expanded">
+<procedure title="Configure the Combo Gameplay Ability" collapsible="true" default-state="collapsed">
     <img src="cbt_guide_combo_ability.png" alt="Combo Gameplay Ability" border-effect="line" thumbnail="true"/>
     <step>
         <p>In your Combo Ability folder, create a new <b>Gameplay Ability Blueprint</b> using <code>CombatAbility_Combo</code> as the base class.</p>
