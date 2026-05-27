@@ -272,5 +272,6 @@
     
     <toc-element toc-title="Integrations">
         <toc-element topic="integration_combat_input.md"/>
+        <toc-element topic="integration_combat_inventory.md"/>
     </toc-element>
 </instance-profile>

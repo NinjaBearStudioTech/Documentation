@@ -33,7 +33,7 @@ The **Combo System** in Ninja Combat is designed to try to **activate a Combo Ab
 or send a **Gameplay Event** to **advance the combo**, if a Combo Window is open. This is a generic GAS-based design,
 leveraging Gameplay Tags. Because of that, Ninja Input provides a **Combo Input Handler** that can be used out-of-the-box.
 
-<procedure title="Using Combat Combo Handlers" collapsible="true" default-state="expanded">
+<procedure title="Configure Combat Combo Handlers" collapsible="true" default-state="expanded">
     <img src="integration_combat_input_combo.png" alt="Adding Combo Handlers" border-effect="line" thumbnail="true" width="720"/>
     <step>
         <p>Open your <b>Input Setup</b> and add one <b>Combat Combo</b> handler for each supported <b>Input Action</b> (e.g., Primary and Secondary Actions).</p>
