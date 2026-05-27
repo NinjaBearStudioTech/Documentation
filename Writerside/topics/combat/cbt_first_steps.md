@@ -161,5 +161,6 @@ This character has the following features:
 
 From here, you can:
 
-- Create [**combat abilities**](cbt_abilities.md) to be used by the character directly, including [**Combos**](cbt_combos.md). 
+- Learn more about [**combat components**](cbt_concepts_components.md) and other important parts of the system.
+- Create [**combat abilities**](cbt_abilities.md) to be used by the character directly, including [**Combos**](cbt_concepts_combos.md). 
 - Configure [**weapon management**](cbt_weapon_management.md).
