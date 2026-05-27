@@ -39,28 +39,42 @@ This class is compatible with the [**Actor Pool**](cbt_concepts_actor_pooling.md
 A **Cast Actor** is used when the ability needs to create an actor in the world, such as a meteor, lava pool, aura,
 explosion volume, or similar world-based cast.
 
-Use `NinjaCombatCastActor` as the base class when possible. The Cast Actor is responsible for collecting targets and
-applying the Gameplay Effect configured by the ability. This class provide the following properties:
+Use one of the provided `NinjaCombatCastActor` classes as the base class when possible. Cast Actors are responsible for
+**collecting targets** and **applying the Gameplay Effect** configured by the ability. They are also poolable actors, 
+compatible with the [**Actor Pool**](cbt_concepts_actor_pooling.md).
 
-| Property                   | Description                                                                                                                    |
-|----------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| `ShouldIgnoreSource`       | If set to true, ignores the source whenever a collision is detected.                                                           |
-| `ManageEffectRemoval`      | If set to true, applies and removes the effect while actors are colliding. Not applicable for instant effects.                 |
-| `ReinforceHitResults`      | If set to true, reinforces hit result on targets, using a line trace. Usually only needed for directional Hit/Death reactions. |
-| `HitResultChannel`         | Channel used to reinforce hit results.                                                                                         |
-| `TryToAlignWithFloor`      | If set to true, automatically tries to align the actor with the floor, using a line trace.                                     |
-| `FloorHeightDistanceCheck` | Distance from top to bottom to check for the floor.                                                                            |
-| `FloorTraceChannel`        | Trace Channel used to detect the floor.                                                                                        |
-| `FloorOffset`              | Offset added to the final position before placing on the floor.                                                                |
+The base class provides the following properties:
 
-If you cannot use the provided base class, any actor that implements `CombatCastInterface` can be used instead.
+| Property                   | Description                                                                                                                     |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| `ShouldIgnoreSource`       | If set to true, ignores the source whenever a collision is detected.                                                            |
+| `ManageEffectRemoval`      | If set to true, applies and removes the effect while actors are colliding. Not applicable for instant effects.                  |
+| `ReinforceHitResults`      | If set to true, reinforces hit results on targets, using a line trace. Usually only needed for directional Hit/Death reactions. |
+| `HitResultChannel`         | Channel used to reinforce hit results.                                                                                          |
+| `TryToAlignWithFloor`      | If set to true, automatically tries to align the actor with the floor, using a line trace.                                      |
+| `FloorHeightDistanceCheck` | Distance from top to bottom to check for the floor.                                                                             |
+| `FloorTraceChannel`        | Trace Channel used to detect the floor.                                                                                         |
+| `FloorOffset`              | Offset added to the final position before placing on the floor.                                                                 |
 
-Regardless of whether you are using `NinjaCombatCastActor` or your own interface implementation, implement `StartCast`
-with the activation logic that should run when the actor becomes relevant to the cast.
+The following Cast Actor classes are available:
+
+| Cast Actor                    | Description                                                                                                   |
+|-------------------------------|---------------------------------------------------------------------------------------------------------------|
+| `NinjaCombatCastActor`        | Base class without any specific collision type.                                                               |
+| `NinjaCombatCastActor_Sphere` | Cast Actor that uses a Sphere for collision. Can optionally filter targets by angle to simulate a cone shape. |
+| `NinjaCombatCastActor_Box`    | Cast Actor that uses a Box for collision.                                                                     |
+
+If you need a different collision type, use `NinjaCombatCastActor` as a starting point and assign the collision component
+from your subclass. If you cannot use the provided base classes, any actor that implements `CombatCastInterface` can be
+used instead.
+
+The provided `NinjaCombatCastActor` classes already implement `StartCast`, binding collision events and evaluating any
+available overlaps. Custom interface implementations should implement `StartCast` with the activation logic that should
+run when the actor becomes relevant to the cast.
 
 > **Begin Play**
 >
-> Since Cast Actors are compatible with the [**Actor Pool**](cbt_concepts_actor_pooling.md), they may be instantiated before 
+> Since Cast Actors are compatible with the [**Actor Pool**](cbt_concepts_actor_pooling.md), they may be instantiated before
 > they are actually needed. Avoid using `BeginPlay` for cast startup logic. Use `StartCast` instead.
 {style="note"}
 

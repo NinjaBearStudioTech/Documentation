@@ -223,7 +223,7 @@ for collecting targets, usually through collision or overlap logic, and applying
 <procedure title="Create the Cast Actor" collapsible="true" default-state="collapsed">
     <img src="cbt_guide_cast_actor_graph.png" alt="Cast Actor Graph" width="780" thumbnail="true" border-effect="line"/>
     <step>
-        <p>In your Blueprints folder, create a new <b>Cast Actor Blueprint</b> using <code>NinjaCombatCastActor</code> as the base class.</p>
+        <p>In your Blueprints folder, create a new <b>Cast Actor Blueprint</b> using <code>NinjaCombatCastActor_Sphere</code> as the base class.</p>
     </step>
     <step>
         <p>Add a <b>Niagara Component</b> and an <b>Audio Component</b> to the <b>Cast Sphere</b>. Set <b>Auto Activate</b> to <code>false</code> on both components.</p>
