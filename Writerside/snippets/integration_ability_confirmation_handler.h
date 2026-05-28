@@ -2,15 +2,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "NinjaInputHandler.h"
 #include "Input/Handlers/InputHandler_AbilityTargeting.h"
 #include "InputHandler_CombatTargetConfirm.generated.h"
 
-/**
- * Confirms cast targeting through the Targeting Actor provided by Ninja Combat.
- */
-UCLASS(Abstract)
-class TOPDOWNINPUT_API UInputHandler_CombatTargetConfirm : public UInputHandler_AbilityConfirm
+UCLASS(Abstract, DisplayName = "Combat Target Confirm")
+class UInputHandler_CombatTargetConfirm : public UInputHandler_AbilityConfirm
 {
 	
     GENERATED_BODY()

@@ -1,2 +1,2 @@
-# Target Lock Ability
+# Target Lock
 <primary-label ref="combat"/>

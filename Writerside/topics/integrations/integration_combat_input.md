@@ -73,7 +73,10 @@ some cases.
             <code-block lang="c++" src="integration_ability_confirmation_handler.cpp"/>
         </tab>
     </tabs>
-    <step>Create a new <b>Input Handler</b> based on <code>InputHandler_AbilityConfirm</code>.</step>
+    <step>
+        <p>Create a new <b>Input Handler</b> based on <code>InputHandler_AbilityConfirm</code>.</p>
+        <p>You can create Input Handlers in the Content Browser by clicking <b>Add</b>, then selecting <b>Ninja Bear Studio</b> &rarr; <b>Ninja Input</b> &rarr; <b>Input Handler</b>, and then selecting the base class.</p>
+    </step>
     <step>Override the <code>GetAbilityTargetActor</code> function.</step>
     <step>Retrieve the <b>Target Manager Component</b> from the Input Manager's Pawn.</step>
     <step>Return the current <b>Ability Targeting Actor</b> by calling the Target Manager Component's <code>GetAbilityTargetActor</code> function.</step>
@@ -84,6 +87,46 @@ some cases.
     <step>Create a new <b>Input Handler</b> based on <code>InputHandler_AbilityCancel</code>.</step>
     <step>Repeat the same integration steps from the <b>Target Confirmation Handler</b>.</step>
     <step>Optionally, adjust the <b>Ability Targeting Operation</b> to only execute at the actor level.</step>
+</procedure>
+
+## Fire Intent
+
+The [**Firearms Module**](cbt_concept_firearms.md) handles **Fire Intent** using functions from the Firearm Component.
+These functions are responsible for requesting activation or deactivation of the Shoot Ability.
+
+Once this handler is created, you can reuse it across different projects by adding it to the **Input Setup** and mapping
+it to the appropriate **Input Action**. This handler expects an Input Action with both **Pressed** and **Released**
+triggers.
+
+<procedure title="Create the Fire Intent Handler" collapsible="true" default-state="expanded">
+    <tabs group="sample">
+        <tab title="Blueprint" group-key="bp">
+            <img src="integration_combat_input_fire_intent.png" alt="Managing Fire Intent" border-effect="line" thumbnail="true" width="720"/>
+        </tab>
+        <tab title="C++" group-key="c++">
+            <code-block lang="c++" src="integration_fire_intent_handler.h"/>
+            <p><br/></p>
+            <code-block lang="c++" src="integration_fire_intent_handler.cpp"/>
+        </tab>
+    </tabs>
+    <step>
+        <p>Create a new <b>Input Handler</b> based on <code>NinjaInputHandler</code>.</p>
+        <p>You can create Input Handlers in the Content Browser by clicking <b>Add</b>, then selecting <b>Ninja Bear Studio</b> &rarr; <b>Ninja Input</b> &rarr; <b>Input Handler</b>, and then selecting the base class.</p>
+    </step>
+    <step>
+        <p>Create a <b>Gameplay Tag Query</b> property, which will be used to retrieve the <b>active firearm</b>.</p>
+    </step>
+    <step>
+        <p>Override <code>HandleTriggeredEvent</code> so it retrieves the <b>Firearm Component</b> by query.</p>
+        <p>Then, based on the <b>input value</b>, invoke <code>TryOpenFire</code> or <code>TryCeaseFire</code>, respectively.</p>
+        <tip>
+            <p><b>Boolean Value Conversion</b></p>
+            <p>The conversion function is an auto-cast function, meaning <b>you won't be able to find it in the context menu</b>.</p>
+            <p>Instead, you must <b>drag</b> the Value parameter pin to the Branch's Condition parameter, to automatically create the conversion.</p>
+        </tip>
+    </step>
+    <step>Add <code>Triggered</code> to the list of <b>Trigger Events</b>.</step>
+    <step>Optionally, set <b>Manage Fire Intent</b> as the <b>Display Name</b>.</step>
 </procedure>
 
 ## Disabling Input
