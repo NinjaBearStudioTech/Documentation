@@ -48,19 +48,32 @@ The execution captures the following attributes:
 | `CriticalHitMultiplier` | Source attribute used to multiply damage when a critical hit succeeds.                                                                                                                       |
 | `PendingDamage`         | Target attribute that receives the calculated incoming damage. Changes to this attribute trigger the defense pipeline. Successful damage being applied triggers the damage outcome pipeline. |
 
-The **base damage** can come from the captured `BaseDamage` attribute or from the `Combat.Data.Damage` Set By Caller magnitude.
-This allows abilities to either rely on combat attributes or provide explicit damage values when applying the Gameplay
-Effect.
+The Damage Execution calculates damage using **base damage** and optional **critical hit** values. Each value is captured
+from a combat attribute, but can be overridden by a **Set By Caller Magnitude** using the related data tag.
 
-After the base damage is calculated, the execution determines the **critical damage** (if applicable). If a critical hit
-succeeds, the execution adds the critical damage tag to the Gameplay Effect Spec, allowing later systems to detect the
-hit as critical.
+| Value                   | Attribute               | Set By Caller Tag                   |
+|-------------------------|-------------------------|-------------------------------------|
+| **Base Damage**         | `BaseDamage`            | `Combat.Data.Damage`                |
+| **Critical Hit Chance** | `CriticalHitChance`     | `Combat.Data.CriticalHitChance`     |
+| **Critical Multiplier** | `CriticalHitMultiplier` | `Combat.Data.CriticalHitMultiplier` |
+
+If a critical hit succeeds, the execution adds the critical damage tag, `Combat.Effect.Damage.Critical`, to the Gameplay
+Effect Spec, allowing later systems to detect the hit as critical.
 
 > **Damage Execution Scope**
 >
 > The Damage Execution calculates incoming damage, but it does not decide how the target defends against that damage.
 > Target-side defenses are handled by the **Defense Pipeline**.
 {style="tip"}
+
+You can add the damage execution, `CombatExecution_Damage`, to any Gameplay Effect, or use a preset provided by Ninja 
+Combat.
+
+| Gameplay Effect          | Description                                                        |
+|--------------------------|--------------------------------------------------------------------|
+| `CombatEffect_Damage`    | Base damage class, not related to any specific type of damage.     |
+| `CombatEffect_MeleeHit`  | Damage class that is identified as **damage from melee attacks**.  |
+| `CombatEffect_RangedHit` | Damage class that is identified as **damage from ranged attacks**. |
 
 ## Defense Data
 
@@ -194,17 +207,18 @@ contain authoritative gameplay logic, because they may not run on dedicated serv
 
 Damage Cosmetics can inspect the cue parameters to identify common damage states:
 
-| Helper                  | Description                                                 |
-|-------------------------|-------------------------------------------------------------|
-| `IsMeleeDamage`         | Returns true if the damage was tagged as melee damage.      |
-| `IsRangedDamage`        | Returns true if the damage was tagged as ranged damage.     |
-| `IsRecurringDamage`     | Returns true if the damage was recurring damage.            |
-| `IsBlockedHit`          | Returns true if the hit was blocked.                        |
-| `IsBreakerHit`          | Returns true if the hit was a guard breaker.                |
-| `IsStaggerHit`          | Returns true if the hit caused stagger.                     |
-| `IsCriticalHit`         | Returns true if the hit was critical.                       |
-| `IsFatalHit`            | Returns true if the hit was fatal.                          |
-| `IsDead`                | Returns true if the cue represents death.                   |
+| Helper              | Description                                                                           |
+|---------------------|---------------------------------------------------------------------------------------|
+| `DamageApplied`     | Provides the damage that has been applied. Usually the same as the **cue magnitude**. |
+| `IsMeleeDamage`     | Returns true if the damage was tagged as melee damage.                                |
+| `IsRangedDamage`    | Returns true if the damage was tagged as ranged damage.                               |
+| `IsRecurringDamage` | Returns true if the damage was recurring damage.                                      |
+| `IsBlockedHit`      | Returns true if the hit was blocked.                                                  |
+| `IsBreakerHit`      | Returns true if the hit was a guard breaker.                                          |
+| `IsStaggerHit`      | Returns true if the hit caused stagger.                                               |
+| `IsCriticalHit`     | Returns true if the hit was critical.                                                 |
+| `IsFatalHit`        | Returns true if the hit was fatal.                                                    |
+| `IsDead`            | Returns true if the cue represents death.                                             |
 
 Cosmetics can also check whether the source or target is **authoritative** or **locally controlled**. This is useful for
 choosing which feedback should play for the attacker, the victim, local players, remote clients, or simulated proxies.
@@ -231,8 +245,8 @@ The Damage and Mitigation pipeline is designed to be extended through data asset
 |---------------------------|-------------------------------------------------------------------------------|
 | Custom Damage Execution   | Override the execution logic used by the damage Gameplay Effect.              |
 | Custom Defense Data Asset | Configure a different mitigation order for specific combatants.               |
-| Custom Damage Mitigation  | Add new target-side defenses to the mitigation pipeline.                      |
 | Custom Damage Data Asset  | Configure different outcomes and cosmetics for specific combatants.           |
+| Custom Damage Mitigation  | Add new target-side defenses to the mitigation pipeline.                      |
 | Custom Damage Outcome     | Add new gameplay consequences after damage is resolved.                       |
 | Custom Damage Cosmetic    | Add new feedback handlers for damage and death cues.                          |
 | Damage Modifier Interface | Allow project-level or actor-level logic to modify damage at specific points. |
