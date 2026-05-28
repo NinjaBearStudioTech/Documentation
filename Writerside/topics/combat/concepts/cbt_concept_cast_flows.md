@@ -25,11 +25,11 @@ You can use any Targeting Actor provided by the Gameplay Ability System. Ninja C
 `NinjaCombatAbilityTargetingActor`, a generic base class that can collect targets using a Targeting Preset or broadcast 
 its own location when the actor is only being used for placement.
 
-This class is compatible with the [**Actor Pool**](cbt_concepts_actor_pooling.md).
+This class is compatible with the [**Actor Pool**](cbt_concept_actor_pooling.md).
 
 > **Begin Play**
 >
-> Since the provided Ability Targeting Actor is compatible with the [**Actor Pool**](cbt_concepts_actor_pooling.md), it may be 
+> Since the provided Ability Targeting Actor is compatible with the [**Actor Pool**](cbt_concept_actor_pooling.md), it may be 
 > instantiated before they are actually needed. Avoid using `BeginPlay` for startup logic. Use `HandleTargetActorActivated` 
 > instead.
 {style="note"}
@@ -41,7 +41,7 @@ explosion volume, or similar world-based cast.
 
 Use one of the provided `NinjaCombatCastActor` classes as the base class when possible. Cast Actors are responsible for
 **collecting targets** and **applying the Gameplay Effect** configured by the ability. They are also poolable actors, 
-compatible with the [**Actor Pool**](cbt_concepts_actor_pooling.md).
+compatible with the [**Actor Pool**](cbt_concept_actor_pooling.md).
 
 The base class provides the following properties:
 
@@ -74,7 +74,7 @@ run when the actor becomes relevant to the cast.
 
 > **Begin Play**
 >
-> Since Cast Actors are compatible with the [**Actor Pool**](cbt_concepts_actor_pooling.md), they may be instantiated before
+> Since Cast Actors are compatible with the [**Actor Pool**](cbt_concept_actor_pooling.md), they may be instantiated before
 > they are actually needed. Avoid using `BeginPlay` for cast startup logic. Use `StartCast` instead.
 {style="note"}
 
@@ -214,7 +214,7 @@ Cast Requests are usually created by the **Trigger Cast** Animation Notify and s
 Gameplay Event. The ability reads the request from the event payload and uses it to continue the Cast Flow.
 
 A Cast Request can also contain logic used to spawn or retrieve a Cast Actor, including support for the 
-[**Actor Pool**](cbt_concepts_actor_pooling.md).
+[**Actor Pool**](cbt_concept_actor_pooling.md).
 
 > **Modifying the Cast Actor**
 >

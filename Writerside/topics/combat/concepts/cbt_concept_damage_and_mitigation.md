@@ -34,7 +34,7 @@ determines **how much of that damage should actually apply**. Outcomes and Cosme
 The default damage execution is `CombatExecution_Damage`, which can be added to **Gameplay Effects** applying damage.
 This execution is added by default to base Combat Effects that represent damage from attacks and other abilities.
 
-This execution calculates incoming damage using damage attributes present in the [**Combat Attribute Set**](cbt_attributes.md),
+This execution calculates incoming damage using damage attributes present in the [**Combat Attribute Set**](cbt_reference_attributes.md),
 **Set By Caller magnitudes**, **transient aggregators**, and **source and target tags**.
 
 The execution captures the following attributes:
@@ -180,8 +180,8 @@ outcomes are available.
 
 | Outcome        | Description                                                                 |
 |----------------|-----------------------------------------------------------------------------|
-| `Stagger`      | Handles [**stagger**](cbt_concepts_stagger.md).                             |
-| `Knockdown`    | Handles [**knockdown and recovery**](cbt_concepts_knockdown.md).            |
+| `Stagger`      | Handles [**stagger**](cbt_concept_stagger.md).                              |
+| `Knockdown`    | Handles [**knockdown and recovery**](cbt_concept_knockdown.md).             |
 | `Last Stand`   | Replenishes health on **fatal damage**. Based on **Last Stand** attributes. |
 | `Death`        | Handles death-related state and cleanup.                                    |
 | `Damage Sense` | Integrates damage with the perception system.                               |

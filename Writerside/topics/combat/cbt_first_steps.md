@@ -125,7 +125,7 @@ Ninja Combat provides its own **Attribute Set**, which should be added to each c
 
 <procedure title="Add Combat Attributes using Ninja G.A.S." collapsible="true" default-state="expanded">
     <step>Create a new <b>Data Table</b> for your Combat Attributes, using <code>AttributeMetaData</code> as the table row structure.</step>
-    <step>Download the <b><a href="cbt_attributes.md#initialization-data">Sample Initialization Data</a></b> and use it as the table data.</step>
+    <step>Download the <b><a href="cbt_reference_attributes.md#initialization-data">Sample Initialization Data</a></b> and use it as the table data.</step>
     <step>
         <p>Create a new <b>G.A.S. Setup Data Asset</b> and add a new <b>Default Attribute Set</b> entry.</p> 
         <p>You can do so by right-clicking an empty area in the <b>Content Browser</b>, then navigating to <b>Ninja Bear Studio</b> &rarr; <b>Ninja G.A.S.</b> &rarr; <b>G.A.S. Setup</b>.</p>
@@ -161,6 +161,7 @@ This character has the following features:
 
 From here, you can:
 
-- Learn more about [**combat components**](cbt_concepts_components.md) and other important parts of the system.
-- Create [**combat abilities**](cbt_abilities.md) to be used by the character directly, including [**Combos**](cbt_concepts_combos.md). 
-- Configure [**weapon management**](cbt_weapon_management.md).
+- Learn more about [**combat components**](cbt_concept_components.md) and other important parts of the system.
+- Create [**melee**](cbt_concept_melee_attacks.md) or [**ranged**](cbt_concept_ranged_attacks.md) to be used by the character. 
+- Create [**firearms**](cbt_concept_firearms.md) that can be used by the character.
+- Configure [**weapon management**](cbt_concept_weapon_management.md).
