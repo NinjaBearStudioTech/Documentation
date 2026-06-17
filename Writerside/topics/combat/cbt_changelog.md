@@ -1,6 +1,31 @@
 # Changelog
 <primary-label ref="combat"/>
 
+## 7.0.0
+> **Important Changes in this version**
+>
+> 1. Magic attributes and effects were renamed to Mana.
+> 2. Projectiles were fully rewritten to use Projectile Components.
+```
+<secondary-label ref="wip"/>
+```
+[major] Projectiles have their behavior created via aggregation, with Projectile Components.
+[major] Melee Scan exchanges internal data, between Object and Ability Task, via Instanced Structs.
+[major] Renamed Magic attribute (and related effects) to Mana.
+[added] Base Ability Targeting Actor, compatible with the Actor Pool.
+[added] Dedicated Launch Projectile ability.
+[improvement] Introduced extension point for when a Cast is effectively started in the Ability.
+[improvement] Organized method visibility in Melee/Parry scans.
+[fix] Corrected check for "InParryAttackerWindow" in the Combat Manager.
+[fix] Considering socket rotation to debug draw functions in the Melee Scan.
+[fix] Added missing EditCondition to the Cast Ability.
+[fix] Corrected optimal distance logic for Melee Motion Warping.
+[fix] Corrected interface name: ICombatMitigationAttributeSetInterface.
+[fix] Added missing export macro to the Melee Scan Anim Notify State.
+[fix] Added support to Gameplay Cue Parameters not based on Hit Results.
+[deprecation] Generic Attacks will be removed in a future version, in favor of specialized Melee, Ranged and Opportunity attacks.
+```
+
 ## 6.6.20 - 30/04/2026
 ```
 [improvement] Additional logs to track reflection bridge between Combat and Inventory.

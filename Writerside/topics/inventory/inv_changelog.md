@@ -1,6 +1,12 @@
 # Changelog
 <primary-label ref="inventory"/>
 
+## 3.1.8 
+```
+[fix] Crash from Async Drop Fragment, due to incorrect context being captured in lambda. 
+[fix] Widget names in Spatial Container Widget were leading do duplicate widgets and incorrect behavior. 
+```
+
 ## 3.1.6 - 18/05/2026
 ```
 [improvement] Better handling deferred initialization of containers.

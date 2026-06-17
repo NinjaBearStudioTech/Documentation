@@ -160,6 +160,17 @@ mitigation is skipped**. This allows specific damage types or ability effects to
 For example, a piercing attack could include a tag that prevents armor mitigation, while still allowing other stages in
 the pipeline to run.
 
+### Mitigation Attributes
+
+Mitigation classes may need to access certain **Gameplay Attributes** to evaluate mitigation outcomes. These are available 
+in the `AttributeSnapshot` property, from the `FDamageCalculationInput` struct, provided as parameter to each mitigation class.
+
+When the **Ninja Combat Attribute Set** prepares the Damage Calculation Input, it searches for all **Attribute Sets**
+associated with the Ability System Component, looking for instances implementing `CombatMitigationAttributeSetInterface`.
+
+These Attribute Sets provide their mitigation attributes via `GetAttributesRelevantForDamageMitigation`. Attributes
+returned by this function will be available in the mitigation struct.
+
 ## Damage Data
 
 The **Damage Data Asset** configures what happens after damage has been resolved.
@@ -178,13 +189,13 @@ It contains:
 A **Damage Outcome** represents an authoritative or replicated gameplay consequence of resolved damage. The following
 outcomes are available.
 
-| Outcome        | Description                                                                 |
-|----------------|-----------------------------------------------------------------------------|
-| `Stagger`      | Handles [**stagger**](cbt_concept_stagger.md).                              |
-| `Knockdown`    | Handles [**knockdown and recovery**](cbt_concept_knockdown.md).             |
-| `Last Stand`   | Replenishes health on **fatal damage**. Based on **Last Stand** attributes. |
-| `Death`        | Handles death-related state and cleanup.                                    |
-| `Damage Sense` | Integrates damage with the perception system.                               |
+| Outcome        | Description                                                                                    |
+|----------------|------------------------------------------------------------------------------------------------|
+| `Stagger`      | Handles [**stagger**](cbt_concept_vulnerable_states.md#stagger).                               |
+| `Knockdown`    | Handles [**knockdown and recovery**](cbt_concept_vulnerable_states.md#knockdown-and-recovery). |
+| `Last Stand`   | Replenishes health on **fatal damage**. Based on **Last Stand** attributes.                    |
+| `Death`        | Handles death-related state and cleanup.                                                       |
+| `Damage Sense` | Integrates damage with the perception system.                                                  |
 
 Each outcome has an **Outcome Tag**. When the outcome handles damage successfully, that tag is added to the outcome context.
 This allows the damage result to record which outcomes were executed.

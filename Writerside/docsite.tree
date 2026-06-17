@@ -53,7 +53,7 @@
                 <toc-element topic="cbt_concept_ranged_attacks.md"/>
                 <toc-element topic="cbt_concept_cast_flows.md"/>
                 <toc-element topic="cbt_concept_combos.md"/>
-                <toc-element topic="cbt_concept_target_lock.md"/>
+                <toc-element topic="cbt_concept_target_locking.md"/>
                 <toc-element topic="cbt_concept_damage_and_mitigation.md"/>
                 <toc-element topic="cbt_concept_vulnerable_states.md"/>
                 <toc-element topic="cbt_concept_firearms.md"/>
@@ -270,6 +270,7 @@
     </toc-element>
     
     <toc-element toc-title="Integrations">
+        <toc-element topic="integration_combat_bot.md"/>
         <toc-element topic="integration_combat_input.md"/>
         <toc-element topic="integration_combat_inventory.md"/>
     </toc-element>
