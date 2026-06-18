@@ -4,8 +4,9 @@
 Ranged Combat in Ninja Combat is built around **three main pieces**:
 
 1. A **Projectile Request** that describes which projectile should be spawned and how it should be initialized.
-2. A **Projectile Actor** that owns the projectile lifecycle and broadcasts projectile events.
-3. A **Launch Projectile Ability** that receives or creates requests, spawns projectiles, and starts their launch.
+2. A **Projectile Actor** that owns the core lifecycle, collision, movement, and projectile interface.
+3. A **Projectile Behavior Component** that owns the projectile's ordered behavior stack.
+4. A **Launch Projectile Ability** that receives or creates requests, spawns projectiles, and starts their launch.
 
 Most ranged attacks are driven by **Animation Montages**. During the montage, a **Launch Projectile Animation Notify**
 can create a Projectile Request and send it to the active Launch Projectile Ability. The ability then spawns the projectile,
@@ -22,7 +23,7 @@ prepares it, and launches it through the projectile interface.
 ## Projectile Requests
 
 A **Projectile Request** is the transfer object used to spawn a projectile. It contains the projectile class, spawn data,
-instigator information, launch source, and any project-specific data needed by the projectile or its components.
+instigator information, launch source, and any project-specific data needed by the projectile or its behaviors.
 
 Projectile Requests can be created in different ways:
 
@@ -46,25 +47,28 @@ a fallback request.
 
 ## Projectile Actors
 
-A **Projectile Actor** owns the projectile lifecycle. It implements the Projectile Interface and exposes a small API used
-by abilities, components, and pooling systems.
+A **Projectile Actor** owns the core projectile lifecycle. It implements the Projectile Interface and exposes a small API used
+by abilities, behaviors, and pooling systems.
+
+The actor owns the physical projectile pieces, such as collision and projectile movement. Specialized gameplay logic is
+handled by instanced **Projectile Behaviors** owned by the actor's **Projectile Behavior Component**.
 
 The standard lifecycle is:
 
-| Event           | Description                                                                  |
-|-----------------|------------------------------------------------------------------------------|
-| **Activated**   | The projectile has entered an active lifecycle.                              |
-| **Setup**       | The projectile is preparing launch data, ignored actors, and component data. |
-| **Launch**      | The projectile has started movement.                                         |
-| **Hit**         | The projectile reported a raw contact with another object.                   |
-| **Bounce**      | The projectile bounced and reported bounce data.                             |
-| **Impact**      | The projectile confirmed a gameplay impact, usually after applying effects.  |
-| **Exhausted**   | The projectile stopped acting as an active gameplay projectile.              |
-| **Deactivated** | The projectile is being cleaned up before pool reuse.                        |
+| Event           | Description                                                                 |
+|-----------------|-----------------------------------------------------------------------------|
+| **Activated**   | The projectile has entered an active lifecycle.                             |
+| **Setup**       | The projectile is preparing launch data, ignored actors, and behavior data. |
+| **Launch**      | The projectile has started movement.                                        |
+| **Hit**         | The projectile reported a raw contact with another object.                  |
+| **Bounce**      | The projectile bounced and reported bounce data.                            |
+| **Impact**      | The projectile confirmed a gameplay impact, usually after applying effects. |
+| **Exhausted**   | The projectile stopped acting as an active gameplay projectile.             |
+| **Deactivated** | The projectile is being cleaned up before pool reuse.                       |
 
-The projectile actor broadcasts these events to its projectile components. This allows the actor to stay focused on
-lifecycle, while components decide what each event means for launch behavior, hit processing, bouncing, exhaustion,
-blasts, or cosmetics.
+The projectile actor broadcasts these events through its Projectile Behavior Component. This allows the actor to stay
+focused on lifecycle and shared runtime context, while behaviors decide what each event means for launch logic, hit
+processing, scanning, bouncing, exhaustion, blasts, cosmetics, or project-specific behavior.
 
 > **Hit vs. Impact**
 >
@@ -77,7 +81,7 @@ blasts, or cosmetics.
 
 ### Projectile Interface
 
-The **Projectile Interface**, `CombatProjectileInterface`, exposes the public API used by abilities and components. Common
+The **Projectile Interface**, `CombatProjectileInterface`, exposes the public API used by abilities and behaviors. Common
 functions include:
 
 | Function                | Description                                                                             |
@@ -97,25 +101,42 @@ functions include:
 | `GetActorsHit`          | Provides actors that have received confirmed impacts from this projectile.              |
 
 The interface is intentionally high-level. More specific behavior, such as bounce response, scan rules, blast targeting,
-or cosmetics, is handled by projectile components.
+or cosmetics, is handled by projectile behaviors.
 
-## Projectile Components
+## Projectile Behaviors
 
-Projectile behavior is built through components. A projectile can use only the components it needs, which allows simple
-arrows, homing missiles, bouncing projectiles, grenades, and blast projectiles to share the same core lifecycle.
+Projectile gameplay is built through instanced **Projectile Behaviors**. A projectile can use only the behaviors it needs,
+which allows simple arrows, homing missiles, bouncing projectiles, grenades, and blast projectiles to share the same core
+lifecycle.
 
-### Launch Components
+Projectile Behaviors are owned by the **Projectile Behavior Component**. The component receives projectile lifecycle
+events from the actor and forwards them to each behavior in order. Behaviors can also opt into ticking, subobject
+replication, or RPC support when needed.
 
-A **Launch Component** reacts to the projectile launch event and applies the projectile's initial velocity.
+The default projectile actor creates a Projectile Behavior Component with the standard behavior stack:
 
-The default launch component launches the projectile forward using the projectile's initial speed. Specialized launch
-components can calculate a target location before launch and rotate the projectile toward that location.
+| Behavior          | Purpose                                                        |
+|-------------------|----------------------------------------------------------------|
+| **Launch**        | Applies the initial projectile velocity.                       |
+| **Hit Processor** | Converts accepted raw hits into confirmed gameplay impacts.    |
+| **Scan**          | Scans the projectile path between frames and reports raw hits. |
+| **Exhaustion**    | Decides when the projectile stops acting as active gameplay.   |
+| **Cosmetics**     | Routes projectile lifecycle events to Gameplay Cues.           |
+
+Additional behaviors can be added by projectile subclasses or Blueprint defaults.
+
+### Launch Behaviors
+
+A **Launch Behavior** reacts to the projectile launch event and applies the projectile's initial velocity.
+
+The default launch behavior launches the projectile forward using the projectile's initial speed. Specialized launch
+behaviors can calculate a target location before launch and rotate the projectile toward that location.
 
 Common launch variants include:
 
-| Component            | Description                                                            |
+| Behavior             | Description                                                            |
 |----------------------|------------------------------------------------------------------------|
-| **Launch Component** | Launches the projectile forward.                                       |
+| **Launch Behavior**  | Launches the projectile forward.                                       |
 | **Launch Location**  | Launches the projectile toward a stored or calculated world location.  |
 | **Launch Camera**    | Launches the projectile toward the owning player's camera center.      |
 | **Launch Targeting** | Uses the Targeting System to select a launch location or target actor. |
@@ -129,18 +150,18 @@ A targeting launch can also enable projectile movement homing when a target acto
 > Animation Notifies.
 > {style="tip"}
 
-### Scan Component
+### Scan Behavior
 
-A **Projectile Scan Component** scans the projectile path between frames and reports raw hits to the projectile.
+A **Projectile Scan Behavior** scans the projectile path between frames and reports raw hits to the projectile.
 
-This is useful for fast-moving projectiles where relying only on movement collision can miss targets. The scan component
+This is useful for fast-moving projectiles where relying only on movement collision can miss targets. The scan behavior
 does not apply damage by itself. It only detects hits and reports them through `RegisterProjectileHit`.
 
-The projectile's hit processor, exhaustion policy, cosmetics, and blast components can then respond to the reported hit.
+The projectile's hit processor, exhaustion policy, cosmetics, and blast behaviors can then respond to the reported hit.
 
-### Hit Processor Component
+### Hit Processor Behavior
 
-A **Hit Processor Component** listens for raw projectile hits and decides whether they should become confirmed impacts.
+A **Hit Processor Behavior** listens for raw projectile hits and decides whether they should become confirmed impacts.
 
 The default hit processor can:
 
@@ -165,11 +186,11 @@ Common hit policies include:
 > `GetActorsHit` represents actors affected by the projectile, not every object touched by raw collision.
 > {style="note"}
 
-### Bounce Component
+### Bounce Behavior
 
-A **Bounce Component** listens for projectile bounce events and can override the projectile's next travel direction.
+A **Bounce Behavior** listens for projectile bounce events and can override the projectile's next travel direction.
 
-The default Projectile Movement Component can handle natural bouncing by itself. The Bounce Component is useful when a
+The default Projectile Movement Component can handle natural bouncing by itself. The Bounce Behavior is useful when a
 projectile needs extra behavior after a bounce, such as reflecting manually, selecting a new target, or enabling homing.
 
 Common bounce response modes include:
@@ -181,12 +202,12 @@ Common bounce response modes include:
 | **Target Next Actor**            | Redirects the projectile toward a selected target.                      |
 | **Target Next Actor and Homing** | Redirects the projectile and enables homing toward the selected target. |
 
-The Bounce Component does not own exhaustion policy. If a projectile should expire after a certain bounce condition, that
-should be handled by the exhaustion component or by a custom component.
+The Bounce Behavior does not own exhaustion policy. If a projectile should expire after a certain bounce condition, that
+should be handled by the exhaustion behavior or by a custom behavior.
 
-### Exhaustion Component
+### Exhaustion Behavior
 
-An **Exhaustion Component** decides when a projectile should stop being active.
+An **Exhaustion Behavior** decides when a projectile should stop being active.
 
 Exhaustion is different from deactivation. Exhaustion means the projectile stops acting as a gameplay projectile: movement
 can stop, collision can be disabled, and exhaustion events can trigger final effects. Deactivation is used for pool cleanup
@@ -208,25 +229,25 @@ Common exhaustion triggers include:
 > final exhaustion events still run before the projectile is cleaned up for reuse.
 > {style="note"}
 
-### Blast Components
+### Blast Behaviors
 
-A **Blast Component** applies area or multi-target effects when the projectile reaches a configured trigger.
+A **Blast Behavior** applies area or multi-target effects when the projectile reaches a configured trigger.
 
-Blast triggers can include raw hits, confirmed impacts, exhaustion, or a timer. The base blast component owns the shared
+Blast triggers can include raw hits, confirmed impacts, exhaustion, or a timer. The base blast behavior owns the shared
 pipeline, while subclasses decide how targets are collected.
 
 The blast pipeline usually works like this:
 
 1. The projectile emits the configured trigger event.
-2. The blast component collects target data.
-3. The blast component creates an outgoing Gameplay Effect spec.
+2. The blast behavior collects target data.
+3. The blast behavior creates an outgoing Gameplay Effect spec.
 4. The blast effect is applied to collected targets.
 5. A blast Gameplay Cue is executed.
 6. Confirmed blast impacts are optionally registered back to the projectile.
 
 Common blast variants include:
 
-| Component           | Description                                                               |
+| Behavior            | Description                                                               |
 |---------------------|---------------------------------------------------------------------------|
 | **Blast Sphere**    | Collects targets using a radial sphere scan or overlap plus confirmation. |
 | **Blast Targeting** | Uses the Targeting System to collect blast targets with richer rules.     |
@@ -256,12 +277,12 @@ The ability can also control when cost and cooldown are committed:
 | **Ability Ends**        | Cost and cooldown are committed when the ability ends successfully. |
 
 When the projectile is ready, the ability calls the projectile API to prepare and launch it. This keeps the ability focused
-on orchestration, while the projectile and its components own the actual projectile behavior.
+on orchestration, while the projectile and its behaviors own the actual projectile behavior.
 
 > **Projectile effects**
 >
-> Projectile impact effects are handled by projectile components, not by the Attack Ability. The ability creates or receives
-> a Projectile Request, spawns the projectile, and launches it. The projectile's hit processor and blast components decide
+> Projectile impact effects are handled by projectile behaviors, not by the Attack Ability. The ability creates or receives
+> a Projectile Request, spawns the projectile, and launches it. The projectile's hit processor and blast behaviors decide
 > how Gameplay Effects are applied.
 > {style="tip"}
 
@@ -269,8 +290,8 @@ on orchestration, while the projectile and its components own the actual project
 
 The **Launch Projectile Animation Notify** is the most common way to launch projectiles from attack animations.
 
-The Animation Notify creates a Projectile Request and sends it through a Gameplay Event to the active Launch Projectile Ability. 
-This allows the animation to define the exact frame where the projectile should be spawned or launched, while still letting 
+The Animation Notify creates a Projectile Request and sends it through a Gameplay Event to the active Launch Projectile Ability.
+This allows the animation to define the exact frame where the projectile should be spawned or launched, while still letting
 the ability manage the overall attack lifecycle.
 
 Animation-driven projectile launches are useful for:
@@ -285,11 +306,11 @@ Animation-driven projectile launches are useful for:
 
 Ranged cosmetics are handled through **Gameplay Cues** and projectile events.
 
-A projectile can map lifecycle events such as `Launch`, `Hit`, `Impact`, `Bounce`, `Exhausted`, and `Deactivated` to one or
+A projectile behavior can map lifecycle events such as `Launch`, `Hit`, `Impact`, `Bounce`, `Exhausted`, and `Deactivated` to one or
 more Gameplay Cues. This allows projectiles to trigger trails, muzzle flashes, impacts, bounces, explosions, final bursts,
 or cleanup effects without hardcoding Niagara Systems or sounds directly into the projectile actor.
 
-Blast components can also execute their own blast Gameplay Cue. This cue represents the blast occurrence itself, not each
+Blast behaviors can also execute their own blast Gameplay Cue. This cue represents the blast occurrence itself, not each
 individual target affected by the blast.
 
 > **Gameplay Cue routing**
@@ -300,16 +321,16 @@ individual target affected by the blast.
 
 ## Common Projectile Setups
 
-Different projectiles can be built by combining the same components in different ways:
+Different projectiles can be built by combining the same behaviors in different ways:
 
-| Projectile Type         | Common Components                                                               |
-|-------------------------|---------------------------------------------------------------------------------|
-| **Simple Arrow**        | Launch Component, Hit Processor, Exhaustion on Impact, Cosmetics.               |
-| **Fast Projectile**     | Launch Component, Scan Component, Hit Processor, Exhaustion on Impact.          |
-| **Bouncing Projectile** | Launch Component, Bounce Component, Hit Processor, Exhaustion policy.           |
-| **Homing Projectile**   | Launch Targeting Component, Hit Processor, Exhaustion policy, Cosmetics.        |
-| **Grenade**             | Launch Component, Exhaustion Timer, Blast on Exhaustion, Blast Sphere.          |
-| **Fireball**            | Launch Location or Camera Component, Hit Processor, Blast on Impact, Cosmetics. |
+| Projectile Type         | Common Behaviors                                                               |
+|-------------------------|--------------------------------------------------------------------------------|
+| **Simple Arrow**        | Launch Behavior, Hit Processor, Exhaustion on Impact, Cosmetics.               |
+| **Fast Projectile**     | Launch Behavior, Scan Behavior, Hit Processor, Exhaustion on Impact.           |
+| **Bouncing Projectile** | Launch Behavior, Bounce Behavior, Hit Processor, Exhaustion policy.            |
+| **Homing Projectile**   | Launch Targeting Behavior, Hit Processor, Exhaustion policy, Cosmetics.        |
+| **Grenade**             | Launch Behavior, Exhaustion Timer, Blast on Exhaustion, Blast Sphere.          |
+| **Fireball**            | Launch Location or Camera Behavior, Hit Processor, Blast on Impact, Cosmetics. |
 
-Most projects can start with the default projectile actor and default components, then add custom subclasses only when
-target selection, filtering, movement response, or effect application needs project-specific rules.
+Most projects can start with the default projectile actor and default behavior stack, then add custom behavior subclasses
+only when target selection, filtering, movement response, or effect application needs project-specific rules.
