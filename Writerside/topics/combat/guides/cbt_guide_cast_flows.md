@@ -5,7 +5,7 @@
 This guide shows how to build common **Cast Flows** using the Cast Ability, Targeting Presets, Ability Targeting Actors,
 and Cast Actors.
 
-For a deeper explanation of the systems and settings used by these examples, see the [**related concepts**](cbt_concepts_cast_flows.md).
+For a deeper explanation of the systems and settings used by these examples, see the [**related concepts**](cbt_concept_cast_flows.md).
 
 ## Prerequisites
 

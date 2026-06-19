@@ -13,7 +13,7 @@ logic to AI perception.
 
 ## Target Lock Integration
 
-A common integration point is the [**Target Lock ability**](cbt_ability_target_lock.md) provided by [**Ninja Combat**](cbt_overview.md). 
+A common integration point is the [**Target Lock ability**](cbt_concept_target_locking.md) provided by [**Ninja Combat**](cbt_overview.md). 
 When configured, target selection events can automatically:
 
 - activate the Target Lock ability when a target is acquired

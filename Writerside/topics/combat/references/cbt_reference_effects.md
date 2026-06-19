@@ -48,7 +48,7 @@ The following Gameplay Effects are used to apply **damage**.
 | `RangedHit`   | Damage effect tagged as a ranged impact.                                                                              |
 | `FatalDamage` | Applies damage based on the target's current health, making the hit fatal.                                            |
 
-For details about how damage is calculated, mitigated, modified, and applied, see [**Damage and Mitigation**](cbt_concepts_damage_and_mitigation.md).
+For details about how damage is calculated, mitigated, modified, and applied, see [**Damage and Mitigation**](cbt_concept_damage_and_mitigation.md).
 
 ## Defense Effects
 
@@ -106,7 +106,7 @@ The following Gameplay Effects are related to **Target Lock**.
 >
 > If the Combat Manager is set to grant "strafe ownership" to the target lock, via the `bTargetingControlsStrafingState`
 > property, then locking on a target also enables strafing. This state is then broadcast to combat listeners, such as
-> the [**Movement Component and Animation Instance**](cbt_concepts_components.md).
+> the [**Movement Component and Animation Instance**](cbt_concept_components.md).
 > {style="tip"}
 
 ## Locomotion Effects

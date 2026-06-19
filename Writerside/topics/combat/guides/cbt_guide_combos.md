@@ -5,7 +5,7 @@
 This guide shows how to build a basic combo flow where Gameplay Abilities advance from one attack to the next using the 
 **Combo Ability**, **Combo Manager**, and **Combo Windows**.
 
-For a deeper explanation of the systems and settings used by these examples, see the [**related concepts**](cbt_concepts_combos.md).
+For a deeper explanation of the systems and settings used by these examples, see the [**related concepts**](cbt_concept_combos.md).
 
 ## Prerequisites
 

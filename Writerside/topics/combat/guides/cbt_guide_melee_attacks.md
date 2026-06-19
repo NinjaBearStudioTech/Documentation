@@ -7,7 +7,7 @@ This guide shows how to create a basic **melee attack** using an **Attack Abilit
 The setup is agnostic to the melee source. The same flow works for attacks scanned from the **combatant**, such as
 punches, claws, or creature attacks, and for attacks scanned from an equipped **weapon**.
 
-For more information, see the documentation for [**Melee Attacks**](cbt_concepts_melee_attacks.md).
+For more information, see the documentation for [**Melee Attacks**](cbt_concept_melee_attacks.md).
 
 ## Prerequisites
 
@@ -26,11 +26,11 @@ handling for ability activation should already be configured.
 <secondary-label ref="optional"/>
 
 If your melee scans originate from **weapons**, make sure to configure them first. For more information, see
-[**Weapon Management**](cbt_concepts_weapon_management.md).
+[**Weapon Management**](cbt_concept_weapon_management.md).
 
 ## Motion Warping
 
-[**Motion Warping**](cbt_concepts_motion_warping.md) is commonly used by melee attacks to move the attacker closer to the
+[**Motion Warping**](cbt_concept_motion_warping.md) is commonly used by melee attacks to move the attacker closer to the
 target by adjusting the animation's **root motion**.
 
 This requires adding the **Motion Warping Component** to your character and implementing the appropriate getter function
@@ -50,7 +50,7 @@ from the **Combat System Interface**.
 ## Targeting Preset
 
 Motion Warping can use a **Targeting Preset** to find the target that the attack should warp toward. We will create a
-preset that prioritizes the [**locked target**](cbt_concepts_target_lock.md) first. If no locked target is available, the
+preset that prioritizes the [**locked target**](cbt_concept_target_locking.md) first. If no locked target is available, the
 preset will collect targets using a fallback area scan.
 
 <procedure title="Create a Targeting Preset" collapsible="true" default-state="collapsed">

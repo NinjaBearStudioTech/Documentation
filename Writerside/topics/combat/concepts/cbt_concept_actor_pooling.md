@@ -113,7 +113,7 @@ The following actor types are supported by the Actor Pool by default.
 | **Projectiles**      | Spawned by [**Ranged Attacks**](cbt_concept_ranged_attacks.md).                                         |
 | **Cast Actors**      | Spawned by certain [**Cast Flows**](cbt_concept_cast_flows.md).                                         |
 | **Targeting Actors** | Spawned by abilities that use Targeting Actors, like the [**Cast Ability**](cbt_concept_cast_flows.md). |
-| **Marker Actors**    | Spawned by the [**Target Lock Ability**](cbt_concept_target_lock.md)                                    |
+| **Marker Actors**    | Spawned by the [**Target Lock Ability**](cbt_concept_target_locking.md)                                 |
 
 You can support additional actors by extending `NinjaCombatPoolableActor`, or by implementing
 `CombatPoolableActorInterface` directly.

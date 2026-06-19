@@ -115,5 +115,5 @@ members, with controllers able to expose team information to Unreal Engine's AI 
 From here, you can:
 
 - Create [**Reputation Tiers**](fct_reputation_tiers.md) to support more dynamic faction relationships.
-- Integrate [**Ninja Factions with Ninja Combat**](itg_combat_factions.md) to disable or customize Friendly Fire.
+- Integrate [**Ninja Factions with Ninja Combat**](integration_combat_factions.md) to disable or customize Friendly Fire.
 - Learn more about [**Factions and Memberships**](fct_factions_memberships.md).

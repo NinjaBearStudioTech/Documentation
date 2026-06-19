@@ -271,6 +271,7 @@
     
     <toc-element toc-title="Integrations">
         <toc-element topic="integration_combat_bot.md"/>
+        <toc-element topic="integration_combat_factions.md"/>
         <toc-element topic="integration_combat_input.md"/>
         <toc-element topic="integration_combat_inventory.md"/>
     </toc-element>

@@ -6,13 +6,13 @@ This guide shows how to create a Gameplay Effect that applies damage through the
 target's mitigation pipeline, and define the outcomes and cosmetics that run after damage is resolved.
 
 For a deeper explanation of the systems and settings used by these examples, see the
-[**related concepts**](cbt_concepts_damage_and_mitigation.md).
+[**related concepts**](cbt_concept_damage_and_mitigation.md).
 
 ## Prerequisites
 
 ### Combat Attributes
 
-Make sure the source and target have the [**Combat Attribute Set**](cbt_attributes.md), since the default Damage Execution
+Make sure the source and target have the [**Combat Attribute Set**](cbt_reference_attributes.md), since the default Damage Execution
 uses combat attributes such as **Base Damage**, **Critical Hit Chance**, **Block**, **Defense**, **Armor**, and
 **Absorption**.
 
