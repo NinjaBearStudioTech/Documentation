@@ -2,93 +2,128 @@
 <primary-label ref="combat"/>
 
 The **Cast Ability** is a flexible Gameplay Ability base for casts that need to be **created**, **placed**, or **triggered**
-in the world. It can be used for many kinds of world-based casts, including:
+in the world. It can be used for world-based effects such as explosions, healing zones, hazard pools, meteors, blizzards,
+auras, and delayed impacts.
 
-- **Immediate explosions** that damage nearby enemies.
-- **Hazard pools** or **healing zones** that remain in the world and affect overlapping targets.
-- **Meteors**, **blizzards** or other delayed impacts that strike a targeted location.
+A **Cast Flow** describes how the ability resolves that cast. Each flow uses the same base ability, but changes how targets
+are collected and, in some cases, where a Cast Actor is placed.
 
-A **Cast Flow** describes how the ability resolves that cast. Each flow uses the **same base ability**, but changes how
-**targets are collected** and, in some cases, **where the Cast Actor spawns**.
-
-Cast Flows can use **Targeting Presets**, **Ability Targeting Actors**, dedicated **Cast Actor Blueprints**, or a combination
-of these systems. Each flow can be created **independently**, although some supporting assets may be shared between examples.
-
-This page explains the main concepts used by Cast Flows, including targeting modes, cast triggers, commit times, Gameplay
-Effects, Cast Actors, and extension points.
+Cast Flows can use **Targeting Presets**, **Ability Targeting Actors**, **Cast Actor Blueprints**, or a combination of these
+systems.
 
 ## Ability Targeting Actor
 
-An **Ability Targeting Actor** is used when the Cast Ability needs a confirmation step before resolving the cast.
+An **Ability Targeting Actor** is used when the cast needs a confirmation step before it resolves. For example, a player
+may aim an area on the ground, confirm the location, and then trigger the cast.
 
 You can use any Targeting Actor provided by the Gameplay Ability System. Ninja Combat also provides
-`NinjaCombatAbilityTargetingActor`, a generic base class that can collect targets using a Targeting Preset or broadcast 
-its own location when the actor is only being used for placement.
+`NinjaCombatAbilityTargetingActor`, a generic base class that can collect targets using a Targeting Preset or broadcast its
+own location when the actor is only being used for placement.
 
 This class is compatible with the [**Actor Pool**](cbt_concept_actor_pooling.md).
 
 > **Begin Play**
 >
-> Since the provided Ability Targeting Actor is compatible with the [**Actor Pool**](cbt_concept_actor_pooling.md), it may be 
-> instantiated before they are actually needed. Avoid using `BeginPlay` for startup logic. Use `HandleTargetActorActivated` 
-> instead.
+> Since the provided Ability Targeting Actor is compatible with the [**Actor Pool**](cbt_concept_actor_pooling.md), it may be
+> instantiated before it is actually needed. Do not use `BeginPlay` for startup logic, use the targeting actor activation
+> hooks instead.
 {style="note"}
 
 ## Cast Actor
 
-A **Cast Actor** is used when the ability needs to create an actor in the world, such as a meteor, lava pool, aura,
-explosion volume, or similar world-based cast.
+A **Cast Actor** is used when the ability needs to place an actor in the world. Examples include a lava pool, aura, explosion
+volume, meteor marker, lingering hazard, or healing zone.
 
-Use one of the provided `NinjaCombatCastActor` classes as the base class when possible. Cast Actors are responsible for
-**collecting targets** and **applying the Gameplay Effect** configured by the ability. They are also poolable actors, 
-compatible with the [**Actor Pool**](cbt_concept_actor_pooling.md).
+Use one of the provided `NinjaCombatCastActor` classes as the base class when possible. Cast Actors are compatible with the
+[**Actor Pool**](cbt_concept_actor_pooling.md).
 
-The base class provides the following properties:
-
-| Property                   | Description                                                                                                                     |
-|----------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| `ShouldIgnoreSource`       | If set to true, ignores the source whenever a collision is detected.                                                            |
-| `ManageEffectRemoval`      | If set to true, applies and removes the effect while actors are colliding. Not applicable for instant effects.                  |
-| `ReinforceHitResults`      | If set to true, reinforces hit results on targets, using a line trace. Usually only needed for directional Hit/Death reactions. |
-| `HitResultChannel`         | Channel used to reinforce hit results.                                                                                          |
-| `TryToAlignWithFloor`      | If set to true, automatically tries to align the actor with the floor, using a line trace.                                      |
-| `FloorHeightDistanceCheck` | Distance from top to bottom to check for the floor.                                                                             |
-| `FloorTraceChannel`        | Trace Channel used to detect the floor.                                                                                         |
-| `FloorOffset`              | Offset added to the final position before placing on the floor.                                                                 |
+The Cast Actor owns the actor lifecycle, collision, and cast event notifications. Specialized gameplay rules are handled by
+**Cast Behaviors** hosted by the actor's `NinjaCombatCastBehaviorComponent`.
 
 The following Cast Actor classes are available:
 
-| Cast Actor                    | Description                                                                                                   |
-|-------------------------------|---------------------------------------------------------------------------------------------------------------|
-| `NinjaCombatCastActor`        | Base class without any specific collision type.                                                               |
-| `NinjaCombatCastActor_Sphere` | Cast Actor that uses a Sphere for collision. Can optionally filter targets by angle to simulate a cone shape. |
-| `NinjaCombatCastActor_Box`    | Cast Actor that uses a Box for collision.                                                                     |
+| Cast Actor                    | Description                                       |
+|-------------------------------|---------------------------------------------------|
+| `NinjaCombatCastActor`        | Base class without a specific collision shape.    |
+| `NinjaCombatCastActor_Sphere` | Cast Actor that uses a Sphere collision shape.    |
+| `NinjaCombatCastActor_Box`    | Cast Actor that uses a Box collision shape.       |
 
 If you need a different collision type, use `NinjaCombatCastActor` as a starting point and assign the collision component
 from your subclass. If you cannot use the provided base classes, any actor that implements `CombatCastInterface` can be
 used instead.
 
-The provided `NinjaCombatCastActor` classes already implement `StartCast`, binding collision events and evaluating any
-available overlaps. Custom interface implementations should implement `StartCast` with the activation logic that should
-run when the actor becomes relevant to the cast.
-
 > **Begin Play**
 >
-> Since Cast Actors are compatible with the [**Actor Pool**](cbt_concept_actor_pooling.md), they may be instantiated before
-> they are actually needed. Avoid using `BeginPlay` for cast startup logic. Use `StartCast` instead.
+> Since Cast Actors can be pooled, they may exist before they are used. Avoid using `BeginPlay` for cast startup logic.
+> Use the cast lifecycle and Cast Behaviors instead.
 {style="note"}
 
-### Cast Interface
+### Cast Lifecycle
 
-Any actor used as a Cast Actor must implement `CombatCastInterface`. This interface provides the data needed by the Cast 
-Ability and defines the function used to start the cast.
+Cast Actors separate the **active gameplay lifecycle** from the **actor or pool lifecycle**.
 
-| Function                  | Description                                                                                                   |
-|---------------------------|---------------------------------------------------------------------------------------------------------------|
-| `GetCastOwner`            | Returns the actor responsible for the cast.                                                                   |
-| `SetCastOwner`            | Sets the actor responsible for the cast. Usually invoked by the Cast Ability when preparing the actor.        |
-| `SetGameplayEffectHandle` | Sets the Gameplay Effect Handle that the Cast Actor can apply to collected targets.                           |
-| `StartCast`               | Starts the cast, allowing the actor to run activation logic, collect targets, and apply the Gameplay Effect.  |
+| Lifecycle Step   | Description                                                                                  |
+|------------------|----------------------------------------------------------------------------------------------|
+| `Activated`      | The Cast Actor becomes active, either from Begin Play or from the Actor Pool.                |
+| `Prepared`       | The Cast Actor prepares runtime data before the cast starts.                                 |
+| `Started`        | The cast starts affecting the world.                                                         |
+| `Overlap Begin`  | Another actor begins overlapping the Cast Actor collision.                                   |
+| `Overlap End`    | Another actor stops overlapping the Cast Actor collision.                                    |
+| `Effect Applied` | A cast behavior confirms that effects were applied to a target.                              |
+| `Effect Removed` | A cast behavior confirms that managed effects were removed from a target.                    |
+| `Dissipated`     | The cast reaches the end of its active gameplay lifecycle.                                   |
+| `Deactivated`    | The actor is destroyed, hidden, or returned to the Actor Pool.                               |
+
+`Dissipated` and `Deactivated` are deliberately separate. Use **Dissipated** for the end of active gameplay, and
+**Deactivated** for final actor or pool cleanup.
+
+## Cast Behaviors
+
+**Cast Behaviors** are instanced objects owned by a `NinjaCombatCastBehaviorComponent`. They receive cast lifecycle events
+from the owning Cast Actor and execute in order.
+
+The default Cast Actor behavior stack includes:
+
+| Behavior                             | Purpose                                                   |
+|--------------------------------------|-----------------------------------------------------------|
+| **Floor Alignment**                  | Places the cast cleanly on the floor when it starts.      |
+| **Cast Effect**                      | Applies the cast Gameplay Effect to valid targets.        |
+| **Dissipation**                      | Ends the active cast after its configured duration.       |
+
+Optional behaviors can be added when needed:
+
+| Behavior                             | Purpose                                                                       |
+|--------------------------------------|-------------------------------------------------------------------------------|
+| **Sphere Cone Effect**               | Filters sphere overlaps to a forward-facing cone.                             |
+| **Cosmetics**                        | Executes Gameplay Cues for selected cast lifecycle events on clients.         |
+
+Cast Behaviors are intended to make Cast Actors easier to configure and extend without placing every rule directly on the
+actor class.
+
+> **Cosmetics**
+>
+> Cast visuals are usually best handled directly on the Cast Actor with normal components, Blueprints, Niagara Systems,
+> decals, sounds, materials, and timelines.
+>
+> Target impact visuals are usually best handled by Gameplay Cues configured on the Gameplay Effect applied to the target.
+> Animation-driven casts can also trigger cosmetics from the animation or montage that starts the cast.
+>
+> Use the Cast Cosmetics Behavior only when you need lightweight Gameplay Cues tied to cast lifecycle events.
+{style="tip"}
+
+## Cast Interface
+
+Any actor used as a Cast Actor must implement `CombatCastInterface`. The interface lets the ability, actor, and behaviors
+communicate through a consistent lifecycle. At a high level, the interface supports:
+
+- Binding and unbinding to cast lifecycle events.
+- Preparing and starting the cast.
+- Registering applied or removed cast effects.
+- Dissipating the active cast.
+- Providing the Gameplay Effect class and level used by cast behaviors.
+- Returning targets confirmed as affected by the cast.
+
+Most projects should use the provided Cast Actor classes instead of implementing the interface from scratch.
 
 ## Cast Ability
 
@@ -99,26 +134,26 @@ for target confirmation, spawn a Cast Actor, or combine targeting and spawning i
 
 Once the ability activates, it may wait for a specific trigger before starting the cast.
 
-| Trigger                | Description                                                                                                                                                                                                        |
-|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Ability Activation** | The cast starts immediately, as soon as the Gameplay Ability activates.                                                                                                                                            |
-| **Gameplay Event**     | The cast starts when the ability receives the `Combat.Event.Cast` Gameplay Event. This can be sent by gameplay code, Blueprint logic, or the provided **Trigger Cast** Animation Notify.                           |
-| **Delayed**            | The cast starts after a configured delay. From there, it behaves similarly to **Ability Activation**. This option is only compatible with non-interactive flows, such as **Targeting System** and **Spawn Actor**. |
+| Trigger                | Description                                                                                                             |
+|------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| **Ability Activation** | The cast starts immediately, as soon as the Gameplay Ability activates.                                                 |
+| **Gameplay Event**     | The cast starts when the ability receives the `Combat.Event.Cast` Gameplay Event.                                       |
+| **Delayed**            | The cast starts after a configured delay. This is intended for non-interactive flows.                                   |
 
 ### Targeting Modes
 
 The Cast Ability supports multiple targeting modes for different usage scenarios.
 
-| Targeting                                 | Description                                                                                                        |
-|-------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| **Targeting System**                      | Applies the Cast Gameplay Effect to all targets collected by the **Targeting System**.                             |
-| **Spawn Actor**                           | Spawns or activates a **Cast Actor**, which collects targets and applies the Cast Gameplay Effect.                 |
-| **Wait For Confirmation**                 | Waits for a **Targeting Actor** to collect and confirm targets, then applies the Cast Gameplay Effect.             |
-| **Wait For Confirmation And Spawn Actor** | Waits for a **Targeting Actor** to confirm a location, then spawns or activates a **Cast Actor** at that location. |
+| Targeting                                 | Description                                                                                            |
+|-------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| **Targeting System**                      | Applies the Cast Gameplay Effect to targets collected by the Targeting System.                         |
+| **Spawn Actor**                           | Spawns or activates a Cast Actor. The actor and its behaviors handle target collection and effects.    |
+| **Wait For Confirmation**                 | Waits for a Targeting Actor to collect and confirm targets, then applies the Gameplay Effect.          |
+| **Wait For Confirmation And Spawn Actor** | Waits for a Targeting Actor to confirm placement, then spawns or activates a Cast Actor.               |
 
 ### Commit Times
 
-For flexibility, the Cast Ability allows you to fine-tune when costs and cooldowns are committed.
+For flexibility, the Cast Ability allows you to choose when costs and cooldowns are committed.
 
 | Commit Time           | Description                                                                  |
 |-----------------------|------------------------------------------------------------------------------|
@@ -129,29 +164,34 @@ For flexibility, the Cast Ability allows you to fine-tune when costs and cooldow
 
 ### Cast Gameplay Effect
 
-The **Cast Gameplay Effect** is applied to the targets collected by the Cast Ability. This is usually a damage or benefit
-effect, but it can be any Gameplay Effect that fits your design.
+The **Cast Gameplay Effect** is applied to targets collected by the cast. This is usually a damage or benefit effect, but it
+can be any Gameplay Effect that fits your design.
 
-The number of targets collected by the Cast Ability is available through the `Tag_Combat_Data_CastHits` magnitude tag.
+The Cast Ability applies the effect directly when using:
 
-You can further **modify the Gameplay Effect Spec** generated or applied by the Cast Ability. Modifications are usually
-done by adding **Dynamic Tags** or **Set By Caller Magnitudes** to the effect, which can be used by **Effect Executions**
-or **Modifier Calculations**.
+- **Targeting System**
+- **Wait For Confirmation**
 
-You can extend the following Cast Ability functions for customization:
+When using a Cast Actor flow, the Cast Actor and its behaviors handle effect application instead. This lets actor-based
+casts own their world presence, collision, duration, and target interactions.
 
-| Function                             | Description                                                                               |
-|--------------------------------------|-------------------------------------------------------------------------------------------|
-| `GetDynamicGameplayTags`             | Adds dynamic Gameplay Tags to the effect spec as targets are acquired.                    |
-| `GetAdditionalSetByCallerMagnitudes` | Adds or overrides Set By Caller magnitudes in the effect spec.                            |
-| `ApplyGameplayEffectToData`          | Provides full control over how the spec is applied to each target. Available only in C++. |
+The number of targets collected by direct ability-applied casts is available through the `Tag_Combat_Data_CastHits`
+magnitude tag.
+
+### Combat Magnitudes
+
+Cast Actors, projectiles, weapons, owners, instigators, and other effect sources can provide additional Set By Caller
+magnitudes through `CombatMagnitudeProviderInterface`.
+
+This allows project-specific data such as damage, poise damage, scaling values, or other magnitudes to be supplied by the
+source of the effect without duplicating effect setup across abilities and actors.
 
 ### Confirmation State Gameplay Effect
 
 The **Confirmation State Gameplay Effect** is applied to the owner while the ability is waiting for target confirmation.
 
 Tags granted by this effect can be used to adjust input or AI behavior. For example, the player's Primary Action could
-confirm the cast instead of triggering an attack, or a bot could wait briefly before sending a confirmation event.
+confirm the cast instead of triggering an attack.
 
 This effect is removed when targeting is confirmed or cancelled.
 
@@ -159,68 +199,49 @@ This effect is removed when targeting is confirmed or cancelled.
 
 The **Successful Gameplay Effect** is optionally applied to the owner when the cast successfully triggers.
 
-This can be used for cosmetic feedback through Gameplay Cues, or for tags and temporary self-effects that should happen
-when the cast starts.
-
-This effect is not removed by the ability, so its duration, stacking, and removal rules are controlled by the Gameplay
-Effect itself.
-
-### Extension Points
-
-The Cast Ability provides functions for key internal events. These can be extended when a Cast Flow needs additional logic.
-
-| Function                    | Description                                                                                 |
-|-----------------------------|---------------------------------------------------------------------------------------------|
-| `HandleDelayFinished`       | Executed when the delay finishes and the ability is ready to start the cast.                |
-| `HandleCastStarted`         | Executed when the cast starts, regardless of the selected trigger.                          |
-| `HandleTargetsReady`        | Handles targets collected through the Gameplay Targeting System.                            |
-| `HandleCastActorReady`      | Handles a Cast Actor that has been initialized but not spawned yet.                         |
-| `HandleCastActorSpawned`    | Handles a Cast Actor that has been spawned or activated from the pool.                      |
-| `HandleTargetDataConfirmed` | Handles target data confirmed by the Targeting Actor, based on the **Targeting** property.  |
-| `HandleTargetDataCancelled` | Handles the cancellation of target selection.                                               |
+This can be used for feedback, tags, temporary self-effects, or Gameplay Cues that should happen when the cast starts. Its
+duration, stacking, and removal rules are controlled by the Gameplay Effect itself.
 
 ## Authoring Animations
 
-The Cast Ability expects an **Animation Montage**. The montage can be simple or section-based, depending on how the cast 
-is triggered.
+The Cast Ability expects an **Animation Montage**. The montage can be simple or section-based, depending on how the cast is
+triggered.
 
-For immediate casts, such as casts using **Targeting Presets** or directly spawned **Cast Actors**, you can use a simple 
-montage. If the ability is configured to start the cast from a **Gameplay Event**, the montage should include the **Trigger 
-Cast** Animation Notify, which sends that event to the ability.
+If the ability starts the cast from a **Gameplay Event**, the montage should include the **Trigger Cast** Animation Notify,
+which sends that event to the ability.
 
-For interactive casts, such as casts using **Ability Targeting Actors**, the montage can include named sections that 
-represent the targeting lifecycle. The ability can move between these sections when the cast is waiting for confirmation, 
-confirmed, or cancelled.
+For interactive casts, such as casts using Ability Targeting Actors, the montage can include sections for targeting,
+confirmation, and cancellation.
 
-| Section       | Description                                                                                                                |
-|---------------|----------------------------------------------------------------------------------------------------------------------------|
-| **Default**   | Entry section where the animation starts. Usually transitions into the **Loop** section.                                   |
-| **Loop**      | Looped section that plays while the ability is waiting for target confirmation. Usually transitions into itself.           |
-| **Confirmed** | Section played when the cast is confirmed. This name must match the ability's **Section When Confirmed** property.         |
-| **Cancelled** | Section played when target selection is cancelled. This name must match the ability's **Section When Cancelled** property. |
+| Section       | Description                                                                                                        |
+|---------------|--------------------------------------------------------------------------------------------------------------------|
+| **Default**   | Entry section where the animation starts.                                                                          |
+| **Loop**      | Looped section that plays while the ability is waiting for target confirmation.                                    |
+| **Confirmed** | Section played when the cast is confirmed.                                                                         |
+| **Cancelled** | Section played when target selection is cancelled.                                                                 |
 
 > **Montage Section Names**
 >
-> The relevant **section names are configurable** in the ability, and they must always match the section names 
-> authored in the **Animation Montage**.
+> The relevant section names are configurable in the ability, and they must match the section names authored in the
+> Animation Montage.
 {style="tip"}
 
 ## Cast Requests
 
-The Cast Ability uses **Cast Requests** as data transfer objects between animation, the ability, and the internal cast 
-execution tasks.
+The Cast Ability uses **Cast Requests** as data transfer objects between animation, the ability, and cast execution.
 
-Cast Requests are usually created by the **Trigger Cast** Animation Notify and sent to the ability through the `Combat.Event.Cast` 
-Gameplay Event. The ability reads the request from the event payload and uses it to continue the Cast Flow.
+Cast Requests are usually created by the **Trigger Cast** Animation Notify and sent to the ability through the
+`Combat.Event.Cast` Gameplay Event. The ability reads the request from the event payload and uses it to continue the Cast
+Flow.
 
-A Cast Request can also contain logic used to spawn or retrieve a Cast Actor, including support for the 
+A Cast Request can also contain logic used to spawn or retrieve a Cast Actor, including support for the
 [**Actor Pool**](cbt_concept_actor_pooling.md).
 
 > **Modifying the Cast Actor**
 >
-> You can **modify the Cast Actor after it is spawned or retrieved** by overriding `ModifyCastActor`, either in Blueprint 
-> or C++.
-> 
-> Keep in mind that the actor may have been retrieved from the pool, so **temporary changes should be reset** before the 
-> actor is returned to the pool.
+> You can modify the Cast Actor after it is spawned or retrieved by overriding `ModifyCastActor`, either in Blueprint or
+> C++.
+>
+> Keep in mind that the actor may have been retrieved from the pool, so temporary changes should be reset before the actor
+> is returned to the pool.
 {style="note"}

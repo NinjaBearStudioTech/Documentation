@@ -5,11 +5,13 @@
 > **Important Changes in this version**
 >
 > 1. Magic attributes and effects were renamed to Mana.
-> 2. Projectiles were fully rewritten to use Projectile Behaviors, hosted by the Projectile Behavior Component.
+> 2. Projectile Actors were rewritten to use Projectile Behaviors, hosted by the Projectile Behavior Component.
+> 3. Cast Actors were rewritten to use Cast Behaviors, hosted by the Cast Behavior Component.
 ```
 <secondary-label ref="wip"/>
 ```
-[major] Projectiles have their behavior created via aggregation, with Projectile Behaviors, hosted bu the Projectile Behavior Component.
+[major] Projectile Actors were rewritten to use Projectile Behaviors, hosted by the Projectile Behavior Component.
+[major] Cast Actors were rewritten to use Cast Behaviors, hosted by the Cast Behavior Component.
 [major] Melee Scan exchanges internal data, between Object and Ability Task, via Instanced Structs.
 [major] Renamed Magic attribute (and related effects) to Mana.
 [added] Base Ability Targeting Actor, compatible with the Actor Pool.
