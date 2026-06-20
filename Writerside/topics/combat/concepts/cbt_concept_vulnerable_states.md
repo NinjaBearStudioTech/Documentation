@@ -1,5 +1,14 @@
-# Vulnerable States
+# Hits and Vulnerable States
 <primary-label ref="combat"/>
+
+After damage is confirmed, combatants can react in different ways depending on the incoming hit, their current state, 
+and the systems configured for them.
+
+These reactions can range from simple directional hit animations to stronger state changes such as stagger, knockdown, 
+recovery, riposte opportunities, or death. Some systems, such as parry windows, also create temporary vulnerabilities before damage is applied, allowing other combatants to respond with a counterattack.
+
+This page introduces the main Combat System features used to represent damage reactions, temporary vulnerabilities, 
+and follow-up opportunities.
 
 ## Hit Reactions
 
