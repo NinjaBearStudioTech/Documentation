@@ -3,6 +3,60 @@
 
 ## Hit Reactions
 
+The **Hit Reaction Ability** is responsible for executing hit reactions from confirmed, non-fatal damage. It supports 
+directional hit reactions and can map specific damage types or hit contexts to appropriate animations.
+
+It is typically triggered by **Gameplay Events**, so it should usually be **granted by default** to all characters that 
+can react to incoming damage.
+
+### Ability Trigger
+
+By default, the Hit Reaction Ability is triggered by the **Combat Manager**, specifically from the **Damage Manager** 
+component.
+
+Incoming hits are evaluated and, unless overridden by another effect such as **fatal damage**, may trigger the Hit Reaction 
+Ability. Since it is activated by a Gameplay Event, it can also be triggered by other systems as needed.
+
+### Directional Hit Reactions
+
+The Hit Reaction Ability uses the **Directional Hits Animation Provider**, which selects a **Montage Section** based on 
+the direction of the incoming attack. This allows a single Animation Montage to provide different reactions for hits from 
+the front, back, left, or right.
+
+> **Section Montages**
+> 
+> When using Montage Sections, make sure to **break their links** in the Montage Section panel. Otherwise, all sections 
+> will play in sequence.
+{style="note"}
+
+### Hit Angle Calculation
+
+The Directional Hits Animation Provider calculates the hit angle using two sources: the **Hit Result Location** and the
+**Attacker Location**.
+
+You can control their influence using the **Hit Location Weight** and **Attacker Location Weight** properties. This 
+allows you to favor one source, ignore one entirely, or use a blended approach.
+
+<img src="cbt_damage_hit_angle.png" alt="Hit Reaction Calculation"/>
+
+### Contextual Hit Reactions
+
+The Animation Provider also supports **contextual hit reactions**, where animations are selected based on Gameplay Tags 
+found in the incoming damage. 
+
+Each context **maps a tag filter to a specific Animation Montage**, while still preserving the directional section selection 
+within that montage. For example, you might assign different hit reaction animations for knockback attacks, stagger hits, or special blows. 
+
+If no context matches the incoming damage, the **default Animation Montage** set in the Animation Provider is used.
+
+### Gameplay Tag Filtering
+
+Contexts are evaluated using **Gameplay Tag Filters**, which can inspect tags from both the instigator and the target. 
+These filters are defined by the **Instigator Tags Filter** and **Target Tags Filter** in the Animation Provider.
+
+You can also extend the **Hit Reaction Animation Provider** in Blueprint or C++ to add custom evaluation logic or dynamic 
+montage selection.
+
 ## Stagger
 
 ## Knockdown and Recovery
