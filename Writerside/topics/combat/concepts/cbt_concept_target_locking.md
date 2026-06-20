@@ -128,3 +128,9 @@ targets during combat.
 >
 > For AI or external systems that provide the target directly through `Combat.Event.Target.Acquired`, the ability does not
 > require a Targeting Preset. In that case, the payload must provide a valid Actor as the event's Optional Object.
+
+<seealso style="cards">
+    <category ref="external">
+        <a href="https://dev.epicgames.com/documentation/unreal-engine/gameplay-targeting-system-reference-in-unreal-engine" summary="A Debugging and Troubleshooting guide of the Gameplay Targeting System plugin framework in Unreal Engine.">Gameplay Targeting System Reference</a>
+    </category>
+</seealso>
