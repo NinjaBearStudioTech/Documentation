@@ -23,6 +23,7 @@
 [changed] Introduced extension point for when a Cast has effectively started in the Ability.
 [changed] Organized method visibility in Melee/Parry scans.
 [changed] Centralized Health Damage and Poise Damage from Melee and Projectile Interfaces into the Magnitude Interface.
+[changed] Better integrated Parry Scans and Melee Attacks, exposing available Parry Scan Windows through the Melee Interface.
 [fixed] Corrected check for "InParryAttackerWindow" in the Combat Manager.
 [fixed] Considering socket rotation to debug draw functions in the Melee Scan.
 [fixed] Added missing EditCondition to the Cast Ability.
