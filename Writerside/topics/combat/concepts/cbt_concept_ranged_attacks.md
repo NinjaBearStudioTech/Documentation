@@ -77,19 +77,21 @@ The standard lifecycle is:
 
 ### Projectile Interface
 
-The **Projectile Interface**, `CombatProjectileInterface`, exposes the public API used by abilities and behaviors.
+The **Projectile Interface**, `CombatProjectileInterface`, exposes the public API used by abilities, behaviors, and other
+combat systems that interact with a projectile.
 
 At a high level, the interface supports:
 
+- Binding and unbinding projectile event listeners.
 - Preparing and launching the projectile.
 - Applying movement velocity.
 - Reporting raw hits and confirmed impacts.
 - Exhausting the projectile.
-- Providing movement and impact effect data.
+- Providing current speed, initial speed, impact Gameplay Effect, impact effect level, and impact strength.
 - Returning actors confirmed as affected by the projectile.
 
-The interface is intentionally high-level. More specific behavior, such as launch targeting, scan rules, hit filtering,
-bounce response, blasts, exhaustion, or cosmetics, is handled by projectile behaviors.
+The interface is the main contract for projectile actors. More specific behavior, such as launch targeting, scan rules,
+hit filtering, bounce response, blasts, exhaustion, or cosmetics, is still handled by projectile behaviors.
 
 ## Projectile Behaviors
 
@@ -114,14 +116,14 @@ Additional behaviors can be added by projectile subclasses or Blueprint defaults
 
 ### Common Behavior Types
 
-| Behavior Type     | When to use it                                                                                              |
-|-------------------|-------------------------------------------------------------------------------------------------------------|
-| **Launch**        | Use for normal launches, targeted launches, camera-guided launches, or homing setup.                        |
-| **Scan**          | Use for fast-moving projectiles where normal collision may miss targets between frames.                     |
-| **Hit Processor** | Use when raw hits must be filtered before they become confirmed gameplay impacts.                           |
-| **Bounce**        | Use when a projectile needs custom behavior after bouncing, such as redirecting or selecting a new target.  |
-| **Exhaustion**    | Use to decide when the projectile should stop being active, such as after an impact, bounce, or timer.      |
-| **Blast**         | Use for area or multi-target effects triggered by impact, exhaustion, timer, or other projectile events.    |
+| Behavior Type     | When to use it                                                                                             |
+|-------------------|------------------------------------------------------------------------------------------------------------|
+| **Launch**        | Use for normal launches, targeted launches, camera-guided launches, or homing setup.                       |
+| **Scan**          | Use for fast-moving projectiles where normal collision may miss targets between frames.                    |
+| **Hit Processor** | Use when raw hits must be filtered before they become confirmed gameplay impacts.                          |
+| **Bounce**        | Use when a projectile needs custom behavior after bouncing, such as redirecting or selecting a new target. |
+| **Exhaustion**    | Use to decide when the projectile should stop being active, such as after an impact, bounce, or timer.     |
+| **Blast**         | Use for area or multi-target effects triggered by impact, exhaustion, timer, or other projectile events.   |
 | **Cosmetics**     | Use to route projectile lifecycle events to Gameplay Cues on non-dedicated servers.                        |
 
 > **Exhaustion before deactivation**
@@ -176,13 +178,32 @@ Animation-driven projectile launches are useful for:
 - Coordinating projectile launch with montage sections or combo steps.
 - Passing attack-specific request data into the projectile spawn pipeline.
 
-## Gameplay Effects and Magnitudes
+## Gameplay Effects
 
-Projectile impact effects are usually applied by projectile behaviors, such as the Hit Processor or Blast behaviors.
+Projectile impact effects are usually applied by projectile behaviors, such as the Hit Processor or Blast behaviors. The
+projectile provides the Gameplay Effect class and level used for its impact, while the behavior decides when that effect
+should be applied.
 
-Projectiles, weapons, owners, instigators, and other effect sources can provide additional Set By Caller magnitudes through
-`CombatMagnitudeProviderInterface`. This allows project-specific values such as damage, poise damage, scaling values, or
-other magnitudes to come from the source of the effect without duplicating setup across abilities and projectiles.
+## Custom Damage
+
+Normally, projectile damage is defined by the Gameplay Effect itself. The Combat Damage Execution can calculate damage
+from the source's **Base Damage** attribute, modifiers applied to that attribute, target defenses, mitigation, and any other
+game-specific combat rules.
+
+A projectile or another effect source can override values used by the damage execution by providing Set By Caller
+magnitudes before the Gameplay Effect is applied. The most common combat magnitudes are:
+
+| Tag                       | Description                                              |
+|---------------------------|----------------------------------------------------------|
+| `Combat.Data.Damage`      | Overrides or provides the pending damage value.          |
+| `Combat.Data.PoiseDamage` | Overrides or provides the poise damage applied by a hit. |
+
+These values can be injected through the combat magnitude provider function/interface used by the damage pipeline. This
+keeps damage values close to the projectile or source that owns them, while still letting the Gameplay Effect and Combat
+Damage Execution handle the final calculation.
+
+The base projectile actor already implements this behavior, so projects can set projectile damage and poise damage on the
+projectile defaults without creating a custom behavior just to provide common damage magnitudes.
 
 ## Cosmetics
 

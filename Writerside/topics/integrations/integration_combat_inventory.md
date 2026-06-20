@@ -43,8 +43,11 @@ identification tags like `Item.Type.Ammo.Rifle` and `Item.Type.Ammo.Shotgun`, se
 Multiple Item Fragments can be used to enhance weapons in many ways.
 
 | Fragment           | Description                                                                                                |
-| ------------------ | ---------------------------------------------------------------------------------------------------------- |
+|--------------------|------------------------------------------------------------------------------------------------------------|
 | Firearm            | Identifies a firearm and becomes aware of compatible ammo.                                                 |
 | Equipment          | Configures an actor presence for a weapon, which can be used as the Weapon Actor.                          |
 | Offhand Position   | Allows two-handed weapons to properly place the off-hand.                                                  |
 | Dynamic Attributes | Can be used to set magnitudes for weapons, such as damage, critical hit chance, and critical damage bonus. |
+
+When using **Dynamic Attributes** in your weapons, override `GetAdditionalCombatMagnitudes`, from `CombatMagnitudeProviderInterface`,
+to expose your dynamic attributes, such as Damage and Critical Hit Chance, using the proper data tags.

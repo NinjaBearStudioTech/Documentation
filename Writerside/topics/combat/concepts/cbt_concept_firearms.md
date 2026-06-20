@@ -44,6 +44,9 @@ the baseline configuration, while runtime values can be overridden by the **Fire
 **Firearm Actors** are specialized [**Weapon Actors**](cbt_concept_weapon_management.md#weapon-actors) that represent
 firearms in the world. Their main difference is the presence of the **Firearm Component**, `NinjaCombatFirearmComponent`.
 
+If you are creating your own Firearm Actor, but not using the provided Weapon Actor as the base class, then make sure to 
+implement `CombatRangedInterface`, which is used by the firearm system.
+
 ### Firearm Component
 
 The **Firearm Component** receives the **Firearm Data Asset** and exposes firearm data to actors and abilities. The data
