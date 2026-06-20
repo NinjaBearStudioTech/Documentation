@@ -89,6 +89,34 @@ some cases.
     <step>Optionally, adjust the <b>Ability Targeting Operation</b> to only execute at the actor level.</step>
 </procedure>
 
+## Target Lock
+
+Target Lock is executed by the Target Lock Ability, which supports common activation and additional events to scan for
+targets, cycle between available targets and dismiss the current target.
+
+Common GAS-related handlers from Ninja Input can be used to activate the ability, scan for targets, cycle between targets,
+and dismiss the current target.
+
+<procedure title="Toggle the Target Lock Ability" collapsible="true" default-state="expanded">
+    <step>Navigate your Target Lock Ability and add <code>Input.Ability.Toggled</code> to the list of <b>Ability Tags</b>.</step>
+    <step>Create a new Input Handler based on <code>InputHandler_AbilityTags</code>.</step>
+    <step>In the new Input Handler, configure the Gameplay Ability Tags used for activation of the Target Lock Ability.</step>
+    <step>Configure the Input Action as usual.</step>
+</procedure>
+
+<procedure title="Scan for a Target" collapsible="true" default-state="expanded">
+    <step>Create a new Input Handler based on <code>InputHandler_GameplayEvent</code>.</step>
+    <step>Set <code>Combat.Event.Target.Scan</code> as the Event Tag.</step>
+    <step>Configure the Input Action as usual.</step>
+</procedure>
+
+<procedure title="Cycle Available Targets" collapsible="true" default-state="expanded">
+    <step>Create two new Input Handlers based on <code>InputHandler_GameplayEvent</code>.</step>
+    <step>In the first Input Handler, set <code>Combat.Event.Target.Left</code> as the Event Tag.</step>
+    <step>In the second Input Handler, set <code>Combat.Event.Target.Right</code> as the Event Tag.</step>
+    <step>Configure the Input Actions as usual.</step>
+</procedure>
+
 ## Fire Intent
 
 The [**Firearms Module**](cbt_concept_firearms.md) handles **Fire Intent** using functions from the Firearm Component.

@@ -9,6 +9,11 @@ punches, claws, or creature attacks, and for attacks scanned from an equipped **
 
 For more information, see the documentation for [**Melee Attacks**](cbt_concept_melee_attacks.md).
 
+> **Target Locking**
+>
+> Parts of this guide are shared with the [**Target Lock**](cbt_guide_target_lock.md) guide. If you are working on
+> both, you will be able to reuse and skip certain steps.
+
 ## Prerequisites
 
 ### Collision and Components
@@ -213,7 +218,7 @@ Common Set By Caller tags used by melee sources include:
 ### Configure the Ability
 
 <procedure title="Configure the Attack Ability" collapsible="true" default-state="collapsed">
-    <step>In your Attack Ability folder, create a new <b>Gameplay Ability Blueprint</b> using <code>CombatAbility_Attack</code> as the base class.</step>
+    <step>In your Attack Ability folder, create a new <b>Gameplay Ability Blueprint</b> using <code>CombatAbility_MeleeAttack</code> as the base class.</step>
     <step>Set the <b>Default Animation Montage</b> to the montage configured earlier.</step>
     <step>Set the default <b>Hit Gameplay Effect</b> to the Gameplay Effect created earlier.</step>
     <step>Configure the <b>Ability Tags</b> used to activate this Attack Ability.</step>
