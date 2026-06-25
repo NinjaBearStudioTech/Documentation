@@ -1,11 +1,13 @@
 # Creating Melee Attacks
 <primary-label ref="combat"/>
+<secondary-label ref="guide"/>
 
-This guide shows how to create a basic **melee attack** using an **Attack Ability**, an **Animation Montage**, a
+This guide shows how to create a basic **melee attack** using an **Gameplay Ability**, an **Animation Montage**, a
 **Melee Scan**, and optional **Motion Warping**.
 
 The setup is agnostic to the melee source. The same flow works for attacks scanned from the **combatant**, such as
-punches, claws, or creature attacks, and for attacks scanned from an equipped **weapon**.
+punches, claws, or creature attacks, and for attacks scanned from an equipped **weapon**. The shared pre-requisite is 
+that a melee source must be a valid implementation of `ICombatMeleeInterface`.
 
 For more information, see the documentation for [**Melee Attacks**](cbt_concept_melee_attacks.md).
 

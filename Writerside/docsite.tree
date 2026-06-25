@@ -58,6 +58,7 @@
                 <toc-element topic="cbt_concept_vulnerable_states.md"/>
                 <toc-element topic="cbt_concept_firearms.md"/>
                 <toc-element topic="cbt_concept_physical_animations.md"/>
+                <toc-element topic="cbt_concept_paired_animations.md"/>
                 <toc-element topic="cbt_concept_ui.md"/>
                 <toc-element topic="cbt_concept_ai.md"/>
                 <toc-element topic="cbt_concept_actor_pooling.md"/>
@@ -270,7 +271,8 @@
     </toc-element>
     
     <toc-element toc-title="Integrations">
-        <toc-element topic="integration_combat_bot.md"/>
+        <toc-element topic="integration_bot_combat.md"/>
+        <toc-element topic="integration_bot_factions.md"/>
         <toc-element topic="integration_combat_factions.md"/>
         <toc-element topic="integration_combat_input.md"/>
         <toc-element topic="integration_combat_inventory.md"/>
