@@ -70,6 +70,76 @@ montage selection.
 
 ## Stagger
 
+**Stagger** is a temporary vulnerable state usually caused by **Poise Damage**. When a combatant receives enough Poise
+Damage to deplete their Poise, the damage can resolve into a stagger, interrupting the combatant and temporarily limiting
+their ability to act.
+
+Stagger is handled by the **Stagger Damage Outcome**. When damage is received, the outcome checks whether the incoming hit
+should stagger the target. If the check succeeds, it applies the **Stagger Gameplay Effect**, which adds the
+`Combat.State.Staggered` Gameplay Tag.
+
+### Enabling Stagger
+
+To enable stagger for a combatant:
+
+1. Add the **Stagger Damage Outcome** to the combatant's Damage Data outcome pipeline.
+2. Grant the **Stagger Ability** to the combatant.
+3. Configure valid values for the stagger attributes.
+4. Make sure attacks that should build stagger apply **Poise Damage**.
+
+The Combat System provides the following **Gameplay Attributes** to support stagger.
+
+| Attribute               | Description                                                              |
+|-------------------------|--------------------------------------------------------------------------|
+| `Poise`                 | Defines how much accumulated Poise Damage is required before staggering. |
+| `PoiseDamage`           | Tracks the current accumulated Poise Damage.                             |
+| `PoiseRecovery`         | Defines how much Poise Damage is recovered when poise recovery happens.  |
+| `PoiseRecoveryInterval` | Defines how often Poise Damage is recovered.                             |
+| `StaggerDuration`       | Defines how long the stagger state lasts.                                |
+
+### Poise Damage
+
+Poise represents the combatant's resistance to stagger. As attacks apply **Poise Damage**, the accumulated value moves
+toward the combatant's Poise value.
+
+When `PoiseDamage` reaches `Poise`, the **Stagger Damage Outcome** can apply the Stagger Gameplay Effect. The default
+Stagger effect lasts for the duration defined by `StaggerDuration`.
+
+When the stagger effect ends, the default setup immediately recovers poise, allowing the combatant to begin building
+toward a future stagger again.
+
+### Forced Stagger
+
+Attacks can also force stagger directly by adding the `Combat.Damage.Modifier.ForceStagger` Gameplay Tag to the incoming
+damage source tags.
+
+This is useful for special attacks, heavy counters, parries, boss mechanics, or any hit that should stagger regardless of
+the current Poise Damage value.
+
+### Stagger Gameplay Effect
+
+The **Stagger Gameplay Effect** represents the actual stagger state. It adds the `Combat.State.Staggered` Gameplay Tag and
+uses the target's `StaggerDuration` attribute to determine how long the state lasts.
+
+You can also apply the Stagger Gameplay Effect directly if you want to force the state without going through damage
+resolution. This is useful for scripted moments or custom systems where the target should immediately become staggered.
+
+### Stagger Ability
+
+The **Stagger Ability** is activated when the `Combat.State.Staggered` Gameplay Tag is added to the avatar.
+
+By default, it cancels and blocks common combat abilities while the character is staggered, such as attacks, casts, combos,
+evades, and opportunity attacks. It also exposes a `HandleStagger` event that can be implemented in Blueprint or C++ to
+play animations, trigger effects, or run additional stagger-specific behavior.
+
+### Stagger Animation
+
+The Combat Manager broadcasts changes to the stagger state, and the Ninja Combat Animation Instance is aware of this state
+through `bIsStaggered`.
+
+This allows Animation Blueprints to blend into stagger poses, locomotion, recovery animations, or other animation states
+while the combatant is staggered.
+
 ## Knockdown and Recovery
 
 **Knockdown** is an optional fatal damage reaction. When enabled, fatal damage can place a combatant into a temporary
@@ -129,7 +199,7 @@ By default, the recovered health is calculated from the combatant's maximum heal
 `MaxHealthTotal * KnockDownHealthPercent`. Once the knocked down Gameplay Tag is removed, the Knock Down Ability ends and 
 the combatant exits the knocked down state.
 
-### Animation State
+### Knockdown Animation
 
 The Combat Manager broadcasts changes to the knocked down state, and the Ninja Combat Animation Instance can use this
 information to expose an animation-facing flag.

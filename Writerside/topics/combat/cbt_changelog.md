@@ -25,6 +25,7 @@
 [change] Better integrated Parry Scans and Melee Attacks, exposing available Parry Scan Windows through the Melee Interface.
 [change] Exposed parameters for target cycling, in the target lock ability.
 [change] Made the Combat/Faction integration component more flexible, allowing non-boolean mitigations.
+[change] Replaced core stagger resolution in favour of the new outcome.
 [fix] Corrected check for "InParryAttackerWindow" in the Combat Manager.
 [fix] Considering socket rotation to debug draw functions in the Melee Scan.
 [fix] Added missing EditCondition to the Cast Ability.
@@ -35,9 +36,10 @@
 [fix] Added default initialization for mitigation GE, to avoid spamming "SetByCaller" messages. 
 [fix] Corrected damage manager check in the Invulnerability mitigation class.
 [fix] Corrected scheduled notify timelines crashing when an animation is playing and avatar becomes invalid.
+[fix] Ensured that bot assets are only released after the bot is unpossessed.
+[fix] Included Block Angle to the list of mitigation attributes.
 [deprecated] The generic Attack Ability will be removed in a future version. Please update to specialized Melee, Ranged and Opportunity attacks.
 [deprecated] Launch Projectile Animation Notify has a new structure to set the same properties. Please review your settings.
-[fix] Ensured that bot assets are only released after the bot is unpossessed.
 [build] Added support for Unreal Engine 5.8, removed support for Unreal Engine 5.5
 ```
 

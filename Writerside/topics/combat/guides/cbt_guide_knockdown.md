@@ -72,8 +72,8 @@ For more information, see [**Combat Components**](cbt_concept_components.md).
 
 Knockdown uses two Gameplay Abilities:
 
-* `CombatAbility_KnockDown`, which handles entering the knocked down state.
-* `CombatAbility_KnockDownRecovery`, which handles recovery.
+-`CombatAbility_KnockDown`, which handles entering the knocked down state.
+-`CombatAbility_KnockDownRecovery`, which handles recovery.
 
 Both abilities should usually be granted by default to combatants that can be knocked down and recovered.
 
@@ -87,8 +87,6 @@ Both abilities should usually be granted by default to combatants that can be kn
     <step>Grant this ability to the combatant.</step>
 </procedure>
 
-The Knock Down Ability is activated by the `Combat.Event.KnockedDown` Gameplay Event.
-
 ### Configure the Recovery Ability
 
 <procedure title="Configure the Knock Down Recovery Ability" collapsible="true" default-state="collapsed">
@@ -97,8 +95,6 @@ The Knock Down Ability is activated by the `Combat.Event.KnockedDown` Gameplay E
     <step>Keep the default <b>Recovery Effect Class</b>, or assign a custom effect based on <code>CombatEffect_RecoverFromKnockDown</code>.</step>
     <step>Grant this ability to the combatant.</step>
 </procedure>
-
-The Knock Down Recovery Ability is activated by the `Combat.Event.RecoverFromKnockDown` Gameplay Event.
 
 ## Knockdown Attributes
 
