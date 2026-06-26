@@ -72,6 +72,71 @@ montage selection.
 
 ## Knockdown and Recovery
 
+**Knockdown** is an optional fatal damage reaction. When enabled, fatal damage can place a combatant into a temporary
+knocked down state instead of immediately starting the normal death flow.
+
+This is handled by the **Knock Down Damage Outcome**. When fatal damage is received, the outcome checks whether the
+combatant can enter knockdown, whether the incoming damage allows knockdown, and whether the required knockdown attributes
+are configured. If all checks pass, the fatal hit is resolved as a knockdown, the `Combat.Event.KnockedDown` Gameplay Event
+is broadcast, and fatal resolution stops.
+
+### Enabling Knockdown
+
+To enable knockdown for a combatant:
+
+1. Add the **Knock Down Damage Outcome** to the combatant's Damage Data outcome pipeline.
+2. Enable knockdown on the combatant's Damage Manager or Combat Manager.
+3. Grant the **Knock Down Ability** to the combatant.
+4. Grant the **Knock Down Recovery Ability** if the combatant can be recovered.
+5. Configure valid values for the knockdown attributes.
+
+The Combat System provides the following **Gameplay Attributes** to support knockdown.
+
+| Attribute                | Description                                                          |
+|--------------------------|----------------------------------------------------------------------|
+| `KnockDownDuration`      | Defines how long the combatant can remain knocked down before dying. |
+| `KnockDownHealthPercent` | Defines how much health is restored when recovering from knockdown.  |
+
+Both attributes must be configured with values greater than zero for the default Knock Down outcome to resolve fatal damage
+as a knockdown.
+
+### Knock Down Ability
+
+The **Knock Down Ability** is activated by the `Combat.Event.KnockedDown` Gameplay Event. It plays the knockdown animation
+and applies the **Knocked Down Gameplay Effect**, which adds the `Combat.State.KnockedDown` Gameplay Tag.
+
+This Gameplay Tag represents the actual knocked down state. It can be used by other abilities, UI, animation systems, or
+gameplay logic to detect that the combatant is currently knocked down.
+
+The default **Knocked Down Gameplay Effect** also cancels health, mana, and stamina regeneration while the state is active.
+
+### Knockdown Duration
+
+Once the Knock Down Ability starts, it waits for the duration defined by the `KnockDownDuration` attribute.
+
+If the duration expires before the combatant recovers, the ability applies the death effect and starts the death flow. The
+same can happen if a `Combat.Event.GiveUp` Gameplay Event is sent while the combatant is knocked down.
+
+### Recovery
+
+Recovery is handled by the **Knock Down Recovery Ability**, which is activated by the
+`Combat.Event.RecoverFromKnockDown` Gameplay Event.
+
+The recovery ability requires the combatant to currently have the `Combat.State.KnockedDown` Gameplay Tag. When activated,
+it applies the recovery effect, restores health, removes the knocked down state, and plays the recovery animation.
+
+By default, the recovered health is calculated from the combatant's maximum health and knockdown recovery percentage:
+`MaxHealthTotal * KnockDownHealthPercent`. Once the knocked down Gameplay Tag is removed, the Knock Down Ability ends and 
+the combatant exits the knocked down state.
+
+### Animation State
+
+The Combat Manager broadcasts changes to the knocked down state, and the Ninja Combat Animation Instance can use this
+information to expose an animation-facing flag.
+
+This allows Animation Blueprints to blend into knocked down poses, locomotion, recovery animations, or other animation
+states while the combatant is knocked down.
+
 ## Parry and Riposte
 
 Parries and ripostes are common **counterattack** mechanics, popularized by the _souls-like_ genre. They work by creating
