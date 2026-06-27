@@ -26,6 +26,7 @@
 [change] Exposed parameters for target cycling, in the target lock ability.
 [change] Made the Combat/Faction integration component more flexible, allowing non-boolean mitigations.
 [change] Replaced core stagger resolution in favour of the new outcome.
+[change] Improved initialization and caching strategies for combat components.
 [fix] Corrected check for "InParryAttackerWindow" in the Combat Manager.
 [fix] Considering socket rotation to debug draw functions in the Melee Scan.
 [fix] Added missing EditCondition to the Cast Ability.
