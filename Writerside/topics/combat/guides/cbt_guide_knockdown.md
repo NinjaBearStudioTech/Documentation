@@ -30,20 +30,11 @@ Knockdown usually uses three animation-related pieces:
 * A **Knock Down Montage** that plays when the combatant enters knockdown.
 * A **Recovery Montage** that plays when the combatant recovers.
 
-### Animation Instance
-
-The Animation Blueprint should react to the combatant's knocked down state. The default Ninja Combat Animation Instance
-already exposes `bKnockedDown`, which can be used by the Anim Graph.
-
 <procedure title="Configure the Animation Instance" collapsible="true" default-state="collapsed">
     <step>Create an Animation Blueprint using <code>NinjaCombatAnimInstance</code> as the base class.</step>
     <step>In your Anim Graph or state machine, use <code>bKnockedDown</code> to blend into and out of knocked down animation states.</step>
     <step>Make sure your Animation Blueprint has a full-body Slot that can be used by the knockdown and recovery montages.</step>
 </procedure>
-
-### Animation Montages
-
-The **Knock Down Ability** and **Knock Down Recovery Ability** each play an Animation Montage.
 
 <procedure title="Create the Knockdown Montages" collapsible="true" default-state="collapsed">
     <step>Create an Animation Montage for the transition into knockdown.</step>
@@ -75,10 +66,6 @@ Knockdown uses two Gameplay Abilities:
 -`CombatAbility_KnockDown`, which handles entering the knocked down state.
 -`CombatAbility_KnockDownRecovery`, which handles recovery.
 
-Both abilities should usually be granted by default to combatants that can be knocked down and recovered.
-
-### Configure the Knock Down Ability
-
 <procedure title="Configure the Knock Down Ability" collapsible="true" default-state="collapsed">
     <step>Create a Gameplay Ability Blueprint using <code>CombatAbility_KnockDown</code> as the base class.</step>
     <step>Set the <b>Default Animation Montage</b> to the knockdown montage created earlier.</step>
@@ -86,8 +73,6 @@ Both abilities should usually be granted by default to combatants that can be kn
     <step>Keep the default <b>Dead Effect Class</b>, or assign a custom death effect used when the knockdown duration expires.</step>
     <step>Grant this ability to the combatant.</step>
 </procedure>
-
-### Configure the Recovery Ability
 
 <procedure title="Configure the Knock Down Recovery Ability" collapsible="true" default-state="collapsed">
     <step>Create a Gameplay Ability Blueprint using <code>CombatAbility_KnockDownRecovery</code> as the base class.</step>
@@ -135,21 +120,8 @@ Once this is configured, fatal damage can be redirected into knockdown instead o
 
 ## Recovery
 
-Recovery can be triggered by any system that sends the `Combat.Event.RecoverFromKnockDown` Gameplay Event to the knocked
-down combatant. Common recovery sources include:
-
-* Another player interacting with a fallen ally.
-* A trigger volume.
-* A gameplay objective.
-* A scripted event.
-* Custom Blueprint or C++ logic.
-
-The only requirement is that the recovering combatant currently has the knocked down state.
-
-### Recovery Volume Example
-
-This example uses a Trigger Box to recover knocked down combatants that overlap it. You can use the same event flow from
-other systems, such as Ninja Interaction.
+In this example, a Trigger Box is used to recover knocked down combatants that overlap it. You can use the same event 
+flow from other systems, such as [**Ninja Interaction**](int_overview.md)
 
 <procedure title="Create a Recovery Volume" collapsible="true" default-state="collapsed">
     <step>Create a Blueprint based on <b>Trigger Box</b>.</step>
@@ -168,9 +140,8 @@ other systems, such as Ninja Interaction.
 ## Give Up
 <secondary-label ref="optional"/>
 
-A knocked down combatant can also be forced into the death flow by sending the `Combat.Event.GiveUp` Gameplay Event.
-
-This can be used for player-controlled give-up actions, timers, AI behavior, or scripted events.
+A knocked down combatant can also be forced into the death flow by sending the `Combat.Event.GiveUp` Gameplay Event. This 
+can be used for player-controlled give-up actions, timers, AI behavior, or scripted events.
 
 <procedure title="Trigger Give Up" collapsible="true" default-state="collapsed">
     <step>Retrieve the knocked down combatant's Ability System Component.</step>

@@ -95,36 +95,25 @@ hit filtering, bounce response, blasts, exhaustion, or cosmetics, is still handl
 
 ## Projectile Behaviors
 
-Projectile gameplay is built through instanced **Projectile Behaviors**. A projectile can use only the behaviors it needs,
-which allows simple arrows, homing missiles, bouncing projectiles, grenades, and blast projectiles to share the same core
-lifecycle.
+Projectile gameplay is built through instanced **Projectile Behaviors**. A projectile can use only the behaviors it needs, 
+which allows simple arrows, homing missiles, bouncing projectiles, grenades, and blast projectiles to share the same core lifecycle.
 
-Projectile Behaviors are owned by the **Projectile Behavior Component**. The component receives projectile lifecycle events
+Projectile Behaviors are owned by the **Projectile Behavior Component**. The component receives projectile lifecycle events 
 from the actor and forwards them to each behavior in order.
 
-The default projectile actor creates a Projectile Behavior Component with the standard behavior stack:
+The default projectile actor creates a Projectile Behavior Component with a standard behavior stack, but additional behaviors 
+can be added by projectile subclasses or Blueprint defaults.
 
-| Behavior          | Purpose                                                        |
-|-------------------|----------------------------------------------------------------|
-| **Launch**        | Applies the initial projectile velocity.                       |
-| **Hit Processor** | Converts accepted raw hits into confirmed gameplay impacts.    |
-| **Scan**          | Scans the projectile path between frames and reports raw hits. |
-| **Exhaustion**    | Decides when the projectile stops acting as active gameplay.   |
-| **Cosmetics**     | Routes projectile lifecycle events to Gameplay Cues.           |
-
-Additional behaviors can be added by projectile subclasses or Blueprint defaults.
-
-### Common Behavior Types
-
-| Behavior Type     | When to use it                                                                                             |
-|-------------------|------------------------------------------------------------------------------------------------------------|
-| **Launch**        | Use for normal launches, targeted launches, camera-guided launches, or homing setup.                       |
-| **Scan**          | Use for fast-moving projectiles where normal collision may miss targets between frames.                    |
-| **Hit Processor** | Use when raw hits must be filtered before they become confirmed gameplay impacts.                          |
-| **Bounce**        | Use when a projectile needs custom behavior after bouncing, such as redirecting or selecting a new target. |
-| **Exhaustion**    | Use to decide when the projectile should stop being active, such as after an impact, bounce, or timer.     |
-| **Blast**         | Use for area or multi-target effects triggered by impact, exhaustion, timer, or other projectile events.   |
-| **Cosmetics**     | Use to route projectile lifecycle events to Gameplay Cues on non-dedicated servers.                        |
+| Behavior          | Added by Default | Purpose                                                                                                                 |
+|-------------------|------------------|-------------------------------------------------------------------------------------------------------------------------|
+| **Launch**        | Yes              | Applies the initial projectile velocity and supports normal, targeted, camera-guided, or homing launches.               |
+| **Hit Processor** | Yes              | Converts accepted raw hits into confirmed gameplay impacts.                                                             |
+| **Scan**          | Yes              | Scans the projectile path between frames and reports raw hits, helping fast projectiles detect missed targets.          |
+| **Exhaustion**    | Yes              | Decides when the projectile stops acting as active gameplay, such as after an impact, bounce, or timer.                 |
+| **Cosmetics**     | Yes              | Routes projectile lifecycle events to Gameplay Cues on non-dedicated servers.                                           |
+| **Bounce**        | No               | Handles custom behavior after bouncing, such as redirecting the projectile or selecting a new target.                   |
+| **Blast**         | No               | Applies area or multi-target effects triggered by impact, exhaustion, timer, or other projectile events.                |
+| **Z Lock**        | No               | Keeps the projectile at a fixed Z location relative to its instigator, or maintains its initial Z during its lifecycle. |
 
 > **Exhaustion before deactivation**
 >

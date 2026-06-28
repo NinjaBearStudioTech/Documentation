@@ -222,35 +222,30 @@ for collecting targets, usually through collision or overlap logic, and applying
 
 <procedure title="Create the Cast Actor" collapsible="true" default-state="collapsed">
     <img src="cbt_guide_cast_actor_graph.png" alt="Cast Actor Graph" width="780" thumbnail="true" border-effect="line"/>
+    <step>In your Blueprints folder, create a new <b>Cast Actor Blueprint</b> using <code>NinjaCombatCastActor_Sphere</code> as the base class.</step>
     <step>
-        <p>In your Blueprints folder, create a new <b>Cast Actor Blueprint</b> using <code>NinjaCombatCastActor_Sphere</code> as the base class.</p>
+        <p>Review the default <b>Cast Behaviors</b> and adjust settings as needed:</p>
+        <ul>
+            <li>In the <b>Floor Alignment</b> behavior, set the <b>Floor Trace Channel</b> to <code>Floor</code></li>
+            <li>In the <b>Cast Effect</b> behavior, set the <b>Hit Result Channel</b> to <code>CombatObject</code></li>
+            <li>In the <b>Dissipation</b> behavior, adjust the <b>Active Duration</b> as needed.</li>
+        </ul>
     </step>
     <step>
         <p>Add a <b>Niagara Component</b> and an <b>Audio Component</b> to the <b>Cast Sphere</b>. Set <b>Auto Activate</b> to <code>false</code> on both components.</p>
         <tip>Although you can assign particles and sound assets directly to these components, it is usually better to keep this Blueprint as an <b>abstract parent</b> for your Cast Actors.</tip>
     </step>
-    <step>
-        <p>In the <b>My Blueprint</b> tab, expand <b>Overridable Functions</b> and select <code>StartCast</code>. This adds the event to the <b>Event Graph</b>.</p>
-    </step>
+    <step>In the <b>My Blueprint</b> tab, expand <b>Overridable Functions</b> and select <code>StartCast</code>. This adds the event to the <b>Event Graph</b>.</step>
     <step>
         <p>Right-click the <code>StartCast</code> node and select <b>Add Call to Parent Function</b>. Connect the parent function call to the event.</p>
         <note>Always call the <b>Parent Function</b> in your base <b>Cast Actors</b>, since the base class runs important setup logic there.</note>
     </step>
-    <step>
-        <p>Bind a new event to the Niagara Component's <b>System Finished</b> delegate.</p>
-    </step>
-    <step>
-        <p>Activate the <b>VFX</b> and <b>Audio</b> components. Make sure both components are set to <b>Reset</b>, then call <b>Play</b> on the audio component.</p>
-    </step>
-    <step>
-        <p>In the <b>System Finished</b> event, unbind the callback and deactivate the Poolable Actor through the <b>Poolable Actor Component</b>.</p>
-    </step>
-    <step>
-        <p>Close the base Blueprint and create a new <b>Child Blueprint</b>. This child Blueprint is the one that will be used by the ability.</p>
-    </step>
-    <step>
-        <p>Assign the Niagara System and Sound assets that should be used by this Cast Actor.</p>
-    </step>
+    <step>Bind a new event to the Niagara Component's <b>System Finished</b> delegate.</step>
+    <step>Activate the <b>VFX</b> and <b>Audio</b> components. Make sure both components are set to <b>Reset</b>, then call <b>Play</b> on the audio component.</step>
+    <step>In the <b>System Finished</b> event, unbind the callback and deactivate the Poolable Actor through the <b>Poolable Actor Component</b>.</step>
+    <step>Close the base Blueprint and create a new <b>Child Blueprint</b>. This child Blueprint is the one that will be used by the ability.</step>
+    <step>Assign the Niagara System and Sound assets that should be used by this Cast Actor.</step>
+    <step>Set the Gameplay Effect applied by the Cast Actor, to the <b>Cast Effect Class</b>.</step>
 </procedure>
 
 <procedure title="Create the Cast Ability" collapsible="true" default-state="collapsed">
