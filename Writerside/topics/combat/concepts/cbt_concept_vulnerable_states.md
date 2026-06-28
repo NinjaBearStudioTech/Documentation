@@ -283,6 +283,9 @@ final phase of death, including animations and destruction logic.
 You can configure the death animation to either **end naturally** or **loop** in a specific animation state.  
 Looping is useful for holding ragdoll poses or collapsed states before cleanup.
 
+When configuring an **Animation Montage** for the Death Ability, add the **Death Notify** at some point. Additionally, 
+you optionally use the **Ragdoll Notify** as well.
+
 <img src="cbt_death_animation.png" alt="Death Animation" thumbnail="true" border-effect="line"/>
 
 ### Interrupting Abilities

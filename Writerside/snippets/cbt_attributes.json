@@ -384,7 +384,7 @@
         "bCanStack": false
     },
     {
-        "Name": "NinjaCombatAttributeSet.KnockOutHealthPercent",
+        "Name": "NinjaCombatAttributeSet.KnockDownHealthPercent",
         "BaseValue": 10,
         "MinValue": 0,
         "MaxValue": 0,

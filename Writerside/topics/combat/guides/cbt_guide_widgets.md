@@ -61,4 +61,3 @@ provides many of these functions.
 > Similarly to the conversion functions above, you can bind ViewModel data to any **Callable function** with an
 > **input parameter matching the ViewModel’s property type**.
 
-## Enemy Vitals

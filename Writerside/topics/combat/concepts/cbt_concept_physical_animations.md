@@ -1,6 +1,5 @@
 # Physical Animations
 <primary-label ref="combat"/>
-<secondary-label ref="optional"/>
 <secondary-label ref="advanced"/>
 
 Ninja Combat can use **physical animations** to create hit reactions when a combatant receives melee or ranged damage.

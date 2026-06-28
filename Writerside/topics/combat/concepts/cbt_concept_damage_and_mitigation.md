@@ -152,6 +152,14 @@ The following mitigation types are available:
 > mitigation needs state, store it on the combatant, the Combat Manager, or another gameplay system.
 {style="tip"}
 
+> **Invulnerability Mitigation and State**
+>
+> The Invulnerability mitigation evaluates if the character has the invulnerability state currently active. This is done
+> by applying the **Invulnerability Gameplay Effect** (`UCombatEffect_Invulnerability`).
+> 
+> Additionally, if you are implementing invulnerability during an **Evade Ability**, you can use the **Invulnerability
+> Notify State**, which sends the proper Gameplay Event back to the ability.
+
 ### Mitigation Blocking Tags
 
 Each mitigation can define **Mitigation Blocking Tags**. If the incoming damage contains one of these source tags, **that
