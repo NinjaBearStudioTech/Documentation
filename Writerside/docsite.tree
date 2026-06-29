@@ -121,6 +121,9 @@
                 <toc-element topic="gas_batch_activation.md"/>
                 <toc-element topic="gas_lazy_loading.md"/>
             </toc-element>
+            <toc-element toc-title="Guides">
+                <toc-element topic="gas_guide_attributes.md"/>
+            </toc-element>
             <toc-element topic="gas_changelog.md"/>
         </toc-element>
         <!-- Ninja Input -->

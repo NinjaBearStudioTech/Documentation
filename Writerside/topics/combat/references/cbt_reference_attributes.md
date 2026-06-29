@@ -1,62 +1,79 @@
 # Combat Attributes
 <primary-label ref="combat"/>
 
-The Combat Framework includes its own Attribute Set, containing multiple relevant categories such as **Vitals**,
-**Damage** and **Defense**.
+The Combat Framework includes its own Attribute Set, represented by the `NinjaCombatAttributeSet` class.
 
-The Attribute Set is represented by the `NinjaCombatAttributeSet` class, make sure to add it to the Ability System
-Component assigned to your Character or Player State.
+This Attribute Set provides dozens of combat-related attributes used by the framework, including **Vitals**,
+**Damage**, **Defense**, **Block**, **Evade**, **Poise**, **Stagger**, and other combat systems.
 
-## Available Attributes
+Make sure to add this Attribute Set to the Ability System Component assigned to your Character or Player State.
 
-The following table contains all attributes available in the Combat System's Attribute Set.
+## Attribute Operations
 
-| Attribute                | Description                                              | Category          |
-|--------------------------|----------------------------------------------------------|-------------------|
-| `PendingDamage`          | Damage that must be applied to the owner.                | Meta Attributes   |
-| `PendingMitigationCost`  | Mitigation cost that must be subtracted from the owner.  | Meta Attributes   |
-| `MaxHealthTotal`         | Total health available, including base/add/percent.      | Meta Attributes   |
-| `MaxStaminaTotal`        | Total stamina available, including base/add/percent.     | Meta Attributes   |
-| `MaxManaTotal`           | Total mana available, including base/add/percent.        | Meta Attributes   |
-| `Health`                 | Current amount of health available.                      | Health            |
-| `MaxHealth`              | Base maximum health available.                           | Health            |
-| `MaxHealthAdd`           | Health added to the maximum.                             | Health            |
-| `MaxHealthPercent`       | Percent multiplier to health in {0, 1} range.            | Health            |
-| `HealthRegenRate`        | Health regeneration rate.                                | Health            |
-| `Stamina`                | Current amount of stamina available.                     | Stamina           |
-| `MaxStamina`             | Base maximum amount of stamina available.                | Stamina           |
-| `MaxStaminaAdd`          | Stamina added to the maximum.                            | Stamina           |
-| `MaxStaminaPercent`      | Percent multiplier to stamina in {0, 1} range.           | Stamina           |
-| `StaminaCost`            | Base cost for stamina that can be used by abilities.     | Stamina           |
-| `StaminaRegenRate`       | Stamina regeneration rate.                               | Stamina           |
-| `Mana`                   | Current amount of mana available.                        | Mana              |
-| `MaxMana`                | Base maximum amount of mana available.                   | Mana              |
-| `MaxManaAdd`             | Mana added to the maximum.                               | Mana              |
-| `ManaCost`               | Base cost for mana that can be used by abilities.        | Mana              |
-| `MaxManaPercent`         | Percent multiplier to mana in {0, 1} range.              | Mana              |
-| `ManaRegenRate`          | Mana regeneration rate.                                  | Mana              |
-| `BaseDamage`             | Base damage applied by the character.                    | Damage            |
-| `CriticalHitChance`      | Critical Hit Chance for applied damage.                  | Damage            |
-| `CriticalHitMultiplier`  | Critical Hit Multiplier for applied damage.              | Damage            |
-| `BlockChance`            | Chance to block an incoming attack in {0, 1} range.      | Block             |
-| `BlockMitigation`        | Amount of damage mitigated by blocking, in {0, 1} range. | Block             |
-| `BlockAngle`             | Maximum angle where block is effective.                  | Block             |
-| `BlockLimit`             | Flat limit of damage that can be mitigated.              | Block             |
-| `BlockStaminaCostRate`   | The cost in stamina, to block each point of damage.      | Block             |
-| `BlockCooldown`          | Block cooldown, usually as penalty from a breaker hit.   | Block             |
-| `EvadeStaminaCost`       | Stamina cost to perform an evade.                        | Evade             |
-| `EvadeCooldown`          | Cooldown applied before a new evade can be performed.    | Evade             |
-| `DefenseChance`          | Chance to defend an incoming attack in {0, 1} range.     | Defense           |
-| `DefenseMitigation`      | Amount of damage passively mitigated, in {0, 1} range.   | Defense           |
-| `DefenseStaminaCostRate` | The cost in stamina, to defend each point of damage.     | Defense           |
-| `ArmorReduction`         | Flat damage reduction for incoming damage.               | Armor             |
-| `LastStandCount`         | Chances for the character to revert fatal damage.        | Last Stand        |
-| `LastStandHealthPercent` | Amount health granted when fatal damage is reverted.     | Last Stand        |
-| `Poise`                  | Current poise. At zero, triggers a stagger.              | Poise and Stagger |
-| `MaxPoise`               | Maximum poise for a character.                           | Poise and Stagger |
-| `StaggerDuration`        | Duration of the Stagger effect.                          | Poise and Stagger |
+Combat Attributes are not only raw values. Some of them are used by the framework as part of important combat
+operations, such as applying damage, calculating mitigation, spending resources, and deriving final vital values.
 
-> You can always track your character's Attributes and their current values using the Gameplay Ability System debugger.
+### Pending Damage and Mitigation Costs
+
+`PendingDamage` and `PendingMitigationCost` are meta attributes processed by the Attribute Set.
+
+They represent temporary values that are received by the Attribute Set and then distributed to their actual
+destinations.
+
+For example, incoming `PendingDamage` is processed by the damage mitigation flow and eventually applied to `Health`.
+Likewise, `PendingMitigationCost` is processed and applied to the appropriate resource used by the mitigation result.
+
+### Vitals
+
+The main vitals provided by Combat are **Health**, **Stamina** and **Mana**. Each vital has a set of support attributes 
+used to calculate and manage its final value:
+
+| Attribute Type    | Description                                                                               |
+|-------------------|-------------------------------------------------------------------------------------------|
+| Current Value     | The current amount available, such as `Health`, `Stamina`, or `Mana`.                     |
+| Max Total         | Meta attribute containing the final maximum value after base, add, and percent modifiers. |
+| Max Add           | Flat amount added to the maximum value.                                                   |
+| Max Percent       | Multiplier applied to the maximum value.                                                  |
+| Regeneration Rate | A value that is regenerated over a period of time.                                        |
+
+For example, Health uses: `Health`, `MaxHealth`, `MaxHealthTotal`, `MaxHealthAdd`, `MaxHealthPercent`. The same pattern 
+is used by Stamina and Mana.
+
+### Damage
+
+Combat provides damage attributes used by the framework when building and applying damage.
+
+The main damage attributes include:
+
+| Attribute               | Description                                     |
+|-------------------------|-------------------------------------------------|
+| `BaseDamage`            | Base damage applied by the character.           |
+| `CriticalHitChance`     | Chance to apply a critical hit.                 |
+| `CriticalHitMultiplier` | Multiplier used when a critical hit is applied. |
+| `BaseDamageBonus`       | Dynamic bonus added to base damage.             |
+| `BaseDamageReduction`   | Dynamic reduction applied to base damage.       |
+
+These attributes can be used by abilities, effects, equipment, or other systems that need to affect outgoing damage.
+
+### Mitigation Attributes
+
+Mitigation attributes are used by the [**damage mitigation pipeline**](cbt_concept_damage_and_mitigation.md).
+
+These include attributes related to systems such as **blocking**, **defense**, **armor**, and any other combat rules that
+participate in reducing, redirecting, or reacting to incoming damage.
+
+Attributes are only considered by the mitigation pipeline when they are deliberately exposed to it. To do that, an
+Attribute Set must implement `CombatMitigationAttributeSetInterface` and return the relevant attributes from
+`GetAttributesRelevantForDamageMitigation`.
+
+> **Exposing Custom Attribute Sets**
+>
+> Any Attribute Set present in the owner's Ability System Component will be evaluated for the interface. All
+> implementations can provide attributes to be exposed to the mitigation pipeline.
+
+> **Gameplay Debugger**
+>
+> You can always track your character's attributes and their current values using the Gameplay Ability System debugger.
 
 ## Initialization Data
 
@@ -64,6 +81,6 @@ You can use this JSON to facilitate the creation the Data Table used to initiali
 
 The Data Table Row type used to create the Attribute Set Data for initialization, `AttributeMetaData`, is provided by
 the **Gameplay Ability System**. Once your Data Table is created, you can import the following JSON to have an initial,
-complete, set of attribute values.
+complete set of attribute values.
 
 <code-block lang="json" src="cbt_attributes.json" collapsible="true" collapsed-title="Combat Attributes"/>
