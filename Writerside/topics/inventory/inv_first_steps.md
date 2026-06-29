@@ -167,4 +167,4 @@ From here, you can:
 - Learn more about [**Item Fragments**](inv_inventory_items.md).
 - Configure [**Equipment**](inv_equipment_system.md).
 - Learn about [**Save and Load**](inv_save_and_load.md) functionality.
-- Integrate [**Ninja Inventory with Ninja Combat**](itg_combat_inventory.md).
+- Integrate [**Ninja Inventory with Ninja Combat**](integration_combat_inventory.md).

@@ -18,7 +18,7 @@ an actor during Ability System initialization.
         <p>Create a new <b>G.A.S. Setup Data Asset</b>.</p>
         <p>You can do so by right-clicking an empty area in the <b>Content Browser</b>, then navigating to <b>Ninja Bear Studio</b> &rarr; <b>Ninja G.A.S.</b> &rarr; <b>G.A.S. Setup</b>.</p>
     </step>
-    <step>Add any <b>Attribute Sets</b> required by your project. For example, you can use the one provided by <a href="cbt_gameplay_attributes.md"><b>Ninja Combat</b></a>.</step>
+    <step>Add any <b>Attribute Sets</b> required by your project. For example, you can use the one provided by <a href="cbt_concept_attributes.md"><b>Ninja Combat</b></a>.</step>
     <step>Add any startup <b>Gameplay Effects</b> required by your project.</step>
     <step>Add any startup <b>Gameplay Abilities</b> required by your project.</step>
 </procedure>

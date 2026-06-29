@@ -16,11 +16,11 @@ This handler can be also used by the **secondary combo keys**, only handling fol
 Even though this is mostly designed considering **Ninja Combat's input system**, it's just a GAS based check using 
 gameplay tags, so if your combo system also follows that approach, this can be used too. 
 
-| Property         | Purpose                                                                          |
-|------------------|----------------------------------------------------------------------------------|
-| `ComboStateTag`  | The gameplay tag that represents an **active combo state**.                      |
-| `ActivationTags` | Gameplay tags that will be used to start the [**Combo ability**](cbt_combos.md). |
-| `AdvancementTag` | Gameplay tag representing the **Advance Combo Event**.                           |
+| Property         | Purpose                                                                                  |
+|------------------|------------------------------------------------------------------------------------------|
+| `ComboStateTag`  | The gameplay tag that represents an **active combo state**.                              |
+| `ActivationTags` | Gameplay tags that will be used to start the [**Combo ability**](cbt_concept_combos.md). |
+| `AdvancementTag` | Gameplay tag representing the **Advance Combo Event**.                                   |
 
 ## Default, Hold, Combo
 An Input Handler that handles three **combo/attack ability scenarios from the same Input Action**.

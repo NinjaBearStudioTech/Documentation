@@ -1,6 +1,10 @@
 # Changelog
 <primary-label ref="interaction"/>
 
+## 2.0.8
+[fix] Ensured that the correct interaction slot tag is registered over network.
+[build] Added support for Unreal Engine 5.8.
+
 ## 2.0.7 - 17/04/2026
 ```
 [improvement] Gameplay or sequencers can force openable actors to unlock without a key, via ForceUnlock.

@@ -63,7 +63,7 @@ System**. When these events are fired:
 - A gameplay event is sent to the owner's Ability System
 - The newly acquired or dismissed perception target is provided as an optional event object 
 
-> This pattern matches the [**Target Lock Gameplay Ability**](cbt_ability_target_lock.md) provided by Ninja Combat and 
+> This pattern matches the [**Target Lock Gameplay Ability**](cbt_concept_target_locking.md) provided by Ninja Combat and 
 > allows AI perception to drive combat or interaction systems without tight coupling.
 {style="note"}
 
@@ -131,7 +131,7 @@ interface's `GetGenericTeamId` function. Attitude resolution can also be impleme
 ### Factions Team Provider
 
 Ninja Bot also provides a Team Provider compatible with [**Ninja Factions**](fct_overview.md). You can find more details
-about this integration in the [**Ninja Factions Integration**](bot_ninja_factions.md) page.
+about this integration in the [**Ninja Factions Integration**](integration_bot_factions.md) page.
 
 ### Custom Resolution
 

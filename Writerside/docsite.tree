@@ -30,8 +30,6 @@
                 <toc-element topic="bot_awareness_target.md"/>
                 <toc-element topic="bot_movement_modes.md"/>
                 <toc-element topic="bot_threat_manager.md"/>
-                <toc-element topic="bot_ninja_factions.md"/>
-                <toc-element topic="bot_ninja_combat.md"/>
             </toc-element>
             <toc-element toc-title="Guides">
                 <toc-element topic="bot_guide_01_movement_profile.md"/>
@@ -45,57 +43,45 @@
         <toc-element topic="cbt_overview.md">
             <toc-element topic="cbt_setup.md"/>
             <toc-element topic="cbt_first_steps.md"/>
-            <toc-element toc-title="Combat System">
-                <toc-element topic="cbt_weapon_actors.md"/>
-                <toc-element topic="cbt_weapon_manager.md"/>
-                <toc-element topic="cbt_melee_attacks.md"/>
-                <toc-element topic="cbt_ranged_attacks.md"/>
-                <toc-element topic="cbt_casts.md"/>
-                <toc-element topic="cbt_combos.md">
-                    <toc-element topic="cbt_combos_input.md"/>
-                    <toc-element topic="cbt_combos_ai.md"/>
-                    <toc-element topic="cbt_combos_branching.md"/>
-                </toc-element>
-                <toc-element topic="cbt_parry_riposte.md"/>
-                <toc-element topic="cbt_opportunity_attacks.md"/>
-                <toc-element topic="cbt_damage_and_defense.md">
-                    <toc-element topic="cbt_damage_hit_reactions.md"/>
-                    <toc-element topic="cbt_damage_death.md"/>
-                </toc-element>
-                <toc-element topic="cbt_target_lock.md"/>
+            <toc-element toc-title="Concepts">
+                <toc-element topic="cbt_concept_components.md"/>
+                <toc-element topic="cbt_concept_attributes.md"/>
+                <toc-element topic="cbt_concept_weapon_management.md"/>
+                <toc-element topic="cbt_concept_melee_attacks.md"/>
+                <toc-element topic="cbt_concept_motion_warping.md"/>
+                <toc-element topic="cbt_concept_ranged_attacks.md"/>
+                <toc-element topic="cbt_concept_cast_flows.md"/>
+                <toc-element topic="cbt_concept_combos.md"/>
+                <toc-element topic="cbt_concept_target_locking.md"/>
+                <toc-element topic="cbt_concept_damage_and_mitigation.md"/>
+                <toc-element topic="cbt_concept_vulnerable_states.md"/>
+                <toc-element topic="cbt_concept_firearms.md"/>
+                <toc-element topic="cbt_concept_physical_animations.md"/>
+                <toc-element topic="cbt_concept_paired_animations.md"/>
+                <toc-element topic="cbt_concept_ui.md"/>
+                <toc-element topic="cbt_concept_ai.md"/>
+                <toc-element topic="cbt_concept_actor_pooling.md"/>
             </toc-element>
-            <toc-element toc-title="Gameplay">
-                <toc-element topic="cbt_gameplay_tags.md"/>
-                <toc-element topic="cbt_gameplay_attributes.md"/>
-                <toc-element topic="cbt_gameplay_effects.md"/>
-                <toc-element topic="cbt_gameplay_abilities.md">
-                    <toc-element topic="cbt_ability_attack.md"/>
-                    <toc-element topic="cbt_ability_block.md"/>
-                    <toc-element topic="cbt_ability_evade.md"/>
-                    <toc-element topic="cbt_ability_opportunity_attack.md"/>
-                    <toc-element topic="cbt_ability_stagger.md"/>
-                    <toc-element topic="cbt_ability_target_lock.md"/>
-                </toc-element>
-                <toc-element topic="cbt_gameplay_targeting_system.md"/>
-            </toc-element>
-            <toc-element toc-title="Advanced Topics">
-                <toc-element topic="cbt_component_extensions.md"/>
-                <toc-element topic="cbt_attack_magnitudes.md"/>
-                <toc-element topic="cbt_motion_warping.md"/>
-                <toc-element topic="cbt_physical_animations.md"/>
-                <toc-element topic="cbt_actor_pooling.md"/>
-                <toc-element topic="cbt_user_interface.md"/>
-                <toc-element topic="cbt_movement_component.md"/>
-                <toc-element topic="cbt_artificial_intelligence.md"/>
-                <toc-element topic="cbt_character_animation.md"/>
-            </toc-element>
-            <toc-element toc-title="Integrations">
-                <toc-element topic="itg_combat_factions.md"/>
-                <toc-element topic="itg_combat_input.md"/>
-                <toc-element topic="itg_combat_inventory.md"/>
+            <toc-element toc-title="References">
+                <toc-element topic="cbt_reference_effects.md"/>
+                <toc-element topic="cbt_reference_abilities.md"/>
             </toc-element>
             <toc-element toc-title="Guides">
-                <toc-element topic="cbt_guide_03_cast_aoe.md"/>
+                <toc-element topic="cbt_guide_weapons.md"/>    
+                <toc-element topic="cbt_guide_melee_attacks.md"/>
+                <toc-element topic="cbt_guide_ranged_attacks.md"/>
+                <toc-element topic="cbt_guide_cast_flows.md"/>
+                <toc-element topic="cbt_guide_combos.md"/>
+                <toc-element topic="cbt_guide_target_lock.md"/>
+                <toc-element topic="cbt_guide_damage_pipeline.md"/>
+                <!--<toc-element topic="cbt_guide_hit_reactions_and_death.md"/>-->
+                <!--<toc-element topic="cbt_guide_evade.md"/>-->
+                <!--<toc-element topic="cbt_guide_block.md"/>-->
+                <!--<toc-element topic="cbt_guide_parry.md"/>-->
+                <toc-element topic="cbt_guide_knockdown.md"/>
+                <toc-element topic="cbt_guide_opportunity_attacks.md"/>
+                <toc-element topic="cbt_guide_firearms.md"/>
+                <toc-element topic="cbt_guide_widgets.md"/>
             </toc-element>
             <toc-element topic="cbt_troubleshooting.md"/>
             <toc-element topic="cbt_changelog.md"/>
@@ -135,6 +121,9 @@
                 <toc-element topic="gas_local_gameplay_cues.md"/>
                 <toc-element topic="gas_batch_activation.md"/>
                 <toc-element topic="gas_lazy_loading.md"/>
+            </toc-element>
+            <toc-element toc-title="Guides">
+                <toc-element topic="gas_guide_attributes.md"/>
             </toc-element>
             <toc-element topic="gas_changelog.md"/>
         </toc-element>
@@ -284,5 +273,10 @@
     </toc-element>
     
     <toc-element toc-title="Integrations">
+        <toc-element topic="integration_bot_combat.md"/>
+        <toc-element topic="integration_bot_factions.md"/>
+        <toc-element topic="integration_combat_factions.md"/>
+        <toc-element topic="integration_combat_input.md"/>
+        <toc-element topic="integration_combat_inventory.md"/>
     </toc-element>
 </instance-profile>

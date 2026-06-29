@@ -1,9 +1,20 @@
 # Changelog
 <primary-label ref="inventory"/>
 
+## 3.1.10
+```
+[change] Added static check to ensure correct fragment types are being searched for.
+[change] Updated linked containers to make sure they synchronize on all events.
+[change] Updated spatial layouts to better handle wrong placement scenarios and anchor sensitivity.
+[fix] Crash from Async Drop Fragment, due to incorrect context being captured in lambda. 
+[fix] Widget names in Spatial Container Widget were leading do duplicate widgets and incorrect behavior. 
+[build] Added support for Unreal Engine 5.8, removed support for Unreal Engine 5.5
+[deprecation] Common UI Widgets will be removed. There are no meaningful features these widgets, UMG counterparts can be used with/without Common UI.
+```
+
 ## 3.1.6 - 18/05/2026
 ```
-[improvement] Better handling deferred initialization of containers.
+[change] Better handling deferred initialization of containers.
 [fix] Ensured that Loot updates from transfer are broadcast to the player client.
 [fix] Improved UI clean-up for items changing the container.
 [fix] Reviewed and fixed odd states when inventory is loaded from a client.
@@ -21,21 +32,21 @@
 [major] Refactored the base Pickup actor for easier integration with Interaction.
 [major] Inventory supports loading save files from clients, which are sent to the server and become authoritative.
 [major] Improved Loot Generation to use a dedicated Default Loot entry, extending from the Default Item.
-[added] A vendor component that provides a gameplay API to buy and sell items to a non-inventory, catalog-based actor.
-[added] Firearm fragment, integrated with Combat Firearms.
-[added] Global Stack observers, available from the Subsystem and Function Library. Useful for the incoming hotbar module.
-[added] Option to set a range for random stack sizes, when setting default memories (including loot).
-[added] Option to generate pickup contents from a loot table. 
-[added] Option to have gameplay-only equipment instances. 
-[added] Option to load inventory data from a network client.
-[added] UI Subsystem for singleton ViewModels.
-[improvement] Inventory Items can be filtered before serialization.
-[improvement] Inventory will notify Player Controllers and HUD classes during initialization, via IInventoryInitializationWatcherInterface.
-[improvement] Moved Gameplay Debugger to Gameplay module, so it can be used in packaged builds.
-[improvement] Added a new "AddItems" function to the Inventory Manager.
-[improvement] Added extra methods to Loot ViewModel for individual loot transfers.
-[improvement] Organized the Animation Ability class, so the Combat Animation Task (or other animation tasks) can be used.
-[improvement] Separated the main Inventory Manager implementation file into domain-based ones. 
+[new] A vendor component that provides a gameplay API to buy and sell items to a non-inventory, catalog-based actor.
+[new] Firearm fragment, integrated with Combat Firearms.
+[new] Global Stack observers, available from the Subsystem and Function Library. Useful for the incoming hotbar module.
+[new] Option to set a range for random stack sizes, when setting default memories (including loot).
+[new] Option to generate pickup contents from a loot table. 
+[new] Option to have gameplay-only equipment instances. 
+[new] Option to load inventory data from a network client.
+[new] UI Subsystem for singleton ViewModels.
+[change] Inventory Items can be filtered before serialization.
+[change] Inventory will notify Player Controllers and HUD classes during initialization, via IInventoryInitializationWatcherInterface.
+[change] Moved Gameplay Debugger to Gameplay module, so it can be used in packaged builds.
+[change] Added a new "AddItems" function to the Inventory Manager.
+[change] Added extra methods to Loot ViewModel for individual loot transfers.
+[change] Organized the Animation Ability class, so the Combat Animation Task (or other animation tasks) can be used.
+[change] Separated the main Inventory Manager implementation file into domain-based ones. 
 [fix] Removed const from the Loot Handler.
 [fix] Changed raw pointers in FInventoryContainerPosition to TObjectPtr.
 [fix] Ensured that loot outcomes are properly handled by standalone "clients".
@@ -45,14 +56,14 @@
 
 ## 2.16.50 - 12/01/2026
 ```
-[added] Dedicated (optional) Loot Handler that can handle received loot on client and server.
-[added] Dynamic Attributes will support level-based curve tables to update their values.
-[added] Dynamic Attribute ViewModel to be used in conjunction with the equivalent List version.
-[added] Interface-based Loot Table provider, which allow instance-editable tables.
-[added] Helper function to provide the equipment actor for an item.
-[improvement] New event that notifies when an item has been fully initialized.
-[improvement] Organized/standardized all function categories.
-[improvement] Added owner tags to the Chooser Animation Criteria. 
+[new] Dedicated (optional) Loot Handler that can handle received loot on client and server.
+[new] Dynamic Attributes will support level-based curve tables to update their values.
+[new] Dynamic Attribute ViewModel to be used in conjunction with the equivalent List version.
+[new] Interface-based Loot Table provider, which allow instance-editable tables.
+[new] Helper function to provide the equipment actor for an item.
+[change] New event that notifies when an item has been fully initialized.
+[change] Organized/standardized all function categories.
+[change] Added owner tags to the Chooser Animation Criteria. 
 [fix] Connected the loot handler, routing the correct methods to server and client.
 [fix] Ensured that animation layers are re-linked if an animation instance is re-instantiated.
 [fix] Corrected order in which equipment instances add GAS-related objects, so a potential actor causer is ready. 
@@ -67,17 +78,17 @@
 > 2. **Spatial Layouts** and **Linked Containers** are in beta, meaning they are not production ready, but their API should be stable.
 > 3. **Mutable** is now support as an equipment type, along with meshes and actors. This integration is still experimental.
 ```
-[added] Item prerequisites that can be applied when the item is being added to the inventory or an equipment state is being set.
-[added] Support for Customizable Objects (Mutable) for Equipment State Representations.
-[added] Preliminary checks for pickups, before adding them to inventories. Includes stack change and synchronization for pickup quantities.
-[added] Introduced a new specialized base widget for grid-based containers.
-[added] Offhand placement fragment including a fast-access cache in the Equipment Manager.
-[added] Loot persistency policies used by loot generation (none, requester, source). 
-[improvement] Removed timer from Equipment Manager used to wait for a controller. Added broadcasts for avatars and owners to the Inventory Subsystem.
-[improvement] Helper function to move equipment items between storage and equipment containers (i.e. "right click equip").
-[improvement] Introduced an option to create a brush based on the icon, for the User Interface ViewModel.
-[improvement] Promoted spatial layouts and linked containers from experimental to beta.
-[improvement] Consumable fragment is more deliberate about its use mode, supporting unlimited and single use directly.
+[new] Item prerequisites that can be applied when the item is being added to the inventory or an equipment state is being set.
+[new] Support for Customizable Objects (Mutable) for Equipment State Representations.
+[new] Preliminary checks for pickups, before adding them to inventories. Includes stack change and synchronization for pickup quantities.
+[new] Introduced a new specialized base widget for grid-based containers.
+[new] Offhand placement fragment including a fast-access cache in the Equipment Manager.
+[new] Loot persistency policies used by loot generation (none, requester, source). 
+[change] Removed timer from Equipment Manager used to wait for a controller. Added broadcasts for avatars and owners to the Inventory Subsystem.
+[change] Helper function to move equipment items between storage and equipment containers (i.e. "right click equip").
+[change] Introduced an option to create a brush based on the icon, for the User Interface ViewModel.
+[change] Promoted spatial layouts and linked containers from experimental to beta.
+[change] Consumable fragment is more deliberate about its use mode, supporting unlimited and single use directly.
 [fix] Get Inventory from the Function Library will be able to navigate Pawn/Player States/Controllers for inventory search. 
 [fix] Ensured that items with equipment without a presence for their initial state are always initialized.
 [fix] Ensured that the item is removed from the inventory when the last item stack is consumed. 
@@ -85,29 +96,29 @@
 
 ## 2.6.36 - 17/11/2025
 ```
-[added] Key fragment with accompanying unlock operation class.
-[improvement] Removed the order requirement for container and equipment fragments.
-[improvement] Equipment Manager is compatible with inventory avatar changes during gameplay.
+[new] Key fragment with accompanying unlock operation class.
+[change] Removed the order requirement for container and equipment fragments.
+[change] Equipment Manager is compatible with inventory avatar changes during gameplay.
 [build] Added support to Unreal Engine 5.7, removed Unreal Engine 5.4 support
 ```
 
 ## 2.5.33 - 13/11/2025
 ```
-[added] "InventoryInitializationWatcherInterface" to track final inventory states on an owner or avatar.
-[added] "EquipmentAnimationInterface" allows Equipment Animation Blueprints to receive the equipment and avatar.
-[improvement] Consolidated interface names to be categorized in a better hierarchy.
+[new] "InventoryInitializationWatcherInterface" to track final inventory states on an owner or avatar.
+[new] "EquipmentAnimationInterface" allows Equipment Animation Blueprints to receive the equipment and avatar.
+[change] Consolidated interface names to be categorized in a better hierarchy.
 [fix] Ensure that presence is updated when state changes, so sockets are updated.
 [fix] Ensure that all active equipment presences are removed when equipment manager ends play.
 ```
 
 ## 2.3.30 - 27/09/2025
 ```
-[added] Encumbrance Gameplay Effect for convenience.
-[improvement] Gameplay Effect fragment can interact with the Stack fragment.
-[improvement] Ensure the Weight fragment always synchronizes with new stack sizes.
-[improvement] Clean-up the Wealth Gameplay Effect, so it can be properly extended.
-[improvement] Gameplay Debugger also allows displaying item IDs.
-[improvement] Reviewed equipment state callback functions to avoid potential race conditions. 
+[new] Encumbrance Gameplay Effect for convenience.
+[change] Gameplay Effect fragment can interact with the Stack fragment.
+[change] Ensure the Weight fragment always synchronizes with new stack sizes.
+[change] Clean-up the Wealth Gameplay Effect, so it can be properly extended.
+[change] Gameplay Debugger also allows displaying item IDs.
+[change] Reviewed equipment state callback functions to avoid potential race conditions. 
 [fix] Replication for Dynamic Attributes is kept during inventory transfers.
 [fix] Items fully merged will be deleted instead of dropped.
 [fix] The drag and drop operation will correctly trigger a swap for items of same type, when the target item has a full stack.
@@ -116,8 +127,8 @@
 
 ## 2.2.21 - 19/09/2025
 ```
-[added] ViewModel exposing Inventory Attributes, such as Encumbrance and Wealth.
-[improvement] Modified Equipment Load callback to make it more robust for precompiled libraries plus deep hierarchies.
+[new] ViewModel exposing Inventory Attributes, such as Encumbrance and Wealth.
+[change] Modified Equipment Load callback to make it more robust for precompiled libraries plus deep hierarchies.
 [fix] Send Inventory Event notify won't trigger ensure assertion on editor.
 [fix] Added platform allowlist for the test module.
 [fix] Ensured that dynamic magnitudes are always applied, regardless of a previous application that happened before.
@@ -126,10 +137,10 @@
 
 ## 2.1.16 - 10/09/2025
 ```
-[improvement] Marked container function GetTotalSlots as virtual.
-[improvement] Added an option to still execute item actions, even when an ability animation is missing.
-[improvement] The inventory Subsystem will support registering inventories using either the avatar or owner.
-[improvement] Added a GetInventoryAnimInstance function in the Equipment Interface, to support realtime retargeting scenarios. 
+[change] Marked container function GetTotalSlots as virtual.
+[change] Added an option to still execute item actions, even when an ability animation is missing.
+[change] The inventory Subsystem will support registering inventories using either the avatar or owner.
+[change] Added a GetInventoryAnimInstance function in the Equipment Interface, to support realtime retargeting scenarios. 
 [fix] Ensured that the equipment manager queries equipment instances, not items.
 [fix] Reintroduced missing blueprint attributes for inventory item, equipment and components.
 [fix] Corrected the logic to determine the attach socket for the equipment actor, so it correctly addresses optional overrides. 
@@ -137,13 +148,13 @@
 
 ## 2.1.9 - 01/09/2025
 ```
-[added] Introduced a network proxy and authorized inventory checkers.
-[improvement] Exposed dedicated transfer function for inventory items.
-[improvement] Updated arrays with raw object pointers to use TObjectPtr instead.
-[improvement] Simplified the ASC binding flow to remove the confusing "bShouldFailFromASC" flag.
-[improvement] Modified fragment initialization signature to avoid unnecessary copying of the initial memory struct.
-[improvement] Automatic server RPC management for item and container functions.
-[improvement] Tag-based visibility for Equipment Actors.
+[new] Introduced a network proxy and authorized inventory checkers.
+[change] Exposed dedicated transfer function for inventory items.
+[change] Updated arrays with raw object pointers to use TObjectPtr instead.
+[change] Simplified the ASC binding flow to remove the confusing "bShouldFailFromASC" flag.
+[change] Modified fragment initialization signature to avoid unnecessary copying of the initial memory struct.
+[change] Automatic server RPC management for item and container functions.
+[change] Tag-based visibility for Equipment Actors.
 [fix] Build issue from FInventoryItemContainerPlacementOperation.
 [fix] Corrected the description to match the purpose of the Drag and Drop ViewModel.
 [fix] Added missing call to "Super" in the Inventory View Model resolver.
@@ -160,17 +171,17 @@
 [major] Linked Container: primary and linked mirroring (equipment single-slot semantics).
 [major] Linked Container: redirect when placed in linked first; move owner to primary, then mirror.
 [major] Nested Container: auto-create on activation; lifecycle tied to owner; auto-remove on owner removal.
-[added] Allowed build platforms: Linux and Mac.
-[added] Spatial layout: PerCell and BitSetRows fit algorithms; custom hook via TestWithCustomAlgorithm (C++).
-[added] Occupancy Masks with rotation support and in-editor mask UI (paint/mirror/rotate/validate).
-[added] Drag & Drop: UNinjaInventoryDropZoneWidget + UNinjaInventoryDragDropOperation integration for world/container drops.
-[added] Automated test suite covering placement, events, swaps, nested/linked, eviction, container removal.
-[improvement] Container Placement: single graceful retry path (TryPlaceWithRetry) for transient failures.
-[improvement] Container Placement: ResolveById for authoritative container instance resolution.
-[improvement] Linked Container: listens to item + container events; clears mirror on container removal/unequip.
-[improvement] Consume ability: expanded logs/comments to clarify cancellation causes.
-[improvement] Attribute Set: replaced ensure with check/warning for Equipment Managers.
-[improvement] Test utilities consolidated into shared event listeners and helpers.
+[new] Allowed build platforms: Linux and Mac.
+[new] Spatial layout: PerCell and BitSetRows fit algorithms; custom hook via TestWithCustomAlgorithm (C++).
+[new] Occupancy Masks with rotation support and in-editor mask UI (paint/mirror/rotate/validate).
+[new] Drag & Drop: UNinjaInventoryDropZoneWidget + UNinjaInventoryDragDropOperation integration for world/container drops.
+[new] Automated test suite covering placement, events, swaps, nested/linked, eviction, container removal.
+[change] Container Placement: single graceful retry path (TryPlaceWithRetry) for transient failures.
+[change] Container Placement: ResolveById for authoritative container instance resolution.
+[change] Linked Container: listens to item + container events; clears mirror on container removal/unequip.
+[change] Consume ability: expanded logs/comments to clarify cancellation causes.
+[change] Attribute Set: replaced ensure with check/warning for Equipment Managers.
+[change] Test utilities consolidated into shared event listeners and helpers.
 [fix] Crash when removing items without stacks fragments.
 [fix] Consume from gameplay events condition corrected.
 [fix] Equipment State ability now ends correctly when no animation is found.
@@ -181,31 +192,31 @@
 
 ## 1.3.17 - 30/12/2024
 ```
-[added] Completed "Load" functionality.
-[added] New Scene Selector (`EquipmentSceneComponentProvider`) based on an interface, for advanced logic.
-[improvement] Added the source to pickup actors.
-[improvement] Exposed consumable objects in the Consumable Ability.
+[new] Completed "Load" functionality.
+[new] New Scene Selector (`EquipmentSceneComponentProvider`) based on an interface, for advanced logic.
+[change] Added the source to pickup actors.
+[change] Exposed consumable objects in the Consumable Ability.
 [fix] Fixed `IsSuccessful` in the `FInventoryItemContext`.
 ```
 
 ## 1.1.14 - 16/11/2024
 ```
-[added] Support for Unreal Engine 5.5.
-[improvement] Added the appropriate Editor Category for all Inventory Assets in the Content Browser.
-[improvement] Improved the logic for the Inventory Animation Ability activation check.
+[new] Support for Unreal Engine 5.5.
+[change] Added the appropriate Editor Category for all Inventory Assets in the Content Browser.
+[change] Improved the logic for the Inventory Animation Ability activation check.
 [fix] Fixed the Equipment State Changed broadcast not being called.
 ```
 
 ## 1.0.11 - 08/09/2024
 ```
-[improvement] Added a default implementation to the Equipment Actor Interface so it can use the Equipment Receiver Component.
+[change] Added a default implementation to the Equipment Actor Interface so it can use the Equipment Receiver Component.
 ```
 
 ## 1.0.10 - 25/08/2024
 ```
-[improvement] Organizing the code to eventually auto-generate Mesh Components for slots.
-[improvement] Added a component that enables direct integration with Ninja Combat.
-[improvement] Added a function that can assume the container from an item in safe scenarios.
+[change] Organizing the code to eventually auto-generate Mesh Components for slots.
+[change] Added a component that enables direct integration with Ninja Combat.
+[change] Added a function that can assume the container from an item in safe scenarios.
 [fix] Fixed initial memories for Level and Quality fragments.
 [fix] Fixed filters for Data Tables.
 [fix] Fixed a crash while checking for empty Inventory Avatars.

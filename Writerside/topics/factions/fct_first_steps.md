@@ -96,7 +96,7 @@ If you are using Ninja Bot, then you can ignore the AI Controller provided by Ni
 provided by Ninja Bot instead. All you need to do to connect both systems is to select the correct **Team Provider Class**,
 in the Ninja Bot's settings.
 
-For more information, check the [**Bot and Factions Integration Page**](bot_ninja_factions.md).
+For more information, check the [**Bot and Factions Integration Page**](integration_bot_factions.md).
 
 ### Player Controller
 
@@ -115,5 +115,5 @@ members, with controllers able to expose team information to Unreal Engine's AI 
 From here, you can:
 
 - Create [**Reputation Tiers**](fct_reputation_tiers.md) to support more dynamic faction relationships.
-- Integrate [**Ninja Factions with Ninja Combat**](itg_combat_factions.md) to disable or customize Friendly Fire.
+- Integrate [**Ninja Factions with Ninja Combat**](integration_combat_factions.md) to disable or customize Friendly Fire.
 - Learn more about [**Factions and Memberships**](fct_factions_memberships.md).
