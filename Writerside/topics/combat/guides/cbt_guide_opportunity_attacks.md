@@ -1,5 +1,4 @@
 # Creating Opportunity Attacks
-
 <primary-label ref="combat"/>
 <secondary-label ref="guide"/>
 
@@ -33,7 +32,7 @@ Contextual animations are configured through a **scene asset** that plays **Anim
 To create the scene, define the roles, prepare the montages, and then create the Contextual Animation Scene.
 
 <procedure title="Define Contextual Roles" collapsible="true" default-state="collapsed">
-    <img src="cbt_opportunity_roles_asset.png" alt="Contextual Roles Asset" thumbnail="true" border-effect="line"/>
+    <img src="cbt_guide_opportunity_roles_asset.png" alt="Contextual Roles Asset" thumbnail="true" border-effect="line"/>
     <step>Create a new <b>Data Asset</b> based on <code>ContextualAnimRolesAsset</code>.</step>
     <step>
         <p>Add a new role named <b>Victim</b>.</p>
@@ -52,7 +51,7 @@ To create the scene, define the roles, prepare the montages, and then create the
 </procedure>
 
 <procedure title="Create the Attacker Montage" collapsible="true" default-state="collapsed">
-    <img src="cbt_opportunity_montage_attacker.png" alt="Attacker Animation Montage" thumbnail="true" border-effect="line"/>
+    <img src="cbt_guide_opportunity_montage_attacker.png" alt="Attacker Animation Montage" thumbnail="true" border-effect="line"/>
     <step>Create an <b>Animation Montage</b> for the attacker.</step>
     <step>Set the montage to use the correct full-body <b>Slot</b>.</step>
     <step>Make sure the source Animation Sequence has <b>Root Motion</b> enabled.</step>
@@ -67,7 +66,7 @@ To create the scene, define the roles, prepare the montages, and then create the
 </procedure>
 
 <procedure title="Create the Victim Montage" collapsible="true" default-state="collapsed">
-    <img src="cbt_opportunity_montage_victim.png" alt="Victim Animation Montage" thumbnail="true" border-effect="line"/>
+    <img src="cbt_guide_opportunity_montage_victim.png" alt="Victim Animation Montage" thumbnail="true" border-effect="line"/>
     <step>Create an <b>Animation Montage</b> for the victim.</step>
     <step>Set the montage to use the correct full-body <b>Slot</b>.</step>
     <step>Make sure the source Animation Sequence has <b>Root Motion</b> enabled, if the victim animation moves the character.</step>
@@ -76,7 +75,7 @@ To create the scene, define the roles, prepare the montages, and then create the
 </procedure>
 
 <procedure title="Create the Contextual Scene" collapsible="true" default-state="collapsed">
-    <img src="cbt_opportunity_scene_asset.png" alt="Contextual Scene Asset" thumbnail="true" border-effect="line"/>
+    <img src="cbt_guide_opportunity_scene_asset.png" alt="Contextual Scene Asset" thumbnail="true" border-effect="line"/>
     <step>In the <b>Content Browser</b>, click the <b>Add</b> button and select <b>Animation</b> &rarr; <b>Contextual Anim Scene</b>.</step>
     <step>Open the new asset and set the <b>Roles Asset</b> created earlier.</step>
     <step>Click <b>Update Roles</b> and confirm.</step>
@@ -167,7 +166,7 @@ Opportunity Attacks are executed by <code>CombatAbility_OpportunityAttack</code>
 previous steps.
 
 <procedure title="Configure the Opportunity Attack" collapsible="true" default-state="collapsed">
-    <img src="cbt_opportunity_ability.png" alt="Opportunity Attack Ability" thumbnail="true" border-effect="line"/>
+    <img src="cbt_guide_opportunity_ability.png" alt="Opportunity Attack Ability" thumbnail="true" border-effect="line"/>
     <step>Create a new <b>Gameplay Ability</b> based on <code>CombatAbility_OpportunityAttack</code>.</step>
     <step>Set a <b>Targeting Preset</b> to select eligible targets.</step>
     <step>Set the <b>Contextual Animation</b> configured for the attack.</step>

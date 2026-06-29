@@ -1,14 +1,15 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 3.1.9
+## 3.1.10
 ```
 [change] Added static check to ensure correct fragment types are being searched for.
-[change] Updates to linked components to make sure they synchronize on all events.
+[change] Updated linked containers to make sure they synchronize on all events.
+[change] Updated spatial layouts to better handle wrong placement scenarios and anchor sensitivity.
 [fix] Crash from Async Drop Fragment, due to incorrect context being captured in lambda. 
 [fix] Widget names in Spatial Container Widget were leading do duplicate widgets and incorrect behavior. 
-[fix] Ensured that bot assets are only released after the bot is unpossessed.
 [build] Added support for Unreal Engine 5.8, removed support for Unreal Engine 5.5
+[deprecation] Common UI Widgets will be removed. There are no meaningful features these widgets, UMG counterparts can be used with/without Common UI.
 ```
 
 ## 3.1.6 - 18/05/2026
