@@ -12,9 +12,9 @@ For a deeper explanation of the systems and settings used by these examples, see
 
 ### Combat Attributes
 
-Make sure the source and target have the [**Combat Attribute Set**](cbt_reference_attributes.md), since the default Damage Execution
-uses combat attributes such as **Base Damage**, **Critical Hit Chance**, **Block**, **Defense**, **Armor**, and
-**Absorption**.
+Make sure the source and target have the [**Combat Attribute Set**](cbt_concept_attributes.md), since the default Damage 
+Execution uses combat attributes such as **Base Damage**, **Critical Hit Chance**, **Block**, **Defense**, **Armor**, 
+and **Absorption**.
 
 ### Damage Ability
 

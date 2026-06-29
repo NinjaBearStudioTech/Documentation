@@ -34,7 +34,7 @@ determines **how much of that damage should actually apply**. Outcomes and Cosme
 The default damage execution is `CombatExecution_Damage`, which can be added to **Gameplay Effects** applying damage.
 This execution is added by default to base Combat Effects that represent damage from attacks and other abilities.
 
-This execution calculates incoming damage using damage attributes present in the [**Combat Attribute Set**](cbt_reference_attributes.md),
+This execution calculates incoming damage using damage attributes present in the [**Combat Attribute Set**](cbt_concept_attributes.md),
 **Set By Caller magnitudes**, **transient aggregators**, and **source and target tags**.
 
 The execution captures the following attributes:

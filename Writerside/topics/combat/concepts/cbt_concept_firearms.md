@@ -135,6 +135,21 @@ data and actor setup to remain modular.
 > Both abilities support Weapon Queries to retrieve the firearm from the **Weapon Manager**. When activated through
 > **Gameplay Events**, they prioritize a **Firearm Component** provided as the payload's **Optional Object**.
 
+### Firearm Animations
+
+The weapon owner can play **Animation Montages** to represent **shoot** and **reload** actions. These montages can use 
+sections to support one-shot actions, automatic fire, and reloads that loop until they are finished or interrupted.
+
+* **Shoot animations** should have their main section named `Shoot`. For automatic fire, the ability can keep looping this section while the weapon continues firing. The exit section should be separate, commonly named `End` or `Exit`.
+* **Reload animations** should have their main section named `Reload`. For reloads that repeat part of the animation, such as shell-by-shell reloads, the montage can transition from `Reload` into a `Loop` section. The exit section should be separate, commonly named `End`.
+
+Reload montages should also include the appropriate reload notify, such as **Reload Ammo**, at the point where ammunition should actually be committed.
+
+> **Montage Slots**
+>
+> These actions commonly use two **Montage Slots**: one for **upper body** and one for **full body**.
+> This is not required, but if you use multiple slots, make sure they are configured in the character's Animation Blueprint.
+
 ## Inventory Integration
 
 Firearms have multiple integration points with [**Ninja Inventory**](inv_overview.md), beyond the **Weapon Management**

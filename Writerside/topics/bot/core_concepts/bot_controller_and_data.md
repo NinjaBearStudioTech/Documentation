@@ -131,7 +131,7 @@ interface's `GetGenericTeamId` function. Attitude resolution can also be impleme
 ### Factions Team Provider
 
 Ninja Bot also provides a Team Provider compatible with [**Ninja Factions**](fct_overview.md). You can find more details
-about this integration in the [**Ninja Factions Integration**](bot_ninja_factions.md) page.
+about this integration in the [**Ninja Factions Integration**](integration_bot_factions.md) page.
 
 ### Custom Resolution
 

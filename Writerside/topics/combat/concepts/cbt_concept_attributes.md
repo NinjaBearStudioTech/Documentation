@@ -9,7 +9,7 @@ This Attribute Set provides dozens of combat-related attributes used by the fram
 Make sure to add this Attribute Set to the Ability System Component assigned to your Character or Player State. You can
 use [**Ninja G.A.S.**](gas_overview.md) to register and initialize attribute sets.
 
-## Attribute Operations
+## Attribute Design
 
 Combat Attributes are not only raw values. Some of them are used by the framework as part of important combat
 operations, such as applying damage, calculating mitigation, spending resources, and deriving final vital values.

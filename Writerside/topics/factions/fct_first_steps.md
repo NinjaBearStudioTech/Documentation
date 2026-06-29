@@ -96,7 +96,7 @@ If you are using Ninja Bot, then you can ignore the AI Controller provided by Ni
 provided by Ninja Bot instead. All you need to do to connect both systems is to select the correct **Team Provider Class**,
 in the Ninja Bot's settings.
 
-For more information, check the [**Bot and Factions Integration Page**](bot_ninja_factions.md).
+For more information, check the [**Bot and Factions Integration Page**](integration_bot_factions.md).
 
 ### Player Controller
 
