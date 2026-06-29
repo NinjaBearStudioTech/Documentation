@@ -6,7 +6,8 @@ The Combat Framework includes its own Attribute Set, represented by the `NinjaCo
 This Attribute Set provides dozens of combat-related attributes used by the framework, including **Vitals**,
 **Damage**, **Defense**, **Block**, **Evade**, **Poise**, **Stagger**, and other combat systems.
 
-Make sure to add this Attribute Set to the Ability System Component assigned to your Character or Player State.
+Make sure to add this Attribute Set to the Ability System Component assigned to your Character or Player State. You can
+use [**Ninja G.A.S.**](gas_overview.md) to register and initialize attribute sets.
 
 ## Attribute Operations
 
@@ -77,7 +78,7 @@ Attribute Set must implement `CombatMitigationAttributeSetInterface` and return 
 
 ## Initialization Data
 
-You can use this JSON to facilitate the creation the Data Table used to initialize the Combat Attributes.
+You can use this JSON to create and populate Data Table used to initialize the Combat Attributes.
 
 The Data Table Row type used to create the Attribute Set Data for initialization, `AttributeMetaData`, is provided by
 the **Gameplay Ability System**. Once your Data Table is created, you can import the following JSON to have an initial,

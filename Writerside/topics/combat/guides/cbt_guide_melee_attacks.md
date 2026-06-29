@@ -141,28 +141,8 @@ This section uses the default **Weapon Manager Component** and **Weapon Actor** 
 [**Ninja Inventory**](inv_overview.md), see the [**Combat and Inventory Integration**](integration_combat_inventory.md)
 page for the inventory-based replacements.
 
-<procedure title="Configure a Weapon Mesh" collapsible="true" default-state="collapsed">
-    <step>Open the <b>skeletal or static mesh</b> that represents your <b>weapon</b>. In this example, we'll use a sword.</step>
-    <step>
-        <p>Add a socket at the center of the blade and name it <code>sScan01</code>.</p>
-        <img src="cbt_guide_melee_weapon_socket.png" alt="Weapon Socket" border-effect="line" thumbnail="true"/>
-    </step>
-    <step>Make sure that the asset has <b>no collision</b>, since regular mesh collision can interfere with gameplay collision and scan results.</step>
-</procedure>
-
-<procedure title="Create the Weapon Actor" collapsible="true" default-state="collapsed">
-    <step>Create a new <b>Weapon Actor</b> based on <code>NinjaCombatWeaponActor</code>.</step>
-    <step>Add a <b>Static Mesh Component</b> or <b>Skeletal Mesh Component</b> for the weapon mesh.</step>
-    <step>Implement <code>GetMeleeMesh</code>, returning the mesh component used by the Melee Scan.</step>
-    <step>Create a <b>Child Blueprint</b> and set the sword mesh configured earlier.</step>
-    <step>Add <code>Combat.Weapon.Sword</code>, or any other identifying tags, to the list of <b>Weapon Tags</b>.</step>
-</procedure>
-
-<procedure title="Add the Weapon Manager Component" collapsible="true" default-state="collapsed">
-    <step>In your Character Blueprint or base class, add <code>NinjaCombatWeaponManagerComponent</code>.</step>
-    <step>Implement <code>GetWeaponManagerComponent</code> from the <code>CombatSystemInterface</code>, returning your <b>Weapon Manager Component</b>.</step>
-    <step>Add your weapon Blueprint to the list of <b>Default Weapon Classes</b>.</step>
-</procedure>
+Make sure that you create a proper **Melee Weapon**. For instructions on how to create a Melee Weapon, please check the
+[**Creating Weapons guide**](cbt_guide_weapons.md)
 
 <procedure title="Configure the Attack Montage (Weapon)" collapsible="true" default-state="collapsed">
     <step>
