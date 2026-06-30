@@ -1,6 +1,11 @@
 # Changelog
 <primary-label ref="factions"/>
 
+## 2.3.15 - 30/06/2026
+```
+[build] Added support for Unreal Engine 5.8.
+```
+
 ## 2.3.14 - 12/01/2026
 ```
 [change] Added features for plugin integrations.

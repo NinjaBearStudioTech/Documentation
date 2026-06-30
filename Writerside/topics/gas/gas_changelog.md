@@ -1,6 +1,14 @@
 # Changelog
 <primary-label ref="gas"/>
 
+## 1.12.21 - 30/06/2026
+```
+[new] Delegate to the ASC informing when abilities are granted.
+[new] Notify States for effects and loose gameplay tags.
+[fix] Integrated mesh montages with main GAS flow.
+[build] Added support for Unreal Engine 5.8.
+```
+
 ## 1.11.19 - 17/04/2026
 ```
 [new] Paper2D variations of the main character classes.

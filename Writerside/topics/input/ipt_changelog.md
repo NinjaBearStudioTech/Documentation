@@ -1,6 +1,13 @@
 # Changelog
 <primary-label ref="input"/>
 
+## 6.1.1 - 30/06/2026
+```
+[change] Anim Notify States used to toggle rotation during root motion are more flexible.
+[change] Improved support for the Targeting Actor in the Confirm/Cancel handlers.
+[build] Added support for Unreal Engine 5.8.
+```
+
 ## 6.0.0 - 17/04/2026
 ```
 [major] Updated internal functions to send gameplay events in the Input Manager, so they are more flexible taking a single struct attribute.

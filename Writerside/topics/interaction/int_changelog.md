@@ -1,9 +1,16 @@
 # Changelog
 <primary-label ref="interaction"/>
 
-## 2.0.8
+## 2.1.11 - 30/06/2026
+```
+[change] Reduced assertion severity.
+[fix] Added interaction type tag to the RPC.
 [fix] Ensured that the correct interaction slot tag is registered over network.
+[fix] Corrected dedicated server check for openable actor cosmetics.
+[fix] Ensured more stable transitions in the prompt.
+[fix] Added missing check for the candidate viability, in the trace ability task.
 [build] Added support for Unreal Engine 5.8.
+```
 
 ## 2.0.7 - 17/04/2026
 ```

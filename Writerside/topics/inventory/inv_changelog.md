@@ -1,7 +1,7 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 3.1.10
+## 3.1.10 - 30/06/2026
 ```
 [change] Added static check to ensure correct fragment types are being searched for.
 [change] Updated linked containers to make sure they synchronize on all events.

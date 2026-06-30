@@ -1,7 +1,7 @@
 # Changelog
 <primary-label ref="combat"/>
 
-## 7.0.0
+## 7.0.0 - 30/06/2026
 > **Important Changes in this version**
 >
 > 1. Magic attributes and effects were renamed to Mana.
@@ -9,7 +9,6 @@
 > 3. Cast Actors were rewritten to use Cast Behaviors, hosted by the Cast Behavior Component.
 > 4. New Launch Projectile and Melee Attack abilities should be used. The old "one size fits all" attack ability is deprecated.
 > 5. Launch Projectile and Melee Scan Nofities have a new configuration struct. Old settings are deprecated.
-<secondary-label ref="wip"/>
 ```
 [major] Projectile Actors were rewritten to use Projectile Behaviors, hosted by the Projectile Behavior Component.
 [major] Cast Actors were rewritten to use Cast Behaviors, hosted by the Cast Behavior Component.
@@ -37,7 +36,6 @@
 [fix] Added default initialization for mitigation GE, to avoid spamming "SetByCaller" messages. 
 [fix] Corrected damage manager check in the Invulnerability mitigation class.
 [fix] Corrected scheduled notify timelines crashing when an animation is playing and avatar becomes invalid.
-[fix] Ensured that bot assets are only released after the bot is unpossessed.
 [fix] Included Block Angle to the list of mitigation attributes.
 [deprecated] The generic Attack Ability will be removed in a future version. Please update to specialized Melee, Ranged and Opportunity attacks.
 [deprecated] Launch Projectile Animation Notify has a new structure to set the same properties. Please review your settings.
