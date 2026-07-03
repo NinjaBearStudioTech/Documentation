@@ -61,3 +61,16 @@ provides many of these functions.
 > Similarly to the conversion functions above, you can bind ViewModel data to any **Callable function** with an
 > **input parameter matching the ViewModel’s property type**.
 
+## Enemy Vitals
+
+The same structure can be used by widgets assigned to **enemy blueprints**. The difference is that you need to set the
+**Combat Actor** that will provide the Ability System Component and the Combat Manager used for bindings.
+
+This can be done in two ways:
+
+1. Using the provided `NinjaCombatWidgetComponent` in your blueprint. It automatically sets the owner to any Combat Widgets hosted by it.
+2. Calling `SetCombatActor`, from the `CombatActorAwareInterface` on any Combat Widget that needs to know about the combatant actor.
+
+For enemies, you can explore additional ViewModels and bindings to show or hide the widget as needed.
+
+<img src="cbt_guide_ui_enemy_bindings.png" alt="Additional Widget Bindings" thumbnail="true" border-effect="line"/>

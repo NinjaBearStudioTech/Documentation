@@ -28,10 +28,16 @@ initialization.
 ## Widget Component
 
 In cases where the ViewModel should be initialized for another combatant, such as an enemy for an overhead widget, you
-can use the provided `NinjaCombatWidgetComponent`.
+can use the provided `NinjaCombatWidgetComponent`. This is also harmless when set to the player, so the same component
+can be used for both.
 
 Once the component's widget is initialized, it calls `InitializeCombatViewModel` on all hosted ViewModels, passing
 the component's owner so the ViewModels can initialize for that actor.
+
+> **Setting the Combat Actor**
+> 
+> The Widget Component will set the Combat Actor hosting the widget, but you can also deliberately set actors, as needed,
+> calling `SetCombatActor`, from `CombatActorAwareInterface`, on combat-related widgets.
 
 ## ViewModel Reference
 
