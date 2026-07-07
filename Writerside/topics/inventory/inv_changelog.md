@@ -1,6 +1,12 @@
 # Changelog
 <primary-label ref="inventory"/>
 
+## 3.1.11
+<secondary-label ref="wip"/>
+```
+[fix] Items dropped in the linked container weren't updating the primary one.
+```
+
 ## 3.1.10 - 30/06/2026
 ```
 [change] Added static check to ensure correct fragment types are being searched for.
