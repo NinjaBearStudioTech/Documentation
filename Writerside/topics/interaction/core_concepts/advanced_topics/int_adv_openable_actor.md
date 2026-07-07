@@ -86,4 +86,4 @@ A Key Resolver is any class derived from `UNinjaInteractionKeyResolver`. It expo
 three parameters: the Instigator Controller, the Unlockable Actor, and a Key Query. It returns true if unlocking is allowed.
 
 The default Key Resolver integrates with [**Ninja Inventory**](inv_overview.md). It searches for an item configured as a 
-[**key**](inv_fragment_key.md) and, if found, unlocks the actor (including optional key consumption defined by the item fragment).
+[**key**](inv_inventory_fragments.md) and, if found, unlocks the actor (including optional key consumption defined by the item fragment).

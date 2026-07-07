@@ -205,37 +205,19 @@
                 </toc-element>
                 <toc-element topic="inv_inventory_items.md">
                     <toc-element topic="inv_inventory_prerequisites.md"/>
-                    <toc-element toc-title="Fragments">
-                        <toc-element topic="inv_fragment_consumable.md"/>
-                        <toc-element topic="inv_fragment_container.md"/>
-                        <toc-element topic="inv_fragment_dimensions.md"/>
-                        <toc-element topic="inv_fragment_drop.md"/>
-                        <toc-element topic="inv_fragment_durability.md"/>
-                        <toc-element topic="inv_fragment_dynamic_attributes.md"/>
-                        <toc-element topic="inv_fragment_economy.md"/>
-                        <toc-element topic="inv_fragment_equipment.md"/>
-                        <toc-element topic="inv_fragment_gameplay_effect.md"/>
-                        <toc-element topic="inv_fragment_key.md"/>
-                        <toc-element topic="inv_fragment_level.md"/>
-                        <toc-element topic="inv_fragment_linked_container.md"/>
-                        <toc-element topic="inv_fragment_loot.md"/>
-                        <toc-element topic="inv_fragment_nested_container.md"/>
-                        <toc-element topic="inv_fragment_offhand.md"/>
-                        <toc-element topic="inv_fragment_prerequisites.md"/>
-                        <toc-element topic="inv_fragment_quality.md"/>
-                        <toc-element topic="inv_fragment_stack.md"/>
-                        <toc-element topic="inv_fragment_user_interface.md"/>
-                        <toc-element topic="inv_fragment_weight.md"/>
-                    </toc-element>
+                    <toc-element topic="inv_inventory_fragments.md"/>
                 </toc-element>
                 <toc-element topic="inv_inventory_events.md"/>
                 <toc-element topic="inv_inventory_loot.md"/>
                 <toc-element topic="inv_save_and_load.md"/>
+                <toc-element topic="inv_shared_inventories.md"/>
             </toc-element>
             <toc-element toc-title="Equipment System">
                 <toc-element topic="inv_equipment_system.md"/>
                 <toc-element topic="inv_equipment_management.md"/>
                 <toc-element topic="inv_equipment_instances.md"/>
+                <toc-element topic="inv_tag_visibility.md"/>
+                <!--<toc-element topic="inv_mutable_equipment.md"/>-->
             </toc-element>
             <toc-element toc-title="Gameplay">
                 <toc-element topic="inv_gameplay_attributes.md"/>
@@ -260,13 +242,14 @@
                 <toc-element topic="inv_ui_tooltips.md"/>
                 <toc-element topic="inv_ui_drag_and_drop.md"/>
             </toc-element>
-            <toc-element toc-title="Advanced Topics">
-                <toc-element topic="inv_tag_visibility.md"/>
-                <toc-element topic="inv_shared_inventories.md"/>
-                <!--<toc-element topic="inv_mutable_equipment.md"/>-->
-            </toc-element>
+            <toc-element toc-title="Guides">
+                <toc-element topic="inv_guide_inventory_items.md"/>
+                <toc-element topic="inv_guide_equipment.md"/>
+                <toc-element topic="inv_guide_simple_grid.md"/>
+                <toc-element topic="inv_guide_spatial_grid.md"/>
+            </toc-element>            
             <toc-element topic="inv_changelog.md"/>
-        </toc-element>        
+        </toc-element>
     </toc-element>
     
     <toc-element toc-title="Integrations">
