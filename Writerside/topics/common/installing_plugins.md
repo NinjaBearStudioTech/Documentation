@@ -77,3 +77,11 @@ have access to the repository.
     </step>
     <step><b>Recompile the project</b>. If this is the first time doing so, it might take a while.</step>
 </procedure>
+
+## AI-Assisted Development
+
+As a limited exception to the Fab NoAI designation, licensed customers may submit portions of this product's source code 
+to private generative AI tools solely for analysis, debugging, modification, or integration within their own licensed projects. 
+
+This permission does not include training, fine-tuning, dataset inclusion, persistent AI knowledge bases, redistribution, 
+public exposure, or development of competing products.
