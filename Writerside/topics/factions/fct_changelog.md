@@ -1,6 +1,12 @@
 # Changelog
 <primary-label ref="factions"/>
 
+## 2.3.16
+<secondary-label ref="wip"/>
+```
+[change] Added parameterized constructor to the Player Controller.
+```
+
 ## 2.3.15 - 30/06/2026
 ```
 [build] Added support for Unreal Engine 5.8.

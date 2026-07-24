@@ -52,6 +52,26 @@ leveraging Gameplay Tags. Because of that, Ninja Input provides a **Combo Input 
     </step>
 </procedure>
 
+## Default, Hold, Combo
+
+This is a unique handler from Ninja Input that allows you to handle the following advanced scenario:
+
+1. Default Activation: Triggers a default ability, when the input is quickly released.
+2. Hold to Activate: Triggers a different ability, like a "hold" attack.
+3. Combo Event: Sends a Gameplay Event to the active default ability.
+
+Because Ninja Input does not depend on Ninja Combat, the handler **cannot determine the current combo state by itself**. 
+To enable combo progression, override IsFirstComboAttack and connect it to your combat system.
+
+<procedure title="Integrate with Ninja Combat" collapsible="true" default-state="expanded">
+    <step>Create a new <b>Input Handler</b> based on <code>InputHandler_DefaultHoldCombo</code>.</step> 
+    <step>Override <code>IsFirstComboAttack</code>.</step> 
+    <step>Get the pawn from the <b>Input Manager</b>, using <code>GetPawn</code>.</step> 
+    <step>Get the pawn's <b>Combo Manager</b>, using Ninja Combat's <code>GetComboManagerComponent</code> function.</step> 
+    <step>Check the current combo count using <code>GetComboCount</code>. A count of zero indicates the first attack, while any higher value indicates that the combo has progressed.</step> 
+    <step>Optionally, override <code>IsInComboWindow</code> to connect the handler to Ninja Combat's combo window state.</step> 
+</procedure>
+
 ## Ability Targeting
 
 The Gameplay Ability System supports **target confirmation and cancellation** by using Targeting Actors. While those

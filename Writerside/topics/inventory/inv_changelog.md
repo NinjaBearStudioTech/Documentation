@@ -1,10 +1,11 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 3.1.11
+## 3.1.12
 <secondary-label ref="wip"/>
 ```
 [fix] Items dropped in the linked container weren't updating the primary one.
+[fix] Fixed anchor reference calculation for drag operations, with spatial layouts.
 ```
 
 ## 3.1.10 - 30/06/2026
