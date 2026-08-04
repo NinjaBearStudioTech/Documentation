@@ -55,6 +55,11 @@ If your project already has custom versions of these classes, they should inheri
     </step>
 </procedure>
 
+> **Gameplay Cues Paths**
+> 
+> The Gameplay Ability System scans the project looking for Gameplay Cues, which are commonly used throughout the Combat
+> plugin. This might be a good moment to configure the Gameplay Cue paths used in your project! 
+
 ## Physical Materials
 Physical Materials are optional, but useful when weapons and projectiles should react differently based on the surface 
 they hit. For example, a weapon impact may use different effects for flesh, stone, metal, or wood.
