@@ -116,8 +116,49 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-  publish-indexes:
+  clear-index:
     needs: [build, test, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clear Algolia Index
+        env:
+          ALGOLIA_KEY: ${{ secrets.ALGOLIA_KEY }}
+        run: |
+          if [ -z "$ALGOLIA_KEY" ]; then
+            echo "ALGOLIA_KEY secret is not set in GitHub Secrets"
+            exit 1
+          fi
+
+          RESPONSE=$(curl --fail-with-body --silent --show-error \
+            --request POST \
+            --url "https://${ALGOLIA_APP_NAME}.algolia.net/1/indexes/${ALGOLIA_INDEX_NAME}/clear" \
+            --header "X-Algolia-Application-Id: ${ALGOLIA_APP_NAME}" \
+            --header "X-Algolia-API-Key: ${ALGOLIA_KEY}")
+
+          TASK_ID=$(echo "$RESPONSE" | jq -r '.taskID')
+
+          if [ -z "$TASK_ID" ] || [ "$TASK_ID" = "null" ]; then
+            echo "Algolia did not return a task ID"
+            exit 1
+          fi
+
+          for ATTEMPT in {1..120}; do
+            STATUS=$(curl --fail-with-body --silent --show-error \
+              --url "https://${ALGOLIA_APP_NAME}.algolia.net/1/indexes/${ALGOLIA_INDEX_NAME}/task/${TASK_ID}" \
+              --header "X-Algolia-Application-Id: ${ALGOLIA_APP_NAME}" \
+              --header "X-Algolia-API-Key: ${ALGOLIA_KEY}" | jq -r '.status')
+
+            if [ "$STATUS" = "published" ]; then
+              exit 0
+            fi
+
+            sleep 1
+          done
+
+          echo "Timed out waiting for Algolia to clear the index"
+          exit 1
+  publish-indexes:
+    needs: [build, test, deploy, clear-index]
     runs-on: ubuntu-latest
     container:
       image: registry.jetbrains.team/p/writerside/builder/algolia-publisher:latest
