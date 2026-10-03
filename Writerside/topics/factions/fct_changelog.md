@@ -1,10 +1,24 @@
 # Changelog
 <primary-label ref="factions"/>
 
-## 2.3.16
-<secondary-label ref="wip"/>
+## 2.5.33 - 05/10/2026
 ```
-[change] Added parameterized constructor to the Player Controller.
+[added] Added client-side membership snapshots to identify which replicated fields changed.
+[added] Added AI Controller listeners for faction removal and main-faction status changes.
+[change] Added a parameterized constructor to the Player Controller.
+[change] Reputation tables now load during database initialization before memberships are processed.
+[change] AI team resolution now caches the Team ID and refreshes perception only when the team changes.
+[change] Preserved the Blueprint OnFactionAdded extension while running internal team synchronization independently.
+[fix] Corrected reputation tier evaluation to use the updated reputation value.
+[fix] Corrected reputation clamping to use the resulting total instead of the requested change.
+[fix] Ensured faction membership copies preserve minimum reputation and tier boundaries.
+[fix] Ensured main-faction switching modifies the actual replicated membership entries.
+[fix] Ensured reputation, tier, and main-status delegates fire only when their values change.
+[fix] Ensured default factions are initialized exclusively by the authoritative server.
+[fix] Corrected faction-list widgets returning empty results.
+[fix] Ensured Game Feature cleanup removes only memberships granted by that feature and preserves pre-existing memberships.
+[fix] Corrected Behavior Tree Check Attitude decorators to leave condition inversion to Unreal.
+[fix] Ensured AI Perception refreshes after the main faction changes.
 ```
 
 ## 2.3.15 - 30/06/2026

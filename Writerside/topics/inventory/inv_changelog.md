@@ -1,11 +1,40 @@
 # Changelog
 <primary-label ref="inventory"/>
 
-## 3.1.12
-<secondary-label ref="wip"/>
+## 3.2.27 - 05/10/2026
 ```
-[fix] Items dropped in the linked container weren't updating the primary one.
-[fix] Fixed anchor reference calculation for drag operations, with spatial layouts.
+[added] Added a generic pre-acceptance predicate and an explicit Rejected lifecycle result for item processing.
+[change] Restricted item and container creation, direct stack changes, levels, durability, and attribute mutations to the server.
+[change] Transfers now rebuild item data from the authoritative source item and accept only validated client preferences.
+[change] Replication caches are populated before added and changed callbacks execute.
+[change] Stack merge requests now validate both source and target inventories.
+[change] Loot transfers now resolve requests against authoritative server entries and data.
+[change] Non-persistent loot now maintains a temporary authoritative selection for transfer validation.
+[change] Vendor purchases now revalidate buyer ownership, wealth, offer identity, and stock when the item is accepted.
+[change] Vendor sales now reserve vendor funds and compensate payouts if ownership changes or item removal fails.
+[fix] Ensured items dropped into linked containers update their primary container.
+[fix] Corrected anchor-reference calculations for drag operations in spatial layouts.
+[fix] Removed the recursive container-registration RPC call.
+[fix] Corrected stale container, item, attribute, and fragment memory-cache indexes after replicated removals.
+[fix] Corrected the misspelled Item Fast Array change callback that prevented replicated cache updates.
+[fix] Added validation around cached container lookups and fragment-operation inventory ownership.
+[fix] Corrected the dynamic-attribute removal operation tag.
+[fix] Sanitized authoritative stack size, level, and durability values and allowed levels to decrease from their maximum.
+[fix] Ensured transfers retain the source item until the target inventory accepts its replacement.
+[fix] Ensured rejected transfers clear their pending context without modifying the source inventory.
+[fix] Ensured accepted transfers validate original source ownership before removing the source item.
+[fix] Allowed client split requests to reach the server.
+[fix] Delayed source-quantity reduction until the new split stack is accepted.
+[fix] Ensured removing placement memory evicts the item from its container cache and broadcasts PlacementRemoved.
+[fix] Ensured partial pickups enqueue only the quantity the inventory can accept.
+[fix] Prevented transferring one of several identical loot entries from invalidating the others.
+[fix] Prevented client-supplied loot definitions from substituting item data or fragment state.
+[fix] Prevented rejected purchases from charging buyers, funding vendors, or consuming stock.
+[fix] Prevented sellers from submitting items belonging to another inventory.
+[fix] Prevented failed payments from destroying sold items.
+[fix] Ensured catalog resets notify observers of the empty state before rebuilding the catalog.
+[fix] Corrected the reset lifecycle used when replacing pickup catalogs.
+[fix] Ensured equipment refreshes remove every previous entry and apply the latest state after assets load.
 ```
 
 ## 3.1.10 - 30/06/2026

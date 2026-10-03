@@ -1,6 +1,27 @@
 # Changelog
 <primary-label ref="combat"/>
 
+## 7.1.19 - 05/10/2026
+```
+[change] Improved strafing and riposte replication, including immediate updates for locally controlled strafing.
+[change] Added diagnostic logging for Melee Scan builder issues.
+[fix] Corrected the interface check used to validate custom target managers.
+[fix] Ensured target switching unbinds the death delegate from the previous target.
+[fix] Ensured native blocking notifications receive the current blocking state.
+[fix] Prevented leaving the dead state from restarting the death flow.
+[fix] Ensured full health, stamina, and mana retain their regeneration-blocking tags across repeated attribute updates.
+[fix] Correctly marked stored Damage Fast Array entries dirty so new damage records replicate.
+[fix] Changed FGameplayEventData payload pointers into references.
+[fix] Ensured pool lifetime expiration performs projectile exhaustion and cast dissipation cleanup.
+[fix] Stopped dissolve components from ticking after the final curve endpoint.
+[fix] Reused dynamic material instances and reset tracked materials during repeated dissolve requests.
+[fix] Corrected firearm ammunition percentage calculations to use floating-point division.
+[fix] Ensured firearm ViewModels remove ammunition callbacks from the correct delegate.
+[fix] Ensured base Combat ViewModels clear stale actor references and avoid duplicate bindings.
+[fix] Ensured clearing status effects immediately notifies the UI.
+[fix] Ensured Target Lock ViewModels unbind from the exact target manager originally subscribed to.
+```
+
 ## 7.0.0 - 30/06/2026
 > **Important Changes in this version**
 >

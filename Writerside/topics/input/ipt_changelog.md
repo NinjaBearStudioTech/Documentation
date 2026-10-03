@@ -1,6 +1,29 @@
 # Changelog
 <primary-label ref="input"/>
 
+## 6.1.20 - 05/10/2026
+```
+[change] Shared input action and event bindings across overlapping setups until the final referencing setup is removed.
+[change] Tracked original root-motion rotation overrides independently.
+[fix] Made input dispatch re-entrancy safe when handlers add or remove input setups during execution.
+[fix] Made setup clearing and removal safe against container mutation and overlapping registrations.
+[fix] Removed duplicate setup registration and processing from AddInputSetupData.
+[fix] Corrected Enhanced Input binding cleanup and manager teardown ordering.
+[fix] Ensured RemapKey returns failure reasons.
+[fix] Ensured First Command buffer mode stores the first command and rejects later replacements.
+[fix] Grouped buffered handlers by channel so commands cannot execute handlers from another channel.
+[fix] Ensured Double Tap requires a press-release-press sequence and cannot trigger from a held input.
+[fix] Prevented actions shared by multiple active mapping contexts from dispatching the complete handler cache multiple times.
+[fix] Prevented an infinite loop when searching for pawn or controller owners without an Input Manager component.
+[fix] Ensured controller-owned managers rebind lifecycle delegates when the possessed pawn changes.
+[fix] Ensured traversal jump implementations receive the originating trigger event.
+[fix] Ensured the Combat Combo handler respects Handles Advancement and rejects advancement without a valid event tag.
+[fix] Made gameplay-event payloads local to prevent memory leaks.
+[fix] Assigned the owning Player Controller to generated key-mapping categories and entries.
+[fix] Ensured remapped key entries immediately update their displayed key, icon, and customized state.
+[fix] Ensured the settings ViewModel leaves its saving state after successful or failed completion.
+```
+
 ## 6.1.1 - 30/06/2026
 ```
 [change] Anim Notify States used to toggle rotation during root motion are more flexible.

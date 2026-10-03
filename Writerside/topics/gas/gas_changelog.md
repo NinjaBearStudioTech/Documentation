@@ -1,6 +1,25 @@
 # Changelog
 <primary-label ref="gas"/>
 
+## 1.12.35 - 05/10/2026
+```
+[change] Removed default loose gameplay tags from the GAS Data Asset and their ASC grant and cleanup path.
+[fix] Corrected inverted conditions during batch activation.
+[fix] Ensured clients initialize the replicated Ability System Component instead of replacing it.
+[fix] Prevented BeginPlay from creating an Ability System Component for actors configured for lazy initialization.
+[fix] Ensured avatar-change resets reapply owner defaults after clearing the previous state.
+[fix] Made input press and release safe for non-instanced abilities and active ability instances.
+[fix] Updated Wait For Ability System to retry until the Ability System Component has a valid avatar or the wait times out.
+[fix] Ensured Wait For Ability System emits distinct success, timeout, and cancellation outcomes and stops its timer.
+[fix] Ensured Wait For Ability End removes its delegate and releases the action after the first matching result.
+[fix] Ensured AI ability selection checks the controlled pawn's Ability System Component and only considers activatable abilities.
+[fix] Ensured AI ability selection clears stale Blackboard entries.
+[fix] Prevented the attribute service from accumulating duplicate delegates or changing tick behavior on a shared node.
+[fix] Kept selected ability classes local to each execution so one AI cannot affect another AI's completion check.
+[fix] Ensured custom-mesh montage updates remain pending until the mesh and animation instance are ready.
+[fix] Ensured pending custom-mesh montage updates retry using the latest replicated entry.
+```
+
 ## 1.12.21 - 30/06/2026
 ```
 [new] Delegate to the ASC informing when abilities are granted.

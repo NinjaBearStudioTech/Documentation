@@ -1,6 +1,30 @@
 # Changelog
 <primary-label ref="interaction"/>
 
+## 2.4.28 - 05/10/2026
+```
+[added] Added replicated Smart Object slot identity and client-side cache reconstruction for interaction summaries and behavior configurations.
+[change] Made interaction registration idempotent and deferred late-join summaries until target references resolve.
+[change] Updated interaction request searches to skip unclaimable matching slots and continue looking for a viable slot.
+[change] Updated ViewModels to rebuild their summaries from interaction manager data.
+[change] Ensured ViewModels retain and restore their interaction target when the controller changes.
+[fix] Prevented late-joining clients from emitting empty Interaction Target errors or missing registration callbacks.
+[fix] Prevented multiple colliders from duplicating target registration or unregistering targets prematurely.
+[fix] Ensured interaction behavior configurations initialize, cache, and replicate correctly.
+[fix] Ensured client slot-based summary and behavior lookups resolve correctly after replication.
+[fix] Prevented dynamically re-enabled interactions from emitting duplicate registration notifications.
+[fix] Ensured automatic interactions use the exact Smart Object slot recorded in their interaction summary.
+[fix] Added viable-slot fallback behavior for older or incomplete interaction summaries.
+[fix] Ensured occupied intended slots reject automatic requests instead of executing a different interaction.
+[fix] Ensured Execute Interaction finishes or cancels according to the manager lifecycle.
+[fix] Discarded focused targets when their Smart Object preconditions fail.
+[fix] Excluded ineligible Smart Object slots before evaluating interaction targets.
+[fix] Ensured committed interactions remain available as the UI's active interaction.
+[fix] Ensured commit events reference the active interaction target instead of the scan target.
+[fix] Prevented gameplay-event payload memory leaks.
+[fix] Ensured Reach Target tasks evaluate the actor's actual transform after applying movement and rotation.
+```
+
 ## 2.1.11 - 30/06/2026
 ```
 [change] Reduced assertion severity.
