@@ -11,7 +11,7 @@ Use Ninja Interaction to decide **when** a world pickup is collected and Ninja I
     <step><p>Use the pickup component's <b>Destroy Owner When Fully Consumed</b> setting, or bind <code>OnFullyConsumed</code> to disable the slot and play a collection effect. Leave <code>Interaction.Trait.Disposable</code> off if the player should be able to retry a failed or partial transfer. A successful interaction can finish even when inventory capacity prevents the transfer.</p></step>
 </procedure>
 
-The pickup component calls `AddItemsFromPickupActor` and uses `HandlePickupResults` to subtract the quantities actually accepted. For a custom pickup implementation, see [Adding Items from Pickups](inv_operation_add_pickup.md).
+The pickup component calls `AddItemsFromPickupActor` and uses `HandlePickupResults` to subtract the quantities actually accepted. For a custom pickup implementation, see [Give a Pickup Its Own Behavior](inv_guide_inventory_items.md#give-a-pickup-its-own-behavior).
 
 ## Try It in Play
 

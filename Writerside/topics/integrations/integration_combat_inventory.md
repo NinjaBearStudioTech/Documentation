@@ -28,7 +28,7 @@ but forwards requests to an **Equipment Manager** that should also be present in
 Make sure to return the correct component from `GetWeaponManager`, in the **Combat System Interface**.
 
 <procedure title="Configure the Equipment Weapon Manager" collapsible="true" default-state="expanded">
-    <step>Add the <b>Equipment Manager</b>, <code>NinjaEquipmentManagerComponent</code>, to your character. Check the <a href="inv_equipment_management.md"><b>Equipment Management</b></a> documentation for additional details.</step>
+    <step>Add the <b>Equipment Manager</b>, <code>NinjaEquipmentManagerComponent</code>, to your character. Check the <a href="inv_guide_equipment.md"><b>Equip an Item and Change Its Appearance</b></a> documentation for additional details.</step>
     <step>
         <p>Add the <b>Equipment Weapon Adapter</b>, <code>NinjaCombatEquipmentAdapterComponent</code>, to your character. Check the <a href="cbt_concept_weapon_management.md"><b>Weapon Management</b></a> documentation for additional details.</p>
         <note>
@@ -64,7 +64,7 @@ additional features, such as using the **Item Level** as the **Weapon Level** wh
             <p>If you cannot use the provided base class in your hierarchy, add <code>NinjaEquipmentActorComponent</code> to your own base Weapon Actor class or Blueprint.</p>
         </note>
     </step>
-    <step>Create a new <b>Item Definition</b> for your weapon. Check the <a href="inv_inventory_items.md"><b>Inventory Items</b></a> documentation for additional details.</step>
+    <step>Create a new <b>Item Definition</b> for your weapon. Check the <a href="inv_inventory_fragments.md"><b>Items, Fragments, and Eligibility</b></a> documentation for additional details.</step>
     <step>Add an <b>Equipment Fragment</b> to your Item Definition and configure the <b>Equipped State</b>, at minimum.</step>
     <step>
         <p>Set the <b>Equipment Type</b> to <b>Actor</b> and set the Weapon Actor as the <b>Actor Class</b>.</p>
