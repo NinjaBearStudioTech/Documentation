@@ -1,3 +1,12 @@
+.app {
+    max-width: 1920px;
+    margin-inline: auto;
+}
+
+.app__footer {
+    --app-footer: var(--app-header);
+}
+
 .article__p {
     max-width: var(--wh-max-width-xl) !important;
 }
