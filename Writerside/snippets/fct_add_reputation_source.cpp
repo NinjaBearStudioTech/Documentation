@@ -1,4 +1,7 @@
-void APluginLabsCharacter::AddReputationFromSource(const UObject* Source, FGameplayTag EventTag) const
+#include "Components/NinjaFactionComponent.h"
+#include "NinjaFactionTags.h"
+
+void AwardQuestRewards(UNinjaFactionComponent& PlayerFactions, const UObject& QuestGiver)
 {
-    FactionManager->AddReputationFromSource(Source, EventTag);
+    PlayerFactions.AddReputationFromSource(&QuestGiver, Tag_Factions_Event_QuestCompleted);
 }

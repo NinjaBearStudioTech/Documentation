@@ -3,12 +3,12 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Interfaces/FactionMemberInterface.h"
-#include "PluginLabsPlayerState.generated.h"
+#include "PluginLabsCharacter.generated.h"
 
 class UNinjaFactionComponent;
 
 UCLASS()
-class PLUGINLABS_API APluginLabsCharacter : public ACharacter, public IFactionMemberInterface,
+class PLUGINLABS_API APluginLabsCharacter : public ACharacter, public IFactionMemberInterface
 {
 
     GENERATED_BODY()

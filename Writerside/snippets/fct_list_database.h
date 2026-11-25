@@ -1,7 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "NinjaFactionDatabase.h"
+#include "GameFramework/NinjaFactionDatabase.h"
 #include "FactionDatabase_DataList.generated.h"
 
 UCLASS(DisplayName = "Faction Database: Data List")

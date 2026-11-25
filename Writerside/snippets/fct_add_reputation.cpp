@@ -1,4 +1,8 @@
-void APluginLabsCharacter::AddReputation(const UNinjaFactionDataAsset* FactionData, int32 Reputation) const
+#include "Components/NinjaFactionComponent.h"
+#include "NinjaFactionTags.h"
+
+void AwardWatchReputation(UNinjaFactionComponent& PlayerFactions,
+    const UNinjaFactionDataAsset& TownWatch, const UObject& QuestGiver)
 {
-    FactionManager->AddReputation(FactionData, Reputation, this, Tag_Factions_Event_Generic);
+    PlayerFactions.AddReputation(&TownWatch, 12, &QuestGiver, Tag_Factions_Event_QuestCompleted);
 }

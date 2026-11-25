@@ -1,43 +1,16 @@
-# Combat and Factions
+# Combat and Factions: Control Friendly Fire
 <primary-label ref="integrations"/>
 <secondary-label ref="combat-sec"/>
 <secondary-label ref="factions-sec"/>
 
-Integrating [**Ninja Combat**](cbt_overview.md) and [**Ninja Factions**](fct_overview.md) allows you to control **friendly
-fire** based on the **Faction** and **Alignment** between the Attacker and Target.
+Use the attacker's attitude toward the target to cancel friendly fire or let allies take reduced damage. Start with a [working damage setup](cbt_concept_damage_and_mitigation.md) and [two characters with factions](fct_first_steps.md). With both plugins enabled, Ninja Combat supplies a faction damage evaluator.
 
-This integration is automatically enabled when both plugins are available and active in the project, regardless of whether
-they are installed locally or in the engine.
-
-## Modifying Damage
-
-Ninja Combat provides an interface that establishes the contract for damage modification: `CombatDamageModifierInterface`.
-It allows damage to be modified or fully cancelled. For more information about damage modification and cancellation,
-check the [**Damage and Mitigation**](cbt_concept_damage_and_mitigation.md) page.
-
-This interface is added to the **mitigation pipeline** via the **Modifier Interface** mitigation object. When added to
-the pipeline, it evaluates the **Game Mode** and **Game State** for valid implementations of the interface.
-
-The integration with Ninja Factions uses this mechanism by introducing a dedicated component that can check the **Team
-Attitude**, as provided by **Ninja Factions**, between the attacker and victim. This component can cancel or modify
-damage applied to **friendly actors**.
-
-<procedure title="Configuring the Damage Evaluator" collapsible="true" default-state="expanded">
-    <step>Add the <code>CombatDamageModifierInterface</code> to your Game Mode or Game State.</step>
-    <step>Add <code>NinjaCombatFactionDamageEvaluator</code> to the same object.</step>
-    <step>Route the interface's <code>ShouldCancelDamage</code> function to the component's implementation.</step>
-    <step>Route the interface's <code>ModifyDamage</code> function to the component's implementation.</step>
-    <step>Make sure that your Combat Mitigation Pipeline asset includes the <b>Modifier Interface</b> mitigation object.</step>
+<procedure title="Apply faction rules to incoming damage">
+    <step><p>Include <b>Modifier Interface</b> in the <a href="cbt_guide_damage_pipeline.md">Combat Mitigation Pipeline</a> used by the targets.</p></step>
+    <step><p>If your Game Mode derives from <code>NinjaCombatGameMode</code>, use its built-in damage evaluator. For a custom Game Mode or Game State, implement <code>CombatDamageModifierInterface</code> and give that object a <code>NinjaCombatFactionDamageEvaluator</code>. Forward <b>Should Cancel Damage</b> and <b>Modify Damage</b> to the evaluator, returning its results.</p></step>
+    <step><p>On the evaluator, enable <b>Cancel Friendly Damage</b> to discard friendly hits. To let friendly hits deal reduced damage, turn cancellation off and set <b>Friendly Damage Mitigation</b> to the fraction to absorb. For example, <code>0.25</code> absorbs a quarter of the incoming damage.</p></step>
 </procedure>
 
-The component offers two settings:
+## Try It in Play
 
-| Property                   | Description                                                                                    |
-|----------------------------|------------------------------------------------------------------------------------------------|
-| `CancelFriendlyDamage`     | Determines whether friendly damage is fully cancelled. If enabled, the damage is discarded.    |
-| `FriendlyDamageMitigation` | If damage is not cancelled, determines how much base damage is mitigated for friendly targets. |
-
-> **Default Game Mode**
->
-> Consider using the `NinjaCombatGameMode` class as the base for your Game Mode, if you do not have a hierarchy of your
-> own. This class already provides the integration for you.
+Give the attacker one Friendly target and one Hostile target. With cancellation on, hit both with the same attack. The ally should lose no health, and the hostile target should take damage as usual. Turn cancellation off and repeat with 0.25 mitigation. A hit worth 20 damage should now reach the ally as 15 before other mitigation. If the results differ, check **Get Attitude** from the attacker toward each target, then check which mitigation pipeline each target uses.

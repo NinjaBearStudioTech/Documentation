@@ -3,49 +3,25 @@
 
 ![Ninja Factions](fct_feature.png "Ninja Factions")
 
-**Ninja Factions** is a team and reputation framework for Unreal Engine. It helps define how AI agents, players, and 
-world systems relate to each other through factions, memberships, attitudes, and reputation.
-
-The plugin is designed to work with Unreal Engine's AI Team Agent and AI Perception systems, while remaining flexible 
-enough to support simple team checks, reputation-driven worlds, friendly fire rules, and project-specific attitude logic.
+A guard can welcome a fellow guard, ignore a stranger, or turn on someone who betrayed the town. Ninja Factions lets your game ask how the guard sees a particular character.
 
 ## What It Does
 
-- Provides a reusable framework for **factions**, **memberships**, **reputation**, and **attitude resolution**.
-- Allows AI agents to determine how they should react to perceived targets.
-- Supports dynamic reputation changes that can affect how the world responds to players.
-- Provides data-driven configuration through **Data Assets** and **Data Tables**.
-- Integrates with AI Perception, Combat friendly fire rules, and Bot perception logic.
-- Includes editor and debugging support for faster configuration and testing.
+Give each actor a **main faction** to identify its team. When you ask for an **attitude**, the answer is **Friendly**, **Neutral**, or **Hostile**. You choose whether that answer comes from the two teams or from the target's reputation with the observer's faction.
 
 ## Main Features
 
-- **Faction Definitions**: Define factions as data assets that can be registered and reused across the project.
-- **Membership System**: Assign actors to factions and expose their team identity to gameplay and AI systems.
-- **Reputation Tiers**: Use data-driven reputation values and tiers to represent changing relationships.
-- **Flexible Attitude Resolution**: Resolve friendly, neutral, or hostile attitudes through built-in or custom strategies.
-- **AI Perception Support**: Works with Unreal's AI Team Agent flow so perceived actors can be evaluated through faction logic.
-- **Save Support**: Faction and reputation data can be saved and loaded between play sessions.
-- **Editor Integration**: Includes project settings, contextual asset creation, and Gameplay Debugger support.
-- **Extension Points**: Provides component, interface, Blueprint, and C++ hooks for project-specific faction rules.
+- Give a character a starting team and let them [join or leave other factions](fct_manage_memberships.md) during play.
+- [Award reputation for a quest](fct_add_reputation.md) and let a guard react when the player earns its trust.
+- [Choose an AI behavior](fct_bots.md) based on how the observer sees its target.
+- [Save memberships and reputation](fct_save_load.md) so the world remembers the player's choices.
 
-## Architecture Overview
+## How a Guard Recognizes the Player
 
-Ninja Factions is organized around the relationship between faction data, actor membership, reputation state, and attitude 
-resolution.
+The guard's Faction Component identifies it as a member of the Town Watch. When a quest awards the player Watch reputation, the player's Watch membership records the new score. The next time the guard checks the player, the reputation solver reads that membership and returns the Watch's attitude. A dialogue or AI tree can use the result to open the gate.
 
-Faction assets define the available groups in the project. Actors can become members of these factions (gain Membership) 
-through components or interfaces, allowing gameplay systems to query their faction identity without requiring a specific 
-actor class. Reputation can then modify how one faction or actor relates to another over time.
-
-When an attitude is requested, the plugin uses an attitude resolution strategy to decide whether the target should be 
-considered friendly, neutral, or hostile. The default strategies support simple team checks and reputation-tier checks, 
-but projects can provide their own logic for more specific rules.
-
-This makes Ninja Factions useful as a foundation for AI perception, combat filtering, social systems, world reactions, 
-and any gameplay feature that needs consistent relationship data between team members.
+[Set up Ninja Factions](fct_setup.md), then [give two actors opposing factions](fct_first_steps.md) and check the result in both directions.
 
 ## Integrations
 
-- **[Ninja Combat](cbt_overview.md)** can use factions to enable, disable, or customize friendly fire behavior.
-- **[Ninja Bot](bot_overview.md)** can use factions to determine perceived target attitude in the perception layer.
+Use faction attitudes to [filter what a Ninja Bot guard detects](integration_bot_factions.md) or [control friendly fire in Ninja Combat](integration_combat_factions.md).

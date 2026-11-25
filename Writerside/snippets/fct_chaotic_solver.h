@@ -1,10 +1,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "NinjaFactionAttitudeSolver.h"
+#include "GameFramework/NinjaFactionAttitudeSolver.h"
 #include "FactionSolver_ChaoticSolver.generated.h"
 
-UCLASS(DisplayName = "Faction Database: Chaotic Solver")
+UCLASS(DisplayName = "Faction Attitude Solver: Chaotic Solver")
 class PLUGINLABS_API UFactionSolver_ChaoticSolver : public UNinjaFactionAttitudeSolver
 {
 
