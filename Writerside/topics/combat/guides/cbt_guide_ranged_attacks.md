@@ -1,113 +1,25 @@
-# Configuring Ranged Attacks
+# Launch a Projectile
 <primary-label ref="combat"/>
 <secondary-label ref="guide"/>
 
-This guide shows how to create a basic **ranged attack** using a **Gameplay Ability**, an **Animation Montage**, and a
-**Projectile Actor**.
+Cast a glowing projectile from a hand socket and make it affect the combatant it hits. Use the [combatant setup](cbt_first_steps.md) for the caster and target.
 
-The setup works with different ranged sources. The same flow works for projectiles launched from the **combatant** and
-for projectiles launched from an equipped **weapon**. The shared prerequisite is that the projectile source must implement
-`ICombatRangedInterface`.
-
-For more information, see the documentation for [**Ranged Attacks**](cbt_concept_ranged_attacks.md).
-
-## Prerequisites
-
-### Collision and Components
-
-Your collision channels, combat components, and base character setup should already be configured. For more information,
-see [**Combat Setup**](cbt_setup.md) and [**Combat First Steps**](cbt_first_steps.md).
-
-### Input Handling
-
-Make sure your input setup can activate gameplay abilities. For more information, see
-[**Combat and Input Integration**](integration_combat_input.md). Integration with Ninja Input is optional, but input
-handling for ability activation should already be configured.
-
-### Weapon Management
-<secondary-label ref="optional"/>
-
-If your projectiles originate from **weapons**, make sure to configure them first. For more information, see
-[**Weapon Management**](cbt_concept_weapon_management.md).
-
-## Projectile Actor
-
-The projectile actor is launched by a Gameplay Ability and owns the Gameplay Effect application.
-
-<procedure title="Create the Damage Gameplay Effect" collapsible="true" default-state="collapsed">
-    <img src="cbt_guide_projectile_damage.png" alt="Damage Gameplay Effect" thumbnail="true" border-effect="line"/>
-    <step>In your Projectile Ability folder, create a new <b>Gameplay Effect Blueprint</b> using <code>CombatEffect_RangedHit</code> as the base class.</step>
-    <step>Optionally, add a <b>Gameplay Cue</b> that should be applied to each target affected by the projectile.</step>
+<procedure title="Create the traveling actor">
+    <step><p>Make a Gameplay Effect based on <code>CombatEffect_RangedHit</code>. Create a Blueprint based on <code>NinjaCombatProjectileActor</code> and assign the effect as its <b>Impact Effect Class</b>.</p></step>
+    <step><p>Set its scan channel and hit adjustment trace channel to the combat channel your target responds to. Add a trail or mesh so you can see the projectile travel. For a Niagara trail, turn off <b>Auto Activate</b>.</p></step>
 </procedure>
 
-<procedure title="Create the Projectile Actor" collapsible="true" default-state="collapsed">
-    <step>In your Blueprints folder, create a new <b>Projectile Actor Blueprint</b> using <code>NinjaCombatProjectileActor</code> as the base class.</step>
-    <step>
-        <p>Review the default <b>Projectile Behaviors</b> and adjust settings as needed:</p>
-        <ul>
-            <li>In the <b>Hit Processor</b> behavior, set the <b>Hit Adjustment Trace Channel</b> to <code>CombatObject</code>.</li>
-            <li>In the <b>Scan</b> behavior, set the <b>Scan Channel</b> to <code>CombatObject</code>.</li>
-            <li>In the <b>Exhaustion</b> behavior, adjust the <b>Active Duration</b> as needed.</li>
-        </ul>
-    </step>
-    <step>
-        <p>Add a <b>Niagara Component</b> to the <b>Root Sphere</b>. Set <b>Auto Activate</b> to <code>false</code>.</p>
-        <tip>Although you can assign particles and sound assets directly to these components, it is usually better to keep this Blueprint as an <b>abstract parent</b> for your Projectile Actors.</tip>
-    </step>
-    <step>
-        <p>In the <b>My Blueprint</b> tab, expand <b>Overridable Functions</b> and add the following events to the <b>Event Graph</b>.</p>
-        <ul>
-            <li>Double-click <code>LaunchProjectile</code> to add this event to the graph. Right-click the node and select <b>Add Call to Parent Function</b>.</li>
-            <li>Double-click <code>Exhaust</code> to add this event to the graph. Right-click the node and select <b>Add Call to Parent Function</b>.</li>
-        </ul>
-        <note>Always call the <b>Parent Function</b> in your base <b>Projectile Actors</b>, since the base class runs important setup logic there.</note>
-    </step>
-    <step>
-        <img src="cbt_guide_projectile_actor_graph.png" alt="Projectile Actor Graph" width="780" thumbnail="true" border-effect="line"/>
-        <p>Implement the new events, activating and deactivating components.</p>
-        <ul>
-            <li>When <b>launching the projectile</b>, activate the <b>VFX</b> component. Make sure the component is set to <b>Reset</b>.</li>
-            <li>When the projectile <b>exhausts</b>, deactivate the VFX.</li>
-        </ul>
-    </step>
-    <step>Close the base Blueprint and create a new <b>Child Blueprint</b>. This child Blueprint is the one that will be used by the ability.</step>
-    <step>Assign the Niagara System and Sound assets that should be used by this Projectile Actor.</step>
-    <step>Set the Gameplay Effect applied by the Projectile Actor to the <b>Impact Effect Class</b>.</step>
+<procedure title="Launch from the release frame">
+    <step><p>Implement the <b>Combat Ranged Interface</b> on the caster. Return the mesh with the launch socket from <code>GetProjectileSourceMesh</code>. Add a <b>Launch Projectile</b> notify at the release frame of the cast montage. In its <b>Request Data</b>, set the source to <b>Owner</b> and its origin socket to that socket.</p></step>
+    <step><p>Create a <code>CombatAbility_LaunchProjectile</code> Blueprint. Set <b>Projectile Trigger</b> to <b>Gameplay Event</b>, assign the montage, and set <b>Fallback Projectile Class</b> to your projectile. Grant the ability and activate it from your test action. For a weapon launch, set the notify source to <b>Weapon</b> and use a query matching the registered weapon.</p></step>
 </procedure>
 
-## Gameplay Ability
+<img src="cbt_guide_projectile_montage_notify.png" alt="Launch Projectile notify on the montage release frame" width="650" border-effect="line"/>
 
-The Gameplay Ability will activate, wait for a Gameplay Event from the animation, and launch the projectile. 
+Override the projectile's `LaunchProjectile` and `Exhaust` events to start and stop a trail. Call the parent implementation in both so movement and cleanup still run. C++ subclasses can implement the corresponding `_Implementation` methods. If your game fires many projectiles, add `NinjaCombatActorPoolComponent` to the attacker, include the projectile class in its pool configuration, and return the component from `GetActorPool` on the Combat Pool Provider Interface. Reset per-shot visuals on activation and clear them on deactivation. A class configured in the notify's request can override the ability's fallback projectile.
 
-While using **Gameplay Event** mode, the ability can launch a Projectile Actor class provided by the **Projectile Payload**, 
-or use the **Fallback Projectile Class** configured in the ability.
+<code-block lang="c++" src="cbt_add_actor_pool_component.cpp" collapsible="true" collapsed-title="Return the projectile pool from a C++ character"/>
 
-<procedure title="Create the Animation Montage" collapsible="true" default-state="collapsed">
-    <img src="cbt_guide_projectile_montage_notify.png" alt="Projectile Animation Montage (with Notify)" thumbnail="true" border-effect="line"/>
-    <step>Select the Animation Sequence that represents the ranged attack and create an <b>Animation Montage</b> from it.</step>
-    <step>If applicable, select the correct <b>Slot</b> for the Animation Montage, based on the setup in your <b>Animation Instance</b>.</step>
-    <step>Navigate to the point in the Animation Montage where the projectile should launch, then add the <b>Launch Projectile</b> Animation Notify.</step>
-    <step>
-        <p>Configure the Animation Notify with a proper <b>Source</b> and <b>Origin Socket</b>.</p>
-        <tip>
-            <p><b>Weapon Sources</b></p>
-            <p>If you are using a <b>weapon</b> as the source, make sure to add a <b>socket</b> to the weapon's mesh and configure the <b>Weapon Query</b>.</p>
-        </tip>
-    </step>
-</procedure>
+## Try It in Play
 
-<procedure title="Create the Projectile Ability" collapsible="true" default-state="collapsed">
-    <img src="cbt_guide_projectile_ability.png" alt="Projectile Ability" thumbnail="true" border-effect="line"/>
-    <step>
-        <p>Create a new <b>Gameplay Ability</b> using <code>CombatAbility_LaunchProjectile</code> as the base class.</p>
-    </step>
-    <step>
-        <p>Configure the Projectile Ability with the following values:</p>
-        <ul>
-            <li><b>Projectile Trigger</b>: <b>Gameplay Event</b></li>
-            <li><b>Commit Time</b>: <b>Ability Activates</b></li>
-            <li><b>Fallback Projectile Class</b>: the <b>Projectile Blueprint</b></li>
-        </ul>
-    </step>
-    <step>Add any <b>Gameplay Tags</b> required to activate the ability.</step>
-</procedure>
+Launch toward a stationary target, then past it. Check the socket origin, whether the projectile reaches the target, and whether health changes only on a hit. Fire again and check that a reused trail begins at the new origin.

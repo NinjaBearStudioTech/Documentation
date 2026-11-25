@@ -43,48 +43,52 @@
         </toc-element>
         <!-- Ninja Combat -->
         <toc-element topic="cbt_overview.md">
-            <toc-element topic="cbt_setup.md"/>
-            <toc-element topic="cbt_first_steps.md"/>
+            <toc-element topic="cbt_setup.md" toc-title="Setup">
+                <toc-element topic="cbt_first_steps.md"/>
+            </toc-element>
             <toc-element toc-title="Concepts">
                 <toc-element topic="cbt_concept_components.md"/>
-                <toc-element topic="cbt_concept_attributes.md"/>
-                <toc-element topic="cbt_concept_gas.md"/>
                 <toc-element topic="cbt_concept_weapon_management.md"/>
-                <toc-element topic="cbt_concept_melee_attacks.md"/>
-                <toc-element topic="cbt_concept_motion_warping.md"/>
-                <toc-element topic="cbt_concept_ranged_attacks.md"/>
-                <toc-element topic="cbt_concept_cast_flows.md"/>
-                <toc-element topic="cbt_concept_combos.md"/>
                 <toc-element topic="cbt_concept_target_locking.md"/>
+                <toc-element topic="cbt_concept_combos.md"/>
                 <toc-element topic="cbt_concept_damage_and_mitigation.md"/>
-                <toc-element topic="cbt_concept_vulnerable_states.md"/>
                 <toc-element topic="cbt_concept_firearms.md"/>
-                <toc-element topic="cbt_concept_physical_animations.md"/>
-                <toc-element topic="cbt_concept_paired_animations.md"/>
-                <toc-element topic="cbt_concept_ui.md"/>
-                <toc-element topic="cbt_concept_ai.md"/>
-                <toc-element topic="cbt_concept_actor_pooling.md"/>
             </toc-element>
             <toc-element toc-title="Guides">
-                <toc-element topic="cbt_guide_weapons.md"/>    
                 <toc-element topic="cbt_guide_melee_attacks.md"/>
                 <toc-element topic="cbt_guide_ranged_attacks.md"/>
+                <toc-element topic="cbt_guide_cast_preset.md"/>
+                <toc-element topic="cbt_guide_cast_actor.md"/>
                 <toc-element topic="cbt_guide_cast_flows.md"/>
                 <toc-element topic="cbt_guide_combos.md"/>
                 <toc-element topic="cbt_guide_target_lock.md"/>
                 <toc-element topic="cbt_guide_damage_pipeline.md"/>
-                <!--<toc-element topic="cbt_guide_hit_reactions_and_death.md"/>-->
-                <!--<toc-element topic="cbt_guide_evade.md"/>-->
-                <!--<toc-element topic="cbt_guide_block.md"/>-->
-                <!--<toc-element topic="cbt_guide_parry.md"/>-->
+                <toc-element topic="cbt_guide_block.md"/>
                 <toc-element topic="cbt_guide_knockdown.md"/>
                 <toc-element topic="cbt_guide_opportunity_attacks.md"/>
                 <toc-element topic="cbt_guide_firearms.md"/>
                 <toc-element topic="cbt_guide_widgets.md"/>
+                <toc-element topic="cbt_guide_ai.md"/>
+                <toc-element topic="cbt_troubleshooting.md"/>
             </toc-element>
-            <toc-element topic="cbt_troubleshooting.md"/>
+            <toc-element topic="cbt_concept_attributes.md" hidden="true"/>
+            <toc-element topic="cbt_concept_gas.md" hidden="true"/>
+            <toc-element topic="cbt_concept_melee_attacks.md" hidden="true"/>
+            <toc-element topic="cbt_concept_motion_warping.md" hidden="true"/>
+            <toc-element topic="cbt_concept_ranged_attacks.md" hidden="true"/>
+            <toc-element topic="cbt_concept_cast_flows.md" hidden="true"/>
+            <toc-element topic="cbt_concept_vulnerable_states.md" hidden="true"/>
+            <toc-element topic="cbt_concept_physical_animations.md" hidden="true"/>
+            <toc-element topic="cbt_concept_paired_animations.md" hidden="true"/>
+            <toc-element topic="cbt_concept_ui.md" hidden="true"/>
+            <toc-element topic="cbt_concept_ai.md" hidden="true"/>
+            <toc-element topic="cbt_concept_actor_pooling.md" hidden="true"/>
+            <toc-element topic="cbt_guide_weapons.md" hidden="true"/>
+            <toc-element topic="cbt_guide_evade.md" hidden="true"/>
+            <toc-element topic="cbt_guide_parry.md" hidden="true"/>
+            <toc-element topic="cbt_guide_hit_reactions_and_death.md" hidden="true"/>
             <toc-element topic="cbt_changelog.md"/>
-        </toc-element>        
+        </toc-element>
         <!-- Ninja Factions -->
         <toc-element topic="fct_overview.md">
             <toc-element topic="fct_setup.md" toc-title="Setup">
