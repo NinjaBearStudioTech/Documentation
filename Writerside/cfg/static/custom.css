@@ -3,6 +3,20 @@
     margin-inline: auto;
 }
 
+/* The shell already centers the page. Let the desktop columns fill its scroll area. */
+@media screen and (min-width: 1181px) {
+    .app__content-scroller > .layout--container-content,
+    .app__content-scroller > .app__footer > .layout--container-content {
+        width: 100%;
+        max-width: none;
+        margin-inline: 0;
+    }
+
+    .app__content-scroller > .layout--container-content:has(> .app__virtual-toc-aside) {
+        padding-inline-end: 0;
+    }
+}
+
 .app__footer {
     --app-footer: var(--app-header);
 }
