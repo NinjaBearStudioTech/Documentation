@@ -1,112 +1,32 @@
-# Combat and Inventory
+# Combat and Inventory: Fight with Equipped Weapons
 <primary-label ref="integrations"/>
 <secondary-label ref="combat-sec"/>
 <secondary-label ref="inventory-sec"/>
 
-[**Ninja Combat**](cbt_overview.md) can defer [**Weapon Management**](cbt_concept_weapon_management.md) and [**Ammo Management**](cbt_concept_firearms.md)
-to [**Ninja Inventory**](inv_overview.md). You can also create **custom fragments** that define weapon behavior,
-such as **weapon damage**, **critical hit chance and bonus**, **fire rate**, **ammo capacity**, and so on.
-
-This integration is automatically enabled when both plugins are available and active in the project, regardless of whether
-they are installed locally or in the engine. 
-
-Once set up:
-
-- Weapon spawning, attachment, features, and configuration are handled by the **Inventory system**.
-- The Combat system **no longer directly manages weapons**. Instead, it requests the correct weapon actor for each equipment slot.
-- You can define **weapon-specific behavior** through **item fragments**, such as gameplay elements, dynamic attributes, off-hand attachments, and so on.
+Equip a rifle from a backpack, fire it, then reload from an ammo stack. Inventory supplies the weapon actor in the player's hand and counts the reserve rounds. Combat uses that actor to fire and tracks the rounds loaded in its magazine. Start with a working [equipment slot](inv_guide_equipment.md) and a [firearm with shooting and reload abilities](cbt_guide_firearms.md).
 
 ## Weapon Manager
 
-Ninja Combat uses a **Weapon Manager** to retrieve weapons available to a combatant. With Ninja Inventory, this responsibility
-is assigned to the Inventory Manager, and the Weapon Manager simply forwards requests to it.
-
-Instead of adding the usual `NinjaCombatWeaponManagerComponent`, use the equipment-aware variant,
-`NinjaCombatEquipmentAdapterComponent`. This version implements `CombatWeaponManagerInterface`, as expected by Ninja Combat,
-but forwards requests to an **Equipment Manager** that should also be present in the character.
-
-Make sure to return the correct component from `GetWeaponManager`, in the **Combat System Interface**.
-
-<procedure title="Configure the Equipment Weapon Manager" collapsible="true" default-state="expanded">
-    <step>Add the <b>Equipment Manager</b>, <code>NinjaEquipmentManagerComponent</code>, to your character. Check the <a href="inv_guide_equipment.md"><b>Equip an Item and Change Its Appearance</b></a> documentation for additional details.</step>
-    <step>
-        <p>Add the <b>Equipment Weapon Adapter</b>, <code>NinjaCombatEquipmentAdapterComponent</code>, to your character. Check the <a href="cbt_concept_weapon_management.md"><b>Weapon Management</b></a> documentation for additional details.</p>
-        <note>
-            <p><b>Do Not Duplicate Weapon Managers</b></p>
-            <p>If you are using the Equipment Adapter component, make sure that no other Weapon Manager component is active on your character.</p>
-        </note>
-    </step>
-    <step>Return the new <b>Equipment Adapter Component</b> from <code>GetWeaponManager</code>, which is a function from <code>CombatSystemInterface</code>.</step> 
+<procedure title="Let equipment supply the active weapon">
+    <step><p>On the character, keep its <code>NinjaEquipmentManagerComponent</code> and use <code>NinjaCombatEquipmentAdapterComponent</code> as its only Combat Weapon Manager. Return the adapter from <b>Get Weapon Manager Component</b> (<code>GetWeaponManagerComponent</code>) on the <b>Combat System Interface</b>. Remove the rifle from Combat's default weapon classes if it was previously spawned there.</p></step>
+    <step><p>Give the rifle's Item Definition a project tag such as <code>Item.Weapon.Primary</code>. In its <b>Equipment Fragment</b>, add the <code>Inventory.Equipment.State.Equipped</code> state. Choose <b>Actor</b> as the presence and assign a Blueprint based on <code>NinjaCombatEquipmentWeaponActor</code>. Put the rifle mesh and its Firearm Component on this actor.</p></step>
+    <step><p>Let the hand slot accept the item's tag and set its equipped socket. In the combat ability's <b>Weapon Query</b>, require both the item tag and the equipped state. Move the rifle from the backpack into that slot. Combat searches the equipment's tags and returns the first matching weapon actor.</p></step>
 </procedure>
 
 ## Weapon Actor
 
-Weapon Actors can also benefit from a closer integration with Ninja Inventory. Specifically, they can access the
-**Equipment Instance** that contains relevant item data, such as the **Item Instance and its Fragments**. This is exposed
-by the `NinjaEquipmentActorComponent`, which is added to each actor used as an **Equipment Presence**.
-
-To leverage this, either use `ANinjaCombatEquipmentWeaponActor` as your base **Weapon Class**, or add
-`NinjaEquipmentActorComponent` to your own Weapon Actor hierarchy. Keep in mind that the provided base class includes
-additional features, such as using the **Item Level** as the **Weapon Level** when applying Gameplay Effects.
-
-> **Weapon Tags**
->
-> When using the default Weapon Manager and Weapon Actor, weapons are identified by tags set in the Weapon Actor itself.
->
-> However, when weapons are managed by the Inventory, the identifying tags are set in the **Item Data Asset**, and tags
-> added to the actor are no longer used.
-
-<procedure title="Create Inventory Weapons" collapsible="true" default-state="expanded"> 
-    <step>
-        <p>For your weapon actors, use <code>NinjaCombatEquipmentWeaponActor</code> as your base class.</p>
-        <note>
-            <p><b>Different Class Hierarchies</b></p>
-            <p>If you cannot use the provided base class in your hierarchy, add <code>NinjaEquipmentActorComponent</code> to your own base Weapon Actor class or Blueprint.</p>
-        </note>
-    </step>
-    <step>Create a new <b>Item Definition</b> for your weapon. Check the <a href="inv_inventory_fragments.md"><b>Items, Fragments, and Eligibility</b></a> documentation for additional details.</step>
-    <step>Add an <b>Equipment Fragment</b> to your Item Definition and configure the <b>Equipped State</b>, at minimum.</step>
-    <step>
-        <p>Set the <b>Equipment Type</b> to <b>Actor</b> and set the Weapon Actor as the <b>Actor Class</b>.</p>
-        <note>
-            <p><b>Weapons are always Equipment Instances</b></p>
-            <p>Weapons are always implemented as <b>Equipment Actors</b>, as they represent items with <b>physical presence</b> and <b>dedicated in-world logic</b>.</p>
-        </note>
-    </step>
-</procedure>
+If your game already has a weapon actor, keep its **Combat Weapon Interface** and add a `NinjaEquipmentActorComponent` to access the equipment and its item. The supplied equipment weapon can use the item's level as its hit effect level. To drive damage from a rolled item stat, read the item's **Dynamic Attributes** fragment in the weapon's `GetAdditionalCombatMagnitudes` override and add the value under the damage tag your effect reads. In C++, extend `GetAdditionalCombatMagnitudes_Implementation` and preserve the parent's magnitudes. An **Offhand Position** fragment can also supply the support-hand position for a two-handed weapon.
 
 ## Ammo Storage
 
-Similar to the **Weapon Manager**, Ninja Combat uses an **Ammo Storage** component to manage ammunition for firearms
-during reloads. When using Ninja Inventory, ammo can be managed using **Item Stacks**.
-
-Instead of using the default `NinjaCombatAmmoStorageComponent`, use `NinjaCombatInventoryAmmoAdapterComponent` and set
-its `AllAmmoTypesQuery` to a query that covers all items that represent ammo. For example, if your ammo items use
-identification tags such as `Item.Type.Ammo.Rifle` and `Item.Type.Ammo.Shotgun`, set this query to find `Item.Type.Ammo`.
-
-<procedure title="Configure the Ammo Storage" collapsible="true" default-state="expanded">
-    <step>
-        <p>Add the <b>Ammo Storage Adapter</b>, <code>NinjaCombatInventoryAmmoAdapterComponent</code>, to your character. Check the <a href="cbt_concept_firearms.md"><b>Firearms</b></a> documentation for additional details.</p>
-        <note>
-            <p><b>Do Not Duplicate Ammo Storages</b></p>
-            <p>If you are using the Ammo Adapter component, make sure that no other Ammo Storage component is active on your character.</p>
-        </note>
-    </step>
-    <step>Configure the Adapter's <code>AllAmmoTypesQuery</code> property to catch all ammo types in your Inventory.</step>
-    <step>Create Inventory Items representing <b>Ammunition</b>, including a <b>Stack Fragment</b> set to be <b>observable</b>. This allows you to get a <b>global count</b> in addition to the per-stack count.</step>
-    <step>Create Inventory Items representing <b>Firearms</b>, including a <b>Firearm Component</b>, which provides specialized ammo functions.</step>
+<procedure title="Reload from an inventory stack">
+    <step><p>Add <code>NinjaCombatInventoryAmmoAdapterComponent</code> to the character as its only ammo storage component. Create an ammunition Item Definition tagged, for example, <code>Inventory.Item.Type.Ammo.Rifle</code>. Add a <b>Stack and Quantity</b> fragment, set a stack limit of at least ten, and enable <b>Can Be Observed</b>.</p></step>
+    <step><p>On the adapter, set <b>All Ammo Types Query</b> to include your ammo items. On the rifle's Firearm Definition, set <b>Ammo Query</b> to the rifle ammo tag. The first query tells the adapter which stack changes to watch. The rifle's query determines which rounds it can actually take.</p></step>
+    <step><p>Give the backpack ten reserve rounds. Use a full magazine of at least three, fire three shots, and trigger a magazine reload. At the reload notify the magazine should refill and seven rounds should remain in inventory.</p></step>
 </procedure>
 
-## Item Fragments
+For an ammo counter, read `GetAvailableAmmo` with the rifle's query when the widget opens. Bind `BindToAvailableAmmoChangedDelegate` on the ammo storage interface for later changes. Unbind with `UnbindFromAvailableAmmoChangedDelegate` when the widget closes. Combat calls `TakeAmmo` during reload, so the widget only displays the result.
 
-Multiple Item Fragments can be used to enhance weapons in many ways.
+## Try It in Play
 
-| Fragment           | Description                                                                                                |
-|--------------------|------------------------------------------------------------------------------------------------------------|
-| Firearm            | Identifies a firearm and becomes aware of compatible ammo.                                                 |
-| Equipment          | Configures an actor presence for a weapon, which can be used as the Weapon Actor.                          |
-| Offhand Position   | Allows two-handed weapons to properly place the off-hand.                                                  |
-| Dynamic Attributes | Can be used to set magnitudes for weapons, such as damage, critical hit chance, and critical damage bonus. |
-
-When using **Dynamic Attributes** in your weapons, override `GetAdditionalCombatMagnitudes`, from `CombatMagnitudeProviderInterface`,
-to expose your dynamic attributes, such as Damage and Critical Hit Chance, using the proper data tags.
+Replace the rifle in the hand slot with a second weapon bearing the same primary tag and a visibly different mesh. Fire again and check which actor supplies the shot. Move it back to the bag and verify the slot no longer supplies a weapon. Finally, try reloading the rifle with only an incompatible ammo stack. Its magazine and that stack should both keep their counts.

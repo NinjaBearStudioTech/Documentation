@@ -3,54 +3,44 @@
 <secondary-label ref="combat-sec"/>
 <secondary-label ref="input-sec"/>
 
-Start with a [combatant](cbt_first_steps.md) that can already perform the action and a player with a [working Input Setup](ipt_first_steps.md). Bind the first attack, then add the controls your combat system uses.
-
-## Gameplay Abilities
-
-For a single attack, map a Pressed action in your context. Add **GAS: Activate Ability by Class** to the Input Setup, assign that action, and select the attack ability already granted to the combatant. [Input and G.A.S.](ipt_gas_handlers.md) covers activation by tags, momentary abilities, and toggles.
+Give a player one attack button that starts a combo and advances it on a well-timed second press. Start with a [working Input Setup](ipt_first_steps.md) and a combatant that can already perform a [branching combo](cbt_guide_combos.md).
 
 ## Combo Inputs
 
-<procedure title="Start a combo and advance it">
-    <step><p>Grant the combo ability and set up its <a href="cbt_guide_combos.md">combo window</a>. Add <b>GAS: Combat Combo</b> for the first attack action. Assign <b>Triggered</b> as its event.</p></step>
-    <step><p>Enable <b>Handles Activation</b> for a button that can start the combo and choose Activation Tags matching the granted ability. Enable <b>Handles Advancement</b> for a button that can continue it and set the Advancement Tag to the event expected by the combo branch.</p></step>
-    <step><p>Press once to start, then press again while the combo window is open. If the first attack plays but the second does not, compare the handler's combo state and advancement tags with the ability and combo tree.</p></step>
+<procedure title="Bind the opening swing and follow-up">
+    <step><p>Map a Boolean attack action with a <b>Pressed</b> trigger in the player's active mapping context. In the Input Setup, add a <b>GAS: Combat Combo</b> handler for that action and select <b>Triggered</b>.</p></step>
+    <step><p>Enable <b>Handles Activation</b> and set <b>Activation Tags</b> to the granted combo ability's tag, such as <code>Combat.Ability.Combo</code>. Set <b>Combo State Tag</b> to <code>Combat.State.ComboWindow</code>, the tag the Combat Combo Manager applies while the montage window is open.</p></step>
+    <step><p>Enable <b>Handles Advancement</b> and set <b>Advancement Tag</b> to the opening state's follow-up event, for example <code>Combat.Event.Combo.Attack.Primary</code>. A second button can send the secondary branch's event. Leave activation off on that handler if it should only continue an existing combo.</p></step>
 </procedure>
 
-<img src="integration_combat_input_combo.png" alt="Activation and advancement settings on a combo handler" width="720" border-effect="line"/>
+<img src="integration_combat_input_combo.png" alt="Combo handler with activation and advancement settings" width="720" border-effect="line"/>
 
-## Default, Hold, Combo
-
-When a single button needs a quick attack, a held attack, and a combo continuation, derive an Input Handler from **GAS: Default, Hold, Combo**. Use a Hold trigger so the handler can distinguish releasing early from reaching the hold time. Configure the abilities or events for those roles. Override `IsFirstComboAttack` to read the current pawn's Combo Manager and return true when `GetComboCount` is zero. Override `IsInComboWindow` to report whether that pawn can advance. For a project-specific choice of action, override the role selector, such as `GetHoldActivationType` or `GetComboActivationType`.
-
-## Ability Targeting
-
-Add **GAS: Ability Target Confirm** and **GAS: Ability Target Cancel** for a combat ability that waits for a target. To operate directly on Combat's targeting actor, subclass the corresponding handler. Override `GetAbilityTargetActor`, get the pawn from the Input Manager, and return the Combat Target Manager's current ability targeting actor. Set **Ability Targeting Operation** to the actor operation if that is where the ability expects confirmation.
-
-<img src="integration_combat_input_confirm.png" alt="Returning the current targeting actor from a confirmation handler" width="720" border-effect="line"/>
-
-## Target Lock
-
-Grant the [Target Lock ability](cbt_guide_target_lock.md), add `Input.Ability.Toggled` to its ability tags, and bind a Pressed action using the activation-by-tags handler. Bind **GAS: Send Gameplay Event** for each extra control you support: `Combat.Event.Target.Scan` to scan, and `Combat.Event.Target.Left` or `Combat.Event.Target.Right` to cycle. Press the original toggle again to release the lock.
-
-## Forward Reference
-
-For a shared direction in top-down movement and directional evades, add an Arrow to the character. Use **Absolute Rotation** and tag it with both `Input.Component.ForwardReference` and `Combat.Component.ForwardReference`. Return that Arrow from Combat's `GetCombatForwardReference` interface function. Check the direction of an evade after rotating the pawn.
-
-## Fire Intent
-
-Bind a Boolean fire action with **Pressed** and **Released** triggers. In a custom handler's `HandleTriggeredEvent`, get the active weapon's Firearm Component using the weapon query for that pawn. Convert Value to Boolean and call `TryOpenFire` on press or `TryCeaseFire` on release. The [firearm guide](cbt_guide_firearms.md) covers the weapon and shoot ability.
-
-<img src="integration_combat_input_fire_intent.png" alt="Sending press and release to the active firearm" width="720" border-effect="line"/>
-
-## Disabling Input
-
-Apply `Input.Block.Movement`, `Input.Block.Camera`, or `Input.Block.Rotation` during a finisher or target lock to gate the matching handlers. Remove the tags when the ability ends so the player regains control.
+For a tap, hold, and combo branch on the same button, derive a handler from **GAS: Default, Hold, Combo**. Use a Hold trigger and choose the ability or event for each role. Override `IsFirstComboAttack` to return true when the pawn's Combo Manager reports `GetComboCount` is zero, and `IsInComboWindow` using its `InComboWindow` result. In C++, override the corresponding `_Implementation` methods. Use `GetHoldActivationType` or `GetComboActivationType` if your equipped weapon changes what that input does.
 
 ## Input Buffer
 
-If an early press should advance a combo, enable **Can Be Buffered** on its handler and open its channel shortly before the next combo window. Time the release so the combo can accept the event. [Buffer an Action](ipt_guide_buffer_action.md) shows the montage and Blueprint paths.
+Once both presses work, enable **Can Be Buffered** on the follow-up handler. Open the handler's buffer channel just before the montage window and release the saved input while Combat can accept it. [Buffer an Action](ipt_guide_buffer_action.md) shows the notify and Blueprint paths.
+
+## Ability Targeting
+
+For an [aimed spell](cbt_guide_cast_flows.md), bind separate Pressed actions to **GAS: Ability Target Confirm** and **GAS: Ability Target Cancel**. Choose the ability component operation for a cast waiting on GAS confirmation. If your spell needs the targeting actor directly, override `GetAbilityTargetActor` on both handlers. Get the Input Manager's pawn, find its Combat Target Manager, and return that manager's `GetAbilityTargetActor` result. Choose the targeting actor operation. Aim once and cancel, then aim again and confirm. Only the confirmed cast should land.
+
+<img src="integration_combat_input_confirm.png" alt="Confirmation handler resolving Combat's active targeting actor" width="720" border-effect="line"/>
+
+## Target Lock
+
+Grant [Target Lock](cbt_guide_target_lock.md), give it the ability asset tag `Input.Ability.Toggled`, and bind a Pressed action using **GAS: Activate Ability by Tags** with the lock ability's identifying tag. Press once to lock and again to release. For cycling, bind **GAS: Send Gameplay Event** to `Combat.Event.Target.Left` and `Combat.Event.Target.Right`. Use `Combat.Event.Target.Scan` for a fresh scan.
+
+## Fire Intent
+
+For a [firearm](cbt_guide_firearms.md), use a Boolean fire action with **Pressed** and **Released** triggers. In a custom handler's `HandleTriggeredEvent`, resolve the equipped weapon from the pawn's weapon query and get its Firearm Component. Call `TryOpenFire` on a true value and `TryCeaseFire` on false. Use `HandleTriggeredEvent_Implementation` in C++. This also lets the firearm handle its own rate of fire while the player holds the button.
+
+<img src="integration_combat_input_fire_intent.png" alt="Passing a press or release to the equipped firearm" width="720" border-effect="line"/>
+
+## Forward Reference
+
+For a top-down evade, give the character an Arrow with **Absolute Rotation** and the component tags `Input.Component.ForwardReference` and `Combat.Component.ForwardReference`. Return that Arrow from `GetCombatForwardReference` so movement input and evades agree on direction. During a finisher, grant `Input.Block.Movement`, `Input.Block.Camera`, or `Input.Block.Rotation` for the controls you want to suspend, and remove those tags when the ability ends.
 
 ## Try It in Play
 
-Check one action at a time: start a combo, press again inside the window, confirm a target, then release a held fire input. If the handler receives the input but the ability does nothing, inspect the granted ability and its tags on the possessed combatant.
+Test the combo first with buffering off. Press once, then press again during the window. The second press should play the follow-up. Wait out the opening move and the next press should start a fresh combo. If only the opener plays, inspect the pawn's owned tags while the window is open, then compare the handler's advancement tag with the tree transition. For a single attack with no combo, use [Activate an Ability from an Action](ipt_gas_handlers.md).
