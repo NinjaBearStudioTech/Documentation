@@ -180,6 +180,7 @@ jobs:
       - name: Unzip Algolia artifact
         run: unzip -O UTF-8 -qq "artifacts/${{ needs.build.outputs.algolia_artifact }}" -d algolia-indexes
       - name: Update Algolia Index
+        timeout-minutes: 10
         run: |
           if [ -z "${{ secrets.ALGOLIA_KEY }}" ]; then
             echo "ALGOLIA_KEY secret is not set in GitHub Secrets"
@@ -191,6 +192,5 @@ jobs:
             --index-name ${{ env.ALGOLIA_INDEX_NAME }} \
             --product ${{ env.CONFIG_JSON_PRODUCT }} \
             --version ${{ env.CONFIG_JSON_VERSION }} \
-            --index-directory algolia-indexes/ \
-            2>&1 | tee algolia-update-index-log.txt
+            --index-directory algolia-indexes/
           fi
