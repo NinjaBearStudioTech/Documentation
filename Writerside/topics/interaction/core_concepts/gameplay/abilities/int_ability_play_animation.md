@@ -20,7 +20,7 @@ the best Animation Montage to play.
 While running, it will apply an **Interaction Effect** to the owner. You can use this to achieve behaviors such as:
 
 - Apply **Gameplay Tags** that may affect the character in other ways, for example, affecting [**equipment visibility**](inv_tag_visibility.md).
-- Apply **Gameplay Tags** that will [**block player input**](ipt_character_handlers.md) to avoid movement during the interaction.
+- Apply **Gameplay Tags** that will [**block player input**](ipt_input_handlers.md) to avoid movement during the interaction.
 - Add **Gameplay Cues** for sounds, effects or other cosmetic effects on the character.
 - Grant **Gameplay Abilities** to trigger additional behaviors.
 

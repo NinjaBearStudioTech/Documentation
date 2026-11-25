@@ -128,28 +128,29 @@
         </toc-element>
         <!-- Ninja Input -->
         <toc-element topic="ipt_overview.md">
-            <toc-element topic="ipt_setup.md"/>
-            <toc-element topic="ipt_first_steps.md"/>
-            <toc-element toc-title="Input Handling">
+            <toc-element topic="ipt_setup.md" toc-title="Setup">
+                <toc-element topic="ipt_first_steps.md"/>
+            </toc-element>
+            <toc-element toc-title="Concepts">
                 <toc-element topic="ipt_input_management.md"/>
-                <toc-element topic="ipt_input_handlers.md">
-                    <toc-element topic="ipt_character_handlers.md"/>
-                    <toc-element topic="ipt_gas_handlers.md"/>
-                    <toc-element topic="ipt_combat_handlers.md"/>
-                    <toc-element topic="ipt_ui_handlers.md"/>
-                </toc-element>
-            </toc-element>
-            <toc-element toc-title="Input Remapping">
-                <toc-element topic="ipt_remapping_setup.md"/>
-                <toc-element topic="ipt_remapping_functions.md"/>
-                <toc-element topic="ipt_remapping_ui.md"/>
-            </toc-element>
-            <toc-element toc-title="Advanced Topics">
+                <toc-element topic="ipt_input_handlers.md"/>
                 <toc-element topic="ipt_user_settings.md"/>
                 <toc-element topic="ipt_input_buffer.md"/>
             </toc-element>
-            <toc-element topic="ipt_troubleshooting.md"/>
+            <toc-element toc-title="Guides">
+                <toc-element topic="ipt_guide_custom_handler.md"/>
+                <toc-element topic="ipt_remapping_ui.md"/>
+                <toc-element topic="ipt_input_detection.md"/>
+                <toc-element topic="ipt_guide_buffer_action.md"/>
+                <toc-element topic="ipt_troubleshooting.md"/>
+            </toc-element>
             <toc-element topic="ipt_changelog.md"/>
+            <toc-element topic="ipt_input_system.md" hidden="true"/>
+            <toc-element topic="ipt_character_handlers.md" hidden="true"/>
+            <toc-element topic="ipt_ui_handlers.md" hidden="true"/>
+            <toc-element topic="ipt_combat_handlers.md" hidden="true"/>
+            <toc-element topic="ipt_remapping_setup.md" hidden="true"/>
+            <toc-element topic="ipt_remapping_functions.md" hidden="true"/>
         </toc-element>
         <!-- Ninja Interaction -->
         <toc-element topic="int_overview.md">
@@ -186,7 +187,6 @@
                 <toc-element topic="int_adv_interaction_duration.md"/>
                 <toc-element topic="int_adv_interaction_animations.md"/>
                 <toc-element topic="int_adv_openable_actor.md"/>
-                <toc-element topic="int_adv_integration_input.md"/>
             </toc-element>
             <toc-element topic="int_changelog.md"/>
         </toc-element>
@@ -260,5 +260,7 @@
         <toc-element topic="integration_combat_factions.md"/>
         <toc-element topic="integration_combat_input.md"/>
         <toc-element topic="integration_combat_inventory.md"/>
+        <toc-element topic="ipt_gas_handlers.md"/>
+        <toc-element topic="int_adv_integration_input.md"/>
     </toc-element>
 </instance-profile>
