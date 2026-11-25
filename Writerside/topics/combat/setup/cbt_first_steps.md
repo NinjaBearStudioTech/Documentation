@@ -11,7 +11,7 @@ Build one character that can both deal and receive damage. Use it for the player
 
 <procedure title="Give both characters starting attributes">
     <step><p>Add <code>NinjaCombatAttributeSet</code> to the ability system. Use an <b>AttributeMetaData</b> table or your usual initialization effect to give each character health, maximum health, and give the attacker a positive Base Damage.</p></step>
-    <step><p>With Ninja G.A.S., add the attribute set and its table under <b>Default Attribute Sets</b> in the GAS Setup Data assigned to the Ability System Component. With your own GAS setup, initialize the set and grant abilities on the server.</p></step>
+    <step><p>With Ninja G.A.S., <a href="gas_guide_attributes.md#give-a-combatant-starting-health">assign the set and its table in a G.A.S. Setup asset</a>. With your own GAS setup, initialize the set and grant abilities on the server.</p></step>
     <step><p>Place a second instance within reach in the level. Give it the same starting health. Keep its movement and attacks idle for the first test.</p></step>
 </procedure>
 

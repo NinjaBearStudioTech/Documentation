@@ -25,4 +25,4 @@ When a character picks up arrows, the manager checks whether it can add them. Th
 
 ## Integrations
 
-[Combat and Inventory](integration_combat_inventory.md) connects equipped items to weapons. [Interaction and Inventory](integration_interaction_inventory.md) connects a Collect action to an inventory transfer and covers partial pickups.
+[Combat and Inventory](integration_combat_inventory.md) connects equipped items to weapons. [Interaction and Inventory](integration_interaction_inventory.md) connects a Collect action to an inventory transfer and covers partial pickups. [Initialize Plugin Attributes](gas_guide_attributes.md#give-a-backpack-its-capacity) sets backpack capacity through a Ninja G.A.S. ability bundle.

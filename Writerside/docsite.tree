@@ -116,19 +116,21 @@
         </toc-element>
         <!-- Ninja GAS -->
         <toc-element topic="gas_overview.md">
-            <toc-element topic="gas_setup.md"/>
-            <toc-element topic="gas_first_steps.md"/>
-            <toc-element topic="gas_architecture.md">
-                <toc-element topic="gas_data_asset.md"/>
+            <toc-element topic="gas_setup.md" toc-title="Setup">
+                <toc-element topic="gas_first_steps.md"/>
+            </toc-element>
+            <toc-element toc-title="Concepts">
                 <toc-element topic="gas_base_classes.md"/>
-                <toc-element topic="gas_artificial_intelligence.md"/>
-                <toc-element topic="gas_local_gameplay_cues.md"/>
-                <toc-element topic="gas_batch_activation.md"/>
-                <toc-element topic="gas_lazy_loading.md"/>
+                <toc-element topic="gas_data_asset.md"/>
             </toc-element>
             <toc-element toc-title="Guides">
-                <toc-element topic="gas_guide_attributes.md"/>
+                <toc-element topic="gas_guide_starting_abilities.md"/>
+                <toc-element topic="gas_local_gameplay_cues.md"/>
+                <toc-element topic="gas_artificial_intelligence.md"/>
             </toc-element>
+            <toc-element topic="gas_architecture.md" hidden="true"/>
+            <toc-element topic="gas_lazy_loading.md" hidden="true"/>
+            <toc-element topic="gas_batch_activation.md" hidden="true"/>
             <toc-element topic="gas_changelog.md"/>
         </toc-element>
         <!-- Ninja Input -->
@@ -254,6 +256,7 @@
         <toc-element topic="integration_combat_factions.md"/>
         <toc-element topic="integration_combat_input.md"/>
         <toc-element topic="integration_combat_inventory.md"/>
+        <toc-element topic="gas_guide_attributes.md"/>
         <toc-element topic="ipt_gas_handlers.md"/>
         <toc-element topic="int_adv_integration_input.md"/>
         <toc-element topic="integration_interaction_inventory.md"/>

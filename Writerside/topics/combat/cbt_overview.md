@@ -22,4 +22,4 @@ Give a player or an AI character a move, decide when it makes contact, and show 
 
 ## Integrations
 
-See [Combat and Input](integration_combat_input.md) for input handlers, [Combat and Inventory](integration_combat_inventory.md) for equipped weapons, [Combat and Factions](integration_combat_factions.md) for team rules, and [Bot and Combat](integration_bot_combat.md) for perception-driven targeting.
+See [Combat and Input](integration_combat_input.md) for input handlers, [Combat and Inventory](integration_combat_inventory.md) for equipped weapons, [Combat and Factions](integration_combat_factions.md) for team rules, and [Bot and Combat](integration_bot_combat.md) for perception-driven targeting. To set up starting health with an ability bundle, follow [Initialize Plugin Attributes](gas_guide_attributes.md#give-a-combatant-starting-health).

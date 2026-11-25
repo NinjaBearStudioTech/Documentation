@@ -25,6 +25,6 @@ Both guides use the same Inventory Manager. Either can be your first layout.
 
 ## Initialization Data
 
-For a bag that grows with the character, set its slot count type to **Gameplay Attribute** and select **BackpackSlots**. Add the inventory attribute set to the owner's ability system and initialize it with a Data Table using the **AttributeMetaData** row type. This sample starts the character with 12 backpack slots, a weight limit of 100, and zero wealth. Adjust the values to suit your game.
+For a bag that grows with the character, set its slot count type to **Gameplay Attribute** and select **BackpackSlots**. Add the inventory attribute set to the owner's ability system and initialize it with a Data Table using the **AttributeMetaData** row type. This sample starts the character with 12 backpack slots, a weight limit of 100, and zero wealth. Adjust the values to suit your game. If you use Ninja G.A.S., follow [Give a Backpack Its Capacity](gas_guide_attributes.md#give-a-backpack-its-capacity) to assign the table to an ability bundle.
 
 <code-block lang="json" src="inv_attributes.json" collapsible="true" collapsed-title="Starting inventory attributes"/>
