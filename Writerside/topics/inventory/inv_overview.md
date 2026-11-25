@@ -50,7 +50,7 @@ extend the system with custom fragments, specialized handlers, item logic, and U
 
 - **[Ninja G.A.S.][6]** can provide the Ability System setup used by inventory abilities and equipment effects.
 - **[Ninja Combat][7]** can use equipped items as weapons or combat-relevant equipment.
-- **[Ninja Interaction][8]** can create pickups, containers, or interactable inventory actors.
+- **[Ninja Interaction][8]** can [collect an inventory item from an interactable](integration_interaction_inventory.md) or open a container.
 - **[Ninja Input][9]** can trigger inventory abilities or equipment actions through input handlers.
 
 [1]: https://www.unrealengine.com/marketplace/product/ninja-inventory
