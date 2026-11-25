@@ -9,9 +9,9 @@ is that your actor implements the `IInventoryPickupInterface`.
 
 The Inventory Manager provides a built-in function, <code>AddItemsFromPickupActor</code>, which can be used to extract
 and grant items from any actor that implements this interface. This ensures custom pickup actors remain fully compatible
-with the inventory system’s queuing, stacking, and placement logic.
+with the inventory system's queuing, stacking, and placement logic.
 
-This gives you full control over how pickups behave, while still benefiting from the Inventory system’s item lifecycle
+This gives you full control over how pickups behave, while still benefiting from the Inventory system's item lifecycle
 and automation.
 
 ## Provided Pickup Actor
@@ -22,7 +22,7 @@ and automation.
     <step>
         <p>In the actor's <code>PickupItems</code> array, define one or more default items that should be granted when the pickup is collected.</p>
         <note>
-            The system will attempt to add the item(s) to the collector’s Inventory Manager on overlap.
+            The system will attempt to add the item(s) to the collector's Inventory Manager on overlap.
             If the pickup is successfully granted, the actor will automatically destroy itself.
         </note>
     </step>
@@ -34,7 +34,7 @@ and automation.
 If you'd like to build a custom pickup actor (e.g., for complex interactions, scripted behavior, or special effects), you
 can do so by implementing the <code>IInventoryPickupInterface</code>.
 
-This allows you to define your own collection logic while still leveraging the Inventory system’s item creation, queuing,
+This allows you to define your own collection logic while still leveraging the Inventory system's item creation, queuing,
 and placement handling.
 
 <procedure title="Implementing a Custom Pickup Actor" collapsible="true" default-state="expanded"> 

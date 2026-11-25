@@ -68,7 +68,7 @@ The system includes several built-in finders:
 
 | Finder                             | Description                                                                     |
 |------------------------------------|---------------------------------------------------------------------------------|
-| `UAttachFinder_CharacterMesh`      | Always returns the avatar’s main mesh (e.g., `GetMesh()` on characters).        |
+| `UAttachFinder_CharacterMesh`      | Always returns the avatar's main mesh (e.g., `GetMesh()` on characters).        |
 | `UAttachFinder_ComponentTag`       | Searches the avatar for a component with a matching `ComponentTag`.             |
 | `UAttachFinder_InventoryInterface` | Calls `GetInventoryMesh()` from the `EquipmentSystemInterface`, if implemented. |
 

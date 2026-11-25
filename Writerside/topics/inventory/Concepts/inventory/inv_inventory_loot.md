@@ -34,7 +34,7 @@ predefined strategies:
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
 | `DataTable`             | Selects loot based on a **data table** containing predefined items, drop chances, and loot costs. Uses the `InventoryLootTableRow` structure. |
 | `DataTable (Interface)` | Same as the previous one, but the table is provided by `InventoryLootTableProviderInterface`, implemented by the **Inventory Owner**.         |
-| `InventoryItems`        | Selects loot from the Inventory Manager’s existing items. Selection is based on the [**Loot Fragment**](inv_inventory_fragments.md).          |
+| `InventoryItems`        | Selects loot from the Inventory Manager's existing items. Selection is based on the [**Loot Fragment**](inv_inventory_fragments.md).          |
 | `LootableContainers`    | Selects loot from containers that have the **lootable** trait.                                                                                |
 
 You can create custom strategies by extending `InventoryLootSelector` and implementing the `GenerateLoot` function.

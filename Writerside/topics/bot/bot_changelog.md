@@ -1,6 +1,14 @@
 # Changelog
 <primary-label ref="bot"/>
 
+## 1.1.24
+```
+[new] Native StateTree references and linked overrides provide per-setup parameters and standard Unreal parameter editing.
+[change] Patrol-point StateTree parameter overrides and preservation of setup parameters when restoring linked behavior.
+[change] StateTree asset pickers accept Unreal's AI component schema and its subclasses while filtering out unrelated schemas; asset and runtime validation also enforce compatibility.
+[fix] Publish the final awareness update before removing a memory that reached zero.
+```
+
 ## 1.0.21 - 05/10/2026
 ```
 [change] Centralized target-transition notifications and ensured destroyed targets trigger clearing callbacks and delegates.

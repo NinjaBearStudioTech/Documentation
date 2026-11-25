@@ -63,7 +63,7 @@ The layout supports two modes of determining total slots:
 - **Fixed Property**: The `Width` and `Height` are set directly on the asset and remain constant.
 - **Gameplay Attribute**: A runtime attribute defines the total number of slots. The layout uses `Width` and derives `Height` dynamically.
 
-This enables both static containers (e.g. a small chest) and dynamic ones (e.g. a player’s bag scaling with level or strength).
+This enables both static containers (e.g. a small chest) and dynamic ones (e.g. a player's bag scaling with level or strength).
 
 ## Fit Algorithm
 

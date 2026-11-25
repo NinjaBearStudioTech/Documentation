@@ -3,52 +3,26 @@
 
 ![Ninja Bot](bot_feature.png "Ninja Bot")
 
-**Ninja Bot** is an AI framework plugin for Unreal Engine that provides a structured layer for perception evaluation, 
-awareness, and decision support.
-
-It is designed to sit between Unreal Engine's AI Perception system and higher-level decision logic, turning raw sensed 
-data into meaningful information that can be consumed by Behavior Trees, State Trees, UI, and other gameplay systems.
+Use Ninja Bot to build characters that notice what happens around them and decide how to respond. A guard might walk a route, grow suspicious when the player crosses a doorway, then give chase.
 
 ## What It Does
 
-- Adds a reusable framework for **AI perception evaluation** and **awareness modeling**.
-- Converts raw perception data into normalized, meaningful awareness information.
-- Helps AI agents reason about targets using explicit evaluation rules instead of raw sense data.
-- Provides decision-ready data for **Behavior Trees** and **State Trees**.
-- Supports UI presentation for awareness, detection, and AI state.
-- Includes additional gameplay systems such as **Patrol Points** and optional **Threat Management**.
-- Integrates with **Ninja Factions** for attitude-aware perception.
+A bot can see or hear several actors at once. You decide which signals deserve its attention, how long it remembers someone, and what it does with that information.
 
 ## Main Features
 
-- **Perception Evaluation**: Evaluates sensed actors using reusable rules, scores, and sense-specific data.
-- **Awareness Modeling**: Aggregates perception data into continuous awareness states that can drive AI behavior.
-- **Behavior Tree Support**: Provides services, tasks, decorators, and blackboard-friendly data for Behavior Tree workflows.
-- **State Tree Support**: Provides evaluators and tasks for projects using State Trees as their AI decision model.
-- **Patrol Points**: Adds reusable patrol-point support for common AI movement and routing behavior.
-- **Threat Management**: Provides an optional module for tracking and selecting relevant threats.
-- **UI Presentation**: Includes UMG widgets and ViewModels for presenting awareness and AI state.
-- **Faction Integration**: Works with Ninja Factions to evaluate perceived targets using team attitude and faction relationships.
+- Give guards, civilians, and other characters different senses and behaviors through reusable **Bot Setup** assets.
+- Build decisions in a **Behavior Tree** or **State Tree**. Both can read the selected target and the bot's awareness of it.
+- Set walking and running speeds, link patrol points, or give a particular stop its own activity.
+- Let [threat from damage or healing](bot_threat_manager.md) draw a guard's attention to a new target.
+- Show players how close a guard is to spotting them with an awareness indicator.
 
-## Architecture Overview
+## How a Bot Works
 
-Ninja Bot is organized around a clear separation between sensing, interpretation, decision support, and presentation.
+The character supplies its **Bot Setup** to its AI Controller. The controller applies the setup and starts the chosen tree. When sight picks up a player, the tree gets a target it can move toward. You can make the guard chase immediately or wait until its awareness reaches a threshold.
 
-Unreal Engine's AI Perception system detects raw stimuli such as sight, sound, damage, and team information. Ninja Bot 
-evaluates that data into normalized perception entries, then interprets those entries into awareness values that can be 
-consumed by AI decision systems.
-
-Behavior Trees and State Trees can then use that awareness data to select targets, change behavior, update blackboards, 
-trigger tasks, or drive higher-level AI logic. UI systems can observe the same awareness state through ViewModels and 
-widgets, allowing player-facing feedback such as detection indicators or awareness meters.
-
-By keeping sensing, evaluation, decision support, and UI presentation separate, Ninja Bot allows multiple AI agents to 
-share the same controller structure while changing behavior through data assets, perception settings, awareness profiles, 
-and optional faction configuration.
+Start with [Set Up Ninja Bot](bot_setup.md), then [build a bot that roams and chases](bot_first_steps.md).
 
 ## Integrations
 
-- **[Ninja Factions][1]** can provide team and attitude data used by the perception layer.
-- **[Ninja Combat](cbt_overview.md)** can provide combat events, damage stimuli, or target data used by AI behavior.
-
-[1]: fct_overview.md
+Use [Bot and Factions](integration_bot_factions.md) to decide who counts as an enemy. Use [Bot and Combat](integration_bot_combat.md) to lock on when the bot selects a target and release it when the target is lost.

@@ -49,7 +49,7 @@ Repeat the steps below for every input you want to support remapping.
 
 > **Optional Configuration**  
 > 
-> If you don’t plan to use automated brushes for key representation (for example, if you only want to display the key's 
+> If you don't plan to use automated brushes for key representation (for example, if you only want to display the key's
 > name), you can skip this step.  
 {style="note"}
 

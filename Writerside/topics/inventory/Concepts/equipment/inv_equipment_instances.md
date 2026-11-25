@@ -62,7 +62,7 @@ Each `InventoryEquipmentState` provides detailed control over how the item shoul
 | `ActorClass`                     | Actor class to spawn for this state (if type is `Actor`).                                                    |
 | `StaticMesh`                     | Static mesh to display for this state (if type is `StaticMesh`).                                             |
 | `SkeletalMesh`                   | Skeletal mesh to display for this state (if type is `SkeletalMesh`).                                         |
-| `bFollowsParentMesh`             | Whether the skeletal mesh should follow the parent avatar’s mesh as a follower (leader pose).                |
+| `bFollowsParentMesh`             | Whether the skeletal mesh should follow the parent avatar's mesh as a follower (leader pose).                |
 | `SkeletalMeshAnimClass`          | Animation blueprint to use if the skeletal mesh is not using a leader pose.                                  |
 | `bOverridesParentFinderStrategy` | If true, overrides the default Attach Parent Finder set in the Equipment Manager.                            |
 | `AttachParentFinderClass`        | Custom `NinjaEquipmentAttachParentFinder` used to determine the parent component for attachments.            |

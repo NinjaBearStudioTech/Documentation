@@ -11,7 +11,7 @@ and **consume**. These abilities are designed to accomplish the following tasks:
 ## Ability Structure
 
 All Ninja Inventory abilities derive from the shared base class: `UNinjaInventoryAnimationAbility`. This base introduces
-several key properties that configure the ability’s behavior:
+several key properties that configure the ability's behavior:
 
 | Property                                | Description                                                                                                                  |
 |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------|

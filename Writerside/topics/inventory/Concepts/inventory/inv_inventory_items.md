@@ -73,7 +73,7 @@ At runtime, an item becomes a `NinjaInventoryItem` instance. These are instanced
 - Support **replicated memory** for multiplayer scenarios.
 
 You can customize item behavior further by subclassing `NinjaInventoryItem` and assigning the new class in the Item Data 
-Asset’s `ItemInstanceClass` property.
+Asset's `ItemInstanceClass` property.
 
 When added to an inventory, items have a **registration process**, that can inform where in the initialization an item
 currently is. Possible values are:

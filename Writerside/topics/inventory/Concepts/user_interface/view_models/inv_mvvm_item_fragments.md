@@ -201,4 +201,4 @@ weight and calculate encumbrance effects.
 |---------------|---------------------------------------------------------------|
 | `bHasWeight`  | Indicates whether the item includes a Weight Fragment.        |
 | `UnitWeight`  | The weight of a single unit of the item.                      |
-| `TotalWeight` | The total weight, factoring in the item’s current stack size. |
+| `TotalWeight` | The total weight, factoring in the item's current stack size. |

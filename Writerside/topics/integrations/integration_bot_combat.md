@@ -3,33 +3,15 @@
 <secondary-label ref="bot-sec"/>
 <secondary-label ref="combat-sec"/>
 
-[**Ninja Bot**](bot_overview.md) integrates with **combat systems** through the **Gameplay Ability System**, allowing AI
-perception and target selection to drive combat-related behavior.
+Make a guard lock on to the player it sees and release the lock when it loses its target. Start with a guard that can [detect the player](bot_first_steps.md). Set it up as a [combatant](cbt_first_steps.md) with a Target Manager and grant it the [Target Lock ability](cbt_guide_target_lock.md).
 
-When the AI Controller selects a sensed actor as the current target, it broadcasts a **Gameplay Event** to the owning
-Ability System. A corresponding event is also broadcast when that target is lost.
+<procedure title="Connect perception to Target Lock">
+    <step><p>Create a Blueprint based on <code>NinjaBotAIController</code>. In its Class Defaults, find <b>Perception Target Acquired Event Tag</b> and set it to <code>Combat.Event.Target.Acquired</code>.</p></step>
+    <step><p>Set <b>Perception Target Dismissed Event Tag</b> to <code>Combat.Event.Target.Dismissed</code>. Compile the controller and assign it as the guard's <b>AI Controller Class</b>.</p></step>
+</procedure>
 
-These events allow combat abilities to react immediately to AI targeting decisions, without tightly coupling combat
-logic to AI perception.
+When the guard selects a target, the controller sends that actor to the ability on the guard. When perception clears the target, the second event releases the lock.
 
-## Target Lock Integration
+## Try It in Play
 
-A common integration point is the [**Target Lock ability**](cbt_concept_target_locking.md) provided by [**Ninja Combat**](cbt_overview.md).
-When configured, target selection events can automatically:
-
-* Activate the Target Lock ability when a target is acquired.
-* Deactivate the Target Lock ability when the target is dismissed.
-
-This enables coordinated combat behavior for both the AI agent and its current target, such as **applying Gameplay Effects**
-or **triggering combat state changes**.
-
-To integrate Ninja Bot target selection with Ninja Combat's [**Target Lock ability**](cbt_concept_target_locking.md), ensure
-the following Gameplay Tags match between the **AI Controller** and the **Target Lock Ability** assigned to the agent:
-
-| Purpose          | Source                                             | Gameplay Tag                    |
-|------------------|----------------------------------------------------|---------------------------------|
-| Target Acquired  | AI Controller, `PerceptionTargetAcquiredEventTag`  | `Combat.Event.Target.Acquired`  |
-| Target Dismissed | AI Controller, `PerceptionTargetDismissedEventTag` | `Combat.Event.Target.Dismissed` |
-
-The **Gameplay Event payload** emitted by Ninja Bot follows the format expected by Ninja Combat. The selected perception
-target is provided as part of the event data, allowing abilities to react without additional setup or translation.
+Walk a valid combat target into view. Check that the guard's Target Manager selects the same actor as its AI tree. Move the target out of sight and check that the lock clears when perception dismisses it. If perception works but the lock never starts, check the guard's ability grant and the acquired event tag on its assigned controller.

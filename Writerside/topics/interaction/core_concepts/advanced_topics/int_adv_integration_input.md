@@ -11,7 +11,7 @@
 </tldr>
 
 Use **Ninja Input** to forward button events to the **Interaction Manager**, so it attempts to start an interaction with
-an eligible target and, optionally, interrupt an ongoing interaction that hasn’t been **committed** yet.
+an eligible target and, optionally, interrupt an ongoing interaction that hasn't been **committed** yet.
 
 ## Creating the Input Handler
 <procedure title="Creating the Input Handler" collapsible="true" default-state="expanded">

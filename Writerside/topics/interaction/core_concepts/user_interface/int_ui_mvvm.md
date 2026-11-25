@@ -44,7 +44,7 @@ Starting with the simplest possible widget, the steps below show how to build an
         <p><img src="int_ui_widget_target_set_focus_state.png" alt="SetFocusState implementation" border-effect="line" thumbnail="true"/></p>
     </step>
     <step>
-        <b>Implement</b> <code>SetInteractionState</code>, receiving the <code>TargetIInteractionState</code> enum. Set the widget’s visibility based on the enum:
+        <b>Implement</b> <code>SetInteractionState</code>, receiving the <code>TargetIInteractionState</code> enum. Set the widget's visibility based on the enum:
         <ul>
             <li><b>None</b>, <b>Commited</b>, <b>Finished</b>, <b>Cancelled</b> &rarr; <code>Collapsed</code></li>
             <li><b>Started</b> &rarr; <code>Not Hit-Testable (Self & All Children)</code></li>

@@ -3,29 +3,17 @@
 <secondary-label ref="bot-sec"/>
 <secondary-label ref="factions-sec"/>
 
-[**Ninja Factions**](fct_overview.md) allows designers to **define factions** for pawns and determine how those factions
-relate to each other. Attitudes can be expressed using either a **direct faction matrix** or **reputation-based
-relationships**, depending on project needs.
+Make a guard recognize its enemy through faction membership. Start with a guard that can [detect the player](bot_first_steps.md) and [two faction members](fct_first_steps.md).
 
-[**Ninja Bot**](bot_overview.md) integrates with Ninja Factions by delegating team membership and attitude resolution to
-that system, allowing a **single, authoritative source of truth** for team logic.
+<procedure title="Use faction attitudes for sight">
+    <step><p>Create or select the Players and Enemies faction assets. Give them different team IDs. On Enemies, choose a friendly or neutral attitude toward its own faction and a hostile attitude toward Players.</p></step>
+    <step><p>Assign Players as the player character's main faction and Enemies as the guard's main faction through their Faction components.</p></step>
+    <step><p>With both plugins enabled, open <b>Edit → Project Settings → Ninja Bot</b>. Choose the <b>Faction Team Provider</b> under <b>Team Provider Class</b>.</p></step>
+    <step><p>In the guard's <b>Sense Profile</b>, set Sight to detect enemies only. Save the assets.</p></step>
+</procedure>
 
-## Team Provider Integration
+<img src="bot_advanced_integration_factions.png" alt="Faction team provider selected in Ninja Bot settings" width="780" border-effect="line"/>
 
-Ninja Bot includes a **Team Provider implementation** that is compatible with Ninja Factions. When a pawn is sensed by
-the perception system:
+## Try It in Play
 
-1. The pawn's faction and alignment are resolved via **Ninja Factions**.
-2. The **resulting attitude** — friendly, hostile, or neutral — is used by Ninja Bot.
-3. Perception, awareness, and targeting decisions rely on this resolved attitude.
-
-This ensures that AI perception logic remains consistent with faction rules defined elsewhere in the project.
-
-## Automatic Detection
-
-If the Ninja Factions module is present in the project, Ninja Bot **automatically enables the corresponding Team Provider**.
-
-You can then select the Ninja Factions Team Provider from the **Ninja Bot Settings** page. Once selected, all team and
-attitude queries performed by Ninja Bot are routed through Ninja Factions.
-
-<img src="bot_advanced_integration_factions.png" alt="Ninja Factions Integration" width="800" border-effect="line"/>
+Walk in front of the guard. It should select the player. Change the player to the guard's own faction and repeat from the same starting position. If it still gives chase, check the actual attitude between the two members and the Sight affiliation filter.

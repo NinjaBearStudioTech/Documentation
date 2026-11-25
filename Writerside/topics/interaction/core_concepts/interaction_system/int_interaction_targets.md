@@ -225,7 +225,7 @@ The following procedures will guide you through each step in detail.
     </step>
     <step>Assign your mesh asset, matching the one used in the Smart Object preview.</step>
     <step>
-        Add a collision component (e.g., <b>Box Collision</b>) that matches the object’s shape, and set its <b>Collision Preset</b> to <code>InteractionTarget</code>, as per the <a href="int_setup.md">collision setup</a>.
+        Add a collision component (e.g., <b>Box Collision</b>) that matches the object's shape, and set its <b>Collision Preset</b> to <code>InteractionTarget</code>, as per the <a href="int_setup.md">collision setup</a>.
         <p><img src="int_target_actor_02.png" alt="Set Collision Preset" border-effect="line" thumbnail="true"/></p>
     </step>
     <step>

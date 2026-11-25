@@ -15,7 +15,7 @@ class. This class will provide the following selection properties:
 | Property        | Description                                                           |
 |-----------------|-----------------------------------------------------------------------|
 | InteractionTags | Tags describing the interaction being executed (e.g., type, subtype). |
-| SlotTags        | Runtime tags added to the Smart Object’s slot at configuration time.  |
+| SlotTags        | Runtime tags added to the Smart Object's slot at configuration time.  |
 | AbilityTags     | Additional tags contributed by the Gameplay Ability during execution. |
 
 Before creating a Chooser table, make sure that all your interaction slots have enough metadata for proper selection.
@@ -63,7 +63,7 @@ Interaction animations are usually played from the **State Tree** using the **Pl
 dedicated state for **instant** interactions, or pair it with a preceding **Delay/Wait** node for **timed** interactions.
 
 This task is straightforward and also lets you specify an **Animation Montage override**. When provided, the override is 
-used instead of a Chooser selection—handy for unique scenarios or simpler projects that don’t need a Chooser Table.
+used instead of a Chooser selection—handy for unique scenarios or simpler projects that don't need a Chooser Table.
 
 <p><img src="int_adv_animation_state_tree_task.png" alt="Play Animation task in the State Tree" border-effect="line" thumbnail="true"/></p>
 

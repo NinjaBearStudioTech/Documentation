@@ -154,7 +154,7 @@ their own flows if needed, without having to extend large pieces of the main com
 Item processors are created by extending `UNinjaInventoryItemProcessor`.
 
 The processor will use your configuration (e.g., queries, default memories) to determine valid placement and stacking. 
-For most cases, you won’t need to override this unless you're building a custom flow (e.g., forced container injection or 
+For most cases, you won't need to override this unless you're building a custom flow (e.g., forced container injection or
 loot-specific routing).
 
 ## Stranded Items
