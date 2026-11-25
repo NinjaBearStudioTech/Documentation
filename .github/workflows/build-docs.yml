@@ -13,7 +13,7 @@ permissions:
 env:
   INSTANCE: 'Writerside/docsite'
   ARTIFACT: 'webHelpDOCSITE2-all.zip'
-  DOCKER_VERSION: '2026.04.8711'
+  DOCKER_VERSION: '2026.10.0423'
   ALGOLIA_APP_NAME: '1VNI46BYQK'
   ALGOLIA_INDEX_NAME: 'nbs_tech_site_index'
   CONFIG_JSON_PRODUCT: 'docsite'
@@ -104,6 +104,20 @@ jobs:
 
       - name: Unzip artifact
         run: unzip -O UTF-8 -qq "artifacts/${{ needs.build.outputs.artifact }}" -d dir
+
+      - name: Verify agent-readable documentation
+        working-directory: dir
+        shell: bash
+        run: |
+          set -eu
+          gas_pages=(gas?setup.html.md)
+          gas_page="${gas_pages[0]}"
+          grep -Fq 'integrations.html.md' llms.txt
+          grep -Fq "$gas_page" llms.txt
+          grep -Fq 'Integration Matrix' integrations.html.md
+          grep -Eq 'integration[-_]bot[-_]combat\.html' integrations.html.md
+          grep -Fq 'PublicDependencyModuleNames.AddRange' "$gas_page"
+          grep -Fq 'NinjaGAS' "$gas_page"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

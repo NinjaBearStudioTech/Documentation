@@ -6,14 +6,13 @@
                   name="Ninja Bear Studio Plugins"
                   start-page="getting_started.md">
 
-    <toc-element topic="getting_started.md" toc-title="Getting Started"/>
-    <toc-element toc-title="Installation and Setup">
-        <toc-element topic="installing_plugins.md"/>
-        <toc-element topic="asset_manager.md"/>
-        <toc-element topic="collision_settings.md"/>
-    </toc-element>
-    
-    <toc-element toc-title="Plugins">
+    <toc-element toc-title="NBS Suite">
+        <toc-element topic="getting_started.md">
+            <toc-element topic="installing_plugins.md"/>
+            <toc-element topic="asset_manager.md"/>
+            <toc-element topic="collision_settings.md"/>
+        </toc-element>
+
         <!-- Ninja Bot -->
         <toc-element topic="bot_overview.md">
             <toc-element topic="bot_setup.md" toc-title="Setup">
@@ -248,17 +247,17 @@
             <toc-element topic="inv_ui_tooltips.md" hidden="true"/>
             <toc-element topic="inv_changelog.md"/>
         </toc-element>
-    </toc-element>
-    
-    <toc-element toc-title="Integrations">
-        <toc-element topic="integration_bot_combat.md"/>
-        <toc-element topic="integration_bot_factions.md"/>
-        <toc-element topic="integration_combat_factions.md"/>
-        <toc-element topic="integration_combat_input.md"/>
-        <toc-element topic="integration_combat_inventory.md"/>
-        <toc-element topic="gas_guide_attributes.md"/>
-        <toc-element topic="ipt_gas_handlers.md"/>
-        <toc-element topic="int_adv_integration_input.md"/>
-        <toc-element topic="integration_interaction_inventory.md"/>
+
+        <toc-element topic="integrations.md">
+            <toc-element topic="integration_bot_combat.md"/>
+            <toc-element topic="integration_bot_factions.md"/>
+            <toc-element topic="integration_combat_factions.md"/>
+            <toc-element topic="integration_combat_input.md"/>
+            <toc-element topic="integration_combat_inventory.md"/>
+            <toc-element topic="gas_guide_attributes.md"/>
+            <toc-element topic="ipt_gas_handlers.md"/>
+            <toc-element topic="int_adv_integration_input.md"/>
+            <toc-element topic="integration_interaction_inventory.md"/>
+        </toc-element>
     </toc-element>
 </instance-profile>

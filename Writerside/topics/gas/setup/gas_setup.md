@@ -17,7 +17,7 @@ In **Project Settings → Asset Manager → Primary Asset Types to Scan**, add `
 
 <img src="gas_setup_data_asset.png" alt="Ability bundle scan settings in the Asset Manager" thumbnail="true" border-effect="line"/>
 
-<code-block lang="csharp" src="gas_setup_build.cs" collapsible="true" collapsed-title="Example C++ module dependencies"/>
+<code-block lang="c#" src="gas_setup_build.cs" collapsible="true" collapsed-title="Example C++ module dependencies"/>
 
 ## Ability System Initialization
 

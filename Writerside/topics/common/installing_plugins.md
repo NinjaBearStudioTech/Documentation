@@ -1,82 +1,40 @@
-# Installing Plugins
+# Install and Enable Plugins
 
-This page will walk you through the steps necessary to add and enable Ninja Bear Studio plugins.
-
-## Prerequisites And Additional Steps
-All plugins are designed to work standalone and will enable any required plugin dependencies through their `.uplugin` files.
-For embedded Unreal Engine plugins listed as dependencies, such as the Gameplay Ability System, that is enough.
-
-However, each plugin might have their own prerequisites or list additional steps necessary during its setup. To learn more 
-about their specific prerequisites and steps, please check each plugin's dedicated **Setup Page**.
+Choose the Launcher install for a plugin from Fab, including for a Blueprint-only project. Use the project-source install if you have the plugin source and want to build it with your game.
 
 ## Installing from the Launcher
-To get started, install the plugin to your engine using the <b>Epic Games Launcher</b>.
 
-<procedure title="Install via the Epic Launcher" collapsible="true" default-state="expanded">
-    <step>Open the <b>Epic Games Launcher</b> and locate the <b>desired plugin</b> in your <b>library</b>.</step>
-    <step>
-        <p>Click <b>Install to Engine</b> and select the engine version to install, from the list of compatible versions.</p>
-        <tip>Plugins installed via the Epic Launcher are added to your Engine directory and are available to <b>all projects</b> using that engine version.</tip>
-    </step>
-    <step>Once installed, open your project, navigate to <b>Edit</b> &rarr; <b>Plugins</b> and find the plugin in the list of installed plugins. You can also search for it, by name, using the Search Bar.</step>
-    <step>Enable the plugin and restart the engine.</step>
+<procedure title="Install for the engine version your project uses">
+    <step><p>Add the plugin to your Fab library using the Epic account you use in the Launcher. You can find the plugins on the <a href="https://www.fab.com/sellers/Ninja%20Bear%20Studio">Ninja Bear Studio Fab page</a>.</p></step>
+    <step><p>Close the project. In the Epic Games Launcher, open <b>Unreal Engine → Library</b> and find the plugin in <b>Fab Library</b>. Refresh the library if you just acquired it.</p></step>
+    <step><p>Choose <b>Install to Engine</b>, select your project's engine version, and wait for installation to finish. The version picker shows compatible installed engines. An engine installation makes the plugin available to projects using that version.</p></step>
 </procedure>
 
 ## Working with the Source Code
-<secondary-label ref="advanced"/>
-If you plan to work with source code, you can copy the plugin to your project or clone it from <b>GitHub</b>, if you 
-have access to the repository.
 
-<tip>
-    <p>If you decide to copy the plugin from the engine into your project, make sure to uninstall the version in the engine. <b>Make sure only one copy is active!</b></p>
-    <p>Unreal may load the Engine version of the plugin over the one in your project, leading to <b>version mismatches</b> or <b>undefined behavior</b>.</p>
-</tip>
-
-<procedure title="Enable C++ in your Project" collapsible="true" default-state="expanded">
-    <step>Make sure to perform all <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-your-development-environment-for-cplusplus-in-unreal-engine">necessary steps</a> to <b>enable C++</b> in your environment and project.</step>
-    <step>To work with the source code, you will need an editor installed, such as <b>Visual Studio</b> or <b>Rider</b>. Make sure to install your editor of choice.</step>
-    <step>If your project was originally Blueprint-only, create at least one C++ class, such as a base Character or Game Mode, via <b>Tools</b> &rarr; <b>New C++ Class</b>.</step>
+<procedure title="Build a project-local copy">
+    <step><p>Set up your platform's Unreal C++ toolchain. For a Blueprint-only project that you want to build from source, use <b>Tools → New C++ Class</b> to create a game module. See <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-your-development-environment-for-cplusplus-in-unreal-engine">Epic's C++ environment setup</a>.</p></step>
+    <step><p>Close the editor. Copy the complete plugin folder, or clone its repository if you have access, into your project's <code>Plugins</code> folder. For example, a local Ninja Input install contains <code>Plugins/NinjaInput/NinjaInput.uplugin</code>. Use one copy of the plugin for this project so you can tell which version you are building.</p></step>
+    <step><p>Generate project files for the <code>.uproject</code>, then build the project's <b>Development Editor</b> target for your platform. Open the project after the build succeeds.</p></step>
 </procedure>
 
-<procedure title="Install from GitHub" collapsible="true" default-state="expanded">
-    <step>Ensure that you have access to the plugin repository on <b>GitHub</b>.</step>
-    <step>In your project root, create a <code>Plugins</code> folder if you don't have one. If you're using multiple Ninja Bear Studio plugins, we recommend organizing them under a <code>NinjaBearStudio</code> folder.</step>
-    <step><b>Clone</b> the plugin repository into your desired Plugins folder.</step>
-    <step>Right-click the <code>.uproject</code> file and select <b>Generate Visual Studio project files</b> (or your IDE equivalent).</step>
-    <step>Launch the project. The plugin should now be available in your project's Plugins list.</step>
-</procedure>
+## Enable and Check the Plugin
 
-<procedure title="Add C++ Module Dependencies" collapsible="true" default-state="expanded">
-    <step>Close your Unreal Engine project if it is currently open.</step>
-    <step>
-        <p>In your IDE of choice, open the <code>Build.cs</code> file, named after your project (e.g., <code>MyGame.Build.cs</code> in the <code>Source/MyGame</code> folder), and add the following modules, based on plugins you are using.</p>
-        <tabs group="module_dependencies">
-            <tab title="Bot" group-key="bot">
-                <code-block lang="c#" src="bot_setup_build.cs"/>
-            </tab>
-            <tab title="Combat" group-key="cbt">
-                <code-block lang="c#" src="cbt_setup_build.cs"/>
-            </tab>
-            <tab title="Factions" group-key="fct">
-                <code-block lang="c#" src="fct_setup_build.cs"/>
-            </tab>
-            <tab title="GAS" group-key="gas">
-                <code-block lang="c#" src="gas_setup_build.cs"/>
-            </tab>
-            <tab title="Interaction" group-key="int">
-                <code-block lang="c#" src="int_setup_build.cs"/>
-            </tab>
-            <tab title="Inventory" group-key="inv">
-                <code-block lang="c#" src="inv_setup_build.cs"/>
-            </tab>
-            <tab title="Input" group-key="ipt">
-                <code-block lang="c#" src="ipt_setup_build.cs"/>
-            </tab>
-        </tabs>
-        <warning><b>Do not remove or replace any existing dependencies</b>. Add the ones in the list above, and <b>watch out for duplicates</b>.</warning>
-    </step>
-    <step><b>Recompile the project</b>. If this is the first time doing so, it might take a while.</step>
-</procedure>
+Open **Edit → Plugins**, search for the plugin, and tick its checkbox. Allow Unreal to enable any required engine plugins it lists. Save and restart the editor. Reopen **Edit → Plugins** and check that the plugin is enabled in this project. If it is missing, check the engine version used to open the project or the location of the project-local `.uplugin`. [Epic's plugin installation guide](https://dev.epicgames.com/documentation/unreal-engine/working-with-plugins-in-unreal-engine)
+
+Once the plugin is enabled, [choose its Setup and First Steps guide](getting_started.md#choose-your-plugin).
+
+If a walkthrough uses assets supplied by the plugin, open the Content Browser's **Settings** and enable **Show Plugin Content**. For an engine-installed plugin, also enable **Show Engine Content** if its folder is hidden.
+
+## C++ Module Dependencies
+
+When your game's C++ code uses a plugin class, add the module that provides it to your game module's `Build.cs`. This example adds the module for a Ninja Input Manager used in a private implementation file.
+
+```c#
+PrivateDependencyModuleNames.Add("NinjaInput");
+```
+
+Use `PublicDependencyModuleNames` for a dependency exposed by your module's public headers. Keep your existing dependencies and rebuild the Editor target after adding the module.
 
 ## AI-Assisted Development
 

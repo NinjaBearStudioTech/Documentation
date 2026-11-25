@@ -26,5 +26,6 @@
             <social type="youtube" href="https://www.youtube.com/@ninjabearstudio"/>
             <social type="github" href="https://github.com/NinjaBearStudioTech"/>
         </footer>
+        <llms-txt/>
     </build-profile>
 </buildprofiles>

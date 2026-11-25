@@ -1,159 +1,54 @@
-# Collision Settings
+# Configure Collision
 
-Unreal Engine uses **collision channels** and **collision presets** to determine how objects detect, block, overlap, or 
-ignore each other.
+Set up collision for the feature you are testing. A combat trace needs a target it can hit. An interaction scan needs two shapes that overlap. A dropped item may need a floor trace. Start with the matching section below.
 
-Some Ninja Bear Studio plugins require custom collision settings so they can perform gameplay queries consistently. These 
-queries are used for features such as **line-of-sight checks**, **melee and projectile traces**, and other gameplay-specific 
-detection.
+Open **Edit → Project Settings → Engine → Collision**. An **Object Channel** identifies a kind of object. A **Trace Channel** is what a query tests. A **Preset** saves the object type, collision mode, and responses so you can apply them to a component. In an existing project, keep channel assignments that other assets already use. Select the corresponding named channel on the plugin's query or trace setting.
 
-This page lists the shared collision setup used by Ninja Bear Studio plugins. **Configure only the channels and presets 
-required by the plugins enabled in your project**.
+## Combat
 
-**Collision settings** are configured in **Edit** &rarr; **Project Settings** &rarr; **Engine** &rarr; **Collision**.
-
-## Object Channels
-**Object Channels** represent the **type of object** being queried. These are commonly assigned through Collision Presets.
-
-<procedure title="Adding Object Channels" collapsible="true" default-state="expanded">
-    <step>Open <b>Edit</b> &rarr; <b>Project Settings</b>.</step>
-    <step>Navigate to <b>Engine</b> &rarr; <b>Collision</b>.</step>
-    <step>In <b>Object Channels</b>, add the object channels required by the plugins you are using.</step>
-    <step>Set each channel's <b>Default Response</b> according to the tables below.</step>
-    <step>Save the project settings and restart the editor if requested.</step>
+<procedure title="Make the character visible to combat traces">
+    <step><p>Under <b>Object Channels</b>, create <code>CombatObject</code> with default response <b>Ignore</b>. Under <b>Preset</b>, create <code>Combat</code>, set <b>Collision Enabled</b> to <b>Query Only</b>, choose <code>CombatObject</code> as its object type, and set its response to <code>CombatObject</code> to <b>Block</b>.</p></step>
+    <step><p>Apply the preset to the character mesh or dedicated hit shapes. Let those shapes ignore <b>Pawn</b>, <b>Camera</b>, and <b>Vehicle</b> where the movement capsule already handles physical contact. Keep the capsule's movement preset.</p></step>
+    <step><p>In your attack's scan settings, select the channel that matches your target setup. For an object query, include the target's object type. For a trace by channel, set the target's response to that channel to <b>Block</b>.</p></step>
 </procedure>
 
-| Plugin            | Channel             | Default Response | Purpose                                                                                                               |
-|-------------------|---------------------|------------------|-----------------------------------------------------------------------------------------------------------------------|
-| Combat            | `CombatObject`      | Ignore           | Represents objects that can be detected by combat traces, weapons, projectiles, aiming checks, or opportunity checks. |
-| Interaction       | `InteractionObject` | Ignore           | Represents objects used by interaction sources and targets.                                                           |
-| Combat, Inventory | `FloorObject`       | Ignore           | Optional object type for floor actors used by floor-specific traces or top-down targeting.                            |
+[Set up a combatant](cbt_first_steps.md), then [land a melee hit](cbt_guide_melee_attacks.md). If the swing passes through the target, check which component the trace crosses, its assigned preset, and the channel selected by the attack.
 
-## Trace Channels
-**Trace Channels** represent specific **query types** used by gameplay systems.
+### Additional Combat Traces
 
-<procedure title="Adding Trace Channels" collapsible="true" default-state="expanded">
-    <step>Open <b>Edit</b> &rarr; <b>Project Settings</b>.</step>
-    <step>Navigate to <b>Engine</b> &rarr; <b>Collision</b>.</step>
-    <step>In <b>Trace Channels</b>, add the trace channels required by the plugins you are using.</step>
-    <step>Set each channel's <b>Default Response</b> according to the tables below.</step>
-    <step>Save the project settings and restart the editor if requested.</step>
+Add these trace channels when the move calls for them. The default response sets the starting behavior for components in the project. Adjust individual presets for the objects the move should hit.
+
+| Trace channel | Default response | What to configure |
+| --- | --- | --- |
+| `Projectile` | Block | Let the target and any cover that should stop a shot block the trace. Have trigger volumes ignore it. |
+| `Opportunity` | Ignore | Let eligible target shapes block an opportunity check. |
+| `Aim` | Ignore | Let the shapes you want to aim at block the trace. |
+| `Evade` | Block | Let obstacles that should stop an evade block the trace. |
+
+## Interaction
+
+<procedure title="Let a pawn detect a switch">
+    <step><p>Create an <b>Object Channel</b> named <code>InteractionObject</code> with default response <b>Ignore</b>. Create the two presets below. Both use <b>Query Only</b> and the <code>InteractionObject</code> object type.</p></step>
+    <step><p>Assign <code>InteractionSource</code> to the pawn's scan and focus shapes. Assign <code>InteractionTarget</code> to the collision box around the switch. Enable <b>Generate Overlap Events</b> on both sides.</p></step>
 </procedure>
 
-| Plugin            | Channel            | Default Response | Purpose                                                                                                     |
-|-------------------|--------------------|------------------|-------------------------------------------------------------------------------------------------------------|
-| Interaction       | `InteractionSight` | Ignore           | Used to validate line of sight between an interaction source and an interaction target. **See note below!** |
-| Combat            | `Projectile`       | Block            | Used by projectile traces, hit-scan traces, and projectile-style collision checks.                          |
-| Combat            | `Opportunity`      | Ignore           | Used by opportunity checks, such as opportunity attacks or combat line-of-sight validation.                 |
-| Combat            | `Evade`            | Block            | Used for evade checks or movement-space validation.                                                         |
-| Combat            | `Aim`              | Ignore           | Used for aiming traces or target validation.                                                                |
-| Combat, Inventory | `Floor`            | Ignore           | Used for floor traces, mouse targeting, or ground detection.                                                |
+| Preset | Response to `InteractionObject` | Other channels |
+| --- | --- | --- |
+| `InteractionSource` | Overlap | Ignore |
+| `InteractionTarget` | Block | Ignore |
+
+The source's **Overlap** response lets it detect the target without physically stopping the pawn. [Interact with a Nearby Object](int_first_steps.md) sets up the sphere, focus box, abilities, and switch. If the switch never registers, check both shapes' responses and overlap events. If it registers but never becomes selectable, check the focus shape and the find ability.
 
 ### Line of Sight for Interactions
-Interaction line-of-sight checks use the `InteractionSight` channel to detect blocking geometry between the scanner and 
-the interaction target.
 
-For common blocking geometry, make sure relevant presets block `InteractionSight`. This usually includes presets such as:
+If a wall should hide the switch, enable the line-of-sight check on your targeting task. Ninja Interaction defaults to **Visibility**. To control interaction sight separately, create the `InteractionSight` trace channel with default response **Ignore**, then select it as the **Line of Sight Channel** in Ninja Interaction settings. Make walls and other opaque obstacles **Block** that channel, including the **BlockAll** and **BlockAllDynamic** presets where appropriate. Let trigger volumes ignore it.
 
-- `BlockAll`
-- `BlockAllDynamic`
-- Any project-specific wall, prop, door, obstacle, or blocking-volume preset
+Test with the switch in range, first with a clear view, then with a blocking wall between the pawn and switch. The wall should prevent selection while the sight check is active.
 
-<tip>
-    <p><b>Blocking Objects vs. Tracing Interaction Targets</b></p>
-    <p>In Ninja Interaction, <b>line-of-sight</b> traces are meant to detect <b>blocking geometry</b>, not confirm a hit on the interaction target.</p>
-    <p>Interaction should <b>succeed</b> when nothing physically blocks the line of sight. It should <b>fail</b> because something blocks it, not because the interaction target failed to respond to the trace.</p>
-</tip>
+## Floor
 
-## Adding Collision Presets
-Collision Presets make it easier to apply the correct channel responses to actors and components without configuring 
-each one manually.
+For a cast actor that settles on the floor or an inventory pickup placed on the ground, use a trace channel your walkable surface blocks. If you want a dedicated channel, add **Floor** under **Trace Channels** with default response **Ignore**.
 
-<procedure title="Adding Collision Presets" collapsible="true" default-state="expanded">
-    <step>Open <b>Edit</b> &rarr; <b>Project Settings</b>.</step>
-    <step>Navigate to <b>Engine</b> &rarr; <b>Collision</b>.</step>
-    <step>In <b>Preset</b>, add each preset required by the plugins you are using.</step>
-    <step>Set <b>Collision Enabled</b>, <b>Object Type</b>, and <b>Collision Responses</b> according to the tables below.</step>
-    <step>Save the project settings and restart the editor if requested.</step>
-</procedure>
+On the floor mesh's existing preset, set **Floor** to **Block** and keep the responses that let the character stand on it. If you create a separate floor preset, use **WorldStatic** and **Query and Physics** for a solid level floor. For a cast actor, select that channel under **Floor Alignment → Floor Trace Channel**. For inventory drops, the Drop fragment's **Placement Query** chooses where the pickup appears. If that query traces for the ground, select the floor channel in the query. Set **Projectile** or **Evade** to **Ignore** on the floor only if those queries should pass through it. If a query selects floors by object type, you can also define **FloorObject** as an object channel and assign it to the surfaces that query should find.
 
-## Collision Presets
-The following presets provide reusable collision configurations for common Ninja Bear Studio gameplay components. Add only 
-the presets required by the plugins enabled in your project, then assign them to the relevant actors or components.
-
-| Plugin            | Preset              | Collision Enabled | Object Type         | Purpose                                                                      |
-|-------------------|---------------------|-------------------|---------------------|------------------------------------------------------------------------------|
-| Interaction       | `InteractionSource` | Query Only        | `InteractionObject` | Used by scanner components that detect interaction targets.                  |
-| Interaction       | `InteractionTarget` | Query Only        | `InteractionObject` | Used by interactable actors that can be detected by interaction scans.       |
-| Combat            | `Combat`            | Query Only        | `CombatObject`      | Used by actors or components that should be detected by combat traces.       |
-| Combat, Inventory | `Floor`             | Query and Physics | `WorldStatic`       | Used by floor actors that should support floor traces or top-down targeting. |
-
-## Preset Details
-Use the following entries as a reference for each **Preset** being added to your project.
-
-### InteractionSource
-<secondary-label ref="interaction-sec"/>
-Use this preset for scanning components attached to actors that can look for interactable targets.
-
-| Setting             | Value               |
-|---------------------|---------------------|
-| Collision Enabled   | Query Only          |
-| Object Type         | `InteractionObject` |
-| `InteractionObject` | Overlap             |
-| All other channels  | Ignore              |
-
-### InteractionTarget
-<secondary-label ref="interaction-sec"/>
-Use this preset for actors or components that should be detected by interaction scans.
-
-| Setting             | Value               |
-|---------------------|---------------------|
-| Collision Enabled   | Query Only          |
-| Object Type         | `InteractionObject` |
-| `InteractionObject` | Block               |
-| All other channels  | Ignore              |
-
-### Floor
-<secondary-label ref="combat-sec"/>
-<secondary-label ref="inventory-sec"/>
-Use this preset for floor actors that should participate in floor-specific queries, such as the placement of <b>Cast Actors</b> (combat)
-or <b>Dropped Items</b> (inventory).
-
-| Setting           | Value             |
-|-------------------|-------------------|
-| Collision Enabled | Query and Physics |
-| Object Type       | `WorldStatic`     |
-| `Floor`           | Block             |
-| `FloorObject`     | Block             |
-| `Projectile`      | Ignore            |
-| `Evade`           | Ignore            |
-| Other channels    | Project-specific  |
-
-### Combat
-<secondary-label ref="combat-sec"/>
-Use this preset for components that should be detected by combat-related traces. Combat Objects are usually the <b>mesh</b>
-that represents the pawn or character, or dedicated <b>collision components</b> added along the skeleton.
-
-| Setting            | Value            |
-|--------------------|------------------|
-| Collision Enabled  | Query Only       |
-| Object Type        | `CombatObject`   |
-| `CombatObject`     | Block            |
-| `Opportunity`      | Block            |
-| `Aim`              | Block            |
-| `Pawn`             | Ignore           |
-| `Camera`           | Ignore           |
-| `Vehicle`          | Ignore           |
-| `InteractionSight` | Ignore           |
-| Other channels     | Project-specific |
-
-## Collision Parity
-As you introduce new traces and channels, you might need to review other **predefined channels** to ensure their parity
-with the new instructions.
-
-| Profile           | Changes                                                |
-|-------------------|--------------------------------------------------------|
-| `Trigger`         | Should **ignore** `Projectile` and `InteractionSight`. |
-| `NoCollision`     | Should **ignore** `Projectile` and `InteractionSight`. |
-| `BlockAll`        | Should **block** `InteractionSight`.                   |
-| `BlockAllDynamic` | Should **block** `InteractionSight`.                   |
+A first inventory with a fixed-size bag only needs its [item and container setup](inv_first_steps.md). Check floor collision when you [drop an item into the level](inv_gameplay_abilities.md) or [place a cast effect](cbt_guide_cast_actor.md).
