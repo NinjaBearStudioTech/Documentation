@@ -21,6 +21,10 @@
     --app-footer: var(--app-header);
 }
 
+.theme-dark .app__sidebar .toc-item--selected {
+    color: #A6E3C8;
+}
+
 .article__p {
     max-width: var(--wh-max-width-xl) !important;
 }
